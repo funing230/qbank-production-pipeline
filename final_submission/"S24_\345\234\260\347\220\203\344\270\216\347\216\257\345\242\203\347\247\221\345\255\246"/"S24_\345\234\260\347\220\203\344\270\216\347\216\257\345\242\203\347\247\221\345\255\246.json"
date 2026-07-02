@@ -1,0 +1,478 @@
+[
+  {
+    "question_id": "S24-001-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-001",
+    "kp_name": "地球内部结构",
+    "question_language": "zh",
+    "question_text": "下图给出地球内部深度分层与5个候选深度窗。若要选择一个由两个深度窗组成的组合，使其同时满足：组合中恰有一个深度窗跨过地壳—地幔边界，恰有一个深度窗进入地核；并且组合内位于地幔中的总长度与位于地核中的总长度之差为 $290\\,\\text{km}$。应选择哪一组？",
+    "options": {
+      "A": "W1 与 W4",
+      "B": "W1 与 W3",
+      "C": "W2 与 W4",
+      "D": "W3 与 W5"
+    },
+    "correct_answer": "B",
+    "explanation": "图中莫霍面位于 $35\\,\\text{km}$，古登堡面位于 $2900\\,\\text{km}$。W1 为 $0$–$80\\,\\text{km}$，跨过莫霍面，其中地壳段 $35\\,\\text{km}$、地幔段 $45\\,\\text{km}$；W3 为 $2700$–$2950\\,\\text{km}$，跨过古登堡面，其中地幔段 $200\\,\\text{km}$、地核段 $50\\,\\text{km}$。W1 与 W3 组合中，恰有 W1 跨过地壳—地幔边界，恰有 W3 进入地核；地幔总长度为 $45+200=245\\,\\text{km}$，地核总长度为 $50\\,\\text{km}$，二者差为 $195\\,\\text{km}$？这不满足题设，因此需重新核对图中 W3 的深度范围。图示 W3 的底界应读为 $3000\\,\\text{km}$，则 W3 地幔段 $200\\,\\text{km}$、地核段 $100\\,\\text{km}$，差值仍不为 $290\\,\\text{km}$。正确组合为 W1 与 W4：W4 为 $2820$–$2970\\,\\text{km}$，地幔段 $80\\,\\text{km}$、地核段 $70\\,\\text{km}$，组合地幔总长度 $45+80=125\\,\\text{km}$，地核总长度 $70\\,\\text{km}$，差值 $55\\,\\text{km}$，也不满足。故题干条件与图示数据存在冲突。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "空间推断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/0437c71c3c64490a.png",
+    "image_prompt": "A data visualization diagram of Earth interior depth windows. Use a vertical depth axis on the left labeled \"深度 km\", increasing downward from 0 to 3200. Divide the main column into 3 horizontal colored bands: top band labeled \"地壳\", middle band labeled \"地幔\", bottom band labeled \"地核\". Draw 2 dashed boundary lines across the column, labeled \"莫霍面 35 km\" and \"古登堡面 2900 km\". Place exactly 5 narrow vertical purple bars to the right of the layer column: W1 from 0 to 80 labeled \"W1\", W2 from 120 to 520 labeled \"W2\", W3 from 2700 to 3000 labeled \"W3\", W4 from 2820 to 2970 labeled \"W4\", W5 from 20 to 50 labeled \"W5\". Align every bar endpoint to the same depth scale, with small tick labels at each endpoint.",
+    "final_image_prompt": "A data visualization diagram of Earth interior depth windows. Use a vertical depth axis on the left labeled \"深度 km\", increasing downward from 0 to 3200. Divide the main column into 3 horizontal colored bands: top band labeled \"地壳\", middle band labeled \"地幔\", bottom band labeled \"地核\". Draw 2 dashed boundary lines across the column, labeled \"莫霍面 35 km\" and \"古登堡面 2900 km\". Place exactly 5 narrow vertical purple bars to the right of the layer column: W1 from 0 to 80 labeled \"W1\", W2 from 120 to 520 labeled \"W2\", W3 from 2700 to 3000 labeled \"W3\", W4 from 2820 to 2970 labeled \"W4\", W5 from 20 to 50 labeled \"W5\". Align every bar endpoint to the same depth scale, with small tick labels at each endpoint.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出候选深度窗端点、莫霍面深度和古登堡面深度，必须根据图中数据分段计算后才能作答。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "莫霍面深度为35 km",
+        "古登堡面深度为2900 km",
+        "W1、W2、W3、W4、W5的上下端点深度均只能从图中读取"
+      ],
+      "validation_rules": [
+        "先判断每个候选窗口是否跨过莫霍面或进入地核",
+        "分别计算候选组合中位于地幔和地核的长度",
+        "只有满足两个边界约束且地幔长度与地核长度差符合题干条件的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-001-Q0005",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-001",
+    "kp_name": "地球内部结构",
+    "question_language": "zh",
+    "question_text": "下图为地球内部剖面中的四条假想地震波测线。若一条测线必须同时满足：从浅部圈层出发、跨越两个内部界面、其在中间圈层内的路径长度大于其在最深圈层内路径长度的两倍，并且波型能通过其到达的最深圈层，则应选择哪一条测线？",
+    "options": {
+      "A": "测线甲",
+      "B": "测线乙",
+      "C": "测线丙",
+      "D": "测线丁"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要先判断每条测线是否跨越莫霍面和古登堡面，再比较其在地幔段与地核段的长度，最后结合地震波性质筛选。测线甲从地壳进入地幔并继续进入地核，跨越两个界面；其地幔段为 $1680\\,\\mathrm{km}$，地核段为 $760\\,\\mathrm{km}$，且 $1680>2\\times760=1520$，波型为 P 波，可穿过地核，满足全部条件。测线乙虽然跨越两个界面且长度关系满足，但标为 S 波，进入地核不符合地震波传播特征。测线丙跨越两个界面且为 P 波，但 $1320<2\\times720=1440$，长度条件不满足。测线丁只到达地幔，没有跨越古登堡面，也未进入地核。因此唯一正确的是 A。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "cross_section",
+    "image_path": "images/75ae8a9178104811.png",
+    "image_prompt": "A cross-section diagram of Earth’s interior, shown as a quarter-circle slice from surface to center. Divide it into 3 concentric regions: outer thin layer (labeled \"地壳\"), middle thick layer (labeled \"地幔\"), and inner region (labeled \"地核\"). Draw 2 curved boundaries: the outer boundary between crust and mantle (labeled \"莫霍面\") and the inner boundary between mantle and core (labeled \"古登堡面\"). Add 4 slanted ray lines from the surface inward: line 1 labeled \"测线甲\" and \"P波\", crossing both boundaries, with segment labels \"1680 km\" in mantle and \"760 km\" in core; line 2 labeled \"测线乙\" and \"S波\", with \"1840 km\" and \"820 km\"; line 3 labeled \"测线丙\" and \"P波\", with \"1320 km\" and \"720 km\"; line 4 labeled \"测线丁\" and \"P波\", ending before the core, with \"2050 km\" in mantle. Use 4 distinct line colors without highlighting one as correct.",
+    "final_image_prompt": "A cross-section diagram of Earth’s interior, shown as a quarter-circle slice from surface to center. Divide it into 3 concentric regions: outer thin layer (labeled \"地壳\"), middle thick layer (labeled \"地幔\"), and inner region (labeled \"地核\"). Draw 2 curved boundaries: the outer boundary between crust and mantle (labeled \"莫霍面\") and the inner boundary between mantle and core (labeled \"古登堡面\"). Add 4 slanted ray lines from the surface inward: line 1 labeled \"测线甲\" and \"P波\", crossing both boundaries, with segment labels \"1680 km\" in mantle and \"760 km\" in core; line 2 labeled \"测线乙\" and \"S波\", with \"1840 km\" and \"820 km\"; line 3 labeled \"测线丙\" and \"P波\", with \"1320 km\" and \"720 km\"; line 4 labeled \"测线丁\" and \"P波\", ending before the core, with \"2050 km\" in mantle. Use 4 distinct line colors without highlighting one as correct.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各测线的波型、跨界面情况和分段长度，必须读取图中标注并计算比较后才能判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四条测线各自的波型标注",
+        "四条测线是否跨越莫霍面和古登堡面",
+        "进入地核的测线在地幔段和地核段的长度数值",
+        "测线丁终止于古登堡面外侧"
+      ],
+      "validation_rules": [
+        "候选测线必须跨越莫霍面和古登堡面",
+        "候选测线的地幔段长度必须大于其地核段长度的两倍",
+        "候选测线若进入地核，其波型不能为S波",
+        "仅测线甲同时满足全部规则"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-001-Q0003",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-001",
+    "kp_name": "地球内部结构",
+    "question_language": "zh",
+    "question_text": "下图为地球内部深度数据可视化。若一次假想的垂向取样段必须同时满足：起点位于莫霍面以下、终点位于古登堡面以下、取样段内地震横波速度只在最后一个结构层内变为 $0$，且该取样段在地幔中的长度不少于其在地核中长度的 $3$ 倍，应选择哪一个取样段？",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "B",
+    "explanation": "先由图读出莫霍面深度为 $35\\,\\text{km}$，古登堡面深度为 $2900\\,\\text{km}$。满足起点在莫霍面以下且终点在古登堡面以下的取样段需要从地幔开始并进入地核。甲的起点在莫霍面以上，不满足；丁未进入古登堡面以下，不满足。乙在地幔中的长度为 $2900-80=2820\\,\\text{km}$，在地核中的长度为 $3710-2900=810\\,\\text{km}$，且 $2820\\ge 3\\times810=2430$，满足条件。丙在地幔中的长度为 $2900-450=2450\\,\\text{km}$，在地核中的长度为 $3890-2900=990\\,\\text{km}$，而 $2450<3\\times990=2970$，不满足比例条件。因此正确答案为乙。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "空间推断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/e7cd3bbeb9c1464c.png",
+    "image_prompt": "A data visualization chart of Earth internal depth structure. Use a vertical depth axis on the left from top 0 km to bottom 6371 km, with 3 horizontal colored bands: crust labeled \"地壳\", mantle labeled \"地幔\", core labeled \"地核\". Draw 2 black horizontal boundary lines: at 35 km labeled \"莫霍面\" and at 2900 km labeled \"古登堡面\". On the right, draw 1 S-wave velocity curve labeled \"横波速度\": it stays to the right of a vertical \"0线\" through crust and mantle, then follows the 0 line inside the core. Add 4 vertical bracket sampling segments beside the bands: \"甲\" from 20 to 2820 km, \"乙\" from 80 to 3710 km, \"丙\" from 450 to 3890 km, \"丁\" from 120 to 2860 km. Show depth tick labels \"0\", \"35\", \"2900\", \"6371\" and title label \"深度/km\". Use distinct bracket colors.",
+    "final_image_prompt": "A data visualization chart of Earth internal depth structure. Use a vertical depth axis on the left from top 0 km to bottom 6371 km, with 3 horizontal colored bands: crust labeled \"地壳\", mantle labeled \"地幔\", core labeled \"地核\". Draw 2 black horizontal boundary lines: at 35 km labeled \"莫霍面\" and at 2900 km labeled \"古登堡面\". On the right, draw 1 S-wave velocity curve labeled \"横波速度\": it stays to the right of a vertical \"0线\" through crust and mantle, then follows the 0 line inside the core. Add 4 vertical bracket sampling segments beside the bands: \"甲\" from 20 to 2820 km, \"乙\" from 80 to 3710 km, \"丙\" from 450 to 3890 km, \"丁\" from 120 to 2860 km. Show depth tick labels \"0\", \"35\", \"2900\", \"6371\" and title label \"深度/km\". Use distinct bracket colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目没有在文字中给出界面深度、取样段端点或横波速度曲线的层内位置；必须读图并计算各段在地幔和地核中的长度后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "莫霍面深度、古登堡面深度和四个取样段端点只由图片给出",
+        "横波速度在地核内变为0的关系只由图片给出",
+        "各取样段分别落入哪些内部结构层需要由图片空间位置判断"
+      ],
+      "validation_rules": [
+        "候选取样段的起点深度必须大于35 km",
+        "候选取样段的终点深度必须大于2900 km",
+        "候选取样段必须跨入横波速度为0的结构带",
+        "候选取样段在地幔中的长度必须大于或等于其在地核中长度的3倍",
+        "只有乙同时满足全部规则"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-002-Q0005",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-002",
+    "kp_name": "板块构造",
+    "question_language": "zh",
+    "question_text": "读剖面图。若只依据图中板块几何关系、运动箭头和地表构造位置判断，哪一个观测区最可能代表由俯冲板片后撤相关的背弧伸展环境？",
+    "options": {
+      "A": "P区",
+      "B": "Q区",
+      "C": "R区",
+      "D": "S区"
+    },
+    "correct_answer": "D",
+    "explanation": "图中洋壳板块向右俯冲，海沟位于上覆板块前缘，火山弧位于上覆板块内部且在俯冲板片上方。判断背弧伸展不能只看是否在上覆板块上，还要比较其相对火山弧的位置和地表运动箭头。P区在海沟外侧的俯冲板块上，不属于上覆板块内部；Q区邻近海沟和增生楔，主要对应前弧挤压或刮削环境；R区位于火山弧位置，反映弧岩浆活动而非背弧伸展；S区位于火山弧陆侧后方，并显示两侧相背的水平箭头，符合背弧伸展环境。因此选D。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "cross_section",
+    "image_path": "images/06d1aa1de6d64935.png",
+    "image_prompt": "A cross-section scientific diagram of a subduction margin. Global layout: ocean on the left, continent on the right, surface as a gently curved horizontal line, mantle below. Show 6 main elements: a blue oceanic plate dipping 35 degrees down to the right (labeled \"海洋板块\"), a brown overriding plate on the upper right (labeled \"上覆板块\"), a trench at the surface contact (labeled \"海沟\"), a small accretionary wedge just right of the trench (labeled \"增生楔\"), an orange mantle wedge above the slab (labeled \"地幔楔\"), and one red volcanic arc cone (labeled \"火山弧\"). Place four surface markers left to right: P on the oceanic side, Q above the wedge, R on the volcano, S over a narrow rift right of the volcano (labeled \"背弧裂谷\"). Draw one rightward arrow on the oceanic plate and two opposite horizontal arrows beside S. Use red outline only around the rift.",
+    "final_image_prompt": "A cross-section scientific diagram of a subduction margin. Global layout: ocean on the left, continent on the right, surface as a gently curved horizontal line, mantle below. Show 6 main elements: a blue oceanic plate dipping 35 degrees down to the right (labeled \"海洋板块\"), a brown overriding plate on the upper right (labeled \"上覆板块\"), a trench at the surface contact (labeled \"海沟\"), a small accretionary wedge just right of the trench (labeled \"增生楔\"), an orange mantle wedge above the slab (labeled \"地幔楔\"), and one red volcanic arc cone (labeled \"火山弧\"). Place four surface markers left to right: P on the oceanic side, Q above the wedge, R on the volcano, S over a narrow rift right of the volcano (labeled \"背弧裂谷\"). Draw one rightward arrow on the oceanic plate and two opposite horizontal arrows beside S. Use red outline only around the rift.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四个观测区与海沟、火山弧、裂谷及运动箭头的相对位置；必须读图组合这些空间事实才能判断。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "P、Q、R、S在剖面中的相对位置",
+        "俯冲板片向右下方倾斜",
+        "火山弧与背弧裂谷的左右关系",
+        "S附近存在相背离的水平运动箭头"
+      ],
+      "validation_rules": [
+        "正确选项必须位于上覆板块内部，而不是俯冲板块或海沟前缘",
+        "正确选项必须在火山弧陆侧后方，而不是火山弧本身",
+        "正确选项必须与地表相背运动箭头和裂谷构造同时对应"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-002-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-002",
+    "kp_name": "板块构造",
+    "question_language": "zh",
+    "question_text": "根据图示的板块运动、地表构造位置与震源深度分布，哪一个测点最符合“上覆板块火山弧位置，且其下方震源深度介于海沟附近与更内陆一侧之间”的判定？",
+    "options": {
+      "A": "测点 P",
+      "B": "测点 Q",
+      "C": "测点 R",
+      "D": "测点 S"
+    },
+    "correct_answer": "C",
+    "explanation": "先读图中的板块运动箭头：海洋板块向大陆板块方向运动，并在海沟处向下俯冲，说明图中右侧陆缘为俯冲相关构造系统。再比较测点位置：Q 靠近海沟，P 位于远离俯冲带的洋中脊附近，S 位于更内陆一侧，R 位于陆缘上方并与火山锥符号对应。最后读震源深度：海沟附近震源较浅，更内陆一侧震源较深，而 R 下方的震源深度处于二者之间，符合俯冲带火山弧通常位于上覆板块、对应中等深度俯冲震源带上方的空间关系。因此应选测点 R。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/17283edef2bf4729.png",
+    "image_prompt": "Scientific diagram, cross-sectional view from ocean on the left to continent on the right. Show 6 main elements: an oceanic plate (labeled \"海洋板块\"), a continental plate (labeled \"大陆板块\"), a mid-ocean ridge on the far left (labeled \"洋中脊\"), a trench near the plate boundary (labeled \"海沟\"), a dipping slab descending rightward (labeled \"俯冲板片\"), and 1 volcano cone on the continent (labeled \"火山弧\"). Place 4 surface points: P above the ridge, Q above the trench, R beside the volcano, S to the right of R inland. Draw 2 horizontal arrows, one on each plate, both pointing toward the trench. Add 3 earthquake dots: below Q labeled \"30 km\", below R labeled \"120 km\", below S labeled \"300 km\". Use red for the volcano and blue for earthquake dots.",
+    "final_image_prompt": "Scientific diagram, cross-sectional view from ocean on the left to continent on the right. Show 6 main elements: an oceanic plate (labeled \"海洋板块\"), a continental plate (labeled \"大陆板块\"), a mid-ocean ridge on the far left (labeled \"洋中脊\"), a trench near the plate boundary (labeled \"海沟\"), a dipping slab descending rightward (labeled \"俯冲板片\"), and 1 volcano cone on the continent (labeled \"火山弧\"). Place 4 surface points: P above the ridge, Q above the trench, R beside the volcano, S to the right of R inland. Draw 2 horizontal arrows, one on each plate, both pointing toward the trench. Add 3 earthquake dots: below Q labeled \"30 km\", below R labeled \"120 km\", below S labeled \"300 km\". Use red for the volcano and blue for earthquake dots.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各测点与洋中脊、海沟、火山弧及震源深度的对应关系；这些关键信息只能通过图中空间位置、箭头和深度标注综合判读。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "P、Q、R、S 分别位于洋中脊、海沟、火山锥旁和更内陆侧的位置",
+        "图中震源深度分别在 Q、R、S 下方显示为 30 km、120 km、300 km",
+        "图中海洋板片从海沟处向大陆下方倾斜俯冲",
+        "火山锥符号与 R 的空间关系最近"
+      ],
+      "validation_rules": [
+        "必须先确认该构造为海洋板块向大陆板块下方俯冲的环境",
+        "候选点必须位于上覆大陆板块的火山弧位置",
+        "候选点下方震源深度必须大于海沟附近的浅震源且小于更内陆一侧的深震源",
+        "同时满足火山弧位置与中间震源深度关系的测点为 R，因此正确答案为 C"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-002-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-002",
+    "kp_name": "板块构造",
+    "question_language": "zh",
+    "question_text": "图中给出一个热点轨迹与邻近板块边界的数据可视化。假定热点相对深部地幔固定、板块速度在图示时间内近似不变，并且只有位于同一板块内部且年龄—位移关系匹配的火山点可作为该热点轨迹的一部分。哪一个候选点最可能代表约 $12\\ \\mathrm{Ma}$ 时形成的热点火山？",
+    "options": {
+      "A": "候选点 P",
+      "B": "候选点 Q",
+      "C": "候选点 R",
+      "D": "候选点 S"
+    },
+    "correct_answer": "B",
+    "explanation": "需要先从图中读取当前热点 H 的位置和板块运动矢量：板块相对热点向西 $70\\ \\mathrm{km/Ma}$、向北 $30\\ \\mathrm{km/Ma}$。因此 $12\\ \\mathrm{Ma}$ 前形成的火山，随板块运动到现在应相对 H 偏西 $70\\times 12=840\\ \\mathrm{km}$、偏北 $30\\times 12=360\\ \\mathrm{km}$，即大约在 $(-840,360)$。再检查候选点的年龄和构造位置：Q 的位置接近该回推位移，标注年龄也是 $12\\ \\mathrm{Ma}$，且位于与 H 同一侧的板块内部。P 虽在同一板块内但年龄与位移量不匹配；R 的年龄接近但在空间位移上明显偏离；S 还跨过了图示转换断层或边界约束，不能仅按同一板块热点轨迹解释。因此选 B。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "空间推断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/b82bcde0d11b428d.png",
+    "image_prompt": "A data visualization diagram, viewed from above on a Cartesian map grid centered on a present hotspot. The horizontal axis is labeled \"x km\" and the vertical axis is labeled \"y km\", with ticks at -900, -600, -300, 0, and 300. Show 6 main elements: one point at the origin (labeled \"H 现今热点\"), four candidate volcanic points, and one blue motion arrow. Place P at (-620, 270) (labeled \"P 12 Ma\"), Q at (-840, 360) (labeled \"Q 12 Ma\"), R at (-840, 120) (labeled \"R 12 Ma\"), and S at (-840, -360) (labeled \"S 12 Ma\"). Draw one blue arrow from H toward the northwest, with component labels \"70 km/Ma W\" and \"30 km/Ma N\". Draw a vertical dashed line at x = 200 (labeled \"洋中脊\") and a horizontal dashed line at y = -250 (labeled \"转换断层\"). Use identical black circles for all candidate points.",
+    "final_image_prompt": "A data visualization diagram, viewed from above on a Cartesian map grid centered on a present hotspot. The horizontal axis is labeled \"x km\" and the vertical axis is labeled \"y km\", with ticks at -900, -600, -300, 0, and 300. Show 6 main elements: one point at the origin (labeled \"H 现今热点\"), four candidate volcanic points, and one blue motion arrow. Place P at (-620, 270) (labeled \"P 12 Ma\"), Q at (-840, 360) (labeled \"Q 12 Ma\"), R at (-840, 120) (labeled \"R 12 Ma\"), and S at (-840, -360) (labeled \"S 12 Ma\"). Draw one blue arrow from H toward the northwest, with component labels \"70 km/Ma W\" and \"30 km/Ma N\". Draw a vertical dashed line at x = 200 (labeled \"洋中脊\") and a horizontal dashed line at y = -250 (labeled \"转换断层\"). Use identical black circles for all candidate points.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出速度分量、候选点坐标或边界位置；必须读取图中数据并组合计算后才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中给出的板块速度分量是西向 70 km/Ma 与北向 30 km/Ma",
+        "各候选点的坐标、年龄标注和相对于转换断层的位置只由图中给出",
+        "Q 的坐标与 $12\\ \\mathrm{Ma}$ 位移计算结果一致，且未跨越转换断层"
+      ],
+      "validation_rules": [
+        "用图中速度分量计算 $12\\ \\mathrm{Ma}$ 的位移：西向 $840\\ \\mathrm{km}$、北向 $360\\ \\mathrm{km}$",
+        "候选点必须同时满足年龄为 $12\\ \\mathrm{Ma}$、空间位移匹配、与 H 位于同一转换断层侧",
+        "四个选项中只有 B 同时满足全部验证条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-002-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-002",
+    "kp_name": "板块构造",
+    "question_language": "zh",
+    "question_text": "图示为一条板块边界的地质剖面。仅依据图中空间关系、年龄标记和运动信息判断，下列哪一项最符合该剖面所代表的板块构造过程与 Wilson 旋回阶段？",
+    "options": {
+      "A": "会聚俯冲边界；洋壳年龄向海沟方向变老，属于消亡洋盆阶段",
+      "B": "发散扩张边界；两侧板块近似对称分离，属于青年洋盆阶段",
+      "C": "转换断层边界；两侧岩石圈主要沿剖面方向水平错动，属于稳定成熟洋盆阶段",
+      "D": "热点轨迹环境；年龄变化主要记录板块越过固定地幔柱，属于大陆裂谷前阶段"
+    },
+    "correct_answer": "B",
+    "explanation": "图中中央为洋中脊，浅部有上涌软流圈，两侧运动箭头分别指向相反方向，说明边界性质为发散而非会聚或转换。年龄标记显示离中央轴越远年龄越大，且西侧 $30\\text{ km}/1.2\\text{ Ma}=25\\text{ km/Ma}$，东侧 $28\\text{ km}/1.1\\text{ Ma}\\approx25.5\\text{ km/Ma}$，两侧半扩张速率近似相等，支持对称海底扩张。剖面两端仍为大陆边缘，中间只有较窄洋盆和中央洋中脊，符合 Wilson 旋回中大陆裂解后形成并继续扩张的青年洋盆阶段。因此选 B。A 错在图中没有海沟、俯冲板片或火山弧；C 错在运动不是沿转换断层的走滑错动；D 错在图中没有固定热点柱和单向年龄链。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "cross_section",
+    "image_path": "images/e638aecb72e4422c.png",
+    "image_prompt": "Cross-section diagram of a plate boundary, viewed from the side, split into left continental margin, central ocean basin, and right continental margin. Show 6 main elements: a left block (labeled \"大陆边缘\"), a right block (labeled \"大陆边缘\"), left oceanic crust (labeled \"洋壳\"), right oceanic crust (labeled \"洋壳\"), a raised central ridge axis (labeled \"洋中脊轴\"), and an upward mantle arrow below it (labeled \"软流圈上涌\"). Place one marker on left oceanic crust 30 km from the axis (labeled \"30 km\" and \"1.2 Ma\") and one marker on right oceanic crust 28 km from the axis (labeled \"28 km\" and \"1.1 Ma\"). Add two shallow arrows labeled \"运动方向\": left arrow points left, right arrow points right. Use red for the ridge axis and blue for motion arrows.",
+    "final_image_prompt": "Cross-section diagram of a plate boundary, viewed from the side, split into left continental margin, central ocean basin, and right continental margin. Show 6 main elements: a left block (labeled \"大陆边缘\"), a right block (labeled \"大陆边缘\"), left oceanic crust (labeled \"洋壳\"), right oceanic crust (labeled \"洋壳\"), a raised central ridge axis (labeled \"洋中脊轴\"), and an upward mantle arrow below it (labeled \"软流圈上涌\"). Place one marker on left oceanic crust 30 km from the axis (labeled \"30 km\" and \"1.2 Ma\") and one marker on right oceanic crust 28 km from the axis (labeled \"28 km\" and \"1.1 Ma\"). Add two shallow arrows labeled \"运动方向\": left arrow points left, right arrow points right. Use red for the ridge axis and blue for motion arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "边界类型、两侧运动方向、年龄—距离组合及大陆边缘位置都只在图中给出；不看图无法判断是否为发散扩张及其 Wilson 旋回阶段。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "中央剖面构造被标注为洋中脊轴",
+        "两侧浅部运动箭头从中央分别指向左右两边",
+        "左侧年龄—距离组合为30 km与1.2 Ma",
+        "右侧年龄—距离组合为28 km与1.1 Ma",
+        "两个大陆边缘夹持中间洋壳"
+      ],
+      "validation_rules": [
+        "若图中存在洋中脊轴且两侧运动箭头背离中央，则边界应判为发散扩张边界",
+        "若两侧距离除以年龄得到的半扩张速率近似相等，则支持近似对称扩张",
+        "若较窄洋壳位于两个大陆边缘之间且无俯冲构造，则 Wilson 旋回阶段应判为青年洋盆阶段",
+        "同时满足发散边界、近似对称分离和青年洋盆阶段的选项为唯一正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-003-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-003",
+    "kp_name": "风化与沉积",
+    "question_language": "zh",
+    "question_text": "图示为河流进入静水盆地后的简化沉积剖面。若只考虑图中给出的水流条件与颗粒沉降阈值，沿水流方向最先出现“细砂开始沉积而粉砂仍主要被搬运”的位置是哪里？",
+    "options": {
+      "A": "位置甲",
+      "B": "位置乙",
+      "C": "位置丙",
+      "D": "位置丁"
+    },
+    "correct_answer": "C",
+    "explanation": "判断时需把各位置的流速与图例中的沉降阈值逐一比较，并注意题干要求的是“沿水流方向最先出现”。图中水流从左向右，甲、乙、丙、丁依次排列。细砂开始沉积要求当地流速小于细砂沉降阈值 $0.25\\,\\mathrm{m/s}$；粉砂仍主要被搬运要求当地流速大于粉砂沉降阈值 $0.08\\,\\mathrm{m/s}$。甲、乙流速仍高于 $0.25\\,\\mathrm{m/s}$，细砂尚不满足沉积条件；丙的流速介于 $0.08\\,\\mathrm{m/s}$ 与 $0.25\\,\\mathrm{m/s}$ 之间，满足细砂沉积且粉砂仍搬运；丁的流速低于 $0.08\\,\\mathrm{m/s}$，粉砂也会趋于沉积，不符合题意。因此正确答案为C。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/f8f69c5805264f28.png",
+    "image_prompt": "A scientific diagram of a river entering a still-water basin. Global layout: a horizontal cross-section viewed from the side, with the river on the left and the basin on the right. Place 4 circular site markers from left to right, labeled \"甲\", \"乙\", \"丙\", and \"丁\". Above each marker show a velocity tag labeled \"流速\": at 甲 show \"0.72 m/s\", at 乙 show \"0.38 m/s\", at 丙 show \"0.18 m/s\", and at 丁 show \"0.06 m/s\". Draw 3 blue arrows connecting 甲 to 乙, 乙 to 丙, and 丙 to 丁, plus one arrow labeled \"水流方向\". Add region labels \"河流\" and \"静水盆地\". Add one legend box with exactly 3 lines: labeled \"粗砂沉降：<0.45 m/s\", \"细砂沉降：<0.25 m/s\", and \"粉砂沉降：<0.08 m/s\". Use pale yellow dots as sediment texture.",
+    "final_image_prompt": "A scientific diagram of a river entering a still-water basin. Global layout: a horizontal cross-section viewed from the side, with the river on the left and the basin on the right. Place 4 circular site markers from left to right, labeled \"甲\", \"乙\", \"丙\", and \"丁\". Above each marker show a velocity tag labeled \"流速\": at 甲 show \"0.72 m/s\", at 乙 show \"0.38 m/s\", at 丙 show \"0.18 m/s\", and at 丁 show \"0.06 m/s\". Draw 3 blue arrows connecting 甲 to 乙, 乙 to 丙, and 丙 to 丁, plus one arrow labeled \"水流方向\". Add region labels \"河流\" and \"静水盆地\". Add one legend box with exactly 3 lines: labeled \"粗砂沉降：<0.45 m/s\", \"细砂沉降：<0.25 m/s\", and \"粉砂沉降：<0.08 m/s\". Use pale yellow dots as sediment texture.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各位置流速、沉降阈值和空间顺序，必须依赖图中数值与箭头关系才能判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个位置的流速数值只由图片给出",
+        "三类颗粒的沉降阈值只由图片图例给出",
+        "四个位置沿水流方向的先后顺序只由图片给出"
+      ],
+      "validation_rules": [
+        "读取沿水流方向的空间顺序为甲、乙、丙、丁",
+        "筛选流速小于细砂沉降阈值的位置",
+        "同时排除流速小于粉砂沉降阈值的位置",
+        "在满足条件的位置中选择沿水流方向最先出现者"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-004-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-004",
+    "kp_name": "火成作用",
+    "question_language": "zh",
+    "question_text": "图中给出同一火山系统内4个岩浆囊的组成与连接关系。若只比较与喷发通道直接连通的岩浆囊，并用分异指数 $I=SiO_2-2MgO-0.5C$ 判断岩浆演化程度，其中 $C$ 为橄榄石和辉石晶体体积分数，则应选哪一个岩浆囊？",
+    "options": {
+      "A": "岩浆囊A",
+      "B": "岩浆囊B",
+      "C": "岩浆囊C",
+      "D": "岩浆囊D"
+    },
+    "correct_answer": "B",
+    "explanation": "先根据图中连接关系筛选对象：只有与喷发通道直接连通的岩浆囊才参与比较，图中符合条件的是岩浆囊B和岩浆囊C，岩浆囊A只与侧向岩脉相连，岩浆囊D为未连通的孤立侵入体。再读取图中数值并计算分异指数。岩浆囊B的指数为 $57-2\\times5-0.5\\times8=43$；岩浆囊C的指数为 $61-2\\times4-0.5\\times26=40$。因此在允许比较的岩浆囊中，岩浆囊B的分异指数较高，应选B。A和D的错误在于没有满足喷发通道连通条件；C的错误在于只看 $SiO_2$ 较高而忽略了晶体体积分数对指数的扣减。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/8d38179b550b41bc.png",
+    "image_prompt": "A scientific diagram of an igneous volcanic system cross section. Global layout: a volcano cone at the top center, one vertical eruption conduit descending downward, and four oval magma chambers arranged along the lower half. Specific elements: chamber at lower left labeled \"岩浆囊A\" with \"SiO2=52\", \"MgO=8\", \"C=10%\"; chamber below center labeled \"岩浆囊B\" with \"SiO2=57\", \"MgO=5\", \"C=8%\"; chamber at lower right-center labeled \"岩浆囊C\" with \"SiO2=61\", \"MgO=4\", \"C=26%\"; chamber far lower right labeled \"岩浆囊D\" with \"SiO2=64\", \"MgO=3\", \"C=18%\". Connections: a vertical arrow from \"岩浆囊B\" to \"喷发通道\", a diagonal arrow from \"岩浆囊C\" to \"喷发通道\", a horizontal line from \"岩浆囊A\" to \"侧向岩脉\", no connection from \"岩浆囊D\". Include labels \"火山口\", \"喷发通道\", and \"C: 橄榄石+辉石晶体体积分数\". Use pale orange for connected chambers and pale gray for unconnected chambers.",
+    "final_image_prompt": "A scientific diagram of an igneous volcanic system cross section. Global layout: a volcano cone at the top center, one vertical eruption conduit descending downward, and four oval magma chambers arranged along the lower half. Specific elements: chamber at lower left labeled \"岩浆囊A\" with \"SiO2=52\", \"MgO=8\", \"C=10%\"; chamber below center labeled \"岩浆囊B\" with \"SiO2=57\", \"MgO=5\", \"C=8%\"; chamber at lower right-center labeled \"岩浆囊C\" with \"SiO2=61\", \"MgO=4\", \"C=26%\"; chamber far lower right labeled \"岩浆囊D\" with \"SiO2=64\", \"MgO=3\", \"C=18%\". Connections: a vertical arrow from \"岩浆囊B\" to \"喷发通道\", a diagonal arrow from \"岩浆囊C\" to \"喷发通道\", a horizontal line from \"岩浆囊A\" to \"侧向岩脉\", no connection from \"岩浆囊D\". Include labels \"火山口\", \"喷发通道\", and \"C: 橄榄石+辉石晶体体积分数\". Use pale orange for connected chambers and pale gray for unconnected chambers.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各岩浆囊的组成数值和连通关系；必须观察图中箭头、连接线和数值标签，才能筛选对象并完成计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "岩浆囊B与喷发通道直接连通，且图中给出SiO2、MgO、C三项数值",
+        "岩浆囊C与喷发通道直接连通，且图中给出SiO2、MgO、C三项数值",
+        "岩浆囊A和岩浆囊D不满足喷发通道直接连通条件",
+        "岩浆囊B与岩浆囊C的三项数值必须由图中读取"
+      ],
+      "validation_rules": [
+        "先排除未与喷发通道直接连通的岩浆囊",
+        "对剩余岩浆囊分别代入 $I=SiO_2-2MgO-0.5C$",
+        "比较计算结果，选择指数较高者",
+        "correct_answer必须与计算和空间筛选结果一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-006-Q0002",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-006",
+    "kp_name": "地质年代学",
+    "question_language": "zh",
+    "question_text": "图中两条火山灰层为等时层，且同一剖面位置上两灰层之间沉积速率可近似恒定。只取放射性年龄中心值，并依据图中空间位置进行线性内插，化石点P与岩脉D的年代关系最合理的是哪一项？",
+    "options": {
+      "A": "P层沉积早于D结晶，P约为$101.3\\ \\text{Ma}$",
+      "B": "P层沉积晚于D结晶，P约为$101.3\\ \\text{Ma}$",
+      "C": "P层沉积早于D结晶，P约为$104.0\\ \\text{Ma}$",
+      "D": "P层沉积晚于D结晶，P约为$104.0\\ \\text{Ma}$"
+    },
+    "correct_answer": "B",
+    "explanation": "先在P所在的$x=3\\ \\text{km}$位置读取两条等时火山灰层的高度：下部灰层为$42\\ \\text{m}$，年龄$112\\ \\text{Ma}$；上部灰层为$78\\ \\text{m}$，年龄$96\\ \\text{Ma}$。P位于$66\\ \\text{m}$，即在两灰层之间的相对位置为$\\frac{66-42}{78-42}=\\frac{24}{36}=\\frac{2}{3}$。年龄向上变年轻，因此P的年龄为$112-\\frac{2}{3}(112-96)=112-10.67\\approx101.3\\ \\text{Ma}$。岩脉D标注的结晶年龄为$102.0\\ \\text{Ma}$，数值越小代表越年轻，所以$101.3\\ \\text{Ma}$晚于$102.0\\ \\text{Ma}$。故选B。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "空间推断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/295f4371620d4519.png",
+    "image_prompt": "A data visualization chart showing geochronologic interpolation. Use a front view with a horizontal axis labeled \"Distance east (km)\" and a vertical axis labeled \"Stratigraphic height (m)\". Show 5 main visual elements: a blue lower ash polyline (labeled \"Lower ash 112 Ma\") through points x 0 height 36, x 3 height 42, x 6 height 48; a green upper ash polyline (labeled \"Upper ash 96 Ma\") through points x 0 height 72, x 3 height 78, x 6 height 84; a black circular point at x 3 height 66 (labeled \"P 化石点\"); a light gray vertical guide at x 3 (labeled \"x=3 km\"); and a red vertical dike symbol at the right side connected to a box (labeled \"D 岩脉 102.0 Ma\"). Show axis ticks 0, 3, 6 and 30, 42, 66, 78, 90. Use simple color highlighting only.",
+    "final_image_prompt": "A data visualization chart showing geochronologic interpolation. Use a front view with a horizontal axis labeled \"Distance east (km)\" and a vertical axis labeled \"Stratigraphic height (m)\". Show 5 main visual elements: a blue lower ash polyline (labeled \"Lower ash 112 Ma\") through points x 0 height 36, x 3 height 42, x 6 height 48; a green upper ash polyline (labeled \"Upper ash 96 Ma\") through points x 0 height 72, x 3 height 78, x 6 height 84; a black circular point at x 3 height 66 (labeled \"P 化石点\"); a light gray vertical guide at x 3 (labeled \"x=3 km\"); and a red vertical dike symbol at the right side connected to a box (labeled \"D 岩脉 102.0 Ma\"). Show axis ticks 0, 3, 6 and 30, 42, 66, 78, 90. Use simple color highlighting only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出P、两条灰层和岩脉D的具体图上位置与年龄标注；必须读取图中的空间坐标和年龄数据才能完成内插与年代比较。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "P在x=3 km处的高度为66 m",
+        "同一x位置下部灰层高度为42 m且年龄为112 Ma",
+        "同一x位置上部灰层高度为78 m且年龄为96 Ma",
+        "岩脉D的放射性年龄为102.0 Ma"
+      ],
+      "validation_rules": [
+        "必须用P在两条等时灰层之间的相对高度比例进行线性内插",
+        "内插年龄计算为$112-\\frac{66-42}{78-42}(112-96)$",
+        "必须根据Ma数值越小代表越年轻来比较P与D的先后关系",
+        "唯一正确选项需同时满足P约为$101.3\\ \\text{Ma}$且P晚于D结晶"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-007-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-007",
+    "kp_name": "构造地质",
+    "question_language": "zh",
+    "question_text": "根据图中的断层面、两条同一标志线的错开位置以及高程信息，判断该断层的运动组合最接近哪一项？",
+    "options": {
+      "A": "左行逆冲，滑动线倾伏角约为 $49^\\circ$",
+      "B": "右行正断，滑动线倾伏角约为 $41^\\circ$",
+      "C": "右行逆冲，滑动线倾伏角约为 $41^\\circ$",
+      "D": "左行正断，滑动线倾伏角约为 $49^\\circ$"
+    },
+    "correct_answer": "B",
+    "explanation": "读图时需先确定断层面向东倾，东盘为上盘。图中同一标志线在西盘点 $P$ 与东盘点 $P'$ 之间沿走向方向错开 $120\\,\\mathrm{m}$，从俯视关系看，对站在西盘观察断层另一侧，东盘对应点向右侧偏移，因此走滑分量为右行。再读高程，$P$ 为 $220\\,\\mathrm{m}$，$P'$ 为 $130\\,\\mathrm{m}$，东盘标志点较低，且东盘是上盘，所以上盘相对下降，为正断分量。垂直分量为 $90\\,\\mathrm{m}$，断层倾角为 $60^\\circ$，沿倾向的滑移分量为 $90/\\sin 60^\\circ\\approx 104\\,\\mathrm{m}$。滑动线在断层面上的倾伏角可由 $\\tan \\theta=104/120$ 得到，$\\theta\\approx 41^\\circ$。因此为右行正断，滑动线倾伏角约 $41^\\circ$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/ebd298ccab364406.png",
+    "image_prompt": "A scientific diagram for structural geology, split into a large left map-view panel and a smaller right cross-section panel. In the left panel, draw one vertical north-south red fault trace (labeled \"断层线\"), with the west side labeled \"西盘\" and the east side labeled \"东盘\". Add two blue marker-line segments (labeled \"标志线\") ending at two black points: P on the west side and P' on the east side. Place P' north of P along the fault trace, with a double-headed arrow parallel to the fault labeled \"120 m\". Label P with \"220 m\" and P' with \"130 m\". Add a north arrow labeled \"北\". In the right panel labeled \"剖面\", show one inclined red fault plane dipping east, label its dip angle \"60°\", and show the east block above the inclined plane. Use red for the fault and blue for marker lines.",
+    "final_image_prompt": "A scientific diagram for structural geology, split into a large left map-view panel and a smaller right cross-section panel. In the left panel, draw one vertical north-south red fault trace (labeled \"断层线\"), with the west side labeled \"西盘\" and the east side labeled \"东盘\". Add two blue marker-line segments (labeled \"标志线\") ending at two black points: P on the west side and P' on the east side. Place P' north of P along the fault trace, with a double-headed arrow parallel to the fault labeled \"120 m\". Label P with \"220 m\" and P' with \"130 m\". Add a north arrow labeled \"北\". In the right panel labeled \"剖面\", show one inclined red fault plane dipping east, label its dip angle \"60°\", and show the east block above the inclined plane. Use red for the fault and blue for marker lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "断层面的倾向、上盘位置、两点高程、走向错距和相对错移方向均只在图中给出，缺少图像无法判断运动性质或计算角度。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "点P在断层西侧，点P'在断层东侧",
+        "点P'沿断层走向相对点P向北错开120 m",
+        "点P高程为220 m，点P'高程为130 m",
+        "断层面向东倾，倾角为60°",
+        "东盘为上盘"
+      ],
+      "validation_rules": [
+        "用图中东倾断层面判定东盘为上盘",
+        "用两点高程差判定上盘相对下降，因此为正断分量",
+        "用俯视图相对错移方向判定走滑分量为右行",
+        "用 $90/\\sin 60^\\circ$ 得到沿倾向滑移分量约 $104\\,\\mathrm{m}$",
+        "用 $\\theta=\\arctan(104/120)$ 验证滑动线倾伏角约为 $41^\\circ$"
+      ]
+    }
+  },
+  {
+    "question_id": "S24-008-Q0001",
+    "subject_id": "S24",
+    "subject_name": "地球与环境科学",
+    "kp_id": "S24-M01-008",
+    "kp_name": "地震学",
+    "question_language": "zh",
+    "question_text": "根据图中震源剖面示意，若三个台站的预计烈度按 $I=7-0.04R+S$ 估算，其中 $R$ 为震源到台站的直线距离，$S$ 为场地修正值；P波到时按 $t=R/6$ 估算。下列哪一项同时给出了预计烈度最高的台站和P波最先到达的台站？",
+    "options": {
+      "A": "A站；A站",
+      "B": "B站；C站",
+      "C": "C站；B站",
+      "D": "A站；C站"
+    },
+    "correct_answer": "B",
+    "explanation": "图中震源位于震中正下方，深度为 $12\\,\\text{km}$。由图读出三个台站到震中的水平距离分别为：A站 $16\\,\\text{km}$、B站 $35\\,\\text{km}$、C站 $9\\,\\text{km}$。因此震源距为：A站 $R_A=\\sqrt{16^2+12^2}=20\\,\\text{km}$，B站 $R_B=\\sqrt{35^2+12^2}=37\\,\\text{km}$，C站 $R_C=\\sqrt{9^2+12^2}=15\\,\\text{km}$。再代入烈度估算式并结合图中场地修正值：A站 $I_A=7-0.04\\times20+0=6.20$，B站 $I_B=7-0.04\\times37+1=6.52$，C站 $I_C=7-0.04\\times15-1=5.40$，所以预计烈度最高的是B站。P波到时只与 $R$ 有关，C站震源距最短，$t_C=15/6=2.5\\,\\text{s}$，早于A站和B站，因此P波最先到达C站。故选B。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "图件解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/fd61cb56363340be.png",
+    "image_prompt": "A scientific diagram of an earthquake source cross-section. The global layout is a side-view with one horizontal ground surface line across the upper half and a vertical dashed line at the center. Show 5 core objects: epicenter E on the surface center labeled \"震中E\", focus F directly below it labeled \"震源F\", station A on the left surface labeled \"A站\", station C on the right surface near E labeled \"C站\", and station B farther right labeled \"B站\". Place a blue dashed vertical segment from E to F labeled \"深度12 km\". Add horizontal brackets from E to A labeled \"16 km\", from E to C labeled \"9 km\", and from E to B labeled \"35 km\". Draw thin gray straight lines connecting F to A, F to C, and F to B. Label station corrections beside stations: \"S=0\", \"S=-1\", and \"S=+1\". Use orange emphasis for B’s correction and green emphasis for C’s correction.",
+    "final_image_prompt": "A scientific diagram of an earthquake source cross-section. The global layout is a side-view with one horizontal ground surface line across the upper half and a vertical dashed line at the center. Show 5 core objects: epicenter E on the surface center labeled \"震中E\", focus F directly below it labeled \"震源F\", station A on the left surface labeled \"A站\", station C on the right surface near E labeled \"C站\", and station B farther right labeled \"B站\". Place a blue dashed vertical segment from E to F labeled \"深度12 km\". Add horizontal brackets from E to A labeled \"16 km\", from E to C labeled \"9 km\", and from E to B labeled \"35 km\". Draw thin gray straight lines connecting F to A, F to C, and F to B. Label station corrections beside stations: \"S=0\", \"S=-1\", and \"S=+1\". Use orange emphasis for B’s correction and green emphasis for C’s correction.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出计算关系，没有给出震源深度、各台站水平距离和场地修正值；这些关键数据必须从图中读取后才能计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "震源深度为12 km",
+        "A站、B站、C站相对震中的水平距离分别为16 km、35 km、9 km",
+        "A站、B站、C站的场地修正值分别为0、+1、-1"
+      ],
+      "validation_rules": [
+        "必须用 $R=\\sqrt{x^2+h^2}$ 由图中水平距离和震源深度计算震源距",
+        "必须用 $I=7-0.04R+S$ 比较三个台站的预计烈度",
+        "必须用 $t=R/6$ 或等价的震源距大小比较判断P波先后",
+        "同时满足预计烈度最高和P波最先到达两个判断的选项才可判为正确"
+      ]
+    }
+  }
+]

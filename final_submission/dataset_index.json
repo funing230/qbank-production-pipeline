@@ -1,0 +1,202 @@
+{
+  "version": "pilot_240_qwen36_final",
+  "generated_at": "2026-07-01T03:31:31.334838",
+  "source_db": "/home/flyer8258/research_projects/multimodal_question_bank_24x1000/runs/qwen_gpt_closed_loop_18subjects_24000_20260619_v2/final_questionbank_production_18subjects_24000_v5/pilot_240_qwen36_verified/verified_pilot.db",
+  "total_questions": 337,
+  "total_images": 337,
+  "missing_images": 0,
+  "subjects": [
+    {
+      "subject_id": "S01",
+      "subject_name": "组合与离散数学",
+      "count": 18,
+      "image_count": 18,
+      "json_file": "S01_组合与离散数学/S01_组合与离散数学.json",
+      "images_dir": "S01_组合与离散数学/images"
+    },
+    {
+      "subject_id": "S02",
+      "subject_name": "概率与统计",
+      "count": 22,
+      "image_count": 22,
+      "json_file": "S02_概率与统计/S02_概率与统计.json",
+      "images_dir": "S02_概率与统计/images"
+    },
+    {
+      "subject_id": "S03",
+      "subject_name": "拓扑与变换",
+      "count": 21,
+      "image_count": 21,
+      "json_file": "S03_拓扑与变换/S03_拓扑与变换.json",
+      "images_dir": "S03_拓扑与变换/images"
+    },
+    {
+      "subject_id": "S04",
+      "subject_name": "代数与函数",
+      "count": 19,
+      "image_count": 19,
+      "json_file": "S04_代数与函数/S04_代数与函数.json",
+      "images_dir": "S04_代数与函数/images"
+    },
+    {
+      "subject_id": "S05",
+      "subject_name": "几何",
+      "count": 17,
+      "image_count": 17,
+      "json_file": "S05_几何/S05_几何.json",
+      "images_dir": "S05_几何/images"
+    },
+    {
+      "subject_id": "S06",
+      "subject_name": "数论与逻辑",
+      "count": 23,
+      "image_count": 23,
+      "json_file": "S06_数论与逻辑/S06_数论与逻辑.json",
+      "images_dir": "S06_数论与逻辑/images"
+    },
+    {
+      "subject_id": "S07",
+      "subject_name": "基础医学",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S07_基础医学/S07_基础医学.json",
+      "images_dir": "S07_基础医学/images"
+    },
+    {
+      "subject_id": "S08",
+      "subject_name": "临床医学",
+      "count": 16,
+      "image_count": 16,
+      "json_file": "S08_临床医学/S08_临床医学.json",
+      "images_dir": "S08_临床医学/images"
+    },
+    {
+      "subject_id": "S09",
+      "subject_name": "药学",
+      "count": 14,
+      "image_count": 14,
+      "json_file": "S09_药学/S09_药学.json",
+      "images_dir": "S09_药学/images"
+    },
+    {
+      "subject_id": "S10",
+      "subject_name": "公共卫生与预防医学",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S10_公共卫生与预防医学/S10_公共卫生与预防医学.json",
+      "images_dir": "S10_公共卫生与预防医学/images"
+    },
+    {
+      "subject_id": "S11",
+      "subject_name": "中医学",
+      "count": 16,
+      "image_count": 16,
+      "json_file": "S11_中医学/S11_中医学.json",
+      "images_dir": "S11_中医学/images"
+    },
+    {
+      "subject_id": "S12",
+      "subject_name": "护理学",
+      "count": 15,
+      "image_count": 15,
+      "json_file": "S12_护理学/S12_护理学.json",
+      "images_dir": "S12_护理学/images"
+    },
+    {
+      "subject_id": "S13",
+      "subject_name": "机械工程",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S13_机械工程/S13_机械工程.json",
+      "images_dir": "S13_机械工程/images"
+    },
+    {
+      "subject_id": "S14",
+      "subject_name": "电气与电子工程",
+      "count": 12,
+      "image_count": 12,
+      "json_file": "S14_电气与电子工程/S14_电气与电子工程.json",
+      "images_dir": "S14_电气与电子工程/images"
+    },
+    {
+      "subject_id": "S15",
+      "subject_name": "计算机科学",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S15_计算机科学/S15_计算机科学.json",
+      "images_dir": "S15_计算机科学/images"
+    },
+    {
+      "subject_id": "S16",
+      "subject_name": "土木与建筑工程",
+      "count": 11,
+      "image_count": 11,
+      "json_file": "S16_土木与建筑工程/S16_土木与建筑工程.json",
+      "images_dir": "S16_土木与建筑工程/images"
+    },
+    {
+      "subject_id": "S17",
+      "subject_name": "材料科学与工程",
+      "count": 13,
+      "image_count": 13,
+      "json_file": "S17_材料科学与工程/S17_材料科学与工程.json",
+      "images_dir": "S17_材料科学与工程/images"
+    },
+    {
+      "subject_id": "S18",
+      "subject_name": "能源与动力工程",
+      "count": 13,
+      "image_count": 13,
+      "json_file": "S18_能源与动力工程/S18_能源与动力工程.json",
+      "images_dir": "S18_能源与动力工程/images"
+    },
+    {
+      "subject_id": "S19",
+      "subject_name": "农业与生命工程",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S19_农业与生命工程/S19_农业与生命工程.json",
+      "images_dir": "S19_农业与生命工程/images"
+    },
+    {
+      "subject_id": "S20",
+      "subject_name": "其他工程",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S20_其他工程/S20_其他工程.json",
+      "images_dir": "S20_其他工程/images"
+    },
+    {
+      "subject_id": "S21",
+      "subject_name": "生物学",
+      "count": 14,
+      "image_count": 14,
+      "json_file": "S21_生物学/S21_生物学.json",
+      "images_dir": "S21_生物学/images"
+    },
+    {
+      "subject_id": "S22",
+      "subject_name": "化学",
+      "count": 11,
+      "image_count": 11,
+      "json_file": "S22_化学/S22_化学.json",
+      "images_dir": "S22_化学/images"
+    },
+    {
+      "subject_id": "S23",
+      "subject_name": "物理学",
+      "count": 10,
+      "image_count": 10,
+      "json_file": "S23_物理学/S23_物理学.json",
+      "images_dir": "S23_物理学/images"
+    },
+    {
+      "subject_id": "S24",
+      "subject_name": "地球与环境科学",
+      "count": 12,
+      "image_count": 12,
+      "json_file": "S24_地球与环境科学/S24_地球与环境科学.json",
+      "images_dir": "S24_地球与环境科学/images"
+    }
+  ]
+}

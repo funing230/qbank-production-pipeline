@@ -1,0 +1,402 @@
+[
+  {
+    "question_id": "S20-001-Q0005",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-001",
+    "kp_name": "流体输送与管路",
+    "question_language": "zh",
+    "question_text": "某装置拟输送剪切变稀浆液至高位反应器。根据图示管路改造方案，若设计原则是：泵应布置在可形成灌注吸入的位置，吸入侧不得包含易造成较大局部损失的设备，且泵出口侧必须能够通过安全回流支路卸压，则图中哪一个候选泵位最合适？",
+    "options": {
+      "A": "P-A",
+      "B": "P-B",
+      "C": "P-C",
+      "D": "P-D"
+    },
+    "correct_answer": "B",
+    "explanation": "判断时不能只看某一个位置标签，而要同时检查吸入条件、局部损失位置和安全回流关系。图中储槽液面高程为 $2.0\\,\\mathrm{m}$，P-B 位于 $0.6\\,\\mathrm{m}$，因此相对于液面可形成灌注吸入；同时从储槽到 P-B 之间仅为短直管段，过滤器和换热器均位于其下游，不会把高局部阻力放到泵吸入侧。P-B 的下游还连接到带安全阀的回流支路，安全阀开启压力为 $0.35\\,\\mathrm{MPa}$，可将泵出口侧介质回流至储槽。P-A 虽位于过滤器前，但其标高高于液面，不能形成灌注吸入；P-C 的吸入侧已包含过滤器，易使非牛顿浆液在吸入侧产生较大压降；P-D 的吸入侧同时经过过滤器和换热器，且安全回流支路已位于其上游，不能作为泵出口卸压支路。因此最合适的是 P-B。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "系统设计",
+    "blueprint_image_type": "engineering_schematic",
+    "image_path": "images/8b03b2a350e648ff.png",
+    "image_prompt": "Engineering schematic diagram, viewed straight on, arranged left to right as a pipeline system. Draw 7 main components: an open tank on the far left (labeled \"T-1\"), four blue candidate pump circles along the main pipe (labeled \"P-A z=2.8 m\", \"P-B z=0.6 m\", \"P-C z=0.7 m\", \"P-D z=0.8 m\"), one filter rectangle between P-B and P-C (labeled \"F-1\"), one heat exchanger rectangle between P-C and P-D (labeled \"E-1\"), and one reactor on the far right (labeled \"R-1\"). Show a liquid level line inside T-1 labeled \"液面 z=2.0 m\". Connect T-1 bottom outlet to P-A, P-A to P-B, P-B to F-1, F-1 to P-C, P-C to E-1, E-1 to P-D, and P-D to R-1, with a rightward arrow labeled \"主流向\". Add one red bypass branch from the pipe between P-B and F-1 through a valve labeled \"SV-1 开启0.35 MPa\" back to the top of T-1, with a leftward arrow labeled \"安全回流\".",
+    "final_image_prompt": "Engineering schematic diagram, viewed straight on, arranged left to right as a pipeline system. Draw 7 main components: an open tank on the far left (labeled \"T-1\"), four blue candidate pump circles along the main pipe (labeled \"P-A z=2.8 m\", \"P-B z=0.6 m\", \"P-C z=0.7 m\", \"P-D z=0.8 m\"), one filter rectangle between P-B and P-C (labeled \"F-1\"), one heat exchanger rectangle between P-C and P-D (labeled \"E-1\"), and one reactor on the far right (labeled \"R-1\"). Show a liquid level line inside T-1 labeled \"液面 z=2.0 m\". Connect T-1 bottom outlet to P-A, P-A to P-B, P-B to F-1, F-1 to P-C, P-C to E-1, E-1 to P-D, and P-D to R-1, with a rightward arrow labeled \"主流向\". Add one red bypass branch from the pipe between P-B and F-1 through a valve labeled \"SV-1 开启0.35 MPa\" back to the top of T-1, with a leftward arrow labeled \"安全回流\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出候选泵位高程、过滤器与换热器的相对位置、回流支路取出口位置和流向；这些关键事实只能从图中读取，缺图无法唯一判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "各候选泵位相对于储槽液面的标高",
+        "过滤器和换热器在主输送管线中的先后位置",
+        "安全回流支路从哪一段主管取出并返回储槽",
+        "主流向与安全回流方向"
+      ],
+      "validation_rules": [
+        "候选泵位必须低于储槽液面以满足灌注吸入条件",
+        "候选泵位的吸入侧不得包含过滤器或换热器等高局部损失设备",
+        "安全回流支路取出口必须位于所选泵位下游，才能作为泵出口卸压支路",
+        "只有同时满足上述三条规则的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-001-Q0004",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-001",
+    "kp_name": "流体输送与管路",
+    "question_language": "zh",
+    "question_text": "图示为某非牛顿流体在圆管中稳定层流输送时的轴对称速度剖面。若按图中给出的剖面函数和几何标注计算体积流量，则最接近的结果为哪一项？已知圆管截面积积分可写为 $Q=2\\pi\\int_0^R u(r)r\\,dr$。",
+    "options": {
+      "A": "$8.48\\ \\mathrm{m^3/h}$",
+      "B": "$6.36\\ \\mathrm{m^3/h}$",
+      "C": "$10.18\\ \\mathrm{m^3/h}$",
+      "D": "$12.72\\ \\mathrm{m^3/h}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中速度剖面可读出 $u/u_c=1-(r/R)^4$，且 $u_c=1.80\\ \\mathrm{m/s}$、$R=25\\ \\mathrm{mm}=0.025\\ \\mathrm{m}$。体积流量为 $Q=2\\pi\\int_0^R u_c\\left[1-(r/R)^4\\right]r\\,dr$。令 $x=r/R$，则 $Q=2\\pi u_c R^2\\int_0^1(1-x^4)x\\,dx=2\\pi u_c R^2\\left(\\frac{1}{2}-\\frac{1}{6}\\right)=\\frac{2\\pi u_c R^2}{3}$。代入得 $Q=\\frac{2\\pi\\times1.80\\times(0.025)^2}{3}=2.356\\times10^{-3}\\ \\mathrm{m^3/s}$，换算为小时流量为 $2.356\\times10^{-3}\\times3600=8.48\\ \\mathrm{m^3/h}$，故选 A。B 对应把剖面误当作抛物线平均速度关系；C 对应只近似使用错误的平均速度系数；D 则相当于把中心速度直接当作截面平均速度。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "velocity_profile",
+    "image_path": "images/9fec1701e53d4f69.png",
+    "image_prompt": "A velocity_profile diagram of laminar flow in one circular pipe, viewed as a split layout with a pipe-radius schematic on the left and a velocity plot on the right. Show 6 main elements: one horizontal radius line, one vertical centerline, one vertical wall line, one blue curved velocity profile, one axial velocity arrow at the center, and one formula label. The radius arrow runs from the centerline (labeled \"r/R = 0\") to the wall line (labeled \"r/R = 1\"), with the radius label \"R = 25 mm\" below it. The blue curve starts at the center point labeled \"u_c = 1.80 m/s\" and ends at the wall point labeled \"u = 0\". Place the title label \"速度剖面\" above the plot and show a rendered formula u/u_c = 1 - (r/R)^4 beside the curve. Use blue only for the velocity curve and arrow.",
+    "final_image_prompt": "A velocity_profile diagram of laminar flow in one circular pipe, viewed as a split layout with a pipe-radius schematic on the left and a velocity plot on the right. Show 6 main elements: one horizontal radius line, one vertical centerline, one vertical wall line, one blue curved velocity profile, one axial velocity arrow at the center, and one formula label. The radius arrow runs from the centerline (labeled \"r/R = 0\") to the wall line (labeled \"r/R = 1\"), with the radius label \"R = 25 mm\" below it. The blue curve starts at the center point labeled \"u_c = 1.80 m/s\" and ends at the wall point labeled \"u = 0\". Place the title label \"速度剖面\" above the plot and show a rendered formula u/u_c = 1 - (r/R)^4 beside the curve. Use blue only for the velocity curve and arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出速度剖面指数、中心速度和管半径；这些关键计算量只能从图中读取，删除图片后无法唯一确定体积流量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中速度剖面函数为 $u/u_c=1-(r/R)^4$",
+        "图中中心速度为 $u_c=1.80\\ \\mathrm{m/s}$",
+        "图中管半径为 $R=25\\ \\mathrm{mm}$"
+      ],
+      "validation_rules": [
+        "必须使用圆截面积分 $Q=2\\pi\\int_0^R u(r)r\\,dr$",
+        "必须将图中半径由 $25\\ \\mathrm{mm}$ 换算为 $0.025\\ \\mathrm{m}$",
+        "必须由图中剖面得到平均速度 $\\bar{u}=\\frac{2}{3}u_c$",
+        "最终应得到 $Q\\approx8.48\\ \\mathrm{m^3/h}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-001-Q0001",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-001",
+    "kp_name": "流体输送与管路",
+    "question_language": "zh",
+    "question_text": "拟在图示泵出口至反应器入口的三条支路中选一条作为单一主进料支路。各支路管径相同、设计流速相同，局部与沿程损失可合并为 $h_L=\\sum K\\,v^2/(2g)$，且检修锁闭的支路不得投入。按图中数据，应选择哪一支路使所需泵扬程最小？",
+    "options": {
+      "A": "上部支路 R1",
+      "B": "中部支路 R2",
+      "C": "下部支路 R3",
+      "D": "R1 与 R2 任意一个都可"
+    },
+    "correct_answer": "B",
+    "explanation": "由图读出各支路的静升和阻力系数，并注意带有检修锁闭标识的支路不能作为运行支路。图中给出 $v^2/(2g)=1.0\\,\\mathrm{m}$，因此每条可运行支路从泵出口到反应器入口所需增加的扬程可按 $H=\\Delta z+\\sum K\\,v^2/(2g)$ 比较。R1 的计算值为 $5+13\\times1.0=18\\,\\mathrm{m}$；R2 的计算值为 $8+7\\times1.0=15\\,\\mathrm{m}$。R3 虽然按数值为 $4+5\\times1.0=9\\,\\mathrm{m}$，但图中标注为检修锁闭，不允许投入。故在可运行支路中，R2 所需泵扬程较小，应选择中部支路 R2。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "工艺分析",
+    "blueprint_image_type": "streamline_diagram",
+    "image_path": "images/ae7d19061cfd471d.png",
+    "image_prompt": "A streamline diagram viewed from above, arranged left to right. Show 5 main elements: a left circular node labeled \"泵出口 P\", a right circular node labeled \"反应器入口\", and 3 horizontal branch streamlines between them. Place the upper branch labeled \"R1\", the middle branch labeled \"R2\", and the lower branch labeled \"R3\". Connect \"泵出口 P\" to the left end of R1, R2, and R3; connect the right end of R1, R2, and R3 to \"反应器入口\". Put one right-pointing arrow on each branch. Beside R1 show labels \"Δz = 5 m\" and \"ΣK = 13\". Beside R2 show \"Δz = 8 m\" and \"ΣK = 7\". Beside R3 show \"Δz = 4 m\", \"ΣK = 5\", a red lock icon, and red label \"检修锁闭\". Below the branches show a note with rendered formula \"v²/2g = 1.0 m\".",
+    "final_image_prompt": "A streamline diagram viewed from above, arranged left to right. Show 5 main elements: a left circular node labeled \"泵出口 P\", a right circular node labeled \"反应器入口\", and 3 horizontal branch streamlines between them. Place the upper branch labeled \"R1\", the middle branch labeled \"R2\", and the lower branch labeled \"R3\". Connect \"泵出口 P\" to the left end of R1, R2, and R3; connect the right end of R1, R2, and R3 to \"反应器入口\". Put one right-pointing arrow on each branch. Beside R1 show labels \"Δz = 5 m\" and \"ΣK = 13\". Beside R2 show \"Δz = 8 m\" and \"ΣK = 7\". Beside R3 show \"Δz = 4 m\", \"ΣK = 5\", a red lock icon, and red label \"检修锁闭\". Below the branches show a note with rendered formula \"v²/2g = 1.0 m\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各支路的静升、阻力系数、速度头数值和哪条支路被锁闭；这些关键信息只能从图中读取，缺图无法唯一确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "R1 的静升为 5 m 且 ΣK 为 13。",
+        "R2 的静升为 8 m 且 ΣK 为 7。",
+        "R3 的静升为 4 m 且 ΣK 为 5。",
+        "R3 带有检修锁闭标识。",
+        "图中速度头为 1.0 m。"
+      ],
+      "validation_rules": [
+        "按 $H=\\Delta z+\\sum K\\,v^2/(2g)$ 分别计算可运行支路。",
+        "带检修锁闭标识的支路不得作为运行选择。",
+        "在未锁闭支路中，计算所得 $H$ 较小者为正确选项。"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-002-Q0001",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-002",
+    "kp_name": "传热操作",
+    "question_language": "zh",
+    "question_text": "某管壳式换热器被划分为 4 个等面积轴向区段。假定热流体质量流量与定压比热在各区段不变，且可用区段两端温差的算术平均值近似局部传热推动力。根据图中的温度分布，哪一个区段的表观局部传热系数最可能偏低，需要优先检查结垢或旁流问题？",
+    "options": {
+      "A": "区段 I",
+      "B": "区段 II",
+      "C": "区段 III",
+      "D": "区段 IV"
+    },
+    "correct_answer": "D",
+    "explanation": "对等面积区段，热流体侧放热量满足 $Q_i \\propto \\Delta T_{h,i}$；表观局部传热系数可用 $U_i \\propto \\frac{Q_i}{\\overline{\\Delta T_i}}$ 比较，其中 $\\overline{\\Delta T_i}$ 取区段两端冷热流体温差的算术平均值。由图读数：热流体在四段的降温分别为 $15,14,9,6\\ ^\\circ\\mathrm{C}$。各区段两端的冷热温差分别为：区段 I 为 $160-140=20$ 与 $145-128=17$，平均约 $18.5$；区段 II 为 $17$ 与 $20$，平均约 $18.5$；区段 III 为 $20$ 与 $34$，平均约 $27$；区段 IV 为 $34$ 与 $56$，平均约 $45$。因此表观指标约为 $15/18.5,14/18.5,9/27,6/45$。区段 IV 在较大的传热推动力下只对应很小的热流体降温，表观局部传热系数最低，最应优先检查。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "工艺分析",
+    "blueprint_image_type": "temperature_distribution",
+    "image_path": "images/5b18de67e7494553.png",
+    "image_prompt": "A temperature distribution diagram for a shell-and-tube heat exchanger, shown as a flat side-view axial plot split into 4 equal vertical regions from left to right. Draw 5 vertical boundary lines and label the bottom centers as \"区段 I\", \"区段 II\", \"区段 III\", and \"区段 IV\". Plot 2 polylines: a red upper line labeled \"热流体\" through 5 points labeled \"160°C\", \"145°C\", \"131°C\", \"122°C\", \"116°C\" from left to right; a blue lower line labeled \"冷流体\" through 5 points labeled \"140°C\", \"128°C\", \"111°C\", \"88°C\", \"60°C\" from left to right. Add a red arrow labeled \"流向\" pointing left to right above the red line, and a blue arrow labeled \"流向\" pointing right to left below the blue line. Keep region widths equal and leave no extra judgment labels.",
+    "final_image_prompt": "A temperature distribution diagram for a shell-and-tube heat exchanger, shown as a flat side-view axial plot split into 4 equal vertical regions from left to right. Draw 5 vertical boundary lines and label the bottom centers as \"区段 I\", \"区段 II\", \"区段 III\", and \"区段 IV\". Plot 2 polylines: a red upper line labeled \"热流体\" through 5 points labeled \"160°C\", \"145°C\", \"131°C\", \"122°C\", \"116°C\" from left to right; a blue lower line labeled \"冷流体\" through 5 points labeled \"140°C\", \"128°C\", \"111°C\", \"88°C\", \"60°C\" from left to right. Add a red arrow labeled \"流向\" pointing left to right above the red line, and a blue arrow labeled \"流向\" pointing right to left below the blue line. Keep region widths equal and leave no extra judgment labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各边界温度、区段位置和两股流体方向；必须从温度分布图读取这些事实，才能计算并比较各区段表观局部传热系数。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "热流体五个边界温度为 160°C、145°C、131°C、122°C、116°C",
+        "冷流体五个边界温度为 140°C、128°C、111°C、88°C、60°C",
+        "四个区段等宽且对应等面积比较",
+        "区段 IV 对应第三分界与右端之间的温度点"
+      ],
+      "validation_rules": [
+        "按热流体相邻边界温度差求各区段相对热负荷",
+        "按同一区段两端冷热流体温差的算术平均值求近似传热推动力",
+        "比较 $\\Delta T_{h,i}/\\overline{\\Delta T_i}$，数值最小的区段为正确选项",
+        "计算得到区段 IV 的指标 $6/45$ 小于其他区段"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-002-Q0002",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-002",
+    "kp_name": "传热操作",
+    "question_language": "zh",
+    "question_text": "图示为某平板换热单元按单位面积表示的串联热阻网络，热流按图中箭头方向传递。若稳态下只考虑图中标出的热阻，单位面积热流密度最接近下列哪一项？",
+    "options": {
+      "A": "$26.9\\ \\mathrm{kW\\cdot m^{-2}}$",
+      "B": "$34.9\\ \\mathrm{kW\\cdot m^{-2}}$",
+      "C": "$43.6\\ \\mathrm{kW\\cdot m^{-2}}$",
+      "D": "$58.9\\ \\mathrm{kW\\cdot m^{-2}}$"
+    },
+    "correct_answer": "A",
+    "explanation": "串联热阻网络按单位面积计算，总热阻为各段热阻之和。由图可读出热流两端温度分别为热侧主体温度和冷侧主体温度，因此驱动力为 $\\Delta T=180-40=140\\ \\mathrm{K}$。各段热阻为 $R_{h}=0.0020$、$R_{f,h}=0.0008$、$R_{w}=0.000375$、$R_{f,c}=0.0012$、$R_{c}=0.000833\\ \\mathrm{m^2\\cdot K\\cdot W^{-1}}$。故 $R_{\\mathrm{tot}}=0.0020+0.0008+0.000375+0.0012+0.000833=0.005208\\ \\mathrm{m^2\\cdot K\\cdot W^{-1}}$。单位面积热流密度 $q''=\\frac{\\Delta T}{R_{\\mathrm{tot}}}=\\frac{140}{0.005208}=2.69\\times10^4\\ \\mathrm{W\\cdot m^{-2}}\\approx26.9\\ \\mathrm{kW\\cdot m^{-2}}$，因此选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "thermal_resistance_network",
+    "image_path": "images/6b76187fb5fd449c.png",
+    "image_prompt": "A thermal resistance network diagram for heat transfer, viewed straight on, arranged horizontally from left to right with a temperature-distribution strip above it. Show 7 main elements: a left circular node (labeled \"热侧主体 180°C\"), 5 rectangular resistance blocks in the center, and a right circular node (labeled \"冷侧主体 40°C\"). Connect them in one series chain: left node to block 1, block 1 to block 2, block 2 to block 3, block 3 to block 4, block 4 to block 5, block 5 to right node. Label the blocks \"热侧对流\", \"热侧污垢\", \"金属壁\", \"冷侧污垢\", \"冷侧对流\". Under the blocks show \"0.0020 m²·K/W\", \"0.0008 m²·K/W\", \"0.000375 m²·K/W\", \"0.0012 m²·K/W\", \"0.000833 m²·K/W\". Add one rightward arrow (labeled \"q''\"). The top strip is labeled \"温度分布\" and fades from red at left to blue at right.",
+    "final_image_prompt": "A thermal resistance network diagram for heat transfer, viewed straight on, arranged horizontally from left to right with a temperature-distribution strip above it. Show 7 main elements: a left circular node (labeled \"热侧主体 180°C\"), 5 rectangular resistance blocks in the center, and a right circular node (labeled \"冷侧主体 40°C\"). Connect them in one series chain: left node to block 1, block 1 to block 2, block 2 to block 3, block 3 to block 4, block 4 to block 5, block 5 to right node. Label the blocks \"热侧对流\", \"热侧污垢\", \"金属壁\", \"冷侧污垢\", \"冷侧对流\". Under the blocks show \"0.0020 m²·K/W\", \"0.0008 m²·K/W\", \"0.000375 m²·K/W\", \"0.0012 m²·K/W\", \"0.000833 m²·K/W\". Add one rightward arrow (labeled \"q''\"). The top strip is labeled \"温度分布\" and fades from red at left to blue at right.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出两端温度、各段热阻数值以及是否存在并联支路；这些决定总热阻和温差的关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左端温度为 $180\\ ^\\circ\\mathrm{C}$，右端温度为 $40\\ ^\\circ\\mathrm{C}$",
+        "网络包含5个串联单位面积热阻",
+        "5个热阻分别为 $0.0020$、$0.0008$、$0.000375$、$0.0012$、$0.000833\\ \\mathrm{m^2\\cdot K\\cdot W^{-1}}$",
+        "图中无并联支路"
+      ],
+      "validation_rules": [
+        "必须用图中两端温度差计算 $\\Delta T=140\\ \\mathrm{K}$",
+        "必须把5个串联热阻全部相加得到 $R_{\\mathrm{tot}}=0.005208\\ \\mathrm{m^2\\cdot K\\cdot W^{-1}}$",
+        "必须按 $q''=\\Delta T/R_{\\mathrm{tot}}$ 得到约 $26.9\\ \\mathrm{kW\\cdot m^{-2}}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-002-Q0002",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-002",
+    "kp_name": "传热操作",
+    "question_language": "zh",
+    "question_text": "图示为一台逆流换热器沿换热面积坐标划分的温度分布数据图。各区段面积相等，局部传热量近似按 $q_i \\propto U_i\\overline{\\Delta T_i}$ 估算，其中 $\\overline{\\Delta T_i}$ 取该区段两端温差的算术平均值。若只能在一个区段增加少量换热面积，且要求该区段两端局部温差均不低于 $45\\ \\mathrm{K}$，应优先选择哪一区段？",
+    "options": {
+      "A": "Z1",
+      "B": "Z2",
+      "C": "Z3",
+      "D": "Z4"
+    },
+    "correct_answer": "B",
+    "explanation": "需先从图中读取各节点的热、冷流体温度，并计算各区段两端的局部温差。Z1 两端温差为 $150-102=48\\ \\mathrm{K}$ 与 $138-90=48\\ \\mathrm{K}$，$U_1\\overline{\\Delta T_1}=0.62\\times48=29.76$。Z2 为 $48\\ \\mathrm{K}$ 与 $50\\ \\mathrm{K}$，$0.78\\times49=38.22$。Z3 为 $50\\ \\mathrm{K}$ 与 $55\\ \\mathrm{K}$，$0.70\\times52.5=36.75$。Z4 为 $55\\ \\mathrm{K}$ 与 $63\\ \\mathrm{K}$，$0.54\\times59=31.86$。四个区段均满足两端温差不低于 $45\\ \\mathrm{K}$，比较 $U_i\\overline{\\Delta T_i}$ 后，Z2 的边际传热增益最大，因此选 B。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "基于精确图示信息考查传热操作",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/7da83e2f90474794.png",
+    "image_prompt": "A data chart showing a temperature distribution for a countercurrent heat exchanger. The layout is a single rectangular plot with x-axis left to right (labeled \"面积坐标 x\") and y-axis vertical (labeled \"温度 °C\"), plus one inset table in the upper right. Draw 5 red circular points for the hot stream (labeled \"热流体\") at x 0, 0.25, 0.50, 0.75, 1.00 with visible labels 150, 138, 126, 116, 108. Draw 5 blue square points for the cold stream (labeled \"冷流体\") at the same x positions with labels 102, 90, 76, 61, 45. Connect red points with one red line and blue points with one blue line. Add 3 vertical divider lines at 0.25, 0.50, 0.75, forming 4 bands labeled \"Z1\", \"Z2\", \"Z3\", \"Z4\". The inset table is labeled \"U kW/(m²·K)\" and lists Z1 0.62, Z2 0.78, Z3 0.70, Z4 0.54. Use light gray zone shading.",
+    "final_image_prompt": "A data chart showing a temperature distribution for a countercurrent heat exchanger. The layout is a single rectangular plot with x-axis left to right (labeled \"面积坐标 x\") and y-axis vertical (labeled \"温度 °C\"), plus one inset table in the upper right. Draw 5 red circular points for the hot stream (labeled \"热流体\") at x 0, 0.25, 0.50, 0.75, 1.00 with visible labels 150, 138, 126, 116, 108. Draw 5 blue square points for the cold stream (labeled \"冷流体\") at the same x positions with labels 102, 90, 76, 61, 45. Connect red points with one red line and blue points with one blue line. Add 3 vertical divider lines at 0.25, 0.50, 0.75, forming 4 bands labeled \"Z1\", \"Z2\", \"Z3\", \"Z4\". The inset table is labeled \"U kW/(m²·K)\" and lists Z1 0.62, Z2 0.78, Z3 0.70, Z4 0.54. Use light gray zone shading.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出温度分布、区段边界或各区段 $U_i$，必须读取图片中的折线数据和 inset 表才能完成计算与筛选。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "各面积坐标处热流体与冷流体的成对温度数值只在图片中给出。",
+        "各区段与面积坐标区间的对应关系只在图片中给出。",
+        "各区段的局部传热系数 $U_i$ 只在图片 inset 表中给出。"
+      ],
+      "validation_rules": [
+        "对每个区段，分别用图中两端节点计算局部温差。",
+        "剔除任一端温差低于 $45\\ \\mathrm{K}$ 的区段；本图中四个区段均不剔除。",
+        "用 $U_i$ 乘以两端温差的算术平均值比较边际传热能力。",
+        "乘积最大的合格区段对应的选项为正确答案。"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-002-Q0005",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-002",
+    "kp_name": "传热操作",
+    "question_language": "zh",
+    "question_text": "图示为某蒸发进料预热段的两台串联换热器，冷进料依次经过 E1 和 E2。假定各台换热器内可按图中两个等面积半段分别用逆流对数平均温差计算，且每个半段的总传热系数相同。若冷进料的热容流率为 $C_c=22\\ \\mathrm{kW\\cdot K^{-1}}$，按图中温度分布估算 E1 与 E2 的总换热量之差最接近下列哪一项？",
+    "options": {
+      "A": "$96\\ \\mathrm{kW}$",
+      "B": "$132\\ \\mathrm{kW}$",
+      "C": "$176\\ \\mathrm{kW}$",
+      "D": "$220\\ \\mathrm{kW}$"
+    },
+    "correct_answer": "A",
+    "explanation": "需要从图中分别读取冷进料在 E1 和 E2 的进出口温度，而不是直接比较热流体端温差。E1 中冷进料由 $42^\\circ\\mathrm{C}$ 升至 $70^\\circ\\mathrm{C}$，因此 $Q_{E1}=C_c(70-42)=22\\times 28=616\\ \\mathrm{kW}$。E2 中冷进料由 $70^\\circ\\mathrm{C}$ 升至 $94^\\circ\\mathrm{C}$，因此 $Q_{E2}=C_c(94-70)=22\\times 24=528\\ \\mathrm{kW}$。两者总换热量之差为 $616-528=88\\ \\mathrm{kW}$，最接近 $96\\ \\mathrm{kW}$。其他选项通常来自把热流体端温差误当作冷侧升温、漏掉串联中间温度，或把两个半段的温差直接相加代替热量衡算。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "engineering_schematic",
+    "image_path": "images/7e6cd74111114766.png",
+    "image_prompt": "An engineering schematic diagram of a serial heat-exchanger preheating section. Use a horizontal left-to-right layout with two rectangular exchangers: left unit labeled \"E1\" and right unit labeled \"E2\". Draw one lower blue-to-red cold-feed arrow from E1 to E2 labeled \"冷进料\", with a label \"Cc=22 kW/K\" below it. Inside each exchanger, add one vertical dashed divider labeled \"等面积半段\". For E1, place cold-side temperature labels \"42°C\" at the left bottom, \"56°C\" at the center bottom, and \"70°C\" at the right bottom; place hot-side labels \"104°C\" at the left top, \"116°C\" at the center top, and \"138°C\" at the right top, with a top arrow labeled \"热流体1\" pointing right-to-left. For E2, place cold labels \"70°C\", \"82°C\", \"94°C\" left to right and hot labels \"101°C\", \"112°C\", \"130°C\" left to right, with top arrow labeled \"热流体2\" pointing right-to-left. Highlight cold temperature profiles in blue-to-red and hot profiles in red-to-orange.",
+    "final_image_prompt": "An engineering schematic diagram of a serial heat-exchanger preheating section. Use a horizontal left-to-right layout with two rectangular exchangers: left unit labeled \"E1\" and right unit labeled \"E2\". Draw one lower blue-to-red cold-feed arrow from E1 to E2 labeled \"冷进料\", with a label \"Cc=22 kW/K\" below it. Inside each exchanger, add one vertical dashed divider labeled \"等面积半段\". For E1, place cold-side temperature labels \"42°C\" at the left bottom, \"56°C\" at the center bottom, and \"70°C\" at the right bottom; place hot-side labels \"104°C\" at the left top, \"116°C\" at the center top, and \"138°C\" at the right top, with a top arrow labeled \"热流体1\" pointing right-to-left. For E2, place cold labels \"70°C\", \"82°C\", \"94°C\" left to right and hot labels \"101°C\", \"112°C\", \"130°C\" left to right, with top arrow labeled \"热流体2\" pointing right-to-left. Highlight cold temperature profiles in blue-to-red and hot profiles in red-to-orange.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两台换热器的冷侧进出口温度、串联方向和热容流率；这些关键量只能从图中温度分布和流程箭头读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "E1 冷侧入口、出口温度分别由图中冷侧温度分布读出",
+        "E2 冷侧入口、出口温度分别由图中冷侧温度分布读出",
+        "冷进料热容流率由图中标签读出",
+        "冷进料先经过 E1 再经过 E2 由图中箭头读出"
+      ],
+      "validation_rules": [
+        "按 $Q=C_c\\Delta T$ 分别计算两台换热器的冷侧吸热量",
+        "E1 使用图中 E1 冷侧出口温度减入口温度",
+        "E2 使用图中 E2 冷侧出口温度减入口温度",
+        "比较两台换热器总换热量之差，并选择最接近的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-002-Q0001",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-002",
+    "kp_name": "传热操作",
+    "question_language": "zh",
+    "question_text": "图示为一台逆流换热器沿等面积坐标划分后的运行数据。若只允许对一个区段清洗，使该区段的局部传热系数提高 $10\\%$，且各区段面积相同、端点温差按对数平均温差计算，则为获得最大的传热量增量，应优先清洗哪个区段？",
+    "options": {
+      "A": "区段 I",
+      "B": "区段 II",
+      "C": "区段 III",
+      "D": "区段 IV"
+    },
+    "correct_answer": "C",
+    "explanation": "各区段面积相同，清洗某一区段使其 $U_i$ 提高 $10\\%$ 时，该区段传热量增量满足 $\\Delta q_i \\propto 0.10 U_i \\Delta T_{\\mathrm{lm},i}$，因此只需比较 $U_i\\Delta T_{\\mathrm{lm},i}$。从图中读取各端点温差：区段 I 为 $72-28=44^\\circ\\mathrm{C}$ 与 $78-40=38^\\circ\\mathrm{C}$，$\\Delta T_{\\mathrm{lm},I}=\\frac{44-38}{\\ln(44/38)}\\approx40.9$；区段 II 为 $38$ 与 $34$，$\\Delta T_{\\mathrm{lm},II}\\approx35.9$；区段 III 为 $34$ 与 $33$，$\\Delta T_{\\mathrm{lm},III}\\approx33.5$；区段 IV 为 $33$ 与 $36$，$\\Delta T_{\\mathrm{lm},IV}\\approx34.5$。再乘以图中局部 $U$：I 为 $0.62\\times40.9\\approx25.4$，II 为 $0.74\\times35.9\\approx26.6$，III 为 $0.86\\times33.5\\approx28.8$，IV 为 $0.79\\times34.5\\approx27.3$。区段 III 的 $U_i\\Delta T_{\\mathrm{lm},i}$ 最大，因此清洗区段 III 可获得最大的传热量增量。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "基于精确图示信息考查传热操作",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/cd4ed76e48e74c56.png",
+    "image_prompt": "A data chart showing heat exchanger temperature distribution. Use a front-view 2D layout with one main plot above and four aligned U labels below. The x-axis is labeled \"等面积坐标 x\" with ticks 0, 0.25, 0.50, 0.75, 1.00; the y-axis is labeled \"温度 / °C\". Draw 5 vertical dashed boundaries forming 4 equal regions labeled \"区段 I\", \"区段 II\", \"区段 III\", \"区段 IV\". Plot one red line labeled \"热流体\" through points labeled \"72°C\", \"78°C\", \"86°C\", \"94°C\", \"104°C\" from left to right. Plot one blue line labeled \"冷流体\" through points labeled \"28°C\", \"40°C\", \"52°C\", \"61°C\", \"68°C\". Add a red arrow from x=1.00 toward x=0 and a blue arrow from x=0 toward x=1.00. Below the regions show labels \"U=0.62\", \"U=0.74\", \"U=0.86\", \"U=0.79\" centered under regions I to IV. Use light alternating gray region bands.",
+    "final_image_prompt": "A data chart showing heat exchanger temperature distribution. Use a front-view 2D layout with one main plot above and four aligned U labels below. The x-axis is labeled \"等面积坐标 x\" with ticks 0, 0.25, 0.50, 0.75, 1.00; the y-axis is labeled \"温度 / °C\". Draw 5 vertical dashed boundaries forming 4 equal regions labeled \"区段 I\", \"区段 II\", \"区段 III\", \"区段 IV\". Plot one red line labeled \"热流体\" through points labeled \"72°C\", \"78°C\", \"86°C\", \"94°C\", \"104°C\" from left to right. Plot one blue line labeled \"冷流体\" through points labeled \"28°C\", \"40°C\", \"52°C\", \"61°C\", \"68°C\". Add a red arrow from x=1.00 toward x=0 and a blue arrow from x=0 toward x=1.00. Below the regions show labels \"U=0.62\", \"U=0.74\", \"U=0.86\", \"U=0.79\" centered under regions I to IV. Use light alternating gray region bands.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各区段端点温度、局部传热系数或区段边界位置；必须依赖图中双折线和 U 标注才能计算每段的清洗收益。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个区段的热流体端点温度只能由图中红色折线读出",
+        "四个区段的冷流体端点温度只能由图中蓝色折线读出",
+        "四个区段的局部传热系数只能由图中区段下方标注读出",
+        "区段与端点坐标的对应关系只能由图中竖向边界确定"
+      ],
+      "validation_rules": [
+        "对每个区段用两端热流体温度减去同一坐标处冷流体温度得到两个端点温差",
+        "对每个区段计算 $\\Delta T_{\\mathrm{lm}}=\\frac{\\Delta T_1-\\Delta T_2}{\\ln(\\Delta T_1/\\Delta T_2)}$；若两端温差相近，可用极限形式保持连续",
+        "比较各区段的 $U_i\\Delta T_{\\mathrm{lm},i}$，数值最大的区段对应正确选项",
+        "不得只比较单个端点温差或只比较 $U_i$"
+      ]
+    }
+  },
+  {
+    "question_id": "S20-005-Q0002",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-005",
+    "kp_name": "干燥",
+    "question_language": "zh",
+    "question_text": "图示为某连续带式干燥器的稳态操作数据。若忽略固体损失且图中空气湿度端点保持不变，为满足物料衡算所需的干空气流量最接近下列哪一项？",
+    "options": {
+      "A": "$1.10\\times10^4\\ \\mathrm{kg\\ dry\\ air/h}$",
+      "B": "$9.50\\times10^3\\ \\mathrm{kg\\ dry\\ air/h}$",
+      "C": "$8.56\\times10^3\\ \\mathrm{kg\\ dry\\ air/h}$",
+      "D": "$1.28\\times10^4\\ \\mathrm{kg\\ dry\\ air/h}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出湿料流量为 $1200\\ \\mathrm{kg/h}$，进料含水率为 $35\\%$ 湿基，因此干固体流量为 $1200(1-0.35)=780\\ \\mathrm{kg/h}$。产品含水率为 $8\\%$ 湿基，故产品总流量为 $780/(1-0.08)=847.83\\ \\mathrm{kg/h}$，产品中水分为 $847.83-780=67.83\\ \\mathrm{kg/h}$。需蒸发水量为 $1200\\times0.35-67.83=352.17\\ \\mathrm{kg/h}$。空气侧湿度增量为 $0.041-0.009=0.032\\ \\mathrm{kg\\ water/kg\\ dry\\ air}$，所以所需干空气流量为 $352.17/0.032=1.10\\times10^4\\ \\mathrm{kg\\ dry\\ air/h}$，选 A。B 是直接取图示现有空气流量；C 是把现有空气可带走水量 $9500\\times0.032$ 再除以进料湿基含水率得到的误算；D 是将湿基含水率误按干基处理所得的偏大结果。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/a2b72774c5e14e8e.png",
+    "image_prompt": "A technical illustration of a continuous belt dryer. Side-view layout with one horizontal rectangular dryer body centered, a solid stream region on the left and right, and an air stream region below and above. Show exactly 5 main visual elements: the dryer body (labeled \"连续带式干燥器\"), a brown left-to-center arrow (labeled \"湿料\", \"1200 kg/h\", \"35% 水分，湿基\"), a brown center-to-right arrow (labeled \"干品\", \"8% 水分，湿基\"), a blue lower-left inward arrow (labeled \"热干空气\", \"9500 kg dry air/h\", \"Y = 0.009 kg water/kg dry air\"), and a blue upper-right outward arrow (labeled \"湿空气排出\", \"Y = 0.041 kg water/kg dry air\"). Add one small note near the solid arrows (labeled \"含水率均为湿基\"). Use brown for solid arrows and blue for air arrows.",
+    "final_image_prompt": "A technical illustration of a continuous belt dryer. Side-view layout with one horizontal rectangular dryer body centered, a solid stream region on the left and right, and an air stream region below and above. Show exactly 5 main visual elements: the dryer body (labeled \"连续带式干燥器\"), a brown left-to-center arrow (labeled \"湿料\", \"1200 kg/h\", \"35% 水分，湿基\"), a brown center-to-right arrow (labeled \"干品\", \"8% 水分，湿基\"), a blue lower-left inward arrow (labeled \"热干空气\", \"9500 kg dry air/h\", \"Y = 0.009 kg water/kg dry air\"), and a blue upper-right outward arrow (labeled \"湿空气排出\", \"Y = 0.041 kg water/kg dry air\"). Add one small note near the solid arrows (labeled \"含水率均为湿基\"). Use brown for solid arrows and blue for air arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出湿料流量、两端湿基含水率和空气湿度端点；这些关键数值只能从图中读取，无法脱离图片确定所需干空气流量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "Wet solid feed total flow is 1200 kg/h.",
+        "Feed moisture is 35% wet basis.",
+        "Product moisture is 8% wet basis.",
+        "Inlet air humidity is 0.009 kg water/kg dry air.",
+        "Exhaust air humidity is 0.041 kg water/kg dry air."
+      ],
+      "validation_rules": [
+        "Compute dry solid flow from the feed as $1200(1-0.35)=780\\ \\mathrm{kg/h}$.",
+        "Compute product total flow from wet-basis product moisture as $780/(1-0.08)$.",
+        "Compute evaporated water from feed water minus product water.",
+        "Compute required dry air flow by dividing evaporated water by $0.041-0.009$.",
+        "The option closest to the computed required dry air flow is the valid answer."
+      ]
+    }
+  },
+  {
+    "question_id": "S20-005-Q0001",
+    "subject_id": "S20",
+    "subject_name": "其他工程",
+    "kp_id": "S20-M01-005",
+    "kp_name": "干燥",
+    "question_language": "zh",
+    "question_text": "某浅盘物料在恒定干燥条件下进行间歇干燥。图中给出了干基含水量与干燥速率所需的参数。若降速段可近似为通过平衡含水量点的直线关系，即 $N=N_c\\frac{X-X^*}{X_c-X^*}$，则从初始状态干燥到目标含水量所需时间最接近多少？",
+    "options": {
+      "A": "$1.07\\ \\mathrm{h}$",
+      "B": "$1.16\\ \\mathrm{h}$",
+      "C": "$1.25\\ \\mathrm{h}$",
+      "D": "$0.96\\ \\mathrm{h}$"
+    },
+    "correct_answer": "B",
+    "explanation": "图中给出的干固体质量、暴露面积和恒速干燥通量用于时间积分。恒速段从 $X_i$ 到 $X_c$，时间为 $t_1=\\frac{M_s(X_i-X_c)}{A N_c}=\\frac{120(0.42-0.18)}{18\\times1.50}=1.07\\ \\mathrm{h}$。目标含水量低于临界含水量，需再计算降速段。由 $N=N_c\\frac{X-X^*}{X_c-X^*}$，降速段时间为 $t_2=\\frac{M_s}{A N_c}(X_c-X^*)\\ln\\frac{X_c-X^*}{X_t-X^*}=\\frac{120}{18\\times1.50}(0.18-0.04)\\ln\\frac{0.18-0.04}{0.16-0.04}=0.096\\ \\mathrm{h}$。总时间 $t=t_1+t_2=1.16\\ \\mathrm{h}$，故选 B。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/c6873f7a039a4019.png",
+    "image_prompt": "Technical illustration of a batch tray drying calculation, split into left equipment region and right rate-curve region. On the left, draw 4 main components: a rectangular drying chamber (labeled \"浅盘干燥器\"), one shallow tray with yellow material (labeled \"湿物料层\"), one left-to-right inlet arrow (labeled \"热空气\"), and one rightward outlet arrow (labeled \"排出空气\"). Add one data box (labeled \"数据\") connected by a leader line to the tray, showing \"Ms = 120 kg dry solid\" and \"A = 18 m²\". On the right, draw one chart with vertical axis (labeled \"N\") and horizontal axis (labeled \"X\"). Show a horizontal rate segment labeled \"Nc = 1.50 kg/(m²·h)\" ending at a red dashed vertical line labeled \"Xc = 0.18\", and a sloped segment extending down toward a black tick labeled \"X* = 0.04\". Mark a black tick labeled \"Xi = 0.42\" to the right of Xc and a blue dashed vertical line labeled \"Xt = 0.16\" between Xc and X*. Use red for Xc and blue for Xt.",
+    "final_image_prompt": "Technical illustration of a batch tray drying calculation, split into left equipment region and right rate-curve region. On the left, draw 4 main components: a rectangular drying chamber (labeled \"浅盘干燥器\"), one shallow tray with yellow material (labeled \"湿物料层\"), one left-to-right inlet arrow (labeled \"热空气\"), and one rightward outlet arrow (labeled \"排出空气\"). Add one data box (labeled \"数据\") connected by a leader line to the tray, showing \"Ms = 120 kg dry solid\" and \"A = 18 m²\". On the right, draw one chart with vertical axis (labeled \"N\") and horizontal axis (labeled \"X\"). Show a horizontal rate segment labeled \"Nc = 1.50 kg/(m²·h)\" ending at a red dashed vertical line labeled \"Xc = 0.18\", and a sloped segment extending down toward a black tick labeled \"X* = 0.04\". Mark a black tick labeled \"Xi = 0.42\" to the right of Xc and a blue dashed vertical line labeled \"Xt = 0.16\" between Xc and X*. Use red for Xc and blue for Xt.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出降速段模型，所有用于计算的质量、面积、干燥速率和含水量端点均需从图中读取；没有图片无法判断是否进入降速段，也无法完成数值计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "干固体质量为图中数据框给出的数值",
+        "暴露面积为图中数据框给出的数值",
+        "恒速干燥通量为图中速率曲线标注数值",
+        "初始、临界、平衡和目标干基含水量均由图中坐标或标注读取",
+        "目标含水量位于临界含水量和平衡含水量之间"
+      ],
+      "validation_rules": [
+        "先用 $t_1=\\frac{M_s(X_i-X_c)}{A N_c}$ 计算恒速段时间",
+        "当 $X_t<X_c$ 时必须加入降速段时间",
+        "降速段按 $t_2=\\frac{M_s}{A N_c}(X_c-X^*)\\ln\\frac{X_c-X^*}{X_t-X^*}$ 计算",
+        "总时间 $t=t_1+t_2$ 应与选项 B 的数值最接近"
+      ]
+    }
+  }
+]

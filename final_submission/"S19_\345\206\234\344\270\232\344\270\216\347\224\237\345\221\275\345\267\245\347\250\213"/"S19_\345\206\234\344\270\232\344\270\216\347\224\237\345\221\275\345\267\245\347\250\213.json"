@@ -1,0 +1,399 @@
+[
+  {
+    "question_id": "S19-001-Q0003",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-001",
+    "kp_name": "耕作机械",
+    "question_language": "zh",
+    "question_text": "某旋耕—深松联合作业机按图示横向布置进行相邻行程衔接。若工艺要求为：旋耕层不得出现漏耕，深松相邻沟间距不得超过 $0.60\\,\\mathrm{m}$，并在满足两项要求的前提下使相邻行程重叠尽量小，则相邻两行程中心线间距应取多少？",
+    "options": {
+      "A": "$1.80\\,\\mathrm{m}$",
+      "B": "$2.20\\,\\mathrm{m}$",
+      "C": "$2.30\\,\\mathrm{m}$",
+      "D": "$2.40\\,\\mathrm{m}$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图读出旋耕有效作业带左右边界分别为 $-1.15\\,\\mathrm{m}$ 和 $+1.15\\,\\mathrm{m}$，因此相邻行程中心距 $S$ 若要不漏耕，应满足 $S\\le 2.30\\,\\mathrm{m}$。深松铲相对本行程中心线的位置为 $-0.90\\,\\mathrm{m}$、$-0.30\\,\\mathrm{m}$、$+0.30\\,\\mathrm{m}$、$+0.90\\,\\mathrm{m}$，本行程内部深松沟间距均为 $0.60\\,\\mathrm{m}$；相邻行程之间最靠近的两条深松沟间距为 $S-1.80\\,\\mathrm{m}$，要求 $S-1.80\\le0.60$，即 $S\\le2.40\\,\\mathrm{m}$。同时满足两项约束时，$S\\le2.30\\,\\mathrm{m}$；为使重叠尽量小，应取允许范围内最大的中心距，即 $2.30\\,\\mathrm{m}$，所以选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "工艺分析",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/805a4f4ec6544e9b.png",
+    "image_prompt": "A technical illustration diagram of a rotary tiller and subsoiler pass layout. Use a top-view horizontal cross-section with two vertical red dashed centerlines, the left one labeled \"本行程中心线\" and the right one labeled \"相邻行程中心线\". Draw one light blue rectangular band centered on the left centerline labeled \"旋耕有效作业带\", with boundary labels \"-1.15 m\" and \"+1.15 m\". Draw one light gray rectangular band centered on the right centerline. Place 4 black inverted triangles on the left pass labeled \"深松铲\" at positions labeled \"-0.90 m\", \"-0.30 m\", \"+0.30 m\", and \"+0.90 m\"; place 4 matching triangles on the right pass with the same relative offsets. Connect the two centerlines with a double-headed arrow labeled \"S\". Add a top-right constraint box labeled \"沟距≤0.60 m\" pointing to the subsoiler row. Use blue highlight for rotary coverage and red for centerlines.",
+    "final_image_prompt": "A technical illustration diagram of a rotary tiller and subsoiler pass layout. Use a top-view horizontal cross-section with two vertical red dashed centerlines, the left one labeled \"本行程中心线\" and the right one labeled \"相邻行程中心线\". Draw one light blue rectangular band centered on the left centerline labeled \"旋耕有效作业带\", with boundary labels \"-1.15 m\" and \"+1.15 m\". Draw one light gray rectangular band centered on the right centerline. Place 4 black inverted triangles on the left pass labeled \"深松铲\" at positions labeled \"-0.90 m\", \"-0.30 m\", \"+0.30 m\", and \"+0.90 m\"; place 4 matching triangles on the right pass with the same relative offsets. Connect the two centerlines with a double-headed arrow labeled \"S\". Add a top-right constraint box labeled \"沟距≤0.60 m\" pointing to the subsoiler row. Use blue highlight for rotary coverage and red for centerlines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出旋耕有效宽度、深松铲横向布置和沟距限制的具体数值，必须通过图中标注读取这些事实后才能建立约束并计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "旋耕有效作业带左右边界为-1.15 m和+1.15 m",
+        "深松铲相对中心线的位置为-0.90 m、-0.30 m、+0.30 m、+0.90 m",
+        "图中给出的深松沟距限制为不大于0.60 m"
+      ],
+      "validation_rules": [
+        "根据图中旋耕带边界计算旋耕衔接约束 $S\\le2.30\\,\\mathrm{m}$",
+        "根据图中深松铲外侧位置和沟距限制计算深松衔接约束 $S\\le2.40\\,\\mathrm{m}$",
+        "在同时满足两项约束的选项中选择使重叠最小的最大中心距",
+        "最终答案必须与correct_answer字段一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-001-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-001",
+    "kp_name": "耕作机械",
+    "question_language": "zh",
+    "question_text": "某农场准备用一台标定功率为 $100\\,\\mathrm{kW}$ 的拖拉机完成一次整地作业，按安全裕量可用于机具牵引的功率取 $0.90P_e$。设计要求为：松土深度不小于 $30\\,\\mathrm{cm}$、作业后地表残茬覆盖率不低于 $35\\%$、土块平均粒径不大于 $25\\,\\mathrm{mm}$，且只允许一次通过。根据图中四种耕作机械配置，最合适的是哪一项？",
+    "options": {
+      "A": "方案甲",
+      "B": "方案乙",
+      "C": "方案丙",
+      "D": "方案丁"
+    },
+    "correct_answer": "D",
+    "explanation": "可用牵引功率为 $0.90\\times100=90\\,\\mathrm{kW}$。逐项按深度、残茬覆盖率、土块粒径和功率筛选：方案甲的深度与残茬覆盖率不足，且土块粒径偏大；方案乙的深度和残茬覆盖率不足；方案丙的深度、残茬覆盖率和功率满足要求，但土块平均粒径大于 $25\\,\\mathrm{mm}$；方案丁的深度不小于 $30\\,\\mathrm{cm}$，残茬覆盖率不低于 $35\\%$，土块平均粒径不大于 $25\\,\\mathrm{mm}$，所需功率也不超过 $90\\,\\mathrm{kW}$。因此选方案丁。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "系统设计",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/959e6268550c4361.png",
+    "image_prompt": "An engineering diagram showing four tillage machinery configuration cards in a single horizontal row, viewed from the side. The cards are arranged left to right as one card labeled \"方案甲\", one labeled \"方案乙\", one labeled \"方案丙\", and one labeled \"方案丁\". Card 1 shows a moldboard plow icon labeled \"犁铧翻耕\" with four parameter rows: \"深度 26 cm\", \"功率 74 kW\", \"残茬覆盖率 18%\", \"土块粒径 38 mm\". Card 2 shows a rotary tiller icon labeled \"旋耕\" with \"深度 16 cm\", \"功率 62 kW\", \"残茬覆盖率 28%\", \"土块粒径 22 mm\". Card 3 shows a subsoiler plus notched disc harrow labeled \"深松+圆盘耙\" with \"深度 34 cm\", \"功率 88 kW\", \"残茬覆盖率 42%\", \"土块粒径 31 mm\". Card 4 shows a subsoiler plus rotary rotor labeled \"深松+旋耕\" with \"深度 32 cm\", \"功率 86 kW\", \"残茬覆盖率 36%\", \"土块粒径 24 mm\". Use vertical alignment between each icon and its parameter rows; draw card 4 with a pale blue outline.",
+    "final_image_prompt": "An engineering diagram showing four tillage machinery configuration cards in a single horizontal row, viewed from the side. The cards are arranged left to right as one card labeled \"方案甲\", one labeled \"方案乙\", one labeled \"方案丙\", and one labeled \"方案丁\". Card 1 shows a moldboard plow icon labeled \"犁铧翻耕\" with four parameter rows: \"深度 26 cm\", \"功率 74 kW\", \"残茬覆盖率 18%\", \"土块粒径 38 mm\". Card 2 shows a rotary tiller icon labeled \"旋耕\" with \"深度 16 cm\", \"功率 62 kW\", \"残茬覆盖率 28%\", \"土块粒径 22 mm\". Card 3 shows a subsoiler plus notched disc harrow labeled \"深松+圆盘耙\" with \"深度 34 cm\", \"功率 88 kW\", \"残茬覆盖率 42%\", \"土块粒径 31 mm\". Card 4 shows a subsoiler plus rotary rotor labeled \"深松+旋耕\" with \"深度 32 cm\", \"功率 86 kW\", \"残茬覆盖率 36%\", \"土块粒径 24 mm\". Use vertical alignment between each icon and its parameter rows; draw card 4 with a pale blue outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出设计约束和拖拉机功率，四种耕作机械配置的关键参数及对应关系均来自图片；不看图无法判断哪一项同时满足全部约束。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "四个方案各自的深度、功率、残茬覆盖率和土块粒径数值只在图片中给出",
+        "各参数与方案甲、乙、丙、丁的对应关系只由图片中的卡片布局确定"
+      ],
+      "validation_rules": [
+        "先计算可用功率阈值 $0.90\\times100=90\\,\\mathrm{kW}$",
+        "候选方案必须同时满足深度 $\\ge 30\\,\\mathrm{cm}$、残茬覆盖率 $\\ge 35\\%$、土块粒径 $\\le 25\\,\\mathrm{mm}$、功率 $\\le 90\\,\\mathrm{kW}$",
+        "只有与方案丁对应的图中参数同时满足全部约束"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-001-Q0002",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-001",
+    "kp_name": "耕作机械",
+    "question_language": "zh",
+    "question_text": "某深松整地联合作业需从图示4个工况中选择一个。已知机具工作幅宽为 $B=2.5\\,\\mathrm{m}$，田间作业效率系数为 $0.80$，有效作业率按 $C=0.1Bv(1-s)\\times0.80$ 计算，其中 $v$ 为前进速度，$s$ 为滑转率的小数形式。工艺要求：耕作深度在 $24\\sim28\\,\\mathrm{cm}$，滑转率不超过 $15\\%$；在满足要求的工况中，应选择单位面积燃油消耗 $q=Q/C$ 较低者。根据图中数据，应选哪一工况？",
+    "options": {
+      "A": "工况甲",
+      "B": "工况乙",
+      "C": "工况丙",
+      "D": "工况丁"
+    },
+    "correct_answer": "D",
+    "explanation": "先按图中数据筛选约束。工况甲深度为 $26\\,\\mathrm{cm}$、滑转率为 $12\\%$，满足要求；工况乙深度满足但滑转率为 $18\\%$，超过 $15\\%$，不满足；工况丙滑转率满足但深度为 $23\\,\\mathrm{cm}$，低于 $24\\,\\mathrm{cm}$，不满足；工况丁深度为 $25\\,\\mathrm{cm}$、滑转率为 $14\\%$，满足要求。再比较满足要求的甲、丁的单位面积燃油消耗。甲：$C=0.1\\times2.5\\times4.8\\times(1-0.12)\\times0.80=0.8448\\,\\mathrm{hm^2/h}$，$q=13.0/0.8448\\approx15.39\\,\\mathrm{L/hm^2}$。丁：$C=0.1\\times2.5\\times5.0\\times(1-0.14)\\times0.80=0.86\\,\\mathrm{hm^2/h}$，$q=12.6/0.86\\approx14.65\\,\\mathrm{L/hm^2}$。丁满足全部工艺约束且单位面积燃油消耗较低，因此选D。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/dbd3a0e6c532419d.png",
+    "image_prompt": "A data visualization chart, viewed straight on, arranged as four vertical condition cards from left to right. The cards are labeled \"工况甲\", \"工况乙\", \"工况丙\", and \"工况丁\". Each card contains exactly four stacked rows labeled \"前进速度 v\", \"滑转率 s\", \"平均耕作深度 d\", and \"燃油消耗率 Q\". Show values: 工况甲 4.8 km/h, 12%, 26 cm, 13.0 L/h; 工况乙 5.5 km/h, 18%, 27 cm, 14.0 L/h; 工况丙 4.2 km/h, 10%, 23 cm, 11.0 L/h; 工况丁 5.0 km/h, 14%, 25 cm, 12.6 L/h. Draw one red dashed horizontal guide across the slip row labeled \"滑转率上限 15%\". Draw one light green horizontal band across the depth row labeled \"深度合格带 24–28 cm\". Use light blue borders for 工况甲 and 工况丁.",
+    "final_image_prompt": "A data visualization chart, viewed straight on, arranged as four vertical condition cards from left to right. The cards are labeled \"工况甲\", \"工况乙\", \"工况丙\", and \"工况丁\". Each card contains exactly four stacked rows labeled \"前进速度 v\", \"滑转率 s\", \"平均耕作深度 d\", and \"燃油消耗率 Q\". Show values: 工况甲 4.8 km/h, 12%, 26 cm, 13.0 L/h; 工况乙 5.5 km/h, 18%, 27 cm, 14.0 L/h; 工况丙 4.2 km/h, 10%, 23 cm, 11.0 L/h; 工况丁 5.0 km/h, 14%, 25 cm, 12.6 L/h. Draw one red dashed horizontal guide across the slip row labeled \"滑转率上限 15%\". Draw one light green horizontal band across the depth row labeled \"深度合格带 24–28 cm\". Use light blue borders for 工况甲 and 工况丁.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出计算公式和筛选规则，未给出各工况的速度、滑转率、深度和燃油消耗率；这些关键参数必须从图中读取后才能筛选和计算。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "四个工况各自的前进速度、滑转率、平均耕作深度和燃油消耗率均只在图片中给出",
+        "滑转率上限线和深度合格带的图示位置与标注只在图片中给出",
+        "满足约束后需要比较的两个工况来自图片数据筛选"
+      ],
+      "validation_rules": [
+        "先用图片中的深度数值检验是否位于 $24\\sim28\\,\\mathrm{cm}$",
+        "再用图片中的滑转率数值检验是否不超过 $15\\%$",
+        "只对满足两项约束的工况计算 $C=0.1Bv(1-s)\\times0.80$",
+        "用图片中的 $Q$ 与计算得到的 $C$ 求 $q=Q/C$",
+        "单位面积燃油消耗较低且满足约束的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-001-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-001",
+    "kp_name": "耕作机械",
+    "question_language": "zh",
+    "question_text": "某旋耕整地作业需从图中4个工况中选择一项。工艺约束为：耕深不小于 $20\\,\\mathrm{cm}$，牵引功率不超过 $58\\,\\mathrm{kW}$，碎土率不低于 $82\\%$。牵引功率按 $P=\\frac{Fv}{3.6}$ 计算，单位面积牵引功按 $E_a=\\frac{10F}{B}$ 计算，其中 $F$ 为牵引阻力，$v$ 为作业速度，$B$ 为有效幅宽。应选择哪一工况？",
+    "options": {
+      "A": "工况甲",
+      "B": "工况乙",
+      "C": "工况丙",
+      "D": "工况丁"
+    },
+    "correct_answer": "D",
+    "explanation": "先由图读取每个工况的耕深、牵引阻力、速度、幅宽和碎土率。工况甲满足耕深与碎土率要求，牵引功率为 $P=\\frac{36\\times 5.6}{3.6}=56.0\\,\\mathrm{kW}$，不超限，单位面积牵引功为 $E_a=\\frac{10\\times 36}{2.4}=150.0\\,\\mathrm{MJ/ha}$。工况乙的牵引功率为 $\\frac{35\\times 5.5}{3.6}=53.5\\,\\mathrm{kW}$，但碎土率为 $80\\%$，低于 $82\\%$，应排除。工况丙的碎土率和耕深满足要求，但牵引功率为 $\\frac{34\\times 6.4}{3.6}=60.4\\,\\mathrm{kW}$，超过 $58\\,\\mathrm{kW}$，应排除。工况丁满足耕深和碎土率要求，牵引功率为 $\\frac{38\\times 4.8}{3.6}=50.7\\,\\mathrm{kW}$，单位面积牵引功为 $E_a=\\frac{10\\times 38}{3.0}=126.7\\,\\mathrm{MJ/ha}$。在满足全部约束的工况中，丁的单位面积牵引功小于甲，因此选择工况丁。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/f468f48bed894d34.png",
+    "image_prompt": "A data visualization chart, front view, arranged as a four-column matrix with one header row and five metric rows. From left to right the column headers are labeled \"工况甲\", \"工况乙\", \"工况丙\", and \"工况丁\". The five row labels on the left are labeled \"耕深/cm\", \"牵引阻力/kN\", \"速度/km·h⁻¹\", \"幅宽/m\", and \"碎土率/%\". In 工况甲 show value tags \"22\", \"36\", \"5.6\", \"2.4\", \"85\" from top to bottom. In 工况乙 show \"24\", \"35\", \"5.5\", \"3.2\", \"80\". In 工况丙 show \"21\", \"34\", \"6.4\", \"2.2\", \"86\". In 工况丁 show \"20\", \"38\", \"4.8\", \"3.0\", \"83\". Connect the five value tags within each column by one thin vertical line. Use light gray column dividers, orange markers for the traction-resistance row, and blue markers for the pulverization-rate row.",
+    "final_image_prompt": "A data visualization chart, front view, arranged as a four-column matrix with one header row and five metric rows. From left to right the column headers are labeled \"工况甲\", \"工况乙\", \"工况丙\", and \"工况丁\". The five row labels on the left are labeled \"耕深/cm\", \"牵引阻力/kN\", \"速度/km·h⁻¹\", \"幅宽/m\", and \"碎土率/%\". In 工况甲 show value tags \"22\", \"36\", \"5.6\", \"2.4\", \"85\" from top to bottom. In 工况乙 show \"24\", \"35\", \"5.5\", \"3.2\", \"80\". In 工况丙 show \"21\", \"34\", \"6.4\", \"2.2\", \"86\". In 工况丁 show \"20\", \"38\", \"4.8\", \"3.0\", \"83\". Connect the five value tags within each column by one thin vertical line. Use light gray column dividers, orange markers for the traction-resistance row, and blue markers for the pulverization-rate row.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出约束和计算公式，没有给出四个工况的耕深、牵引阻力、速度、幅宽和碎土率；这些关键参数只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "图中给出四个工况各自的耕深、牵引阻力、速度、幅宽和碎土率",
+        "工况乙的碎土率低于题干要求",
+        "工况丙的牵引阻力和速度组合会导致牵引功率超过题干上限",
+        "满足全部约束的工况之间还需要比较由牵引阻力和幅宽计算出的单位面积牵引功"
+      ],
+      "validation_rules": [
+        "按 $P=\\frac{Fv}{3.6}$ 分别计算各工况牵引功率，并排除超过 $58\\,\\mathrm{kW}$ 的工况",
+        "同时排除耕深小于 $20\\,\\mathrm{cm}$ 或碎土率低于 $82\\%$ 的工况",
+        "对保留工况按 $E_a=\\frac{10F}{B}$ 计算单位面积牵引功",
+        "选择满足全部约束且 $E_a$ 较小的工况"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-002-Q0004",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-002",
+    "kp_name": "播种与施肥机械",
+    "question_language": "zh",
+    "question_text": "图示为四种种肥分施开沟器出口布置方案。坐标以种子落点为原点，$x$ 轴向右为正，$z$ 轴向下为正。若系统设计要求肥料带相对种子落点满足横向偏置 $+50\\,\\text{mm}$、垂向偏置 $+30\\,\\text{mm}$，且种、肥不得同沟接触，应选哪一方案？",
+    "options": {
+      "A": "方案甲",
+      "B": "方案乙",
+      "C": "方案丙",
+      "D": "方案丁"
+    },
+    "correct_answer": "C",
+    "explanation": "根据图中坐标定义，需分别判断肥料带相对种子落点的横向和垂向位置。方案甲的肥料带在种子右侧但与种子处于同一深度，不满足 $+30\\,\\text{mm}$ 的垂向偏置；方案乙的肥料带在左侧下方，横向偏置方向错误；方案丁的肥料带在右侧上方，垂向偏置符号错误。方案丙中肥料带位于种子右侧 $50\\,\\text{mm}$ 且下方 $30\\,\\text{mm}$，同时图中种子沟与肥料沟分开，因此满足种肥分施的设计要求。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "系统设计",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/009f88f243524cde.png",
+    "image_prompt": "Engineering diagram, viewed as four side-by-side cross-section panels arranged left to right. The panels are labeled \"方案甲\", \"方案乙\", \"方案丙\", and \"方案丁\". In each panel, show 1 black filled circle labeled \"种子\" at the local origin, 1 green short horizontal bar labeled \"肥料带\", 1 seed furrow outline, 1 fertilizer furrow outline, and a small coordinate axis with x pointing right and z pointing down. In \"方案甲\", place the fertilizer bar at +50 mm horizontally and 0 mm vertically from the seed, with labels \"+50 mm\" and \"0 mm\". In \"方案乙\", place it at -50 mm and +30 mm, labeled \"-50 mm\" and \"+30 mm\". In \"方案丙\", place it at +50 mm and +30 mm, labeled \"+50 mm\" and \"+30 mm\". In \"方案丁\", place it at +50 mm and -30 mm, labeled \"+50 mm\" and \"-30 mm\". Use green only for fertilizer bars.",
+    "final_image_prompt": "Engineering diagram, viewed as four side-by-side cross-section panels arranged left to right. The panels are labeled \"方案甲\", \"方案乙\", \"方案丙\", and \"方案丁\". In each panel, show 1 black filled circle labeled \"种子\" at the local origin, 1 green short horizontal bar labeled \"肥料带\", 1 seed furrow outline, 1 fertilizer furrow outline, and a small coordinate axis with x pointing right and z pointing down. In \"方案甲\", place the fertilizer bar at +50 mm horizontally and 0 mm vertically from the seed, with labels \"+50 mm\" and \"0 mm\". In \"方案乙\", place it at -50 mm and +30 mm, labeled \"-50 mm\" and \"+30 mm\". In \"方案丙\", place it at +50 mm and +30 mm, labeled \"+50 mm\" and \"+30 mm\". In \"方案丁\", place it at +50 mm and -30 mm, labeled \"+50 mm\" and \"-30 mm\". Use green only for fertilizer bars.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出设计要求，没有给出四个方案中肥料带的实际相对坐标和沟槽分离关系；这些关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个方案中肥料带相对种子落点的横向偏置数值和方向",
+        "四个方案中肥料带相对种子落点的垂向偏置数值和方向",
+        "四个方案中种子沟与肥料沟是否分开显示"
+      ],
+      "validation_rules": [
+        "读取图中每个方案的肥料带相对种子落点坐标",
+        "保留横向偏置等于$+50\\,\\text{mm}$的方案",
+        "在保留方案中继续筛选垂向偏置等于$+30\\,\\text{mm}$且种肥分离的方案",
+        "唯一满足全部条件的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-002-Q0002",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-002",
+    "kp_name": "播种与施肥机械",
+    "question_language": "zh",
+    "question_text": "某条播施肥机按有效幅宽进行静态标定。已知作业行数为6行、行距为$0.25\\,\\text{m}$，每个排种盘每转排出12粒种子。若农艺要求株距控制在$11.5\\sim12.5\\,\\text{cm}$，施肥量控制在$210\\sim230\\,\\text{kg/hm}^2$，并且优先采用图中标为种肥分施的组合，则应选哪一组标定组合？",
+    "options": {
+      "A": "组合甲",
+      "B": "组合乙",
+      "C": "组合丙",
+      "D": "组合丁"
+    },
+    "correct_answer": "C",
+    "explanation": "按图读取各组合的排种盘转数、排肥轴转数、每转排肥量和施肥方式。株距计算为$s=\\frac{10000}{12n_s}$，其中$n_s$为每$100\\,\\text{m}$排种盘转数。施肥量计算为$Q=\\frac{m n_f \\times 6}{100\\times 6\\times0.25}\\times100$，其中$m$为每转排肥量，$n_f$为每$100\\,\\text{m}$排肥轴转数，换算后等价于$Q=4mn_f$。组合甲株距约$12.21\\,\\text{cm}$，但施肥量为$4\\times0.46\\times118=217.12\\,\\text{kg/hm}^2$，图示为同沟；组合乙株距约$11.49\\,\\text{cm}$，略低于下限；组合丙株距约$12.02\\,\\text{cm}$，施肥量为$4\\times0.43\\times128=220.16\\,\\text{kg/hm}^2$，且为种肥分施；组合丁株距约$12.50\\,\\text{cm}$，但施肥量为$4\\times0.48\\times122=234.24\\,\\text{kg/hm}^2$，超过上限。因此唯一满足株距、施肥量和种肥分施优先条件的是组合丙。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/4800ac7cbf7d48cb.png",
+    "image_prompt": "A data visualization chart for seeding and fertilizing machine calibration. The layout is front view with four vertical grouped columns from left to right, labeled \"组合甲\", \"组合乙\", \"组合丙\", and \"组合丁\". Each group contains exactly three adjacent bars: a blue bar labeled \"排种盘转数 n_s /100 m\", a green bar labeled \"排肥轴转数 n_f /100 m\", and an orange bar labeled \"每转排肥量 m /kg\". Show values above bars: for \"组合甲\" 68.2, 118, 0.46; for \"组合乙\" 72.5, 116, 0.45; for \"组合丙\" 69.3, 128, 0.43; for \"组合丁\" 66.7, 122, 0.48. At the bottom of each group place one mode tag: \"同沟\" under 组合甲, \"种肥分施\" under 组合乙, 组合丙, and 组合丁. Use a small legend matching blue, green, and orange bars.",
+    "final_image_prompt": "A data visualization chart for seeding and fertilizing machine calibration. The layout is front view with four vertical grouped columns from left to right, labeled \"组合甲\", \"组合乙\", \"组合丙\", and \"组合丁\". Each group contains exactly three adjacent bars: a blue bar labeled \"排种盘转数 n_s /100 m\", a green bar labeled \"排肥轴转数 n_f /100 m\", and an orange bar labeled \"每转排肥量 m /kg\". Show values above bars: for \"组合甲\" 68.2, 118, 0.46; for \"组合乙\" 72.5, 116, 0.45; for \"组合丙\" 69.3, 128, 0.43; for \"组合丁\" 66.7, 122, 0.48. At the bottom of each group place one mode tag: \"同沟\" under 组合甲, \"种肥分施\" under 组合乙, 组合丙, and 组合丁. Use a small legend matching blue, green, and orange bars.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给计算规则和农艺约束，具体标定参数与施肥方式均在图中；不读图无法判断哪一组同时满足全部条件。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个组合的每100 m排种盘转数",
+        "四个组合的每100 m排肥轴转数",
+        "四个组合的每转排肥量",
+        "四个组合对应的同沟或种肥分施方式"
+      ],
+      "validation_rules": [
+        "用$s=\\frac{10000}{12n_s}$计算株距并检查是否在$11.5\\sim12.5\\,\\text{cm}$",
+        "用$Q=4mn_f$计算施肥量并检查是否在$210\\sim230\\,\\text{kg/hm}^2$",
+        "在满足数值约束的组合中排除非种肥分施组合",
+        "最终只保留组合丙"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-002-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-002",
+    "kp_name": "播种与施肥机械",
+    "question_language": "zh",
+    "question_text": "按图示播种施肥机的传动与标定信息，若作业时按有效幅宽计算并考虑地轮滑移，则该机的施肥量最接近下列哪一项？",
+    "options": {
+      "A": "$142\\ \\mathrm{kg/hm^2}$",
+      "B": "$131\\ \\mathrm{kg/hm^2}$",
+      "C": "$237\\ \\mathrm{kg/hm^2}$",
+      "D": "$24\\ \\mathrm{kg/hm^2}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出地轮直径、滑移率、链轮齿数、施肥排肥量以及行数和行距。地轮理论周长为 $\\pi D=\\pi\\times0.70\\approx2.199\\ \\mathrm{m}$，考虑滑移后的实际前进距离为 $2.199\\times(1-0.08)\\approx2.023\\ \\mathrm{m}$。地轮链轮驱动施肥轴链轮，施肥轴转速与地轮转速比为 $18/30=0.6$。每个排肥器每转排肥 $12\\ \\mathrm{g}$，6行总排肥量为 $6\\times0.6\\times12=43.2\\ \\mathrm{g}=0.0432\\ \\mathrm{kg}$。有效幅宽为 $6\\times0.25=1.50\\ \\mathrm{m}$，地轮每转覆盖面积为 $2.023\\times1.50\\approx3.035\\ \\mathrm{m^2}$。施肥量为 $0.0432/3.035\\times10000\\approx142\\ \\mathrm{kg/hm^2}$，故选A。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "工艺分析",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/c45f381219654bc3.png",
+    "image_prompt": "A technical illustration diagram of a seed-and-fertilizer drill calibration layout. Use a left-to-right side view split into a left drive region and a right row-spacing region. Draw 1 ground wheel at lower left (labeled \"地轮\" and \"D=0.70 m\") with a nearby label \"滑移 s=8%\". Above it draw 1 driving sprocket (labeled \"主动链轮 18齿\") connected by 1 chain to 1 driven sprocket at center (labeled \"从动链轮 30齿\"). The driven sprocket is coaxial with 1 horizontal fertilizer shaft (labeled \"施肥轴\") connected to 6 identical fertilizer meters, each labeled \"排肥器\" and \"12 g/r\". On the right, draw 6 vertical crop rows labeled \"6行\", with one double-arrow gap labeled \"行距 0.25 m\". Add a bottom bracket labeled \"有效幅宽\" spanning all 6 rows, and a rightward arrow labeled \"前进方向\". Highlight sprockets in light blue and meters in light green.",
+    "final_image_prompt": "A technical illustration diagram of a seed-and-fertilizer drill calibration layout. Use a left-to-right side view split into a left drive region and a right row-spacing region. Draw 1 ground wheel at lower left (labeled \"地轮\" and \"D=0.70 m\") with a nearby label \"滑移 s=8%\". Above it draw 1 driving sprocket (labeled \"主动链轮 18齿\") connected by 1 chain to 1 driven sprocket at center (labeled \"从动链轮 30齿\"). The driven sprocket is coaxial with 1 horizontal fertilizer shaft (labeled \"施肥轴\") connected to 6 identical fertilizer meters, each labeled \"排肥器\" and \"12 g/r\". On the right, draw 6 vertical crop rows labeled \"6行\", with one double-arrow gap labeled \"行距 0.25 m\". Add a bottom bracket labeled \"有效幅宽\" spanning all 6 rows, and a rightward arrow labeled \"前进方向\". Highlight sprockets in light blue and meters in light green.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出地轮尺寸、滑移率、链轮齿数、排肥器数量、单器排量和行距；这些均需从图中读取并组合计算，删除图片后无法确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "地轮直径为 $0.70\\ \\mathrm{m}$",
+        "滑移率为 $8\\%$",
+        "主动链轮为18齿且从动链轮为30齿",
+        "每个排肥器排量为 $12\\ \\mathrm{g/r}$",
+        "共有6个排肥器并对应6行",
+        "行距为 $0.25\\ \\mathrm{m}$"
+      ],
+      "validation_rules": [
+        "用 $\\pi D(1-s)$ 计算地轮每转实际前进距离",
+        "用主动齿数除以从动齿数计算施肥轴每地轮一转的转数",
+        "用排肥器数量、单器排量和施肥轴转数计算总排肥质量",
+        "用行数乘行距计算有效幅宽",
+        "按 $\\mathrm{kg/hm^2}$ 单位换算后应最接近 $142\\ \\mathrm{kg/hm^2}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-002-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-002",
+    "kp_name": "播种与施肥机械",
+    "question_language": "zh",
+    "question_text": "某条播施肥机进行台架标定后，需按田间有效作业面积修正地轮滑移影响。若要求播种量处于 $20\\sim 26\\,\\mathrm{kg/ha}$，施肥量处于 $108\\sim 122\\,\\mathrm{kg/ha}$，且应优先选择满足范围内播种量较低的档位，则应选择图中的哪一档？计算按 $Q=\\frac{m\\times 10000}{L\\times B\\times (1-s)}$，其中 $m$ 为图示标定收集质量。",
+    "options": {
+      "A": "Ⅰ档",
+      "B": "Ⅱ档",
+      "C": "Ⅲ档",
+      "D": "Ⅳ档"
+    },
+    "correct_answer": "C",
+    "explanation": "由图读出标定长度 $L=50\\,\\mathrm{m}$、有效幅宽 $B=2.4\\,\\mathrm{m}$、地轮滑移率 $s=8\\%$。修正面积为 $50\\times 2.4\\times(1-0.08)=110.4\\,\\mathrm{m^2}$。各档播种量和施肥量按 $Q=\\frac{m\\times10000}{110.4}$ 计算：Ⅰ档播种约 $19.0\\,\\mathrm{kg/ha}$、施肥约 $86.1\\,\\mathrm{kg/ha}$，不满足；Ⅱ档播种约 $22.2\\,\\mathrm{kg/ha}$、施肥约 $104.2\\,\\mathrm{kg/ha}$，施肥量偏低；Ⅲ档播种约 $24.9\\,\\mathrm{kg/ha}$、施肥约 $115.9\\,\\mathrm{kg/ha}$，两者均满足；Ⅳ档播种约 $29.0\\,\\mathrm{kg/ha}$、施肥约 $135.9\\,\\mathrm{kg/ha}$，均偏高。因此唯一满足条件的是Ⅲ档，选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/ea34b2021eb64fdc.png",
+    "image_prompt": "A data visualization chart for seed and fertilizer drill calibration. The global layout is a grouped bar chart occupying the center, with one small condition box in the upper left. Show 4 x-axis groups from left to right labeled \"Ⅰ档\", \"Ⅱ档\", \"Ⅲ档\", and \"Ⅳ档\". In each group, place 2 vertical bars: a blue bar labeled \"播种\" and an orange bar labeled \"施肥\". The blue bar values are 210 g, 245 g, 275 g, and 320 g. The orange bar values are 950 g, 1150 g, 1280 g, and 1500 g. Connect the legend labels to their colors only, with no arrows between bars. The chart title is labeled \"台架标定数据\"; the y-axis is labeled \"收集质量 g\" and the x-axis is labeled \"档位\". The condition box contains \"标定长度 50 m\", \"有效幅宽 2.4 m\", and \"地轮滑移率 8%\". Use blue and orange highlights only.",
+    "final_image_prompt": "A data visualization chart for seed and fertilizer drill calibration. The global layout is a grouped bar chart occupying the center, with one small condition box in the upper left. Show 4 x-axis groups from left to right labeled \"Ⅰ档\", \"Ⅱ档\", \"Ⅲ档\", and \"Ⅳ档\". In each group, place 2 vertical bars: a blue bar labeled \"播种\" and an orange bar labeled \"施肥\". The blue bar values are 210 g, 245 g, 275 g, and 320 g. The orange bar values are 950 g, 1150 g, 1280 g, and 1500 g. Connect the legend labels to their colors only, with no arrows between bars. The chart title is labeled \"台架标定数据\"; the y-axis is labeled \"收集质量 g\" and the x-axis is labeled \"档位\". The condition box contains \"标定长度 50 m\", \"有效幅宽 2.4 m\", and \"地轮滑移率 8%\". Use blue and orange highlights only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "各档播种与施肥收集质量以及滑移修正参数均只在图中给出，删除图片后无法完成换算和档位筛选。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个档位的播种收集质量来自图中蓝色柱",
+        "四个档位的施肥收集质量来自图中橙色柱",
+        "标定长度、有效幅宽和地轮滑移率来自图中信息框"
+      ],
+      "validation_rules": [
+        "用图中标定长度、有效幅宽和滑移率计算修正面积",
+        "将每档播种收集质量和施肥收集质量分别换算为kg/ha",
+        "同时满足播种量与施肥量范围的档位才可入选",
+        "若多个档位满足，应选择满足范围内播种量较低者"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-003-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-003",
+    "kp_name": "收获机械",
+    "question_language": "zh",
+    "question_text": "某联合收割机在稳定作业时出现籽粒损失偏高。依据图中各监测点、限值和调整影响关系，若要求优先针对超限的损失来源，且调整后不使粮箱杂质率超过限值，最合适的系统调整方案是哪一项？",
+    "options": {
+      "A": "将上筛开度增大一级",
+      "B": "将清选风机转速提高一级",
+      "C": "将凹板间隙减小一级",
+      "D": "将滚筒转速提高一级"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要先定位超限环节：脱粒口未脱净率为 $0.2\\%$，低于限值 $0.5\\%$；清选尾部籽粒损失为 $1.4\\%$，高于限值 $0.8\\%$；粮箱杂质率为 $1.1\\%$，低于限值 $2.0\\%$。因此优先应处理清选尾部损失，而不是脱粒不足。再看调整影响：上筛开度增大一级会使清选尾部籽粒损失降低 $0.5\\%$，同时使粮箱杂质率升高 $0.4\\%$，调整后杂质率为 $1.1\\%+0.4\\%=1.5\\%$，仍低于 $2.0\\%$，且清选损失降至 $0.9\\%$，最接近限值。提高风机转速会使尾部籽粒损失升高，不符合目标；减小凹板间隙和提高滚筒转速主要针对脱粒环节，而图中脱粒指标未超限。因此选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "系统设计",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/8b69145b24c04d72.png",
+    "image_prompt": "An engineering diagram of a combine harvester cleaning and threshing system. Use a left-to-right side layout with 5 main components: an upper-left cylinder (labeled \"脱粒滚筒\"), a curved concave below it (labeled \"凹板\"), a lower-middle fan (labeled \"清选风机\"), a right-middle sieve (labeled \"上筛\"), and a far-right grain tank (labeled \"粮箱\"). Draw grain-flow arrows from 脱粒滚筒 to 凹板, from 凹板 to 上筛, and from 上筛 to 粮箱; draw an airflow arrow from 清选风机 to 上筛. Add 3 monitor boxes: \"未脱净率 0.2% / 限值 0.5%\" connected to 凹板, \"尾部籽粒损失 1.4% / 限值 0.8%\" connected to 上筛, and \"杂质率 1.1% / 限值 2.0%\" connected to 粮箱. Add 4 dashed adjustment boxes with the exact labels \"开度 +1级: 损失 -0.5%, 杂质 +0.4%\", \"转速 +1级: 损失 +0.3%, 杂质 -0.5%\", \"间隙 -1级: 未脱净 -0.1%, 破碎 +0.3%\", and \"转速 +1级: 未脱净 -0.2%, 破碎 +0.5%\". Highlight the tail-loss monitor with a light red border and the impurity monitor with a light blue border.",
+    "final_image_prompt": "An engineering diagram of a combine harvester cleaning and threshing system. Use a left-to-right side layout with 5 main components: an upper-left cylinder (labeled \"脱粒滚筒\"), a curved concave below it (labeled \"凹板\"), a lower-middle fan (labeled \"清选风机\"), a right-middle sieve (labeled \"上筛\"), and a far-right grain tank (labeled \"粮箱\"). Draw grain-flow arrows from 脱粒滚筒 to 凹板, from 凹板 to 上筛, and from 上筛 to 粮箱; draw an airflow arrow from 清选风机 to 上筛. Add 3 monitor boxes: \"未脱净率 0.2% / 限值 0.5%\" connected to 凹板, \"尾部籽粒损失 1.4% / 限值 0.8%\" connected to 上筛, and \"杂质率 1.1% / 限值 2.0%\" connected to 粮箱. Add 4 dashed adjustment boxes with the exact labels \"开度 +1级: 损失 -0.5%, 杂质 +0.4%\", \"转速 +1级: 损失 +0.3%, 杂质 -0.5%\", \"间隙 -1级: 未脱净 -0.1%, 破碎 +0.3%\", and \"转速 +1级: 未脱净 -0.2%, 破碎 +0.5%\". Highlight the tail-loss monitor with a light red border and the impurity monitor with a light blue border.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各监测值、限值和调整影响方向，必须读取图中的监测框与调整框并进行比较和计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "脱粒出口监测框显示未脱净率 0.2%，限值 0.5%",
+        "清选尾部监测框显示籽粒损失 1.4%，限值 0.8%",
+        "粮箱监测框显示杂质率 1.1%，限值 2.0%",
+        "上筛开度增大一级对应尾部损失降低 0.5%、杂质率升高 0.4%",
+        "风机转速提高一级对应尾部损失升高 0.3%、杂质率降低 0.5%"
+      ],
+      "validation_rules": [
+        "先判断各监测指标是否超过对应限值，确定需要优先处理清选尾部籽粒损失",
+        "候选调整必须作用于清选损失，而不是只作用于脱粒未脱净率",
+        "候选调整后粮箱杂质率必须不超过 $2.0\\%$",
+        "上筛开度增大一级后杂质率为 $1.5\\%$，未超过限值，且尾部损失降低"
+      ]
+    }
+  },
+  {
+    "question_id": "S19-004-Q0001",
+    "subject_id": "S19",
+    "subject_name": "农业与生命工程",
+    "kp_id": "S19-M01-004",
+    "kp_name": "植保机械",
+    "question_language": "zh",
+    "question_text": "某果园行间需要选用一套低飘移喷雾布置。要求：相邻喷幅重叠率按 $r=\\frac{w-s}{w}\\times100\\%$ 计算，需满足 $20\\%\\le r\\le35\\%$；3个喷头的有效覆盖宽度按 $W=w+2s$ 计算，需满足 $W\\ge2.60\\,\\text{m}$；同时雾滴体积中径需不低于 $250\\,\\mu\\text{m}$，且必须带防飘罩。根据图中四个方案，哪一个符合全部设计要求？",
+    "options": {
+      "A": "方案甲",
+      "B": "方案乙",
+      "C": "方案丙",
+      "D": "方案丁"
+    },
+    "correct_answer": "C",
+    "explanation": "逐项读取图中每个方案的喷幅宽度 $w$、喷头间距 $s$、雾滴体积中径和防飘罩状态。方案甲的重叠率为 $\\frac{1.00-0.70}{1.00}\\times100\\%=30\\%$，覆盖宽度 $W=1.00+2\\times0.70=2.40\\,\\text{m}$，未达到 $2.60\\,\\text{m}$。方案乙的覆盖宽度 $W=1.10+2\\times0.75=2.60\\,\\text{m}$，但重叠率为 $\\frac{1.10-0.75}{1.10}\\times100\\%\\approx31.8\\%$ 且雾滴体积中径只有 $230\\,\\mu\\text{m}$，不满足低飘移要求。方案丙的重叠率为 $\\frac{1.20-0.85}{1.20}\\times100\\%\\approx29.2\\%$，覆盖宽度 $W=1.20+2\\times0.85=2.90\\,\\text{m}$，雾滴体积中径为 $270\\,\\mu\\text{m}$，并且带防飘罩，全部满足。方案丁的覆盖宽度 $W=1.05+2\\times0.80=2.65\\,\\text{m}$，雾滴体积中径也达标，但图中未带防飘罩，因此不符合。故选C。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "系统设计",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/b60d21d339c5445e.png",
+    "image_prompt": "Engineering diagram of four sprayer boom design schemes, arranged left to right in four equal panels viewed from the front. Panel 1 is labeled \"方案甲\" and shows 3 nozzles on one horizontal boom, two spacing arrows labeled \"s=0.70 m\", one fan-width arrow labeled \"w=1.00 m\", text labeled \"VMD=260 μm\", and a green shield icon labeled \"有罩\". Panel 2 labeled \"方案乙\" shows 3 nozzles, spacing arrows labeled \"s=0.75 m\", fan-width arrow labeled \"w=1.10 m\", text labeled \"VMD=230 μm\", green shield labeled \"有罩\". Panel 3 labeled \"方案丙\" shows \"s=0.85 m\", \"w=1.20 m\", \"VMD=270 μm\", green shield \"有罩\". Panel 4 labeled \"方案丁\" shows \"s=0.80 m\", \"w=1.05 m\", \"VMD=280 μm\", a gray crossed shield labeled \"无罩\". Use pale blue spray fan shapes under every nozzle.",
+    "final_image_prompt": "Engineering diagram of four sprayer boom design schemes, arranged left to right in four equal panels viewed from the front. Panel 1 is labeled \"方案甲\" and shows 3 nozzles on one horizontal boom, two spacing arrows labeled \"s=0.70 m\", one fan-width arrow labeled \"w=1.00 m\", text labeled \"VMD=260 μm\", and a green shield icon labeled \"有罩\". Panel 2 labeled \"方案乙\" shows 3 nozzles, spacing arrows labeled \"s=0.75 m\", fan-width arrow labeled \"w=1.10 m\", text labeled \"VMD=230 μm\", green shield labeled \"有罩\". Panel 3 labeled \"方案丙\" shows \"s=0.85 m\", \"w=1.20 m\", \"VMD=270 μm\", green shield \"有罩\". Panel 4 labeled \"方案丁\" shows \"s=0.80 m\", \"w=1.05 m\", \"VMD=280 μm\", a gray crossed shield labeled \"无罩\". Use pale blue spray fan shapes under every nozzle.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出筛选规则，不给出各方案的喷幅、间距、雾滴体积中径和防飘罩状态；这些关键参数必须从图中读取后才能计算和比较。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个方案各自的w、s、VMD数值只在图片中给出",
+        "四个方案各自的防飘罩状态只在图片中给出",
+        "四个方案均为3喷头布置这一结构事实只在图片中给出"
+      ],
+      "validation_rules": [
+        "用图片中的w和s计算每个方案的重叠率 $r=\\frac{w-s}{w}\\times100\\%$",
+        "用图片中的w和s计算每个方案的有效覆盖宽度 $W=w+2s$",
+        "仅当 $20\\%\\le r\\le35\\%$、$W\\ge2.60\\,\\text{m}$、$VMD\\ge250\\,\\mu\\text{m}$ 且有防飘罩时判为符合要求",
+        "四个选项中只有方案丙同时满足全部验证规则"
+      ]
+    }
+  }
+]

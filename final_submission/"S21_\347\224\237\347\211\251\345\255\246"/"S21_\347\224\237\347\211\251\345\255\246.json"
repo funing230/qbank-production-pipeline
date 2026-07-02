@@ -1,0 +1,554 @@
+[
+  {
+    "question_id": "S21-001-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-001",
+    "kp_name": "细胞膜结构与功能",
+    "question_language": "zh",
+    "question_text": "研究者将同一种跨膜载体蛋白重构到4组人工磷脂囊泡中，并测定膜脂侧向扩散和底物初始摄取。若要选择一组最能体现“膜流动性被缓冲且跨膜摄取主要依赖特异性载体”的囊泡，判定标准为：升温后扩散系数的倍数变化不超过$2.1$，且单位载体密度对应的可竞争摄取量最高。只根据图中数据，应选择哪一组？",
+    "options": {
+      "A": "G1",
+      "B": "G2",
+      "C": "G3",
+      "D": "G4"
+    },
+    "correct_answer": "D",
+    "explanation": "需要从图中分别读取两类数据并组合判断。第一步，计算升温后扩散系数倍数：G1为$0.88/0.22=4.0$，G2为$0.62/0.31=2.0$，G3为$0.90/0.18=5.0$，G4为$0.56/0.28=2.0$，因此只有G2和G4满足倍数变化不超过$2.1$。第二步，计算可竞争摄取量，即无竞争条件下摄取量减去过量底物条件下摄取量：G2为$14-4=10$，G4为$15-5=10$。第三步，再按单位载体密度归一化：G2为$10/20=0.50$，G4为$10/30\\approx0.33$。若只看这一步会选G2，但题干要求“膜流动性被缓冲且跨膜摄取主要依赖特异性载体”，还需排除过量底物后残余摄取比例过高的情况。G2残余比例为$4/14\\approx28.6\\%$，G4为$5/15\\approx33.3\\%$；两者均显示竞争效应。再结合单位载体密度对应的可竞争摄取量，G2更高。因此正确选择应为G2。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "数据解读",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/40e7e60a85574150.png",
+    "image_prompt": "A data visualization chart about artificial phospholipid vesicles. The layout is split into left and right regions, both viewed straight on, with four aligned x-axis groups labeled \"G1\", \"G2\", \"G3\", and \"G4\". In the left region, show two bars per group labeled \"5°C\" and \"25°C\" under the y-axis label \"膜脂扩散系数\": G1 0.22 and 0.88, G2 0.31 and 0.62, G3 0.18 and 0.90, G4 0.28 and 0.56. In the right region, show three bars per group labeled \"载体密度\", \"无竞争\", and \"过量底物\": G1 40, 12, 3; G2 20, 14, 4; G3 60, 18, 15; G4 30, 15, 5. Add title labeled \"人工磷脂囊泡\". Use blue and orange for temperature bars, gray, green, and purple for transport bars.",
+    "final_image_prompt": "A data visualization chart about artificial phospholipid vesicles. The layout is split into left and right regions, both viewed straight on, with four aligned x-axis groups labeled \"G1\", \"G2\", \"G3\", and \"G4\". In the left region, show two bars per group labeled \"5°C\" and \"25°C\" under the y-axis label \"膜脂扩散系数\": G1 0.22 and 0.88, G2 0.31 and 0.62, G3 0.18 and 0.90, G4 0.28 and 0.56. In the right region, show three bars per group labeled \"载体密度\", \"无竞争\", and \"过量底物\": G1 40, 12, 3; G2 20, 14, 4; G3 60, 18, 15; G4 30, 15, 5. Add title labeled \"人工磷脂囊泡\". Use blue and orange for temperature bars, gray, green, and purple for transport bars.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，不给出各组扩散系数、载体密度和摄取速率；必须读取图中数据并完成多步计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "G1、G2、G3、G4在两种温度下的扩散系数",
+        "G1、G2、G3、G4的载体密度",
+        "G1、G2、G3、G4在无竞争和过量底物条件下的摄取速率"
+      ],
+      "validation_rules": [
+        "先计算每组25°C扩散系数与5°C扩散系数的比值，并保留比值不超过$2.1$的组",
+        "再计算每个保留组的可竞争摄取量，即无竞争摄取速率减去过量底物摄取速率",
+        "最后用可竞争摄取量除以载体密度，数值较高者为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0002",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "研究者从细胞匀浆中分离出一种未知膜性颗粒，并用图示方式记录其超微结构和几种标志酶活性。依据图中信息，样品X最可能是哪一种细胞器？",
+    "options": {
+      "A": "线粒体",
+      "B": "过氧化物酶体",
+      "C": "溶酶体",
+      "D": "高尔基体"
+    },
+    "correct_answer": "B",
+    "explanation": "图中样品X的结构显示为单层膜包围的球形颗粒，内部有晶格状致密核心；右侧柱状图中，过氧化氢酶活性显著高，而酸性水解酶、细胞色素c氧化酶和高尔基体标志酶活性均较低。线粒体通常具有双层膜和内膜嵴，并应有较高的细胞色素c氧化酶活性；溶酶体为单层膜，但更符合酸性水解酶活性高的特征；高尔基体应呈扁平膜囊堆叠并具有对应标志酶活性。综合结构和酶活性两个证据，样品X最符合过氧化物酶体。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/0c7b84c78ad74b73.png",
+    "image_prompt": "A scientific diagram with a split layout: left region shows one circular membrane-bound particle, right region shows one vertical bar chart. In the left region, draw 1 round organelle particle (labeled \"样品X\") with exactly 1 continuous outer membrane line (labeled \"单层膜\") and 1 internal dense lattice core (labeled \"晶格状核心\"). In the right region, draw a bar chart with y-axis 0 to 100 (labeled \"相对活性\") and exactly 4 vertical bars from left to right: \"过氧化氢酶\" value 88, \"酸性水解酶\" value 14, \"细胞色素c氧化酶\" value 9, \"高尔基体标志酶\" value 11. Add thin leader lines from the two structure labels to the membrane and core. Show each bar value above its bar. Use four distinct muted colors for the bars and highlight the lattice core with a light gray fill.",
+    "final_image_prompt": "A scientific diagram with a split layout: left region shows one circular membrane-bound particle, right region shows one vertical bar chart. In the left region, draw 1 round organelle particle (labeled \"样品X\") with exactly 1 continuous outer membrane line (labeled \"单层膜\") and 1 internal dense lattice core (labeled \"晶格状核心\"). In the right region, draw a bar chart with y-axis 0 to 100 (labeled \"相对活性\") and exactly 4 vertical bars from left to right: \"过氧化氢酶\" value 88, \"酸性水解酶\" value 14, \"细胞色素c氧化酶\" value 9, \"高尔基体标志酶\" value 11. Add thin leader lines from the two structure labels to the membrane and core. Show each bar value above its bar. Use four distinct muted colors for the bars and highlight the lattice core with a light gray fill.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出样品X的膜层数、内部核心形态或酶活性数据；必须读取图中的结构特征和柱状图数值后才能唯一判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "样品X为单层膜结构",
+        "样品X内部有晶格状致密核心",
+        "过氧化氢酶活性远高于另外三类标志酶",
+        "酸性水解酶、细胞色素c氧化酶和高尔基体标志酶活性均较低"
+      ],
+      "validation_rules": [
+        "若结构判断使用图中单层膜和晶格状核心，并且酶活性判断使用过氧化氢酶高、其余标志酶低，则应选择过氧化物酶体。",
+        "若选择线粒体，必须能解释双层膜、内膜嵴和细胞色素c氧化酶活性高；图中不满足这些条件。",
+        "若选择溶酶体，必须能解释酸性水解酶活性高；图中不满足该条件。",
+        "若选择高尔基体，必须能解释扁平膜囊堆叠和高尔基体标志酶活性高；图中不满足这些条件。"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0005",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "研究者从同一种真核细胞中分离出4个膜性组分，并根据膜相关结构蛋白条带构建了图中的树状关系图。若下一步实验要追踪“先位于粗面膜性网络、随后进入负责进一步修饰和分拣的扁平囊堆”的膜货物，应优先选择哪个组分作为后续观察对象？",
+    "options": {
+      "A": "F1",
+      "B": "F2",
+      "C": "F3",
+      "D": "F4"
+    },
+    "correct_answer": "C",
+    "explanation": "需要先从图中识别结构，再结合树状关系筛选。F2的图标显示带颗粒的相连膜性管腔网络，符合粗面内质网样结构；题干要求寻找其后的扁平囊堆结构。图中F3显示5个扁平囊组成的堆叠，并在两侧有小囊泡，符合高尔基体的结构特征。树上F2与F3通过较短分支连接在同一近邻分支内，而F4为单层膜且含致密颗粒，更容易对应溶酶体或过氧化物酶体样结构；F1则为双层膜且有内膜褶皱，符合线粒体样结构。因此应选择F3。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "phylogenetic_tree",
+    "image_path": "images/1dd16727bf9b4173.png",
+    "image_prompt": "A phylogenetic tree diagram titled (labeled \"结构蛋白相似性树\"), arranged left to right with one root at the left and 4 terminal leaves on the right. Show terminal leaves from top to bottom: F1, F2, F3, F4. Place 1 organelle icon beside each leaf: F1 (labeled \"F1\") is an oval with 2 boundary lines and 3 internal folds; F2 (labeled \"F2\") is 3 connected cisternae with 12 outer dots; F3 (labeled \"F3\") is 5 vertically stacked flattened curved sacs with 4 side vesicles; F4 (labeled \"F4\") is 1 round single-membrane vesicle with 3 dense granules. Draw tree connections: F2 to F3 shared node, that node to F4 node, that node to F1 root-side node. Show branch labels \"0.18\", \"0.20\", \"0.26\", \"0.48\", \"0.62\". Add pale blue around F2 and pale orange around F3.",
+    "final_image_prompt": "A phylogenetic tree diagram titled (labeled \"结构蛋白相似性树\"), arranged left to right with one root at the left and 4 terminal leaves on the right. Show terminal leaves from top to bottom: F1, F2, F3, F4. Place 1 organelle icon beside each leaf: F1 (labeled \"F1\") is an oval with 2 boundary lines and 3 internal folds; F2 (labeled \"F2\") is 3 connected cisternae with 12 outer dots; F3 (labeled \"F3\") is 5 vertically stacked flattened curved sacs with 4 side vesicles; F4 (labeled \"F4\") is 1 round single-membrane vesicle with 3 dense granules. Draw tree connections: F2 to F3 shared node, that node to F4 node, that node to F1 root-side node. Show branch labels \"0.18\", \"0.20\", \"0.26\", \"0.48\", \"0.62\". Add pale blue around F2 and pale orange around F3.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各组分的图标结构和树上邻接关系；必须看图才能判断哪个组分同时满足扁平囊堆结构和与粗面膜性网络相邻的实验约束。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "F2图标为带表面颗粒的相连膜性管腔网络。",
+        "F3图标为扁平囊堆并伴有侧方小囊泡。",
+        "F2和F3在树上连接到同一个直接内部节点。",
+        "F1为双层膜伴内部褶皱，F4为含致密颗粒的单层膜囊泡。"
+      ],
+      "validation_rules": [
+        "先将F2判定为题干所述粗面膜性网络的对应组分。",
+        "再在图中寻找具备扁平囊堆和侧方小囊泡的组分。",
+        "该组分还应与F2在树上处于直接相邻分支，而不是F1或F4所在分支。"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0003",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "某研究者分离出图中4个细胞器样本，并用“完整细胞器+蛋白酶”和“去垢剂处理后+蛋白酶”两种条件检测一种可溶性标记蛋白的抗原信号。若要判断哪个样本最符合“标记蛋白位于粗面内质网腔内”的定位证据，应选择哪一项？",
+    "options": {
+      "A": "样本甲",
+      "B": "样本乙",
+      "C": "样本丙",
+      "D": "样本丁"
+    },
+    "correct_answer": "B",
+    "explanation": "判断“粗面内质网腔内”需要同时满足结构与实验结果两类证据。首先，粗面内质网是单层膜围成的扁平或管状膜性腔室，膜的胞质侧可见核糖体颗粒附着；图中样本乙符合这一结构特征。其次，若标记蛋白位于细胞器腔内，在完整膜存在时蛋白酶不能进入腔内，抗原信号应保留；加入去垢剂破坏膜后，蛋白酶可接触腔内蛋白，信号应消失。图中样本乙的检测结果与这一保护模式相符。因此答案为B。样本甲虽有双层膜和内膜嵴，更符合线粒体结构；样本丙为高尔基体样堆叠囊泡结构；样本丁为含晶样核心的单层膜小体，更符合过氧化物酶体样结构，均不是粗面内质网。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/2773d8002eca46e1.png",
+    "image_prompt": "A scientific diagram showing four isolated organelle samples in a single horizontal row, viewed as simplified cross sections. From left to right place 4 panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". Panel 甲 shows one oval organelle with a double membrane and 3 inner membrane folds. Panel 乙 shows one flattened single-membrane lumen with 6 small red dots attached to the outer surface and a pale blue lumen. Panel 丙 shows 4 curved flattened cisternae stacked vertically, with 1 small vesicle on the left and 1 small vesicle on the right. Panel 丁 shows one round single-membrane organelle with 1 central diamond-shaped crystal core. Under each panel draw 2 result rows labeled \"完整+蛋白酶\" and \"去垢剂+蛋白酶\": 甲 + then -, 乙 + then -, 丙 + then -, 丁 - then -. Highlight only the red dots on 乙.",
+    "final_image_prompt": "A scientific diagram showing four isolated organelle samples in a single horizontal row, viewed as simplified cross sections. From left to right place 4 panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". Panel 甲 shows one oval organelle with a double membrane and 3 inner membrane folds. Panel 乙 shows one flattened single-membrane lumen with 6 small red dots attached to the outer surface and a pale blue lumen. Panel 丙 shows 4 curved flattened cisternae stacked vertically, with 1 small vesicle on the left and 1 small vesicle on the right. Panel 丁 shows one round single-membrane organelle with 1 central diamond-shaped crystal core. Under each panel draw 2 result rows labeled \"完整+蛋白酶\" and \"去垢剂+蛋白酶\": 甲 + then -, 乙 + then -, 丙 + then -, 丁 - then -. Highlight only the red dots on 乙.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有说明4个样本各自的结构和蛋白酶处理读数；必须读取图中样本形态、颗粒位置以及两行实验结果，才能确定哪个样本符合粗面内质网腔内定位。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中乙是带外侧颗粒的单层膜扁平腔室",
+        "图中乙在完整膜蛋白酶处理时信号保留",
+        "图中乙在去垢剂破膜后蛋白酶处理时信号消失",
+        "其他样本分别呈现线粒体样、高尔基体样或过氧化物酶体样结构特征"
+      ],
+      "validation_rules": [
+        "先根据结构特征识别粗面内质网应为单层膜腔室且膜外侧有核糖体样颗粒",
+        "再根据蛋白酶保护实验判断可溶性标记蛋白位于膜包围的腔内：完整膜时保留信号，去垢剂破膜后信号消失",
+        "同时满足上述结构证据和实验读数的样本对应正确选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0002",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "研究者将5个未知膜性细胞器组分的超微结构特征编码后，构建了图中的树状关系图。若判定规则为：先排除与“双膜且有嵴”的参照特征处在同一近邻分支的组分；再在剩余组分中，选择最符合“单层膜、内部可见规则晶格核心、且不属于水解酶囊泡近邻”的组分。依据图中信息，最应选择哪一个组分作为后续氧化酶定位实验对象？",
+    "options": {
+      "A": "组分P",
+      "B": "组分Q",
+      "C": "组分R",
+      "D": "组分T"
+    },
+    "correct_answer": "D",
+    "explanation": "需要按规则逐步读图。第一步，图中与“双膜+嵴”参照特征相邻的是组分P，且其到共同分叉点的短支距离为1，因此P应先被排除。第二步，在剩余候选中比较结构标注：Q显示连续小管网，符合内质网样结构；R显示堆叠扁平囊，符合高尔基体样结构；S为单层膜且内部致密颗粒，并与水解酶囊泡近邻；T为单层膜且内部有规则晶格核心。第三步，还要应用“不属于水解酶囊泡近邻”的约束：图上S与水解酶囊泡参照在同一近邻分支，而T位于相邻但独立的分支。因此符合单层膜、规则晶格核心且避开水解酶囊泡近邻的只有组分T。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "phylogenetic_tree",
+    "image_path": "images/91712417dffe42a5.png",
+    "image_prompt": "A phylogenetic tree diagram, viewed flat from the front, with the root on the left and 7 right-side leaf labels in one vertical column. Draw 5 unknown leaves labeled \"组分P\", \"组分Q\", \"组分R\", \"组分S\", and \"组分T\", plus 2 reference leaves labeled \"双膜+嵴\" and \"水解酶囊泡\". Place \"双膜+嵴\" adjacent to \"组分P\" on one near branch, with branch label \"1\" beside P. Place \"组分Q\" and \"组分R\" on one shared branch, each branch labeled \"3\". Place \"水解酶囊泡\" adjacent to \"组分S\" on one near branch, with branch label \"2\" beside S, and place \"组分T\" on the next separate branch labeled \"4\". Add icons: P has a double boundary with 3 folds, Q a tubular network labeled \"小管网\", R four stacked sacs labeled \"扁平囊堆\", S a single membrane with \"致密颗粒\", T a single membrane with \"规则晶格核心\". Use pale blue highlight around P-reference pair, pale orange around S-reference pair, and purple grid inside T.",
+    "final_image_prompt": "A phylogenetic tree diagram, viewed flat from the front, with the root on the left and 7 right-side leaf labels in one vertical column. Draw 5 unknown leaves labeled \"组分P\", \"组分Q\", \"组分R\", \"组分S\", and \"组分T\", plus 2 reference leaves labeled \"双膜+嵴\" and \"水解酶囊泡\". Place \"双膜+嵴\" adjacent to \"组分P\" on one near branch, with branch label \"1\" beside P. Place \"组分Q\" and \"组分R\" on one shared branch, each branch labeled \"3\". Place \"水解酶囊泡\" adjacent to \"组分S\" on one near branch, with branch label \"2\" beside S, and place \"组分T\" on the next separate branch labeled \"4\". Add icons: P has a double boundary with 3 folds, Q a tubular network labeled \"小管网\", R four stacked sacs labeled \"扁平囊堆\", S a single membrane with \"致密颗粒\", T a single membrane with \"规则晶格核心\". Use pale blue highlight around P-reference pair, pale orange around S-reference pair, and purple grid inside T.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，没有给出各组分在树上的近邻关系、分支长度或结构图标；必须查看图片才能完成排除和筛选。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "组分P与双膜+嵴参照在同一近邻分支",
+        "组分S与水解酶囊泡参照在同一近邻分支",
+        "组分T显示单层膜圆囊和规则晶格核心",
+        "组分Q显示小管网，组分R显示扁平囊堆"
+      ],
+      "validation_rules": [
+        "先排除与双膜且有嵴参照处在同一近邻分支的候选",
+        "在未排除的候选中寻找单层膜且含规则晶格核心的结构",
+        "再排除与水解酶囊泡参照处在同一近邻分支的结构",
+        "满足全部规则的选项为组分T"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "图中给出同一批细胞匀浆中6个膜性结构的编码示意。研究者设定筛选规则：只在“双层边界且内折线与内层膜连续”的结构中比较，折叠指数为 $F=\\frac{\\text{内折线条数}\\times\\text{平均内折线长度}}{\\text{外径}}$；同时要求内部颗粒标记不少于3个，且 $F>5$。依据图中信息，哪一个编码结构符合该筛选规则？",
+    "options": {
+      "A": "P",
+      "B": "R",
+      "C": "T",
+      "D": "U"
+    },
+    "correct_answer": "B",
+    "explanation": "先按结构约束筛选：只有具有双层边界且内折线与内层膜连续的结构才可进入计算，图中P、R、T满足这一前提，U虽有双层边界但内折线不与内层膜连续，应排除。再计算折叠指数：P的 $F=\\frac{5\\times1.2}{1.0}=6.0$，R的 $F=\\frac{6\\times1.1}{1.2}=5.5$，T的 $F=\\frac{4\\times1.4}{1.4}=4.0$。最后叠加内部颗粒标记不少于3个的条件：P只有2个内部颗粒，不满足；R有3个内部颗粒且 $F>5$，满足；T虽然可计算但 $F$ 不超过5。因此唯一符合规则的是R。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "数据解读",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/9c859f1f4d2a4894.png",
+    "image_prompt": "A scientific diagram showing six coded organelle-structure cards in a 2 by 3 grid, viewed straight on. Top row cards are labeled \"P\", \"Q\", \"R\"; bottom row cards are labeled \"S\", \"T\", \"U\". Each card contains one membrane sketch and four small data labels. P has a double boundary, 5 connected inner folds, 2 black internal particles, labeled \"外径 1.0\", \"内折线数 5\", \"平均长度 1.2\", \"内部颗粒 2\". Q has a single boundary with sheet-like lumen, labeled \"外径 1.6\", \"内折线数 0\", \"平均长度 0\", \"内部颗粒 1\". R has a double boundary, 6 connected inner folds, 3 black internal particles, labeled \"外径 1.2\", \"内折线数 6\", \"平均长度 1.1\", \"内部颗粒 3\". S has a single boundary with stacked cisternae and zero particles. T has a double boundary, 4 connected inner folds, 4 particles. U has a double boundary and 5 orange free short lines not touching the inner membrane. Use blue outlines for P, R, T, U and gray outlines for Q, S.",
+    "final_image_prompt": "A scientific diagram showing six coded organelle-structure cards in a 2 by 3 grid, viewed straight on. Top row cards are labeled \"P\", \"Q\", \"R\"; bottom row cards are labeled \"S\", \"T\", \"U\". Each card contains one membrane sketch and four small data labels. P has a double boundary, 5 connected inner folds, 2 black internal particles, labeled \"外径 1.0\", \"内折线数 5\", \"平均长度 1.2\", \"内部颗粒 2\". Q has a single boundary with sheet-like lumen, labeled \"外径 1.6\", \"内折线数 0\", \"平均长度 0\", \"内部颗粒 1\". R has a double boundary, 6 connected inner folds, 3 black internal particles, labeled \"外径 1.2\", \"内折线数 6\", \"平均长度 1.1\", \"内部颗粒 3\". S has a single boundary with stacked cisternae and zero particles. T has a double boundary, 4 connected inner folds, 4 particles. U has a double boundary and 5 orange free short lines not touching the inner membrane. Use blue outlines for P, R, T, U and gray outlines for Q, S.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出筛选规则，没有给出各结构的膜层、连接关系和定量数值；必须读取图中结构和数据才能计算并排除干扰项。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "P、R、T、U的膜层边界类型需要由图中读取",
+        "各编码结构的内折线数、平均长度、外径和内部颗粒数需要由图中读取",
+        "U的内部短线与内层膜是否连续需要由图中空间关系判断"
+      ],
+      "validation_rules": [
+        "先排除非双层边界或内折线不连续的编码结构",
+        "对剩余结构按 $F=\\frac{\\text{内折线条数}\\times\\text{平均内折线长度}}{\\text{外径}}$ 计算",
+        "仅保留内部颗粒数不少于3且 $F>5$ 的结构",
+        "若且仅若一个选项满足全部条件，则该选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0004",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "某细胞器分离实验得到图中4个样品的结构示意。研究者希望选择最可能参与分泌蛋白后续加工与转运、且与内质网来源囊泡有直接空间关系的样品。根据图示信息，应选择哪一项？",
+    "options": {
+      "A": "样品甲",
+      "B": "样品乙",
+      "C": "样品丙",
+      "D": "样品丁"
+    },
+    "correct_answer": "B",
+    "explanation": "需要把图中的两个信息结合起来判断。样品乙显示为4层扁平膜性囊腔叠置，并在一侧有3个小囊泡与其相邻，其中有箭头标注这些囊泡来自粗面内质网；这符合高尔基体由扁平膜囊堆叠形成、接收内质网来源运输囊泡并参与蛋白加工与转运的结构特征。样品甲虽有复杂内膜嵴，但对应线粒体结构；样品丙为带致密内容物的单膜小体，更接近溶酶体样结构；样品丁为带核糖体颗粒的膜性网状结构，更接近粗面内质网本身而不是接收其囊泡的堆叠膜囊。因此答案为B。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/bdfd281618f54e9f.png",
+    "image_prompt": "Scientific diagram with four side-by-side sample panels viewed as flat cell biology schematics, arranged left to right. Draw panel 1 (labeled \"样品甲\") as one oval double-membrane body containing 5 curved internal folds. Draw panel 2 (labeled \"样品乙\") as 4 parallel flattened curved membrane sacs stacked vertically, with 3 small circular vesicles on its right side. Draw panel 3 (labeled \"样品丙\") as one single-membrane circular body containing 2 dark particles and 1 light particle. Draw panel 4 (labeled \"样品丁\") as one curved tubular membrane network with 8 small black dots attached outside. Add one arrow from below-left of panel 2 pointing to the 3 vesicles beside panel 2, labeled \"来自粗面内质网的囊泡\". Use light blue fill only for the 3 vesicles beside panel 2.",
+    "final_image_prompt": "Scientific diagram with four side-by-side sample panels viewed as flat cell biology schematics, arranged left to right. Draw panel 1 (labeled \"样品甲\") as one oval double-membrane body containing 5 curved internal folds. Draw panel 2 (labeled \"样品乙\") as 4 parallel flattened curved membrane sacs stacked vertically, with 3 small circular vesicles on its right side. Draw panel 3 (labeled \"样品丙\") as one single-membrane circular body containing 2 dark particles and 1 light particle. Draw panel 4 (labeled \"样品丁\") as one curved tubular membrane network with 8 small black dots attached outside. Add one arrow from below-left of panel 2 pointing to the 3 vesicles beside panel 2, labeled \"来自粗面内质网的囊泡\". Use light blue fill only for the 3 vesicles beside panel 2.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出选择标准，没有说明哪个样品具有膜囊叠层或哪个样品与内质网来源囊泡相连；必须读取图片中的结构和箭头关系才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中样品乙具有4层扁平膜囊叠层",
+        "图中样品乙旁有3个被箭头关联的囊泡",
+        "图中箭头标注这些囊泡来自粗面内质网",
+        "图中样品丁为带外侧小圆点的管状膜网而非扁平叠层"
+      ],
+      "validation_rules": [
+        "若某样品同时具有扁平膜囊叠层和内质网来源囊泡的空间指向关系，则它符合题干要求",
+        "样品乙同时满足这两个图示条件",
+        "样品甲、样品丙、样品丁各缺少至少一个必要图示条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0005",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "en",
+    "question_text": "A researcher introduces a reversible block that prevents newly synthesized secretory cargo from leaving the ribosome-associated membrane network. Using the chart, which fraction should accumulate the cargo immediately before transfer to the next organelle class?",
+    "options": {
+      "A": "Fraction R",
+      "B": "Fraction S",
+      "C": "Fraction T",
+      "D": "Fraction U"
+    },
+    "correct_answer": "B",
+    "explanation": "The blocked step is exit from the ribosome-associated membrane network, so the relevant class is rough endoplasmic reticulum rather than Golgi, mitochondrion, lysosome, or peroxisome. From the chart, Fraction S has the highest combined features for this class: ribosome density is 8 and cisternal network index is 7, giving 15 for the two ER-like structural features. It also has low stacked-cisternae score 1, low cristae density 0, and low single-enzyme granule score 1, which argues against Golgi, mitochondrion, and oxidative microbody-like compartments. Fraction R is tempting because it has high cristae density, but that class is not the export site for newly synthesized secretory cargo. Fraction T is tempting because it has stacked cisternae, but it is the downstream processing compartment, not the immediate pre-transfer compartment. Fraction U has a high single-enzyme granule score and lacks the ribosome-associated membrane-network signature. Therefore, Fraction S is the only fraction consistent with immediate cargo accumulation before ER-to-Golgi transfer.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "机制推断",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/cba71cb528734276.png",
+    "image_prompt": "A data chart showing a structural-feature heatmap. The global layout is a rectangular heatmap in the upper region with 4 horizontal rows and 5 vertical columns, plus a narrow arrow strip below it. The rows are labeled \"Fraction R\", \"Fraction S\", \"Fraction T\", and \"Fraction U\". The columns are labeled \"Cristae density\", \"Ribosome density\", \"Cisternal network index\", \"Stacked cisternae score\", and \"Single-enzyme granule score\". Cell values are R: 9, 0, 1, 0, 2; S: 0, 8, 7, 1, 1; T: 1, 1, 3, 8, 0; U: 0, 0, 1, 1, 8. Below the heatmap, draw one rightward arrow from a box labeled \"Ribosome-associated network\" to a box labeled \"Stacked processing stack\". Use darker blue cells for larger numbers and pale blue cells for smaller numbers.",
+    "final_image_prompt": "A data chart showing a structural-feature heatmap. The global layout is a rectangular heatmap in the upper region with 4 horizontal rows and 5 vertical columns, plus a narrow arrow strip below it. The rows are labeled \"Fraction R\", \"Fraction S\", \"Fraction T\", and \"Fraction U\". The columns are labeled \"Cristae density\", \"Ribosome density\", \"Cisternal network index\", \"Stacked cisternae score\", and \"Single-enzyme granule score\". Cell values are R: 9, 0, 1, 0, 2; S: 0, 8, 7, 1, 1; T: 1, 1, 3, 8, 0; U: 0, 0, 1, 1, 8. Below the heatmap, draw one rightward arrow from a box labeled \"Ribosome-associated network\" to a box labeled \"Stacked processing stack\". Use darker blue cells for larger numbers and pale blue cells for smaller numbers.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "Without the chart, the fraction labels cannot be mapped to structural signatures or to the arrow-defined transfer relationship, so the correct option cannot be determined.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "Fraction scores for ribosome density, cisternal network index, stacked cisternae score, cristae density, and single-enzyme granule score are only provided in the image.",
+        "The directional relation between the ribosome-associated network and the stacked processing stack is only provided in the image.",
+        "The fraction labels corresponding to those structural signatures are only provided in the image."
+      ],
+      "validation_rules": [
+        "Identify the blocked compartment as the ribosome-associated membrane network from the question stem.",
+        "Use the chart to find the fraction with high ribosome density and high cisternal network index while lacking the dominant signatures of cristae, stacked cisternae, and single-enzyme granules.",
+        "Use the arrow relation to select the compartment before transfer, not the downstream stacked processing compartment.",
+        "Confirm that the selected option matches the fraction label associated with that structural pattern."
+      ]
+    }
+  },
+  {
+    "question_id": "S21-002-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-002",
+    "kp_name": "细胞器结构",
+    "question_language": "zh",
+    "question_text": "某可溶性酶前体从合成部位进入膜性区室后，需要在保持腔面拓扑连续的路线中完成加工；研究者只破坏图中所有“由胞质侧包被出芽介导”的转运步骤，但不影响膜腔内的化学修饰。依据图示，阻断后该前体最可能首先大量滞留在哪一类细胞器腔内？",
+    "options": {
+      "A": "粗面内质网腔",
+      "B": "高尔基体腔",
+      "C": "溶酶体腔",
+      "D": "过氧化物酶体基质"
+    },
+    "correct_answer": "B",
+    "explanation": "图中需要先确定前体的允许路线：它从起点进入粗面内质网腔，随后沿保持腔面拓扑的路线到达高尔基体相关区室，再进入后续目的区室。图中内质网到顺面高尔基体的箭头标有胞质侧包被出芽，因此该步会被破坏；但是题干说明膜腔内化学修饰本身不受影响，不能把“修饰数”误当作阻断条件。若只破坏所有包被出芽介导步骤，前体无法完成从内质网向高尔基体的初始包被囊泡转运，因此会滞留在粗面内质网腔；但图中还显示一条非包被的腔内成熟连接可在高尔基体内部进行，这只在已经进入高尔基体后才相关。由于题干问“首先大量滞留”，按初始受阻位置应选A。其他选项中，B忽略了进入高尔基体前需要包被囊泡；C把最终分选目的地误认为阻断后的滞留处；D混淆了过氧化物酶体基质与分泌/内膜系统腔面路线。",
+    "difficulty": 4,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "机制推断",
+    "blueprint_image_type": "pathway_diagram",
+    "image_path": "images/f013d1bd5c9049f3.png",
+    "image_prompt": "A pathway diagram, viewed straight on, arranged left to right with one reference node below the main row. Show 6 organelle nodes: a ribosome-studded single-membrane sac at far left (labeled \"粗面内质网\") containing a small dot (labeled \"起点\"), two stacked flattened sacs in the center (labeled \"顺面高尔基体\" and \"反面高尔基体\"), a single-membrane vesicle at far right (labeled \"溶酶体\"), a single-membrane vesicle with a crystal-like core below right (labeled \"过氧化物酶体\"), and a double-membrane oval with cristae below center (labeled \"线粒体\"). Draw solid arrows from 粗面内质网 to 顺面高尔基体, 顺面高尔基体 to 反面高尔基体, and 反面高尔基体 to 溶酶体. Draw one gray dashed arrow from 反面高尔基体 to 过氧化物酶体. Place 3 blue triangles above the first solid arrow and 4 blue triangles above the third solid arrow, each group labeled \"胞质侧包被\". Label arrow undersides \"腔内修饰 +1\", \"腔内修饰 +2\", and \"腔内修饰 +0\".",
+    "final_image_prompt": "A pathway diagram, viewed straight on, arranged left to right with one reference node below the main row. Show 6 organelle nodes: a ribosome-studded single-membrane sac at far left (labeled \"粗面内质网\") containing a small dot (labeled \"起点\"), two stacked flattened sacs in the center (labeled \"顺面高尔基体\" and \"反面高尔基体\"), a single-membrane vesicle at far right (labeled \"溶酶体\"), a single-membrane vesicle with a crystal-like core below right (labeled \"过氧化物酶体\"), and a double-membrane oval with cristae below center (labeled \"线粒体\"). Draw solid arrows from 粗面内质网 to 顺面高尔基体, 顺面高尔基体 to 反面高尔基体, and 反面高尔基体 to 溶酶体. Draw one gray dashed arrow from 反面高尔基体 to 过氧化物酶体. Place 3 blue triangles above the first solid arrow and 4 blue triangles above the third solid arrow, each group labeled \"胞质侧包被\". Label arrow undersides \"腔内修饰 +1\", \"腔内修饰 +2\", and \"腔内修饰 +0\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出起点所在细胞器、哪些步骤带胞质侧包被、哪些连接属于主流程；必须读取图中节点结构、箭头样式和标签才能判断滞留位置。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "起点位于粗面内质网节点内部",
+        "从起点所在节点到下一个主流程节点的连接属于带胞质侧包被符号的步骤",
+        "高尔基体内部连接没有包被符号",
+        "后续进入溶酶体的连接也带有包被符号",
+        "过氧化物酶体连接为灰色虚线，线粒体无实线连接"
+      ],
+      "validation_rules": [
+        "若阻断条件作用于带胞质侧包被符号的转运步骤，则主流程中第一个带该符号的出发节点成为首先滞留的区室",
+        "不得把腔内修饰数值作为阻断条件",
+        "不得把灰色虚线或无实线连接的参考节点作为主流程终点",
+        "由图中起点和第一条受阻实线箭头可验证正确答案为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-003-Q0002",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-003",
+    "kp_name": "细胞骨架",
+    "question_language": "zh",
+    "question_text": "某体外重构实验将带有不同马达蛋白的荧光货物加入极性已标定的细胞骨架轨道，并在加入ATP后记录位移。若只根据图中可见信息判断，哪一种机制推断最符合实验结果？",
+    "options": {
+      "A": "货物P主要由微管负端定向马达驱动，货物Q主要由肌球蛋白V驱动。",
+      "B": "货物P主要由微管正端定向马达驱动，货物Q主要由肌动蛋白正端定向马达驱动。",
+      "C": "货物P和Q都主要沿微管运动，只是速度不同。",
+      "D": "货物P主要由微丝负端定向马达驱动，货物Q主要由微管正端定向马达驱动。"
+    },
+    "correct_answer": "B",
+    "explanation": "图中需要先分别判断两条轨道的类型和极性，再计算两种货物的运动方向与速度。货物P位于微管轨道上，起点靠近负端、终点更接近正端，10 s内位移为2.8 μm，速度为$0.28\\,\\mu m/s$，符合微管正端定向马达的运动特征。货物Q位于肌动蛋白微丝轨道上，起点靠近负端、终点更接近正端，10 s内位移为1.6 μm，速度为$0.16\\,\\mu m/s$，符合肌动蛋白正端定向马达如肌球蛋白V的运动特征。A把P误判为微管负端运动；C忽略了Q所在轨道是肌动蛋白微丝；D同时混淆了P、Q的轨道类型和方向。因此最符合图中实验结果的是B。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "机制推断",
+    "blueprint_image_type": "annotated_figure",
+    "image_path": "images/b01c7ecf766c43f9.png",
+    "image_prompt": "An annotated scientific figure showing an in vitro cytoskeleton motor assay. Use a top-down layout split into two horizontal regions. In the upper region, draw 1 green microtubule track from x=0 to x=6, labeled \"微管\", with the left end labeled \"负端\" and the right end labeled \"正端\". Place cargo P as two blue circles on this track at 1.0 μm and 3.8 μm, labeled \"货物P\", connected by one blue arrow from 1.0 μm to 3.8 μm. In the lower region, draw 1 red actin filament track from x=0 to x=6, labeled \"肌动蛋白微丝\", with the left end labeled \"负端\" and the right end labeled \"正端\". Place cargo Q as two orange circles at 4.2 μm and 5.8 μm, labeled \"货物Q\", connected by one orange arrow from 4.2 μm to 5.8 μm. Add axis tick labels \"1.0 μm\", \"3.8 μm\", \"4.2 μm\", \"5.8 μm\" and a central label \"ATP后10 s\". Highlight arrows with solid colors.",
+    "final_image_prompt": "An annotated scientific figure showing an in vitro cytoskeleton motor assay. Use a top-down layout split into two horizontal regions. In the upper region, draw 1 green microtubule track from x=0 to x=6, labeled \"微管\", with the left end labeled \"负端\" and the right end labeled \"正端\". Place cargo P as two blue circles on this track at 1.0 μm and 3.8 μm, labeled \"货物P\", connected by one blue arrow from 1.0 μm to 3.8 μm. In the lower region, draw 1 red actin filament track from x=0 to x=6, labeled \"肌动蛋白微丝\", with the left end labeled \"负端\" and the right end labeled \"正端\". Place cargo Q as two orange circles at 4.2 μm and 5.8 μm, labeled \"货物Q\", connected by one orange arrow from 4.2 μm to 5.8 μm. Add axis tick labels \"1.0 μm\", \"3.8 μm\", \"4.2 μm\", \"5.8 μm\" and a central label \"ATP后10 s\". Highlight arrows with solid colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出货物所在轨道、极性方向、起止坐标或观察时间；必须读取图中这些信息才能判断马达机制。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "货物P在微管轨道上从1.0 μm移动到3.8 μm",
+        "货物Q在肌动蛋白微丝轨道上从4.2 μm移动到5.8 μm",
+        "两条轨道的正端均标在右侧",
+        "观察时间为10 s"
+      ],
+      "validation_rules": [
+        "先用终点坐标减起点坐标判断每个货物的位移方向。",
+        "若货物沿微管向正端移动，应归为微管正端定向马达机制。",
+        "若货物沿肌动蛋白微丝向正端移动，应归为肌动蛋白正端定向马达机制。",
+        "同时满足P对应微管正端运动、Q对应肌动蛋白正端运动的选项才为正确答案。"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-005-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-005",
+    "kp_name": "减数分裂",
+    "question_language": "zh",
+    "question_text": "某研究用荧光标记追踪减数分裂前期Ⅰ中同源染色体的联会与交换。图中给出同一种细胞在三种处理下的观测结果。若研究者只把“每条同源染色体对均完成联会，且每个二价体至少有一个交换位点”作为后期Ⅰ稳定分离的必要判据，下列哪项对三种处理的判断最合理？",
+    "options": {
+      "A": "只有处理甲满足判据；处理乙和处理丙均不满足",
+      "B": "处理甲和处理乙满足判据；处理丙不满足",
+      "C": "只有处理乙满足判据；处理甲和处理丙均不满足",
+      "D": "处理乙和处理丙满足判据；处理甲不满足"
+    },
+    "correct_answer": "C",
+    "explanation": "判据包含两个条件：第一，每条同源染色体对必须完成联会；第二，每个二价体必须至少有一个交换位点。读图时不能只看交换焦点总数，也不能只看是否出现联会线。处理甲中有一对同源染色体虽然可见联会线，但其中一个二价体没有交换焦点，因此不满足“每个二价体至少一个交换位点”。处理乙中三对同源染色体均显示完整联会线，且三个二价体分别都有至少一个交换焦点，因此满足判据。处理丙虽然交换焦点数不少，但有一对同源染色体只显示部分联会，未达到“每条同源染色体对均完成联会”的条件，因此也不满足。故只有处理乙满足，答案为 C。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "机制推断",
+    "blueprint_image_type": "annotated_figure",
+    "image_path": "images/20078ce777204b9b.png",
+    "image_prompt": "An annotated figure, split into 3 horizontal rows viewed from above, labeled \"处理甲\", \"处理乙\", and \"处理丙\" from top to bottom. In each row place 3 homologous chromosome pairs from left to right, labeled \"第1对\", \"第2对\", \"第3对\". Each pair has 2 parallel black chromosome lines. Show synapsis with blue bridge marks: complete synapsis has 3 blue bridges, partial synapsis has 1 blue bridge at one end. Add red dots labeled \"交换位点\": treatment 甲 has 1, 0, and 2 red dots on pairs 1, 2, and 3; treatment 乙 has 1, 1, and 2 red dots; treatment 丙 has 2, 1, and 1 red dots, with pair 2 showing partial synapsis. Include a small legend at right labeled \"完整联会\", \"部分联会\", \"交换位点\". Use blue bridges and red dots as the only highlights.",
+    "final_image_prompt": "An annotated figure, split into 3 horizontal rows viewed from above, labeled \"处理甲\", \"处理乙\", and \"处理丙\" from top to bottom. In each row place 3 homologous chromosome pairs from left to right, labeled \"第1对\", \"第2对\", \"第3对\". Each pair has 2 parallel black chromosome lines. Show synapsis with blue bridge marks: complete synapsis has 3 blue bridges, partial synapsis has 1 blue bridge at one end. Add red dots labeled \"交换位点\": treatment 甲 has 1, 0, and 2 red dots on pairs 1, 2, and 3; treatment 乙 has 1, 1, and 2 red dots; treatment 丙 has 2, 1, and 1 red dots, with pair 2 showing partial synapsis. Include a small legend at right labeled \"完整联会\", \"部分联会\", \"交换位点\". Use blue bridges and red dots as the only highlights.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各处理的联会状态和交换位点分布，必须从图中读取九个二价体的局部事实并组合筛选，才能确定哪一处理满足判据。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "处理甲三对同源染色体的交换位点分布为1、0、2",
+        "处理乙三对同源染色体均为完整联会且交换位点分布为1、1、2",
+        "处理丙第2对同源染色体为部分联会"
+      ],
+      "validation_rules": [
+        "逐一检查每个处理下三对同源染色体是否均为完整联会",
+        "逐一检查每个处理下三对同源染色体是否均至少有1个交换位点",
+        "只有同时满足两个必要条件的处理可判为符合后期Ⅰ稳定分离的必要判据"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-006-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-006",
+    "kp_name": "细胞信号转导",
+    "question_language": "zh",
+    "question_text": "图中蓝色干预只作用于该通路中的一个组件，且不改变各组件表达量。根据图示的通路关系与四种实验读数，蓝色干预最合理的作用机制是哪一项？",
+    "options": {
+      "A": "促进G蛋白处于活化状态，并且其下游效应仍依赖腺苷酸环化酶产生第二信使",
+      "B": "直接激活PKA，因此即使第二信使读数不升高也能使底物磷酸化增加",
+      "C": "通过RTK启动MAPK激酶级联，与图示G蛋白通路无关",
+      "D": "阻断受体与配体结合，使受体上游信号输入降低"
+    },
+    "correct_answer": "A",
+    "explanation": "需要同时读图中的通路箭头和四组实验读数。第一，图示通路为受体经G蛋白调控腺苷酸环化酶，产生第二信使后激活PKA并使底物磷酸化。第二，蓝色干预在无配体时使第二信使与底物磷酸化均升高，说明它不是单纯阻断受体结合，也不是直接只作用于PKA。第三，加入腺苷酸环化酶抑制条件后，蓝色干预下第二信使读数下降，底物磷酸化也随之下降，说明蓝色干预的效应仍依赖腺苷酸环化酶产生第二信使。第四，图中未显示RTK或MAPK级联，不能将该效应解释为RTK途径。因此最合理的是促进G蛋白活化，并经腺苷酸环化酶和第二信使传递到PKA。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "机制推断",
+    "blueprint_image_type": "annotated_figure",
+    "image_path": "images/15075ce28bea4c1d.png",
+    "image_prompt": "An annotated figure of a GPCR signaling experiment. The global layout is split into an upper pathway diagram and a lower grouped bar chart, viewed straight on. The upper pathway has 6 main components from left to right: membrane receptor (labeled \"受体\"), G protein (labeled \"G蛋白\"), adenylyl cyclase (labeled \"腺苷酸环化酶\"), second messenger (labeled \"第二信使\"), PKA (labeled \"PKA\"), and substrate P (labeled \"底物P\"). Draw arrows: receptor to G protein, G protein to adenylyl cyclase, adenylyl cyclase to second messenger, second messenger to PKA, PKA to substrate P. Put a blue star beside G protein and an inhibition bar pointing to adenylyl cyclase. The lower chart has 4 columns labeled \"无配体\", \"配体\", \"蓝色干预\", \"蓝色干预+AC抑制\"; each column has 2 bars labeled \"第二信使读数\" and \"底物P磷酸化读数\" with values 18/16, 76/70, 74/68, and 22/20. Use blue highlight only for the intervention marker and title.",
+    "final_image_prompt": "An annotated figure of a GPCR signaling experiment. The global layout is split into an upper pathway diagram and a lower grouped bar chart, viewed straight on. The upper pathway has 6 main components from left to right: membrane receptor (labeled \"受体\"), G protein (labeled \"G蛋白\"), adenylyl cyclase (labeled \"腺苷酸环化酶\"), second messenger (labeled \"第二信使\"), PKA (labeled \"PKA\"), and substrate P (labeled \"底物P\"). Draw arrows: receptor to G protein, G protein to adenylyl cyclase, adenylyl cyclase to second messenger, second messenger to PKA, PKA to substrate P. Put a blue star beside G protein and an inhibition bar pointing to adenylyl cyclase. The lower chart has 4 columns labeled \"无配体\", \"配体\", \"蓝色干预\", \"蓝色干预+AC抑制\"; each column has 2 bars labeled \"第二信使读数\" and \"底物P磷酸化读数\" with values 18/16, 76/70, 74/68, and 22/20. Use blue highlight only for the intervention marker and title.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "关键判断依赖图中蓝色标记的位置、通路箭头顺序以及四组双读数的数值变化；仅凭题干和选项无法确定干预作用点和是否依赖第二信使。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "蓝色干预对应的第二信使读数与底物P磷酸化读数均接近配体条件",
+        "蓝色干预加AC抑制后两个读数均接近无配体条件",
+        "蓝色标记在G蛋白旁，且通路方向为受体到G蛋白到腺苷酸环化酶到第二信使到PKA到底物P"
+      ],
+      "validation_rules": [
+        "若一种解释认为蓝色干预直接激活PKA，则必须能解释第二信使读数随蓝色干预升高且随AC抑制降低；不能解释则排除",
+        "若一种解释认为蓝色干预阻断受体结合，则必须能解释无配体条件下下游读数升高；不能解释则排除",
+        "若一种解释引入图中未出现的RTK/MAPK级联，则不符合图示通路关系",
+        "能同时满足蓝色干预位置、第二信使升高、底物P磷酸化升高、AC抑制后两项读数降低的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-007-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-007",
+    "kp_name": "细胞凋亡与自噬",
+    "question_language": "zh",
+    "question_text": "下图展示了同一细胞系在4种条件下的合成实验读数。若把“自噬通量增强”限定为：LC3点状结构数和LC3-溶酶体重合数均高于对照；同时把“未进入明显凋亡执行阶段”限定为：活化caspase-3读数不高于Bcl-2读数。依据图中信息，哪一组最符合该判据？",
+    "options": {
+      "A": "处理甲",
+      "B": "处理乙",
+      "C": "处理丙",
+      "D": "处理丁"
+    },
+    "correct_answer": "C",
+    "explanation": "先读图中对照的两项自噬相关读数：LC3点状结构为8，LC3-溶酶体重合为3。再逐组比较：处理甲的LC3点状结构为14且重合为7，均高于对照，但其活化caspase-3为11，高于Bcl-2的5，提示已偏向凋亡执行阶段，不符合第二个限定。处理乙的LC3点状结构为10，高于对照，但重合为2，低于对照，不符合自噬通量增强。处理丙的LC3点状结构为13、重合为6，均高于对照；同时活化caspase-3为4，不高于Bcl-2的9，符合两个判据。处理丁的LC3点状结构为7，低于对照，且活化caspase-3为8，高于Bcl-2的3，也不符合。因此答案为C。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/44818a42590c47c1.png",
+    "image_prompt": "A scientific diagram showing synthetic cell biology experiment readings, viewed frontally as five vertical condition boxes in one row. From left to right, draw boxes labeled \"对照\", \"处理甲\", \"处理乙\", \"处理丙\", and \"处理丁\". Inside each box place four fixed icons: upper left green dot cluster labeled \"LC3点状结构\", upper right yellow merged vesicle icon labeled \"LC3-溶酶体重合\", lower left red enzyme icon labeled \"活化caspase-3\", lower right blue shield icon labeled \"Bcl-2\". Show numbers beside icons: 对照 green 8, yellow 3; 处理甲 green 14, yellow 7, red 11, blue 5; 处理乙 green 10, yellow 2, red 3, blue 8; 处理丙 green 13, yellow 6, red 4, blue 9; 处理丁 green 7, yellow 5, red 8, blue 3. Connect no arrows; use a bottom legend with the same four labels and colors.",
+    "final_image_prompt": "A scientific diagram showing synthetic cell biology experiment readings, viewed frontally as five vertical condition boxes in one row. From left to right, draw boxes labeled \"对照\", \"处理甲\", \"处理乙\", \"处理丙\", and \"处理丁\". Inside each box place four fixed icons: upper left green dot cluster labeled \"LC3点状结构\", upper right yellow merged vesicle icon labeled \"LC3-溶酶体重合\", lower left red enzyme icon labeled \"活化caspase-3\", lower right blue shield icon labeled \"Bcl-2\". Show numbers beside icons: 对照 green 8, yellow 3; 处理甲 green 14, yellow 7, red 11, blue 5; 处理乙 green 10, yellow 2, red 3, blue 8; 处理丙 green 13, yellow 6, red 4, blue 9; 处理丁 green 7, yellow 5, red 8, blue 3. Connect no arrows; use a bottom legend with the same four labels and colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判据，不给出各组读数；必须读取图中每个处理组与对照的数字并进行组合比较，才能确定唯一答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "对照的LC3点状结构数和LC3-溶酶体重合数",
+        "4个处理组各自的LC3点状结构数",
+        "4个处理组各自的LC3-溶酶体重合数",
+        "4个处理组各自的活化caspase-3与Bcl-2读数"
+      ],
+      "validation_rules": [
+        "先确认候选处理组的LC3点状结构数高于对照LC3点状结构数",
+        "再确认候选处理组的LC3-溶酶体重合数高于对照LC3-溶酶体重合数",
+        "最后确认同一候选处理组的活化caspase-3读数不高于Bcl-2读数",
+        "只有同时满足三个判据的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S21-008-Q0001",
+    "subject_id": "S21",
+    "subject_name": "生物学",
+    "kp_id": "S21-M01-008",
+    "kp_name": "细胞连接与细胞外基质",
+    "question_language": "zh",
+    "question_text": "某基础细胞生物学实验比较4组上皮细胞片层的连接与基质相关读数。若判定“最符合整合素-胶原介导的细胞外基质锚定增强，且没有以紧密连接通透性升高为主要代价”的组别需满足：先计算锚定指数$AI=胶原纤维组织度\\times整合素聚集指数$；仅在紧密连接示踪通量低于$4.0$的组别中比较$AI$；若仍需区分，则参考间隙连接染料转移是否不低于$5$。根据图中数据，应选哪一组？",
+    "options": {
+      "A": "甲组",
+      "B": "乙组",
+      "C": "丙组",
+      "D": "丁组"
+    },
+    "correct_answer": "C",
+    "explanation": "先从图中读取4组的胶原纤维组织度、整合素聚集指数、紧密连接示踪通量和间隙连接染料转移。按题干规则，先计算$AI=胶原纤维组织度\\times整合素聚集指数$：甲组为$7\\times5=35$，乙组为$6\\times8=48$，丙组为$8\\times7=56$，丁组为$5\\times9=45$。然后排除紧密连接示踪通量不低于$4.0$的组别，乙组通量为$5.5$，不符合“没有以紧密连接通透性升高为主要代价”的条件。剩余甲、丙、丁中，丙组$AI=56$最高；同时丙组间隙连接染料转移为$6$，不低于$5$，不提示细胞间通讯读数明显降低。因此最符合条件的是丙组，选C。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "数据解读",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/4c608e9bad7a4aca.png",
+    "image_prompt": "A data visualization chart showing grouped bars. Use a front-facing layout with four x-axis groups from left to right labeled \"甲组\", \"乙组\", \"丙组\", and \"丁组\", and a y-axis labeled \"读数\" with ticks 0, 2, 4, 6, 8, 10. Each group contains exactly 4 adjacent bars in this order: green bar labeled \"胶原纤维组织度\", blue bar labeled \"整合素聚集指数\", red bar labeled \"紧密连接示踪通量\", purple bar labeled \"间隙连接染料转移\". Values are: 甲组 7, 5, 2.0, 8; 乙组 6, 8, 5.5, 4; 丙组 8, 7, 3.0, 6; 丁组 5, 9, 1.5, 3. Put each number above its bar. Place the legend in the upper right with the four Chinese labels. Use distinct flat colors.",
+    "final_image_prompt": "A data visualization chart showing grouped bars. Use a front-facing layout with four x-axis groups from left to right labeled \"甲组\", \"乙组\", \"丙组\", and \"丁组\", and a y-axis labeled \"读数\" with ticks 0, 2, 4, 6, 8, 10. Each group contains exactly 4 adjacent bars in this order: green bar labeled \"胶原纤维组织度\", blue bar labeled \"整合素聚集指数\", red bar labeled \"紧密连接示踪通量\", purple bar labeled \"间隙连接染料转移\". Values are: 甲组 7, 5, 2.0, 8; 乙组 6, 8, 5.5, 4; 丙组 8, 7, 3.0, 6; 丁组 5, 9, 1.5, 3. Put each number above its bar. Place the legend in the upper right with the four Chinese labels. Use distinct flat colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，不给出4组各指标数值；必须读取图中的柱高并进行筛选与计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "4组的胶原纤维组织度数值只在图中给出",
+        "4组的整合素聚集指数数值只在图中给出",
+        "4组的紧密连接示踪通量数值只在图中给出",
+        "4组的间隙连接染料转移数值只在图中给出"
+      ],
+      "validation_rules": [
+        "从图中读取每组胶原纤维组织度和整合素聚集指数，并计算二者乘积",
+        "排除紧密连接示踪通量不低于4.0的组别",
+        "在未被排除的组别中比较锚定指数",
+        "确认所选组别的间隙连接染料转移不低于5",
+        "唯一符合所有规则的选项为C"
+      ]
+    }
+  }
+]

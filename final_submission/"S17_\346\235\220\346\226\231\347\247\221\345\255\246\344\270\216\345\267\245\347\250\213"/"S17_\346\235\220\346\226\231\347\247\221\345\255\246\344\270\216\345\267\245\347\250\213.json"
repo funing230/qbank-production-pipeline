@@ -1,0 +1,518 @@
+[
+  {
+    "question_id": "S17-001-Q0001",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "某二元合金需选择一个热处理状态，使室温继承组织尽量有利于密排滑移，同时要求处理时处于单相区，并且处理温度低于 $850\\ ^\\circ\\mathrm{C}$。根据图中的相区、晶体结构标注和候选点位置，最合适的选择是哪一个？",
+    "options": {
+      "A": "P点",
+      "B": "Q点",
+      "C": "R点",
+      "D": "S点"
+    },
+    "correct_answer": "C",
+    "explanation": "先从图中读取四个候选点所在相区和温度：P点在单相 $\\beta$ 区但温度高于 $850\\ ^\\circ\\mathrm{C}$；Q点在单相 $\\alpha$ 区且低于 $850\\ ^\\circ\\mathrm{C}$；R点在单相 $\\gamma$ 区且低于 $850\\ ^\\circ\\mathrm{C}$；S点落在两相区，不满足单相要求。再结合图中结构标注，$\\alpha$ 为 BCC，密排程度低于 FCC/HCP；$\\beta$ 为 FCC，虽属密排结构但温度约束不满足；$\\gamma$ 为 HCP，且图中给出 $c/a=1.62$，接近理想密排六方的 $1.633$，可作为密排滑移优先的单相低温候选。因此唯一同时满足单相、低于 $850\\ ^\\circ\\mathrm{C}$、且具有密排结构特征的是R点。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查晶体学基础",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/3805368fe6d34cbd.png",
+    "image_prompt": "A phase diagram chart for a binary alloy. The global layout is one rectangular plot with composition B in at.% on the horizontal axis and temperature in °C on the vertical axis. Show 3 black phase-boundary curves dividing 4 labeled regions: left-lower region labeled \"α: BCC, a=0.290 nm\", central-upper region labeled \"β: FCC, a=0.360 nm\", right-lower region labeled \"γ: HCP, c/a=1.62\", and a narrow middle-lower band labeled \"β+γ\". Place exactly 4 circular candidate points: P at 45 at.% B and 900 °C, Q at 20 at.% B and 760 °C, R at 76 at.% B and 820 °C, S at 62 at.% B and 780 °C, each labeled \"P\", \"Q\", \"R\", \"S\". Draw one red dashed horizontal line at 850 °C labeled \"850 °C\". Use blue markers for P and Q, green marker for R, gray marker for S.",
+    "final_image_prompt": "A phase diagram chart for a binary alloy. The global layout is one rectangular plot with composition B in at.% on the horizontal axis and temperature in °C on the vertical axis. Show 3 black phase-boundary curves dividing 4 labeled regions: left-lower region labeled \"α: BCC, a=0.290 nm\", central-upper region labeled \"β: FCC, a=0.360 nm\", right-lower region labeled \"γ: HCP, c/a=1.62\", and a narrow middle-lower band labeled \"β+γ\". Place exactly 4 circular candidate points: P at 45 at.% B and 900 °C, Q at 20 at.% B and 760 °C, R at 76 at.% B and 820 °C, S at 62 at.% B and 780 °C, each labeled \"P\", \"Q\", \"R\", \"S\". Draw one red dashed horizontal line at 850 °C labeled \"850 °C\". Use blue markers for P and Q, green marker for R, gray marker for S.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各候选点的相区、温度、相结构或两相区位置；必须依赖相图读取这些事实并组合筛选。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "P点所在相区、温度位置和β区FCC标注只由图片给出",
+        "Q点所在相区、温度位置和α区BCC标注只由图片给出",
+        "R点所在相区、温度位置和γ区HCP及c/a标注只由图片给出",
+        "S点所在两相区和温度位置只由图片给出"
+      ],
+      "validation_rules": [
+        "候选点必须位于单相区，排除位于β+γ区的点",
+        "候选点温度必须低于$850\\ ^\\circ\\mathrm{C}$，排除高于该线的点",
+        "剩余候选点中应优先选择具有FCC或HCP密排结构特征的相区",
+        "若HCP区给出的$c/a$接近理想密排六方比值$1.633$，则可作为密排结构候选"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-001-Q0003",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "图中给出一个正交晶胞的剖切示意，阴影面为某一晶面族中的一个代表晶面。根据图示截距判断该晶面的 Miller 指数应为哪一项？",
+    "options": {
+      "A": "$(214)$",
+      "B": "$(124)$",
+      "C": "$(241)$",
+      "D": "$(112)$"
+    },
+    "correct_answer": "A",
+    "explanation": "Miller 指数的求法是：先读出晶面在晶轴上的截距，再取倒数，最后化为最小整数比。由图可读出该阴影面在三个正轴方向上的截距分别为 $a$、$2b$ 和 $\\frac{1}{2}c$。因此以晶胞参数为单位的截距为 $1, 2, \\frac{1}{2}$。取倒数得到 $1, \\frac{1}{2}, 2$，再同乘以 $2$ 化为最小整数比，得到 $2:1:4$，所以 Miller 指数为 $(214)$。B 项把截距数值近似当作指数顺序处理；C 项混淆了 $b$、$c$ 方向的倒数结果；D 项相当于只考虑了部分倒数关系，未正确处理 $2b$ 和 $\\frac{1}{2}c$ 的共同整数化。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "微观组织分析",
+    "blueprint_image_type": "foundation_cross_section",
+    "image_path": "images/6e20770759f2491a.png",
+    "image_prompt": "A foundation_cross_section diagram of a crystallographic unit cell. Show a transparent orthorhombic cell in oblique cutaway view, with one origin at the lower left front corner. Draw 3 black axes from the origin: horizontal right axis labeled \"a\", diagonal back axis labeled \"b\", and vertical axis labeled \"c\". Place 3 red intercept points: point A on the positive a axis at the tick labeled \"a\", point B on the positive b axis at the extended tick labeled \"2b\", and point C halfway up the positive c axis at the tick labeled \"c/2\". Draw 1 light-blue triangular shaded plane passing through A, B, and C, labeled \"P\". Add 3 thin dashed guide lines from A, B, and C to the plane edges. Label the cell \"正交晶胞\" and origin \"O\". Use red only for intercept points.",
+    "final_image_prompt": "A foundation_cross_section diagram of a crystallographic unit cell. Show a transparent orthorhombic cell in oblique cutaway view, with one origin at the lower left front corner. Draw 3 black axes from the origin: horizontal right axis labeled \"a\", diagonal back axis labeled \"b\", and vertical axis labeled \"c\". Place 3 red intercept points: point A on the positive a axis at the tick labeled \"a\", point B on the positive b axis at the extended tick labeled \"2b\", and point C halfway up the positive c axis at the tick labeled \"c/2\". Draw 1 light-blue triangular shaded plane passing through A, B, and C, labeled \"P\". Add 3 thin dashed guide lines from A, B, and C to the plane edges. Label the cell \"正交晶胞\" and origin \"O\". Use red only for intercept points.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出三个轴向截距的具体位置，必须通过图片读取阴影面与 a、b、c 三个晶轴的交点标注，才能计算 Miller 指数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中 a 方向截距对应一个 a 单位",
+        "图中 b 方向截距对应两个 b 单位",
+        "图中 c 方向截距对应二分之一个 c 单位",
+        "阴影晶面经过三个标出的轴向截距点"
+      ],
+      "validation_rules": [
+        "将图中截距写成晶胞参数单位下的 $1,2,\\frac{1}{2}$",
+        "对三个截距分别取倒数，得到 $1,\\frac{1}{2},2$",
+        "将倒数比同乘以 $2$ 化为最小整数比 $2:1:4$",
+        "与选项比较，唯一匹配项为 $(214)$"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-001-Q0001",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "图中为某立方晶体微观组织中选定晶粒的放大晶胞示意。橙色斜面表示该晶粒内某一晶面族的一个代表晶面。根据图示截距，判断该晶面的 Miller 指数为哪一项？",
+    "options": {
+      "A": "$(211)$",
+      "B": "$(121)$",
+      "C": "$(112)$",
+      "D": "$(122)$"
+    },
+    "correct_answer": "A",
+    "explanation": "立方晶体中晶面的 Miller 指数由晶面在三个晶轴上的截距决定。先从图中读取橙色晶面与三个晶轴的截距：在 $x$ 轴方向的截距为 $a/2$，在 $y$ 轴方向的截距为 $a$，在 $z$ 轴方向的截距为 $a$。将截距写成以晶格常数 $a$ 为单位的形式，即 $1/2, 1, 1$。Miller 指数取这些截距倒数并化为最小整数比：$1/(1/2)=2$，$1/1=1$，$1/1=1$，因此该晶面的 Miller 指数为 $(211)$。选项 B 和 C 分别对应把不同晶轴的截距顺序混淆；选项 D 则不符合对截距取倒数后的整数比。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "微观组织分析",
+    "blueprint_image_type": "foundation_cross_section",
+    "image_path": "images/72916409dba0449b.png",
+    "image_prompt": "Diagram of a foundation cross-section crystallography schematic, split into a left microstructure strip and a right enlarged unit-cell region. On the left, draw 3 polygonal grain regions in one horizontal strip; the central region is labeled \"晶粒M\". A single arrow labeled \"放大\" points from \"晶粒M\" to the right. On the right, draw 1 cubic unit cell labeled \"立方晶胞\", with 3 axes starting from the same lower-front corner: x slanting forward-left, y horizontal to the right, and z vertical upward. Inside the cube, draw 1 translucent orange triangular plane labeled \"晶面P\". The plane connects three intercept points: on x axis labeled \"a/2\", on y axis labeled \"a\", and on z axis labeled \"a\". Highlight the orange plane and the three intercept dots.",
+    "final_image_prompt": "Diagram of a foundation cross-section crystallography schematic, split into a left microstructure strip and a right enlarged unit-cell region. On the left, draw 3 polygonal grain regions in one horizontal strip; the central region is labeled \"晶粒M\". A single arrow labeled \"放大\" points from \"晶粒M\" to the right. On the right, draw 1 cubic unit cell labeled \"立方晶胞\", with 3 axes starting from the same lower-front corner: x slanting forward-left, y horizontal to the right, and z vertical upward. Inside the cube, draw 1 translucent orange triangular plane labeled \"晶面P\". The plane connects three intercept points: on x axis labeled \"a/2\", on y axis labeled \"a\", and on z axis labeled \"a\". Highlight the orange plane and the three intercept dots.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出晶面在三个晶轴上的具体截距，只有通过图中截距标记和晶轴标签才能确定Miller指数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中橙色晶面在$x$轴上的截距为$a/2$",
+        "图中橙色晶面在$y$轴上的截距为$a$",
+        "图中橙色晶面在$z$轴上的截距为$a$",
+        "三个截距必须按图中$x,y,z$晶轴标签的顺序读取"
+      ],
+      "validation_rules": [
+        "将三个截距以$a$为单位写为$1/2,1,1$",
+        "分别取倒数得到$2,1,1$",
+        "按$x,y,z$顺序写成Miller指数$(211)$"
+      ]
+    }
+  },
+  {
+    "question_id": "89e568c4e00f437e",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "某单相金属材料的截面被画成土层剖面式示意图。若只计算图中被红框标出的层，取该金属原子量 $M=63.5\\ \\mathrm{g\\ mol^{-1}}$、阿伏伽德罗常数 $N_A=6.02\\times10^{23}\\ \\mathrm{mol^{-1}}$，并按图中孔隙率修正。该层的表观密度最接近下列哪一项？",
+    "options": {
+      "A": "$8.97\\ \\mathrm{g\\ cm^{-3}}$",
+      "B": "$8.00\\ \\mathrm{g\\ cm^{-3}}$",
+      "C": "$4.48\\ \\mathrm{g\\ cm^{-3}}$",
+      "D": "$4.00\\ \\mathrm{g\\ cm^{-3}}$"
+    },
+    "correct_answer": "B",
+    "explanation": "由图可知，被红框标出的层采用面心立方晶胞，因此每个晶胞的等效原子数为 $n=4$；晶胞边长为 $a=0.361\\ \\mathrm{nm}=3.61\\times10^{-8}\\ \\mathrm{cm}$；孔隙率为 $P=0.108$。先计算无孔隙时理论密度：$\\rho_0=\\frac{nM}{N_Aa^3}=\\frac{4\\times63.5}{(6.02\\times10^{23})(3.61\\times10^{-8})^3}\\approx8.97\\ \\mathrm{g\\ cm^{-3}}$。再按孔隙率修正表观密度：$\\rho=\\rho_0(1-P)=8.97\\times(1-0.108)\\approx8.00\\ \\mathrm{g\\ cm^{-3}}$。因此正确答案为 B。A 是只算理论密度而没有按孔隙率修正；C 是把面心立方误当作体心立方、取 $n=2$ 后算出的理论密度；D 是把面心立方误当作体心立方、取 $n=2$ 后又进行孔隙修正的典型错误。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "性能计算",
+    "blueprint_image_type": "soil_profile_diagram",
+    "image_path": "images/89e568c4e00f437e.png",
+    "image_prompt": "A soil profile diagram for a crystallography-based material cross-section. The layout is vertical, split into 3 horizontal layers from top to bottom. The top layer is light gray (labeled \"表层扰动区\"), the middle layer is light blue with a red rectangular outline (labeled \"致密功能层\"), and the bottom layer is light yellow (labeled \"基底粗晶区\"). Inside the middle layer, place 6 small white circular pore symbols and the label \"P=10.8%\" near the right side. To the right, draw 1 enlarged cubic unit cell connected to the middle layer by 1 thin leader line. The unit cell has 8 corner atoms and 6 face-center atoms, labeled \"FCC\" above it. Put \"a=0.361 nm\" along the bottom cube edge. Add leader labels \"角点原子\" to 1 corner atom and \"面心原子\" to 1 face-center atom. Use red only for the middle-layer outline.",
+    "final_image_prompt": "A soil profile diagram for a crystallography-based material cross-section. The layout is vertical, split into 3 horizontal layers from top to bottom. The top layer is light gray (labeled \"表层扰动区\"), the middle layer is light blue with a red rectangular outline (labeled \"致密功能层\"), and the bottom layer is light yellow (labeled \"基底粗晶区\"). Inside the middle layer, place 6 small white circular pore symbols and the label \"P=10.8%\" near the right side. To the right, draw 1 enlarged cubic unit cell connected to the middle layer by 1 thin leader line. The unit cell has 8 corner atoms and 6 face-center atoms, labeled \"FCC\" above it. Put \"a=0.361 nm\" along the bottom cube edge. Add leader labels \"角点原子\" to 1 corner atom and \"面心原子\" to 1 face-center atom. Use red only for the middle-layer outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出被选层的晶胞类型、晶胞边长和孔隙率；这些关键输入只能从图中读取，删除图片后无法唯一计算密度。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "被计算对象是图中红框标出的中间层",
+        "该层对应FCC晶胞",
+        "该层晶胞边长为0.361 nm",
+        "该层孔隙率为10.8%",
+        "晶胞图显示面心立方的角点和面心原子分布"
+      ],
+      "validation_rules": [
+        "必须由FCC判断每晶胞等效原子数为4",
+        "必须将0.361 nm换算为3.61×10^-8 cm",
+        "必须先用$\\rho_0=\\frac{nM}{N_Aa^3}$计算理论密度，约为8.97 g/cm³",
+        "必须再用$\\rho=\\rho_0(1-P)$进行孔隙率修正",
+        "最终结果应最接近$8.00\\ \\mathrm{g\\ cm^{-3}}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-001-Q0005",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "图中红色状态点所示二元合金在该温度达到等温平衡。若只按相分数加权估算该合金中原子的平均配位数，且相分数按图中同温度水平线的杠杆定律计算，则平均配位数最接近哪一项？",
+    "options": {
+      "A": "$9.79$",
+      "B": "$10.21$",
+      "C": "$8.00$",
+      "D": "$11.14$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出红色点位于两相区，同温度水平线左端为 $C_\\alpha=22\\ \\mathrm{at.\\%B}$，右端为 $C_\\beta=78\\ \\mathrm{at.\\%B}$，合金总体成分为 $C_0=47\\ \\mathrm{at.\\%B}$。杠杆定律给出 $f_\\beta=\\frac{C_0-C_\\alpha}{C_\\beta-C_\\alpha}=\\frac{47-22}{78-22}=\\frac{25}{56}$，$f_\\alpha=1-f_\\beta=\\frac{31}{56}$。图中还标出 $\\alpha$ 相为 BCC，配位数 $z_\\alpha=8$；$\\beta$ 相为 FCC，配位数 $z_\\beta=12$。因此平均配位数为 $\\bar z=f_\\alpha z_\\alpha+f_\\beta z_\\beta=\\frac{31}{56}\\times 8+\\frac{25}{56}\\times 12=9.7857$，最接近 $9.79$。选项 B 是把杠杆臂对应相分数反用；C 是只取 $\\alpha$ 相配位数；D 是用总体成分比例直接加权或漏用两相端点导致的偏大结果。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查晶体学基础",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/b531f5ee40fe48c5.png",
+    "image_prompt": "A phase diagram chart for a binary alloy. The layout is a single 2D panel with vertical axis (labeled \"Temperature / °C\") and horizontal axis (labeled \"Composition / at.% B\"), composition increasing left to right. Draw 3 phase fields: left field (labeled \"α: BCC, z=8\"), central lens-shaped field (labeled \"α + β\"), and right field (labeled \"β: FCC, z=12\"). Draw 2 curved black phase boundaries enclosing the central field. Add 1 blue dashed horizontal tie line (labeled \"760 °C\") crossing the central field from the left boundary mark (labeled \"22\") to the right boundary mark (labeled \"78\"). Place 1 red filled circle on the tie line between them (labeled \"P\") with a vertical composition marker below it (labeled \"47\"). Use red only for P and blue only for the tie line.",
+    "final_image_prompt": "A phase diagram chart for a binary alloy. The layout is a single 2D panel with vertical axis (labeled \"Temperature / °C\") and horizontal axis (labeled \"Composition / at.% B\"), composition increasing left to right. Draw 3 phase fields: left field (labeled \"α: BCC, z=8\"), central lens-shaped field (labeled \"α + β\"), and right field (labeled \"β: FCC, z=12\"). Draw 2 curved black phase boundaries enclosing the central field. Add 1 blue dashed horizontal tie line (labeled \"760 °C\") crossing the central field from the left boundary mark (labeled \"22\") to the right boundary mark (labeled \"78\"). Place 1 red filled circle on the tie line between them (labeled \"P\") with a vertical composition marker below it (labeled \"47\"). Use red only for P and blue only for the tie line.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出相区、两相端点成分、P点成分或各相配位数；这些关键数值和结构标签只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "两相区水平线左端成分为22 at.%B",
+        "两相区水平线右端成分为78 at.%B",
+        "状态点P成分为47 at.%B",
+        "α相为BCC且配位数为8",
+        "β相为FCC且配位数为12"
+      ],
+      "validation_rules": [
+        "必须用图中两相边界端点和P点成分计算相分数",
+        "必须按杠杆定律得到 $f_\\beta=\\frac{47-22}{78-22}$ 和 $f_\\alpha=1-f_\\beta$",
+        "必须用图中标注的两相配位数计算 $\\bar z=f_\\alpha\\times 8+f_\\beta\\times 12$",
+        "计算结果四舍五入后应最接近 $9.79$"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-001-Q0003",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-001",
+    "kp_name": "晶体学基础",
+    "question_language": "zh",
+    "question_text": "图为某二元合金在一段温度-成分图中的晶体结构相区和密排面等价数注记。对图中红色状态点的合金作等温平衡，假定两相区内相比例可用水平连线杠杆定则估算，且相比例等于随机抽取晶粒的比例。若抽取图中给定数量的晶粒，并统计每个晶粒中晶体学上互不平行的密排面族数，预期总数最接近哪一项？",
+    "options": {
+      "A": "470",
+      "B": "440",
+      "C": "530",
+      "D": "800"
+    },
+    "correct_answer": "C",
+    "explanation": "先读图：红色状态点位于两相区，需要用同一温度下的水平连线作杠杆定则。该水平连线与左、右相界对应的成分分别为 $C_\\alpha=24$ 和 $C_\\gamma=64$，总体成分为 $C_0=42$。因此相分数为 $f_\\alpha=\\frac{C_\\gamma-C_0}{C_\\gamma-C_\\alpha}=\\frac{64-42}{64-24}=0.55$，$f_\\gamma=\\frac{C_0-C_\\alpha}{C_\\gamma-C_\\alpha}=\\frac{42-24}{64-24}=0.45$。图中注记给出 $\\alpha$ 相为 FCC，每个晶粒有 $4$ 组互不平行的 $\\{111\\}$ 密排面族；$\\gamma$ 相为 HCP，每个晶粒有 $1$ 组 basal 密排面族。抽取晶粒数为 $N=200$，故预期统计总数为 $200\\times(0.55\\times4+0.45\\times1)=200\\times2.65=530$。所以选 C。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查晶体学基础",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/d108fed8f6bf42ad.png",
+    "image_prompt": "A phase diagram chart with temperature-composition axes, viewed straight on. The horizontal axis is labeled \"B含量 / at.%\" from 0 to 100, and the vertical axis is labeled \"温度 / °C\" from 600 to 1000. Draw 4 phase regions: left region labeled \"α\", central lens region labeled \"α+γ\", right region labeled \"γ\", and upper narrow region labeled \"β\". At temperature 760, draw one red horizontal tie line from composition 24 to 64, passing through a red dot at composition 42 labeled \"P\". Mark the three x positions with labels \"24\", \"42\", and \"64\", and the y value with label \"760\". Add a boxed legend labeled \"结构注记\" containing three rows: \"α: FCC, 密排面族数 4\", \"γ: HCP, 密排面族数 1\", \"β: BCC, 密排面族数 0\". Add a small box labeled \"N=200\". Highlight only the tie line and point in red.",
+    "final_image_prompt": "A phase diagram chart with temperature-composition axes, viewed straight on. The horizontal axis is labeled \"B含量 / at.%\" from 0 to 100, and the vertical axis is labeled \"温度 / °C\" from 600 to 1000. Draw 4 phase regions: left region labeled \"α\", central lens region labeled \"α+γ\", right region labeled \"γ\", and upper narrow region labeled \"β\". At temperature 760, draw one red horizontal tie line from composition 24 to 64, passing through a red dot at composition 42 labeled \"P\". Mark the three x positions with labels \"24\", \"42\", and \"64\", and the y value with label \"760\". Add a boxed legend labeled \"结构注记\" containing three rows: \"α: FCC, 密排面族数 4\", \"γ: HCP, 密排面族数 1\", \"β: BCC, 密排面族数 0\". Add a small box labeled \"N=200\". Highlight only the tie line and point in red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目没有给出状态点坐标、相界端点、各相密排面族数或抽取晶粒数；这些均只能从图中读取，删除图片后无法进行杠杆定则和加权统计。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "红色状态点的成分与温度",
+        "等温线两端相界成分",
+        "α相与γ相的晶体结构及密排面族数",
+        "抽取晶粒数"
+      ],
+      "validation_rules": [
+        "必须先确认状态点处于α+γ两相区",
+        "必须用水平连线两端成分对总体成分作杠杆定则",
+        "必须按α相和γ相各自密排面族数加权",
+        "计算式应为 $200\\times\\left[\\frac{64-42}{64-24}\\times4+\\frac{42-24}{64-24}\\times1\\right]=530$"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0004",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "某二元金属合金需从高温完全液态冷却到室温，工艺要求最终组织为单相，并且所选晶体结构应具有金属常见结构中的高配位数和较高致密度；同时冷却路径不能经过图中的密排六方相区。根据图示信息，最合适选择哪一条成分路径？",
+    "options": {
+      "A": "路径 P",
+      "B": "路径 Q",
+      "C": "路径 R",
+      "D": "路径 S"
+    },
+    "correct_answer": "C",
+    "explanation": "读图需要先判断四条竖直冷却路径在室温端落入的相区，再结合图中结构标注筛选。路径 P 的室温端位于 $\\alpha$ 区，图中标注 $\\alpha$ 为 BCC；BCC 的配位数为 $8$，致密度约为 $0.68$，不满足高配位数和较高致密度要求。路径 Q 的室温端位于 $\\alpha+\\beta$ 两相区，不满足最终单相。路径 R 的室温端位于 $\\beta$ 区，图中标注 $\\beta$ 为 FCC；FCC 的配位数为 $12$，致密度约为 $0.74$，且该竖直路径未进入 $\\gamma$ 相区，因此满足全部要求。路径 S 在冷却过程中经过 $\\gamma$ 相区，图中 $\\gamma$ 为 HCP，虽然 HCP 也有 $12$ 配位和约 $0.74$ 致密度，但违反不能经过密排六方相区的工艺约束。因此答案为 C。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查金属晶体结构",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/02cd21dfea1c4bad.png",
+    "image_prompt": "A phase diagram for a binary metal alloy. Layout: one large temperature-composition chart on the left and three small structure reference boxes stacked on the right. The x-axis is labeled \"B含量 / at.% B\" from 0 to 100, and the y-axis is labeled \"温度 / °C\" from 25 to 900. Show five regions labeled \"L\", \"α\", \"α+β\", \"β\", and \"γ\"; at 25 °C the regions span 0-30, 30-55, 55-78, and 78-100 at.% B in that order. Draw four vertical downward arrows from 900 °C to 25 °C at 18, 42, 66, and 84 at.% B, labeled \"P\", \"Q\", \"R\", and \"S\". Connect α, β, γ regions to right boxes labeled \"α: BCC, CN=8, APF=0.68\", \"β: FCC, CN=12, APF=0.74\", and \"γ: HCP, CN=12, APF=0.74\". Highlight R in blue and S in orange; lightly tint γ pale red.",
+    "final_image_prompt": "A phase diagram for a binary metal alloy. Layout: one large temperature-composition chart on the left and three small structure reference boxes stacked on the right. The x-axis is labeled \"B含量 / at.% B\" from 0 to 100, and the y-axis is labeled \"温度 / °C\" from 25 to 900. Show five regions labeled \"L\", \"α\", \"α+β\", \"β\", and \"γ\"; at 25 °C the regions span 0-30, 30-55, 55-78, and 78-100 at.% B in that order. Draw four vertical downward arrows from 900 °C to 25 °C at 18, 42, 66, and 84 at.% B, labeled \"P\", \"Q\", \"R\", and \"S\". Connect α, β, γ regions to right boxes labeled \"α: BCC, CN=8, APF=0.68\", \"β: FCC, CN=12, APF=0.74\", and \"γ: HCP, CN=12, APF=0.74\". Highlight R in blue and S in orange; lightly tint γ pale red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各路径的成分位置、室温相区范围、相区对应晶体结构或路径是否穿过γ区；这些关键信息都必须从图中读取并组合判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "路径P、Q、R、S分别对应18、42、66、84 at.% B",
+        "室温下四个相区的成分范围分别为α、α+β、β、γ",
+        "α、β、γ分别对应BCC、FCC、HCP及其CN和APF数值",
+        "路径S经过γ区而路径R不经过γ区"
+      ],
+      "validation_rules": [
+        "候选路径的室温端必须位于单相区，排除落入两相区的路径",
+        "候选路径对应的结构必须具有CN=12且APF=0.74",
+        "候选路径从高温到室温的竖直线不得穿过γ相区",
+        "同时满足单相终态、结构参数要求和避开γ区约束的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0002",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "图示为同一多晶金属样品中四个局部取向区域的最近邻“结点—连线”示意。判读规则为：只统计从中心结点出发的实线同色连线作为第一近邻配位，灰色虚线表示晶界接触而不计入配位。已知常见金属结构中，BCC 的配位数为 $8$、致密度约为 $0.68$，FCC/HCP 的配位数为 $12$、致密度约为 $0.74$。若要找出最可能保留 BCC 型局部结构的区域，应选择哪一项？",
+    "options": {
+      "A": "区域甲",
+      "B": "区域乙",
+      "C": "区域丙",
+      "D": "区域丁"
+    },
+    "correct_answer": "B",
+    "explanation": "根据题干规则，必须先从图中分别读取中心结点的实线同色连线数，再与该区域给出的局部致密度估计共同判断。区域甲的中心结点有 $12$ 条实线同色连线，且图示致密度为 $0.74$，更符合 FCC/HCP 而非 BCC。区域乙的中心结点有 $8$ 条实线同色连线，且致密度为 $0.68$，同时满足 BCC 的配位数和致密度特征。区域丙若把灰色虚线误计入会得到 $8$，但按规则只有 $6$ 条实线同色连线，不满足 BCC 配位数。区域丁有 $8$ 条实线同色连线，但图示致密度为 $0.74$，与 BCC 的典型致密度不符。因此最可能保留 BCC 型局部结构的是区域乙。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "微观组织分析",
+    "blueprint_image_type": "knot_diagram",
+    "image_path": "images/15cf66ae726c4785.png",
+    "image_prompt": "A knot diagram for metal microstructure interpretation, arranged as four equal panels from left to right. Panel 1 is labeled \"区域甲\" and has 1 central black knot connected by 12 black solid lines to 12 surrounding knots, with \"η=0.74\" below. Panel 2 is labeled \"区域乙\" and has 1 central black knot connected by 8 black solid lines to 8 surrounding knots, with \"η=0.68\" below. Panel 3 is labeled \"区域丙\" and has 1 central black knot connected by 6 black solid lines to 6 surrounding knots plus 2 gray dashed lines to 2 surrounding knots, with \"η=0.68\" below. Panel 4 is labeled \"区域丁\" and has 1 central black knot connected by 8 black solid lines to 8 surrounding knots, with \"η=0.74\" below. Add a small legend labeled \"实线：同色第一近邻\" and \"虚线：晶界接触\". Use a pale blue outline around panel 2.",
+    "final_image_prompt": "A knot diagram for metal microstructure interpretation, arranged as four equal panels from left to right. Panel 1 is labeled \"区域甲\" and has 1 central black knot connected by 12 black solid lines to 12 surrounding knots, with \"η=0.74\" below. Panel 2 is labeled \"区域乙\" and has 1 central black knot connected by 8 black solid lines to 8 surrounding knots, with \"η=0.68\" below. Panel 3 is labeled \"区域丙\" and has 1 central black knot connected by 6 black solid lines to 6 surrounding knots plus 2 gray dashed lines to 2 surrounding knots, with \"η=0.68\" below. Panel 4 is labeled \"区域丁\" and has 1 central black knot connected by 8 black solid lines to 8 surrounding knots, with \"η=0.74\" below. Add a small legend labeled \"实线：同色第一近邻\" and \"虚线：晶界接触\". Use a pale blue outline around panel 2.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判读规则和晶体结构判据，具体每个区域的连线数量、虚实线差异及η数值都只能从图中读取；删除图片后无法判断哪个区域同时满足条件。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "区域甲、乙、丙、丁各自中心结点的实线连接数量",
+        "区域丙含有不计入配位的灰色虚线连接",
+        "四个区域各自的η标注数值"
+      ],
+      "validation_rules": [
+        "只统计中心结点出发的黑色实线连接作为配位数",
+        "将统计得到的配位数与BCC配位数$8$比较",
+        "将图中η数值与BCC典型致密度$0.68$比较",
+        "同时满足配位数和致密度条件的区域对应正确选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0005",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "某二元金属合金需从图示高温状态缓冷至室温。工艺要求：忽略液相区后，固态冷却路径上不能经过两相区，且所有出现的固态晶体结构都必须具有金属常见最高配位数与最高致密度。仅依据图中信息，应选择哪一条成分路径？",
+    "options": {
+      "A": "路径 P",
+      "B": "路径 Q",
+      "C": "路径 R",
+      "D": "路径 S"
+    },
+    "correct_answer": "C",
+    "explanation": "金属常见结构中，FCC 与 HCP 的配位数均为 $12$，致密度均为 $0.74$；BCC 的配位数为 $8$，致密度约为 $0.68$。因此满足要求的固态路径必须只经过 FCC 或 HCP 的单相区，且不能进入两相区。由图读出：路径 P 在固态范围内经过 BCC 单相区，不满足配位数和致密度要求；路径 Q 穿过 BCC+FCC 两相区，且涉及 BCC，不满足；路径 S 穿过 FCC+HCP 两相区，虽两种结构本身均为致密结构，但违反“不能经过两相区”；只有路径 R 从高温固态到室温均位于 FCC 单相区。因此应选路径 R。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查金属晶体结构",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/637e9545ab5d4f97.png",
+    "image_prompt": "A phase diagram for a binary metal A-B alloy. Use a 2D temperature-composition layout with B content on the horizontal axis and temperature on the vertical axis. Show 5 phase regions: upper region labeled \"L\", left lower region labeled \"α(BCC)\", central region labeled \"β(FCC)\", right lower region labeled \"ε(HCP)\", a band between α and β labeled \"α+β\", and a band between β and ε labeled \"β+ε\". Draw 4 vertical dashed cooling paths from 850°C to 25°C: at 12 at.% B labeled \"P\", at 32 at.% B labeled \"Q\", at 54 at.% B labeled \"R\", and at 76 at.% B labeled \"S\". Add axis labels \"B含量 / at.%\" and \"温度 / °C\", with tick labels 0, 20, 40, 60, 80, 100 and 25°C, 400°C, 850°C, 1200°C. In the upper right, add a small table labeled \"结构性质\" with \"BCC: CN=8, APF=0.68\", \"FCC: CN=12, APF=0.74\", \"HCP: CN=12, APF=0.74\". Highlight the 4 paths with thin colored lines.",
+    "final_image_prompt": "A phase diagram for a binary metal A-B alloy. Use a 2D temperature-composition layout with B content on the horizontal axis and temperature on the vertical axis. Show 5 phase regions: upper region labeled \"L\", left lower region labeled \"α(BCC)\", central region labeled \"β(FCC)\", right lower region labeled \"ε(HCP)\", a band between α and β labeled \"α+β\", and a band between β and ε labeled \"β+ε\". Draw 4 vertical dashed cooling paths from 850°C to 25°C: at 12 at.% B labeled \"P\", at 32 at.% B labeled \"Q\", at 54 at.% B labeled \"R\", and at 76 at.% B labeled \"S\". Add axis labels \"B含量 / at.%\" and \"温度 / °C\", with tick labels 0, 20, 40, 60, 80, 100 and 25°C, 400°C, 850°C, 1200°C. In the upper right, add a small table labeled \"结构性质\" with \"BCC: CN=8, APF=0.68\", \"FCC: CN=12, APF=0.74\", \"HCP: CN=12, APF=0.74\". Highlight the 4 paths with thin colored lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各路径穿过的相区、各相区对应的晶体结构以及结构性质小表；没有图无法判断哪条冷却路径同时满足单相和致密结构约束。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四条路径的成分位置分别为 P、Q、R、S",
+        "四条路径在固态冷却段各自穿过的相区",
+        "BCC、FCC、HCP 在图中给出的配位数与致密度"
+      ],
+      "validation_rules": [
+        "先判定固态冷却段是否经过两相区，经过两相区者排除",
+        "再判定路径中出现的固态结构是否均满足配位数 $12$ 且致密度 $0.74$",
+        "只有同时满足单相路径约束和最高配位数、最高致密度约束的路径为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0001",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "图示为同一金属多晶样品中四个局部区域的最近邻结点示意。若将中心结点的总配位数按图中两类连线数相加得到，并将局部致密度按图中给出的等效球体总体积与晶胞体积之比计算，则哪一个区域最符合体心立方金属局部结构的判据：配位数为 $8$，且致密度落在 $0.66$ 到 $0.70$ 之间？",
+    "options": {
+      "A": "Rα",
+      "B": "Rβ",
+      "C": "Rγ",
+      "D": "Rδ"
+    },
+    "correct_answer": "B",
+    "explanation": "需要同时读取每个区域的两类连线数和两个体积数值。Rα 的配位数为 $6+6=12$，致密度为 $37/50=0.74$，更接近 FCC/HCP 的高配位致密堆积特征，不符合 BCC。Rβ 的配位数为 $4+4=8$，致密度为 $34/50=0.68$，同时满足 BCC 的配位数 $8$ 与约 $0.68$ 的致密度范围。Rγ 的配位数为 $4+4=8$，但致密度为 $37/50=0.74$，只满足配位数而不满足致密度。Rδ 的配位数为 $3+5=8$，但致密度为 $32/50=0.64$，低于允许范围。因此唯一符合条件的是 Rβ。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "微观组织分析",
+    "blueprint_image_type": "knot_diagram",
+    "image_path": "images/758ccec4a3c2430d.png",
+    "image_prompt": "A knot diagram showing four local metal microstructure regions in a single horizontal row, viewed from above. Draw four equal rectangular frames from left to right labeled \"Rα\", \"Rβ\", \"Rγ\", and \"Rδ\". In each frame place 1 central black node. For Rα, draw 6 solid blue spokes and 6 dashed orange spokes from the node; label below \"Vs=37, Vc=50\". For Rβ, draw 4 solid blue spokes and 4 dashed orange spokes; label below \"Vs=34, Vc=50\". For Rγ, draw 4 solid blue spokes and 4 dashed orange spokes; label below \"Vs=37, Vc=50\". For Rδ, draw 3 solid blue spokes and 5 dashed orange spokes; label below \"Vs=32, Vc=50\". Add a legend at the top: solid blue line labeled \"n_in\" and dashed orange line labeled \"n_out\". Use blue and orange highlights only for the two line types.",
+    "final_image_prompt": "A knot diagram showing four local metal microstructure regions in a single horizontal row, viewed from above. Draw four equal rectangular frames from left to right labeled \"Rα\", \"Rβ\", \"Rγ\", and \"Rδ\". In each frame place 1 central black node. For Rα, draw 6 solid blue spokes and 6 dashed orange spokes from the node; label below \"Vs=37, Vc=50\". For Rβ, draw 4 solid blue spokes and 4 dashed orange spokes; label below \"Vs=34, Vc=50\". For Rγ, draw 4 solid blue spokes and 4 dashed orange spokes; label below \"Vs=37, Vc=50\". For Rδ, draw 3 solid blue spokes and 5 dashed orange spokes; label below \"Vs=32, Vc=50\". Add a legend at the top: solid blue line labeled \"n_in\" and dashed orange line labeled \"n_out\". Use blue and orange highlights only for the two line types.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各区域的连线数量和体积数值，必须从图中读取并计算后才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个区域各自的 n_in 与 n_out 数值只由图中连线数量给出",
+        "四个区域各自的 Vs 与 Vc 数值只在图中标注",
+        "Rβ、Rγ、Rδ 在配位数或致密度上构成相近视觉干扰"
+      ],
+      "validation_rules": [
+        "对每个区域计算总配位数 $n=n_{in}+n_{out}$",
+        "对每个区域计算局部致密度 $P=V_s/V_c$",
+        "只有同时满足 $n=8$ 且 $0.66\\le P\\le0.70$ 的区域可选",
+        "按图中数值计算，唯一满足两个条件的选项为 B"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0005",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "图中给出二元金属合金的简化平衡相图及四条候选成分冷却路径。某工艺要求从图示高温端缓冷到低温端时，固态路径不得穿过任何固态两相区；在满足该约束的候选路径中，计算单相固态区间的温度加权平均致密度 $\\bar{P}=\\frac{\\sum P_i\\Delta T_i}{\\sum \\Delta T_i}$，其中 BCC 取 $0.68$，FCC 和 HCP 均取 $0.74$。应选择哪一条路径？",
+    "options": {
+      "A": "路径 B",
+      "B": "路径 C",
+      "C": "路径 A",
+      "D": "路径 D"
+    },
+    "correct_answer": "B",
+    "explanation": "先按图中每条竖直路径读出从高温端到低温端经过的固态区间。路径 A 中间穿过固态两相区，路径 D 也穿过固态两相区，因此不满足工艺约束。路径 B 的单相区间为 FCC 的 $900\\sim760\\,^{\\circ}\\mathrm{C}$ 和 BCC 的 $760\\sim300\\,^{\\circ}\\mathrm{C}$，所以 $\\bar{P}_B=\\frac{0.74\\times140+0.68\\times460}{600}=0.694$。路径 C 的单相区间为 FCC 的 $900\\sim820\\,^{\\circ}\\mathrm{C}$、HCP 的 $820\\sim640\\,^{\\circ}\\mathrm{C}$ 和 BCC 的 $640\\sim300\\,^{\\circ}\\mathrm{C}$，所以 $\\bar{P}_C=\\frac{0.74\\times80+0.74\\times180+0.68\\times340}{600}=0.706$。在满足不穿过固态两相区的候选路径中，路径 C 的温度加权平均致密度更高，因此选 B。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查金属晶体结构",
+    "blueprint_image_type": "phase_diagram",
+    "image_path": "images/8e3c9ba8385e4f1c.png",
+    "image_prompt": "A phase diagram with a rectangular plot area, x-axis labeled \"Composition B / at.%\" from 0 to 100 and y-axis labeled \"Temperature / °C\" from 300 to 900. Draw four vertical downward arrows at x=15, 35, 55, and 75, labeled \"A\", \"B\", \"C\", and \"D\". Show five phase fields: \"FCC\" in the upper-left, \"HCP\" in the upper-right, \"BCC\" across the lower region, \"BCC+FCC\" as a narrow middle-left band, and \"HCP+BCC\" as a narrow middle-right band. Add dashed horizontal guides at 640, 700, 760, and 820 °C. At path A, boundaries occur at 700 and 640; at B, at 760; at C, at 820 and 640; at D, at 820 and 700. On the right, include a small table labeled \"packing factor\" with rows \"BCC 0.68\", \"FCC 0.74\", \"HCP 0.74\". Use distinct pale fills for phase fields.",
+    "final_image_prompt": "A phase diagram with a rectangular plot area, x-axis labeled \"Composition B / at.%\" from 0 to 100 and y-axis labeled \"Temperature / °C\" from 300 to 900. Draw four vertical downward arrows at x=15, 35, 55, and 75, labeled \"A\", \"B\", \"C\", and \"D\". Show five phase fields: \"FCC\" in the upper-left, \"HCP\" in the upper-right, \"BCC\" across the lower region, \"BCC+FCC\" as a narrow middle-left band, and \"HCP+BCC\" as a narrow middle-right band. Add dashed horizontal guides at 640, 700, 760, and 820 °C. At path A, boundaries occur at 700 and 640; at B, at 760; at C, at 820 and 640; at D, at 820 and 700. On the right, include a small table labeled \"packing factor\" with rows \"BCC 0.68\", \"FCC 0.74\", \"HCP 0.74\". Use distinct pale fills for phase fields.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各路径经过的相区、边界温度和致密度表；这些信息必须从相图及右侧小表读取后才能完成筛选和加权计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四条路径各自对应的成分位置",
+        "每条路径穿过的相区类型",
+        "每条路径上各相区边界对应的温度",
+        "图中给出的 BCC、FCC、HCP 致密度数值"
+      ],
+      "validation_rules": [
+        "先排除任何经过固态两相区的路径",
+        "只对满足约束的路径计算单相固态区间的温度加权平均致密度",
+        "比较剩余路径的 $\\bar{P}$，选择数值较高者",
+        "计算结果应得到 $\\bar{P}_B=0.694$，$\\bar{P}_C=0.706$"
+      ]
+    }
+  },
+  {
+    "question_id": "f8904daa1e954bfc",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "某金属薄板后续要进行大变形冷成形。工艺部门规定：优先选择图中最终组织为单相，且其晶体结构同时满足最高常见金属致密度与室温下独立滑移系数量最多的处理窗口；出现第二相网络或片层均视为不合格。根据图示，应选择哪一种工艺窗口？",
+    "options": {
+      "A": "窗口 I",
+      "B": "窗口 II",
+      "C": "窗口 III",
+      "D": "窗口 IV"
+    },
+    "correct_answer": "B",
+    "explanation": "需要先从图中读取每个工艺窗口的组织组成与晶体结构信息，再按工艺约束筛选。窗口 I 含有 BCC 基体和 HCP 片层，属于混相；窗口 IV 含有 FCC 晶粒和 BCC 晶界网络，也属于混相，因此都不满足单相要求。窗口 III 虽为单相 HCP，致密度为 $0.74$，但 HCP 在室温下独立滑移系通常较少，不是大变形冷成形的优选结构。窗口 II 为单相 FCC 等轴晶，致密度同为 $0.74$，且 FCC 结构拥有最多的独立滑移系，塑性极佳，无第二相网络或片层，因此最符合该工艺选择原则。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "工艺选择",
+    "blueprint_image_type": "microstructure_diagram",
+    "image_path": "images/f8904daa1e954bfc.png",
+    "image_prompt": "A microstructure diagram with a horizontal four-column layout, viewed straight on, divided into regions labeled \"窗口 I\", \"窗口 II\", \"窗口 III\", and \"窗口 IV\". In column I, show one simplified grain field with light blue matrix and orange plates, labeled \"BCC 基体 82%\" and \"HCP 片层 18%\", plus a small BCC knot diagram labeled \"CN 8\" and \"APF 0.68\". In column II, show one green equiaxed grain field without extra regions, labeled \"FCC 单相 100%\", plus an FCC knot diagram labeled \"CN 12\" and \"APF 0.74\". In column III, show one purple plate-like grain field, labeled \"HCP 单相 100%\", plus an HCP knot diagram labeled \"CN 12\" and \"APF 0.74\". In column IV, show green grains with a connected light blue boundary network, labeled \"FCC 晶粒 68%\" and \"BCC 网络 32%\". Use thin leader lines from labels to the corresponding phases, with color highlights only for the phases.",
+    "final_image_prompt": "A microstructure diagram with a horizontal four-column layout, viewed straight on, divided into regions labeled \"窗口 I\", \"窗口 II\", \"窗口 III\", and \"窗口 IV\". In column I, show one simplified grain field with light blue matrix and orange plates, labeled \"BCC 基体 82%\" and \"HCP 片层 18%\", plus a small BCC knot diagram labeled \"CN 8\" and \"APF 0.68\". In column II, show one green equiaxed grain field without extra regions, labeled \"FCC 单相 100%\", plus an FCC knot diagram labeled \"CN 12\" and \"APF 0.74\". In column III, show one purple plate-like grain field, labeled \"HCP 单相 100%\", plus an HCP knot diagram labeled \"CN 12\" and \"APF 0.74\". In column IV, show green grains with a connected light blue boundary network, labeled \"FCC 晶粒 68%\" and \"BCC 网络 32%\". Use thin leader lines from labels to the corresponding phases, with color highlights only for the phases.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "四个处理窗口的相组成、比例、第二相形貌以及 CN/APF 数值都只在图中给出；没有图片无法判断哪个窗口同时满足单相和结构-性能要求。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "窗口 I 含 BCC 基体与 HCP 片层两种结构区域",
+        "窗口 II 是 FCC 单相，且图中给出 CN 12 和 APF 0.74",
+        "窗口 III 是 HCP 单相，且图中给出 CN 12 和 APF 0.74",
+        "窗口 IV 含 FCC 晶粒和连续 BCC 网络"
+      ],
+      "validation_rules": [
+        "先排除图中显示为混相或存在第二相网络、片层的窗口",
+        "在剩余单相窗口中比较晶体结构与冷成形所需结构-性能对应关系",
+        "满足单相、APF 为 0.74，且室温下独立滑移系数量最多（FCC）的窗口为唯一正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S17-002-Q0001",
+    "subject_id": "S17",
+    "subject_name": "材料科学与工程",
+    "kp_id": "S17-M01-002",
+    "kp_name": "金属晶体结构",
+    "question_language": "zh",
+    "question_text": "图示为同一金属多晶样品中四个局部取向区域的最近邻“结点-连线”示意。若该金属在某工艺条件下可能保留体心立方型局部结构，应选择图中哪一个区域作为最可能的判据对象？",
+    "options": {
+      "A": "区域 P",
+      "B": "区域 Q",
+      "C": "区域 R",
+      "D": "区域 S"
+    },
+    "correct_answer": "B",
+    "explanation": "体心立方结构中，一个中心原子的最近邻为立方体的 $8$ 个顶角原子，因此配位数为 $8$，其原子堆积致密度约为 $0.68$，不属于最密堆积。读图时不能只看是否有中心结点，而要同时判断最近邻结点数和空间分布：区域 P 表现为上下两层各 $3$ 个、同层 $6$ 个的 $12$ 配位特征，更符合 HCP 的局部最近邻关系；区域 R 显示 $12$ 个面心方向最近邻，更符合 FCC；区域 S 只有 $6$ 个沿正交轴向的最近邻，不符合常见 BCC/FCC/HCP 金属晶体局部配位。区域 Q 的中心结点与 $8$ 个角点结点相连，且旁注的致密度为 $0.68$，与体心立方结构相符。因此答案为 B。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "微观组织分析",
+    "blueprint_image_type": "knot_diagram",
+    "image_path": "images/fb34ca37b589468d.png",
+    "image_prompt": "A knot diagram, arranged as four equal panels in one horizontal row from left to right. The panels are labeled \"区域 P\", \"区域 Q\", \"区域 R\", and \"区域 S\". Each panel has 1 black central node labeled \"中心原子\" and blue neighboring nodes labeled \"最近邻\" once in a small legend. Panel P contains 12 blue nodes: 6 around the center in one plane, 3 above, and 3 below, with 12 gray lines from the center. Panel Q contains 8 blue nodes at cube-corner positions: 4 front corners and 4 back corners, with 8 gray lines from the center. Panel R contains 12 blue nodes at face-direction positions, with 12 gray lines. Panel S contains 6 blue nodes on left, right, up, down, front, and back axes, with 6 gray lines. Show labels \"致密度 0.74\" for P and R, \"致密度 0.68\" for Q, and \"致密度 0.52\" for S. Use a thin red border around panel Q.",
+    "final_image_prompt": "A knot diagram, arranged as four equal panels in one horizontal row from left to right. The panels are labeled \"区域 P\", \"区域 Q\", \"区域 R\", and \"区域 S\". Each panel has 1 black central node labeled \"中心原子\" and blue neighboring nodes labeled \"最近邻\" once in a small legend. Panel P contains 12 blue nodes: 6 around the center in one plane, 3 above, and 3 below, with 12 gray lines from the center. Panel Q contains 8 blue nodes at cube-corner positions: 4 front corners and 4 back corners, with 8 gray lines from the center. Panel R contains 12 blue nodes at face-direction positions, with 12 gray lines. Panel S contains 6 blue nodes on left, right, up, down, front, and back axes, with 6 gray lines. Show labels \"致密度 0.74\" for P and R, \"致密度 0.68\" for Q, and \"致密度 0.52\" for S. Use a thin red border around panel Q.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各区域的最近邻数、空间分组或致密度，必须读取图中结点连接和标注后才能判断哪一区域符合体心立方局部结构。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个区域各自的中心结点连线数不同",
+        "区域 Q 的最近邻结点呈 4 个前角和 4 个后角的角点式分布",
+        "图中只有一个候选区域同时具有 8 个最近邻和 0.68 的致密度标注"
+      ],
+      "validation_rules": [
+        "体心立方结构的最近邻配位数应为 $8$",
+        "体心立方结构的致密度约为 $0.68$",
+        "若候选区域为 $12$ 配位且致密度为 $0.74$，应排除为密排型结构",
+        "若候选区域只有 $6$ 个最近邻，即使致密度较低，也不能判为体心立方结构"
+      ]
+    }
+  }
+]

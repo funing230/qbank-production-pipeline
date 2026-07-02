@@ -1,0 +1,522 @@
+[
+  {
+    "question_id": "S18-001-Q0003",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-001",
+    "kp_name": "热力学基本概念",
+    "question_language": "zh",
+    "question_text": "图示为某闭口热力系统从状态1到状态2的准静态过程。规定热量传入系统为正、系统对外做功为正。根据图中信息，系统在全过程中的净热量交换最接近下列哪一项？",
+    "options": {
+      "A": "$+81\\ \\mathrm{kJ}$，热量传入系统",
+      "B": "$+49\\ \\mathrm{kJ}$，热量传入系统",
+      "C": "$+17\\ \\mathrm{kJ}$，热量传入系统",
+      "D": "$+105\\ \\mathrm{kJ}$，热量传入系统"
+    },
+    "correct_answer": "A",
+    "explanation": "该图给出闭口系统，故全过程可用闭口系统热力学第一定律 $Q=\\Delta U+W$。由图中状态标注可读得 $U_1=46\\ \\mathrm{kJ}$、$U_2=95\\ \\mathrm{kJ}$，所以 $\\Delta U=U_2-U_1=49\\ \\mathrm{kJ}$。边界功应由 $p$-$V$ 图下的面积确定：过程 $1\\to a$ 为定压膨胀，$W_{1a}=p\\Delta V=200\\ \\mathrm{kPa}\\times(0.28-0.12)\\ \\mathrm{m^3}=32\\ \\mathrm{kJ}$；过程 $a\\to2$ 为定容过程，$W_{a2}=0$。因此 $W=32\\ \\mathrm{kJ}$，$Q=49+32=81\\ \\mathrm{kJ}$。符号为正，表示热量传入系统，故选A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/601f91056fb6411c.png",
+    "image_prompt": "An engineering diagram showing a closed thermodynamic system and its process data. Global layout: split into left and right regions, with the piston-cylinder schematic on the left and a p-V diagram plus a small energy table on the right. Draw exactly 6 main elements: cylinder, piston, blue gas region, red heat arrow, p-V plot, and internal-energy table. The cylinder contains gas (labeled \"气体\") inside a boundary (labeled \"闭口系统\"); a red arrow points into the gas (labeled \"Q\"), and a black upward arrow above the piston is labeled \"活塞位移\". On the p-V plot, axes are labeled \"p-kPa\" and \"V-m³\". Plot point 1 at V=0.12 and p=200, point a at V=0.28 and p=200, point 2 at V=0.28 and p=350. Connect 1 to a horizontally and a to 2 vertically with arrows. Show a table labeled \"U1=46 kJ\" and \"U2=95 kJ\". Use red only for heat arrow and light blue only for gas.",
+    "final_image_prompt": "An engineering diagram showing a closed thermodynamic system and its process data. Global layout: split into left and right regions, with the piston-cylinder schematic on the left and a p-V diagram plus a small energy table on the right. Draw exactly 6 main elements: cylinder, piston, blue gas region, red heat arrow, p-V plot, and internal-energy table. The cylinder contains gas (labeled \"气体\") inside a boundary (labeled \"闭口系统\"); a red arrow points into the gas (labeled \"Q\"), and a black upward arrow above the piston is labeled \"活塞位移\". On the p-V plot, axes are labeled \"p-kPa\" and \"V-m³\". Plot point 1 at V=0.12 and p=200, point a at V=0.28 and p=200, point 2 at V=0.28 and p=350. Connect 1 to a horizontally and a to 2 vertically with arrows. Show a table labeled \"U1=46 kJ\" and \"U2=95 kJ\". Use red only for heat arrow and light blue only for gas.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出状态坐标、过程分段形式和内能数值，必须从图片读取这些事实后才能计算边界功与内能变化。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "p-V图中点1、点a、点2的坐标",
+        "过程线由水平段和竖直段组成",
+        "状态1和状态2的内能数值"
+      ],
+      "validation_rules": [
+        "按闭口系统第一定律使用$Q=\\Delta U+W$",
+        "由图中内能表计算$\\Delta U=95-46=49\\ \\mathrm{kJ}$",
+        "由p-V图水平段计算边界功$W=200\\times(0.28-0.12)=32\\ \\mathrm{kJ}$，竖直段功为零",
+        "净热量为$Q=49+32=81\\ \\mathrm{kJ}$且为正"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-001-Q0004",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-001",
+    "kp_name": "热力学基本概念",
+    "question_language": "zh",
+    "question_text": "图示为某闭口活塞—气缸系统的一个准静态复合过程。按工程热力学符号约定，系统对外做功为正。若只考虑图示边界功和内能变化，则整个过程系统与外界交换的净热量 $Q_{1\\to3}$ 为多少？",
+    "options": {
+      "A": "$22.5\\ \\mathrm{kJ}$",
+      "B": "$27.5\\ \\mathrm{kJ}$",
+      "C": "$47.5\\ \\mathrm{kJ}$",
+      "D": "$52.5\\ \\mathrm{kJ}$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图读出过程 $1\\to2$ 为直线过程，边界功等于 $p$-$V$ 图下的梯形面积：$W_{12}=\\frac{180+300}{2}\\times(0.25-0.10)=36\\ \\mathrm{kJ}$，其中 $1\\ \\mathrm{kPa\\cdot m^3}=1\\ \\mathrm{kJ}$。过程 $2\\to3$ 为定容过程，$\\Delta V=0$，故 $W_{23}=0$。图中还给出 $U_1=54\\ \\mathrm{kJ}$、$U_3=65.5\\ \\mathrm{kJ}$，所以 $\\Delta U_{1\\to3}=65.5-54=11.5\\ \\mathrm{kJ}$。闭口系统第一定律为 $Q-W=\\Delta U$，因此 $Q_{1\\to3}=\\Delta U+W=11.5+36=47.5\\ \\mathrm{kJ}$，选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/88069ab60aff4cf3.png",
+    "image_prompt": "An engineering diagram, split into a left schematic region and a right pressure-volume plot. On the left, draw 1 piston-cylinder assembly with a dashed boundary around the gas (labeled \"系统边界\"), the gas region (labeled \"气体\"), the moving piston (labeled \"活塞\"), and the enclosed system label \"闭口系统\". On the right, draw 1 p-V graph with horizontal axis labeled \"V(m³)\" and vertical axis labeled \"p(kPa)\". Place 3 points: point 1 labeled \"1\" at \"V=0.10 m³, p=180 kPa\", point 2 labeled \"2\" at \"V=0.25 m³, p=300 kPa\", and point 3 labeled \"3\" at \"V=0.25 m³, p=120 kPa\". Connect 1 to 2 by one red straight arrow; connect 2 to 3 by one blue vertical arrow. Add 1 data box beside the graph showing \"U1=54 kJ\" and \"U3=65.5 kJ\".",
+    "final_image_prompt": "An engineering diagram, split into a left schematic region and a right pressure-volume plot. On the left, draw 1 piston-cylinder assembly with a dashed boundary around the gas (labeled \"系统边界\"), the gas region (labeled \"气体\"), the moving piston (labeled \"活塞\"), and the enclosed system label \"闭口系统\". On the right, draw 1 p-V graph with horizontal axis labeled \"V(m³)\" and vertical axis labeled \"p(kPa)\". Place 3 points: point 1 labeled \"1\" at \"V=0.10 m³, p=180 kPa\", point 2 labeled \"2\" at \"V=0.25 m³, p=300 kPa\", and point 3 labeled \"3\" at \"V=0.25 m³, p=120 kPa\". Connect 1 to 2 by one red straight arrow; connect 2 to 3 by one blue vertical arrow. Add 1 data box beside the graph showing \"U1=54 kJ\" and \"U3=65.5 kJ\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出状态坐标、过程形状和内能数值；这些关键计算条件只能从图片读取，删除图片后无法唯一确定热量。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "状态1、2、3在p-V图中的坐标数值",
+        "1到2为斜直线过程，2到3为定容过程",
+        "状态1和状态3的内能数值"
+      ],
+      "validation_rules": [
+        "必须用图中p-V坐标计算边界功，而不能假定压力恒定",
+        "必须识别2到3体积不变，因此该段边界功为零",
+        "必须按闭口系统第一定律$Q-W=\\Delta U$计算净热量",
+        "计算结果应为$47.5\\ \\mathrm{kJ}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-001-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-001",
+    "kp_name": "热力学基本概念",
+    "question_language": "zh",
+    "question_text": "图示为某闭口简单可压缩系统的一个准静态循环，坐标轴单位见图。按工程热力学常用符号约定：系统对外做功为正、热量传入系统为正。仅依据图中循环方向与几何信息，判断该循环全过程的能量交换结论。",
+    "options": {
+      "A": "系统净输出功 $30\\,\\mathrm{kJ}$，并净吸收热量 $30\\,\\mathrm{kJ}$。",
+      "B": "系统净输入功 $30\\,\\mathrm{kJ}$，并净放出热量 $30\\,\\mathrm{kJ}$。",
+      "C": "系统净输出功 $70\\,\\mathrm{kJ}$，并净吸收热量 $70\\,\\mathrm{kJ}$。",
+      "D": "系统净输入功 $70\\,\\mathrm{kJ}$，并净放出热量 $70\\,\\mathrm{kJ}$。"
+    },
+    "correct_answer": "B",
+    "explanation": "该图为闭口系统的完整循环，因此全过程内能变化为 $\\Delta U_{\\mathrm{cycle}}=0$。边界功由 $p$-$V$ 图中有向过程的面积给出，且 $1\\,\\mathrm{kPa}\\cdot\\mathrm{m}^3=1\\,\\mathrm{kJ}$。过程 $A\\to B$ 为定压膨胀，$W_{AB}=100\\times(0.30-0.10)=20\\,\\mathrm{kJ}$；过程 $B\\to C$ 和 $D\\to A$ 为定容过程，边界功均为 $0$；过程 $C\\to D$ 为直线压缩，$W_{CD}=\\frac{300+200}{2}\\times(0.10-0.30)=-50\\,\\mathrm{kJ}$。故循环净功 $W_{\\mathrm{net}}=20-50=-30\\,\\mathrm{kJ}$，表示系统净输入功 $30\\,\\mathrm{kJ}$。由热力学第一定律 $Q_{\\mathrm{net}}-W_{\\mathrm{net}}=\\Delta U=0$，得 $Q_{\\mathrm{net}}=W_{\\mathrm{net}}=-30\\,\\mathrm{kJ}$，即系统净放出热量 $30\\,\\mathrm{kJ}$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查热力学基本概念",
+    "blueprint_image_type": "thermodynamic_cycle_diagram",
+    "image_path": "images/c4ddfdcf572d4df8.png",
+    "image_prompt": "A thermodynamic cycle diagram on a pressure-volume graph. Global layout: a single rectangular p-V coordinate plane viewed straight on, with V increasing to the right and p increasing upward. Draw 2 axes labeled \"V / m³\" and \"p / kPa\". Place 4 black state points: A at the lower left labeled \"A\", B at the lower right labeled \"B\", C at the upper right labeled \"C\", and D at the middle left labeled \"D\". Show tick labels \"0.10\" and \"0.30\" on the horizontal axis, and \"100\", \"200\", \"300\" on the vertical axis. Connect A to B with a rightward horizontal arrow, B to C with an upward vertical arrow, C to D with a diagonal arrow down-left, and D to A with a downward vertical arrow. Use light gray dashed guide lines through the labeled ticks; highlight the cycle line in dark blue.",
+    "final_image_prompt": "A thermodynamic cycle diagram on a pressure-volume graph. Global layout: a single rectangular p-V coordinate plane viewed straight on, with V increasing to the right and p increasing upward. Draw 2 axes labeled \"V / m³\" and \"p / kPa\". Place 4 black state points: A at the lower left labeled \"A\", B at the lower right labeled \"B\", C at the upper right labeled \"C\", and D at the middle left labeled \"D\". Show tick labels \"0.10\" and \"0.30\" on the horizontal axis, and \"100\", \"200\", \"300\" on the vertical axis. Connect A to B with a rightward horizontal arrow, B to C with an upward vertical arrow, C to D with a diagonal arrow down-left, and D to A with a downward vertical arrow. Use light gray dashed guide lines through the labeled ticks; highlight the cycle line in dark blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目没有给出各状态点坐标、过程方向和斜线段端点压力，这些决定边界功符号与大小的事实只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个状态点在 p-V 坐标图中的具体坐标",
+        "四段过程线的方向与几何形状",
+        "斜直过程连接的两个压力和两个体积刻度",
+        "竖直过程对应定容边界功为零所需的图形信息"
+      ],
+      "validation_rules": [
+        "按图中有向 p-V 面积计算各段边界功，膨胀为正、压缩为负。",
+        "水平段功为压力乘以体积变化，竖直段功为零，斜直段功为平均压力乘以体积变化。",
+        "循环过程满足 $\\Delta U=0$，因此 $Q_{\\mathrm{net}}=W_{\\mathrm{net}}$。",
+        "若得到 $W_{\\mathrm{net}}=-30\\,\\mathrm{kJ}$，则应判定系统净输入功 $30\\,\\mathrm{kJ}$ 且净放出热量 $30\\,\\mathrm{kJ}$。"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-001-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-001",
+    "kp_name": "热力学基本概念",
+    "question_language": "zh",
+    "question_text": "图示为某封闭气体系统从状态1到状态2的准静态过程。按工程热力学常用符号约定：系统吸热为正，系统对外做功为正。根据图中信息，判断该过程中系统与外界的热量交换为多少？",
+    "options": {
+      "A": "系统吸热 $190\\,\\mathrm{kJ}$",
+      "B": "系统吸热 $220\\,\\mathrm{kJ}$",
+      "C": "系统吸热 $250\\,\\mathrm{kJ}$",
+      "D": "系统吸热 $60\\,\\mathrm{kJ}$"
+    },
+    "correct_answer": "A",
+    "explanation": "封闭系统能量方程为 $\\Delta U=Q-W$，其中 $W$ 为系统对外的净功。由图读出状态内能变化为 $\\Delta U=U_2-U_1=345-220=125\\,\\mathrm{kJ}$。边界功箭头指向外界，表示系统对外做功 $95\\,\\mathrm{kJ}$；搅拌轴功箭头指向系统内部，表示外界对系统做功 $30\\,\\mathrm{kJ}$，按“系统对外做功为正”应记为 $-30\\,\\mathrm{kJ}$。因此净功 $W=95-30=65\\,\\mathrm{kJ}$。代入得 $Q=\\Delta U+W=125+65=190\\,\\mathrm{kJ}$，且为正，故系统吸热 $190\\,\\mathrm{kJ}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/d6bc1e307d404fd7.png",
+    "image_prompt": "An engineering diagram of a closed piston-cylinder thermodynamic system. Use a front view layout with one cylinder in the center, one movable piston at the top, and one stirrer paddle inside the lower half. Place two rectangular state boxes: left box labeled \"状态1\" with \"U1 = 220 kJ\", right box labeled \"状态2\" with \"U2 = 345 kJ\". The central gas region is labeled \"封闭系统\". Add one upward blue arrow from the piston to outside labeled \"Wb = 95 kJ\". Add one orange arrow from the lower-left outside into the stirrer labeled \"Ws = 30 kJ\". Add one red arrow from the lower-right outside into the cylinder labeled \"Q = ?\". Label the piston \"活塞\" and the paddle \"搅拌桨\". Use simple colored arrows only for the three energy interactions.",
+    "final_image_prompt": "An engineering diagram of a closed piston-cylinder thermodynamic system. Use a front view layout with one cylinder in the center, one movable piston at the top, and one stirrer paddle inside the lower half. Place two rectangular state boxes: left box labeled \"状态1\" with \"U1 = 220 kJ\", right box labeled \"状态2\" with \"U2 = 345 kJ\". The central gas region is labeled \"封闭系统\". Add one upward blue arrow from the piston to outside labeled \"Wb = 95 kJ\". Add one orange arrow from the lower-left outside into the stirrer labeled \"Ws = 30 kJ\". Add one red arrow from the lower-right outside into the cylinder labeled \"Q = ?\". Label the piston \"活塞\" and the paddle \"搅拌桨\". Use simple colored arrows only for the three energy interactions.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两状态内能、边界功、轴功数值及箭头方向；这些信息必须从图中读取并组合判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出状态1内能为 $220\\,\\mathrm{kJ}$",
+        "图中给出状态2内能为 $345\\,\\mathrm{kJ}$",
+        "图中边界功箭头指向外部且数值为 $95\\,\\mathrm{kJ}$",
+        "图中轴功箭头指向系统内部且数值为 $30\\,\\mathrm{kJ}$"
+      ],
+      "validation_rules": [
+        "必须按 $\\Delta U=U_2-U_1$ 计算内能变化",
+        "必须把指向外部的边界功计为系统对外正功",
+        "必须把指向系统内部的轴功计为系统对外负功",
+        "必须使用 $\\Delta U=Q-W$ 得到 $Q=190\\,\\mathrm{kJ}$，且热量为正表示吸热"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-002-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-002",
+    "kp_name": "热力学第一定律",
+    "question_language": "zh",
+    "question_text": "某稳态流动透平拟接入一个工艺用汽母管。忽略位能变化，并按图中给出的候选设备数据，用热力学第一定律判断：若要求轴功输出落在设计窗口内，且排汽必须接入指定母管，应选哪一台设备？",
+    "options": {
+      "A": "T-A",
+      "B": "T-B",
+      "C": "T-C",
+      "D": "T-D"
+    },
+    "correct_answer": "C",
+    "explanation": "稳态流动透平的能量平衡可写为 $\\dot W_{out}=\\dot m(\\Delta h+\\Delta ke)-\\dot Q_{loss}$，其中图中 $\\Delta h=h_1-h_2$，$\\Delta ke=(V_1^2-V_2^2)/2$ 已换算为 $\\mathrm{kJ/kg}$。还必须同时满足排汽压力接入图中指定母管。逐项计算：T-A 的 $\\dot W_{out}=6.0\\times(470-8)-120=2652\\ \\mathrm{kW}$，且压力匹配但功率低于窗口；T-B 的 $\\dot W_{out}=5.5\\times(540+6)-135=2868\\ \\mathrm{kW}$，功率在窗口内但排汽压力不匹配；T-C 的 $\\dot W_{out}=6.4\\times(455+14)-110=2891.6\\ \\mathrm{kW}$，且排汽压力匹配，满足全部条件；T-D 的 $\\dot W_{out}=5.8\\times(515-12)-70=2847.4\\ \\mathrm{kW}$，功率在窗口内但排汽压力不匹配。因此应选 T-C。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "设备选型",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/61c3bc768b0d491a.png",
+    "image_prompt": "A data visualization chart for steady-flow turbine selection. The layout is split into a wide table on the left and a narrow criteria panel on the right. The table has 4 candidate rows labeled \"T-A\", \"T-B\", \"T-C\", \"T-D\" and 5 columns labeled \"质量流量 kg/s\", \"焓降 kJ/kg\", \"动能修正 kJ/kg\", \"热损失 kW\", \"排汽压力 MPa\". Row values are T-A: 6.0, 470, -8, 120, 0.30; T-B: 5.5, 540, +6, 135, 0.45; T-C: 6.4, 455, +14, 110, 0.30; T-D: 5.8, 515, -12, 70, 0.20. The right panel shows one horizontal scale labeled \"轴功输出设计窗口\" with endpoints labeled \"2850 kW\" and \"2920 kW\", and one box below labeled \"目标排汽母管 0.30 MPa\". Add a rendered formula labeled \"W_out = ṁ(Δh + Δke) − Q_loss\" above the table. Use blue, green, orange, and red accent bars by column.",
+    "final_image_prompt": "A data visualization chart for steady-flow turbine selection. The layout is split into a wide table on the left and a narrow criteria panel on the right. The table has 4 candidate rows labeled \"T-A\", \"T-B\", \"T-C\", \"T-D\" and 5 columns labeled \"质量流量 kg/s\", \"焓降 kJ/kg\", \"动能修正 kJ/kg\", \"热损失 kW\", \"排汽压力 MPa\". Row values are T-A: 6.0, 470, -8, 120, 0.30; T-B: 5.5, 540, +6, 135, 0.45; T-C: 6.4, 455, +14, 110, 0.30; T-D: 5.8, 515, -12, 70, 0.20. The right panel shows one horizontal scale labeled \"轴功输出设计窗口\" with endpoints labeled \"2850 kW\" and \"2920 kW\", and one box below labeled \"目标排汽母管 0.30 MPa\". Add a rendered formula labeled \"W_out = ṁ(Δh + Δke) − Q_loss\" above the table. Use blue, green, orange, and red accent bars by column.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各设备的流量、焓降、动能修正、热损失、排汽压力、功率窗口和母管压力；这些条件必须从图中读取并组合计算后才能唯一确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四台候选设备各自的质量流量、焓降、动能修正、热损失和排汽压力来自图片",
+        "轴功输出设计窗口的上下限来自图片",
+        "目标排汽母管压力来自图片",
+        "图中给出的稳态流动能量平衡形式决定热损失与动能修正的代数处理"
+      ],
+      "validation_rules": [
+        "用 $\\dot W_{out}=\\dot m(\\Delta h+\\Delta ke)-\\dot Q_{loss}$ 分别计算四台设备轴功输出",
+        "候选设备必须同时满足 $2850\\ \\mathrm{kW}\\leq \\dot W_{out}\\leq 2920\\ \\mathrm{kW}$",
+        "候选设备排汽压力必须等于 $0.30\\ \\mathrm{MPa}$",
+        "只有满足全部约束的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-002-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-002",
+    "kp_name": "热力学第一定律",
+    "question_language": "zh",
+    "question_text": "图示为某闭口系气体经历一个非循环过程。规定进入系统的热量和功为正，离开系统的热量和功为负。根据热力学第一定律，过程结束时系统的内能为多少？",
+    "options": {
+      "A": "$137\\,\\mathrm{kJ}$",
+      "B": "$149\\,\\mathrm{kJ}$",
+      "C": "$125\\,\\mathrm{kJ}$",
+      "D": "$167\\,\\mathrm{kJ}$"
+    },
+    "correct_answer": "B",
+    "explanation": "这是闭口系能量平衡问题，忽略宏观动能和位能变化时有 $\\Delta U=Q_{\\mathrm{net,in}}+W_{\\mathrm{net,in}}$。从图中读取：初始内能为 $U_1=120\\,\\mathrm{kJ}$；热源向系统输入热量 $75\\,\\mathrm{kJ}$；系统向冷却端放热 $18\\,\\mathrm{kJ}$，因此净热输入为 $75-18=57\\,\\mathrm{kJ}$。图中活塞边界功为系统对外输出 $40\\,\\mathrm{kJ}$，轴功为电机对系统输入 $12\\,\\mathrm{kJ}$，因此净功输入为 $12-40=-28\\,\\mathrm{kJ}$。所以 $\\Delta U=57-28=29\\,\\mathrm{kJ}$，过程末态内能为 $U_2=U_1+\\Delta U=120+29=149\\,\\mathrm{kJ}$。故选 B。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/862b47f4f415403e.png",
+    "image_prompt": "Engineering diagram of a closed-system thermodynamics process, front view, with one central cylinder and piston. The layout has a square heat source on the left, a cylinder with gas in the center, a cooling terminal on the right, a piston and load above, and a motor below. Show the central gas region labeled \"闭口系气体\" and inside it labeled \"U1 = 120 kJ\". Draw one blue arrow from the left box labeled \"热源\" into the gas, labeled \"QH = 75 kJ\". Draw one red arrow from the gas to the right box labeled \"冷却端\", labeled \"QC = 18 kJ\". Draw one red upward arrow from the piston labeled \"活塞\" to the upper block labeled \"负载\", labeled \"Wb = 40 kJ\". Draw one blue upward shaft arrow from the lower device labeled \"电机\" into the gas, labeled \"Ws = 12 kJ\". Use blue for entering energy arrows and red for leaving energy arrows.",
+    "final_image_prompt": "Engineering diagram of a closed-system thermodynamics process, front view, with one central cylinder and piston. The layout has a square heat source on the left, a cylinder with gas in the center, a cooling terminal on the right, a piston and load above, and a motor below. Show the central gas region labeled \"闭口系气体\" and inside it labeled \"U1 = 120 kJ\". Draw one blue arrow from the left box labeled \"热源\" into the gas, labeled \"QH = 75 kJ\". Draw one red arrow from the gas to the right box labeled \"冷却端\", labeled \"QC = 18 kJ\". Draw one red upward arrow from the piston labeled \"活塞\" to the upper block labeled \"负载\", labeled \"Wb = 40 kJ\". Draw one blue upward shaft arrow from the lower device labeled \"电机\" into the gas, labeled \"Ws = 12 kJ\". Use blue for entering energy arrows and red for leaving energy arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出初始内能、各热量和功的大小及方向，必须通过图片读取这些能量流后才能建立能量平衡。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "初始内能数值只在图中给出",
+        "热源输入热量数值和方向只在图中给出",
+        "冷却端放热数值和方向只在图中给出",
+        "边界功数值和方向只在图中给出",
+        "轴功数值和方向只在图中给出"
+      ],
+      "validation_rules": [
+        "按闭口系第一定律计算：$U_2=U_1+Q_{\\mathrm{in}}-Q_{\\mathrm{out}}+W_{\\mathrm{in}}-W_{\\mathrm{out}}$",
+        "代入图中数值得 $U_2=120+75-18+12-40=149\\,\\mathrm{kJ}$",
+        "唯一匹配的选项为 B"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-002-Q0002",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-002",
+    "kp_name": "热力学第一定律",
+    "question_language": "zh",
+    "question_text": "某稳态透平备选方案均为单入口、单出口设备，忽略动能和位能变化，且图中热交换按进入控制体为正、轴功按设备对外输出为正。采购要求为：轴功率不低于 $500\\ \\mathrm{kW}$，同时外壳散热量不超过 $60\\ \\mathrm{kW}$。在满足要求的方案中，应选择年化成本最低的一台。根据图中数据和热力学第一定律，正确选择是哪一项？",
+    "options": {
+      "A": "T-1",
+      "B": "T-2",
+      "C": "T-3",
+      "D": "T-4"
+    },
+    "correct_answer": "D",
+    "explanation": "稳态单入口单出口透平，忽略动能和位能变化时，热力学第一定律可写为 $\\dot W_{out}=\\dot m(h_{in}-h_{out})+\\dot Q_{in}$。图中散热为离开控制体，所以 $\\dot Q_{in}=-\\dot Q_{loss}$。逐项计算：T-1 为 $4.8\\times(3330-3235)-25=431\\ \\mathrm{kW}$，不满足轴功率要求；T-2 为 $5.2\\times(3330-3230)-55=465\\ \\mathrm{kW}$，也不满足；T-3 为 $4.6\\times(3330-3205)-70=505\\ \\mathrm{kW}$，轴功率满足但散热量 $70\\ \\mathrm{kW}$ 超过限制；T-4 为 $5.0\\times(3330-3214)-45=535\\ \\mathrm{kW}$，轴功率和散热限制均满足。满足全部要求的可选方案中只有 T-4，因此选 D。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "设备选型",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/94247729dd6a4a47.png",
+    "image_prompt": "A data visualization chart for steady turbine equipment selection. Global layout: landscape view, one title at the top, a centered constraint box below it, four vertical candidate cards in one row, and one formula box at the bottom. The four cards from left to right are labeled \"T-1\", \"T-2\", \"T-3\", \"T-4\". Card T-1 shows \"质量流量 4.8 kg/s\", \"入口焓 3330 kJ/kg\", \"出口焓 3235 kJ/kg\", \"外壳散热 25 kW\", \"年化成本 68 万元/年\". Card T-2 shows 5.2, 3330, 3230, 55, 74 with the same labels and units. Card T-3 shows 4.6, 3330, 3205, 70, 82. Card T-4 shows 5.0, 3330, 3214, 45, 91. The constraint box is labeled \"采购约束\" and contains \"轴功率 ≥ 500 kW\" and \"散热量 ≤ 60 kW\". The bottom box is labeled \"能量平衡\" with a rendered formula W_out = m(h_in − h_out) − Q_loss. Use orange outline around T-3 heat loss and blue outline around T-4 card.",
+    "final_image_prompt": "A data visualization chart for steady turbine equipment selection. Global layout: landscape view, one title at the top, a centered constraint box below it, four vertical candidate cards in one row, and one formula box at the bottom. The four cards from left to right are labeled \"T-1\", \"T-2\", \"T-3\", \"T-4\". Card T-1 shows \"质量流量 4.8 kg/s\", \"入口焓 3330 kJ/kg\", \"出口焓 3235 kJ/kg\", \"外壳散热 25 kW\", \"年化成本 68 万元/年\". Card T-2 shows 5.2, 3330, 3230, 55, 74 with the same labels and units. Card T-3 shows 4.6, 3330, 3205, 70, 82. Card T-4 shows 5.0, 3330, 3214, 45, 91. The constraint box is labeled \"采购约束\" and contains \"轴功率 ≥ 500 kW\" and \"散热量 ≤ 60 kW\". The bottom box is labeled \"能量平衡\" with a rendered formula W_out = m(h_in − h_out) − Q_loss. Use orange outline around T-3 heat loss and blue outline around T-4 card.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各候选设备的流量、焓值、散热量、成本和采购阈值；必须读取图中数据并结合第一定律筛选。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "四个候选透平的质量流量、入口焓、出口焓、外壳散热和年化成本均只在图中给出",
+        "采购约束中的轴功率阈值和散热量阈值只在图中给出",
+        "用于按图中散热方向计算轴功率的能量平衡式只在图中给出"
+      ],
+      "validation_rules": [
+        "按 $\\dot W_{out}=\\dot m(h_{in}-h_{out})-\\dot Q_{loss}$ 分别计算四个候选方案的轴功率",
+        "排除轴功率低于 $500\\ \\mathrm{kW}$ 的方案",
+        "排除外壳散热量高于 $60\\ \\mathrm{kW}$ 的方案",
+        "在剩余方案中选择年化成本最低者，结果必须为 D"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-002-Q0002",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-002",
+    "kp_name": "热力学第一定律",
+    "question_language": "zh",
+    "question_text": "图示为一个稳态运行的开口控制体，所有进出口均按图中箭头方向流动，轴功箭头表示装置对外输出。若忽略图中未标出的其他能量交换，根据热力学第一定律，轴功率最接近下列哪一项？取重力加速度 $g=9.81\\,\\mathrm{m/s^2}$。",
+    "options": {
+      "A": "$2466\\,\\mathrm{kW}$",
+      "B": "$2588\\,\\mathrm{kW}$",
+      "C": "$2826\\,\\mathrm{kW}$",
+      "D": "$2286\\,\\mathrm{kW}$"
+    },
+    "correct_answer": "A",
+    "explanation": "稳态开口系能量方程可写为 $\\dot Q-\\dot W+\\sum \\dot m(h+V^2/2+gz)_{in}-\\sum \\dot m(h+V^2/2+gz)_{out}=0$，其中动能项换算为 $V^2/2000\\,\\mathrm{kJ/kg}$，位能项换算为 $gz/1000\\,\\mathrm{kJ/kg}$。由图读出两股进口流量相加得到出口流量 $\\dot m_3=2.4+0.8=3.2\\,\\mathrm{kg/s}$。进口1的比总能为 $3380+70^2/2000+9.81\\times5/1000=3382.499\\,\\mathrm{kJ/kg}$；进口2为 $3050+40^2/2000+9.81\\times12/1000=3050.918\\,\\mathrm{kJ/kg}$；出口为 $2460+160^2/2000+9.81\\times2/1000=2472.820\\,\\mathrm{kJ/kg}$。总进口能流率为 $2.4\\times3382.499+0.8\\times3050.918=10558.732\\,\\mathrm{kW}$，出口能流率为 $3.2\\times2472.820=7913.023\\,\\mathrm{kW}$。图中热量为向外散失，所以 $\\dot Q=-180\\,\\mathrm{kW}$。故 $\\dot W=\\dot Q+\\sum \\dot E_{in}-\\sum \\dot E_{out}=-180+10558.732-7913.023=2465.709\\,\\mathrm{kW}$，最接近 $2466\\,\\mathrm{kW}$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "系统分析",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/a423f623506b49c1.png",
+    "image_prompt": "A technical illustration diagram of a steady-flow thermodynamic control volume, viewed straight on, split with inlets on the left and outlet on the right. Draw 7 main elements: one dashed rectangular control volume in the center (labeled \"控制体\" and \"稳态\"), one upper-left inlet pipe (labeled \"1\"), one lower-left inlet pipe (labeled \"2\"), one right outlet pipe (labeled \"3\"), one top heat arrow, one bottom shaft arrow, and one small formula box at upper right with a rendered standard steady-flow first-law energy balance. The upper-left pipe arrow points into the box and shows \"m1 = 2.4 kg/s\", \"h1 = 3380 kJ/kg\", \"V1 = 70 m/s\", \"z1 = 5 m\". The lower-left pipe shows \"m2 = 0.8 kg/s\", \"h2 = 3050 kJ/kg\", \"V2 = 40 m/s\", \"z2 = 12 m\". The right pipe shows \"h3 = 2460 kJ/kg\", \"V3 = 160 m/s\", \"z3 = 2 m\". The top orange arrow points outward (labeled \"Qloss = 180 kW\"); the bottom blue arrow points outward (labeled \"Wshaft = ?\").",
+    "final_image_prompt": "A technical illustration diagram of a steady-flow thermodynamic control volume, viewed straight on, split with inlets on the left and outlet on the right. Draw 7 main elements: one dashed rectangular control volume in the center (labeled \"控制体\" and \"稳态\"), one upper-left inlet pipe (labeled \"1\"), one lower-left inlet pipe (labeled \"2\"), one right outlet pipe (labeled \"3\"), one top heat arrow, one bottom shaft arrow, and one small formula box at upper right with a rendered standard steady-flow first-law energy balance. The upper-left pipe arrow points into the box and shows \"m1 = 2.4 kg/s\", \"h1 = 3380 kJ/kg\", \"V1 = 70 m/s\", \"z1 = 5 m\". The lower-left pipe shows \"m2 = 0.8 kg/s\", \"h2 = 3050 kJ/kg\", \"V2 = 40 m/s\", \"z2 = 12 m\". The right pipe shows \"h3 = 2460 kJ/kg\", \"V3 = 160 m/s\", \"z3 = 2 m\". The top orange arrow points outward (labeled \"Qloss = 180 kW\"); the bottom blue arrow points outward (labeled \"Wshaft = ?\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各流口的焓、速度、高度、质量流量以及热量箭头方向；这些关键数据和关系只能从图中读取，删除图片后无法确定轴功率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "两股入口的质量流量、焓、速度和高度来自图中标签",
+        "出口的焓、速度和高度来自图中标签",
+        "热量箭头方向和数值来自图中标签",
+        "轴功箭头方向来自图中标签",
+        "出口流量需要由图示两入口一出口结构结合质量守恒确定"
+      ],
+      "validation_rules": [
+        "用稳态开口系第一定律 $\\dot Q-\\dot W+\\sum \\dot m(h+V^2/2+gz)_{in}-\\sum \\dot m(h+V^2/2+gz)_{out}=0$ 验证",
+        "速度动能项必须换算为 $V^2/2000\\,\\mathrm{kJ/kg}$",
+        "位能项必须换算为 $gz/1000\\,\\mathrm{kJ/kg}$",
+        "流出热量必须按 $\\dot Q=-180\\,\\mathrm{kW}$ 处理",
+        "由质量守恒取 $\\dot m_3=3.2\\,\\mathrm{kg/s}$",
+        "计算得到轴功率约为 $2466\\,\\mathrm{kW}$ 时判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-003-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-003",
+    "kp_name": "热力学第二定律",
+    "question_language": "zh",
+    "question_text": "某热机按图示方向完成一个循环。仅根据图中标注，判断该循环的熵产生量最接近哪一项？",
+    "options": {
+      "A": "$0\\ \\mathrm{kJ/K}$",
+      "B": "$0.017\\ \\mathrm{kJ/K}$",
+      "C": "$0.033\\ \\mathrm{kJ/K}$",
+      "D": "$0.117\\ \\mathrm{kJ/K}$"
+    },
+    "correct_answer": "C",
+    "explanation": "热机完成循环，系统本身熵变为零。先由能量守恒求向低温热源排出的热量：$Q_C=Q_H-W=180-95=85\\ \\mathrm{kJ}$。再对整个循环作熵平衡：$S_{gen}=\\frac{Q_C}{T_C}-\\frac{Q_H}{T_H}$。代入图中热源温度与热量，得$S_{gen}=\\frac{85}{300}-\\frac{180}{720}=0.2833-0.2500=0.0333\\ \\mathrm{kJ/K}$。该值为正，符合热力学第二定律，因此最接近$0.033\\ \\mathrm{kJ/K}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/bdfcc08e7692494e.png",
+    "image_prompt": "An engineering_diagram showing a heat-engine energy-flow schematic. Use a front-view vertical layout with 3 main blocks aligned on the centerline: a top rectangle labeled \"高温热源\" and \"T_H=720 K\", a middle rounded rectangle labeled \"热机\" and \"循环装置\", and a bottom rectangle labeled \"低温热源\" and \"T_C=300 K\". Add exactly 3 arrows: one red vertical downward arrow from the top rectangle to the middle block labeled \"Q_H=180 kJ\", one blue horizontal arrow from the middle block to the right labeled \"W=95 kJ\", and one red vertical downward arrow from the middle block to the bottom rectangle labeled \"Q_C\". Keep the three blocks evenly spaced, with labels placed beside or inside the corresponding elements. Highlight heat arrows in red and the work arrow in blue.",
+    "final_image_prompt": "An engineering_diagram showing a heat-engine energy-flow schematic. Use a front-view vertical layout with 3 main blocks aligned on the centerline: a top rectangle labeled \"高温热源\" and \"T_H=720 K\", a middle rounded rectangle labeled \"热机\" and \"循环装置\", and a bottom rectangle labeled \"低温热源\" and \"T_C=300 K\". Add exactly 3 arrows: one red vertical downward arrow from the top rectangle to the middle block labeled \"Q_H=180 kJ\", one blue horizontal arrow from the middle block to the right labeled \"W=95 kJ\", and one red vertical downward arrow from the middle block to the bottom rectangle labeled \"Q_C\". Keep the three blocks evenly spaced, with labels placed beside or inside the corresponding elements. Highlight heat arrows in red and the work arrow in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出热源温度、热量和功输出，必须从图中读取这些数值并结合第二定律计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中给出高温热源温度为$720\\ \\mathrm{K}$",
+        "图中给出低温热源温度为$300\\ \\mathrm{K}$",
+        "图中给出输入热量为$180\\ \\mathrm{kJ}$",
+        "图中给出输出功为$95\\ \\mathrm{kJ}$"
+      ],
+      "validation_rules": [
+        "用循环能量守恒计算$Q_C=Q_H-W$",
+        "用热源熵变关系计算$S_{gen}=Q_C/T_C-Q_H/T_H$",
+        "数值应为$0.0333\\ \\mathrm{kJ/K}$，最接近选项C",
+        "熵产生量必须非负，负值或零值不符合该图所示实际循环"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-003-Q0002",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-003",
+    "kp_name": "热力学第二定律",
+    "question_language": "zh",
+    "question_text": "图示为一个热机驱动制冷机的联合循环装置。将热机和制冷机合并视为一个循环系统，忽略动能、位能变化，按每循环判断该联合装置的熵产生量最接近下列哪一项？",
+    "options": {
+      "A": "$1.23\\ \\mathrm{kJ/K}$",
+      "B": "$0.73\\ \\mathrm{kJ/K}$",
+      "C": "$0.50\\ \\mathrm{kJ/K}$",
+      "D": "$1.90\\ \\mathrm{kJ/K}$"
+    },
+    "correct_answer": "A",
+    "explanation": "把热机和制冷机合并为一个循环系统，系统本身每循环熵变为零，因此熵产生量等于所有外部热源、热汇的熵变总和。由图读出：高温热源向联合装置放热，外部高温热源熵变为 $-600/900=-0.667\\ \\mathrm{kJ/K}$；低温冷室被制冷机吸热，低温冷室熵变为 $-120/240=-0.500\\ \\mathrm{kJ/K}$；环境同时接收热机排热和制冷机排热，总受热量为 $420+300=720\\ \\mathrm{kJ}$，环境熵变为 $720/300=2.400\\ \\mathrm{kJ/K}$。所以 $S_{gen}=-0.667-0.500+2.400=1.233\\ \\mathrm{kJ/K}$，最接近 $1.23\\ \\mathrm{kJ/K}$。该值为正，符合热力学第二定律。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/c640f9b698404097.png",
+    "image_prompt": "An engineering_diagram of a combined thermodynamic device, viewed frontally with a top reservoir row, a middle device row, and a bottom environment row. Show exactly 6 main elements: a left upper rectangle labeled \"高温热源\" and \"900 K\", a center-left circle labeled \"热机\", a blue horizontal shaft labeled \"轴功传递\", a center-right circle labeled \"制冷机\", a right upper rectangle labeled \"低温冷室\" and \"240 K\", and a bottom central rectangle labeled \"环境\" and \"300 K\". Draw a red heat arrow from \"高温热源\" to \"热机\" labeled \"600 kJ\". Draw a red heat arrow from \"热机\" to \"环境\" labeled \"420 kJ\". Draw the blue shaft arrow from \"热机\" to \"制冷机\". Draw a red heat arrow from \"低温冷室\" to \"制冷机\" labeled \"120 kJ\". Draw a red heat arrow from \"制冷机\" to \"环境\" labeled \"300 kJ\". Use red heat arrows and one blue work arrow.",
+    "final_image_prompt": "An engineering_diagram of a combined thermodynamic device, viewed frontally with a top reservoir row, a middle device row, and a bottom environment row. Show exactly 6 main elements: a left upper rectangle labeled \"高温热源\" and \"900 K\", a center-left circle labeled \"热机\", a blue horizontal shaft labeled \"轴功传递\", a center-right circle labeled \"制冷机\", a right upper rectangle labeled \"低温冷室\" and \"240 K\", and a bottom central rectangle labeled \"环境\" and \"300 K\". Draw a red heat arrow from \"高温热源\" to \"热机\" labeled \"600 kJ\". Draw a red heat arrow from \"热机\" to \"环境\" labeled \"420 kJ\". Draw the blue shaft arrow from \"热机\" to \"制冷机\". Draw a red heat arrow from \"低温冷室\" to \"制冷机\" labeled \"120 kJ\". Draw a red heat arrow from \"制冷机\" to \"环境\" labeled \"300 kJ\". Use red heat arrows and one blue work arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各热源温度、热量方向、热量数值以及环境接收两股热量的关系；必须依据图中箭头、标签和连接关系才能建立熵平衡。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "高温热源温度为900 K，且对应传给热机的热量为600 kJ",
+        "低温冷室温度为240 K，且对应传给制冷机的热量为120 kJ",
+        "环境温度为300 K，且接收两股热量420 kJ和300 kJ",
+        "功轴只连接热机与制冷机，不作为外部熵流项"
+      ],
+      "validation_rules": [
+        "应将热机和制冷机合并视为循环系统，系统每循环熵变为零",
+        "外部高温热源熵变按 $-600/900$ 计算",
+        "外部低温冷室熵变按 $-120/240$ 计算",
+        "环境熵变按 $(420+300)/300$ 计算",
+        "熵产生量应等于三类外部热源热汇熵变之和，并与选项A一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-004-Q0002",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-004",
+    "kp_name": "理想气体过程",
+    "question_language": "zh",
+    "question_text": "图示为空气作为理想气体在活塞-气缸内经历的两段准静态过程。已知空气质量为 $0.50\\,\\mathrm{kg}$，$R=0.287\\,\\mathrm{kJ/(kg\\cdot K)}$，$c_v=0.718\\,\\mathrm{kJ/(kg\\cdot K)}$。忽略动能、位能变化，按图中过程信息计算整个 $1\\to3$ 过程的总传热量最接近下列哪一项？",
+    "options": {
+      "A": "$254\\,\\mathrm{kJ}$",
+      "B": "$152\\,\\mathrm{kJ}$",
+      "C": "$215\\,\\mathrm{kJ}$",
+      "D": "$317\\,\\mathrm{kJ}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，$1\\to2$ 为等容过程，故 $\\frac{p_1}{T_1}=\\frac{p_2}{T_2}$，得 $T_2=T_1\\frac{p_2}{p_1}=300\\times\\frac{300}{100}=900\\,\\mathrm{K}$。$2\\to3$ 为多变过程，$pV^n=\\mathrm{常数}$，且 $n=1.25$。由 $\\frac{V_3}{V_2}=\\left(\\frac{p_2}{p_3}\\right)^{1/n}=3^{0.8}$，再用理想气体状态方程得 $\\frac{T_3}{T_2}=\\frac{p_3V_3}{p_2V_2}=\\frac{1}{3}\\cdot3^{0.8}$，所以 $T_3\\approx722.4\\,\\mathrm{K}$。总内能变化为 $\\Delta U_{1\\to3}=mc_v(T_3-T_1)=0.50\\times0.718\\times(722.4-300)\\approx151.6\\,\\mathrm{kJ}$。等容段功为零，多变段功为 $W_{2\\to3}=\\frac{mR(T_3-T_2)}{1-n}=\\frac{0.50\\times0.287\\times(722.4-900)}{1-1.25}\\approx102.0\\,\\mathrm{kJ}$。因此总传热量 $Q_{1\\to3}=\\Delta U_{1\\to3}+W_{1\\to3}\\approx151.6+102.0=253.6\\,\\mathrm{kJ}$，最接近 $254\\,\\mathrm{kJ}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/5a48d4280ff140f1.png",
+    "image_prompt": "An engineering diagram of an ideal-gas piston-cylinder process, split into a left schematic and a right p-V plot. On the left, draw 1 piston-cylinder component (labeled \"活塞-气缸\"). On the right, draw 1 coordinate frame with vertical axis (labeled \"p\") and horizontal axis (labeled \"V\"). Place 3 state points: point 1 at lower left (labeled \"1\" and \"p1=100 kPa, T1=300 K\"), point 2 directly above point 1 (labeled \"2\" and \"p2=300 kPa\"), and point 3 at lower right (labeled \"3\" and \"p3=100 kPa\"). Connect 1 to 2 with a vertical upward blue arrow (labeled \"V=常数\"). Connect 2 to 3 with a red curved arrow downward right (labeled \"pV^n=常数, n=1.25\"). Use only these labels and highlight the two process paths.",
+    "final_image_prompt": "An engineering diagram of an ideal-gas piston-cylinder process, split into a left schematic and a right p-V plot. On the left, draw 1 piston-cylinder component (labeled \"活塞-气缸\"). On the right, draw 1 coordinate frame with vertical axis (labeled \"p\") and horizontal axis (labeled \"V\"). Place 3 state points: point 1 at lower left (labeled \"1\" and \"p1=100 kPa, T1=300 K\"), point 2 directly above point 1 (labeled \"2\" and \"p2=300 kPa\"), and point 3 at lower right (labeled \"3\" and \"p3=100 kPa\"). Connect 1 to 2 with a vertical upward blue arrow (labeled \"V=常数\"). Connect 2 to 3 with a red curved arrow downward right (labeled \"pV^n=常数, n=1.25\"). Use only these labels and highlight the two process paths.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出工质质量和物性参数，状态压力、初温、过程类型以及多变指数均来自图片；没有图片无法确定 $T_2$、$T_3$、多变功和总传热量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出状态 1 的压力和温度",
+        "图中给出状态 2 与状态 3 的压力",
+        "图中显示 1→2 为等容过程",
+        "图中显示 2→3 为多变过程且给出多变指数"
+      ],
+      "validation_rules": [
+        "先用等容关系计算 $T_2=T_1p_2/p_1$",
+        "再用多变关系和理想气体状态方程计算 $T_3/T_2=(p_3/p_2)(p_2/p_3)^{1/n}$",
+        "全过程内能变化按 $mc_v(T_3-T_1)$ 计算",
+        "等容段功为零，多变段功按 $mR(T_3-T_2)/(1-n)$ 计算",
+        "总传热量满足 $Q=\\Delta U+W$，并与选项数值比较"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-005-Q0002",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-005",
+    "kp_name": "水蒸气热力学",
+    "question_language": "zh",
+    "question_text": "图示为一台稳流汽轮机及其出口湿蒸气状态的工程示意图。忽略进出口动能、位能变化，按图中给出的热损失方向和水蒸气性质数据，汽轮机对外输出的轴功率最接近下列哪一项？",
+    "options": {
+      "A": "$2.21\\ \\mathrm{MW}$",
+      "B": "$2.33\\ \\mathrm{MW}$",
+      "C": "$2.09\\ \\mathrm{MW}$",
+      "D": "$2.75\\ \\mathrm{MW}$"
+    },
+    "correct_answer": "A",
+    "explanation": "稳流汽轮机能量方程为 $\\dot W_{out}=\\dot m(h_1-h_2)-\\dot Q_{loss}$。由图读得入口为过热蒸汽，$h_1=3375\\ \\mathrm{kJ/kg}$，流量 $\\dot m=2.40\\ \\mathrm{kg/s}$；出口位于湿蒸气区，需先由干度计算出口焓：$h_2=h_f+xh_{fg}=417.5+0.88\\times2257=2403.66\\ \\mathrm{kJ/kg}$。于是 $\\dot m(h_1-h_2)=2.40\\times(3375-2403.66)=2331.2\\ \\mathrm{kW}$。图中热损失箭头表示能量从汽轮机流向环境，应从可输出轴功中扣除，所以 $\\dot W_{out}=2331.2-120=2211.2\\ \\mathrm{kW}\\approx2.21\\ \\mathrm{MW}$。因此选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/4afea64d968d46b5.png",
+    "image_prompt": "Engineering diagram of a steady-flow steam turbine system, arranged horizontally from left to right. Place 1 turbine symbol in the center (labeled \"汽轮机\"), 1 inlet pipe entering from the left, and 1 outlet pipe leaving to the right. On the inlet pipe, show 1 blue state dot (labeled \"状态1：过热蒸汽\") with two nearby labels: \"h1 = 3375 kJ/kg\" and \"m_dot = 2.40 kg/s\". On the outlet pipe, show 1 red state dot (labeled \"状态2：湿蒸气\") with the label \"x2 = 0.88\". To the right of the outlet, draw 1 property box (labeled \"湿蒸气性质\") containing \"hf = 417.5 kJ/kg\" and \"hfg = 2257 kJ/kg\", connected by 1 thin leader line to the red dot. Draw 1 upward arrow from the turbine top (labeled \"W_out\") and 1 orange downward arrow from the turbine bottom to surroundings (labeled \"Q_loss = 120 kW\").",
+    "final_image_prompt": "Engineering diagram of a steady-flow steam turbine system, arranged horizontally from left to right. Place 1 turbine symbol in the center (labeled \"汽轮机\"), 1 inlet pipe entering from the left, and 1 outlet pipe leaving to the right. On the inlet pipe, show 1 blue state dot (labeled \"状态1：过热蒸汽\") with two nearby labels: \"h1 = 3375 kJ/kg\" and \"m_dot = 2.40 kg/s\". On the outlet pipe, show 1 red state dot (labeled \"状态2：湿蒸气\") with the label \"x2 = 0.88\". To the right of the outlet, draw 1 property box (labeled \"湿蒸气性质\") containing \"hf = 417.5 kJ/kg\" and \"hfg = 2257 kJ/kg\", connected by 1 thin leader line to the red dot. Draw 1 upward arrow from the turbine top (labeled \"W_out\") and 1 orange downward arrow from the turbine bottom to surroundings (labeled \"Q_loss = 120 kW\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出入口焓、质量流量、出口干度、湿蒸气性质数值和热损失方向；没有图无法建立唯一的能量平衡计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "入口焓、质量流量、出口干度、饱和液焓、汽化潜热和热损失数值均只由图片给出",
+        "热损失箭头方向只由图片给出",
+        "出口状态属于湿蒸气区且需用干度计算出口焓只由图片明确"
+      ],
+      "validation_rules": [
+        "先用 $h_2=h_f+x_2h_{fg}$ 求出口湿蒸气焓",
+        "再用 $\\dot W_{out}=\\dot m(h_1-h_2)-\\dot Q_{loss}$ 计算轴功率",
+        "计算结果四舍五入到选项精度后应与 $2.21\\ \\mathrm{MW}$ 一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S18-005-Q0001",
+    "subject_id": "S18",
+    "subject_name": "能源与动力工程",
+    "kp_id": "S18-M01-005",
+    "kp_name": "水蒸气热力学",
+    "question_language": "zh",
+    "question_text": "某绝热汽轮机入口为过热水蒸气，出口压力落入湿蒸气区。根据图中给出的 $h$-$s$ 工程示意图，按汽轮机等熵效率定义 $\\eta_t=\\frac{h_1-h_{2a}}{h_1-h_{2s}}$，判断该汽轮机的等熵效率最接近下列哪一项？",
+    "options": {
+      "A": "$0.916$",
+      "B": "$0.860$",
+      "C": "$0.887$",
+      "D": "$1.092$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出入口状态 $1$ 的熵和焓分别为 $s_1=6.92\\,\\mathrm{kJ/(kg\\cdot K)}$、$h_1=3230\\,\\mathrm{kJ/kg}$。等熵膨胀到出口压力时，$s_{2s}=s_1$。图中出口压力饱和线两端给出 $s_f=0.832\\,\\mathrm{kJ/(kg\\cdot K)}$、$s_g=7.908\\,\\mathrm{kJ/(kg\\cdot K)}$，所以等熵出口干度为 $x_{2s}=\\frac{s_1-s_f}{s_g-s_f}=\\frac{6.92-0.832}{7.908-0.832}\\approx0.860$。再由 $h_f=251\\,\\mathrm{kJ/kg}$、$h_g=2609\\,\\mathrm{kJ/kg}$ 得 $h_{2s}=h_f+x_{2s}(h_g-h_f)\\approx251+0.860\\times2358\\approx2280\\,\\mathrm{kJ/kg}$。实际出口焓由图读为 $h_{2a}=2360\\,\\mathrm{kJ/kg}$，因此 $\\eta_t=\\frac{3230-2360}{3230-2280}\\approx0.916$。选项 B 是把等熵出口干度误当作效率；选项 C 来自用湿区焓差计算时混用近似差值；选项 D 则相当于把效率比值倒置或认为实际功大于等熵功。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "热力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/54ac27f826804908.png",
+    "image_prompt": "An engineering diagram of a water-steam h-s chart. Global layout: vertical enthalpy axis on the left (labeled \"h\") and horizontal entropy axis at the bottom (labeled \"s\"), with one saturation dome centered in the plot. Draw 6 main elements: axes, saturation dome, superheated state point 1, one low-pressure horizontal saturation line, one vertical dashed isentropic line, and actual exit point 2a. Place point 1 above and right of the dome (labeled \"1\", \"h1 = 3230 kJ/kg\", \"s1 = 6.92 kJ/(kg·K)\"). The horizontal line is labeled \"p2 = 20 kPa\"; its left endpoint is labeled \"hf = 251 kJ/kg\", \"sf = 0.832 kJ/(kg·K)\" and its right endpoint is labeled \"hg = 2609 kJ/kg\", \"sg = 7.908 kJ/(kg·K)\". Connect point 1 vertically downward by a blue dashed line to point 2s (labeled \"2s\", \"等熵线\"). Draw a red curved arrow from 1 to point 2a (labeled \"2a\", \"实际出口\", \"h2a = 2360 kJ/kg\").",
+    "final_image_prompt": "An engineering diagram of a water-steam h-s chart. Global layout: vertical enthalpy axis on the left (labeled \"h\") and horizontal entropy axis at the bottom (labeled \"s\"), with one saturation dome centered in the plot. Draw 6 main elements: axes, saturation dome, superheated state point 1, one low-pressure horizontal saturation line, one vertical dashed isentropic line, and actual exit point 2a. Place point 1 above and right of the dome (labeled \"1\", \"h1 = 3230 kJ/kg\", \"s1 = 6.92 kJ/(kg·K)\"). The horizontal line is labeled \"p2 = 20 kPa\"; its left endpoint is labeled \"hf = 251 kJ/kg\", \"sf = 0.832 kJ/(kg·K)\" and its right endpoint is labeled \"hg = 2609 kJ/kg\", \"sg = 7.908 kJ/(kg·K)\". Connect point 1 vertically downward by a blue dashed line to point 2s (labeled \"2s\", \"等熵线\"). Draw a red curved arrow from 1 to point 2a (labeled \"2a\", \"实际出口\", \"h2a = 2360 kJ/kg\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出入口状态、饱和端点和实际出口焓等关键数据，必须从图中读取并组合插值才能计算效率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "状态点 1 的焓与熵数值只在图中给出",
+        "出口压力饱和液端与饱和汽端的焓、熵数值只在图中给出",
+        "实际出口状态点的焓值只在图中给出",
+        "等熵出口点与入口点在图中通过竖直等熵线对应"
+      ],
+      "validation_rules": [
+        "必须用 $s_{2s}=s_1$ 计算湿区等熵出口干度",
+        "必须用 $h_{2s}=h_f+x_{2s}(h_g-h_f)$ 得到等熵出口焓",
+        "必须用 $\\eta_t=\\frac{h_1-h_{2a}}{h_1-h_{2s}}$ 计算汽轮机等熵效率",
+        "计算结果最接近 $0.916$ 时判为正确"
+      ]
+    }
+  }
+]

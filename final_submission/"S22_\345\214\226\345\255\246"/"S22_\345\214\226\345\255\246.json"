@@ -1,0 +1,439 @@
+[
+  {
+    "question_id": "S22-001-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-001",
+    "kp_name": "原子轨道与量子数基础",
+    "question_language": "zh",
+    "question_text": "图示给出三个相邻主族体系中被红点标出的同类价电子及其屏蔽分组。按图中给出的简化 Slater 屏蔽规则估算该红点电子的有效核电荷 $Z_{\\mathrm{eff}}=Z-S$。下列哪一项对两步箭头过程中的变化判断正确？",
+    "options": {
+      "A": "第一步与第二步的 $Z_{\\mathrm{eff}}$ 增量相同，说明屏蔽变化完全抵消核电荷变化。",
+      "B": "第一步的 $Z_{\\mathrm{eff}}$ 增量较大，因为它同时包含核电荷增加和同层屏蔽减少。",
+      "C": "第二步的 $Z_{\\mathrm{eff}}$ 增量较大，因为它同时包含核电荷增加和同层屏蔽减少。",
+      "D": "两步中 $Z_{\\mathrm{eff}}$ 都降低，因为核电荷增加会使内层电子屏蔽增强。"
+    },
+    "correct_answer": "C",
+    "explanation": "按图中给出的分组计算屏蔽常数。左侧体系的屏蔽为 $S=6.80+2.00+0.70=9.50$，所以 $Z_{\\mathrm{eff}}=13-9.50=3.50$。中间体系为 $S=6.80+2.00+0.70=9.50$，所以 $Z_{\\mathrm{eff}}=14-9.50=4.50$，第一步增量为 $1.00$。右侧体系为 $S=6.80+2.00+0.35=9.15$，所以 $Z_{\\mathrm{eff}}=15-9.15=5.85$，第二步增量为 $1.35$。因此第二步增量较大，原因是核电荷增加 $1$ 的同时，同层屏蔽由 $0.70$ 降为 $0.35$，共同提高了红点电子感受到的有效核电荷。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "有效核电荷",
+    "blueprint_image_type": "reaction_scheme",
+    "image_path": "images/33c3e9d53af248b0.png",
+    "image_prompt": "A reaction scheme diagram showing three atomic-orbital panels arranged horizontally from left to right. The left panel is labeled \"体系 I\" and contains one nucleus labeled \"Z=13\", one inner shielding box labeled \"2s2p: 6.80\" and \"1s: 2.00\", one same-shell box labeled \"n=3 同层: 0.70\", and one red dot labeled \"红点电子\" beside an orbital label \"3p\". A right arrow connects to the middle panel labeled \"体系 II\" with nucleus \"Z=14\", inner shielding labels \"2s2p: 6.80\" and \"1s: 2.00\", same-shell label \"n=3 同层: 0.70\", and the same red dot and \"3p\" labels. A second right arrow connects to the right panel labeled \"体系 III\" with nucleus \"Z=15\", inner labels \"2s2p: 6.80\" and \"1s: 2.00\", same-shell label \"n=3 同层: 0.35\", and red dot beside \"3p\". Show a rendered formula Zeff = Z - S below each panel. Use red only for the target electron.",
+    "final_image_prompt": "A reaction scheme diagram showing three atomic-orbital panels arranged horizontally from left to right. The left panel is labeled \"体系 I\" and contains one nucleus labeled \"Z=13\", one inner shielding box labeled \"2s2p: 6.80\" and \"1s: 2.00\", one same-shell box labeled \"n=3 同层: 0.70\", and one red dot labeled \"红点电子\" beside an orbital label \"3p\". A right arrow connects to the middle panel labeled \"体系 II\" with nucleus \"Z=14\", inner shielding labels \"2s2p: 6.80\" and \"1s: 2.00\", same-shell label \"n=3 同层: 0.70\", and the same red dot and \"3p\" labels. A second right arrow connects to the right panel labeled \"体系 III\" with nucleus \"Z=15\", inner labels \"2s2p: 6.80\" and \"1s: 2.00\", same-shell label \"n=3 同层: 0.35\", and red dot beside \"3p\". Show a rendered formula Zeff = Z - S below each panel. Use red only for the target electron.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出任何具体核电荷或屏蔽贡献，必须读取图中三个面板的数值并组合计算，才能判断两步变化。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "三个体系的核电荷分别为 13、14、15",
+        "三个体系的内层屏蔽项均包含 6.80 和 2.00",
+        "三个体系的同层屏蔽项依次为 0.70、0.70、0.35",
+        "红点电子均对应 3p 价电子"
+      ],
+      "validation_rules": [
+        "分别按图中每个体系的屏蔽项求 $S$",
+        "分别用 $Z_{\\mathrm{eff}}=Z-S$ 求三个红点电子的有效核电荷",
+        "比较从体系 I 到体系 II 与从体系 II 到体系 III 的两个增量",
+        "选择指出第二步增量较大且原因包含核电荷增加与同层屏蔽减少的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-001-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-001",
+    "kp_name": "原子轨道与量子数基础",
+    "question_language": "en",
+    "question_text": "The figure shows the outer-orbital box diagram of a neutral atom in its ground state; lower boxes have lower energy. Using the visible core count and the occupied boxes, which electron configuration is the correct spectroscopic notation for this atom?",
+    "options": {
+      "A": "$[\\mathrm{Ar}]\\,3d^7\\,4s^2$",
+      "B": "$[\\mathrm{Ar}]\\,4s^2\\,3d^7$",
+      "C": "$[\\mathrm{Ar}]\\,3d^8\\,4s^1$",
+      "D": "$[\\mathrm{Kr}]\\,3d^7\\,4s^2$"
+    },
+    "correct_answer": "A",
+    "explanation": "The diagram gives an inner closed core with 18 electrons, so the noble-gas core is $[\\mathrm{Ar}]$. The outer boxes show two electrons in the $4s$ subshell and seven electrons in the five $3d$ orbitals. Although the energy diagram places $4s$ below $3d$ for filling, standard spectroscopic electron-configuration notation writes the subshells in increasing principal quantum number grouping with the $(n-1)d$ subshell before $ns$ for transition-metal configurations. Therefore the configuration is $[\\mathrm{Ar}]\\,3d^7\\,4s^2$. Option B follows the visual energy order rather than the conventional written order, option C miscounts the distribution between $3d$ and $4s$, and option D uses the wrong noble-gas core.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "电子构型书写",
+    "blueprint_image_type": "atomic_orbital_diagram",
+    "image_path": "images/7e0a8b65d58a43dc.png",
+    "image_prompt": "An atomic orbital diagram, viewed straight on, split into a left core block and right orbital rows. On the left place 1 rectangle labeled \"Core: 18 e−\". On the right place 3 horizontal rows: bottom row has 1 square orbital box labeled \"4s\" with 2 opposite arrows inside; middle row has 5 square boxes labeled \"3d\" with arrows left to right as paired up-down, paired up-down, single up, single up, single up; top row has 3 square boxes labeled \"4p\" with no arrows. Draw 1 vertical arrow along the left side of the rows from bottom to top labeled \"increasing energy\". Connect no boxes with lines. Use thin blue outlines for occupied boxes and gray outlines for empty boxes.",
+    "final_image_prompt": "An atomic orbital diagram, viewed straight on, split into a left core block and right orbital rows. On the left place 1 rectangle labeled \"Core: 18 e−\". On the right place 3 horizontal rows: bottom row has 1 square orbital box labeled \"4s\" with 2 opposite arrows inside; middle row has 5 square boxes labeled \"3d\" with arrows left to right as paired up-down, paired up-down, single up, single up, single up; top row has 3 square boxes labeled \"4p\" with no arrows. Draw 1 vertical arrow along the left side of the rows from bottom to top labeled \"increasing energy\". Connect no boxes with lines. Use thin blue outlines for occupied boxes and gray outlines for empty boxes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The core size, the $4s$ occupancy, the $3d$ occupancy, and the empty $4p$ row are only provided by the image, so the correct configuration cannot be determined from the text alone.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The diagram shows an inner core containing 18 electrons.",
+        "The visible occupied outer subshells contain two $4s$ electrons and seven $3d$ electrons.",
+        "The $4p$ row is shown but has no electrons."
+      ],
+      "validation_rules": [
+        "Map 18 core electrons to $[\\mathrm{Ar}]$.",
+        "Count two electrons in $4s$ and seven electrons in $3d$ from the orbital boxes.",
+        "Exclude the empty $4p$ row from the configuration.",
+        "Write the transition-metal spectroscopic notation as $[\\mathrm{Ar}]\\,3d^7\\,4s^2$."
+      ]
+    }
+  },
+  {
+    "question_id": "S22-001-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-001",
+    "kp_name": "原子轨道与量子数基础",
+    "question_language": "zh",
+    "question_text": "图中给出四个含第三能层价电子的粒子及一条简化屏蔽规则。只依据图示信息，哪一个被标出的价电子所受有效核电荷 $Z_{\\mathrm{eff}}=Z-S$ 最大？",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "B",
+    "explanation": "按图中规则，对被标出的第三能层价电子，屏蔽常数为 $S=0.85N_{\\mathrm{core}}+0.35N_{\\mathrm{same}}$，且 $N_{\\mathrm{core}}$ 为内层电子数，$N_{\\mathrm{same}}$ 为同一第三能层中除被标出电子以外的电子数。甲：$Z_{\\mathrm{eff}}=13-(0.85\\times10+0.35\\times2)=3.80$。乙：$Z_{\\mathrm{eff}}=14-(0.85\\times10+0.35\\times2)=4.80$。丙：$Z_{\\mathrm{eff}}=15-(0.85\\times10+0.35\\times4)=5.10$。丁：$Z_{\\mathrm{eff}}=16-(0.85\\times10+0.35\\times6)=5.40$。但题目要求比较被标出的价电子所受有效核电荷时，还必须注意图中丁的红色交叉箭头表示被标出电子位于成对的 $3p$ 轨道，需按图示附加同轨道成对屏蔽 $0.70$ 计入 $S$；丁修正后为 $16-(8.50+2.10+0.70)=4.70$。因此最大的是乙。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "有效核电荷",
+    "blueprint_image_type": "reaction_scheme",
+    "image_path": "images/a0f79183790b428b.png",
+    "image_prompt": "A reaction scheme diagram for comparing effective nuclear charge. Layout: one rule box on the left and four equal candidate boxes in one row on the right, connected by four thin arrows from the rule box. The rule box is labeled \"简化屏蔽规则\" and shows a rendered formula Zeff = Z − S, plus labels \"内层电子：0.85/个\", \"同层其他电子：0.35/个\", and \"红色交叉箭头：+0.70\". Candidate boxes are labeled \"甲\", \"乙\", \"丙\", \"丁\". In each box, put the nuclear charge label at upper left: \"Z=13\", \"Z=14\", \"Z=15\", \"Z=16\" respectively, and \"内层=10\" at upper right. Each box contains one 3s orbital box labeled \"3s\" and three 3p orbital boxes labeled \"3p\". Use black arrows for electrons and one blue dot for the marked 3p electron. Show same-shell other electron counts as 2, 2, 4, and 6 respectively. Only 丁 has one red crossed arrow in the same 3p box as the blue dot.",
+    "final_image_prompt": "A reaction scheme diagram for comparing effective nuclear charge. Layout: one rule box on the left and four equal candidate boxes in one row on the right, connected by four thin arrows from the rule box. The rule box is labeled \"简化屏蔽规则\" and shows a rendered formula Zeff = Z − S, plus labels \"内层电子：0.85/个\", \"同层其他电子：0.35/个\", and \"红色交叉箭头：+0.70\". Candidate boxes are labeled \"甲\", \"乙\", \"丙\", \"丁\". In each box, put the nuclear charge label at upper left: \"Z=13\", \"Z=14\", \"Z=15\", \"Z=16\" respectively, and \"内层=10\" at upper right. Each box contains one 3s orbital box labeled \"3s\" and three 3p orbital boxes labeled \"3p\". Use black arrows for electrons and one blue dot for the marked 3p electron. Show same-shell other electron counts as 2, 2, 4, and 6 respectively. Only 丁 has one red crossed arrow in the same 3p box as the blue dot.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出核电荷、同层电子数、特殊附加屏蔽位置或屏蔽系数；这些关键计算事实只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个候选的核电荷分别为13、14、15、16",
+        "四个候选的内层电子数均为10",
+        "四个候选的同层其他电子数分别为2、2、4、6",
+        "红色交叉箭头只出现在丁且带来0.70附加屏蔽",
+        "有效核电荷按图中简化屏蔽规则计算"
+      ],
+      "validation_rules": [
+        "必须使用 $Z_{\\mathrm{eff}}=Z-S$",
+        "必须把内层电子贡献按 $0.85$ 每个计入",
+        "必须把同层其他电子贡献按 $0.35$ 每个计入",
+        "必须对带红色交叉箭头的候选额外计入 $0.70$ 屏蔽",
+        "四个修正后的 $Z_{\\mathrm{eff}}$ 比较后唯一最大者对应选项B"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-001-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-001",
+    "kp_name": "原子轨道与量子数基础",
+    "question_language": "zh",
+    "question_text": "图中红色箭头标出的电子属于某中性原子基态能级示意图中的一个占据轨道。若同一子层内方框从左到右按磁量子数递增排列，下列哪一组量子数最可能描述该电子？",
+    "options": {
+      "A": "$n=4,\\ l=0,\\ m_l=0,\\ m_s=+\\frac{1}{2}$",
+      "B": "$n=3,\\ l=1,\\ m_l=+1,\\ m_s=+\\frac{1}{2}$",
+      "C": "$n=3,\\ l=2,\\ m_l=-1,\\ m_s=+\\frac{1}{2}$",
+      "D": "$n=3,\\ l=2,\\ m_l=0,\\ m_s=-\\frac{1}{2}$"
+    },
+    "correct_answer": "C",
+    "explanation": "先由图中红色箭头所在的能级行判断它属于 $3d$ 子层，因此主量子数为 $n=3$，角量子数为 $l=2$。题干说明同一子层内方框从左到右按 $m_l$ 递增排列，而 $d$ 子层的 $m_l$ 依次为 $-2,-1,0,+1,+2$；图中红色箭头位于该行第二个方框，所以 $m_l=-1$。红色箭头方向向上，对应 $m_s=+\\frac{1}{2}$。因此正确量子数组合为 $n=3,\\ l=2,\\ m_l=-1,\\ m_s=+\\frac{1}{2}$。",
+    "difficulty": 2,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "基于精确图示信息考查原子轨道与量子数基础",
+    "blueprint_image_type": "energy_diagram",
+    "image_path": "images/a125db53fd4a4dcf.png",
+    "image_prompt": "An energy diagram for atomic orbitals, viewed straight on, with a vertical energy axis on the left pointing upward (labeled \"能量升高\") and four horizontal rows on the right. From bottom to top place rows labeled \"3s\", \"3p\", \"4s\", and \"3d\". The 3s row has 1 square box containing one black up arrow and one black down arrow. The 3p row has 3 square boxes, each containing one black up arrow and one black down arrow. The 4s row has 1 square box containing one black up arrow and one black down arrow. The 3d row has 5 equally spaced square boxes; beneath them place labels \"-2\", \"-1\", \"0\", \"+1\", \"+2\" aligned one-to-one. Put one red upward electron arrow inside the second 3d box, with all other 3d arrows black. Use red only for the highlighted arrow.",
+    "final_image_prompt": "An energy diagram for atomic orbitals, viewed straight on, with a vertical energy axis on the left pointing upward (labeled \"能量升高\") and four horizontal rows on the right. From bottom to top place rows labeled \"3s\", \"3p\", \"4s\", and \"3d\". The 3s row has 1 square box containing one black up arrow and one black down arrow. The 3p row has 3 square boxes, each containing one black up arrow and one black down arrow. The 4s row has 1 square box containing one black up arrow and one black down arrow. The 3d row has 5 equally spaced square boxes; beneath them place labels \"-2\", \"-1\", \"0\", \"+1\", \"+2\" aligned one-to-one. Put one red upward electron arrow inside the second 3d box, with all other 3d arrows black. Use red only for the highlighted arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出红色电子所在能级、方框序号、对应 $m_l$ 或自旋方向；这些关键信息只能从图中读取并组合判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "红色箭头所在的能级行标签",
+        "红色箭头所在方框在同一子层中的位置",
+        "红色箭头所在方框对应的磁量子数标注",
+        "红色箭头的方向"
+      ],
+      "validation_rules": [
+        "若电子位于 3d 子层，则 $n=3$ 且 $l=2$",
+        "若 $d$ 子层方框按 $m_l$ 从左到右递增，则第二个方框对应 $m_l=-1$",
+        "若电子箭头向上，则 $m_s=+\\frac{1}{2}$",
+        "四个量子数必须同时与图中行标签、方框位置、磁量子数标注和箭头方向一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-003-Q0002",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-003",
+    "kp_name": "VSEPR与分子形状",
+    "question_language": "zh",
+    "question_text": "根据图中四个中心原子处标出的键角，按VSEPR理论比较这些角的相对大小。下列关系最合理的是？",
+    "options": {
+      "A": "$\\gamma>\\delta>\\beta>\\alpha$",
+      "B": "$\\delta>\\gamma>\\beta>\\alpha$",
+      "C": "$\\gamma>\\beta>\\delta>\\alpha$",
+      "D": "$\\delta>\\beta>\\alpha>\\gamma$"
+    },
+    "correct_answer": "A",
+    "explanation": "先从图中读取四个路易斯结构的中心原子电子域：$\\alpha$对应中心原子有2个成键电子域和2个孤对电子域，为$AX_2E_2$，键角受两对孤对压缩，约小于$109.5^\\circ$；$\\beta$对应3个成键电子域和1个孤对电子域，为$AX_3E$，键角也被孤对压缩，但压缩弱于$AX_2E_2$；$\\gamma$对应2个成键电子域和1个孤对电子域，电子域几何近似三角平面，弯曲形分子角接近但小于$120^\\circ$；$\\delta$对应4个成键电子域且无孤对，为正四面体，约$109.5^\\circ$。因此$\\gamma$最大，其次$\\delta$，再是$\\beta$，最小为$\\alpha$，即$\\gamma>\\delta>\\beta>\\alpha$。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "键角比较",
+    "blueprint_image_type": "lewis_structure",
+    "image_path": "images/0d20869dccdc4797.png",
+    "image_prompt": "A Lewis structure diagram, split into 4 equal horizontal panels labeled \"I\", \"II\", \"III\", and \"IV\" from left to right. Panel I shows one central atom O (labeled \"O\") connected by 2 single lines to 2 H atoms (each labeled \"H\"), with 2 lone-pair dot pairs on O and an arc between the two O-H bonds labeled \"α\". Panel II shows one central atom N connected by 3 single lines to 3 H atoms, with 1 lone-pair dot pair on N and an arc between two adjacent N-H bonds labeled \"β\". Panel III shows one central atom S connected to 2 O atoms, one S-O single line and one S=O double line, with 1 lone-pair dot pair on S and an arc labeled \"γ\". Panel IV shows one central atom C connected by 4 single lines to 4 H atoms, no lone pairs on C, and an arc labeled \"δ\". Use blue arcs only for angle labels.",
+    "final_image_prompt": "A Lewis structure diagram, split into 4 equal horizontal panels labeled \"I\", \"II\", \"III\", and \"IV\" from left to right. Panel I shows one central atom O (labeled \"O\") connected by 2 single lines to 2 H atoms (each labeled \"H\"), with 2 lone-pair dot pairs on O and an arc between the two O-H bonds labeled \"α\". Panel II shows one central atom N connected by 3 single lines to 3 H atoms, with 1 lone-pair dot pair on N and an arc between two adjacent N-H bonds labeled \"β\". Panel III shows one central atom S connected to 2 O atoms, one S-O single line and one S=O double line, with 1 lone-pair dot pair on S and an arc labeled \"γ\". Panel IV shows one central atom C connected by 4 single lines to 4 H atoms, no lone pairs on C, and an arc labeled \"δ\". Use blue arcs only for angle labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出四个角分别对应的中心原子、成键数、孤对数或双键信息；必须读取图中的路易斯结构才能进行VSEPR比较。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "面板I中心原子的成键数和孤对数",
+        "面板II中心原子的成键数和孤对数",
+        "面板III中心原子的成键数、双键显示方式和孤对数",
+        "面板IV中心原子的成键数和孤对数"
+      ],
+      "validation_rules": [
+        "将双键按一个电子域处理来判断VSEPR电子域数",
+        "三角平面电子域的弯曲结构角应大于四面体无孤对结构角",
+        "四面体无孤对角大于三角锥角，三角锥角大于含两对孤对的弯曲结构角",
+        "唯一符合上述比较的是$\\gamma>\\delta>\\beta>\\alpha$"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-005-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-005",
+    "kp_name": "分子间作用力",
+    "question_language": "zh",
+    "question_text": "图中给出四个中性小分子的 Lewis 结构。用下列经验指标比较它们在水中的相对溶解倾向：$P=2N_D+N_A-0.7N_C$。其中，$N_D$ 为可作为氢键供体的 $\\mathrm{O-H}$ 数，$N_A$ 为带孤对电子、可作为氢键受体的氧原子数，$N_C$ 为碳原子数。按该指标，哪一个分子预测最易溶于水？",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "C",
+    "explanation": "需要从图中分别数出每个分子的氢键供体数、氢键受体数和碳原子数，再代入 $P=2N_D+N_A-0.7N_C$。甲为醇类结构，含 $1$ 个 $\\mathrm{O-H}$，有 $1$ 个可作受体的氧，含 $3$ 个碳，所以 $P=2\\times1+1-0.7\\times3=0.9$。乙为羰基结构，含 $0$ 个 $\\mathrm{O-H}$，有 $1$ 个受体氧，含 $3$ 个碳，所以 $P=0+1-2.1=-1.1$。丙含两个 $\\mathrm{O-H}$，两个氧均可作受体，含 $2$ 个碳，所以 $P=2\\times2+2-0.7\\times2=4.6$。丁为醚，含 $0$ 个 $\\mathrm{O-H}$，有 $1$ 个受体氧，含 $2$ 个碳，所以 $P=0+1-1.4=-0.4$。比较四个 $P$ 值，丙最大，因此预测最易溶于水的是丙。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "溶解性预测",
+    "blueprint_image_type": "lewis_structure",
+    "image_path": "images/31b083abf3954149.png",
+    "image_prompt": "A Lewis structure diagram, viewed straight-on, split into 4 equal horizontal boxes arranged left to right. Box 1 is labeled \"甲\" and shows C-C-C-O-H with single bonds, each C carrying enough H labels to form CH3, CH2, CH2, and the O carrying 2 lone-pair dot pairs. Box 2 is labeled \"乙\" and shows C-C-C, with the middle C double-bonded upward to O; the two end C atoms each have 3 H labels, and the O has 2 lone-pair dot pairs. Box 3 is labeled \"丙\" and shows H-O-C-C-O-H with single bonds, both C atoms carrying 2 H labels, and each O carrying 2 lone-pair dot pairs. Box 4 is labeled \"丁\" and shows C-O-C with single bonds, each C carrying 3 H labels, and the O carrying 2 lone-pair dot pairs. Light blue highlight only on O atoms and O-H bonds.",
+    "final_image_prompt": "A Lewis structure diagram, viewed straight-on, split into 4 equal horizontal boxes arranged left to right. Box 1 is labeled \"甲\" and shows C-C-C-O-H with single bonds, each C carrying enough H labels to form CH3, CH2, CH2, and the O carrying 2 lone-pair dot pairs. Box 2 is labeled \"乙\" and shows C-C-C, with the middle C double-bonded upward to O; the two end C atoms each have 3 H labels, and the O has 2 lone-pair dot pairs. Box 3 is labeled \"丙\" and shows H-O-C-C-O-H with single bonds, both C atoms carrying 2 H labels, and each O carrying 2 lone-pair dot pairs. Box 4 is labeled \"丁\" and shows C-O-C with single bonds, each C carrying 3 H labels, and the O carrying 2 lone-pair dot pairs. Light blue highlight only on O atoms and O-H bonds.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出计算规则，没有给出四个分子的结构、碳数、氧数或 O-H 键数；必须读取图片中的 Lewis 结构才能完成计数和比较。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个候选分子的具体 Lewis 结构只在图片中给出",
+        "每个候选分子的碳原子数需要从图片中数出",
+        "每个候选分子的 O-H 键数需要从图片中判断",
+        "每个候选分子的可作氢键受体的氧原子数需要从图片中判断"
+      ],
+      "validation_rules": [
+        "根据图中 Lewis 结构数出每个分子的 $N_D$、$N_A$ 和 $N_C$",
+        "对每个选项计算 $P=2N_D+N_A-0.7N_C$",
+        "选择 $P$ 值最大的分子",
+        "若计算得到甲、乙、丙、丁的 $P$ 值分别为 $0.9$、$-1.1$、$4.6$、$-0.4$，则答案为 C"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-005-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-005",
+    "kp_name": "分子间作用力",
+    "question_language": "zh",
+    "question_text": "图中给出四个候选分子对的局部结构和两条虚线接触。按判据：只有当供体为$\\mathrm{N-H}$、$\\mathrm{O-H}$或$\\mathrm{F-H}$，受体原子为$\\mathrm{N}$、$\\mathrm{O}$或$\\mathrm{F}$，且$\\mathrm{H\\cdots A}$距离不大于$2.20\\ \\mathrm{\\AA}$、$\\mathrm{D-H\\cdots A}$角不小于$150^\\circ$时，才计为一个分子间氢键。哪一个候选分子对恰好包含两个符合判据的分子间氢键？",
+    "options": {
+      "A": "图I",
+      "B": "图II",
+      "C": "图III",
+      "D": "图IV"
+    },
+    "correct_answer": "A",
+    "explanation": "逐一检查两条虚线接触。图I中两条接触均为$\\mathrm{N-H\\cdots O}$，距离分别为$1.95\\ \\mathrm{\\AA}$和$2.00\\ \\mathrm{\\AA}$，角度分别为$168^\\circ$和$160^\\circ$，供体、受体、距离和角度都满足判据，因此有两个氢键。图II中一条$\\mathrm{O-H\\cdots O}$满足，但另一条为$\\mathrm{C-H\\cdots O}$，供体不是规定的$\\mathrm{N-H}$、$\\mathrm{O-H}$或$\\mathrm{F-H}$，不计。图III中两条都是合格供体和受体组合，但其中一条角度为$138^\\circ$，小于$150^\\circ$，不计。图IV中一条$\\mathrm{N-H\\cdots N}$满足，另一条距离为$2.35\\ \\mathrm{\\AA}$，大于$2.20\\ \\mathrm{\\AA}$，不计。故只有图I恰好有两个符合判据的分子间氢键。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "氢键判定",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/647075059f46400f.png",
+    "image_prompt": "Chemical structure diagram, viewed straight on, split into four equal horizontal panels labeled \"图I\", \"图II\", \"图III\", and \"图IV\" from left to right. In each panel draw 2 small molecular fragments facing each other and 2 blue dashed intermolecular contacts. 图I: upper contact from left N-H hydrogen to right O labeled \"1.95 Å\" and \"168°\"; lower contact from right N-H hydrogen to left O labeled \"2.00 Å\" and \"160°\". 图II: upper O-H to O labeled \"1.82 Å\", \"171°\"; lower C-H to O labeled \"2.05 Å\", \"166°\". 图III: upper N-H to O labeled \"1.90 Å\", \"162°\"; lower O-H to N labeled \"1.88 Å\", \"138°\". 图IV: upper N-H to N labeled \"2.10 Å\", \"154°\"; lower O-H to O labeled \"2.35 Å\", \"158°\". Show atom labels \"C\", \"H\", \"N\", \"O\" and black covalent bonds; highlight only dashed contacts in blue.",
+    "final_image_prompt": "Chemical structure diagram, viewed straight on, split into four equal horizontal panels labeled \"图I\", \"图II\", \"图III\", and \"图IV\" from left to right. In each panel draw 2 small molecular fragments facing each other and 2 blue dashed intermolecular contacts. 图I: upper contact from left N-H hydrogen to right O labeled \"1.95 Å\" and \"168°\"; lower contact from right N-H hydrogen to left O labeled \"2.00 Å\" and \"160°\". 图II: upper O-H to O labeled \"1.82 Å\", \"171°\"; lower C-H to O labeled \"2.05 Å\", \"166°\". 图III: upper N-H to O labeled \"1.90 Å\", \"162°\"; lower O-H to N labeled \"1.88 Å\", \"138°\". 图IV: upper N-H to N labeled \"2.10 Å\", \"154°\"; lower O-H to O labeled \"2.35 Å\", \"158°\". Show atom labels \"C\", \"H\", \"N\", \"O\" and black covalent bonds; highlight only dashed contacts in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，四个候选分子对的供体类型、受体类型、距离和角度均在图片中；不看图无法完成逐项筛选和计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四个面板中每条虚线接触对应的供体键类型和受体原子类型",
+        "四个面板中每条虚线接触的距离数值",
+        "四个面板中每条虚线接触的角度数值"
+      ],
+      "validation_rules": [
+        "逐条检查供体是否为$\\mathrm{N-H}$、$\\mathrm{O-H}$或$\\mathrm{F-H}$",
+        "逐条检查受体原子是否为$\\mathrm{N}$、$\\mathrm{O}$或$\\mathrm{F}$",
+        "逐条检查$\\mathrm{H\\cdots A}$距离是否不大于$2.20\\ \\mathrm{\\AA}$",
+        "逐条检查$\\mathrm{D-H\\cdots A}$角度是否不小于$150^\\circ$",
+        "选择且只选择计数为两个的候选分子对"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-005-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-005",
+    "kp_name": "分子间作用力",
+    "question_language": "zh",
+    "question_text": "图中给出四个分子的结构与局部相互作用线索。若比较常压下相对沸点，按“能否同时提供氢键供体与受体、可形成的分子间氢键接触数、分子量所增强的色散力”综合判断，哪一个分子的沸点预期最高？",
+    "options": {
+      "A": "分子 P",
+      "B": "分子 Q",
+      "C": "分子 R",
+      "D": "分子 S"
+    },
+    "correct_answer": "D",
+    "explanation": "判断沸点时，先看分子间作用力强弱。图中 P 为醚类结构，含氧原子但没有与 $O$ 相连的 $H$，只能作为氢键受体，不能在纯液体中彼此提供氢键供体；Q 为醛类结构，也没有 $O-H$，主要依赖偶极力和色散力；R 为醇类结构，有一个 $O-H$，可同时提供氢键供体和受体，能形成分子间氢键；S 为羧酸结构，有一个 $O-H$ 供体和两个氧相关受体位置，并且图中显示两个 S 分子之间有两条互补虚线接触，表示可形成二聚型分子间氢键。虽然 S 与 R 分子量接近，但 S 的分子间氢键接触更成对、更强，因此沸点预期最高，选 D。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "沸点比较",
+    "blueprint_image_type": "molecular_structure",
+    "image_path": "images/8710002575e44767.png",
+    "image_prompt": "A molecular_structure diagram, viewed straight on, split into 4 equal horizontal cards from left to right. Card 1 is labeled \"P\" and shows CH3-O-CH3 with the oxygen labeled \"O\", two lone-pair dot pairs, and \"46 g/mol\" below. Card 2 is labeled \"Q\" and shows CH3-C(=O)-H with the oxygen labeled \"O\", two lone-pair dot pairs, and \"44 g/mol\" below. Card 3 is labeled \"R\" and shows 2 copies of CH3-CH2-O-H; draw 1 blue dashed intermolecular line from the H on one O-H group to the O of the other copy, and show \"46 g/mol\" below. Card 4 is labeled \"S\" and shows 2 copies of CH3-C(=O)-O-H; draw 2 blue dashed intermolecular lines between each hydroxyl H and the opposite carbonyl O, and show \"60 g/mol\" below. Use black covalent bonds and blue dashed contact lines.",
+    "final_image_prompt": "A molecular_structure diagram, viewed straight on, split into 4 equal horizontal cards from left to right. Card 1 is labeled \"P\" and shows CH3-O-CH3 with the oxygen labeled \"O\", two lone-pair dot pairs, and \"46 g/mol\" below. Card 2 is labeled \"Q\" and shows CH3-C(=O)-H with the oxygen labeled \"O\", two lone-pair dot pairs, and \"44 g/mol\" below. Card 3 is labeled \"R\" and shows 2 copies of CH3-CH2-O-H; draw 1 blue dashed intermolecular line from the H on one O-H group to the O of the other copy, and show \"46 g/mol\" below. Card 4 is labeled \"S\" and shows 2 copies of CH3-C(=O)-O-H; draw 2 blue dashed intermolecular lines between each hydroxyl H and the opposite carbonyl O, and show \"60 g/mol\" below. Use black covalent bonds and blue dashed contact lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各分子的结构、分子量或虚线接触数；必须看图才能判断氢键供体/受体、分子间接触和色散力强弱。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "P、Q、R、S 的具体结构只在图中给出",
+        "四个分子的分子量数值只在图中给出",
+        "R 与 S 的蓝色虚线接触数只在图中给出",
+        "P 与 Q 缺少 O-H 连接这一事实需要从图中结构读取"
+      ],
+      "validation_rules": [
+        "含有 O-H 且有受体位点的分子可在纯液体中形成分子间氢键",
+        "蓝色虚线接触数更多表示图示的分子间氢键接触更多",
+        "在氢键能力更强且分子量不低的情况下，预期沸点更高",
+        "按图中事实综合比较后，S 对应的选项为唯一正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-006-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-006",
+    "kp_name": "晶体结构",
+    "question_language": "zh",
+    "question_text": "根据图示晶胞中两类粒子的位置，按晶胞对粒子的实际贡献计算，该晶胞内 $X$ 与 $Y$ 的有效粒子数之比为多少？",
+    "options": {
+      "A": "$2:1$",
+      "B": "$9:2$",
+      "C": "$1:1$",
+      "D": "$4:1$"
+    },
+    "correct_answer": "A",
+    "explanation": "晶胞计数时，位于顶点的粒子被 $8$ 个相邻晶胞共用，每个顶点粒子对一个晶胞贡献 $\\frac{1}{8}$；位于体心的粒子完全属于该晶胞，贡献 $1$；位于面心的粒子被 $2$ 个晶胞共用，每个面心粒子贡献 $\\frac{1}{2}$。由图可数得，$X$ 粒子位于所有顶点和体心，因此 $X$ 的有效数为 $8\\times\\frac{1}{8}+1=2$。$Y$ 粒子位于两个相对面心，因此 $Y$ 的有效数为 $2\\times\\frac{1}{2}=1$。所以 $X:Y=2:1$。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "晶胞计数",
+    "blueprint_image_type": "crystal_structure",
+    "image_path": "images/0c37ee3694ca44fd.png",
+    "image_prompt": "A crystal_structure diagram of one cubic unit cell, shown in a clean slightly tilted orthographic view so the top, front, and right faces are visible. Draw one black wireframe cube. Place 8 red spheres at the 8 cube corners, each labeled \"X\" only once with one nearby red sphere. Place 1 red sphere at the exact cube center, labeled \"体心\". Place 2 blue spheres at the centers of the top and bottom faces, each aligned vertically with the central red sphere; label one blue sphere \"Y\" and label the two face-center positions \"面心\". Label one cube corner \"顶点\". Connect only the cube edges with black lines; do not draw bonds between spheres. Use red for X spheres and blue for Y spheres, with no final ratio or particle count shown.",
+    "final_image_prompt": "A crystal_structure diagram of one cubic unit cell, shown in a clean slightly tilted orthographic view so the top, front, and right faces are visible. Draw one black wireframe cube. Place 8 red spheres at the 8 cube corners, each labeled \"X\" only once with one nearby red sphere. Place 1 red sphere at the exact cube center, labeled \"体心\". Place 2 blue spheres at the centers of the top and bottom faces, each aligned vertically with the central red sphere; label one blue sphere \"Y\" and label the two face-center positions \"面心\". Label one cube corner \"顶点\". Connect only the cube edges with black lines; do not draw bonds between spheres. Use red for X spheres and blue for Y spheres, with no final ratio or particle count shown.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出X和Y在晶胞中的具体位置与数量，必须依赖图示判断顶点、体心和面心分布后才能计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中X粒子分布在8个顶点和1个体心",
+        "图中Y粒子分布在两个相对面心",
+        "图中粒子位置类型分别对应顶点、体心、面心"
+      ],
+      "validation_rules": [
+        "顶点粒子对单个晶胞贡献按$\\frac{1}{8}$计算",
+        "体心粒子对单个晶胞贡献按$1$计算",
+        "面心粒子对单个晶胞贡献按$\\frac{1}{2}$计算",
+        "应分别求出$X$和$Y$的有效粒子数后再化为最简整数比"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-007-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-007",
+    "kp_name": "离子键与离子晶体",
+    "question_language": "zh",
+    "question_text": "图中给出四种同型离子晶体的局部结构信息。若它们的 Madelung 常数和 Born 指数近似相同，晶格能绝对值按 $|U|\\propto \\frac{|z_+z_-|}{r_0}$ 比较，其中 $r_0$ 为最近邻阴、阳离子核间距。以晶体 I 的 $|U|$ 为 $1.00$，下列哪一项最接近晶体 III 的相对晶格能绝对值？",
+    "options": {
+      "A": "$1.50$",
+      "B": "$0.67$",
+      "C": "$2.25$",
+      "D": "$3.00$"
+    },
+    "correct_answer": "A",
+    "explanation": "同型离子晶体且 Madelung 常数、Born 指数近似相同，可用 $|U|\\propto \\frac{|z_+z_-|}{r_0}$ 比较。由图读出晶体 I 的离子电荷乘积绝对值为 $|(+1)(-1)|=1$，最近邻距离为 $r_0=300\\,\\mathrm{pm}$；晶体 III 的离子电荷乘积绝对值为 $|(+2)(-1)|=2$，最近邻距离为 $r_0=400\\,\\mathrm{pm}$。因此相对值为 $\\frac{|U_{III}|}{|U_I|}=\\frac{2/400}{1/300}=\\frac{2\\times 300}{400}=1.50$。选项 B 是只比较距离而忽略电荷乘积；选项 C 类似于把距离比处理错误并过度放大；选项 D 则相当于把电荷倍数与距离变化方向同时误用。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "晶格能",
+    "blueprint_image_type": "crystal_structure",
+    "image_path": "images/e2b237835af1451a.png",
+    "image_prompt": "A crystal structure diagram, arranged as four equal panels in one horizontal row viewed from above. Each panel shows one pale blue central cation circle and one pale orange right-side nearest-neighbor anion circle. Panel 1 is labeled \"晶体 I\" and contains a cation labeled \"M+\", an anion labeled \"X−\", and a horizontal double-headed arrow labeled \"300 pm\". Panel 2 is labeled \"晶体 II\" with \"N+\", \"Y2−\", and \"360 pm\". Panel 3 is labeled \"晶体 III\" with \"P2+\", \"Z−\", and \"400 pm\". Panel 4 is labeled \"晶体 IV\" with \"Q2+\", \"W2−\", and \"520 pm\". In every panel, the arrow connects the two ion centers. Use identical local geometry in all panels, and outline panel 3 with a thin red border.",
+    "final_image_prompt": "A crystal structure diagram, arranged as four equal panels in one horizontal row viewed from above. Each panel shows one pale blue central cation circle and one pale orange right-side nearest-neighbor anion circle. Panel 1 is labeled \"晶体 I\" and contains a cation labeled \"M+\", an anion labeled \"X−\", and a horizontal double-headed arrow labeled \"300 pm\". Panel 2 is labeled \"晶体 II\" with \"N+\", \"Y2−\", and \"360 pm\". Panel 3 is labeled \"晶体 III\" with \"P2+\", \"Z−\", and \"400 pm\". Panel 4 is labeled \"晶体 IV\" with \"Q2+\", \"W2−\", and \"520 pm\". In every panel, the arrow connects the two ion centers. Use identical local geometry in all panels, and outline panel 3 with a thin red border.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出晶体 I 和晶体 III 的电荷标签及最近邻距离；这些关键数值只能从图中读取，删除图片后无法计算相对晶格能。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "晶体 I 的电荷标签为 M+ 与 X−，最近邻距离为 300 pm",
+        "晶体 III 的电荷标签为 P2+ 与 Z−，最近邻距离为 400 pm"
+      ],
+      "validation_rules": [
+        "从图中读取晶体 I 与晶体 III 的离子电荷和最近邻距离",
+        "用 $|U|\\propto \\frac{|z_+z_-|}{r_0}$ 分别写出比例项",
+        "计算 $\\frac{|U_{III}|}{|U_I|}=\\frac{2/400}{1/300}$",
+        "所得相对值应最接近 $1.50$"
+      ]
+    }
+  },
+  {
+    "question_id": "S22-008-Q0001",
+    "subject_id": "S22",
+    "subject_name": "化学",
+    "kp_id": "S22-M01-008",
+    "kp_name": "金属键与能带理论",
+    "question_language": "zh",
+    "question_text": "下图给出四种固体的简化能带示意。按能带理论，若“本征半导体”的判据取为：禁带宽度 $0.5\\ \\mathrm{eV}<E_g<3.0\\ \\mathrm{eV}$，且费米能级 $E_F$ 位于禁带中点，图中哪一种最符合该判据？",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "A",
+    "explanation": "需要从图中读取各固体的价带顶 $E_v$、导带底 $E_c$ 和费米能级 $E_F$。甲的 $E_g=E_c-E_v=0.4-(-1.2)=1.6\\ \\mathrm{eV}$，在 $0.5\\ \\mathrm{eV}$ 到 $3.0\\ \\mathrm{eV}$ 之间；其中点为 $(-1.2+0.4)/2=-0.4\\ \\mathrm{eV}$，与 $E_F$ 重合。乙虽然能带间隔很小，但不满足本征半导体禁带宽度范围；丙的禁带宽度为 $4.0\\ \\mathrm{eV}$，更接近绝缘体；丁的禁带宽度符合范围，但 $E_F$ 不在禁带中点。因此唯一符合判据的是甲。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "能带结构",
+    "blueprint_image_type": "chemical_diagram",
+    "image_path": "images/88b3ca717e40453d.png",
+    "image_prompt": "A chemical diagram of simplified solid-state band structures, viewed straight on, split into 4 equal vertical panels arranged left to right. The panels are labeled \"甲\", \"乙\", \"丙\", and \"丁\". In each panel, draw 1 vertical energy axis labeled \"能量 / eV\" and 3 horizontal energy lines. For \"甲\", show a blue solid line labeled \"价带顶\" at -1.2 eV, a red solid line labeled \"导带底\" at 0.4 eV, and a green dashed line labeled \"E_F\" at -0.4 eV. For \"乙\", place the lines at -0.1 eV, 0.0 eV, and -0.05 eV. For \"丙\", place them at -2.5 eV, 1.5 eV, and -0.5 eV. For \"丁\", place them at -1.0 eV, 0.8 eV, and -0.2 eV. Label every visible numeric value in eV; use blue, red, and green consistently.",
+    "final_image_prompt": "A chemical diagram of simplified solid-state band structures, viewed straight on, split into 4 equal vertical panels arranged left to right. The panels are labeled \"甲\", \"乙\", \"丙\", and \"丁\". In each panel, draw 1 vertical energy axis labeled \"能量 / eV\" and 3 horizontal energy lines. For \"甲\", show a blue solid line labeled \"价带顶\" at -1.2 eV, a red solid line labeled \"导带底\" at 0.4 eV, and a green dashed line labeled \"E_F\" at -0.4 eV. For \"乙\", place the lines at -0.1 eV, 0.0 eV, and -0.05 eV. For \"丙\", place them at -2.5 eV, 1.5 eV, and -0.5 eV. For \"丁\", place them at -1.0 eV, 0.8 eV, and -0.2 eV. Label every visible numeric value in eV; use blue, red, and green consistently.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判据，不给出四种固体的能级数值；必须读取图中各面板的 $E_v$、$E_c$ 与 $E_F$ 才能计算和筛选。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四个面板中的 $E_v$、$E_c$ 和 $E_F$ 数值只由图中给出",
+        "各面板中 $E_F$ 与两条带边的相对位置只由图中判断",
+        "各面板的禁带宽度需要由图中数值相减得到"
+      ],
+      "validation_rules": [
+        "对每个候选项计算 $E_g=E_c-E_v$",
+        "检查 $0.5\\ \\mathrm{eV}<E_g<3.0\\ \\mathrm{eV}$",
+        "检查 $E_F=(E_c+E_v)/2$",
+        "只有同时满足禁带宽度范围和费米能级居中条件的选项为正确答案"
+      ]
+    }
+  }
+]

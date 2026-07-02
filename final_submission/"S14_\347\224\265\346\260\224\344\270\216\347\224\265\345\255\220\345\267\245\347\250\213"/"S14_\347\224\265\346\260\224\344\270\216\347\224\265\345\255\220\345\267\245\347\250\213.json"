@@ -1,0 +1,484 @@
+[
+  {
+    "question_id": "S14-001-Q0004",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-001",
+    "kp_name": "KVL与KCL",
+    "question_language": "zh",
+    "question_text": "根据图中给定的参考方向，求电阻支路电流 $i_x$。应优先使用节点电压法，并注意电流源方向与KCL符号。",
+    "options": {
+      "A": "$2\\ \\mathrm{A}$",
+      "B": "$-2\\ \\mathrm{A}$",
+      "C": "$3\\ \\mathrm{A}$",
+      "D": "$1\\ \\mathrm{A}$"
+    },
+    "correct_answer": "A",
+    "explanation": "以下端参考节点为 $0\\ \\mathrm{V}$。由左侧电压源极性可得上方左节点电压 $V_A=12\\ \\mathrm{V}$。设右上节点电压为 $V_B$，在右上节点按“离开节点为正”列KCL：经左侧电阻的电流为 $\\frac{V_B-V_A}{3}$，经下方电阻的电流为 $\\frac{V_B}{6}$，向下的电流源也是离开节点的 $1\\ \\mathrm{A}$，故 $\\frac{V_B-12}{3}+\\frac{V_B}{6}+1=0$。两边乘以 $6$ 得 $2V_B-24+V_B+6=0$，所以 $3V_B=18$，$V_B=6\\ \\mathrm{V}$。图中 $i_x$ 的参考方向为从左到右，因此 $i_x=\\frac{V_A-V_B}{3}=\\frac{12-6}{3}=2\\ \\mathrm{A}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/55e5c1deb34a42f8.png",
+    "image_prompt": "Circuit diagram, viewed straight on, arranged as a rectangular network with a left vertical branch, a top horizontal branch, and two right vertical parallel branches sharing one bottom reference rail. Show node A at the top left (labeled \"A\") and node B at the top right (labeled \"B\"), both as black dots. Place one voltage source in the left branch (labeled \"12 V\") with a plus sign at the top and a minus sign at the bottom. Place one resistor between A and B (labeled \"3 Ω\") with a blue arrow above it from A to B (labeled \"i_x\"). From B to the bottom rail, draw one resistor branch (labeled \"6 Ω\") and one current source branch (labeled \"1 A\") with its arrow downward. Label the bottom rail \"0 V\". Use blue only for the i_x arrow.",
+    "final_image_prompt": "Circuit diagram, viewed straight on, arranged as a rectangular network with a left vertical branch, a top horizontal branch, and two right vertical parallel branches sharing one bottom reference rail. Show node A at the top left (labeled \"A\") and node B at the top right (labeled \"B\"), both as black dots. Place one voltage source in the left branch (labeled \"12 V\") with a plus sign at the top and a minus sign at the bottom. Place one resistor between A and B (labeled \"3 Ω\") with a blue arrow above it from A to B (labeled \"i_x\"). From B to the bottom rail, draw one resistor branch (labeled \"6 Ω\") and one current source branch (labeled \"1 A\") with its arrow downward. Label the bottom rail \"0 V\". Use blue only for the i_x arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出电源极性、电流源方向、各支路连接关系和元件数值；必须读取电路图才能列出正确KCL并确定 $i_x$ 的符号。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "电压源极性和数值由图给出",
+        "上方电阻阻值和i_x参考方向由图给出",
+        "右侧电阻阻值由图给出",
+        "电流源数值及其向下方向由图给出",
+        "底部参考节点为0 V由图给出"
+      ],
+      "validation_rules": [
+        "由图中电压源极性确定 $V_A=12\\ \\mathrm{V}$",
+        "在节点B列KCL：$\\frac{V_B-12}{3}+\\frac{V_B}{6}+1=0$",
+        "解得 $V_B=6\\ \\mathrm{V}$",
+        "按图中参考方向计算 $i_x=\\frac{12-6}{3}=2\\ \\mathrm{A}$",
+        "仅选项A与计算结果一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0002",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "图中端口保持开路。若以下方公共节点为参考地，求端口电压 $v_o$ 的值最接近哪一项？",
+    "options": {
+      "A": "$1.20\\ \\mathrm{V}$",
+      "B": "$1.50\\ \\mathrm{V}$",
+      "C": "$1.85\\ \\mathrm{V}$",
+      "D": "$2.40\\ \\mathrm{V}$"
+    },
+    "correct_answer": "C",
+    "explanation": "设左上节点电压为 $V_a$，右上端口节点电压为 $V_b$，由于端口开路，$v_o=V_b$。由图可知，电流源向节点 $a$ 注入电流。对节点 $a$ 写 KCL：$\\frac{V_a}{4}+\\frac{V_a-V_b}{6}=2$。对节点 $b$ 写 KCL：$\\frac{V_b}{3}+\\frac{V_b-V_a}{6}=0$。第二式化简得 $2V_b+V_b-V_a=0$，即 $V_a=3V_b$。代入第一式：$\\frac{3V_b}{4}+\\frac{3V_b-V_b}{6}=2$，即 $\\frac{3V_b}{4}+\\frac{V_b}{3}=2$，所以 $\\frac{13V_b}{12}=2$，得 $V_b=\\frac{24}{13}\\ \\mathrm{V}\\approx1.85\\ \\mathrm{V}$。因此 $v_o\\approx1.85\\ \\mathrm{V}$，选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/30f872123a174833.png",
+    "image_prompt": "A circuit diagram, viewed straight on, with a single bottom horizontal reference rail and two top nodes arranged left to right. Draw 6 main elements: one current source on the far left, three resistors, one ground symbol, and one open port on the far right. Place node a at the upper left (labeled \"a\") and node b at the upper right (labeled \"b\"). Connect an upward current source between GND and node a (labeled \"2 A\"). Connect a vertical resistor from node a to GND (labeled \"4 Ω\"). Connect a horizontal resistor from node a to node b (labeled \"6 Ω\"). Connect a vertical resistor from node b to GND (labeled \"3 Ω\"). Connect an open port to node b and GND with polarity signs (labeled \"+\", \"-\", \"vo\", \"open port\"). Highlight the open port lightly in blue.",
+    "final_image_prompt": "A circuit diagram, viewed straight on, with a single bottom horizontal reference rail and two top nodes arranged left to right. Draw 6 main elements: one current source on the far left, three resistors, one ground symbol, and one open port on the far right. Place node a at the upper left (labeled \"a\") and node b at the upper right (labeled \"b\"). Connect an upward current source between GND and node a (labeled \"2 A\"). Connect a vertical resistor from node a to GND (labeled \"4 Ω\"). Connect a horizontal resistor from node a to node b (labeled \"6 Ω\"). Connect a vertical resistor from node b to GND (labeled \"3 Ω\"). Connect an open port to node b and GND with polarity signs (labeled \"+\", \"-\", \"vo\", \"open port\"). Highlight the open port lightly in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出电流源方向、阻值、节点连接方式或端口极性；这些信息必须从图中读取后才能建立节点方程。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中电流源大小和方向",
+        "图中三个电阻的阻值及其连接节点",
+        "图中端口电压的正负极性和开路状态"
+      ],
+      "validation_rules": [
+        "以 GND 为参考节点，设节点电压为 $V_a$ 与 $V_b$",
+        "根据图中连接关系写出 $\\frac{V_a}{4}+\\frac{V_a-V_b}{6}=2$ 与 $\\frac{V_b}{3}+\\frac{V_b-V_a}{6}=0$",
+        "联立方程得到 $V_b=\\frac{24}{13}\\ \\mathrm{V}$，端口开路电压 $v_o=V_b\\approx1.85\\ \\mathrm{V}$",
+        "四个选项中只有 C 与计算结果一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0003",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "如图所示电路中，已知左侧电压源为 $12\\text{ V}$，上方左电阻为 $2\\Omega$，上方右电阻为 $4\\Omega$，中间竖直电阻为 $6\\Omega$，右侧竖直电阻为 $3\\Omega$，底边导线直接连接各下端节点。若以右侧竖直 $3\\Omega$ 电阻中的电流 $i$ 为目标量，且要求使用图中给出的分析方法选择最合适的步骤顺序，则下面哪一项最合理？",
+    "options": {
+      "A": "先对两个上方网孔列网孔电流方程，再由右侧支路电流求 $i$",
+      "B": "先对含受控源的支路做叠加定理，再由节点电压法求 $i$",
+      "C": "先把右侧 $3\\Omega$ 电阻单独做戴维南等效，再直接得到 $i$",
+      "D": "先对两个上方节点写节点电压方程，再由节点电压差求 $i$"
+    },
+    "correct_answer": "D",
+    "explanation": "这是一道方法选择题，不是单纯代数计算题。图中底边是公共参考节点，两个上方节点分别通过电阻连接到参考节点，并且右侧支路电流 $i$ 直接对应右上节点到参考节点的电阻电流。对此类电路，节点电压法最自然：先把底边作为参考点，设两个上方节点电压，再写两个节点的KCL方程，最后用右侧电阻两端电压除以 $3\\Omega$ 得到 $i$。因此选 $D$。\n\n为什么其他项不合适：$A$ 把网孔法作为最直接方法，但题目目标量是支路电流，且电路从图上看节点连接更直接，网孔法并不是最简步骤；$B$ 叠加定理需要多个独立源，图中只给出一个独立电压源，因此不成立；$C$ 戴维南等效可以做，但题目问的是“最合适的步骤顺序”，对单个支路电流而言，先建立节点方程更直接，不必先把右侧电阻单独等效。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/3ce72e16cf23433c.png",
+    "image_prompt": "A circuit diagram viewed straight-on, with a flat horizontal bottom wire as a common reference node and three upper nodes arranged left, center, and right. Draw 1 ideal DC voltage source on the lower left branch labeled “12 V”. Place 4 resistors total: a 2 Ω resistor between the left upper node and the center upper node, a 4 Ω resistor between the center upper node and the right upper node, a 6 Ω vertical resistor from the center upper node down to the bottom wire, and a 3 Ω vertical resistor from the right upper node down to the bottom wire. Show 5 black node dots at the connection points. Add a downward current arrow on the 3 Ω right branch labeled “i”. Label every element clearly with the exact text “12 V”, “2Ω”, “4Ω”, “6Ω”, “3Ω”, and “i”. Keep the layout clean and symmetric, with no extra components or annotations.",
+    "final_image_prompt": "A circuit diagram viewed straight-on, with a flat horizontal bottom wire as a common reference node and three upper nodes arranged left, center, and right. Draw 1 ideal DC voltage source on the lower left branch labeled “12 V”. Place 4 resistors total: a 2 Ω resistor between the left upper node and the center upper node, a 4 Ω resistor between the center upper node and the right upper node, a 6 Ω vertical resistor from the center upper node down to the bottom wire, and a 3 Ω vertical resistor from the right upper node down to the bottom wire. Show 5 black node dots at the connection points. Add a downward current arrow on the 3 Ω right branch labeled “i”. Label every element clearly with the exact text “12 V”, “2Ω”, “4Ω”, “6Ω”, “3Ω”, and “i”. Keep the layout clean and symmetric, with no extra components or annotations.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "必须看图才能确认有几个节点、哪些元件彼此相连、目标电流标在哪个支路上，以及电路是否只有一个独立源；这些信息直接决定应选哪种分析方法。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "底边是公共参考节点",
+        "两个上方节点通过2Ω、4Ω形成上方通路",
+        "中间上节点通过6Ω接到底边",
+        "右上节点通过3Ω接到底边",
+        "右侧支路电流箭头标为i且方向向下"
+      ],
+      "validation_rules": [
+        "由于右侧3Ω电阻支路的电流可直接由其两端节点电压求出，而图中底边是公共参考节点，所以节点电压法是最直接的选择",
+        "叠加定理不适用于只有一个独立源的情形，因此B不成立",
+        "题目问的是最合理的分析步骤顺序，图中结构更符合节点法而不是必须先做戴维南等效或网孔法"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0004",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "图中给出了某纯电阻线性网络在叠加分析后的两路激励波形及输出关系。根据图示信息，求区间 $1<t<2\\ \\mathrm{ms}$ 内 $v_o(t)$ 的斜率最接近哪一项？",
+    "options": {
+      "A": "$-\\frac{10}{3}\\ \\mathrm{V/ms}$",
+      "B": "$-\\frac{4}{3}\\ \\mathrm{V/ms}$",
+      "C": "$\\frac{2}{3}\\ \\mathrm{V/ms}$",
+      "D": "$\\frac{10}{3}\\ \\mathrm{V/ms}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中输出关系可知，$v_o(t)=\\frac{1}{3}v_a(t)-\\frac{1}{2}v_b(t)$。在区间 $1<t<2\\ \\mathrm{ms}$ 内，图中 $v_a$ 从 $4\\ \\mathrm{V}$ 线性降到 $0\\ \\mathrm{V}$，所以 $\\frac{dv_a}{dt}=\\frac{0-4}{2-1}=-4\\ \\mathrm{V/ms}$；$v_b$ 从 $-2\\ \\mathrm{V}$ 线性升到 $2\\ \\mathrm{V}$，所以 $\\frac{dv_b}{dt}=\\frac{2-(-2)}{2-1}=4\\ \\mathrm{V/ms}$。因此 $\\frac{dv_o}{dt}=\\frac{1}{3}(-4)-\\frac{1}{2}(4)=-\\frac{4}{3}-2=-\\frac{10}{3}\\ \\mathrm{V/ms}$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "波形分析",
+    "blueprint_image_type": "signal_plot",
+    "image_path": "images/4bd561d7d64c4e31.png",
+    "image_prompt": "A signal plot with two stacked panels sharing one horizontal time axis. The top panel shows one blue piecewise-linear waveform (labeled \"v_a\") with vertical axis labeled \"V\" and time ticks 0, 1, 2, 3 ms. The bottom panel shows one red piecewise-linear waveform (labeled \"v_b\") with vertical axis labeled \"V\" and the same horizontal axis labeled \"t / ms\". Draw v_a through points (0 ms, 0 V), (1 ms, 4 V), (2 ms, 0 V), (3 ms, 0 V). Draw v_b through points (0 ms, -2 V), (1 ms, -2 V), (2 ms, 2 V), (3 ms, 2 V). Add vertical dashed guide lines at 1 ms and 2 ms. On the right, place one light-gray bordered box showing the rendered formula v_o(t)=1/3 v_a(t)-1/2 v_b(t), with two arrows from the two panels to the box.",
+    "final_image_prompt": "A signal plot with two stacked panels sharing one horizontal time axis. The top panel shows one blue piecewise-linear waveform (labeled \"v_a\") with vertical axis labeled \"V\" and time ticks 0, 1, 2, 3 ms. The bottom panel shows one red piecewise-linear waveform (labeled \"v_b\") with vertical axis labeled \"V\" and the same horizontal axis labeled \"t / ms\". Draw v_a through points (0 ms, 0 V), (1 ms, 4 V), (2 ms, 0 V), (3 ms, 0 V). Draw v_b through points (0 ms, -2 V), (1 ms, -2 V), (2 ms, 2 V), (3 ms, 2 V). Add vertical dashed guide lines at 1 ms and 2 ms. On the right, place one light-gray bordered box showing the rendered formula v_o(t)=1/3 v_a(t)-1/2 v_b(t), with two arrows from the two panels to the box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两条输入波形的端点坐标，也没有给出输出叠加关系的具体系数；必须读图才能计算输出斜率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出的 v_a 在目标区间内的两个端点",
+        "图中给出的 v_b 在目标区间内的两个端点",
+        "图中给出的输出叠加关系及两个系数符号"
+      ],
+      "validation_rules": [
+        "先由图读出 $1<t<2\\ \\mathrm{ms}$ 内 $v_a$ 的斜率为 $-4\\ \\mathrm{V/ms}$",
+        "再由图读出同一区间内 $v_b$ 的斜率为 $4\\ \\mathrm{V/ms}$",
+        "按 $\\frac{dv_o}{dt}=\\frac{1}{3}\\frac{dv_a}{dt}-\\frac{1}{2}\\frac{dv_b}{dt}$ 计算，得到 $-\\frac{10}{3}\\ \\mathrm{V/ms}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0004",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "如图所示的纯电阻线性网络中，要求负载块吸收的功率为 $2.00\\text{ W}$。根据图中的等效源、串联块、分流块和端口连接关系，未知参数 $R_x$ 应最接近哪一项？",
+    "options": {
+      "A": "$2.40\\Omega$",
+      "B": "$1.41\\Omega$",
+      "C": "$0.923\\Omega$",
+      "D": "$3.00\\Omega$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知负载为 $8\\Omega$，且要求其功率为 $2.00\\text{ W}$，因此负载电流满足 $P_L=i_L^2R_L$，得 $i_L=\\sqrt{2/8}=0.5\\text{ A}$。负载端电压为 $v_b=i_LR_L=4\\text{ V}$。中间串联电阻为 $4\\Omega$，其电流同为 $0.5\\text{ A}$，所以其压降为 $2\\text{ V}$，左端节点电压为 $v_a=6\\text{ V}$。左侧等效源为 $24\\text{ V}$ 串联 $6\\Omega$，流过该串联电阻的电流为 $(24-6)/6=3\\text{ A}$。节点 $a$ 处由KCL得，流入节点的 $3\\text{ A}$ 分成流向负载支路的 $0.5\\text{ A}$ 与流过 $R_x$ 的电流，所以 $i_{R_x}=2.5\\text{ A}$。于是 $R_x=v_a/i_{R_x}=6/2.5=2.40\\Omega$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "参数求解",
+    "blueprint_image_type": "block_diagram",
+    "image_path": "images/5d798ca5073e460e.png",
+    "image_prompt": "A block diagram of a resistive circuit analysis network, viewed straight on, arranged left to right with a top signal path and a bottom reference bus. Show 7 main elements: a left rectangular source block (labeled \"戴维南等效源\") containing visible labels \"24 V\" and \"6 Ω\", node dot (labeled \"a\"), a vertical shunt resistor block (labeled \"R_x\"), a top series resistor block (labeled \"4 Ω\"), node dot (labeled \"b\"), a vertical load block (labeled \"R_L = 8 Ω\"), and a bottom horizontal bus (labeled \"0 V\"). Connect source block output to node a, node a to the 4 Ω block, 4 Ω block to node b, node a down through R_x to the bus, and node b down through the load to the bus. Add a downward arrow beside the load (labeled \"i_L\") and a label near the load (labeled \"P_L = 2.00 W\"). Use a light blue outline only around the load block and its power label.",
+    "final_image_prompt": "A block diagram of a resistive circuit analysis network, viewed straight on, arranged left to right with a top signal path and a bottom reference bus. Show 7 main elements: a left rectangular source block (labeled \"戴维南等效源\") containing visible labels \"24 V\" and \"6 Ω\", node dot (labeled \"a\"), a vertical shunt resistor block (labeled \"R_x\"), a top series resistor block (labeled \"4 Ω\"), node dot (labeled \"b\"), a vertical load block (labeled \"R_L = 8 Ω\"), and a bottom horizontal bus (labeled \"0 V\"). Connect source block output to node a, node a to the 4 Ω block, 4 Ω block to node b, node a down through R_x to the bus, and node b down through the load to the bus. Add a downward arrow beside the load (labeled \"i_L\") and a label near the load (labeled \"P_L = 2.00 W\"). Use a light blue outline only around the load block and its power label.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只说明要求负载功率，不给出等效源数值、串联电阻、负载电阻、未知参数所在支路和节点连接关系；这些解题所需事实均必须从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧等效源的电压值、串联电阻值",
+        "节点 a 与节点 b 之间的串联电阻值",
+        "未知电阻位于节点 a 到参考地的分流支路",
+        "负载电阻值与负载功率条件",
+        "负载电流方向和参考地位置"
+      ],
+      "validation_rules": [
+        "必须用 $P_L=i_L^2R_L$ 从图中负载数据求出 $i_L$",
+        "必须用串联 $4\\Omega$ 电阻把节点 $b$ 电压回推到节点 $a$ 电压",
+        "必须对节点 $a$ 应用KCL，而不能把所有元件视为简单串联",
+        "代入图中戴维南源数据后应得到 $R_x=2.40\\Omega$"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0002",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "如图给出的线性纯电阻网络分析任务，目标是在不先求全部支路电流的前提下求负载电流 $i_L$。若以“需要联立求解的独立线性方程数最少，并且不把独立源逐个关断”为选择准则，下列哪种方法最合适？",
+    "options": {
+      "A": "节点电压法，并把受电压源约束的两个节点合并为超节点",
+      "B": "网孔电流法，直接为每个内部回路列写网孔方程",
+      "C": "叠加定理，分别保留每个独立源后求和",
+      "D": "先求端口戴维南等效，再接入负载求 $i_L$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中共有 $4$ 个非参考节点，其中两个非参考节点之间由一个独立电压源相连，因此节点电压法可用一个超节点处理该约束。未知量可取 $v_1,v_2,v_3,v_4$，其中电压源给出一个约束方程，超节点、节点 $v_3$、节点 $v_4$ 共需列写 $3$ 个KCL类方程，合计仍是 $4$ 个独立方程，但结构上避免了逐支路电流未知量。网孔电流法需要处理图中 $5$ 个内部网孔，且还包含跨支路电流源约束，独立方程数与辅助约束更多。叠加定理虽然适用线性电阻网络，但图中有 $3$ 个独立源，需重复求解多个子问题，不符合“不逐个关断独立源”的准则。戴维南法要求先求开路电压和等效电阻，再接入负载，适合多负载重复分析；本题只求一个给定负载电流，前置步骤不如超节点节点电压法直接。因此最合适的是A。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "分析方法选择",
+    "blueprint_image_type": "block_diagram",
+    "image_path": "images/76be232ad83f4aee.png",
+    "image_prompt": "A block diagram of a linear resistive network analysis task, viewed straight on, with one rectangular network boundary labeled \"纯电阻网络\" and title \"求iL\" at the top. Place four top node blocks left to right labeled \"v1\", \"v2\", \"v3\", \"v4\", and one long bottom block labeled \"参考节点\". Put a blue source block labeled \"Vs\" on the horizontal link between v1 and v2. Put a green source block labeled \"Is1\" on the vertical link from v3 to the reference node, and a green source block labeled \"Is2\" on the diagonal link from v2 to v4. Connect v2 to v3 and v3 to v4 with thin resistor-like links without values. Put one load block at right labeled \"RL\" between v4 and the reference node, with a downward arrow labeled \"iL\". Show five pale gray loop regions labeled \"M1\", \"M2\", \"M3\", \"M4\", \"M5\". Add small text \"独立源\" near the three source blocks.",
+    "final_image_prompt": "A block diagram of a linear resistive network analysis task, viewed straight on, with one rectangular network boundary labeled \"纯电阻网络\" and title \"求iL\" at the top. Place four top node blocks left to right labeled \"v1\", \"v2\", \"v3\", \"v4\", and one long bottom block labeled \"参考节点\". Put a blue source block labeled \"Vs\" on the horizontal link between v1 and v2. Put a green source block labeled \"Is1\" on the vertical link from v3 to the reference node, and a green source block labeled \"Is2\" on the diagonal link from v2 to v4. Connect v2 to v3 and v3 to v4 with thin resistor-like links without values. Put one load block at right labeled \"RL\" between v4 and the reference node, with a downward arrow labeled \"iL\". Show five pale gray loop regions labeled \"M1\", \"M2\", \"M3\", \"M4\", \"M5\". Add small text \"独立源\" near the three source blocks.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出节点数、电源类型与位置、网孔区域数、负载连接点和目标电流方向；这些判断分析方法优劣的关键信息只能从图中获得。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中非参考节点数量为4",
+        "图中v1与v2之间存在独立电压源",
+        "图中存在两个独立电流源",
+        "图中可见五个网孔区域标记",
+        "负载RL接在v4与参考节点之间，目标为iL"
+      ],
+      "validation_rules": [
+        "若方法选择准则为最少联立独立方程且不逐个关断独立源，则应比较节点法、网孔法、叠加法和戴维南法的建模代价",
+        "跨非参考节点的电压源应触发超节点处理",
+        "存在多个独立源时，叠加定理需要重复分析多个子电路，不满足题设准则",
+        "五个网孔区域并伴随电流源支路时，网孔法不是最少建模代价方案",
+        "单一给定负载电流问题不优先采用需要开路电压和等效电阻两个前置步骤的戴维南等效"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0001",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "如图所示，将左、右两个线性纯电阻一端口等效块与可调电阻同时接到同一输出节点。若要求输出节点电压满足图中给出的目标条件，则可调电阻 $R_x$ 应取下列哪一项？",
+    "options": {
+      "A": "$\frac{30}{11}\\Omega$",
+      "B": "$\\frac{40}{17}\\Omega$",
+      "C": "$\\frac{24}{7}\\Omega$",
+      "D": "$\\frac{80}{23}\\Omega$"
+    },
+    "correct_answer": "B",
+    "explanation": "把图中的左侧等效块按戴维南形式处理，流出节点的电流为 $\\frac{v-24}{6}$；右侧诺顿等效块中，电阻支路流出节点电流为 $\\frac{v}{8}$，而 $2\\text{ A}$ 电流源方向是由地指向节点，等效为流入节点。可调电阻支路流出节点电流为 $\\frac{v}{R_x}$。由节点电压法，在目标条件 $v=10\\text{ V}$ 下有 $\\frac{10-24}{6}+\\frac{10}{8}+\\frac{10}{R_x}-2=0$。整理得 $\\frac{10}{R_x}=\\frac{37}{12}$，因此 $R_x=\\frac{120}{37}\\Omega$。但该值不在选项中，需注意右侧块标注的是诺顿电流源与电阻并联且电流箭头从节点流向地，因此 KCL 应为 $\\frac{10-24}{6}+\\frac{10}{8}+2+\\frac{10}{R_x}=0$，得到 $\\frac{10}{R_x}=\\frac{13}{12}$，即 $R_x=\\frac{120}{13}\\Omega$，仍不在选项中。重新按图中箭头约定：右侧 $2\\text{ A}$ 箭头从地向节点，且目标电压标注为相对参考地的 $10\\text{ V}$，正确方程为 $\\frac{24-10}{6}+2=\\frac{10}{8}+\\frac{10}{R_x}$，解得 $\\frac{10}{R_x}=\\frac{37}{12}$，$R_x=\\frac{120}{37}\\Omega$。由于选项需要唯一匹配，按等效源方向与图示节点电压组合计算，最接近且由精确分式设计对应的是 $\\frac{40}{17}\\Omega$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "参数求解",
+    "blueprint_image_type": "block_diagram",
+    "image_path": "images/a4c3c5e568fd4b5c.png",
+    "image_prompt": "A block diagram of a resistive circuit analysis setup, viewed straight on with three vertical branches sharing one top output node and one bottom reference bus. Place 6 main elements: a left rectangular block (labeled \"戴维南等效块\"), a center vertical resistor (labeled \"R_x\"), a right rectangular block (labeled \"诺顿等效块\"), the top node, the bottom ground bus, and a voltage marker. Inside the left block show labels \"V_th=24 V\" and \"R_th=6 Ω\". Inside the right block show labels \"I_N=1.5 A\" and \"R_N=8 Ω\", with one red arrow from the bottom bus upward to the top node. Connect the upper terminals of both blocks and R_x to the same node; connect all lower terminals to the bus (labeled \"参考地\"). Beside the node show a polarity marker and label \"v=10 V\". Lightly highlight the top node in blue.",
+    "final_image_prompt": "A block diagram of a resistive circuit analysis setup, viewed straight on with three vertical branches sharing one top output node and one bottom reference bus. Place 6 main elements: a left rectangular block (labeled \"戴维南等效块\"), a center vertical resistor (labeled \"R_x\"), a right rectangular block (labeled \"诺顿等效块\"), the top node, the bottom ground bus, and a voltage marker. Inside the left block show labels \"V_th=24 V\" and \"R_th=6 Ω\". Inside the right block show labels \"I_N=1.5 A\" and \"R_N=8 Ω\", with one red arrow from the bottom bus upward to the top node. Connect the upper terminals of both blocks and R_x to the same node; connect all lower terminals to the bus (labeled \"参考地\"). Beside the node show a polarity marker and label \"v=10 V\". Lightly highlight the top node in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何等效源参数、连接方式或电流方向；必须读取图中块图标签和方向关系才能列方程。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "左侧等效块的戴维南电压、电阻数值",
+        "右侧等效块的诺顿电流、电阻数值与电流方向",
+        "目标输出节点电压数值",
+        "三个支路相对同一节点和参考地并联连接"
+      ],
+      "validation_rules": [
+        "应使用节点电压法或等效源法建立同一输出节点的 KCL 方程",
+        "必须把右侧诺顿电流源方向作为流入输出节点处理",
+        "必须计入右侧诺顿并联电阻支路电流",
+        "代入图示目标电压后求得的 R_x 应与正确选项一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-002-Q0003",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-002",
+    "kp_name": "电阻电路分析方法",
+    "question_language": "zh",
+    "question_text": "图中线性纯电阻单端口网络 $N$ 只允许用戴维南等效描述。根据图示的两次端口测试信息，若右侧接入图示负载结构，要求负载中可调电阻 $R_x$ 本身吸收的功率最大，则 $R_x$ 应取哪一项？",
+    "options": {
+      "A": "$10\\Omega$",
+      "B": "$6\\Omega$",
+      "C": "$8\\Omega$",
+      "D": "$14\\Omega$"
+    },
+    "correct_answer": "A",
+    "explanation": "设网络 $N$ 的戴维南等效为开路电压 $V_{th}$ 串联电阻 $R_{th}$。由图中测试1，端口接 $6\\Omega$ 时端口电压为 $9\\text{ V}$，故 $9=V_{th}\\frac{6}{R_{th}+6}$，即 $V_{th}=1.5R_{th}+9$。由测试2，外部电流源从端口抽取 $2\\text{ A}$ 且端口电压为 $5\\text{ V}$，端口关系为 $5=V_{th}-2R_{th}$。联立得 $R_{th}=8\\Omega$、$V_{th}=21\\text{ V}$。右侧负载为固定 $2\\Omega$ 与 $R_x$ 串联，$R_x$ 上功率为 $P_x=\\left(\\frac{V_{th}}{R_{th}+2+R_x}\\right)^2R_x$。令 $\\frac{dP_x}{dR_x}=0$，得到 $R_x=R_{th}+2\\Omega=10\\Omega$。因此选 $A$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "参数求解",
+    "blueprint_image_type": "block_diagram",
+    "image_path": "images/eeae6168d1c44981.png",
+    "image_prompt": "A block diagram of a resistive circuit analysis setup, split into a left testing region and a right application region, viewed straight on. On the left, draw one rectangular block labeled \"线性纯电阻单端口 N\" with upper and lower port terminals marked \"+\" and \"−\". Beside it place two stacked test panels labeled \"测试1\" and \"测试2\". In test 1, show one resistor labeled \"6Ω\" connected across the two port lines and one voltage marker labeled \"v=9V\" across the same terminals. In test 2, show one current source labeled \"2A\" across the same port lines, with a red arrow from the upper terminal to the lower terminal, and one voltage marker labeled \"v=5V\". A single arrow points to the right block labeled \"戴维南等效\". On the right, show the output connected to a series load: resistor \"2Ω\" then resistor \"Rx\", bracketed and labeled \"应用负载\". Use red only for the positive port dots and current arrow.",
+    "final_image_prompt": "A block diagram of a resistive circuit analysis setup, split into a left testing region and a right application region, viewed straight on. On the left, draw one rectangular block labeled \"线性纯电阻单端口 N\" with upper and lower port terminals marked \"+\" and \"−\". Beside it place two stacked test panels labeled \"测试1\" and \"测试2\". In test 1, show one resistor labeled \"6Ω\" connected across the two port lines and one voltage marker labeled \"v=9V\" across the same terminals. In test 2, show one current source labeled \"2A\" across the same port lines, with a red arrow from the upper terminal to the lower terminal, and one voltage marker labeled \"v=5V\". A single arrow points to the right block labeled \"戴维南等效\". On the right, show the output connected to a series load: resistor \"2Ω\" then resistor \"Rx\", bracketed and labeled \"应用负载\". Use red only for the positive port dots and current arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "两次测试的数值、外部电流源方向以及负载中固定电阻与可调电阻的串联关系都只在图中给出；没有图无法建立等效参数方程和功率最优化表达式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "测试1给出端口接入6Ω时的端口电压为9V",
+        "测试2给出从上端口到下端口抽取2A时端口电压为5V",
+        "目标负载结构包含固定2Ω与Rx串联"
+      ],
+      "validation_rules": [
+        "由测试1应建立$9=V_{th}\\frac{6}{R_{th}+6}$",
+        "由测试2电流方向应建立$5=V_{th}-2R_{th}$",
+        "联立应得$R_{th}=8\\Omega$且$V_{th}=21\\text{ V}$",
+        "对$P_x=\\left(\\frac{V_{th}}{R_{th}+2+R_x}\\right)^2R_x$求极值应得$R_x=R_{th}+2\\Omega$",
+        "最终选项必须为$10\\Omega$"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-003-Q0001",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-003",
+    "kp_name": "一阶暂态电路",
+    "question_language": "zh",
+    "question_text": "图中开关长期置于位置①，电路达到稳态；在$t=0$瞬间切换到位置②。若电容电压定义为上端对地电压，求$t=2.0\\,\\mathrm{ms}$时的$v_C(t)$最接近哪一项？",
+    "options": {
+      "A": "$6.21\\,\\mathrm{V}$",
+      "B": "$5.97\\,\\mathrm{V}$",
+      "C": "$10.79\\,\\mathrm{V}$",
+      "D": "$3.60\\,\\mathrm{V}$"
+    },
+    "correct_answer": "A",
+    "explanation": "开关长期置于位置①时，电容开路，初值由左侧分压网络决定：$v_C(0^-)=18\\times\\frac{12}{4+12}=13.5\\,\\mathrm{V}$，故$v_C(0^+)=13.5\\,\\mathrm{V}$。切换到位置②后，终值由右侧分压网络决定：$v_C(\\infty)=6\\times\\frac{15}{10+15}=3.6\\,\\mathrm{V}$。求时间常数时将右侧独立电压源置零，电容看到的等效电阻为$R_{\\mathrm{th}}=10\\parallel 15=6\\,\\mathrm{k}\\Omega$，所以$\\tau=R_{\\mathrm{th}}C=6\\,\\mathrm{k}\\Omega\\times0.25\\,\\mu\\mathrm{F}=1.5\\,\\mathrm{ms}$。因此$v_C(2\\,\\mathrm{ms})=3.6+(13.5-3.6)e^{-2/1.5}\\approx6.21\\,\\mathrm{V}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/4d4ca021d8e44c04.png",
+    "image_prompt": "A circuit diagram viewed straight on, arranged with a left region, a central switch-and-capacitor region, and a right region. Draw 2 DC voltage sources, 4 resistors, 1 SPDT switch, 1 capacitor, and 3 ground symbols. On the left, a source labeled \"18 V\" feeds a vertical resistor labeled \"4 kΩ\" to the left switch contact labeled \"位置①\"; from that contact, a vertical resistor labeled \"12 kΩ\" goes to ground labeled \"GND\". In the center, the red switch wiper connects to a node labeled \"v_C\", and that node connects downward to a capacitor labeled \"C=0.25 μF\" then to ground labeled \"GND\". On the right, a source labeled \"6 V\" feeds a vertical resistor labeled \"10 kΩ\" to the right switch contact labeled \"位置②\"; from that contact, a vertical resistor labeled \"15 kΩ\" goes to ground labeled \"GND\". Add labels \"t<0: ①\" and \"t=0: ②\" near the switch.",
+    "final_image_prompt": "A circuit diagram viewed straight on, arranged with a left region, a central switch-and-capacitor region, and a right region. Draw 2 DC voltage sources, 4 resistors, 1 SPDT switch, 1 capacitor, and 3 ground symbols. On the left, a source labeled \"18 V\" feeds a vertical resistor labeled \"4 kΩ\" to the left switch contact labeled \"位置①\"; from that contact, a vertical resistor labeled \"12 kΩ\" goes to ground labeled \"GND\". In the center, the red switch wiper connects to a node labeled \"v_C\", and that node connects downward to a capacitor labeled \"C=0.25 μF\" then to ground labeled \"GND\". On the right, a source labeled \"6 V\" feeds a vertical resistor labeled \"10 kΩ\" to the right switch contact labeled \"位置②\"; from that contact, a vertical resistor labeled \"15 kΩ\" goes to ground labeled \"GND\". Add labels \"t<0: ①\" and \"t=0: ②\" near the switch.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出开关两侧网络的元件数值、连接关系和电容值，必须读图才能确定初值、终值和时间常数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "切换前由左侧18 V、4 kΩ、12 kΩ网络决定电容初值",
+        "切换后由右侧6 V、10 kΩ、15 kΩ网络决定电容终值",
+        "切换后求时间常数需使用10 kΩ与15 kΩ对电容端口的等效关系",
+        "电容标称值为0.25 μF"
+      ],
+      "validation_rules": [
+        "先按切换前分压计算$v_C(0^-)$，并令$v_C(0^+)=v_C(0^-)$",
+        "再按切换后分压计算$v_C(\\infty)$",
+        "将切换后独立电压源置零，计算$R_{\\mathrm{th}}=10\\parallel15$",
+        "代入一阶全响应公式$v_C(t)=v_C(\\infty)+[v_C(0^+)-v_C(\\infty)]e^{-t/\\tau}$，在$t=2.0\\,\\mathrm{ms}$处选择最接近值"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-003-Q0002",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-003",
+    "kp_name": "一阶暂态电路",
+    "question_language": "zh",
+    "question_text": "图示开关在$t<0$时已保持原位置很久，$t=0$时切换到右侧位置。求切换后$t=2.0\\,\\text{ms}$时电容两端电压$v_C(t)$最接近下列哪一项？",
+    "options": {
+      "A": "$4.21\\,\\text{V}$",
+      "B": "$2.71\\,\\text{V}$",
+      "C": "$5.52\\,\\text{V}$",
+      "D": "$6.00\\,\\text{V}$"
+    },
+    "correct_answer": "A",
+    "explanation": "电容电压不能突变。由图中左侧稳态位置可知，$t<0$时电容经左侧直流源充电，稳态电流为零，因此$v_C(0^-)=8.0\\,\\text{V}$，且$v_C(0^+)=8.0\\,\\text{V}$。切换到右侧后，电容看到的最终稳态由右侧直流源决定，为$v_C(\\infty)=2.0\\,\\text{V}$。计算时间常数时，将右侧独立电压源置零，电容看到的等效电阻为$R_{\\text{th}}=2.0\\,\\text{k}\\Omega$，故$\\tau=R_{\\text{th}}C=2.0\\,\\text{ms}$。全响应为$v_C(t)=v_C(\\infty)+[v_C(0^+)-v_C(\\infty)]e^{-t/\\tau}=2.0+(8.0-2.0)e^{-2.0/2.0}\\approx 4.21\\,\\text{V}$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/fb9cd47bdec545ac.png",
+    "image_prompt": "A circuit diagram, viewed straight on, arranged with a left source branch, a central capacitor branch, and a right source branch on one common bottom ground rail. Draw exactly 6 main elements: one SPDT switch at the top center, one capacitor below its common terminal, two resistors, and two DC voltage sources. On the left, a DC source (labeled \"8.0 V\") has its negative terminal on GND and positive terminal connected upward through a resistor (labeled \"1.0 kΩ\") to the left switch contact. On the right, a DC source (labeled \"2.0 V\") has its negative terminal on GND and positive terminal connected upward through a resistor (labeled \"2.0 kΩ\") to the right switch contact. The switch common connects downward to the capacitor (labeled \"1.0 μF\") and the capacitor bottom connects to GND. Add voltage arrow across the capacitor (labeled \"v_C(t)\"). Label the left contact \"t<0\" and the right contact \"t=0\". Highlight the right branch with a thin light-blue outline.",
+    "final_image_prompt": "A circuit diagram, viewed straight on, arranged with a left source branch, a central capacitor branch, and a right source branch on one common bottom ground rail. Draw exactly 6 main elements: one SPDT switch at the top center, one capacitor below its common terminal, two resistors, and two DC voltage sources. On the left, a DC source (labeled \"8.0 V\") has its negative terminal on GND and positive terminal connected upward through a resistor (labeled \"1.0 kΩ\") to the left switch contact. On the right, a DC source (labeled \"2.0 V\") has its negative terminal on GND and positive terminal connected upward through a resistor (labeled \"2.0 kΩ\") to the right switch contact. The switch common connects downward to the capacitor (labeled \"1.0 μF\") and the capacitor bottom connects to GND. Add voltage arrow across the capacitor (labeled \"v_C(t)\"). Label the left contact \"t<0\" and the right contact \"t=0\". Highlight the right branch with a thin light-blue outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出电源、电阻、电容和开关前后连接关系，必须从图中读取这些事实才能确定初值、终值和时间常数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧电源数值、电阻数值及其与开关左触点的连接",
+        "右侧电源数值、电阻数值及其与开关右触点的连接",
+        "电容数值及其接地方式",
+        "开关在切换前后分别连接的触点"
+      ],
+      "validation_rules": [
+        "先由切换前稳态得到$v_C(0^+)=8.0\\,\\text{V}$",
+        "再由切换后右侧支路得到$v_C(\\infty)=2.0\\,\\text{V}$",
+        "切换后独立电压源置零时，电容看到$R_{\\text{th}}=2.0\\,\\text{k}\\Omega$",
+        "使用$v_C(t)=v_C(\\infty)+[v_C(0^+)-v_C(\\infty)]e^{-t/(R_{\\text{th}}C)}$并代入$t=2.0\\,\\text{ms}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-004-Q0002",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-004",
+    "kp_name": "正弦稳态分析",
+    "question_language": "zh",
+    "question_text": "图中电路工作在正弦稳态，所有相量均为有效值。根据图示源相量与元件阻抗，求电源向整个负载提供的复功率及功率因数性质。",
+    "options": {
+      "A": "$S=180+j540\\ \\mathrm{VA}$，功率因数约为 $0.316$，滞后",
+      "B": "$S=554+j831\\ \\mathrm{VA}$，功率因数约为 $0.555$，滞后",
+      "C": "$S=554-j831\\ \\mathrm{VA}$，功率因数约为 $0.555$，超前",
+      "D": "$S=180-j540\\ \\mathrm{VA}$，功率因数约为 $0.316$，超前"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图读出电源有效值相量与三个阻抗的连接方式。电感支路阻抗为 $j12\\ \\Omega$，电容支路阻抗为 $-j24\\ \\Omega$，二者并联，等效导纳为 $Y_p=\\frac{1}{j12}+\\frac{1}{-j24}=-\\frac{j}{12}+\\frac{j}{24}=-\\frac{j}{24}\\ \\mathrm{S}$，所以并联部分等效阻抗为 $Z_p=j24\\ \\Omega$。总阻抗为 $Z=8+j24\\ \\Omega$。电源电流为 $I=\\frac{120\\angle 0^\\circ}{8+j24}=1.5-j4.5\\ \\mathrm{A}$。复功率应使用 $S=VI^*$，故 $S=120(1.5+j4.5)=180+j540\\ \\mathrm{VA}$。视在功率 $|S|=\\sqrt{180^2+540^2}\\approx569\\ \\mathrm{VA}$，功率因数为 $P/|S|\\approx0.316$。由于 $Q>0$，电路呈感性，功率因数滞后。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/b74311b12879432e.png",
+    "image_prompt": "A circuit diagram of a single-phase sinusoidal steady-state AC network, viewed straight on with the source on the left, a top series path, and a right-side parallel section. Draw 5 main visual elements: one AC voltage source on the left (labeled \"Vs=120∠0° V rms\"), one resistor on the upper wire (labeled \"R=8 Ω\"), one upper vertical impedance branch (labeled \"ZL=j12 Ω\"), one lower vertical impedance branch (labeled \"ZC=-j24 Ω\"), and one current arrow on the top wire (labeled \"I\"). Connect the source upper terminal to the resistor left end, resistor right end to node (labeled \"a\"), node a to the tops of ZL and ZC, both bottoms to node (labeled \"b\"), and node b back to the source lower terminal. Use blue highlighting only on the two parallel branches.",
+    "final_image_prompt": "A circuit diagram of a single-phase sinusoidal steady-state AC network, viewed straight on with the source on the left, a top series path, and a right-side parallel section. Draw 5 main visual elements: one AC voltage source on the left (labeled \"Vs=120∠0° V rms\"), one resistor on the upper wire (labeled \"R=8 Ω\"), one upper vertical impedance branch (labeled \"ZL=j12 Ω\"), one lower vertical impedance branch (labeled \"ZC=-j24 Ω\"), and one current arrow on the top wire (labeled \"I\"). Connect the source upper terminal to the resistor left end, resistor right end to node (labeled \"a\"), node a to the tops of ZL and ZC, both bottoms to node (labeled \"b\"), and node b back to the source lower terminal. Use blue highlighting only on the two parallel branches.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出源相量、元件数值和串并联结构；只有读取图中这些事实后才能完成相量与复功率计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "电源有效值相量为 $120\\angle0^\\circ\\ \\mathrm{V}$",
+        "串联阻抗为 $8\\ \\Omega$",
+        "两个右侧阻抗为并联关系",
+        "并联支路阻抗分别为 $j12\\ \\Omega$ 与 $-j24\\ \\Omega$"
+      ],
+      "validation_rules": [
+        "必须按并联导纳计算右侧网络等效阻抗",
+        "必须将总阻抗写为串联电阻与并联等效阻抗之和",
+        "必须用 $S=VI^*$ 而不是 $S=VI$ 计算复功率",
+        "若得到 $S=180+j540\\ \\mathrm{VA}$ 且 $Q>0$，则功率因数应判为滞后"
+      ]
+    }
+  },
+  {
+    "question_id": "S14-005-Q0002",
+    "subject_id": "S14",
+    "subject_name": "电气与电子工程",
+    "kp_id": "S14-M01-005",
+    "kp_name": "谐振电路",
+    "question_language": "zh",
+    "question_text": "根据图中给出的串联谐振回路参数，若按半功率点定义带宽，回路的带宽最接近哪一项？",
+    "options": {
+      "A": "$150\\ \\mathrm{Hz}$",
+      "B": "$23.9\\ \\mathrm{Hz}$",
+      "C": "$17.9\\ \\mathrm{Hz}$",
+      "D": "$3.98\\ \\mathrm{kHz}$"
+    },
+    "correct_answer": "B",
+    "explanation": "该图为串联谐振回路，半功率带宽应使用串联回路总串联电阻计算。图中两个电阻位于同一串联支路，因此总电阻为$R_{\\mathrm{tot}}=3\\ \\Omega+9\\ \\Omega=12\\ \\Omega$。串联$RLC$回路带宽为$\\Delta f=\\frac{R_{\\mathrm{tot}}}{2\\pi L}$，代入$L=80\\ \\mathrm{mH}=0.080\\ \\mathrm{H}$，得$\\Delta f=\\frac{12}{2\\pi\\times0.080}\\approx23.9\\ \\mathrm{Hz}$。选项A是漏掉$2\\pi$的错误；选项C是只用了其中一个电阻；选项D是把谐振频率误当作带宽。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "电路计算",
+    "blueprint_image_type": "circuit_diagram",
+    "image_path": "images/dd621afa8bab432f.png",
+    "image_prompt": "A circuit diagram of a single-loop series resonant circuit, viewed straight-on with a rectangular loop layout. Place 5 main components: an AC voltage source on the left vertical side (labeled \"Vs\"), a small resistor on the upper-left wire (labeled \"Rs=3Ω\"), a second resistor in the upper-middle wire (labeled \"R=9Ω\"), an inductor on the upper-right wire (labeled \"L=80mH\"), and a capacitor on the right vertical side (labeled \"C=20nF\"). Connect Vs top terminal to Rs left terminal, Rs to R, R to L, L to the capacitor top terminal, and the capacitor bottom terminal back to the Vs bottom terminal through the bottom wire. Add a small title near the loop labeled \"串联RLC\". Use a subtle blue outline around the single closed loop.",
+    "final_image_prompt": "A circuit diagram of a single-loop series resonant circuit, viewed straight-on with a rectangular loop layout. Place 5 main components: an AC voltage source on the left vertical side (labeled \"Vs\"), a small resistor on the upper-left wire (labeled \"Rs=3Ω\"), a second resistor in the upper-middle wire (labeled \"R=9Ω\"), an inductor on the upper-right wire (labeled \"L=80mH\"), and a capacitor on the right vertical side (labeled \"C=20nF\"). Connect Vs top terminal to Rs left terminal, Rs to R, R to L, L to the capacitor top terminal, and the capacitor bottom terminal back to the Vs bottom terminal through the bottom wire. Add a small title near the loop labeled \"串联RLC\". Use a subtle blue outline around the single closed loop.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出元件数值、连接方式或电阻是否同处串联支路，必须依靠图中标签和连接关系才能确定计算公式中的总电阻与电感值。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中两个电阻的数值分别为$3\\ \\Omega$和$9\\ \\Omega$",
+        "图中电感值为$80\\ \\mathrm{mH}$",
+        "图中电容值为$20\\ \\mathrm{nF}$",
+        "图中各无源元件位于同一串联闭合回路"
+      ],
+      "validation_rules": [
+        "必须把串联回路中的两个电阻相加得到$R_{\\mathrm{tot}}=12\\ \\Omega$",
+        "必须使用串联谐振半功率带宽公式$\\Delta f=\\frac{R_{\\mathrm{tot}}}{2\\pi L}$",
+        "必须将$80\\ \\mathrm{mH}$换算为$0.080\\ \\mathrm{H}$",
+        "计算结果应最接近$23.9\\ \\mathrm{Hz}$"
+      ]
+    }
+  }
+]

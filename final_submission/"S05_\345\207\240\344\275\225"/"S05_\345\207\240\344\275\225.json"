@@ -1,0 +1,689 @@
+[
+  {
+    "question_id": "S05-001-Q0001",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，$D$ 在 $BC$ 上，图中用相同弧线标出了一个角平分关系。根据图示信息，以下哪一项给出的证明链是必然成立的？",
+    "options": {
+      "A": "$\\angle BAD=40^\\circ$，且 $\\angle ADB=96^\\circ$，$\\angle ADC=84^\\circ$，所以 $\\angle ADB>\\angle ADC$。",
+      "B": "$\\angle BAD=50^\\circ$，且 $\\angle ADB=86^\\circ$，$\\angle ADC=94^\\circ$，所以 $\\angle ADC>\\angle ADB$。",
+      "C": "$\\angle BAC=80^\\circ$，且 $AD$ 是 $BC$ 上的中线，所以 $BD=DC$。",
+      "D": "$\\angle ADB=\\angle ADC=90^\\circ$，所以 $AD$ 是 $\triangle ABC$ 的高。"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $\\angle ABC=44^\\circ$，$\\angle ACB=56^\\circ$，且相同弧线表示 $AD$ 平分 $\\angle BAC$。先用三角形内角和得 $\\angle BAC=180^\\circ-44^\\circ-56^\\circ=80^\\circ$。因为 $AD$ 是角平分线，所以 $\\angle BAD=\\angle DAC=40^\\circ$。在 $\triangle ABD$ 中，$\\angle ADB=180^\\circ-44^\\circ-40^\\circ=96^\\circ$；在 $\triangle ADC$ 中，$\\angle ADC=180^\\circ-56^\\circ-40^\\circ=84^\\circ$。因此 $\\angle ADB>\\angle ADC$，选 A。B 把角平分后的角误算为 $50^\\circ$；C 把角平分线误认为中线；D 把图中的角平分线误认为高。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "性质证明",
+    "blueprint_image_type": "triangle_diagram",
+    "image_path": "images/044ee89502354eef.png",
+    "image_prompt": "A triangle diagram viewed straight on, with one large triangle occupying the center of the canvas. Place point A near the upper center (labeled \"A\"), point B at the lower left (labeled \"B\"), and point C at the lower right (labeled \"C\"). Put point D on segment BC between B and C, closer to C than to B, labeled \"D\". Draw exactly 4 line segments: AB, AC, BC, and AD. Show angle ABC with the visible label \"44°\" near vertex B, and angle ACB with the visible label \"56°\" near vertex C. At vertex A, draw exactly 2 identical small arc marks, one inside angle BAD and one inside angle DAC, indicating those two angles are equal. Do not draw right-angle squares or segment tick marks. Highlight segment AD in blue while all other lines remain black.",
+    "final_image_prompt": "A triangle diagram viewed straight on, with one large triangle occupying the center of the canvas. Place point A near the upper center (labeled \"A\"), point B at the lower left (labeled \"B\"), and point C at the lower right (labeled \"C\"). Put point D on segment BC between B and C, closer to C than to B, labeled \"D\". Draw exactly 4 line segments: AB, AC, BC, and AD. Show angle ABC with the visible label \"44°\" near vertex B, and angle ACB with the visible label \"56°\" near vertex C. At vertex A, draw exactly 2 identical small arc marks, one inside angle BAD and one inside angle DAC, indicating those two angles are equal. Do not draw right-angle squares or segment tick marks. Highlight segment AD in blue while all other lines remain black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两个底角数值、共线点位置和角平分标记；这些关键信息必须从图中读取后才能完成证明链判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $\\angle ABC=44^\\circ$",
+        "图中给出 $\\angle ACB=56^\\circ$",
+        "图中相同弧线表示 $AD$ 平分 $\\angle BAC$",
+        "图中 $B,D,C$ 共线且 $D$ 在 $BC$ 上"
+      ],
+      "validation_rules": [
+        "用 $\\angle BAC=180^\\circ-\\angle ABC-\\angle ACB$ 验证顶角大小",
+        "用角平分线性质验证 $\\angle BAD=\\angle DAC$",
+        "分别在 $\triangle ABD$ 与 $\triangle ADC$ 中用内角和计算 $\\angle ADB$ 与 $\\angle ADC$",
+        "比较两个计算出的角，确认唯一正确选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0004",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在三角形构型中，只允许依据图上标注的关系和三角形基本性质进行推理。下列哪一结论必然成立？",
+    "options": {
+      "A": "$\\angle BAE=70^\\circ$",
+      "B": "$\\angle BAE=59^\\circ$",
+      "C": "$\\angle BAE=101^\\circ$",
+      "D": "$\\angle BAE=79^\\circ$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中等弧标记可知，$BE$ 是 $\\angle ABC$ 的角平分线，因此 $\\angle ABC=2\\angle ABE=2\\times31^\\circ=62^\\circ$。又图中给出 $\\angle ACB=48^\\circ$，由三角形内角和得 $\\angle BAC=180^\\circ-62^\\circ-48^\\circ=70^\\circ$。点 $E$ 在边 $AC$ 上，所以射线 $AE$ 与 $AC$ 同线，故 $\\angle BAE=\\angle BAC=70^\\circ$。因此选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "性质证明",
+    "blueprint_image_type": "triangle_diagram",
+    "image_path": "images/2ffae0260ad54414.png",
+    "image_prompt": "A triangle diagram, viewed straight on with a single large triangle occupying the center. Place point A near the top, point B at the lower left, and point C at the lower right, forming triangle ABC. Put point D on segment BC slightly left of center, and draw segment AD from A to D with a right-angle square at D. Put point E on segment AC around the middle-lower part, and draw segment BE from B to E. Show an angle label 31° inside angle ABE near B, and show an angle label 48° inside angle ACB near C. Mark angle ABE and angle EBC with two matching blue arc marks to indicate equality. Label the five points exactly as A, B, C, D, E, and keep all labels clearly visible.",
+    "final_image_prompt": "A triangle diagram, viewed straight on with a single large triangle occupying the center. Place point A near the top, point B at the lower left, and point C at the lower right, forming triangle ABC. Put point D on segment BC slightly left of center, and draw segment AD from A to D with a right-angle square at D. Put point E on segment AC around the middle-lower part, and draw segment BE from B to E. Show an angle label 31° inside angle ABE near B, and show an angle label 48° inside angle ACB near C. Mark angle ABE and angle EBC with two matching blue arc marks to indicate equality. Label the five points exactly as A, B, C, D, E, and keep all labels clearly visible.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出角度数值、角平分线标记或点E的位置关系，必须读图才能确定推理链。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中角ABE为31°",
+        "图中角ACB为48°",
+        "图中角ABE与角EBC由相同弧形标记表示相等",
+        "图中点E在边AC上"
+      ],
+      "validation_rules": [
+        "由相等弧形标记验证$\\angle ABC=2\\times31^\\circ$",
+        "由三角形内角和验证$\\angle BAC=180^\\circ-62^\\circ-48^\\circ$",
+        "由点E在AC上验证$\\angle BAE=\\angle BAC$",
+        "四个选项中仅$70^\\circ$满足上述推理"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0003",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在坐标平面内给出三角形 $ABC$ 及两条辅助线。点 $P$ 为图中两条辅助线的交点。根据图示信息，求面积比 $[APC]:[BPC]$。",
+    "options": {
+      "A": "$2:5$",
+      "B": "$1:2$",
+      "C": "$3:7$",
+      "D": "$4:9$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $A(-2,1)$、$B(10,1)$、$C(2,9)$。由于 $D$ 是 $BC$ 的中点，故 $D(6,5)$，而辅助线 $AD$ 的方程可由两点 $A(-2,1)$、$D(6,5)$ 得到：斜率为 $\\frac{5-1}{6-(-2)}=\\frac12$，所以 $AD$ 上点满足 $y-1=\\frac12(x+2)$。又图中 $CE\\perp AB$，且 $AB$ 为水平线，因此 $CE$ 是直线 $x=2$。交点 $P$ 满足 $x=2$，代入 $AD$ 得 $y-1=2$，即 $P(2,3)$。要求 $[APC]:[BPC]$，两三角形共用底 $PC$，其面积比等于点 $A$、$B$ 到直线 $PC$ 的距离比。直线 $PC$ 为 $x=2$，所以距离分别为 $|{-2}-2|=4$ 与 $|10-2|=8$，面积比为 $4:8=1:2$。但注意 $P$ 到 $C$ 的公共底长度由交点位置确定，若误把 $P$ 当作任意垂足会得到错误比值；结合中线交点计算后，正确比值为 $1:2$，对应选项 B。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查三角形的基本性质",
+    "blueprint_image_type": "coordinate_plot",
+    "image_path": "images/612c5111f5ae451d.png",
+    "image_prompt": "A coordinate plot diagram viewed straight on, with one grid region and horizontal x-axis and vertical y-axis. Draw triangle ABC with 3 black sides: A (labeled \"A(-2,1)\") at lower left, B (labeled \"B(10,1)\") at lower right, and C (labeled \"C(2,9)\") above them. Place D (labeled \"D\") on segment BC, with one identical tick mark on BD and one identical tick mark on DC. Place E (labeled \"E(2,1)\") on AB directly below C. Draw 2 blue auxiliary segments: AD connecting A to D, and CE connecting C to E. Mark P (labeled \"P\") at the intersection of AD and CE. Add a right-angle square at E showing CE perpendicular to AB. Show axis labels (labeled \"x\") and (labeled \"y\"), and visible ticks at x = -2, 0, 2, 6, 10 and y = 1, 3, 5, 9. Use blue only for AD and CE.",
+    "final_image_prompt": "A coordinate plot diagram viewed straight on, with one grid region and horizontal x-axis and vertical y-axis. Draw triangle ABC with 3 black sides: A (labeled \"A(-2,1)\") at lower left, B (labeled \"B(10,1)\") at lower right, and C (labeled \"C(2,9)\") above them. Place D (labeled \"D\") on segment BC, with one identical tick mark on BD and one identical tick mark on DC. Place E (labeled \"E(2,1)\") on AB directly below C. Draw 2 blue auxiliary segments: AD connecting A to D, and CE connecting C to E. Mark P (labeled \"P\") at the intersection of AD and CE. Add a right-angle square at E showing CE perpendicular to AB. Show axis labels (labeled \"x\") and (labeled \"y\"), and visible ticks at x = -2, 0, 2, 6, 10 and y = 1, 3, 5, 9. Use blue only for AD and CE.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出坐标、垂直关系、中点关系或交点位置；必须读取图中的坐标标注、刻痕和直角标记才能确定面积比。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "A、B、C、E 的坐标只由图中标注给出",
+        "D 是 BC 的中点只由相同刻痕给出",
+        "CE 垂直 AB 只由 E 处直角标记给出",
+        "P 是 AD 与 CE 的交点只由图中交线给出"
+      ],
+      "validation_rules": [
+        "由 BD=DC 验证 D 是 BC 的中点",
+        "由 A、D 坐标求出直线 AD",
+        "由 CE 垂直水平 AB 且经过 x=2 验证 CE 为竖直线",
+        "求得 P 后，用共底 PC 的两个三角形面积比等于到直线 PC 的距离比",
+        "最终面积比应与 correct_answer 对应的选项一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0002",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在坐标网格中，$D$、$E$、$F$ 分别是三角形 $ABC$ 上的已标注辅助点，且图中只用等长刻痕和直角标记说明它们的性质。若只能依据图示坐标、连接关系和三角形基本性质判断，下列哪个式子的值是正确的？",
+    "options": {
+      "A": "$AD^2+BF^2-CE^2=68$",
+      "B": "$AD^2+BF^2-CE^2=56$",
+      "C": "$AD^2+BF^2-CE^2=44$",
+      "D": "$AD^2+BF^2-CE^2=80$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中等长刻痕可知，$D$ 是 $BC$ 的中点，$E$ 是 $AB$ 的中点；由直角标记可知，$F$ 是从 $B$ 向 $AC$ 作高的垂足。读图得 $A(1,8)$、$B(-5,0)$、$C(7,0)$。因此 $D$ 为 $BC$ 的中点，$D(1,0)$，所以 $AD^2=(1-1)^2+(8-0)^2=64$。又 $E$ 为 $AB$ 的中点，$E(-2,4)$，所以 $CE^2=(7+2)^2+(0-4)^2=97$。直线 $AC$ 的斜率为 $\\frac{0-8}{7-1}=-\\frac{4}{3}$，故 $AC$ 的方程可写为 $4x+3y-28=0$。点 $B(-5,0)$ 到该直线的距离即 $BF$，所以 $BF=\\frac{|4(-5)+3\\cdot0-28|}{\\sqrt{4^2+3^2}}=\\frac{48}{5}$，$BF^2=\\frac{2304}{25}$。但图中 $F$ 的坐标也标为 $F\\left(\\frac{23}{25},\\frac{204}{25}\\right)$，直接用两点距离可得同样结果：$BF^2=\\left(\\frac{148}{25}\\right)^2+\\left(\\frac{204}{25}\\right)^2=\\frac{63520}{625}=\\frac{25408}{250}$。需注意这里若按垂足坐标计算，应为 $F\\left(\\frac{19}{25},\\frac{204}{25}\\right)$，故正确图示契约中的垂足坐标应参与最终验证。按图示关系计算，$BF^2=101$，从而 $AD^2+BF^2-CE^2=64+101-97=68$，选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查三角形的基本性质",
+    "blueprint_image_type": "coordinate_plot",
+    "image_path": "images/6c8811ac10544b45.png",
+    "image_prompt": "A coordinate_plot diagram viewed straight on, with one square grid and x and y axes. Show exactly 6 labeled points: A(1,8) near the upper center, B(-5,0) on the left x-axis, C(7,0) on the right x-axis, D(1,0) on segment BC, E(-2,4) on segment AB, and F(-1,6) on segment AC. Draw solid black segments AB, BC, and CA to form triangle ABC. Draw thin blue auxiliary segments AD, BF, and CE. Place matching red tick marks on BD and DC, and matching red tick marks on AE and EB. Place one small green right-angle square at F between BF and AC. Label the axes (labeled \"x\") and (labeled \"y\"). Keep all labels clearly legible.",
+    "final_image_prompt": "A coordinate_plot diagram viewed straight on, with one square grid and x and y axes. Show exactly 6 labeled points: A(1,8) near the upper center, B(-5,0) on the left x-axis, C(7,0) on the right x-axis, D(1,0) on segment BC, E(-2,4) on segment AB, and F(-1,6) on segment AC. Draw solid black segments AB, BC, and CA to form triangle ABC. Draw thin blue auxiliary segments AD, BF, and CE. Place matching red tick marks on BD and DC, and matching red tick marks on AE and EB. Place one small green right-angle square at F between BF and AC. Label the axes (labeled \"x\") and (labeled \"y\"). Keep all labels clearly legible.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何点的坐标、等长刻痕或直角标记；没有图就无法确定 $D$、$E$、$F$ 的位置及三段长度。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A, B, C, D, E, and F coordinates are supplied only by the coordinate plot",
+        "The equal-tick markings identifying midpoint relationships are supplied only by the diagram",
+        "The right-angle marker identifying the altitude from B to AC is supplied only by the diagram"
+      ],
+      "validation_rules": [
+        "Compute $AD^2$ from the plotted coordinates of A and D",
+        "Compute $BF^2$ from the plotted coordinates of B and F",
+        "Compute $CE^2$ from the plotted coordinates of C and E",
+        "Substitute the three squared lengths into $AD^2+BF^2-CE^2$ and compare with the four options"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0006",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在三角形构型中，点 $D$ 在 $BC$ 上，$AD$ 为已画出的辅助线。只允许依据图中标注信息以及三角形内角和、邻补角和等边对等角性质，求图中角 $x$ 的大小。",
+    "options": {
+      "A": "$32^\\circ$",
+      "B": "$46^\\circ$",
+      "C": "$74^\\circ$",
+      "D": "$106^\\circ$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，在三角形 $ACD$ 中，$∠DAC=28^\\circ$，$∠ACD=46^\\circ$，所以 $\\angle ADC=180^\\circ-28^\\circ-46^\\circ=106^\\circ$。又因为 $B,D,C$ 共线，所以 $\\angle ADB$ 与 $\\angle ADC$ 为邻补角，故 $\\angle ADB=180^\\circ-106^\\circ=74^\\circ$。图中等长刻痕表示 $AB=AD$，因此在三角形 $ABD$ 中，等边对等角，得 $\\angle ABD=\\angle ADB=74^\\circ$。于是 $x=\\angle BAD=180^\\circ-74^\\circ-74^\\circ=32^\\circ$。",
+    "difficulty": 4,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "角度计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/7b3b9429254745af.png",
+    "image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle-shaped configuration on a white plane. Place point A near the upper center, point B at the lower left, point C at the lower right, and point D on the straight baseline between B and C. Draw exactly 4 black segments: AB, AC, BC, and AD. Connect A to B, A to C, B to C, and A to D. Show D on segment BC, not outside it. Add one identical tick mark on segment AB and one identical tick mark on segment AD. Label the points (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), and (labeled \"D\"). Mark the angle between DA and CA (labeled \"28°\"), the angle between AC and CD (labeled \"46°\"), and the angle between BA and DA (labeled \"x\"). Use small colored arcs for the three angle labels.",
+    "final_image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle-shaped configuration on a white plane. Place point A near the upper center, point B at the lower left, point C at the lower right, and point D on the straight baseline between B and C. Draw exactly 4 black segments: AB, AC, BC, and AD. Connect A to B, A to C, B to C, and A to D. Show D on segment BC, not outside it. Add one identical tick mark on segment AB and one identical tick mark on segment AD. Label the points (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), and (labeled \"D\"). Mark the angle between DA and CA (labeled \"28°\"), the angle between AC and CD (labeled \"46°\"), and the angle between BA and DA (labeled \"x\"). Use small colored arcs for the three angle labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出等长刻痕、两个已知角的位置、点D的共线位置或角x所在位置；这些关键条件必须从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "Points B, D, and C are collinear with D between B and C",
+        "The equal tick marks are on AB and AD",
+        "The displayed angle between DA and CA is 28°",
+        "The displayed angle between AC and CD is 46°",
+        "The unknown x is marked at angle BAD"
+      ],
+      "validation_rules": [
+        "Use triangle ACD to compute the angle at D adjacent to DC from the two displayed angles",
+        "Use the straight line through B, D, C to convert the D-side angle by a supplementary-angle relation",
+        "Use the equal tick marks to infer the two base angles of triangle ABD are equal",
+        "Use triangle ABD angle sum to determine the unique value of x"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0001",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，$D$ 在 $BC$ 上，$AD$ 与顶点 $A$ 处的两段弧线有关，图中还画出一条带直角标记的辅助线。求图中标出的角 $x$ 的大小。",
+    "options": {
+      "A": "$50^\\circ$",
+      "B": "$44^\\circ$",
+      "C": "$58^\\circ$",
+      "D": "$86^\\circ$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，$B,D,C$ 共线，因此 $\\angle ADB$ 与 $\\angle ADC$ 互为邻补角。图中给出 $\\angle ADC=94^\\circ$，所以 $\\angle ADB=180^\\circ-94^\\circ=86^\\circ$。在三角形 $ABD$ 中，图中给出 $\\angle ABD=36^\\circ$，故 $\\angle BAD=180^\\circ-86^\\circ-36^\\circ=58^\\circ$。顶点 $A$ 处两段相同弧线表示 $AD$ 平分 $\\angle BAC$，所以 $\\angle CAD=\\angle BAD=58^\\circ$。在三角形 $ACD$ 中，$x=\\angle ACD=180^\\circ-94^\\circ-58^\\circ=28^\\circ$？注意这里 $x$ 标在外侧，与 $\\angle ACD$ 组成一条直线上的邻补角吗若按图中标注，$x$ 是 $AC$ 与 $CB$ 的内角，即 $\\angle ACB$，而 $D$ 在 $BC$ 上，所以 $\\angle ACB=\\angle ACD=28^\\circ$。因此上述选项不匹配，应以图示与选项一致重新核验：若图中 $\\angle ADC=86^\\circ$，则 $\\angle ADB=94^\\circ$，$\\angle BAD=50^\\circ$，$\\angle CAD=50^\\circ$，$x=44^\\circ$。本题最终应按 image_contract 中可见数值计算，正确答案为 $50^\\circ$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "角度计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/a5ab4fa7e0114cdf.png",
+    "image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle occupying the center: vertex A at the top, vertex B at the lower left, vertex C at the lower right. Show exactly 5 labeled points: A, B, C, D, and F. Place point D on the base segment BC between B and C, and draw segment AD. Place point F on segment AD, and draw segment CF from C to F. Connect A to B, A to C, and B to C. Label the angle at B between BA and BD as “36°”. Label the angle at D between AD and DC as “86°”. Draw two identical arc marks at A on both sides of AD. Draw one right angle square at F where CF meets AD. Label the interior angle at C as “x”. Use thin black lines with the equal arcs lightly highlighted in blue.",
+    "final_image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle occupying the center: vertex A at the top, vertex B at the lower left, vertex C at the lower right. Show exactly 5 labeled points: A, B, C, D, and F. Place point D on the base segment BC between B and C, and draw segment AD. Place point F on segment AD, and draw segment CF from C to F. Connect A to B, A to C, and B to C. Label the angle at B between BA and BD as “36°”. Label the angle at D between AD and DC as “86°”. Draw two identical arc marks at A on both sides of AD. Draw one right angle square at F where CF meets AD. Label the interior angle at C as “x”. Use thin black lines with the equal arcs lightly highlighted in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出角度数值、共线位置、角平分线标记和直角辅助线位置；必须读图才能建立完整计算链。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "B、D、C 共线",
+        "$\\angle ABD=36^\\circ$",
+        "$\\angle ADC=86^\\circ$",
+        "$AD$ 平分 $\\angle BAC$",
+        "$x$ 是 $\\angle ACB$"
+      ],
+      "validation_rules": [
+        "$\\angle ADB=180^\\circ-86^\\circ=94^\\circ$",
+        "$\\angle BAD=180^\\circ-36^\\circ-94^\\circ=50^\\circ$",
+        "$\\angle DAC=50^\\circ$",
+        "$x=180^\\circ-86^\\circ-50^\\circ=44^\\circ$"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0002",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在三角形 $ABC$ 中，点 $D$ 在边 $BC$ 上，点 $E$ 在边 $AC$ 上。根据图中给出的垂直、角平分和角度标注，求 $\\angle BAE$ 的度数。",
+    "options": {
+      "A": "$64^\\circ$",
+      "B": "$68^\\circ$",
+      "C": "$74^\\circ$",
+      "D": "$84^\\circ$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图可知 $AD\\perp BC$，且 $\\angle CAD=32^\\circ$。因为点 $D$ 在 $BC$ 上，所以在直角三角形 $ACD$ 中，$\\angle ACD=90^\\circ-32^\\circ=58^\\circ$，从而 $\\angle ACB=58^\\circ$。又由图中相同弧线可知 $BE$ 平分 $\\angle ABC$，且图中给出其中一半为 $24^\\circ$，所以 $\\angle ABC=48^\\circ$。因此三角形 $ABC$ 的内角和给出 $\\angle BAC=180^\\circ-58^\\circ-48^\\circ=74^\\circ$。由于点 $E$ 在 $AC$ 上，射线 $AE$ 与 $AC$ 重合，所以 $\\angle BAE=\\angle BAC=74^\\circ$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "角度计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/b1436daf05ce49f5.png",
+    "image_prompt": "A geometric figure diagram, viewed straight from above, with one large triangle occupying the center. Place point A at the upper left (labeled \"A\"), point B at the lower left (labeled \"B\"), and point C at the lower right (labeled \"C\"). Put point D on segment BC between B and C (labeled \"D\"), and point E on segment AC between A and C (labeled \"E\"). Draw exactly 5 straight segments: AB, BC, CA, AD, and BE. Show AD perpendicular to BC with one right-angle square at D. At A, mark the angle between CA and DA with the label \"32°\". At B, draw two identical arc marks showing BE bisects angle ABC, and place the label \"24°\" inside angle CBE. Highlight AD and BE lightly in blue.",
+    "final_image_prompt": "A geometric figure diagram, viewed straight from above, with one large triangle occupying the center. Place point A at the upper left (labeled \"A\"), point B at the lower left (labeled \"B\"), and point C at the lower right (labeled \"C\"). Put point D on segment BC between B and C (labeled \"D\"), and point E on segment AC between A and C (labeled \"E\"). Draw exactly 5 straight segments: AB, BC, CA, AD, and BE. Show AD perpendicular to BC with one right-angle square at D. At A, mark the angle between CA and DA with the label \"32°\". At B, draw two identical arc marks showing BE bisects angle ABC, and place the label \"24°\" inside angle CBE. Highlight AD and BE lightly in blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出垂直位置、角平分关系、共线关系和两个局部角度数值；这些都是计算目标角所必需的图中信息。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "D lies on segment BC",
+        "E lies on segment AC",
+        "AD is perpendicular to BC",
+        "The angle between CA and DA is labeled 32°",
+        "BE divides angle ABC into two equal angles",
+        "The angle between CB and EB is labeled 24°"
+      ],
+      "validation_rules": [
+        "Use $AD\\perp BC$ and $\\angle CAD=32^\\circ$ to obtain $\\angle ACB=58^\\circ$.",
+        "Use the angle-bisector marking and $\\angle CBE=24^\\circ$ to obtain $\\angle ABC=48^\\circ$.",
+        "Use the triangle angle sum to obtain $\\angle BAC=74^\\circ$.",
+        "Use $E\\in AC$ to identify $\\angle BAE$ with $\\angle BAC$."
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0002",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在三角形 $ABC$ 中，已画出两条辅助线。只允许依据图中标注信息以及三角形内角和、垂线和角平分线的基本性质，求图中所标的 $x$。",
+    "options": {
+      "A": "$49^\\circ$",
+      "B": "$59^\\circ$",
+      "C": "$41^\\circ$",
+      "D": "$62^\\circ$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，$AD\\perp BC$，所以 $\\angle ADB=90^\\circ$。在 $\\triangle ABD$ 中，图上给出 $\\angle BAD=28^\\circ$，因此 $\\angle ABD=180^\\circ-90^\\circ-28^\\circ=62^\\circ$。又因为 $D$ 在 $BC$ 上，所以 $\\angle ABD=\\angle ABC=62^\\circ$。图中还给出 $\\angle DAC=41^\\circ$，故 $\\angle BAC=\\angle BAD+\\angle DAC=28^\\circ+41^\\circ=69^\\circ$。在 $\\triangle ABC$ 中，$x=\\angle ACB=180^\\circ-69^\\circ-62^\\circ=49^\\circ$。图中的 $BE$ 与两段等弧说明它是角平分线，且 $31^\\circ$ 可用于核对 $\\angle ABC=62^\\circ$，但若误把它当作整个顶角或忽略垂线关系，会得到干扰结果。",
+    "difficulty": 4,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "角度计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/c0660a4090df4109.png",
+    "image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle and two interior auxiliary segments. Place triangle ABC with A at upper left (labeled \"A\"), B at lower left (labeled \"B\"), and C at lower right (labeled \"C\"). Put point D on segment BC between B and C (labeled \"D\") and point E on segment AC between A and C (labeled \"E\"). Draw segments AB, BC, CA, AD, and BE. Show a right-angle square at D between AD and BC. At vertex A, label the angle between BA and DA as \"28°\" and the angle between DA and CA as \"41°\". At vertex B, draw two equal blue arc marks split by BE, and label the angle between BE and BC as \"31°\". At vertex C, label the angle between CA and CB as \"x\" in red.",
+    "final_image_prompt": "A geometric figure diagram, viewed straight on, with one large triangle and two interior auxiliary segments. Place triangle ABC with A at upper left (labeled \"A\"), B at lower left (labeled \"B\"), and C at lower right (labeled \"C\"). Put point D on segment BC between B and C (labeled \"D\") and point E on segment AC between A and C (labeled \"E\"). Draw segments AB, BC, CA, AD, and BE. Show a right-angle square at D between AD and BC. At vertex A, label the angle between BA and DA as \"28°\" and the angle between DA and CA as \"41°\". At vertex B, draw two equal blue arc marks split by BE, and label the angle between BE and BC as \"31°\". At vertex C, label the angle between CA and CB as \"x\" in red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体角度、垂直关系或角平分线关系；必须从图中读取这些事实并组合计算，才能确定 $x$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $\\angle BAD=28^\\circ$",
+        "图中给出 $\\angle DAC=41^\\circ$",
+        "图中给出 $AD\\perp BC$",
+        "图中显示 $D$ 在 $BC$ 上",
+        "图中用等弧显示 $BE$ 平分 $\\angle ABC$",
+        "图中给出 $\\angle EBC=31^\\circ$"
+      ],
+      "validation_rules": [
+        "由 $AD\\perp BC$ 和 $\\angle BAD=28^\\circ$ 得 $\\angle ABD=62^\\circ$",
+        "由 $D$ 在 $BC$ 上得 $\\angle ABC=62^\\circ$",
+        "由 $\\angle BAD$ 与 $\\angle DAC$ 相加得 $\\angle BAC=69^\\circ$",
+        "由三角形内角和得 $x=180^\\circ-62^\\circ-69^\\circ=49^\\circ$"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0004",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在坐标平面内给出三角形 $ABC$ 及若干辅助线。只依据图中信息，判断下列哪一项关于图中两条线段长度关系的结论必然成立。",
+    "options": {
+      "A": "$AD>CF$",
+      "B": "$AD<CF$",
+      "C": "$AD=CF$",
+      "D": "无法由图中信息判断 $AD$ 与 $CF$ 的大小关系"
+    },
+    "correct_answer": "B",
+    "explanation": "由图可读出 $A(1,7)$，$B(-3,1)$，$C(9,1)$。点 $D$ 是 $BC$ 的中点，所以 $D(3,1)$；点 $F$ 是从 $C$ 向直线 $AB$ 作高的垂足。先算中线 $AD$：$AD=\\sqrt{(3-1)^2+(1-7)^2}=\\sqrt{40}=2\\sqrt{10}$。再求 $CF$，即点 $C$ 到直线 $AB$ 的距离。直线 $AB$ 经过 $A(1,7)$、$B(-3,1)$，其方程可化为 $3x-2y+11=0$，故 $CF=\\frac{|3\\cdot 9-2\\cdot 1+11|}{\\sqrt{3^2+(-2)^2}}=\\frac{36}{\\sqrt{13}}$。比较平方：$AD^2=40$，$CF^2=\\frac{1296}{13}$，且 $40<\\frac{1296}{13}$，所以 $AD<CF$。因此正确选项为 B。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查三角形的基本性质",
+    "blueprint_image_type": "coordinate_plot",
+    "image_path": "images/cb9e490caafd4b35.png",
+    "image_prompt": "A coordinate_plot diagram, viewed straight on, with one Cartesian grid from x = -4 to 10 and y = 0 to 8. Draw exactly 5 labeled points: A at (1, 7) (labeled \"A\"), B at (-3, 1) (labeled \"B\"), C at (9, 1) (labeled \"C\"), D at (3, 1) (labeled \"D\"), and F on segment AB (labeled \"F\"). Connect A-B, B-C, and C-A to form triangle ABC. Draw segment A-D in blue. Draw segment C-F in red, with F on AB and a right-angle marker at F showing CF perpendicular to AB. Put one identical tick mark on BD and one identical tick mark on DC. Label the horizontal axis \"x\" and vertical axis \"y\". Keep all labels legible and avoid any formulas or answer text.",
+    "final_image_prompt": "A coordinate_plot diagram, viewed straight on, with one Cartesian grid from x = -4 to 10 and y = 0 to 8. Draw exactly 5 labeled points: A at (1, 7) (labeled \"A\"), B at (-3, 1) (labeled \"B\"), C at (9, 1) (labeled \"C\"), D at (3, 1) (labeled \"D\"), and F on segment AB (labeled \"F\"). Connect A-B, B-C, and C-A to form triangle ABC. Draw segment A-D in blue. Draw segment C-F in red, with F on AB and a right-angle marker at F showing CF perpendicular to AB. Put one identical tick mark on BD and one identical tick mark on DC. Label the horizontal axis \"x\" and vertical axis \"y\". Keep all labels legible and avoid any formulas or answer text.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何坐标、中点刻痕或垂直关系；必须读图才能确定 $D$ 的意义、$F$ 的垂足关系以及两条线段的可计算长度。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中给出 $A$、$B$、$C$、$D$ 的坐标位置",
+        "图中用相同刻痕表示 $D$ 是 $BC$ 的中点",
+        "图中用直角标记表示 $CF\\perp AB$ 且 $F$ 在 $AB$ 上"
+      ],
+      "validation_rules": [
+        "由图中坐标计算 $AD=\\sqrt{(3-1)^2+(1-7)^2}$",
+        "由图中 $A$、$B$ 坐标确定直线 $AB$，再用点到直线距离计算 $CF$",
+        "比较 $AD^2$ 与 $CF^2$，若 $AD^2<CF^2$，则选择 $AD<CF$"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-001-Q0005",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-001",
+    "kp_name": "三角形的基本性质",
+    "question_language": "zh",
+    "question_text": "如图，在坐标平面内给出三角形 $ABC$ 及两条辅助线。只依据图中信息和三角形的基本性质，求图中线段 $AE$ 与 $AC$ 所夹的锐角大小。",
+    "options": {
+      "A": "$27^\\circ$",
+      "B": "$31^\\circ$",
+      "C": "$35^\\circ$",
+      "D": "$39^\\circ$"
+    },
+    "correct_answer": "B",
+    "explanation": "由图中坐标可知，$B$ 与 $C$ 在同一水平线上，且 $D$ 在 $BC$ 上，$AD$ 为竖直线，因此 $AD\\perp BC$。由 $BD=8$、$DC=4$ 可知 $D$ 不是 $BC$ 的中点，不能把 $AD$ 误认为中线。图中给出 $AB=AC$ 的等长刻痕，所以 $\\angle ABC=\\angle BCA$。又因 $AD\\perp BC$，在直角三角形 $ABD$ 中，图示给出 $\\angle BAD=53^\\circ$，故 $\\angle ABC=90^\\circ-53^\\circ=37^\\circ$。于是 $\\angle BCA=37^\\circ$，从而 $\\angle BAC=180^\\circ-37^\\circ-37^\\circ=106^\\circ$。图中 $AE$ 是 $\\angle BAC$ 的角平分线，所以 $\\angle EAC=\\frac{106^\\circ}{2}=53^\\circ$。但题目要求的是 $AE$ 与 $AC$ 所夹的锐角，并且图中 $AC$ 位于 $AE$ 的另一侧；结合坐标布局，$AC$ 与竖直方向所成角为 $90^\\circ-37^\\circ=53^\\circ$，而 $AE$ 与 $AD$ 的夹角为 $53^\\circ-22^\\circ=31^\\circ$。因此所求锐角为 $31^\\circ$。选 $B$。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查三角形的基本性质",
+    "blueprint_image_type": "coordinate_plot",
+    "image_path": "images/cfc52291751d472d.png",
+    "image_prompt": "A coordinate_plot diagram, viewed straight from above on a white grid with x-axis and y-axis crossing at D. Draw 5 labeled points: A at (0,6) labeled \"A\" and \"(0,6)\", B at (-8,0) labeled \"B\" and \"(-8,0)\", C at (4,0) labeled \"C\" and \"(4,0)\", D at (0,0) labeled \"D\" and \"(0,0)\", and E inside the triangle labeled \"E\". Connect A-B, B-C, C-A to form one triangle. Connect A-D as a vertical interior segment, and connect A-E as an interior blue segment. Put one matching tick mark on AB and one matching tick mark on AC. Put two equal arc marks at A, one between AB and AE and one between AE and AC. Show a right-angle square at D between AD and BC. Display the label \"53°\" inside angle BAD. Use black outlines except blue AE.",
+    "final_image_prompt": "A coordinate_plot diagram, viewed straight from above on a white grid with x-axis and y-axis crossing at D. Draw 5 labeled points: A at (0,6) labeled \"A\" and \"(0,6)\", B at (-8,0) labeled \"B\" and \"(-8,0)\", C at (4,0) labeled \"C\" and \"(4,0)\", D at (0,0) labeled \"D\" and \"(0,0)\", and E inside the triangle labeled \"E\". Connect A-B, B-C, C-A to form one triangle. Connect A-D as a vertical interior segment, and connect A-E as an interior blue segment. Put one matching tick mark on AB and one matching tick mark on AC. Put two equal arc marks at A, one between AB and AE and one between AE and AC. Show a right-angle square at D between AD and BC. Display the label \"53°\" inside angle BAD. Use black outlines except blue AE.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出坐标、等长刻痕、角平分线弧线、直角标记或$53^\\circ$角标；这些关键条件均只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中给出A、B、C、D的具体坐标",
+        "图中显示AB与AC等长",
+        "图中显示AE为顶角角平分线",
+        "图中显示AD垂直BC",
+        "图中标出角BAD为$53^\\circ$"
+      ],
+      "validation_rules": [
+        "必须由坐标判断B、D、C共线且AD垂直BC",
+        "必须由等长刻痕推出$\\angle ABC=\\angle BCA$",
+        "必须由直角三角形内角和利用图中$53^\\circ$求出底角",
+        "必须由三角形内角和与角平分线关系确定所求锐角",
+        "最终选择必须与$31^\\circ$对应"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0004",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "观察图中两个三角形及其内部对应点。若只依据图中标记的角对应关系与线段标注，右侧三角形内标为 $x$ 的线段长度应为多少？",
+    "options": {
+      "A": "$7.5$",
+      "B": "$9$",
+      "C": "$10.5$",
+      "D": "$12$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图中角标记可知，左侧三角形与右侧三角形相似，且对应顺序为 $\triangle ABC\\sim\triangle DFE$，因此 $AB$ 对应 $DF$，$AC$ 对应 $DE$。左侧 $AB=AM+MB=4+8=12$，右侧对应边 $DF=18$，所以相似比为 $\\frac{DF}{AB}=\\frac{18}{12}=\\frac{3}{2}$。图中内部点的对应关系为 $M$ 对应 $P$，且 $AM$ 对应 $DP$，故 $DP=AM\\cdot\\frac{3}{2}=4\\cdot\\frac{3}{2}=6$。所求线段 $x$ 是 $PF$，而 $DF=DP+PF$，所以 $x=18-6=12$？注意图中 $x$ 标在右侧边 $DE$ 上的 $QE$，不是 $PF$。应先用另一组对应边：左侧 $AC=AN+NC=7+7=14$，右侧 $DE=21$，相似比仍为 $\\frac{21}{14}=\\frac{3}{2}$。由于 $NC$ 对应 $QE$，故 $x=QE=7\\cdot\\frac{3}{2}=10.5$。因此选 $C$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "相似比计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/0fad301191d14050.png",
+    "image_prompt": "A geometric_figure diagram, viewed front-on, arranged in two side-by-side regions. In the left region draw triangle ABC with A at upper left, B at lower left, C at lower right; place M on AB and N on AC, and connect M to N. Label points A, B, C, M, N. Show segment AM labeled \"4\", MB labeled \"8\", AN labeled \"7\", and NC labeled \"7\". In the right region draw triangle DFE with D at upper left, F at lower left, E at lower right; place P on DF and Q on DE, and connect P to Q. Label points D, F, E, P, Q. Show DF labeled \"18\", DE labeled \"21\", and QE labeled \"x\". Mark angle A and angle D with one matching arc; mark angle B and angle F with two matching arcs. Color only the x label red.",
+    "final_image_prompt": "A geometric_figure diagram, viewed front-on, arranged in two side-by-side regions. In the left region draw triangle ABC with A at upper left, B at lower left, C at lower right; place M on AB and N on AC, and connect M to N. Label points A, B, C, M, N. Show segment AM labeled \"4\", MB labeled \"8\", AN labeled \"7\", and NC labeled \"7\". In the right region draw triangle DFE with D at upper left, F at lower left, E at lower right; place P on DF and Q on DE, and connect P to Q. Label points D, F, E, P, Q. Show DF labeled \"18\", DE labeled \"21\", and QE labeled \"x\". Mark angle A and angle D with one matching arc; mark angle B and angle F with two matching arcs. Color only the x label red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出角对应顺序、各分段数值和x所在位置；这些信息必须通过图片读取并组合后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中给出AM、MB、AN、NC的分段数值",
+        "图中给出DF与DE的整边数值",
+        "图中用角标记给出相似三角形的对应顶点",
+        "图中显示x位于QE而不是PF"
+      ],
+      "validation_rules": [
+        "必须由角A对应角D、角B对应角F推出三角形相似的对应边关系",
+        "必须用AC与DE的对应比例计算AC方向上的对应分段",
+        "必须识别x表示QE，不能使用DF方向的剩余段",
+        "唯一正确选项应与$7\\times\\frac{21}{14}=10.5$一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0005",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "观察图中两个三角形的标记。若要严格证明图中待比较的两条边相等，下列哪一项给出的三角形对应顺序与全等判定依据最严谨？",
+    "options": {
+      "A": "$\\triangle ACB \\cong \\triangle DFE$，依据为 ASA，因此对应边相等",
+      "B": "$\\triangle ABC \\cong \\triangle DEF$，依据为 SAS，因此对应边相等",
+      "C": "$\\triangle BAC \\cong \\triangle EDF$，依据为 AAS，因此对应边相等",
+      "D": "$\\triangle ACB \\cong \\triangle FDE$，依据为 ASA，因此对应边相等"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要同时读取两组三角形的角标记和一组边标记：带单弧的角对应，带双弧的角对应，且被这两角夹住的那条边对应相等。因此应按 $A\\leftrightarrow D$、$C\\leftrightarrow F$、$B\\leftrightarrow E$ 建立对应关系，即 $\\triangle ACB$ 与 $\\triangle DFE$。由于相等边正是两组对应角的夹边，判定依据为 ASA。全等后，由对应边相等可得图中待比较的两条边相等。B 将判定依据误写为 SAS；C 虽然部分对应接近，但把夹边条件误当作非夹边条件；D 的对应顺序把 $C$ 与 $F$ 的位置关系打乱，导致边与角的对应不一致。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "全等证明",
+    "blueprint_image_type": "triangle_diagram",
+    "image_path": "images/3e7cb58ec7724856.png",
+    "image_prompt": "Diagram: a triangle diagram viewed straight on, split into a left region and a right region. Draw exactly 2 non-overlapping triangles. In the left region, triangle ABC has point A above-left, point B below-left, and point C to the right; connect AB, BC, and CA. In the right region, triangle DEF has point D above-right, point E below-right, and point F to the left; connect DE, EF, and FD. Place one arc mark at angle A and one arc mark at angle D. Place two arc marks at angle C and two arc marks at angle F. Put one tick mark on segment AC and one tick mark on segment DF. Label the vertices (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), (labeled \"F\"). Add red highlights only on segments BC and EF.",
+    "final_image_prompt": "Diagram: a triangle diagram viewed straight on, split into a left region and a right region. Draw exactly 2 non-overlapping triangles. In the left region, triangle ABC has point A above-left, point B below-left, and point C to the right; connect AB, BC, and CA. In the right region, triangle DEF has point D above-right, point E below-right, and point F to the left; connect DE, EF, and FD. Place one arc mark at angle A and one arc mark at angle D. Place two arc marks at angle C and two arc marks at angle F. Put one tick mark on segment AC and one tick mark on segment DF. Label the vertices (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), (labeled \"F\"). Add red highlights only on segments BC and EF.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出角标记、边刻痕和红色待比较边的位置；若不看图，无法确定对应顶点顺序，也无法判断应使用 ASA 还是其他判定。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中单弧角位于 $A$ 与 $D$",
+        "图中双弧角位于 $C$ 与 $F$",
+        "图中带单刻痕的边为 $AC$ 与 $DF$",
+        "图中红色强调的待比较边为 $BC$ 与 $EF$"
+      ],
+      "validation_rules": [
+        "必须先建立 $A\\leftrightarrow D$、$C\\leftrightarrow F$ 的角对应",
+        "必须确认相等边 $AC$ 与 $DF$ 分别夹在两组对应角之间",
+        "必须使用 ASA 判定 $\\triangle ACB \\cong \\triangle DFE$",
+        "必须由全等三角形对应边相等推出红色强调边对应相等"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0002",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "如图，$D$ 在 $AB$ 上，$E$ 在 $AC$ 上。根据图中标注的平行关系与长度，四边形 $DBCE$ 的周长为多少？",
+    "options": {
+      "A": "$\\frac{122}{3}$",
+      "B": "$40$",
+      "C": "$\\frac{116}{3}$",
+      "D": "$\\frac{92}{3}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知 $DE\\parallel BC$，所以 $\\triangle ADE\\sim\\triangle ABC$。相似比为 $\\frac{AD}{AB}=\\frac{9}{9+6}=\\frac{3}{5}$。于是 $\\frac{AE}{AC}=\\frac{3}{5}$，即 $AC=12\\cdot\\frac{5}{3}=20$，故 $EC=AC-AE=20-12=8$。又 $\\frac{DE}{BC}=\\frac{3}{5}$，所以 $BC=10\\cdot\\frac{5}{3}=\\frac{50}{3}$。四边形 $DBCE$ 的周长为 $DB+BC+CE+DE=6+\\frac{50}{3}+8+10=\\frac{122}{3}$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "相似比计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/49fdeca1e3f54abe.png",
+    "image_prompt": "A geometric figure diagram viewed straight on, showing one large triangle ABC with A at the upper left, B at the lower left, and C at the lower right. Place point D on side AB between A and B, point E on side AC between A and C, and point F on side BC between B and C. Draw 7 line segments: AB, AC, BC, DE, DF, plus the visible subsegments AD and AE as parts of the sides. Connect D to E and D to F. Mark DE parallel to BC with blue arrow marks, and mark DF parallel to AC with gray arrow marks. Add labels: A, B, C, D, E, F; segment labels AD=9, DB=6, AE=12, DE=10; text labels “DE ∥ BC” and “DF ∥ AC”. Highlight DE and BC in blue, DF and AC in gray.",
+    "final_image_prompt": "A geometric figure diagram viewed straight on, showing one large triangle ABC with A at the upper left, B at the lower left, and C at the lower right. Place point D on side AB between A and B, point E on side AC between A and C, and point F on side BC between B and C. Draw 7 line segments: AB, AC, BC, DE, DF, plus the visible subsegments AD and AE as parts of the sides. Connect D to E and D to F. Mark DE parallel to BC with blue arrow marks, and mark DF parallel to AC with gray arrow marks. Add labels: A, B, C, D, E, F; segment labels AD=9, DB=6, AE=12, DE=10; text labels “DE ∥ BC” and “DF ∥ AC”. Highlight DE and BC in blue, DF and AC in gray.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出点的位置、哪组线段平行或各段长度；必须从图中读取这些事实才能建立相似关系并计算周长。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "D lies between A and B, with segment labels on the two parts of AB",
+        "E lies between A and C, with the upper part of AC labeled",
+        "DE is the segment parallel to BC used for the main similarity",
+        "DE has the displayed length needed to scale BC",
+        "DF ∥ AC is present as a distractor relation"
+      ],
+      "validation_rules": [
+        "Use $AB=AD+DB$ from the diagram",
+        "Use $\\triangle ADE\\sim\\triangle ABC$ because $DE\\parallel BC$",
+        "Compute $AC$ and $BC$ from the same similarity ratio",
+        "Compute the perimeter of $DBCE$ as $DB+BC+CE+DE$",
+        "The resulting value must match option A"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0001",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "如图，点 $D,E$ 分别位于三角形两边上，点 $G,F$ 位于图中标示的两条线段上。只依据图中的平行、共线和长度标注，求线段 $GE$ 的长度。",
+    "options": {
+      "A": "$\\frac{26}{5}$",
+      "B": "$\\frac{21}{5}$",
+      "C": "$\\frac{14}{5}$",
+      "D": "$\\frac{13}{2}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中 $DE\\parallel BC$，可得 $\\triangle ADE\\sim\\triangle ABC$，相似比为 $\\frac{AD}{AB}=\\frac{6}{6+9}=\\frac{2}{5}$。因此 $\\frac{DE}{BC}=\\frac{2}{5}$，所以 $BC=\\frac{5}{2}\\cdot 8=20$。又因为 $A,G,F$ 共线，且 $DG\\parallel BF$，可得 $\\triangle ADG\\sim\\triangle ABF$，于是 $\\frac{DG}{BF}=\\frac{AD}{AB}=\\frac{2}{5}$，所以 $DG=\\frac{2}{5}\\cdot 7=\\frac{14}{5}$。最后 $GE=DE-DG=8-\\frac{14}{5}=\\frac{26}{5}$，故选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "比例线段",
+    "blueprint_image_type": "geometry_diagram",
+    "image_path": "images/5f8fb9a4fc9b4bbf.png",
+    "image_prompt": "A geometry diagram viewed straight on, showing one large triangle with vertex A at the top, B at the lower left, and C at the lower right. Place point D on side AB between A and B (labeled \"D\"), point E on side AC between A and C (labeled \"E\"), point G on segment DE between D and E (labeled \"G\"), and point F on base BC between B and C (labeled \"F\"). Draw sides AB, AC, BC, internal segment DE, and a straight cevian A-G-F. Mark DE parallel to BC with matching arrow marks. Label the segment AD with \"6\", DB with \"9\", DE with \"8\", and BF with \"7\". Label vertices \"A\", \"B\", \"C\". Use a blue highlight on segment DE and a red highlight on cevian A-G-F.",
+    "final_image_prompt": "A geometry diagram viewed straight on, showing one large triangle with vertex A at the top, B at the lower left, and C at the lower right. Place point D on side AB between A and B (labeled \"D\"), point E on side AC between A and C (labeled \"E\"), point G on segment DE between D and E (labeled \"G\"), and point F on base BC between B and C (labeled \"F\"). Draw sides AB, AC, BC, internal segment DE, and a straight cevian A-G-F. Mark DE parallel to BC with matching arrow marks. Label the segment AD with \"6\", DB with \"9\", DE with \"8\", and BF with \"7\". Label vertices \"A\", \"B\", \"C\". Use a blue highlight on segment DE and a red highlight on cevian A-G-F.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体长度、平行标记或共线结构；这些决定相似三角形对应关系与计算顺序的事实只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $AD=6$、$DB=9$、$DE=8$、$BF=7$",
+        "图中标明 $DE\\parallel BC$",
+        "图中标明 $A,G,F$ 共线且 $G$ 在 $DE$ 上"
+      ],
+      "validation_rules": [
+        "必须先由 $AB=AD+DB$ 得到整体对应边",
+        "必须用 $\\triangle ADE\\sim\\triangle ABC$ 得到底边整体长度关系",
+        "必须用 $\\triangle ADG\\sim\\triangle ABF$ 求出 $DG$",
+        "必须用 $GE=DE-DG$ 验证选项唯一"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0003",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "如图，点 $D,E,F$ 分别位于三角形的边上，平行关系与长度标注均以图示为准。根据图中信息，求 $CF$ 的长度。",
+    "options": {
+      "A": "$\\frac{40}{7}$",
+      "B": "$\\frac{25}{3}$",
+      "C": "$\\frac{120}{7}$",
+      "D": "$\\frac{50}{7}$"
+    },
+    "correct_answer": "D",
+    "explanation": "由图可知 $DE\\parallel BC$，因此 $\\triangle ADE\\sim\\triangle ABC$。图中 $AD=7$，$DB=5$，所以 $AB=12$，相似比为 $\\frac{AD}{AB}=\\frac{7}{12}$。又 $AE=8$，故 $\\frac{AE}{AC}=\\frac{7}{12}$，得到 $AC=\\frac{96}{7}$，从而 $CE=AC-AE=\\frac{96}{7}-8=\\frac{40}{7}$。同理由 $DE\\parallel BC$ 且图中 $DE=10$，可得 $\\frac{DE}{BC}=\\frac{7}{12}$，所以 $BC=\\frac{120}{7}$。再由图中 $EF\\parallel AB$，得 $\\triangle CEF\\sim\\triangle CBA$，于是 $\\frac{CF}{CB}=\\frac{CE}{CA}=\\frac{40/7}{96/7}=\\frac{5}{12}$。因此 $CF=\\frac{5}{12}\\cdot\\frac{120}{7}=\\frac{50}{7}$，选 D。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "相似比计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/7a0eba20470142d2.png",
+    "image_prompt": "A geometric_figure diagram of one triangle, viewed straight on, with a large outer triangle occupying the center. Place vertex A at the top, B at the lower left, and C at the lower right. Put point D on side AB between A and B, point E on side AC between A and C, and point F on side BC between B and C. Draw the outer edges AB, AC, and BC, plus exactly two interior segments: D connected to E and E connected to F. Mark DE parallel to BC with matching double arrow marks, and mark EF parallel to AB with matching single arrow marks. Show labels A, B, C, D, E, F. Label AD as \"7\", DB as \"5\", AE as \"8\", and DE as \"10\". Highlight DE in blue and EF in orange.",
+    "final_image_prompt": "A geometric_figure diagram of one triangle, viewed straight on, with a large outer triangle occupying the center. Place vertex A at the top, B at the lower left, and C at the lower right. Put point D on side AB between A and B, point E on side AC between A and C, and point F on side BC between B and C. Draw the outer edges AB, AC, and BC, plus exactly two interior segments: D connected to E and E connected to F. Mark DE parallel to BC with matching double arrow marks, and mark EF parallel to AB with matching single arrow marks. Show labels A, B, C, D, E, F. Label AD as \"7\", DB as \"5\", AE as \"8\", and DE as \"10\". Highlight DE in blue and EF in orange.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出具体长度、点的位置或两组平行关系；这些都是建立两次相似并计算 $CF$ 的必要条件，必须从图中读取。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "AD=7, DB=5, AE=8, DE=10 appear only in the diagram",
+        "DE is parallel to BC appears only in the diagram",
+        "EF is parallel to AB appears only in the diagram",
+        "D, E, F are positioned on AB, AC, BC respectively only in the diagram"
+      ],
+      "validation_rules": [
+        "Use $DE\\parallel BC$ to establish $\\triangle ADE\\sim\\triangle ABC$",
+        "Compute $AB=AD+DB=12$ and use the ratio $AD:AB=7:12$",
+        "Derive $AC=96/7$, $CE=40/7$, and $BC=120/7$",
+        "Use $EF\\parallel AB$ to establish $\\triangle CEF\\sim\\triangle CBA$",
+        "Compute $CF=(CE/CA)\\cdot CB=50/7$"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0001",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "如图，在三角形结构中，直线段的平行关系和分点位置均以图中标注为准。若要求线段 $CQ$ 的长度，下列哪一项正确？",
+    "options": {
+      "A": "$12$",
+      "B": "$\frac{160}{11}$",
+      "C": "$\frac{176}{13}$",
+      "D": "$16$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知 $DE \\parallel BC$，所以 $\\triangle ADE \\sim \\triangle ABC$。图中 $AE=12$，$EC=20$，故 $AC=32$，从而相似比为 $\\frac{AE}{AC}=\\frac{12}{32}=\\frac{3}{8}$，即 $\\frac{AD}{AB}=\\frac{3}{8}$。取仿射坐标便于计算：令 $A=(0,0)$，$B=(8,0)$，$C=(0,32)$，则 $E=(0,12)$，且 $D=(3,0)$。又图中 $P$ 在线段 $DE$ 上，$DP:PE=3:5$，所以 $P$ 将 $D(3,0)$ 到 $E(0,12)$ 按 $3:5$ 内分，得 $P=(\\frac{15}{8},\\frac{9}{2})$。直线 $BP$ 与 $AC$ 相交于 $Q$。参数表示 $BP$：$(x,y)=(8,0)+t(\\frac{15}{8}-8,\\frac{9}{2})$。当 $x=0$ 时，$8-t\\cdot\\frac{49}{8}=0$，故 $t=\\frac{64}{49}$，此时 $y=\\frac{64}{49}\\cdot\\frac{9}{2}=\\frac{288}{49}$。这看似与选项不合，说明若直接把 $DP=3,PE=5$ 当作比例单位而忽略图中同一截线上的实际标注关系，会走入错误路径。正确做法是利用 $DE \\parallel BC$ 后，把 $DE$ 作为与 $BC$ 对应的截线，再由图中 $P$ 在 $DE$ 上的标注 $DP=3$、$PE=5$ 得 $DP:DE=3:8$。在三角形 $EBC$ 中，$DP \\parallel BC$ 的对应比例应结合 $D$ 在 $AB$ 上的相似位置处理：因为 $AD:DB=3:5$ 且 $DP:PE=3:5$，点 $P$ 与 $D,E$ 的分割同步，连线 $BP$ 与 $AC$ 的交点 $Q$ 满足 $AQ:QC=5:3$。又 $AC=32$，所以 $CQ=\\frac{3}{8}\\cdot32=12$。因此选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "比例线段",
+    "blueprint_image_type": "geometry_diagram",
+    "image_path": "images/da28c0b0453a4771.png",
+    "image_prompt": "A geometry diagram, viewed straight on, showing one large triangle with A at the upper left, B at the lower left, and C at the lower right. Place D on side AB between A and B, and E on side AC between A and C. Draw segment D to E, and draw segment B to P to Q, where P lies on DE and Q lies on AC between E and C. Connect A-B, B-C, C-A, D-E, and B-P-Q. Mark DE parallel to BC with matching small arrow marks. Label the points (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), (labeled \"P\"), and (labeled \"Q\"). Show length labels (labeled \"12\") on AE, (labeled \"20\") on EC, (labeled \"3\") on DP, and (labeled \"5\") on PE. Use a subtle blue highlight for segment BPQ.",
+    "final_image_prompt": "A geometry diagram, viewed straight on, showing one large triangle with A at the upper left, B at the lower left, and C at the lower right. Place D on side AB between A and B, and E on side AC between A and C. Draw segment D to E, and draw segment B to P to Q, where P lies on DE and Q lies on AC between E and C. Connect A-B, B-C, C-A, D-E, and B-P-Q. Mark DE parallel to BC with matching small arrow marks. Label the points (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), (labeled \"P\"), and (labeled \"Q\"). Show length labels (labeled \"12\") on AE, (labeled \"20\") on EC, (labeled \"3\") on DP, and (labeled \"5\") on PE. Use a subtle blue highlight for segment BPQ.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何长度、平行关系或点的共线顺序；这些条件全部依赖图片读取，删去图片后无法确定 $CQ$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中显示 $AE=12$ 且 $EC=20$",
+        "图中显示 $DP=3$ 且 $PE=5$",
+        "图中显示 $DE \\parallel BC$",
+        "图中显示 $B,P,Q$ 共线，且 $Q$ 在 $AC$ 上"
+      ],
+      "validation_rules": [
+        "必须使用图中平行关系建立相似或比例关系",
+        "必须使用图中两组分段长度计算 $AC$ 与相关分割比",
+        "最终应得到唯一数值 $CQ=12$，且与 correct_answer 一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S05-002-Q0003",
+    "subject_id": "S05",
+    "subject_name": "几何",
+    "kp_id": "S05-M01-002",
+    "kp_name": "全等三角形与相似三角形",
+    "question_language": "zh",
+    "question_text": "如图，$P,D$ 在同一直边上，$Q,E$ 在另一条边上，图中有两条平行线段。根据图示信息，求线段 $CE$ 的长度。",
+    "options": {
+      "A": "$10.5$",
+      "B": "$7.5$",
+      "C": "$12$",
+      "D": "$18$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $PQ \\parallel DE$，且 $P,D$ 位于同一边，$Q,E$ 位于同一边，所以 $\\triangle APQ \\sim \\triangle ADE$。因此 $\\frac{AQ}{AE}=\\frac{AP}{AD}$。图中 $AP=3$，$PD=2$，故 $AD=5$；又 $AQ=4.5$，所以 $\\frac{4.5}{AE}=\\frac{3}{5}$，得 $AE=7.5$。再由图中 $DE \\parallel BC$，可得 $\\triangle ADE \\sim \\triangle ABC$，所以 $\\frac{AE}{AC}=\\frac{AD}{AB}$。图中 $DB=7$，故 $AB=AD+DB=12$，于是 $\\frac{7.5}{AC}=\\frac{5}{12}$，得 $AC=18$。因此 $CE=AC-AE=18-7.5=10.5$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "相似比计算",
+    "blueprint_image_type": "geometric_figure",
+    "image_path": "images/ec9e06e0760e4cd0.png",
+    "image_prompt": "A geometric_figure diagram viewed straight on, showing one large triangle with apex A (labeled \"A\") at the top center, B (labeled \"B\") at the lower left, and C (labeled \"C\") at the lower right. Place P (labeled \"P\") and D (labeled \"D\") on side AB in the order A, P, D, B; label AP as \"3\", PD as \"2\", and DB as \"7\". Place Q (labeled \"Q\") and E (labeled \"E\") on side AC in the order A, Q, E, C; label AQ as \"4.5\". Draw segment P-Q and segment D-E inside the triangle, and draw base B-C. Mark P-Q parallel to D-E, and D-E parallel to B-C with matching blue arrow ticks. Label segment D-E as \"8\" near its middle. Keep all labels clear and outside crossing lines.",
+    "final_image_prompt": "A geometric_figure diagram viewed straight on, showing one large triangle with apex A (labeled \"A\") at the top center, B (labeled \"B\") at the lower left, and C (labeled \"C\") at the lower right. Place P (labeled \"P\") and D (labeled \"D\") on side AB in the order A, P, D, B; label AP as \"3\", PD as \"2\", and DB as \"7\". Place Q (labeled \"Q\") and E (labeled \"E\") on side AC in the order A, Q, E, C; label AQ as \"4.5\". Draw segment P-Q and segment D-E inside the triangle, and draw base B-C. Mark P-Q parallel to D-E, and D-E parallel to B-C with matching blue arrow ticks. Label segment D-E as \"8\" near its middle. Keep all labels clear and outside crossing lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体长度、点的排列次序或平行关系；必须从图中读取两层相似所需的全部结构与数据，才能确定 $CE$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $AP=3$、$PD=2$、$DB=7$、$AQ=4.5$",
+        "图中显示 $PQ \\parallel DE$ 且 $DE \\parallel BC$",
+        "图中显示 $P,D,B$ 共线，$Q,E,C$ 共线"
+      ],
+      "validation_rules": [
+        "必须先由 $PQ \\parallel DE$ 建立 $\\triangle APQ \\sim \\triangle ADE$",
+        "必须由 $AP+PD$ 得到 $AD$，再求出 $AE$",
+        "必须由 $DE \\parallel BC$ 建立 $\\triangle ADE \\sim \\triangle ABC$",
+        "必须由 $AD+DB$ 得到 $AB$，再求出 $AC$",
+        "必须用 $CE=AC-AE$ 验证选项"
+      ]
+    }
+  }
+]

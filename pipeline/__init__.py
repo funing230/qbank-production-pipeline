@@ -1,0 +1,4 @@
+"""V5 题库生产流水线模块"""
+from .db import ProductionDB, QUALITY_STATUSES, BATCH_STATUSES, RENDER_JOB_STATUSES
+
+__all__ = ['ProductionDB', 'QUALITY_STATUSES', 'BATCH_STATUSES', 'RENDER_JOB_STATUSES']

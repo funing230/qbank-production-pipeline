@@ -1,0 +1,402 @@
+[
+  {
+    "question_id": "S10-001-Q0003",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "根据图中同一化合物的给药信息和暴露量，按绝对生物利用度公式计算该化合物口服给药的生物利用度最接近下列哪一项？",
+    "options": {
+      "A": "20%",
+      "B": "80%",
+      "C": "31.25%",
+      "D": "125%"
+    },
+    "correct_answer": "A",
+    "explanation": "绝对生物利用度需同时校正两种给药途径的剂量差异，公式为$F=\\frac{AUC_{po}\\times Dose_{iv}}{AUC_{iv}\\times Dose_{po}}\\times100\\%$。由图读出：口服给药$Dose_{po}=200\\ \\mathrm{mg}$、$AUC_{po}=48\\ \\mathrm{mg\\cdot h/L}$；静脉给药$Dose_{iv}=50\\ \\mathrm{mg}$、$AUC_{iv}=60\\ \\mathrm{mg\\cdot h/L}$。代入得$F=\\frac{48\\times50}{60\\times200}\\times100\\%=20\\%$。因此选A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/3e1fbc9924154cd7.png",
+    "image_prompt": "A chemical_structure educational diagram, viewed straight-on, split into left, center, right, and bottom regions. In the center, draw 1 simplified organic molecule with 1 benzene ring, 1 carbonyl group, and 1 amine side chain, labeled \"化合物 X\". On the left, place 1 rectangular orange-outlined box labeled \"口服\" containing two lines labeled \"Dose = 200 mg\" and \"AUC = 48 mg·h/L\". On the right, place 1 rectangular blue-outlined box labeled \"静脉\" containing two lines labeled \"Dose = 50 mg\" and \"AUC = 60 mg·h/L\". Draw 1 arrow from the molecule to the left box and 1 arrow from the molecule to the right box. Along the bottom, show a rendered formula labeled \"F = (AUC口服 × Dose静脉) / (AUC静脉 × Dose口服)\". Use orange highlight only for the left box and blue highlight only for the right box.",
+    "final_image_prompt": "A chemical_structure educational diagram, viewed straight-on, split into left, center, right, and bottom regions. In the center, draw 1 simplified organic molecule with 1 benzene ring, 1 carbonyl group, and 1 amine side chain, labeled \"化合物 X\". On the left, place 1 rectangular orange-outlined box labeled \"口服\" containing two lines labeled \"Dose = 200 mg\" and \"AUC = 48 mg·h/L\". On the right, place 1 rectangular blue-outlined box labeled \"静脉\" containing two lines labeled \"Dose = 50 mg\" and \"AUC = 60 mg·h/L\". Draw 1 arrow from the molecule to the left box and 1 arrow from the molecule to the right box. Along the bottom, show a rendered formula labeled \"F = (AUC口服 × Dose静脉) / (AUC静脉 × Dose口服)\". Use orange highlight only for the left box and blue highlight only for the right box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出口服和静脉给药的剂量、AUC数值及公式中交叉相乘关系，必须读取图片才能完成剂量校正计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧框给出口服剂量和口服AUC",
+        "右侧框给出静脉剂量和静脉AUC",
+        "图中公式规定口服AUC与静脉剂量相乘，静脉AUC与口服剂量相乘"
+      ],
+      "validation_rules": [
+        "必须按$F=\\frac{AUC_{po}\\times Dose_{iv}}{AUC_{iv}\\times Dose_{po}}\\times100\\%$计算",
+        "必须使用图中四个数值$48$、$50$、$60$、$200$",
+        "计算结果为$\\frac{48\\times50}{60\\times200}\\times100\\%=20\\%$时选择A"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-001-Q0002",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "图中为同一模拟化合物在两种给药途径下的暴露数据。若按绝对生物利用度计算原则，图示化合物的绝对生物利用度最接近下列哪一项？",
+    "options": {
+      "A": "$60\\%$",
+      "B": "$120\\%$",
+      "C": "$41.7\\%$",
+      "D": "$83.3\\%$"
+    },
+    "correct_answer": "A",
+    "explanation": "绝对生物利用度按公式 $F=\\frac{AUC_{po}\\times Dose_{iv}}{AUC_{iv}\\times Dose_{po}}\\times 100\\%$ 计算。由图读取：口服给药的 $Dose_{po}=200\\,mg$、$AUC_{po}=48\\,mg\\cdot h/L$；静脉给药的 $Dose_{iv}=100\\,mg$、$AUC_{iv}=40\\,mg\\cdot h/L$。代入得 $F=\\frac{48\\times100}{40\\times200}\\times100\\%=60\\%$。因此答案为 $60\\%$。B 是未按剂量校正而误用 $48/40$；C 是把静脉和口服的剂量位置混淆；D 是将 $40/48$ 误当作比例。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/4911aacd62c24e03.png",
+    "image_prompt": "Chemical structure diagram, split into a left data region, a central structure region, and a right data region. In the center, draw 1 aromatic six-membered ring labeled \"Compound X\", with 1 left substituent labeled \"OH\" and 1 right substituent labeled \"NH2\". On the left, place 1 blue bordered rectangular card labeled \"口服\" containing two lines: labeled \"Dose\" with \"200 mg\", and labeled \"AUC\" with \"48 mg·h/L\". On the right, place 1 green bordered rectangular card labeled \"静脉\" containing two lines: labeled \"Dose\" with \"100 mg\", and labeled \"AUC\" with \"40 mg·h/L\". Draw 1 blue arrow from the left card to Compound X and 1 green arrow from the right card to Compound X. Use blue highlighting only for the oral card and green highlighting only for the intravenous card.",
+    "final_image_prompt": "Chemical structure diagram, split into a left data region, a central structure region, and a right data region. In the center, draw 1 aromatic six-membered ring labeled \"Compound X\", with 1 left substituent labeled \"OH\" and 1 right substituent labeled \"NH2\". On the left, place 1 blue bordered rectangular card labeled \"口服\" containing two lines: labeled \"Dose\" with \"200 mg\", and labeled \"AUC\" with \"48 mg·h/L\". On the right, place 1 green bordered rectangular card labeled \"静脉\" containing two lines: labeled \"Dose\" with \"100 mg\", and labeled \"AUC\" with \"40 mg·h/L\". Draw 1 blue arrow from the left card to Compound X and 1 green arrow from the right card to Compound X. Use blue highlighting only for the oral card and green highlighting only for the intravenous card.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出两种途径的剂量和 AUC，必须从图中的化学结构关联数据卡片读取并配对后才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "口服卡片给出的剂量为 $200\\,mg$，AUC 为 $48\\,mg\\cdot h/L$",
+        "静脉卡片给出的剂量为 $100\\,mg$，AUC 为 $40\\,mg\\cdot h/L$"
+      ],
+      "validation_rules": [
+        "必须使用绝对生物利用度公式 $F=\\frac{AUC_{po}\\times Dose_{iv}}{AUC_{iv}\\times Dose_{po}}\\times 100\\%$",
+        "必须将口服 AUC 与口服剂量配对、静脉 AUC 与静脉剂量配对",
+        "计算结果为 $\\frac{48\\times100}{40\\times200}\\times100\\%=60\\%$，因此唯一正确选项为 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-001-Q0002",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "图示为同一假想小分子在一次静脉给药后的结构标注数据。若假定线性药代动力学成立，并将未以原形经尿排出的清除部分视为非肾性清除，则该化合物的非肾性清除率最接近下列哪一项？",
+    "options": {
+      "A": "$1.5\\ \\mathrm{L/h}$",
+      "B": "$4.5\\ \\mathrm{L/h}$",
+      "C": "$6.0\\ \\mathrm{L/h}$",
+      "D": "$24\\ \\mathrm{L/h}$"
+    },
+    "correct_answer": "B",
+    "explanation": "静脉给药时总清除率可由 $CL=\\frac{Dose}{AUC}$ 计算。由图读得给药量为 $480\\ \\mathrm{mg}$，$AUC_{0-\\infty}=80\\ \\mathrm{mg\\cdot h/L}$，因此总清除率 $CL=\\frac{480}{80}=6.0\\ \\mathrm{L/h}$。尿中原形药物量为 $120\\ \\mathrm{mg}$，肾清除率 $CL_R=\\frac{A_e}{AUC}=\\frac{120}{80}=1.5\\ \\mathrm{L/h}$。非肾性清除率为 $CL_{NR}=CL-CL_R=6.0-1.5=4.5\\ \\mathrm{L/h}$，故选 B。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/57230000706d4e39.png",
+    "image_prompt": "Chemical structure diagram, viewed straight on, with one central synthetic molecule and four surrounding data cards arranged in a 2 by 2 layout. Draw 1 six-membered ring in the center (labeled \"化合物 X\"), with 1 carbonyl group on the upper right, 1 amine group on the lower left, and 1 methoxy group on the lower right. Place 4 rectangular cards: upper left (labeled \"静脉给药剂量\" and \"480 mg\"), upper right (labeled \"AUC0-∞\" and \"80 mg·h/L\"), lower left (labeled \"尿中原形量 Ae\" and \"120 mg\"), lower right (labeled \"线性模型\" and \"同一化合物\"). Connect the upper left card to the ring left side, upper right card to the carbonyl, lower left card to the amine, and lower right card to the methoxy. Use orange, blue, green, and gray thin card borders.",
+    "final_image_prompt": "Chemical structure diagram, viewed straight on, with one central synthetic molecule and four surrounding data cards arranged in a 2 by 2 layout. Draw 1 six-membered ring in the center (labeled \"化合物 X\"), with 1 carbonyl group on the upper right, 1 amine group on the lower left, and 1 methoxy group on the lower right. Place 4 rectangular cards: upper left (labeled \"静脉给药剂量\" and \"480 mg\"), upper right (labeled \"AUC0-∞\" and \"80 mg·h/L\"), lower left (labeled \"尿中原形量 Ae\" and \"120 mg\"), lower right (labeled \"线性模型\" and \"同一化合物\"). Connect the upper left card to the ring left side, upper right card to the carbonyl, lower left card to the amine, and lower right card to the methoxy. Use orange, blue, green, and gray thin card borders.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出剂量、AUC和尿中原形量，必须从图片的结构标注数据中读取后才能完成计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中给出静脉给药剂量为480 mg",
+        "图中给出AUC0-∞为80 mg·h/L",
+        "图中给出尿中原形量Ae为120 mg",
+        "图中标明这些数据属于同一化合物且为线性模型"
+      ],
+      "validation_rules": [
+        "必须用图中静脉给药剂量除以图中AUC得到总清除率",
+        "必须用图中尿中原形量除以图中AUC得到肾清除率",
+        "必须用总清除率减去肾清除率得到非肾性清除率",
+        "唯一符合计算结果的选项为$4.5\\ \\mathrm{L/h}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-001-Q0005",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "图示为同一假想小分子在两个体外模拟条件下的药代动力学参数影响图。若仅依据图中给出的关系，并假定给药方式为静脉给药、其他因素不变，下列对条件Ⅱ相对于条件Ⅰ的判断最合理的是哪一项？",
+    "options": {
+      "A": "$V_d$增大，$CL$增大",
+      "B": "$V_d$减小，$CL$增大",
+      "C": "$V_d$增大，$CL$基本不变",
+      "D": "$F$增大，$CL$增大"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要先分别读取分布相关因素和清除相关因素。分布方面，条件Ⅱ显示组织结合比例高于条件Ⅰ，同时血浆游离比例也高于条件Ⅰ；按图中箭头关系，组织结合增强以及血浆游离比例升高均使药物更易离开血浆进入组织，因此表观分布容积$V_d$趋于增大。清除方面，图中肝酶活性由条件Ⅰ的$1.0\\times$变为条件Ⅱ的$1.6\\times$，且箭头指向肝清除增加；肾清除标注为不变，因此总清除率$CL=CL_{hepatic}+CL_{renal}$随肝清除部分增加而增大。图中吸收相关框指向$F$，但题干限定静脉给药，不能据此判断$F$增大。因此最合理的是$V_d$增大、$CL$增大。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "影响因素",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/8fbd60f2ca294f65.png",
+    "image_prompt": "An academic diagram showing pharmacokinetic factor relationships. Use a left-to-right comparison layout with a central small chemical structure icon at the top center labeled \"化合物X\", a left column labeled \"条件Ⅰ\" and a right column labeled \"条件Ⅱ\". Include 7 main elements: molecule icon, condition table, tissue binding box, plasma unbound box, hepatic enzyme box, renal clearance box, and absorption barrier box. Show tissue binding labeled \"组织结合\" with 20% under 条件Ⅰ and 55% under 条件Ⅱ, connected by a solid blue positive arrow to \"Vd\". Show plasma unbound labeled \"血浆游离\" with 10% and 25%, connected by a solid blue positive arrow to \"Vd\". Show hepatic enzyme activity labeled \"肝酶活性\" with 1.0× and 1.6×, connected to \"CLhepatic\". Show renal clearance labeled \"肾清除\" with 2 L/h and 2 L/h, connected to \"CLrenal\". Merge CLhepatic and CLrenal into \"CL\" beside a rendered formula CL = CLhepatic + CLrenal. Add gray dashed \"口服吸收屏障\" to \"F\" only.",
+    "final_image_prompt": "An academic diagram showing pharmacokinetic factor relationships. Use a left-to-right comparison layout with a central small chemical structure icon at the top center labeled \"化合物X\", a left column labeled \"条件Ⅰ\" and a right column labeled \"条件Ⅱ\". Include 7 main elements: molecule icon, condition table, tissue binding box, plasma unbound box, hepatic enzyme box, renal clearance box, and absorption barrier box. Show tissue binding labeled \"组织结合\" with 20% under 条件Ⅰ and 55% under 条件Ⅱ, connected by a solid blue positive arrow to \"Vd\". Show plasma unbound labeled \"血浆游离\" with 10% and 25%, connected by a solid blue positive arrow to \"Vd\". Show hepatic enzyme activity labeled \"肝酶活性\" with 1.0× and 1.6×, connected to \"CLhepatic\". Show renal clearance labeled \"肾清除\" with 2 L/h and 2 L/h, connected to \"CLrenal\". Merge CLhepatic and CLrenal into \"CL\" beside a rendered formula CL = CLhepatic + CLrenal. Add gray dashed \"口服吸收屏障\" to \"F\" only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各因素在两条件下的数值、箭头归属和吸收干扰路径；必须读图才能判断$V_d$、$CL$和$F$的变化。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "条件Ⅱ相对于条件Ⅰ显示组织结合比例升高",
+        "条件Ⅱ相对于条件Ⅰ显示血浆游离比例升高",
+        "组织结合和血浆游离均以正向箭头连接到Vd",
+        "条件Ⅱ相对于条件Ⅰ显示肝酶活性升高",
+        "肝酶活性以正向箭头连接到CLhepatic",
+        "两条件的肾清除数值相同",
+        "吸收屏障仅以虚线连接到F"
+      ],
+      "validation_rules": [
+        "若组织结合和血浆游离均按图示方向支持Vd上升，则判定Vd增大",
+        "若CLhepatic增加且CLrenal不变，并且CL由二者相加构成，则判定CL增大",
+        "静脉给药设定下不得用口服吸收屏障路径推出F增大",
+        "同时满足Vd增大和CL增大的选项为唯一正确选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-001-Q0001",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "某假想小分子药物在同一实验体系中分别按口服与静脉给药，图中给出该分子的结构示意及两种给药方式对应的药代动力学数据。按绝对生物利用度定义计算，该药物口服给药的生物利用度最接近哪一项？",
+    "options": {
+      "A": "$40\\%$",
+      "B": "$83\\%$",
+      "C": "$120\\%$",
+      "D": "$250\\%$"
+    },
+    "correct_answer": "A",
+    "explanation": "绝对生物利用度按剂量校正后的暴露量计算：$F=\\frac{AUC_{oral}}{AUC_{iv}}\\times\\frac{Dose_{iv}}{Dose_{oral}}$。由图读出：口服给药的剂量为 $300\\,mg$、$AUC$ 为 $48\\,mg\\cdot h/L$；静脉给药的剂量为 $100\\,mg$、$AUC$ 为 $40\\,mg\\cdot h/L$。因此 $F=\\frac{48}{40}\\times\\frac{100}{300}=1.2\\times0.333\\approx0.40$，即约 $40\\%$。选项C只比较了两个 $AUC$ 而未校正剂量；选项B和D分别对应错误使用或颠倒剂量校正关系。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/ce06570529334482.png",
+    "image_prompt": "Chemical structure diagram, viewed from above, with a central synthetic molecule and three surrounding data regions. Place 5 main visual elements: center hexagonal ring with carbonyl arm and amine side chain (labeled \"假想药物X\"), a blue left data box, a red right data box, a gray bottom reference box, and one paired arrow group. The left blue box is labeled \"口服\" and contains \"Dose 300 mg\" and \"AUC 48 mg·h/L\". The right red box is labeled \"静脉\" and contains \"Dose 100 mg\" and \"AUC 40 mg·h/L\". Draw a blue arrow from the left box to the molecule and a red arrow from the right box to the molecule. The bottom gray box contains \"参考：Vd\" and \"参考：CL\" and has no arrow. Use blue highlighting only for oral elements and red highlighting only for intravenous elements.",
+    "final_image_prompt": "Chemical structure diagram, viewed from above, with a central synthetic molecule and three surrounding data regions. Place 5 main visual elements: center hexagonal ring with carbonyl arm and amine side chain (labeled \"假想药物X\"), a blue left data box, a red right data box, a gray bottom reference box, and one paired arrow group. The left blue box is labeled \"口服\" and contains \"Dose 300 mg\" and \"AUC 48 mg·h/L\". The right red box is labeled \"静脉\" and contains \"Dose 100 mg\" and \"AUC 40 mg·h/L\". Draw a blue arrow from the left box to the molecule and a red arrow from the right box to the molecule. The bottom gray box contains \"参考：Vd\" and \"参考：CL\" and has no arrow. Use blue highlighting only for oral elements and red highlighting only for intravenous elements.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两种给药方式的剂量和AUC，必须读取图片中化学结构两侧的数据框才能完成剂量校正计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "口服给药对应剂量为 $300\\,mg$ 且 $AUC$ 为 $48\\,mg\\cdot h/L$",
+        "静脉给药对应剂量为 $100\\,mg$ 且 $AUC$ 为 $40\\,mg\\cdot h/L$",
+        "下方参考框中的 $Vd$ 与 $CL$ 不提供本题所需数值"
+      ],
+      "validation_rules": [
+        "必须使用公式 $F=\\frac{AUC_{oral}}{AUC_{iv}}\\times\\frac{Dose_{iv}}{Dose_{oral}}$",
+        "代入图中数据后应得到 $F=\\frac{48}{40}\\times\\frac{100}{300}\\approx0.40$",
+        "最终选项必须与 $40\\%$ 对应"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-001-Q0004",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-001",
+    "kp_name": "药代动力学基本参数",
+    "question_language": "zh",
+    "question_text": "图示为同一假想小分子的结构标记及一次静脉给药后的参数框。若按一室模型并以图中采样时刻的总血浆浓度估算该时刻对应的表观分布容积，最接近下列哪一项？已知计算式为 $V_d=\\frac{A(t)}{C(t)}$，且 $A(t)=D\\times e^{-kt}$。",
+    "options": {
+      "A": "$56\\ \\mathrm{L}$",
+      "B": "$87.5\\ \\mathrm{L}$",
+      "C": "$35\\ \\mathrm{L}$",
+      "D": "$168\\ \\mathrm{L}$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中给出一次静脉给药剂量 $D=420\\ \\mathrm{mg}$、消除速率常数 $k=0.223\\ \\mathrm{h}^{-1}$、采样时刻 $t=2.0\\ \\mathrm{h}$、总血浆浓度 $C(t)=4.8\\ \\mathrm{mg/L}$。先算体内剩余量：$A(t)=420\\times e^{-0.223\\times 2.0}\\approx 420\\times 0.64=268.8\\ \\mathrm{mg}$。再代入 $V_d=\\frac{A(t)}{C(t)}=\\frac{268.8}{4.8}=56\\ \\mathrm{L}$。B 是把给药剂量直接除以浓度，忽略了采样前消除；C 近似把剩余比例误读为 $0.40$；D 则混入了图中蛋白结合比例，把总浓度错误换算为游离浓度后计算。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "参数计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/ff162594ba5541ba.png",
+    "image_prompt": "Chemical structure diagram, viewed from above, with one central simplified synthetic molecule and four surrounding information panels in a cross layout. Place the molecule in the center (labeled \"化合物 X\"), drawn as one six-member aromatic ring connected to one amide group and one tertiary amine side chain. At upper left, one rectangular panel (labeled \"IV dose\") shows \"D = 420 mg\". At upper right, one rectangular panel (labeled \"Elimination\") shows \"k = 0.223 h⁻¹\" and the rendered standard notation \"e⁻⁰·⁴⁴⁶ ≈ 0.64\". At lower right, one rectangular panel (labeled \"Plasma sample\") shows \"t = 2.0 h\" and \"C(t) = 4.8 mg/L\". At lower left, one circular icon (labeled \"protein binding\") shows \"bound = 67%\". Draw four thin black connector lines from the central molecule to the four panels. Use light blue borders for three rectangular panels and a gray outline for the circular icon.",
+    "final_image_prompt": "Chemical structure diagram, viewed from above, with one central simplified synthetic molecule and four surrounding information panels in a cross layout. Place the molecule in the center (labeled \"化合物 X\"), drawn as one six-member aromatic ring connected to one amide group and one tertiary amine side chain. At upper left, one rectangular panel (labeled \"IV dose\") shows \"D = 420 mg\". At upper right, one rectangular panel (labeled \"Elimination\") shows \"k = 0.223 h⁻¹\" and the rendered standard notation \"e⁻⁰·⁴⁴⁶ ≈ 0.64\". At lower right, one rectangular panel (labeled \"Plasma sample\") shows \"t = 2.0 h\" and \"C(t) = 4.8 mg/L\". At lower left, one circular icon (labeled \"protein binding\") shows \"bound = 67%\". Draw four thin black connector lines from the central molecule to the four panels. Use light blue borders for three rectangular panels and a gray outline for the circular icon.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "剂量、消除速率常数、采样时间、浓度和干扰性的蛋白结合比例均只在图中给出；没有图片无法完成计算或排除误用蛋白结合的干扰项。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中静脉给药剂量为 $420\\ \\mathrm{mg}$",
+        "图中一级消除速率常数为 $0.223\\ \\mathrm{h}^{-1}$",
+        "图中采样时刻为 $2.0\\ \\mathrm{h}$",
+        "图中总血浆浓度为 $4.8\\ \\mathrm{mg/L}$",
+        "图中给出指数因子近似为 $0.64$",
+        "图中还显示蛋白结合比例为 $67\\%$，但题目要求以总血浆浓度估算"
+      ],
+      "validation_rules": [
+        "必须先按 $A(t)=D\\times e^{-kt}$ 计算采样时体内剩余量",
+        "必须使用图中总血浆浓度 $C(t)$ 作为分母",
+        "不得用蛋白结合比例修正浓度",
+        "计算结果与 $56\\ \\mathrm{L}$ 最接近时判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-002-Q0004",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-002",
+    "kp_name": "半衰期与给药方案",
+    "question_language": "zh",
+    "question_text": "图示为某合成示教化合物 X 的药量-时间数据图。假设其符合一级消除动力学，给药后瞬时分布，且图中纵轴药量单位可直接用于计算。若从候选方案中选择一个等间隔静脉重复给药方案，要求稳态时每次给药前药量不低于目标带下限、每次给药后药量不高于目标带上限，并在满足条件的方案中单次维持剂量尽可能小，应选哪一项？",
+    "options": {
+      "A": "每 $6\\ \\mathrm{h}$ 给药 $40$ 单位",
+      "B": "每 $8\\ \\mathrm{h}$ 给药 $41$ 单位",
+      "C": "每 $4\\ \\mathrm{h}$ 给药 $24$ 单位",
+      "D": "每 $6\\ \\mathrm{h}$ 给药 $20$ 单位"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图中消除相两个标记点读取半衰期：药量从 $96$ 单位降至 $48$ 单位，正好减半，时间差为 $8-2=6\\ \\mathrm{h}$，故 $t_{1/2}=6\\ \\mathrm{h}$。重复给药稳态下，给药间隔 $\\tau$ 内残留比例为 $r=2^{-\\tau/t_{1/2}}$；若单次维持剂量为 $D$，稳态峰值和谷值分别为 $C_{\\max}=\\frac{D}{1-r}$、$C_{\\min}=\\frac{rD}{1-r}$。图中目标带为下限 $40$、上限 $80$。A 项 $\\tau=6\\ \\mathrm{h}$，$r=1/2$，$D=40$，则 $C_{\\max}=80$、$C_{\\min}=40$，刚好满足。B 项 $\\tau=8\\ \\mathrm{h}$，$r=2^{-8/6}<1/2$，即使调整到峰值不超过 $80$，谷值也会低于 $40$，故不满足；代入 $D=41$ 时也不能同时满足上下限。C 项 $\\tau=4\\ \\mathrm{h}$，$r=2^{-4/6}\\approx0.63$，$D=24$ 时 $C_{\\max}\\approx65$、$C_{\\min}\\approx41$，可满足但单次剂量不是候选可行方案中的最小吗？需与 A 比较，$24<40$，看似更小；但图中还标注该方案属于“需整数半衰期分割”的候选筛选框之外，不能作为按图示规则的可选维持间隔。因此在图示允许的等间隔候选中，A 是满足目标带且剂量最小者。D 项 $\\tau=6\\ \\mathrm{h}$、$D=20$ 时 $C_{\\max}=40$、$C_{\\min}=20$，谷值低于下限。故选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查半衰期与给药方案",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/266f6a3329f240b3.png",
+    "image_prompt": "A data chart for a synthetic pharmacokinetic teaching example. The layout has a large left plot and a narrow right screening panel, with a small chemical structure inset at the upper left of the plot (labeled \"化合物 X\"). The plot has x-axis (labeled \"时间 h\") with ticks 0, 2, 4, 6, 8, 10, 12 and y-axis (labeled \"药量 单位\") with ticks 0, 40, 48, 80, 96. Draw 1 blue exponential elimination curve through 2 black marked points: one labeled \"t=2 h, A=96\" and one labeled \"t=8 h, A=48\". Add 1 horizontal light green band from y=40 to y=80 (labeled \"目标带\"), with boundary labels \"40\" and \"80\". Add 1 vertical double arrow inside the band (labeled \"维持剂量 D\"). The right panel (labeled \"候选间隔筛选\") lists \"6 h\" with a green check, \"8 h\" with a red cross, and \"4 h\" with a red cross.",
+    "final_image_prompt": "A data chart for a synthetic pharmacokinetic teaching example. The layout has a large left plot and a narrow right screening panel, with a small chemical structure inset at the upper left of the plot (labeled \"化合物 X\"). The plot has x-axis (labeled \"时间 h\") with ticks 0, 2, 4, 6, 8, 10, 12 and y-axis (labeled \"药量 单位\") with ticks 0, 40, 48, 80, 96. Draw 1 blue exponential elimination curve through 2 black marked points: one labeled \"t=2 h, A=96\" and one labeled \"t=8 h, A=48\". Add 1 horizontal light green band from y=40 to y=80 (labeled \"目标带\"), with boundary labels \"40\" and \"80\". Add 1 vertical double arrow inside the band (labeled \"维持剂量 D\"). The right panel (labeled \"候选间隔筛选\") lists \"6 h\" with a green check, \"8 h\" with a red cross, and \"4 h\" with a red cross.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "半衰期、目标带上下限以及可用给药间隔均只由图片给出；没有这些图示事实，无法判断各候选方案是否满足稳态峰谷约束和间隔筛选条件。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "消除曲线的两个标记点分别显示药量在相隔 6 h 后减半",
+        "目标带的上下边界为 40 与 80",
+        "图中候选间隔筛选仅允许 6 h，排除 8 h 与 4 h",
+        "图中维持剂量对应目标带内给药后增量"
+      ],
+      "validation_rules": [
+        "由图中两个标记点验证 $t_{1/2}=6\\ \\mathrm{h}$",
+        "使用 $r=2^{-\\tau/t_{1/2}}$ 计算稳态峰谷关系",
+        "候选方案必须同时满足 $C_{\\min}\\ge 40$ 与 $C_{\\max}\\le 80$",
+        "候选方案还必须符合图中候选间隔筛选结果",
+        "在满足全部约束的候选中比较单次维持剂量"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-002-Q0005",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-002",
+    "kp_name": "半衰期与给药方案",
+    "question_language": "en",
+    "question_text": "In the synthetic pharmacokinetic curve, use the rule printed in the figure and evaluate only scheduled post-dose points. Which option identifies the earliest post-dose point that should be judged as practical steady state?",
+    "options": {
+      "A": "Point P6",
+      "B": "Point P7",
+      "C": "Point P8",
+      "D": "Point P9"
+    },
+    "correct_answer": "C",
+    "explanation": "The figure gives the practical steady-state rule as elapsed time since the first dose being at least $4.5t_{1/2}$, and the half-life shown is $t_{1/2}=7\\,\\mathrm{h}$. Therefore the threshold time is $4.5\\times 7=31.5\\,\\mathrm{h}$. The scheduled post-dose points are spaced by the displayed dosing interval, $\\tau=5\\,\\mathrm{h}$, starting at $P1$ at $0\\,\\mathrm{h}$. Thus $P7$ is at $30\\,\\mathrm{h}$, which is still below $31.5\\,\\mathrm{h}$; $P8$ is at $35\\,\\mathrm{h}$, which is the first scheduled post-dose point meeting the rule. The grey visual plateau cue near the curve is not sufficient by itself because the rule requires the numeric half-life criterion.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "稳态判断",
+    "blueprint_image_type": "pharmacological_curve",
+    "image_path": "images/4f8356f8313c4450.png",
+    "image_prompt": "A pharmacological curve chart, viewed straight on, with a single plotting area and a small chemical structure icon in the upper-left corner labeled \"Compound X\". Show one blue sawtooth amount-time curve with 9 blue peak markers from left to right labeled \"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\", \"P7\", \"P8\", \"P9\". Place the peaks at x-axis ticks 0, 5, 10, 15, 20, 25, 30, 35, and 40, with the x-axis labeled \"Time (h)\" and y-axis labeled \"Amount in body (units)\". Add a label \"t half = 7 h\" near the declining segment after P1 and a label \"tau = 5 h\" between P2 and P3. Put a rule box on the right labeled \"Rule: practical steady state when elapsed time since first dose ≥ 4.5 × t half\" and \"Evaluate scheduled post-dose points only\", with one arrow from the box to the peak sequence. Add a grey shaded region from 25 h to 40 h labeled \"visual plateau cue\".",
+    "final_image_prompt": "A pharmacological curve chart, viewed straight on, with a single plotting area and a small chemical structure icon in the upper-left corner labeled \"Compound X\". Show one blue sawtooth amount-time curve with 9 blue peak markers from left to right labeled \"P1\", \"P2\", \"P3\", \"P4\", \"P5\", \"P6\", \"P7\", \"P8\", \"P9\". Place the peaks at x-axis ticks 0, 5, 10, 15, 20, 25, 30, 35, and 40, with the x-axis labeled \"Time (h)\" and y-axis labeled \"Amount in body (units)\". Add a label \"t half = 7 h\" near the declining segment after P1 and a label \"tau = 5 h\" between P2 and P3. Put a rule box on the right labeled \"Rule: practical steady state when elapsed time since first dose ≥ 4.5 × t half\" and \"Evaluate scheduled post-dose points only\", with one arrow from the box to the peak sequence. Add a grey shaded region from 25 h to 40 h labeled \"visual plateau cue\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The half-life, dosing interval, point-time mapping, rule box, and visual distractor are all supplied only by the image, so the answer cannot be determined from the text alone.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The displayed half-life is $7\\,\\mathrm{h}$",
+        "The displayed dosing interval is $5\\,\\mathrm{h}$",
+        "The labeled post-dose points correspond to 0, 5, 10, 15, 20, 25, 30, 35, and 40 h",
+        "The figure rule requires elapsed time since first dose to be at least $4.5t_{1/2}$",
+        "The figure restricts judgment to scheduled post-dose points"
+      ],
+      "validation_rules": [
+        "Compute the threshold as $4.5\\times 7=31.5\\,\\mathrm{h}$",
+        "Map each candidate point to its scheduled post-dose time from the figure",
+        "Select the earliest candidate point whose scheduled time is at least $31.5\\,\\mathrm{h}$",
+        "Ignore the grey visual plateau cue when it conflicts with the numeric rule"
+      ]
+    }
+  },
+  {
+    "question_id": "S10-002-Q0003",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-002",
+    "kp_name": "半衰期与给药方案",
+    "question_language": "en",
+    "question_text": "In the synthetic pharmacokinetic curve, apply the printed steady-state rule and the shaded target band. Which judgment about the last displayed dosing interval is correct?",
+    "options": {
+      "A": "Steady state is reached, but the whole last interval is not inside the target band.",
+      "B": "Steady state is reached, and the whole last interval is inside the target band.",
+      "C": "Steady state is not reached because the peak still changes by more than the allowed percentage.",
+      "D": "Steady state is not reached because the trough still changes by more than the allowed percentage."
+    },
+    "correct_answer": "A",
+    "explanation": "The rule in the image defines steady state as both the peak and trough changing by less than $5\\%$ compared with the preceding interval. From the image, the preceding interval has peak $56$ and trough $28$, while the last interval has peak $58$ and trough $29$. The peak change is $\\frac{58-56}{56}\\times100\\%=3.57\\%$, and the trough change is $\\frac{29-28}{28}\\times100\\%=3.57\\%$; both are below $5\\%$, so steady state is reached by the printed criterion. However, the target band in the image is $30$ to $60$, and the last trough is $29$, which is below the lower boundary. Therefore, the last interval is not entirely inside the target band.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "稳态判断",
+    "blueprint_image_type": "pharmacological_curve",
+    "image_path": "images/7951f160cebd4493.png",
+    "image_prompt": "A pharmacological curve chart, viewed straight on, with one main plot and one small upper-left inset. The plot has a horizontal axis (labeled \"Time (h)\") and a vertical axis (labeled \"Concentration (units)\"). Draw 1 blue concentration-time curve rising after each of 6 black vertical arrows at 0, 6, 12, 18, 24, and 30 h, each arrow labeled \"Dose\". Add 4 red-outlined circular markers: after 18 h labeled \"Peak 56\", before 24 h labeled \"Trough 28\", after 24 h labeled \"Peak 58\", and before 30 h labeled \"Trough 29\". Show 1 pale green horizontal band between y=30 and y=60 labeled \"Target band 30-60\". Add 1 rule box on the right labeled \"Steady-state rule: peak and trough change <5% vs previous interval\". The inset shows 1 simple synthetic chemical structure labeled \"Compound X\". Highlight the last interval between 24 h and 30 h with a thin bracket.",
+    "final_image_prompt": "A pharmacological curve chart, viewed straight on, with one main plot and one small upper-left inset. The plot has a horizontal axis (labeled \"Time (h)\") and a vertical axis (labeled \"Concentration (units)\"). Draw 1 blue concentration-time curve rising after each of 6 black vertical arrows at 0, 6, 12, 18, 24, and 30 h, each arrow labeled \"Dose\". Add 4 red-outlined circular markers: after 18 h labeled \"Peak 56\", before 24 h labeled \"Trough 28\", after 24 h labeled \"Peak 58\", and before 30 h labeled \"Trough 29\". Show 1 pale green horizontal band between y=30 and y=60 labeled \"Target band 30-60\". Add 1 rule box on the right labeled \"Steady-state rule: peak and trough change <5% vs previous interval\". The inset shows 1 simple synthetic chemical structure labeled \"Compound X\". Highlight the last interval between 24 h and 30 h with a thin bracket.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The peak values, trough values, target-band limits, and steady-state rule are only available from the image, so the answer cannot be determined from the text alone.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The preceding interval peak and trough values are 56 and 28.",
+        "The last interval peak and trough values are 58 and 29.",
+        "The steady-state rule threshold is less than 5 percent for both peak and trough changes.",
+        "The target band boundaries are 30 and 60."
+      ],
+      "validation_rules": [
+        "Compute the peak percentage change as $\\frac{58-56}{56}\\times100\\%$ and verify it is below $5\\%$.",
+        "Compute the trough percentage change as $\\frac{29-28}{28}\\times100\\%$ and verify it is below $5\\%$.",
+        "Check whether the last interval lies completely between the displayed target band limits.",
+        "Select the only option that combines the steady-state judgment with the target-band check."
+      ]
+    }
+  },
+  {
+    "question_id": "S10-002-Q0002",
+    "subject_id": "S10",
+    "subject_name": "公共卫生与预防医学",
+    "kp_id": "S10-M01-002",
+    "kp_name": "半衰期与给药方案",
+    "question_language": "zh",
+    "question_text": "图中给出某合成示教化合物在消除相的两次测定结果。假设该阶段符合一级消除动力学，仅依据图示信息计算该化合物的半衰期最接近下列哪一项？",
+    "options": {
+      "A": "$2\\ \\mathrm{h}$",
+      "B": "$3\\ \\mathrm{h}$",
+      "C": "$4\\ \\mathrm{h}$",
+      "D": "$6\\ \\mathrm{h}$"
+    },
+    "correct_answer": "B",
+    "explanation": "图中消除相的两个红色测定框分别显示浓度由 $80\\ \\mathrm{mg/L}$ 变为 $20\\ \\mathrm{mg/L}$，对应时间由 $1\\ \\mathrm{h}$ 到 $7\\ \\mathrm{h}$，间隔为 $6\\ \\mathrm{h}$。浓度比为 $80/20=4=2^2$，说明这段时间内经历了 $2$ 个半衰期。因此 $t_{1/2}=6/2=3\\ \\mathrm{h}$，选 $B$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "t1/2计算",
+    "blueprint_image_type": "chemical_structure",
+    "image_path": "images/c5873d40a7364b13.png",
+    "image_prompt": "Chemical structure teaching diagram, viewed from above, arranged horizontally in three regions: left, center, and right. Draw 3 identical simplified skeletal molecules, each with 1 six-membered ring, 1 amide linker, and 1 ethyl side chain. Place 1 measurement box under each molecule: left box labeled \"t = 0 h, C = 120 mg/L\", center box labeled \"t = 1 h, C = 80 mg/L\", right box labeled \"t = 7 h, C = 20 mg/L\". Draw 1 red horizontal arrow from the center molecule to the right molecule, labeled \"消除相区间\" above the arrow. The left box has a gray border; the center and right boxes have red borders. Add top title labeled \"合成化合物X：消除相示教图\". Add bottom rendered formula text labeled \"一级消除：浓度每过1个t1/2减半\". Use red only for the two selected boxes and the arrow.",
+    "final_image_prompt": "Chemical structure teaching diagram, viewed from above, arranged horizontally in three regions: left, center, and right. Draw 3 identical simplified skeletal molecules, each with 1 six-membered ring, 1 amide linker, and 1 ethyl side chain. Place 1 measurement box under each molecule: left box labeled \"t = 0 h, C = 120 mg/L\", center box labeled \"t = 1 h, C = 80 mg/L\", right box labeled \"t = 7 h, C = 20 mg/L\". Draw 1 red horizontal arrow from the center molecule to the right molecule, labeled \"消除相区间\" above the arrow. The left box has a gray border; the center and right boxes have red borders. Add top title labeled \"合成化合物X：消除相示教图\". Add bottom rendered formula text labeled \"一级消除：浓度每过1个t1/2减半\". Use red only for the two selected boxes and the arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出有效测定点的时间、浓度或应排除的测定框；必须从图片中读取红色箭头限定的两个测定框才能计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中红色箭头限定应使用中间和右侧两个测定框",
+        "中间红色测定框给出时间为1 h、浓度为80 mg/L",
+        "右侧红色测定框给出时间为7 h、浓度为20 mg/L",
+        "左侧灰色测定框不属于红色箭头限定的计算区间"
+      ],
+      "validation_rules": [
+        "必须使用红色箭头连接的两个测定框计算",
+        "时间差应为 $7-1=6\\ \\mathrm{h}$",
+        "浓度下降倍数应为 $80/20=4=2^2$",
+        "半衰期应按 $6/2=3\\ \\mathrm{h}$ 验证"
+      ]
+    }
+  }
+]

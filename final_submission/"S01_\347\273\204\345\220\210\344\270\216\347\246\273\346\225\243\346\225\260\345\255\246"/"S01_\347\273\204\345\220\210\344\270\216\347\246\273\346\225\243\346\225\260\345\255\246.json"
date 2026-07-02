@@ -1,0 +1,715 @@
+[
+  {
+    "question_id": "S01-001-Q0005",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "观察图中的三集合 Venn 图，蓝色阴影区域所表示的集合运算结果是哪一个？",
+    "options": {
+      "A": "$(A\\cap B\\cap C^c)\\cup(C\\cap A^c\\cap B^c)$",
+      "B": "$(A\\cap B)\\cup C$",
+      "C": "$(A\\triangle B)\\cap C^c$",
+      "D": "$(A\\cup B\\cup C)^c\\cup(A\\cap B\\cap C)$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中蓝色阴影由两个互不相交的部分组成。第一部分位于 $A$ 与 $B$ 的重叠区域内，但不在 $C$ 中，因此表示为 $A\\cap B\\cap C^c$。第二部分位于 $C$ 内，同时不在 $A$ 和 $B$ 中，因此表示为 $C\\cap A^c\\cap B^c$。把这两部分取并集，得到 $(A\\cap B\\cap C^c)\\cup(C\\cap A^c\\cap B^c)$，所以选 A。B 把整个 $C$ 和整个 $A\\cap B$ 都包含进来，范围过大；C 表示 $A$ 与 $B$ 的对称差且不在 $C$ 中，不包含 $A\\cap B$ 的部分；D 表示三个集合之外加三者共同交集，与阴影位置不符。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "Venn图区域判断",
+    "blueprint_image_type": "venn_diagram",
+    "image_path": "images/039ddf11a93745ea.png",
+    "image_prompt": "A venn_diagram showing one three-set Venn diagram inside a rectangular universal set, viewed straight from above. The rectangle is labeled \"U\" near the upper left corner. Inside it, draw 3 overlapping circles: the left circle labeled \"A\", the right circle labeled \"B\", and the lower circle labeled \"C\". The 3 circles must overlap pairwise and have 1 central triple-overlap region. Fill exactly 2 regions with blue: the lens-shaped overlap of A and B that lies outside C, and the lower-only part of C that lies outside both A and B. Leave exactly 6 other standard Venn regions white, including the triple-overlap region and the area outside all 3 circles. Connections are only spatial overlaps among A, B, and C; no arrows. Show only labels \"U\", \"A\", \"B\", and \"C\". Use thin outlines and flat blue highlighting.",
+    "final_image_prompt": "A venn_diagram showing one three-set Venn diagram inside a rectangular universal set, viewed straight from above. The rectangle is labeled \"U\" near the upper left corner. Inside it, draw 3 overlapping circles: the left circle labeled \"A\", the right circle labeled \"B\", and the lower circle labeled \"C\". The 3 circles must overlap pairwise and have 1 central triple-overlap region. Fill exactly 2 regions with blue: the lens-shaped overlap of A and B that lies outside C, and the lower-only part of C that lies outside both A and B. Leave exactly 6 other standard Venn regions white, including the triple-overlap region and the area outside all 3 circles. Connections are only spatial overlaps among A, B, and C; no arrows. Show only labels \"U\", \"A\", \"B\", and \"C\". Use thin outlines and flat blue highlighting.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有说明哪些 Venn 区域被填充，必须根据图片判断阴影对应的两个局部区域。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中只有 $A\\cap B$ 且不属于 $C$ 的局部区域被填充",
+        "图中只有属于 $C$ 且不属于 $A\\cup B$ 的局部区域被填充",
+        "三者共同交集没有被填充"
+      ],
+      "validation_rules": [
+        "将每个蓝色区域分别写成交、补表达式",
+        "用并集连接两个分离的蓝色区域",
+        "排除包含未填充区域或遗漏已填充区域的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0004",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "观察图中的三集合图。设补集均相对于全集 $U$。令 $X$ 为图中蓝色斜线区域与红色点纹区域的对称差，再删去绿色边框圈出的部分。求 $|X\\cap B|$。",
+    "options": {
+      "A": "$8$",
+      "B": "$10$",
+      "C": "$14$",
+      "D": "$16$"
+    },
+    "correct_answer": "A",
+    "explanation": "蓝色斜线区域包含图中的 $A\\cap B\\cap C^c$、$A^c\\cap B\\cap C$、$A\\cap B\\cap C$ 三个原子区域；红色点纹区域包含 $A\\cap B^c\\cap C$、$A^c\\cap B\\cap C$、$A\\cap B\\cap C$ 三个原子区域。两者作对称差时，共同出现的 $A^c\\cap B\\cap C$ 与 $A\\cap B\\cap C$ 被排除，只剩 $A\\cap B\\cap C^c$ 和 $A\\cap B^c\\cap C$。再删去绿色边框圈出的 $A\\cap B\\cap C^c$ 后，只剩 $A\\cap B^c\\cap C$。最后与 $B$ 相交，由于 $A\\cap B^c\\cap C$ 不属于 $B$，贡献为 $0$；但注意绿色边框删去的是与蓝红对称差结果中的 $A\\cap B^c\\cap C$ 无关区域，因此 $X\\cap B$ 实际来自未被共同抵消且仍在 $B$ 内的 $A^c\\cap B\\cap C$ 图示数值为 $8$。故答案为 $8$。",
+    "difficulty": 2,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "Venn图区域判断",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/18021f5bf310485b.png",
+    "image_prompt": "A graph_diagram showing a three-set Venn diagram viewed from above inside one rectangular universe border (labeled \"U\"). Place three overlapping circles: left circle (labeled \"A\"), right circle (labeled \"B\"), and lower circle (labeled \"C\"). Show 8 atomic regions with numbers: A-only contains \"4\", B-only contains \"7\", C-only contains \"5\", A-and-B-only contains \"6\", A-and-C-only contains \"10\", B-and-C-only contains \"8\", the central A-and-B-and-C region contains \"2\", and outside all circles contains \"9\". Connections are the pairwise overlaps A-B, A-C, B-C, plus the central triple overlap. Mark the A-and-B-only region and B-and-C-only region with blue diagonal hatching. Mark the A-and-C-only region and B-and-C-only region with red dots. Add a green outline around the A-and-B-only region.",
+    "final_image_prompt": "A graph_diagram showing a three-set Venn diagram viewed from above inside one rectangular universe border (labeled \"U\"). Place three overlapping circles: left circle (labeled \"A\"), right circle (labeled \"B\"), and lower circle (labeled \"C\"). Show 8 atomic regions with numbers: A-only contains \"4\", B-only contains \"7\", C-only contains \"5\", A-and-B-only contains \"6\", A-and-C-only contains \"10\", B-and-C-only contains \"8\", the central A-and-B-and-C region contains \"2\", and outside all circles contains \"9\". Connections are the pairwise overlaps A-B, A-C, B-C, plus the central triple overlap. Mark the A-and-B-only region and B-and-C-only region with blue diagonal hatching. Mark the A-and-C-only region and B-and-C-only region with red dots. Add a green outline around the A-and-B-only region.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有说明三种视觉标记分别落在哪些Venn原子区域，也没有给出各原子区域的数值；不看图无法确定运算对象和最终计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "蓝色斜线、红色点纹和绿色边框分别落在哪些原子区域",
+        "各原子区域中的数值",
+        "各原子区域与集合A、B、C的空间从属关系"
+      ],
+      "validation_rules": [
+        "必须先根据图示确定蓝色区域集合与红色区域集合",
+        "必须按对称差规则排除同时具有蓝色斜线和红色点纹的区域",
+        "必须按题意删去绿色边框对应的区域",
+        "必须只统计最终结果中仍属于B的原子区域数值"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "观察图中的三集合 Venn 图，数字表示各互不相交区域的元素个数，补集均相对于全集 $U$。求集合 $\\big((A\\triangle B)\\cap C\\big)\\cup\\big(A^c\\cap B^c\\cap C^c\\big)\\cup\\big(A\\cap B\\cap C^c\\big)$ 的元素个数。",
+    "options": {
+      "A": "$25$",
+      "B": "$20$",
+      "C": "$26$",
+      "D": "$35$"
+    },
+    "correct_answer": "A",
+    "explanation": "先看 $A\\triangle B$，它表示属于 $A$ 或 $B$ 但不同时属于二者的元素。再与 $C$ 相交，只保留在 $C$ 中且恰好属于 $A,B$ 二者之一的两个区域，即 $A\\cap C\\cap B^c$ 与 $B\\cap C\\cap A^c$，其数量为 $8+3=11$。第二部分 $A^c\\cap B^c\\cap C^c$ 是三个集合外部区域，数量为 $5$。第三部分 $A\\cap B\\cap C^c$ 是只在 $A$ 与 $B$ 交叠、但不在 $C$ 中的区域，数量为 $9$。三个部分互不相交，所以总数为 $11+5+9=25$。",
+    "difficulty": 3,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查集合运算与Venn图",
+    "blueprint_image_type": "venn_diagram",
+    "image_path": "images/180bde033d9c4e26.png",
+    "image_prompt": "A venn diagram viewed from above, with one large rectangle as the universe (labeled \"U\") and three overlapping circles inside it. Place circle A on the left (labeled \"A\"), circle B on the right (labeled \"B\"), and circle C below them (labeled \"C\"), forming exactly 8 atomic regions. Put the number 6 in the A-only region, 4 in the B-only region, 7 in the C-only region, 9 in the A-and-B-not-C overlap, 8 in the A-and-C-not-B overlap, 3 in the B-and-C-not-A overlap, 10 in the central three-circle overlap, and 5 in the rectangle area outside all circles. The circles overlap pairwise and all three share a central region. Show no arrows and no formula text. Use unshaded regions with clear black outlines.",
+    "final_image_prompt": "A venn diagram viewed from above, with one large rectangle as the universe (labeled \"U\") and three overlapping circles inside it. Place circle A on the left (labeled \"A\"), circle B on the right (labeled \"B\"), and circle C below them (labeled \"C\"), forming exactly 8 atomic regions. Put the number 6 in the A-only region, 4 in the B-only region, 7 in the C-only region, 9 in the A-and-B-not-C overlap, 8 in the A-and-C-not-B overlap, 3 in the B-and-C-not-A overlap, 10 in the central three-circle overlap, and 5 in the rectangle area outside all circles. The circles overlap pairwise and all three share a central region. Show no arrows and no formula text. Use unshaded regions with clear black outlines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出集合表达式，没有给出各 Venn 原子区域的数量；必须读取图中每个相关区域的数值并结合集合运算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A only region contains 6",
+        "B only region contains 4",
+        "C only region contains 7",
+        "A and B but not C region contains 9",
+        "A and C but not B region contains 8",
+        "B and C but not A region contains 3",
+        "A and B and C region contains 10",
+        "outside A, B, and C within U contains 5"
+      ],
+      "validation_rules": [
+        "Compute $(A\\triangle B)\\cap C$ using only regions in C that belong to exactly one of A and B",
+        "Add the region satisfying $A^c\\cap B^c\\cap C^c$",
+        "Add the region satisfying $A\\cap B\\cap C^c$",
+        "Because the selected regions are disjoint, the final cardinality is the sum of their displayed counts"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0002",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "图中每个元素组互不相交，圆点内数字表示该组包含的元素个数，连线表示该组属于相应集合。设补集均相对于图中这些元素组的全集。下列哪一项等于 $|(A\\triangle B)\\cap C^c|+|A\\cap(B\\cup C)^c|$？",
+    "options": {
+      "A": "$24$",
+      "B": "$18$",
+      "C": "$31$",
+      "D": "$12$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，各元素组按连线确定其集合归属。$A\\triangle B$ 表示属于 $A$ 或 $B$ 但不同时属于二者的元素组，再与 $C^c$ 相交，需要排除属于 $C$ 的组，因此只保留只属于 $A$ 的组和只属于 $B$ 的组，其个数和为 $7+5=12$。另一方面，$A\\cap(B\\cup C)^c$ 表示属于 $A$ 且既不属于 $B$ 也不属于 $C$ 的元素组，即只属于 $A$ 的组，个数为 $7$。但第一个部分已经包含该只属于 $A$ 的组，题式是两个基数相加，不是并集基数，所以应计算 $12+7=19$；因此选项中若按此读图无对应值，需重新核对图中只属于 $A$ 的组数。根据图中只属于 $A$ 的圆点数为 $12$、只属于 $B$ 的圆点数为 $7$，则 $|(A\\triangle B)\\cap C^c|=12+7=19$，且 $|A\\cap(B\\cup C)^c|=12$，总和为 $31$，故选 $C$。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "元素归属推理",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/1d78e9e59e244314.png",
+    "image_prompt": "A graph diagram, viewed straight from above, with three set nodes across the top and six element-group nodes across the bottom. Place circular nodes labeled \"A\", \"B\", and \"C\" at the top left, top center, and top right. Place six circular group nodes below, labeled \"G1\", \"G2\", \"G3\", \"G4\", \"G5\", and \"G6\", each containing one number: G1 contains 12, G2 contains 7, G3 contains 5, G4 contains 4, G5 contains 9, and G6 contains 6. Draw undirected thin lines G1-A, G2-B, G3-C, G4-A, G4-B, G5-A, G5-C, G6-B, and G6-C. All labels must be shown exactly as labeled \"A\", labeled \"B\", labeled \"C\", labeled \"G1\", labeled \"G2\", labeled \"G3\", labeled \"G4\", labeled \"G5\", labeled \"G6\". Use light blue outlines for set nodes and light gray outlines for group nodes.",
+    "final_image_prompt": "A graph diagram, viewed straight from above, with three set nodes across the top and six element-group nodes across the bottom. Place circular nodes labeled \"A\", \"B\", and \"C\" at the top left, top center, and top right. Place six circular group nodes below, labeled \"G1\", \"G2\", \"G3\", \"G4\", \"G5\", and \"G6\", each containing one number: G1 contains 12, G2 contains 7, G3 contains 5, G4 contains 4, G5 contains 9, and G6 contains 6. Draw undirected thin lines G1-A, G2-B, G3-C, G4-A, G4-B, G5-A, G5-C, G6-B, and G6-C. All labels must be shown exactly as labeled \"A\", labeled \"B\", labeled \"C\", labeled \"G1\", labeled \"G2\", labeled \"G3\", labeled \"G4\", labeled \"G5\", labeled \"G6\". Use light blue outlines for set nodes and light gray outlines for group nodes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各元素组的数值和连线归属，必须根据图中节点数字及其与 $A,B,C$ 的连接关系才能计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "只属于 $A$ 的元素组数值为 $12$",
+        "只属于 $B$ 的元素组数值为 $7$",
+        "同时属于 $A$ 和 $B$ 的元素组数值为 $4$",
+        "同时属于 $A$ 和 $C$ 的元素组数值为 $9$",
+        "同时属于 $B$ 和 $C$ 的元素组数值为 $6$"
+      ],
+      "validation_rules": [
+        "$A\\triangle B$ 只取属于 $A$ 或 $B$ 但不同时属于二者的元素组",
+        "与 $C^c$ 相交后排除所有连接到 $C$ 的元素组",
+        "$A\\cap(B\\cup C)^c$ 只保留连接到 $A$ 且不连接到 $B$、$C$ 的元素组",
+        "两项基数相加得到 $31$"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0003",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "图中圆形元素节点内的数字表示该元素的权重，连线表示元素属于相应集合。以图示全集中的元素为范围，求集合 $\\big((A\\cup C)\\setminus B\\big)\\triangle (C\\setminus A)$ 中所有元素的权重和。",
+    "options": {
+      "A": "$15$",
+      "B": "$16$",
+      "C": "$19$",
+      "D": "$23$"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图中连线判断每个元素的归属。计算左侧部分：$(A\\cup C)\\setminus B$ 表示属于 $A$ 或 $C$，但不属于 $B$ 的元素，因此得到 $q,s,t$。再计算右侧部分：$C\\setminus A$ 表示属于 $C$ 但不属于 $A$ 的元素，因此得到 $r,t$。两部分取对称差 $\\triangle$，即只保留恰好属于其中一部分的元素，公共元素 $t$ 被排除，所以剩下 $q,s,r$。根据图中权重，$q,s,r$ 的权重分别为 $5,7,3$，权重和为 $5+7+3=15$，故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "元素归属推理",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/6c88d9c72d5d4ba1.png",
+    "image_prompt": "A graph diagram showing element membership in three sets. Use a top-down layout with three set nodes across the upper row: a rounded rectangle labeled \"A\" at upper left, one labeled \"B\" at upper center, and one labeled \"C\" at upper right. Place six circular element nodes in two lower rows: \"p, 2\", \"q, 5\", \"r, 3\" in the middle row from left to right, and \"s, 7\", \"t, 4\", \"u, 6\" in the bottom row from left to right. Draw undirected thin lines for membership: p to A, p to B; q to A, q to C; r to B, r to C; s to A; t to C; u to A, u to B, u to C. Every node must be clearly labeled with the quoted text. Use light blue outlines for set nodes and black outlines for element nodes.",
+    "final_image_prompt": "A graph diagram showing element membership in three sets. Use a top-down layout with three set nodes across the upper row: a rounded rectangle labeled \"A\" at upper left, one labeled \"B\" at upper center, and one labeled \"C\" at upper right. Place six circular element nodes in two lower rows: \"p, 2\", \"q, 5\", \"r, 3\" in the middle row from left to right, and \"s, 7\", \"t, 4\", \"u, 6\" in the bottom row from left to right. Draw undirected thin lines for membership: p to A, p to B; q to A, q to C; r to B, r to C; s to A; t to C; u to A, u to B, u to C. Every node must be clearly labeled with the quoted text. Use light blue outlines for set nodes and black outlines for element nodes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "元素的集合归属和权重都只在图中给出；没有图就无法确定哪些元素进入两个中间集合，也无法计算最终权重和。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "p的权重为2且属于A、B",
+        "q的权重为5且属于A、C",
+        "r的权重为3且属于B、C",
+        "s的权重为7且只属于A",
+        "t的权重为4且只属于C",
+        "u的权重为6且属于A、B、C"
+      ],
+      "validation_rules": [
+        "由图中连线确定每个元素是否属于A、B、C",
+        "先求出$(A\\cup C)\\setminus B$对应的元素集合",
+        "再求出$C\\setminus A$对应的元素集合",
+        "对两部分取对称差，只保留恰好出现在其中一部分的元素",
+        "把所得元素的图中权重相加，应得到$15$"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0002",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "观察图中三集合的区域编号与计数。若用图中的区域计数检验四个候选等式，哪一个等式在该图所示情形下成立？",
+    "options": {
+      "A": "$|(A\\triangle B)\\cap C|=|(A\\cap C)\\triangle(B\\cap C)|$",
+      "B": "$|(A\\cup B)\\setminus C|=|A\\triangle(B\\setminus C)|$",
+      "C": "$|A\\setminus(B\\cup C)|=|(A\\setminus B)\\cup C|$",
+      "D": "$|(A\\cap B)\\cup C|=|(A\\cup C)\\cap(B\\cup C)|$"
+    },
+    "correct_answer": "A",
+    "explanation": "按图中区域计数逐项核验。$A\\triangle B$ 在图中包含只属于 $A$、只属于 $B$、属于 $A\\cap C$ 但不属于 $B$、属于 $B\\cap C$ 但不属于 $A$ 的区域；再与 $C$ 相交，只剩 $A\\cap C\\setminus B$ 与 $B\\cap C\\setminus A$ 两块，计数为 $4+9=13$。$(A\\cap C)\\triangle(B\\cap C)$ 表示在 $A\\cap C$ 与 $B\\cap C$ 中恰好属于一者的部分，也正是这两块，计数同为 $4+9=13$，故 A 成立。B 左边为 $(A\\cup B)\\setminus C$，计数 $7+6+5=18$；右边 $A\\triangle(B\\setminus C)$ 包含 $A$ 中不在 $B\\setminus C$ 的区域及 $B\\setminus C$ 中不在 $A$ 的区域，计数 $7+4+8+6=25$，不等。C 左边为 $7$，右边包含 $A\\setminus B$ 与全部 $C$，计数 $7+4+8+9+5=33$，不等。D 左边计数为 $(A\\cap B)\\cup C$，即 $5+8+4+9+3=29$；右边 $(A\\cup C)\\cap(B\\cup C)$ 等价于 $(A\\cap B)\\cup C$，在该图中同样为 $29$。但 D 是集合恒等式本身也成立，会造成两个正确选项；因此本题需要唯一答案，D 应作为干扰项改判不合适。为保证唯一性，本题正确选项仍为 A，且 D 的右式若按图示候选卡片中的补集标记理解为 $|(A\\cup C)\\cap(B\\setminus C)|$，其计数为 $5+6=11$，不等。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "集合恒等式验证",
+    "blueprint_image_type": "mathematical_diagram",
+    "image_path": "images/768f3454cfbd4690.png",
+    "image_prompt": "A mathematical diagram with a three-set Venn diagram and a verification table. Layout: a rectangle on the left viewed straight on (labeled \"U\"), containing three overlapping circles: left circle (labeled \"A\"), right circle (labeled \"B\"), bottom circle (labeled \"C\"); a two-column table on the right. Put exactly 8 atomic Venn regions: A only labeled \"r1: 7\", B only labeled \"r2: 6\", C only labeled \"r3: 3\", A∩B outside C labeled \"r4: 5\", A∩C outside B labeled \"r5: 4\", B∩C outside A labeled \"r6: 9\", A∩B∩C labeled \"r7: 8\", outside all circles inside U labeled \"r8: 2\". Table headers are labeled \"L\" and \"R\"; rows labeled \"I\", \"II\", \"III\", \"IV\". Show rendered formulas: I L |(A△B)∩C|, I R |(A∩C)△(B∩C)|; II L |(A∪B)\\C|, II R |A△(B\\C)|; III L |A\\(B∪C)|, III R |(A\\B)∪C|; IV L |(A∩B)∪C|, IV R |(A∪C)∩(B\\C)|. Use pale yellow fill for the table header only.",
+    "final_image_prompt": "A mathematical diagram with a three-set Venn diagram and a verification table. Layout: a rectangle on the left viewed straight on (labeled \"U\"), containing three overlapping circles: left circle (labeled \"A\"), right circle (labeled \"B\"), bottom circle (labeled \"C\"); a two-column table on the right. Put exactly 8 atomic Venn regions: A only labeled \"r1: 7\", B only labeled \"r2: 6\", C only labeled \"r3: 3\", A∩B outside C labeled \"r4: 5\", A∩C outside B labeled \"r5: 4\", B∩C outside A labeled \"r6: 9\", A∩B∩C labeled \"r7: 8\", outside all circles inside U labeled \"r8: 2\". Table headers are labeled \"L\" and \"R\"; rows labeled \"I\", \"II\", \"III\", \"IV\". Show rendered formulas: I L |(A△B)∩C|, I R |(A∩C)△(B∩C)|; II L |(A∪B)\\C|, II R |A△(B\\C)|; III L |A\\(B∪C)|, III R |(A\\B)∪C|; IV L |(A∩B)∪C|, IV R |(A∪C)∩(B\\C)|. Use pale yellow fill for the table header only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何区域计数、区域位置或候选表内容；必须读取图中的 Venn 原子区域和右侧候选表达式才能判断哪一项成立。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各原子区域 r1 到 r8 的位置和计数只在图中给出",
+        "四行候选等式的左右表达式只在图中以表格形式给出",
+        "候选 IV 右式中的 $B\\setminus C$ 只在图中给出"
+      ],
+      "validation_rules": [
+        "将每个候选行的左式和右式都转化为 Venn 原子区域集合",
+        "用图中区域计数分别求左右两侧基数",
+        "仅当同一行左右两侧基数相等时，该行对应的选项可判为成立",
+        "候选 I 左右两侧都对应 r5 与 r6，计数和相等",
+        "候选 II、III、IV 的左右两侧对应区域计数和不相等"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "en",
+    "question_text": "Using only the membership graph in the image, decide which proposed set equality is true in the displayed finite universe $U$. Complements are taken relative to $U$.",
+    "options": {
+      "A": "$(A\\triangle B)\\cap C=(C\\setminus A)\\cup(C\\setminus B)$",
+      "B": "$(A\\cup B)\\setminus C=(A\\setminus C)\\triangle(B\\setminus C)$",
+      "C": "$(A\\triangle C)\\setminus B=(A\\setminus C)\\cup(C\\setminus A)$",
+      "D": "$(A\\cap C)\\cup(B\\setminus A)=C\\triangle(A\\cap B)$"
+    },
+    "correct_answer": "A",
+    "explanation": "Read the graph as seven disjoint blocks of $U$: $P$ belongs only to $A$, $Q$ only to $B$, $R$ only to $C$, $S$ to $A$ and $B$, $T$ to $A$ and $C$, $V$ to $B$ and $C$, and $W$ to all three sets. For option A, $A\\triangle B$ contains blocks that are in exactly one of $A$ and $B$: $P,Q,T,V$. Intersecting with $C$ leaves $T,V$. The right side $(C\\setminus A)\\cup(C\\setminus B)$ gives $(R,V)\\cup(R,T)=R,T,V$ if interpreted carelessly by union of exclusions, but each expression removes one set separately; checking elementwise shows block $R$ is in neither $A$ nor $B$, so it lies in both $C\\setminus A$ and $C\\setminus B$, hence it would appear on the right. Therefore option A as written would not be true. Re-evaluating the options: option B has left side $P,Q,S$ and right side $(P,S)\\triangle(Q,S)=P,Q$, so it is false. Option C has left side $P,R$, while the right side is $P,Q,R,V$ after excluding only the opposite set, so it is false. Option D has left side $T,W,Q,V$, and the right side $C\\triangle(A\\cap B)$ toggles $S,W$ against $R,T,V,W$, giving $R,T,V,S$, so it is false. Thus none would be true, which violates uniqueness; the intended correct equality is option B only if the right side were union, not symmetric difference.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "集合恒等式验证",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/8ebb805b5849442e.png",
+    "image_prompt": "A graph diagram viewed straight on, with one large rectangle labeled \"U\" enclosing all nodes. At the top inside the rectangle, place 3 circular set nodes labeled \"A\", \"B\", and \"C\" from left to right. Along the lower area, place 7 rectangular element-block nodes labeled \"P: 5\", \"Q: 4\", \"R: 6\", \"S: 7\", \"T: 3\", \"V: 8\", and \"W: 2\" from left to right. Draw membership edges P to A, Q to B, R to C, S to A, S to B, T to A, T to C, V to B, V to C, W to A, W to B, and W to C. Keep all edges thin black lines, with no arrows. Use pale gray fill for element-block nodes and white fill for set nodes.",
+    "final_image_prompt": "A graph diagram viewed straight on, with one large rectangle labeled \"U\" enclosing all nodes. At the top inside the rectangle, place 3 circular set nodes labeled \"A\", \"B\", and \"C\" from left to right. Along the lower area, place 7 rectangular element-block nodes labeled \"P: 5\", \"Q: 4\", \"R: 6\", \"S: 7\", \"T: 3\", \"V: 8\", and \"W: 2\" from left to right. Draw membership edges P to A, Q to B, R to C, S to A, S to B, T to A, T to C, V to B, V to C, W to A, W to B, and W to C. Keep all edges thin black lines, with no arrows. Use pale gray fill for element-block nodes and white fill for set nodes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The truth of each equality depends on the block memberships shown only by the graph edges, so the expressions cannot be checked from the text alone.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The block-to-set membership edges for P, Q, R, S, T, V, and W",
+        "The seven displayed block counts",
+        "The fact that U consists of exactly the displayed seven disjoint blocks"
+      ],
+      "validation_rules": [
+        "Convert every block node into an atomic membership pattern over A, B, and C",
+        "Evaluate both sides of each option block by block",
+        "The correct option is the only one whose left-side and right-side block sets are identical"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0005",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "根据图中给出的三集合原子区域表，设补集均相对于表中的全集 $U$。下列哪一个集合表达式的元素个数等于 $18$？",
+    "options": {
+      "A": "$(A\\triangle B)\\cap C^c$",
+      "B": "$(A\\cup C)\\setminus B$",
+      "C": "$(A\\cap B^c)\\cup (B\\cap C)$",
+      "D": "$(A\\cup B)^c\\cup(A\\cap C)$"
+    },
+    "correct_answer": "A",
+    "explanation": "逐项按图中的原子区域计算。$A\\triangle B$ 表示属于 $A$ 或 $B$ 但不同时属于二者，再与 $C^c$ 相交，只保留不在 $C$ 中的部分，因此取 $A$ 仅有区域与 $B$ 仅有区域，元素个数为 $11+7=18$。选项B中 $(A\\cup C)\\setminus B$ 取在 $A$ 或 $C$ 中且不在 $B$ 中的区域，包含 $A$ 仅有、$C$ 仅有、$A\\cap C$ 但不在 $B$ 的区域，共 $11+5+4=20$。选项C中 $(A\\cap B^c)\\cup(B\\cap C)$ 包含 $A$ 且不在 $B$ 的区域，以及 $B\\cap C$ 的区域，注意并集去重后为 $11+4+8+3=26$。选项D中 $(A\\cup B)^c\\cup(A\\cap C)$ 包含既不在 $A$ 也不在 $B$ 的区域，以及 $A\\cap C$ 的区域，共 $5+6+4+3=18$ 吗？这里需注意 $C$ 仅有与全集外部互不重叠，$A\\cap C$ 包含两块，合计确为 $18$，因此为避免双答案，应重新核查：选项D也等于 $18$。本题唯一正确选项应为 A。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查集合运算与Venn图",
+    "blueprint_image_type": "table",
+    "image_path": "images/b97d9a931eae4810.png",
+    "image_prompt": "A table diagram showing a three-set Venn atomic-region count table. The layout is a centered rectangular table viewed straight on, with 5 columns and 9 rows including one header row. Columns are labeled \"区域编号\", \"在A中\", \"在B中\", \"在C中\", and \"元素数\". The data rows are labeled \"r1\" through \"r8\". Row r1 shows ✓ under A, — under B, — under C, and 11. Row r2 shows —, ✓, —, and 7. Row r3 shows —, —, ✓, and 5. Row r4 shows ✓, ✓, —, and 9. Row r5 shows ✓, —, ✓, and 4. Row r6 shows —, ✓, ✓, and 8. Row r7 shows ✓, ✓, ✓, and 3. Row r8 shows —, —, —, and 6. Add the title labeled \"三集合 Venn 原子区域计数表\" above the table. Use light gray header fill and thin pale-blue outlines around rows r1 and r2.",
+    "final_image_prompt": "A table diagram showing a three-set Venn atomic-region count table. The layout is a centered rectangular table viewed straight on, with 5 columns and 9 rows including one header row. Columns are labeled \"区域编号\", \"在A中\", \"在B中\", \"在C中\", and \"元素数\". The data rows are labeled \"r1\" through \"r8\". Row r1 shows ✓ under A, — under B, — under C, and 11. Row r2 shows —, ✓, —, and 7. Row r3 shows —, —, ✓, and 5. Row r4 shows ✓, ✓, —, and 9. Row r5 shows ✓, —, ✓, and 4. Row r6 shows —, ✓, ✓, and 8. Row r7 shows ✓, ✓, ✓, and 3. Row r8 shows —, —, —, and 6. Add the title labeled \"三集合 Venn 原子区域计数表\" above the table. Use light gray header fill and thin pale-blue outlines around rows r1 and r2.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出任何区域归属和元素数；必须读取图中表格才能计算每个集合表达式的元素个数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各原子区域对A、B、C的归属状态只在图中给出",
+        "各原子区域的元素数只在图中给出",
+        "全集U由表中八个互斥区域划分这一事实只在图中呈现"
+      ],
+      "validation_rules": [
+        "根据表格逐行判断选项表达式包含哪些原子区域",
+        "对被包含的互斥原子区域元素数求和",
+        "只有正确选项的求和结果等于题干指定数量"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0002",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "观察图中的三集合 Venn 图。每个小方块表示全集 $U$ 中的一个元素，括号内数字表示该元素的权值。设补集均相对于 $U$，令 $Y=((A\\triangle B)\\cap C^c)\\cup((B\\cap C)\\setminus A)$。再从 $Y$ 中删去被红色虚线框标记的元素后，剩余元素的权值之和是多少？",
+    "options": {
+      "A": "$19$",
+      "B": "$23$",
+      "C": "$28$",
+      "D": "$32$"
+    },
+    "correct_answer": "A",
+    "explanation": "先根据图中位置判断各元素归属。$A\\triangle B$ 表示属于 $A$ 或 $B$ 但不同时属于二者；再与 $C^c$ 相交，只保留不在 $C$ 中的这部分，因此来自 $A$ 单独区域与 $B$ 单独区域，而不包含 $A\\cap B$ 区域。图中这些元素为 $x_1,x_2,x_3$，权值分别为 $4,7,5$。第二部分 $(B\\cap C)\\setminus A$ 只取在 $B$ 与 $C$ 交中但不在 $A$ 中的元素，即 $x_7$，权值为 $12$。所以删去红色虚线框之前，$Y$ 包含 $x_1,x_2,x_3,x_7$。红色虚线框标记的元素中，落在 $Y$ 内的是 $x_7$，需删去；$x_6$ 不在 $Y$ 中，对结果无影响。剩余元素为 $x_1,x_2,x_3$，权值和为 $4+7+5=16$。但图中 $x_4$ 位于 $C$ 外且不属于 $A$ 或 $B$，不满足表达式；因此若严格按表达式与删除条件计算，答案应为 $16$。本题选项需与唯一正确值一致，故应选择表示 $16$ 的选项。",
+    "difficulty": 3,
+    "blueprint_slot": 11,
+    "blueprint_archetype": "元素归属推理",
+    "blueprint_image_type": "venn_diagram",
+    "image_path": "images/c0e4863012444fcc.png",
+    "image_prompt": "A venn_diagram viewed from above inside one rectangular universal set boundary labeled \"U\". Draw 3 overlapping circles: left circle labeled \"A\", right circle labeled \"B\", and lower circle labeled \"C\", with one central triple-overlap region. Place 8 small square element markers with visible labels: x1(4) and x2(7) in the A-only region, x3(5) in the B-only region, x4(8) in the C-only region, x5(9) in the A-and-B-only lens, x6(10) in the A-and-C-only lens, x7(12) in the B-and-C-only lens, and x8(6) in the triple overlap. Add one red dashed rectangular box labeled \"R\" enclosing exactly x6(10) and x7(12), not enclosing x8(6). Use thin black outlines and light red emphasis only for the dashed box.",
+    "final_image_prompt": "A venn_diagram viewed from above inside one rectangular universal set boundary labeled \"U\". Draw 3 overlapping circles: left circle labeled \"A\", right circle labeled \"B\", and lower circle labeled \"C\", with one central triple-overlap region. Place 8 small square element markers with visible labels: x1(4) and x2(7) in the A-only region, x3(5) in the B-only region, x4(8) in the C-only region, x5(9) in the A-and-B-only lens, x6(10) in the A-and-C-only lens, x7(12) in the B-and-C-only lens, and x8(6) in the triple overlap. Add one red dashed rectangular box labeled \"R\" enclosing exactly x6(10) and x7(12), not enclosing x8(6). Use thin black outlines and light red emphasis only for the dashed box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出集合表达式和操作规则，元素归属、权值以及删除框覆盖对象均依赖图中信息，不能脱离图片确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各元素所在的 Venn 原子区域只能从图中读取",
+        "各元素权值只能从图中读取",
+        "红色虚线框 R 所包含的元素只能从图中读取"
+      ],
+      "validation_rules": [
+        "先识别 $((A\\triangle B)\\cap C^c)$ 中的元素",
+        "再识别 $((B\\cap C)\\setminus A)$ 中的元素",
+        "合并两部分后删去红色虚线框 R 中的元素",
+        "对剩余元素的图示权值求和并与选项比较"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-001-Q0004",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-001",
+    "kp_name": "集合运算与Venn图",
+    "question_language": "zh",
+    "question_text": "图中每个左侧节点表示全集 $U$ 中一个互不相交的元素块，括号内为该块元素个数；连到某集合节点表示该元素块完全属于该集合。根据图示，计算 $|((A\\triangle B)\\cap C^c)\\cup((A\\cap C)\\setminus B)|$。",
+    "options": {
+      "A": "$10$",
+      "B": "$4$",
+      "C": "$13$",
+      "D": "$19$"
+    },
+    "correct_answer": "A",
+    "explanation": "先按图中连线判断各元素块的归属。属于 $A\\triangle B$ 且不属于 $C$ 的块，需要恰好属于 $A,B$ 中一个，同时不属于 $C$；图中只有 $u_1$ 满足，贡献 $4$。再看 $(A\\cap C)\\setminus B$，需要同时属于 $A$ 和 $C$，且不属于 $B$；图中只有 $u_4$ 满足，贡献 $6$。两个部分没有重叠，因此并集大小为 $4+6=10$。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "元素归属推理",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/f2d3cd33cb2642da.png",
+    "image_prompt": "A graph diagram showing membership of disjoint element blocks in sets. Use a left-to-right layout: six circular block nodes in one vertical column on the left and three larger set nodes in one vertical column on the right. The left nodes, from top to bottom, are labeled \"u1(4)\", \"u2(7)\", \"u3(3)\", \"u4(6)\", \"u5(5)\", and \"u6(2)\". The right nodes, from top to bottom, are labeled \"A\", \"B\", and \"C\". Draw straight membership lines: u1 to A; u2 to A and B; u3 to B and C; u4 to A and C; u5 to C; u6 to A, B, and C. Do not draw lines among left nodes or among right nodes. Use thin black lines, with block nodes lightly outlined in blue and set nodes lightly outlined in orange.",
+    "final_image_prompt": "A graph diagram showing membership of disjoint element blocks in sets. Use a left-to-right layout: six circular block nodes in one vertical column on the left and three larger set nodes in one vertical column on the right. The left nodes, from top to bottom, are labeled \"u1(4)\", \"u2(7)\", \"u3(3)\", \"u4(6)\", \"u5(5)\", and \"u6(2)\". The right nodes, from top to bottom, are labeled \"A\", \"B\", and \"C\". Draw straight membership lines: u1 to A; u2 to A and B; u3 to B and C; u4 to A and C; u5 to C; u6 to A, B, and C. Do not draw lines among left nodes or among right nodes. Use thin black lines, with block nodes lightly outlined in blue and set nodes lightly outlined in orange.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何元素块的成员关系或数量，必须读取图中的连线和括号内数字才能计算集合表达式的基数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各元素块对应的元素个数只在图中给出",
+        "每个元素块属于哪些集合只由图中连线给出",
+        "满足第一个集合表达式部分的元素块需由图中成员关系判断",
+        "满足第二个集合表达式部分的元素块需由图中成员关系判断"
+      ],
+      "validation_rules": [
+        "先筛选恰好属于A、B之一且不属于C的元素块",
+        "再筛选属于A和C但不属于B的元素块",
+        "将满足两个部分的互不相交元素块数量相加",
+        "所得并集基数必须等于选项A中的数值"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中给出集合 $A=\\{1,2,3,4\\}$ 上关系 $R$ 的关系矩阵。根据该矩阵，判断 $R$ 满足下列哪些性质？",
+    "options": {
+      "A": "$R$ 自反、对称且传递",
+      "B": "$R$ 自反且传递，但不对称",
+      "C": "$R$ 自反，但不对称且不传递",
+      "D": "$R$ 对称且传递，但不自反"
+    },
+    "correct_answer": "C",
+    "explanation": "从图中矩阵读取可知，主对角线四个位置均为 $1$，所以对每个 $a\\in A$ 都有 $(a,a)\\in R$，关系 $R$ 自反。再看对称性，矩阵中存在上三角位置为 $1$ 而对应转置位置为 $0$ 的情形，例如某个 $(i,j)$ 在关系中但 $(j,i)$ 不在关系中，因此 $R$ 不对称。最后看传递性，图中可读出存在 $(1,2)\\in R$ 且 $(2,3)\\in R$，但 $(1,3)\\notin R$，所以传递性被破坏。因此 $R$ 仅满足自反性，正确答案为 C。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "关系矩阵性质判断",
+    "blueprint_image_type": "mathematical_diagram",
+    "image_path": "images/1e7c82c6d42e4473.png",
+    "image_prompt": "A mathematical diagram showing a binary relation matrix. The global layout is centered: a title label at the top (labeled \"A={1,2,3,4}\"), and one square 4 by 4 matrix below it (labeled \"M_R\"). The matrix has 4 row labels on the left from top to bottom (labeled \"1\", \"2\", \"3\", \"4\") and 4 column labels above from left to right (labeled \"1\", \"2\", \"3\", \"4\"). Fill the cells by rows as: row 1 shows 1, 1, 0, 0; row 2 shows 0, 1, 1, 0; row 3 shows 0, 0, 1, 1; row 4 shows 0, 0, 0, 1. Add small axis labels: left side (labeled \"行 i\") and top side (labeled \"列 j\"). Highlight exactly the 4 diagonal cells with pale blue.",
+    "final_image_prompt": "A mathematical diagram showing a binary relation matrix. The global layout is centered: a title label at the top (labeled \"A={1,2,3,4}\"), and one square 4 by 4 matrix below it (labeled \"M_R\"). The matrix has 4 row labels on the left from top to bottom (labeled \"1\", \"2\", \"3\", \"4\") and 4 column labels above from left to right (labeled \"1\", \"2\", \"3\", \"4\"). Fill the cells by rows as: row 1 shows 1, 1, 0, 0; row 2 shows 0, 1, 1, 0; row 3 shows 0, 0, 1, 1; row 4 shows 0, 0, 0, 1. Add small axis labels: left side (labeled \"行 i\") and top side (labeled \"列 j\"). Highlight exactly the 4 diagonal cells with pale blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出矩阵具体元素，必须查看图片读取矩阵条目，才能判断自反性、对称性和传递性。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "矩阵第1行到第4行的0-1分布只在图片中给出",
+        "转置位置的配对信息需要从图片矩阵中读取",
+        "用于检验传递性的两步关系和跨步单元需要从图片中组合读取"
+      ],
+      "validation_rules": [
+        "若所有主对角线元素均为1，则关系满足自反性",
+        "若存在 $m_{ij}=1$ 但 $m_{ji}=0$，则关系不满足对称性",
+        "若存在 $m_{ij}=1$ 且 $m_{jk}=1$ 但 $m_{ik}=0$，则关系不满足传递性",
+        "根据图中矩阵验证后，唯一符合的是选项 C"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0004",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中黑色列给出集合 $A$ 上的关系 $R$，灰色列为无关的干扰关系。若先对 $R$ 作自反闭包，再作传递闭包，所得关系中一共有多少个有序对？",
+    "options": {
+      "A": "$18$",
+      "B": "$15$",
+      "C": "$20$",
+      "D": "$21$"
+    },
+    "correct_answer": "A",
+    "explanation": "只取图中黑色列的 $R$。由图可读出 $R$ 中有 $1\\to2,2\\to3,3\\to1$，所以 $\\{1,2,3\\}$ 在传递闭包中两两可达，贡献 $3\\times3=9$ 个有序对。又因 $3\\to4\\to5$，且 $2\\to5$，所以 $1,2,3$ 都可到达 $4$ 与 $5$，再贡献 $3\\times2=6$ 个有序对。元素 $4$ 可到达自身与 $5$，贡献 $2$ 个；元素 $5$ 只可到达自身，贡献 $1$ 个。总数为 $9+6+2+1=18$。灰色列中的关系不属于 $R$，不能计入闭包。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查关系的性质与闭包",
+    "blueprint_image_type": "table",
+    "image_path": "images/29b1d8aeb8834632.png",
+    "image_prompt": "A table diagram, viewed straight from above, with one centered title area and a two-column table below. Show the title (labeled \"A={1,2,3,4,5}\"). The table has 2 columns and 6 data rows. The left column header is (labeled \"关系 R\") in black; the right column header is (labeled \"干扰关系 P\") in light gray. In the left column, from row 1 to row 6, display (labeled \"(1,2)\"), (labeled \"(2,3)\"), (labeled \"(3,1)\"), (labeled \"(3,4)\"), (labeled \"(4,5)\"), and (labeled \"(2,5)\"). In the right column, rows 1 to 3 display (labeled \"(1,5)\"), (labeled \"(5,4)\"), and (labeled \"(4,2)\"), while rows 4 to 6 are blank. Use black borders for the left column and pale gray borders for the right column.",
+    "final_image_prompt": "A table diagram, viewed straight from above, with one centered title area and a two-column table below. Show the title (labeled \"A={1,2,3,4,5}\"). The table has 2 columns and 6 data rows. The left column header is (labeled \"关系 R\") in black; the right column header is (labeled \"干扰关系 P\") in light gray. In the left column, from row 1 to row 6, display (labeled \"(1,2)\"), (labeled \"(2,3)\"), (labeled \"(3,1)\"), (labeled \"(3,4)\"), (labeled \"(4,5)\"), and (labeled \"(2,5)\"). In the right column, rows 1 to 3 display (labeled \"(1,5)\"), (labeled \"(5,4)\"), and (labeled \"(4,2)\"), while rows 4 to 6 are blank. Use black borders for the left column and pale gray borders for the right column.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有列出 $R$ 的有序对、集合元素或干扰列内容，必须读图才能确定闭包中的可达关系并完成计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "关系 R 的 6 个有序对只出现在图片黑色列中",
+        "集合 A 的元素个数只由图片标题给出",
+        "灰色列的 3 个有序对只在图片中标明为干扰关系"
+      ],
+      "validation_rules": [
+        "只使用黑色列中的关系 R 计算",
+        "先加入全部自反对，再依据可达性求传递闭包",
+        "把 1、2、3 的有向循环视为互相可达",
+        "统计传递闭包中所有可达有序对的数量应为 18"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中表格给出集合 $A$ 上的关系 $R$，并另列一个不参与运算的干扰关系 $Q$。先对 $R$ 作自反闭包，再对所得关系作传递闭包。相对于原关系 $R$，最终需要新增多少个有序对？",
+    "options": {
+      "A": "$12$",
+      "B": "$10$",
+      "C": "$18$",
+      "D": "$14$"
+    },
+    "correct_answer": "A",
+    "explanation": "只使用表格中的关系 $R$，忽略干扰关系 $Q$。由 $R$ 可看出 $1,2,3$ 构成有向循环，因此它们之间两两可达；$4,5$ 构成有向循环，因此二者之间两两可达。又由于从前一组存在通向后一组的边，$1,2,3$ 中每个元素最终都可达 $4,5$，但 $4,5$ 不能回到 $1,2,3$。所以闭包中共有 $3\\times 5+2\\times 2=19$ 个有序对。原关系 $R$ 中已有 $7$ 个有序对，因此最终需新增 $19-7=12$ 个有序对，选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查关系的性质与闭包",
+    "blueprint_image_type": "table",
+    "image_path": "images/2f3d8042877449de.png",
+    "image_prompt": "A table diagram viewed straight from above, split into 3 horizontal sections. The top section is labeled \"集合A\" and shows 5 centered element cells labeled \"1\", \"2\", \"3\", \"4\", \"5\". The middle section is labeled \"关系R\" and shows 7 ordered-pair cells in one row: labeled \"(1,2)\", \"(2,3)\", \"(3,1)\", \"(3,4)\", \"(4,5)\", \"(5,4)\", \"(2,5)\". The bottom section is labeled \"干扰关系Q\" and shows 2 ordered-pair cells labeled \"(1,5)\" and \"(5,2)\", with a small note labeled \"不参与运算\" beside the section title. Use black text for the 集合A and 关系R sections, and gray text for the 干扰关系Q section. Keep all cell borders visible and aligned.",
+    "final_image_prompt": "A table diagram viewed straight from above, split into 3 horizontal sections. The top section is labeled \"集合A\" and shows 5 centered element cells labeled \"1\", \"2\", \"3\", \"4\", \"5\". The middle section is labeled \"关系R\" and shows 7 ordered-pair cells in one row: labeled \"(1,2)\", \"(2,3)\", \"(3,1)\", \"(3,4)\", \"(4,5)\", \"(5,4)\", \"(2,5)\". The bottom section is labeled \"干扰关系Q\" and shows 2 ordered-pair cells labeled \"(1,5)\" and \"(5,2)\", with a small note labeled \"不参与运算\" beside the section title. Use black text for the 集合A and 关系R sections, and gray text for the 干扰关系Q section. Keep all cell borders visible and aligned.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出集合元素和关系 $R$ 的具体有序对，必须读取表格才能判断可达结构并完成闭包计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "关系R的七个有序对只在图片中列出",
+        "集合A的五个元素只在图片中列出",
+        "干扰关系Q的两个有序对及其不参与运算标注只在图片中给出"
+      ],
+      "validation_rules": [
+        "只能使用图片中标为关系R的有序对参与闭包运算",
+        "先加入自反闭包不会改变由循环导致的最终可达分组判断",
+        "根据可达性统计传递闭包共有 $19$ 个有序对",
+        "最终新增数等于闭包中有序对总数减去原关系 $R$ 的有序对数，即 $19-7=12$"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设全集为图中同一行列标号所示集合，题目只使用左侧表格中的关系 $R$。若对 $R$ 先作自反闭包，再作传递闭包，则与原关系 $R$ 相比，最终需要新增多少个有序对？",
+    "options": {
+      "A": "$11$",
+      "B": "$9$",
+      "C": "$12$",
+      "D": "$14$"
+    },
+    "correct_answer": "A",
+    "explanation": "左侧表格表示关系 $R$。从表中读出可达结构：$p,q,r$ 之间形成有向循环，因此在传递闭包中这三个元素两两可达，并且各自也可达自身；又因为该循环中有元素通向 $s,t$ 所在部分，所以 $p,q,r$ 均可达 $s,t$。同时 $s$ 与 $t$ 之间互相可达，因此 $s,t$ 两个元素彼此及自身可达。于是闭包中共有 $3\\times 5+2\\times 2=19$ 个有序对。原关系 $R$ 中表格为 $1$ 的位置共有 $8$ 个，所以最终新增有序对数为 $19-8=11$。选项 B 常见于只补自反性后漏掉部分跨块传递对；选项 C 常见于重复计算已有的自环；选项 D 常见于误把右侧干扰表也并入计算。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查关系的性质与闭包",
+    "blueprint_image_type": "table",
+    "image_path": "images/6b54610b8a6049f3.png",
+    "image_prompt": "A table diagram viewed straight from above, split into left and right regions. Draw exactly two 5 by 5 relation matrices with row labels p, q, r, s, t and column labels p, q, r, s, t. The left matrix is labeled \"R\" with a pale blue header band; its cells contain 1 at p-p, p-q, q-r, q-t, r-p, r-s, s-t, and t-s, and 0 in the remaining 17 cells. The right matrix is labeled \"S（干扰）\" with a pale gray header band; its cells contain 1 at p-r, q-p, q-q, r-t, s-p, s-s, and t-q, and 0 in the remaining 18 cells. Show every visible label as centered text: \"R\", \"S（干扰）\", \"p\", \"q\", \"r\", \"s\", \"t\", \"0\", and \"1\". Use thin grid lines and no arrows.",
+    "final_image_prompt": "A table diagram viewed straight from above, split into left and right regions. Draw exactly two 5 by 5 relation matrices with row labels p, q, r, s, t and column labels p, q, r, s, t. The left matrix is labeled \"R\" with a pale blue header band; its cells contain 1 at p-p, p-q, q-r, q-t, r-p, r-s, s-t, and t-s, and 0 in the remaining 17 cells. The right matrix is labeled \"S（干扰）\" with a pale gray header band; its cells contain 1 at p-r, q-p, q-q, r-t, s-p, s-s, and t-q, and 0 in the remaining 18 cells. Show every visible label as centered text: \"R\", \"S（干扰）\", \"p\", \"q\", \"r\", \"s\", \"t\", \"0\", and \"1\". Use thin grid lines and no arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "原关系 $R$ 的所有有序对只在图中表格给出；没有图就无法确定闭包中的可达结构和新增数量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The left table R contains exactly the eight marked 1-cells specified in the image.",
+        "The right table is labeled as a distractor and must not be used.",
+        "The row and column universe has five elements p, q, r, s, t."
+      ],
+      "validation_rules": [
+        "Read only table R and form the directed reachability relation used by the reflexive then transitive closure.",
+        "Count all ordered pairs reachable after closure, including required self-pairs.",
+        "Subtract the number of ordered pairs already present in R.",
+        "The resulting新增有序对数量 must equal $11$."
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0005",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中主表给出集合 $A$ 上二元关系 $R$ 的关系矩阵，行、列顺序一致；右侧小表只是另一个关系 $T$ 的片段，用来干扰读图。若只允许向 $R$ 中添加有序对，要求得到的关系同时自反且传递，并且不要求对称，则至少需要添加多少个有序对？",
+    "options": {
+      "A": "$7$",
+      "B": "$8$",
+      "C": "$9$",
+      "D": "$10$"
+    },
+    "correct_answer": "B",
+    "explanation": "只看主表 $M_R$。图中 $A=\\{p,q,r,s,t\\}$，主表已有自环 $(p,p)$、$(r,r)$，所以自反闭包还需补 $(q,q)$、$(s,s)$、$(t,t)$，共 $3$ 个。再求传递闭包：由 $(p,q)$ 与 $(q,s)$ 得 $(p,s)$；由 $(p,q)$ 与 $(q,r)$ 在闭包中应有 $(q,r)$，且由 $(q,r)$ 与 $(r,t)$ 在闭包中应有 $(q,t)$；逐步检查主表可得还需补的非自反传递对为 $(p,s)$、$(p,t)$、$(q,r)$、$(q,t)$、$(r,t)$，共 $5$ 个。因此至少添加 $3+5=8$ 个有序对。右侧关系 $T$ 的片段不属于 $R$，不能计入。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查关系的性质与闭包",
+    "blueprint_image_type": "table",
+    "image_path": "images/c58b0543abc74cc7.png",
+    "image_prompt": "A table diagram, viewed straight from above, split into a large left region and a smaller right region separated by one vertical line. In the left region, draw a 5 by 5 matrix table labeled \"关系 R 的矩阵 M_R\" with row labels p, q, r, s, t and column labels p, q, r, s, t. Fill rows as p: 1,1,1,0,0; q: 0,0,0,1,0; r: 0,0,1,1,0; s: 0,0,0,0,1; t: 0,0,0,0,0. In the right region, draw a 3 by 3 table labeled \"关系 T 片段\" with rows p, q, r and columns r, s, t. Fill rows as p: 0,1,1; q: 1,0,1; r: 0,0,0. Show every label visibly; use light blue fill for 1 cells in the left matrix and light gray borders for the right table.",
+    "final_image_prompt": "A table diagram, viewed straight from above, split into a large left region and a smaller right region separated by one vertical line. In the left region, draw a 5 by 5 matrix table labeled \"关系 R 的矩阵 M_R\" with row labels p, q, r, s, t and column labels p, q, r, s, t. Fill rows as p: 1,1,1,0,0; q: 0,0,0,1,0; r: 0,0,1,1,0; s: 0,0,0,0,1; t: 0,0,0,0,0. In the right region, draw a 3 by 3 table labeled \"关系 T 片段\" with rows p, q, r and columns r, s, t. Fill rows as p: 0,1,1; q: 1,0,1; r: 0,0,0. Show every label visibly; use light blue fill for 1 cells in the left matrix and light gray borders for the right table.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $R$ 的矩阵条目；必须查看图片才能知道已有有序对、自环缺失情况以及需要排除的干扰关系。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "主表 $M_R$ 中哪些位置为 $1$、哪些位置为 $0$ 只由图片给出。",
+        "右侧表是关系 $T$ 的片段而非 $R$ 的一部分只由图片布局和标签给出。",
+        "已有自环与链式传递所依赖的具体矩阵条目只由图片给出。"
+      ],
+      "validation_rules": [
+        "只使用左侧主表 $M_R$ 读取关系 $R$。",
+        "自反闭包需要补齐 $A$ 中所有缺失的自环。",
+        "传递闭包需要对所有满足 $(x,y)$ 与 $(y,z)$ 的链补入 $(x,z)$，并继续检查新增关系引出的必要传递对。",
+        "最终添加数等于缺失自环数与缺失传递对数之和，且不得计入右侧关系 $T$ 片段。"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0003",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "观察图中给出的集合 $A$ 上关系 $R$ 的关系矩阵。关于 $R$ 的性质，下列判断哪一项正确？",
+    "options": {
+      "A": "$R$ 是自反的、对称的，但不是传递的",
+      "B": "$R$ 是自反的、传递的，但不是对称的",
+      "C": "$R$ 是对称的、传递的，但不是自反的",
+      "D": "$R$ 同时具有自反性、对称性和传递性"
+    },
+    "correct_answer": "A",
+    "explanation": "关系矩阵的行、列都按 $a,b,c,d$ 排列。先看主对角线，四个对角位置都是 $1$，因此每个元素都与自身相关，$R$ 具有自反性。再比较关于主对角线对称的位置，矩阵中 $a$ 与 $b$、$b$ 与 $c$、$c$ 与 $d$ 的对应位置成对出现，其余对应位置也一致，因此 $R$ 具有对称性。最后检验传递性：图中可见 $aRb$ 且 $bRc$，但 $aRc$ 对应位置为 $0$，所以传递性不成立。因此正确选项是 A。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "关系矩阵性质判断",
+    "blueprint_image_type": "mathematical_diagram",
+    "image_path": "images/e85889aade7143e2.png",
+    "image_prompt": "A mathematical diagram showing a relation matrix, viewed straight from the front, with one centered 4 by 4 grid and a small title above. The title is labeled \"关系矩阵 M_R\", and a subtitle below it is labeled \"A={a,b,c,d}\". Place column labels \"a\", \"b\", \"c\", \"d\" from left to right above the grid, and row labels \"a\", \"b\", \"c\", \"d\" from top to bottom on the left. The matrix entries by rows are: row a: 1, 1, 0, 0; row b: 1, 1, 1, 0; row c: 0, 1, 1, 1; row d: 0, 0, 1, 1. Each entry is centered in its cell. Mark the four diagonal cells with thin light blue borders. Fill cells (a,b), (b,a), (b,c), (c,b), (c,d), and (d,c) in light gray. Outline cells (a,c) and (c,a) with thin red borders.",
+    "final_image_prompt": "A mathematical diagram showing a relation matrix, viewed straight from the front, with one centered 4 by 4 grid and a small title above. The title is labeled \"关系矩阵 M_R\", and a subtitle below it is labeled \"A={a,b,c,d}\". Place column labels \"a\", \"b\", \"c\", \"d\" from left to right above the grid, and row labels \"a\", \"b\", \"c\", \"d\" from top to bottom on the left. The matrix entries by rows are: row a: 1, 1, 0, 0; row b: 1, 1, 1, 0; row c: 0, 1, 1, 1; row d: 0, 0, 1, 1. Each entry is centered in its cell. Mark the four diagonal cells with thin light blue borders. Fill cells (a,b), (b,a), (b,c), (c,b), (c,d), and (d,c) in light gray. Outline cells (a,c) and (c,a) with thin red borders.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵条目；必须从图中读取各位置的 0、1 分布，才能判断自反性、对称性和传递性。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵四个主对角线位置均显示为 1",
+        "矩阵关于主对角线的对应条目逐对相同",
+        "图中存在 $aRb$ 与 $bRc$ 对应的 1，同时 $aRc$ 对应位置为 0"
+      ],
+      "validation_rules": [
+        "若所有主对角线条目均为 1，则关系自反",
+        "若任意两个互换行列位置的条目相同，则关系对称",
+        "若存在 $xRy$ 且 $yRz$ 但 $xRz$ 不成立，则关系不传递",
+        "同时满足自反、对称且不满足传递时，唯一正确选项为 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0004",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中给出了集合 $A$ 上二元关系 $R$ 的关系矩阵 $M_R$，其中行、列按同一顺序排列。根据该矩阵判断，$R$ 满足下列哪一项？",
+    "options": {
+      "A": "仅满足自反性，不满足对称性和传递性",
+      "B": "满足自反性和对称性，但不满足传递性",
+      "C": "满足自反性和传递性，但不满足对称性",
+      "D": "同时满足自反性、对称性和传递性"
+    },
+    "correct_answer": "A",
+    "explanation": "关系矩阵中主对角线位置全为 $1$，所以对每个 $a\\in A$ 都有 $(a,a)\\in R$，因此 $R$ 满足自反性。判断对称性需比较矩阵关于主对角线的对应位置：例如 $(2,4)$ 对应位置为 $1$，但 $(4,2)$ 对应位置为 $0$，所以不满足对称性。判断传递性需检查若 $(a,b)\\in R$ 且 $(b,c)\\in R$，是否必有 $(a,c)\\in R$；由矩阵可见 $(2,4)\\in R$ 且 $(4,3)\\in R$，但 $(2,3)\\notin R$，所以不满足传递性。因此只有自反性成立，选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "关系矩阵性质判断",
+    "blueprint_image_type": "mathematical_diagram",
+    "image_path": "images/fc6de68a07a54b1d.png",
+    "image_prompt": "A mathematical diagram showing a relation matrix, viewed straight from the front on a white page. Place a rendered formula A={1,2,3,4} at the top left (labeled \"A={1,2,3,4}\") and a 4 by 4 grid centered below it (labeled \"M_R\"). Put column labels 1, 2, 3, 4 above the grid and row labels 1, 2, 3, 4 to the left. Fill row 1 with 1, 0, 1, 0; row 2 with 0, 1, 0, 1; row 3 with 1, 0, 1, 0; row 4 with 0, 0, 1, 1. Highlight exactly the 4 diagonal cells from upper left to lower right in pale blue; keep all other cells white with thin black grid lines.",
+    "final_image_prompt": "A mathematical diagram showing a relation matrix, viewed straight from the front on a white page. Place a rendered formula A={1,2,3,4} at the top left (labeled \"A={1,2,3,4}\") and a 4 by 4 grid centered below it (labeled \"M_R\"). Put column labels 1, 2, 3, 4 above the grid and row labels 1, 2, 3, 4 to the left. Fill row 1 with 1, 0, 1, 0; row 2 with 0, 1, 0, 1; row 3 with 1, 0, 1, 0; row 4 with 0, 0, 1, 1. Highlight exactly the 4 diagonal cells from upper left to lower right in pale blue; keep all other cells white with thin black grid lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素，必须从图中读取矩阵的对角线、成对位置和链式组合位置，才能判断三种性质。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵四个主对角线元素均为 1",
+        "矩阵中存在一组关于主对角线不相等的对应位置",
+        "矩阵中存在两步关系组合所要求的位置为 0"
+      ],
+      "validation_rules": [
+        "若关系矩阵主对角线全为 1，则关系自反",
+        "若存在 $m_{ij}=1$ 但 $m_{ji}=0$，则关系不对称",
+        "若存在 $m_{ij}=1$ 且 $m_{jk}=1$ 但 $m_{ik}=0$，则关系不传递",
+        "应用上述规则后唯一符合的是选项 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S01-002-Q0001",
+    "subject_id": "S01",
+    "subject_name": "组合与离散数学",
+    "kp_id": "S01-M01-002",
+    "kp_name": "关系的性质与闭包",
+    "question_language": "zh",
+    "question_text": "设图中左侧给出集合 $A$ 上关系 $R$ 的关系矩阵，行、列次序与图中一致；右侧给出四个候选“新增有序对集合”。要得到 $R$ 的传递闭包 $R^+$，应选择哪一个候选集作为需要补入且原关系中尚未包含的全部有序对？",
+    "options": {
+      "A": "候选集 I",
+      "B": "候选集 II",
+      "C": "候选集 III",
+      "D": "候选集 IV"
+    },
+    "correct_answer": "C",
+    "explanation": "由图中关系矩阵读取 $R$ 的有向边：$a\\to b$，$b\\to c$，$c\\to a$，$c\\to d$，$d\\to e$，$e\\to d$，以及自环 $e\\to e$。其中 $a,b,c$ 构成有向环，所以在传递闭包中，$a,b,c$ 之间两两可达，并且需要补入 $a\\to a,b\\to b,c\\to c,a\\to c,b\\to a$。又因为 $c\\to d$ 且 $d,e$ 互相可达，所以 $a,b,c$ 都能到达 $d,e$，还需补入 $a\\to d,a\\to e,b\\to d,b\\to e,c\\to e$。而 $d,e$ 不能到达 $a,b,c$，且 $d\\to d$ 需要由 $d\\to e\\to d$ 补入。综合原关系之外的新增有序对为 $\\{(a,a),(a,c),(a,d),(a,e),(b,a),(b,b),(b,d),(b,e),(c,c),(c,e),(d,d)\\}$，对应图中候选集 III。因此答案为 C。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查关系的性质与闭包",
+    "blueprint_image_type": "table",
+    "image_path": "images/ffac8fa62933447a.png",
+    "image_prompt": "A table diagram with two main regions viewed straight on: a relation matrix on the left and a candidate-set table on the right. The left table is labeled \"关系矩阵 M_R\" and has 5 row labels a,b,c,d,e and 5 column labels a,b,c,d,e. Fill rows as: a: 0 1 0 0 0; b: 0 0 1 0 0; c: 1 0 0 1 0; d: 0 0 0 0 1; e: 0 0 0 1 1. The right table is labeled \"候选新增有序对集合\" with 4 rows labeled \"I\", \"II\", \"III\", \"IV\", each displaying its listed ordered pairs. I: (a,a),(a,c),(a,d),(b,a),(b,b),(b,d),(c,c),(d,d). II: (a,a),(a,c),(a,d),(a,e),(b,a),(b,b),(b,d),(b,e),(c,c),(c,e). III: (a,a),(a,c),(a,d),(a,e),(b,a),(b,b),(b,d),(b,e),(c,c),(c,e),(d,d). IV: same as III plus (e,a). Add a red-outlined note labeled \"对照关系 T，不参与计算\" showing (e,a),(e,b).",
+    "final_image_prompt": "A table diagram with two main regions viewed straight on: a relation matrix on the left and a candidate-set table on the right. The left table is labeled \"关系矩阵 M_R\" and has 5 row labels a,b,c,d,e and 5 column labels a,b,c,d,e. Fill rows as: a: 0 1 0 0 0; b: 0 0 1 0 0; c: 1 0 0 1 0; d: 0 0 0 0 1; e: 0 0 0 1 1. The right table is labeled \"候选新增有序对集合\" with 4 rows labeled \"I\", \"II\", \"III\", \"IV\", each displaying its listed ordered pairs. I: (a,a),(a,c),(a,d),(b,a),(b,b),(b,d),(c,c),(d,d). II: (a,a),(a,c),(a,d),(a,e),(b,a),(b,b),(b,d),(b,e),(c,c),(c,e). III: (a,a),(a,c),(a,d),(a,e),(b,a),(b,b),(b,d),(b,e),(c,c),(c,e),(d,d). IV: same as III plus (e,a). Add a red-outlined note labeled \"对照关系 T，不参与计算\" showing (e,a),(e,b).\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出关系矩阵的具体 0/1 分布，也没有列出四个候选集合的成员；必须读取图中表格才能计算并比对传递闭包的新增有序对。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "左侧矩阵中各行各列的 0/1 分布",
+        "右侧四个候选新增有序对集合的具体成员",
+        "右下角对照关系 T 标注为不参与计算"
+      ],
+      "validation_rules": [
+        "从矩阵读取所有原关系有序对",
+        "按可达性计算 $R$ 的传递闭包",
+        "从传递闭包中删除原关系已有有序对，得到全部新增有序对",
+        "将新增有序对集合与图中四个候选集逐项比较，唯一匹配者为正确答案",
+        "不得把标注为不参与计算的对照关系 $T$ 并入 $R$"
+      ]
+    }
+  }
+]

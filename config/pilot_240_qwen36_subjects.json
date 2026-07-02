@@ -1,0 +1,33 @@
+{
+  "version": "pilot_240_qwen36_subjects_v1",
+  "description": "24 subjects x 10 questions pilot, including S07-S12 with synthetic/simulated medical teaching diagrams only.",
+  "total_target": 240,
+  "quota_per_subject": 10,
+  "medical_subjects": ["S07", "S08", "S09", "S10", "S11", "S12"],
+  "subjects": [
+    {"subject_id": "S01", "subject_name": "组合与离散数学", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S02", "subject_name": "概率与统计", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S03", "subject_name": "拓扑与变换", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S04", "subject_name": "代数与函数", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S05", "subject_name": "几何", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S06", "subject_name": "数论与逻辑", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S07", "subject_name": "临床医学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S08", "subject_name": "诊断与检验医学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S09", "subject_name": "基础医学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S10", "subject_name": "药学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S11", "subject_name": "公共卫生与预防医学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S12", "subject_name": "护理学与康复医学", "quota": 10, "synthetic_medical_only": true},
+    {"subject_id": "S13", "subject_name": "机械工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S14", "subject_name": "电气与电子工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S15", "subject_name": "计算机科学", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S16", "subject_name": "土木与建筑工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S17", "subject_name": "材料科学与工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S18", "subject_name": "能源与动力工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S19", "subject_name": "农业与生命工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S20", "subject_name": "其他工程", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S21", "subject_name": "生物学", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S22", "subject_name": "化学", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S23", "subject_name": "物理学", "quota": 10, "synthetic_medical_only": false},
+    {"subject_id": "S24", "subject_name": "地球与环境科学", "quota": 10, "synthetic_medical_only": false}
+  ]
+}

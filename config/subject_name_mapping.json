@@ -1,0 +1,20 @@
+{
+  "S01": {"zh": "组合与离散数学", "en": "Combinatorics and Discrete Mathematics"},
+  "S02": {"zh": "概率与统计", "en": "Probability and Statistics"},
+  "S03": {"zh": "拓扑与变换", "en": "Topology and Transformations"},
+  "S04": {"zh": "代数与函数", "en": "Algebra and Functions"},
+  "S05": {"zh": "几何", "en": "Geometry"},
+  "S06": {"zh": "数论与逻辑", "en": "Number Theory and Logic"},
+  "S13": {"zh": "机械工程", "en": "Mechanical Engineering"},
+  "S14": {"zh": "电气与电子工程", "en": "Electrical and Electronic Engineering"},
+  "S15": {"zh": "计算机科学", "en": "Computer Science"},
+  "S16": {"zh": "土木与建筑工程", "en": "Civil and Architectural Engineering"},
+  "S17": {"zh": "材料科学与工程", "en": "Materials Science and Engineering"},
+  "S18": {"zh": "能源与动力工程", "en": "Energy and Power Engineering"},
+  "S19": {"zh": "农业与生命工程", "en": "Agriculture and Life Engineering"},
+  "S20": {"zh": "其他工程", "en": "Other Engineering"},
+  "S21": {"zh": "生物学", "en": "Biology"},
+  "S22": {"zh": "化学", "en": "Chemistry"},
+  "S23": {"zh": "物理学", "en": "Physics"},
+  "S24": {"zh": "地球与环境科学", "en": "Earth and Environmental Science"}
+}

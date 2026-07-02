@@ -1,0 +1,608 @@
+[
+  {
+    "question_id": "S12-001-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-001",
+    "kp_name": "生命体征监测",
+    "question_language": "zh",
+    "question_text": "观察图中模拟监测屏。按基础护理生命体征记录要求，若只把“本次读数已超出成人常用参考范围、较上一时点向不利方向延续、且采集状态没有提示干扰”的项目归为需复核记录的异常趋势，最符合的是哪一项？",
+    "options": {
+      "A": "体温项目",
+      "B": "脉搏项目",
+      "C": "呼吸项目",
+      "D": "血压项目"
+    },
+    "correct_answer": "C",
+    "explanation": "需同时满足三个条件：本次读数越过图中对应参考范围、与上一时点相比继续向异常方向变化、采集状态可用于判断。体温本次为37.4，高于图中36.0–37.2的上限，且较上一时点升高，但状态栏提示探头位置偏斜，不能作为无干扰判断。脉搏本次为104，高于60–100，且较上一时点升高，但状态栏提示运动干扰，也不满足。呼吸本次为21，高于12–20，较上一时点19继续升高，且状态为稳定，三个条件均满足。血压本次为138/88，未超过图中90–139/60–89的参考范围，且较上一时点下降，因此不符合。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "monitoring_screen",
+    "image_path": "images/0558aa3740f545ce.png",
+    "image_prompt": "A synthetic educational monitoring screen chart. The layout is a front-view rectangular screen split into a wide left region and a narrow right status column. In the left region, place 4 stacked vital-sign cards from top to bottom labeled “体温”, “脉搏”, “呼吸”, and “血压”. Each card shows three rows labeled “当前”, “10分钟前”, and “参考范围”: temperature 37.4 ℃, 37.1 ℃, 36.0–37.2 ℃; pulse 104 次/分, 98 次/分, 60–100 次/分; respiration 21 次/分, 19 次/分, 12–20 次/分; blood pressure 138/88 mmHg, 142/90 mmHg, 90–139/60–89 mmHg. Draw arrows from previous to current: up for the first 3 cards, down for the fourth. The right column labeled “采集状态” has 4 aligned rows: “探头位置偏斜”, “运动干扰”, “稳定”, “袖带合适”. Use thin horizontal connector lines between each card and its status row; color card borders blue, orange, green, and purple.",
+    "final_image_prompt": "A synthetic educational monitoring screen chart. The layout is a front-view rectangular screen split into a wide left region and a narrow right status column. In the left region, place 4 stacked vital-sign cards from top to bottom labeled “体温”, “脉搏”, “呼吸”, and “血压”. Each card shows three rows labeled “当前”, “10分钟前”, and “参考范围”: temperature 37.4 ℃, 37.1 ℃, 36.0–37.2 ℃; pulse 104 次/分, 98 次/分, 60–100 次/分; respiration 21 次/分, 19 次/分, 12–20 次/分; blood pressure 138/88 mmHg, 142/90 mmHg, 90–139/60–89 mmHg. Draw arrows from previous to current: up for the first 3 cards, down for the fourth. The right column labeled “采集状态” has 4 aligned rows: “探头位置偏斜”, “运动干扰”, “稳定”, “袖带合适”. Use thin horizontal connector lines between each card and its status row; color card borders blue, orange, green, and purple.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体读数、参考范围、趋势箭头或采集状态，必须读取图中多处信息并组合判断才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "各生命体征的当前读数、10分钟前读数、参考范围和趋势箭头只在图中给出",
+        "各生命体征与采集状态的逐行对应关系只在图中给出",
+        "体温和脉搏虽有越界与上升趋势但状态提示存在干扰",
+        "呼吸读数同时涉及越界、上升趋势和稳定状态",
+        "血压当前读数与上一时点方向关系需由图中两组血压值比较"
+      ],
+      "validation_rules": [
+        "先判断每项当前读数是否超过图示参考范围",
+        "再比较当前读数与10分钟前读数的方向是否继续朝异常侧变化",
+        "最后排除采集状态提示偏斜或干扰的项目",
+        "仅同时满足三个筛选条件的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-001-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-001",
+    "kp_name": "生命体征监测",
+    "question_language": "zh",
+    "question_text": "观察图中模拟生命体征监测屏。按“读数超出参考范围、较上一记录朝更偏离参考范围的方向变化、且采集状态可用于判断”三项条件同时满足来分类，哪一项应优先标记为异常趋势并复核记录？",
+    "options": {
+      "A": "体温",
+      "B": "脉搏",
+      "C": "呼吸",
+      "D": "血压"
+    },
+    "correct_answer": "B",
+    "explanation": "需同时核对三类信息：当前读数是否越过该项参考范围、与上一记录相比是否朝更偏离参考范围的方向变化、采集状态是否可用于判断。体温当前读数略高且较前次升高，但图中采集状态提示探头松动，不能作为优先标记依据。脉搏当前读数超过参考范围上限，且较上一记录继续升高，采集状态显示有效，三项条件均满足。呼吸当前读数低于参考范围，但较上一记录向参考范围靠近，不符合“朝更偏离参考范围方向变化”。血压收缩压高于参考范围，但图中提示袖带移动，采集状态不可用于判断。因此唯一应优先标记为异常趋势并复核记录的是脉搏。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "monitoring_screen",
+    "image_path": "images/2e729036d25d462c.png",
+    "image_prompt": "A synthetic educational monitoring_screen diagram, front view, split into a 2 by 2 grid of parameter cards under one top title. Show 6 main elements: a top title bar (labeled \"模拟监测屏\"), four cards, and one bottom legend strip. Upper-left card (labeled \"体温\") shows \"当前 37.3°C\", \"上一记录 37.1°C\", \"参考范围 36.3–37.2°C\", \"状态 探头松动\". Upper-right card (labeled \"脉搏\") shows \"当前 102次/分\", \"上一记录 96次/分\", \"参考范围 60–100次/分\", \"状态 有效\". Lower-left card (labeled \"呼吸\") shows \"当前 15次/分\", \"上一记录 14次/分\", \"参考范围 16–20次/分\", \"状态 有效\". Lower-right card (labeled \"血压\") shows \"当前 142/88 mmHg\", \"上一记录 136/86 mmHg\", \"参考范围 90–139/60–89 mmHg\", \"状态 袖带移动\". Draw one upward arrow from previous to current inside each card. Use green status bars for 有效 and orange status bars for 探头松动 and 袖带移动; bottom legend labeled \"绿色=有效\" and \"橙色=需核对\".",
+    "final_image_prompt": "A synthetic educational monitoring_screen diagram, front view, split into a 2 by 2 grid of parameter cards under one top title. Show 6 main elements: a top title bar (labeled \"模拟监测屏\"), four cards, and one bottom legend strip. Upper-left card (labeled \"体温\") shows \"当前 37.3°C\", \"上一记录 37.1°C\", \"参考范围 36.3–37.2°C\", \"状态 探头松动\". Upper-right card (labeled \"脉搏\") shows \"当前 102次/分\", \"上一记录 96次/分\", \"参考范围 60–100次/分\", \"状态 有效\". Lower-left card (labeled \"呼吸\") shows \"当前 15次/分\", \"上一记录 14次/分\", \"参考范围 16–20次/分\", \"状态 有效\". Lower-right card (labeled \"血压\") shows \"当前 142/88 mmHg\", \"上一记录 136/86 mmHg\", \"参考范围 90–139/60–89 mmHg\", \"状态 袖带移动\". Draw one upward arrow from previous to current inside each card. Use green status bars for 有效 and orange status bars for 探头松动 and 袖带移动; bottom legend labeled \"绿色=有效\" and \"橙色=需核对\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出任何具体读数、参考范围、趋势或采集状态，必须读取图中四个参数卡片并组合判断才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "脉搏卡片的当前读数、上一记录、参考范围和状态均需从图中读取",
+        "体温与血压卡片包含需核对的采集状态",
+        "呼吸卡片当前值与上一记录相对参考范围的方向关系需从图中比较"
+      ],
+      "validation_rules": [
+        "先判定当前读数是否超出对应参考范围",
+        "再判定当前读数相对上一记录是否朝更偏离参考范围的方向变化",
+        "最后排除采集状态不是有效的项目",
+        "仅同时满足三项条件的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-001-Q0002",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-001",
+    "kp_name": "生命体征监测",
+    "question_language": "zh",
+    "question_text": "观察图中模拟生命体征监测屏。按基础护理记录原则，若只选择一项进行“当前越过参考范围、与上一时点相比偏离程度加重，且采集质量可用于判断”的异常标记，最符合条件的是哪一项？",
+    "options": {
+      "A": "体温",
+      "B": "脉搏",
+      "C": "呼吸",
+      "D": "血压"
+    },
+    "correct_answer": "A",
+    "explanation": "需要同时核对三个条件：第一，当前读数是否越过图示参考范围；第二，与上一时点相比，离参考范围边界的偏离程度是否加重；第三，采集质量是否为可用于判断。图中体温为$37.8\\,^{\\circ}\\mathrm{C}$，参考范围上限为$37.2\\,^{\\circ}\\mathrm{C}$，上一时点为$37.4\\,^{\\circ}\\mathrm{C}$，当前偏离上限$0.6\\,^{\\circ}\\mathrm{C}$，上一时点偏离$0.2\\,^{\\circ}\\mathrm{C}$，且质量为OK，符合全部条件。脉搏当前在参考范围内；呼吸虽越过上限且较上一时点偏离加重，但质量标为Motion，不应用作该项判断；血压当前仍在屏幕给出的参考范围内。因此答案为A。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "monitoring_screen",
+    "image_path": "images/4f53505b79cb408c.png",
+    "image_prompt": "A synthetic educational monitoring_screen diagram. Global layout: front-facing rectangular screen split into a top title bar, a central 2 by 2 grid, and one bottom note bar. Show 6 main visual elements: title bar (labeled \"模拟生命体征监测屏\"), four cards, and bottom bar (labeled \"核对：范围｜趋势｜质量\"). Top-left card labeled \"体温\" with rows labeled \"当前 37.8 °C\", \"参考 36.0–37.2 °C\", \"上一时点 37.4 °C\", \"趋势 ↑\", \"质量 OK\". Top-right card labeled \"脉搏\" with \"当前 98 次/分\", \"参考 60–100 次/分\", \"上一时点 104 次/分\", \"趋势 ↓\", \"质量 OK\". Bottom-left card labeled \"呼吸\" with \"当前 23 次/分\", \"参考 12–20 次/分\", \"上一时点 21 次/分\", \"趋势 ↑\", \"质量 Motion\". Bottom-right card labeled \"血压\" with \"当前 138/86 mmHg\", \"参考 90–139/60–89 mmHg\", \"上一时点 132/84 mmHg\", \"趋势 ↑\", \"质量 OK\". Connect each trend arrow visually between previous and current rows. Red outline around temperature current value, orange outline around respiration quality label.",
+    "final_image_prompt": "A synthetic educational monitoring_screen diagram. Global layout: front-facing rectangular screen split into a top title bar, a central 2 by 2 grid, and one bottom note bar. Show 6 main visual elements: title bar (labeled \"模拟生命体征监测屏\"), four cards, and bottom bar (labeled \"核对：范围｜趋势｜质量\"). Top-left card labeled \"体温\" with rows labeled \"当前 37.8 °C\", \"参考 36.0–37.2 °C\", \"上一时点 37.4 °C\", \"趋势 ↑\", \"质量 OK\". Top-right card labeled \"脉搏\" with \"当前 98 次/分\", \"参考 60–100 次/分\", \"上一时点 104 次/分\", \"趋势 ↓\", \"质量 OK\". Bottom-left card labeled \"呼吸\" with \"当前 23 次/分\", \"参考 12–20 次/分\", \"上一时点 21 次/分\", \"趋势 ↑\", \"质量 Motion\". Bottom-right card labeled \"血压\" with \"当前 138/86 mmHg\", \"参考 90–139/60–89 mmHg\", \"上一时点 132/84 mmHg\", \"趋势 ↑\", \"质量 OK\". Connect each trend arrow visually between previous and current rows. Red outline around temperature current value, orange outline around respiration quality label.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，不给出任何监测数值、参考范围、趋势或质量状态；必须读取图中四个卡片并进行比较后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "体温当前读数、参考范围、上一时点读数和质量状态只在图片中给出",
+        "脉搏当前读数、参考范围、上一时点读数和质量状态只在图片中给出",
+        "呼吸当前读数、参考范围、上一时点读数和质量状态只在图片中给出",
+        "血压当前读数、参考范围、上一时点读数和质量状态只在图片中给出"
+      ],
+      "validation_rules": [
+        "先判断各项当前读数是否越过图示参考范围",
+        "对越过参考范围的项目，比较当前读数与上一时点读数相对最近参考边界的偏离程度",
+        "排除采集质量不是OK的项目",
+        "唯一同时满足当前越界、偏离程度加重、质量OK三项条件的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-001-Q0004",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-001",
+    "kp_name": "生命体征监测",
+    "question_language": "zh",
+    "question_text": "观察图中模拟监测屏。按基础护理记录原则，若只选择“当前读数越界、趋势仍朝异常方向变化，且采集状态可用于判断”的一项进行异常记录与复测提示，最合适的是哪一项？",
+    "options": {
+      "A": "体温：作为越界且趋势需关注的项目记录",
+      "B": "脉搏：作为越界且趋势需关注的项目记录",
+      "C": "呼吸：作为越界且趋势需关注的项目记录",
+      "D": "血压：作为越界且趋势需关注的项目记录"
+    },
+    "correct_answer": "B",
+    "explanation": "判定需要同时满足三步：先看当前数值是否超出图中成人安静参考范围，再看趋势箭头是否继续朝异常方向变化，最后排除采集状态不可靠的项目。图中脉搏当前为$58$次/分，低于参考范围$60$–$100$次/分，且趋势箭头向下，表示继续远离下限；同时脉搏栏显示采集状态为“稳定”。体温虽高于参考上限且箭头向上，但该栏标注“探头松动”，不应直接作为可靠异常记录依据。呼吸虽高于参考上限，但趋势箭头向下，未继续朝异常方向变化。血压在图中参考范围内。因此最合适的是脉搏。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "monitoring_screen",
+    "image_path": "images/af358b687e3a488c.png",
+    "image_prompt": "A synthetic educational monitoring_screen diagram, front-facing, split into a top title area, a central 2 by 2 grid, and one bottom reference strip. Show 6 main elements: title (labeled \"生命体征监测\"), four vital-sign cards, and a bottom strip (labeled \"成人安静参考范围\"). Top-left card labeled \"体温\" with \"37.4℃\", an up arrow \"↑\", and \"探头松动\". Top-right card labeled \"脉搏\" with \"58次/分\", a down arrow \"↓\", and \"稳定\". Bottom-left card labeled \"呼吸\" with \"21次/分\", a down arrow \"↓\", and \"稳定\". Bottom-right card labeled \"血压\" with \"128/84 mmHg\", a horizontal arrow \"→\", and \"稳定\". The bottom strip lists \"体温36.0-37.2℃\", \"脉搏60-100次/分\", \"呼吸12-20次/分\", and \"血压90-139/60-89 mmHg\". Use orange borders for the first three cards and gray border for blood pressure.",
+    "final_image_prompt": "A synthetic educational monitoring_screen diagram, front-facing, split into a top title area, a central 2 by 2 grid, and one bottom reference strip. Show 6 main elements: title (labeled \"生命体征监测\"), four vital-sign cards, and a bottom strip (labeled \"成人安静参考范围\"). Top-left card labeled \"体温\" with \"37.4℃\", an up arrow \"↑\", and \"探头松动\". Top-right card labeled \"脉搏\" with \"58次/分\", a down arrow \"↓\", and \"稳定\". Bottom-left card labeled \"呼吸\" with \"21次/分\", a down arrow \"↓\", and \"稳定\". Bottom-right card labeled \"血压\" with \"128/84 mmHg\", a horizontal arrow \"→\", and \"稳定\". The bottom strip lists \"体温36.0-37.2℃\", \"脉搏60-100次/分\", \"呼吸12-20次/分\", and \"血压90-139/60-89 mmHg\". Use orange borders for the first three cards and gray border for blood pressure.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各项读数、参考范围、趋势箭头和采集状态；必须读取图中多个局部信息并组合判断，才能确定唯一答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "脉搏当前读数低于图中参考下限",
+        "脉搏趋势箭头继续朝低于下限的方向变化",
+        "脉搏采集状态为稳定",
+        "体温采集状态为探头松动",
+        "呼吸趋势箭头朝参考范围方向变化",
+        "血压当前读数位于图中参考范围内"
+      ],
+      "validation_rules": [
+        "先比较每个当前读数与对应参考范围",
+        "再判断趋势箭头是否继续远离最近的正常范围边界",
+        "排除采集状态不是稳定的项目",
+        "唯一同时满足越界、异常方向趋势和稳定采集状态的选项为B"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-002-Q0002",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-002",
+    "kp_name": "给药原则与途径",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟给药核对图。按“五个正确”中的剂量与途径核对原则，并结合图示换算信息，护士应选择哪一项执行方案？",
+    "options": {
+      "A": "按医嘱途径改为肌肉注射，一次抽取 $1.5\\,\\mathrm{mL}$。",
+      "B": "保持图示医嘱途径，一处给入 $1.5\\,\\mathrm{mL}$。",
+      "C": "保持图示医嘱途径，分两处给入 $0.8\\,\\mathrm{mL}$ 与 $0.7\\,\\mathrm{mL}$。",
+      "D": "保持图示医嘱途径，分两处各给入 $0.7\\,\\mathrm{mL}$。"
+    },
+    "correct_answer": "C",
+    "explanation": "图中医嘱量为 $0.09\\,\\mathrm{g}$，需先换算为 $90\\,\\mathrm{mg}$。药液标示浓度为 $60\\,\\mathrm{mg/mL}$，所需体积为 $90\\div60=1.5\\,\\mathrm{mL}$。图中途径为皮下注射，且单处上限为 $1.0\\,\\mathrm{mL}$，因此不能一处给入 $1.5\\,\\mathrm{mL}$，也不能擅自改为肌肉注射。注射器刻度允许按 $0.1\\,\\mathrm{mL}$ 取量，所以 $0.8\\,\\mathrm{mL}+0.7\\,\\mathrm{mL}=1.5\\,\\mathrm{mL}$ 且每处不超过上限；$0.7\\,\\mathrm{mL}+0.7\\,\\mathrm{mL}=1.4\\,\\mathrm{mL}$，剂量不足。故选C。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "基于精确图示信息考查给药原则与途径",
+    "blueprint_image_type": "annotated_figure",
+    "image_path": "images/4323b20bc1c146d1.png",
+    "image_prompt": "An annotated figure for a synthetic nursing education medication-check diagram. Global layout is a white page split into four regions plus one bottom-center region: order card at upper left, vial at upper right, route-limit table at lower left, syringe scale at lower right, and injection-site sketch at bottom center. Draw 5 main elements. The order card is labeled \"模拟医嘱卡\" and contains \"途径：皮下注射\" and \"剂量：0.09 g\". The vial is labeled \"模拟药液瓶\" and \"浓度：60 mg/mL\". The table is labeled \"途径限制\" with 2 rows: \"皮下注射\" paired with \"单处上限1.0 mL\", and \"肌肉注射\" paired with \"单处上限2.0 mL\". The syringe is labeled \"注射器刻度\" with marks \"0\", \"0.5\", \"1.0\", \"1.5\", \"2.0 mL\" and 0.1 mL tick spacing. Arrows connect order card to vial, vial to syringe, table to injection sites, syringe to injection sites. Highlight the subcutaneous route row and order route in light blue.",
+    "final_image_prompt": "An annotated figure for a synthetic nursing education medication-check diagram. Global layout is a white page split into four regions plus one bottom-center region: order card at upper left, vial at upper right, route-limit table at lower left, syringe scale at lower right, and injection-site sketch at bottom center. Draw 5 main elements. The order card is labeled \"模拟医嘱卡\" and contains \"途径：皮下注射\" and \"剂量：0.09 g\". The vial is labeled \"模拟药液瓶\" and \"浓度：60 mg/mL\". The table is labeled \"途径限制\" with 2 rows: \"皮下注射\" paired with \"单处上限1.0 mL\", and \"肌肉注射\" paired with \"单处上限2.0 mL\". The syringe is labeled \"注射器刻度\" with marks \"0\", \"0.5\", \"1.0\", \"1.5\", \"2.0 mL\" and 0.1 mL tick spacing. Arrows connect order card to vial, vial to syringe, table to injection sites, syringe to injection sites. Highlight the subcutaneous route row and order route in light blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出剂量、浓度、途径、单处上限和刻度精度；必须读取图中这些事实后才能完成换算和约束判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "医嘱途径为皮下注射",
+        "医嘱剂量为0.09 g",
+        "药液浓度为60 mg/mL",
+        "皮下注射单处上限为1.0 mL",
+        "注射器刻度间隔为0.1 mL"
+      ],
+      "validation_rules": [
+        "先将图示剂量换算为毫克：$0.09\\,\\mathrm{g}=90\\,\\mathrm{mg}$",
+        "按图示浓度计算所需体积：$90\\div60=1.5\\,\\mathrm{mL}$",
+        "执行方案必须保持图示医嘱途径，不能改为其他途径",
+        "每处给入量不得超过图示皮下注射单处上限",
+        "各处给入量之和必须等于计算所得总体积，且符合图示刻度精度"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-002-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-002",
+    "kp_name": "给药原则与途径",
+    "question_language": "zh",
+    "question_text": "根据图中给药核对训练板，护士在执行前应将哪一项记录判为需暂停并复核的异常项？",
+    "options": {
+      "A": "甲记录",
+      "B": "乙记录",
+      "C": "丙记录",
+      "D": "丁记录"
+    },
+    "correct_answer": "D",
+    "explanation": "图中医嘱信息为：对象编号为27，药物为K片，每日总量为$300\\text{ mg}$，分$2$次给药，库存规格为$75\\text{ mg/片}$，给药时间包括$08{:}00$，途径为口服。因此单次剂量应为$300\\div2=150\\text{ mg}$，折合片数为$150\\div75=2$片。逐项核对五个正确：甲为27号、K片、2片、08:00、口服，符合；乙虽然是20:00时段，但图中时间表包含08:00与20:00，不能仅因不是当前左侧箭头所指而判为剂量或途径异常；丙为27号、K片、150 mg、08:00、口服，剂量表达与2片等价；丁为27号、K片、3片、08:00、口服，换算为$3\\times75=225\\text{ mg}$，与单次应给$150\\text{ mg}$不符，属于给药剂量核对异常，应暂停并复核。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/52481515d3ec4c74.png",
+    "image_prompt": "A synthetic rehabilitation nursing education diagram, viewed frontally as a medication-check training board split into left, center, and right regions. Place 6 main elements: a left card labeled \"医嘱卡\" with lines labeled \"对象编号27\", \"K片\", \"每日总量300 mg\", \"分2次\", \"途径：口服\"; a center card labeled \"库存规格\" with \"75 mg/片\"; a small center-bottom box labeled \"时间格\" containing \"08:00\" and \"20:00\"; and 4 right stacked record cards labeled \"甲记录\", \"乙记录\", \"丙记录\", \"丁记录\". Connect 医嘱卡 to 库存规格 and 时间格 with arrows; connect 库存规格 to all 4 record cards; connect 时间格 to 甲记录 and 乙记录 with thin lines. Record cards show respectively: \"27 K片 2片 08:00 口服\", \"27 K片 2片 20:00 口服\", \"27 K片 150 mg 08:00 口服\", \"27 K片 3片 08:00 口服\". Use pale blue, pale yellow, and pale gray highlights only.",
+    "final_image_prompt": "A synthetic rehabilitation nursing education diagram, viewed frontally as a medication-check training board split into left, center, and right regions. Place 6 main elements: a left card labeled \"医嘱卡\" with lines labeled \"对象编号27\", \"K片\", \"每日总量300 mg\", \"分2次\", \"途径：口服\"; a center card labeled \"库存规格\" with \"75 mg/片\"; a small center-bottom box labeled \"时间格\" containing \"08:00\" and \"20:00\"; and 4 right stacked record cards labeled \"甲记录\", \"乙记录\", \"丙记录\", \"丁记录\". Connect 医嘱卡 to 库存规格 and 时间格 with arrows; connect 库存规格 to all 4 record cards; connect 时间格 to 甲记录 and 乙记录 with thin lines. Record cards show respectively: \"27 K片 2片 08:00 口服\", \"27 K片 2片 20:00 口服\", \"27 K片 150 mg 08:00 口服\", \"27 K片 3片 08:00 口服\". Use pale blue, pale yellow, and pale gray highlights only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项不提供医嘱总量、分次次数、库存规格、允许时间格或各记录卡内容，必须依赖图片读取并计算后才能判断。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "图中医嘱给出每日总量、分次次数、口服途径和对象编号",
+        "图中库存规格给出每片毫克数",
+        "图中四张记录卡分别给出不同剂量表达、时间和途径",
+        "图中时间格列出两个允许核对的给药时点"
+      ],
+      "validation_rules": [
+        "先用图中每日总量除以分次次数得到单次毫克量",
+        "再用单次毫克量除以图中单片规格得到应核对片数",
+        "逐项比较四张记录卡的对象、药物、剂量、时间和途径",
+        "只有剂量与换算结果不一致且其他项目表面相符的记录为需暂停复核项"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-002-Q0004",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-002",
+    "kp_name": "给药原则与途径",
+    "question_language": "zh",
+    "question_text": "根据图中“任务X”的限制条件与各给药途径属性，护士应选择哪一种给药途径最符合要求？",
+    "options": {
+      "A": "口服给药",
+      "B": "皮下注射",
+      "C": "肌肉注射",
+      "D": "静脉注射"
+    },
+    "correct_answer": "C",
+    "explanation": "图中任务X需要同时满足四项条件：避开胃肠道、给药量为$3\\,\\text{mL}$、起效速度要求高于皮下注射、且限制为非静脉途径。口服给药经过胃肠道，不符合避开胃肠道的要求；皮下注射虽然避开胃肠道，但图示容量范围为$0.5$至$1\\,\\text{mL}$，且速度等级低于任务要求；静脉注射虽起效快并避开胃肠道，但与“非静脉途径”限制相冲突。肌肉注射避开胃肠道，容量范围覆盖$3\\,\\text{mL}$，速度等级高于皮下注射，同时不是静脉途径，因此最符合图示条件。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "适应证选择",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/f9e8e5be1d4d4ddc.png",
+    "image_prompt": "An academic diagram showing a route-selection comparison. The layout is split into a left task region and a right comparison region. On the left, draw 1 rectangular card labeled “任务X” with 4 stacked tags labeled “避开胃肠道”, “剂量 3 mL”, “速度 > 皮下”, and “非静脉”. On the right, draw 4 route cards in a 2 by 2 grid: upper left labeled “口服” with rows “通道：胃肠道”, “容量：常规口服量”, “速度：低”; upper right labeled “皮下” with rows “通道：非胃肠道”, “容量：0.5-1 mL”, “速度：中低”; lower left labeled “肌肉” with rows “通道：非胃肠道”, “容量：2-5 mL”, “速度：中高”; lower right labeled “静脉” with rows “通道：静脉”, “容量：按医嘱”, “速度：高”. Draw 4 thin connector lines from the task card to the 4 route cards. Add orange arrows linking the 4 speed labels from low to high, and a blue outline around “非静脉”.",
+    "final_image_prompt": "An academic diagram showing a route-selection comparison. The layout is split into a left task region and a right comparison region. On the left, draw 1 rectangular card labeled “任务X” with 4 stacked tags labeled “避开胃肠道”, “剂量 3 mL”, “速度 > 皮下”, and “非静脉”. On the right, draw 4 route cards in a 2 by 2 grid: upper left labeled “口服” with rows “通道：胃肠道”, “容量：常规口服量”, “速度：低”; upper right labeled “皮下” with rows “通道：非胃肠道”, “容量：0.5-1 mL”, “速度：中低”; lower left labeled “肌肉” with rows “通道：非胃肠道”, “容量：2-5 mL”, “速度：中高”; lower right labeled “静脉” with rows “通道：静脉”, “容量：按医嘱”, “速度：高”. Draw 4 thin connector lines from the task card to the 4 route cards. Add orange arrows linking the 4 speed labels from low to high, and a blue outline around “非静脉”.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任务X的具体限制，也没有给出各途径的容量、通道和速度属性；必须读取图中任务卡和途径卡并进行综合筛选才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "任务X要求避开胃肠道、剂量为3 mL、速度高于皮下且为非静脉途径",
+        "各途径卡中分别给出了通道、容量和速度属性",
+        "肌肉途径的容量范围覆盖3 mL，且速度等级高于皮下，同时不属于静脉途径"
+      ],
+      "validation_rules": [
+        "候选途径必须满足任务X卡中的全部限制条件",
+        "容量范围必须覆盖$3\\,\\text{mL}$",
+        "速度属性必须高于皮下卡所示速度等级",
+        "若途径卡显示静脉通道，则不满足非静脉限制"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-002-Q0002",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-002",
+    "kp_name": "给药原则与途径",
+    "question_language": "zh",
+    "question_text": "观察图中康复训练室给药核对板，按“五个正确”和剂量换算原则，哪一项计划应判定为异常并先暂停核对？",
+    "options": {
+      "A": "计划甲",
+      "B": "计划乙",
+      "C": "计划丙",
+      "D": "计划丁"
+    },
+    "correct_answer": "C",
+    "explanation": "逐项按患者、药物、剂量、途径、时间核对。计划甲：医嘱为每次 $0.75\\text{ g}$，现有 $250\\text{ mg}/片$，换算为 $750\\text{ mg}\\div250\\text{ mg/片}=3$ 片，且患者、途径、时间一致。计划乙：医嘱为 $60\\text{ mg}$，安瓿标示 $40\\text{ mg}/\\text{mL}$，需 $60\\div40=1.5\\text{ mL}$，且为肌肉注射、时间一致。计划丙：医嘱为 $0.2\\text{ mL}$ 皮内给药，但计划卡显示 $0.8\\text{ mL}$ 皮内给药；虽然患者和时间一致，但剂量与医嘱不符，应暂停核对。计划丁：医嘱为 $2\\text{ mL}$ 雾化吸入，计划卡显示同量同途径，符合。因此异常项为计划丙。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/fa0f430cec1a478c.png",
+    "image_prompt": "A synthetic educational rehabilitation_image diagram titled (labeled \"康复训练室给药核对板\"). Global layout: left region has 1 wristband, middle region has 4 stacked order cards, right region has 4 stacked plan cards, bottom has 5 check circles. The wristband is labeled \"腕带\", \"床号12\", \"林岚\", \"ID48\". Middle cards: (labeled \"医嘱甲\", \"林岚 ID48\", \"口服\", \"0.75 g\", \"250 mg/片\", \"10:00\"), (labeled \"医嘱乙\", \"肌肉注射\", \"60 mg\", \"40 mg/mL\", \"10:00\"), (labeled \"医嘱丙\", \"皮内\", \"0.2 mL\", \"10:00\"), (labeled \"医嘱丁\", \"吸入\", \"2 mL\", \"10:00\"). Right cards: (labeled \"计划甲\", \"口服\", \"3片\", \"10:00\"), (labeled \"计划乙\", \"肌肉注射\", \"1.5 mL\", \"10:00\"), (labeled \"计划丙\", \"皮内\", \"0.8 mL\", \"10:00\"), (labeled \"计划丁\", \"吸入\", \"2 mL\", \"10:00\"). Draw 4 horizontal arrows from each order card to its matching plan card, and 4 thin lines from the wristband to the plan cards. Bottom circles labeled \"患者\", \"药物\", \"剂量\", \"途径\", \"时间\". Use a red outline only around the dose box on 计划丙.",
+    "final_image_prompt": "A synthetic educational rehabilitation_image diagram titled (labeled \"康复训练室给药核对板\"). Global layout: left region has 1 wristband, middle region has 4 stacked order cards, right region has 4 stacked plan cards, bottom has 5 check circles. The wristband is labeled \"腕带\", \"床号12\", \"林岚\", \"ID48\". Middle cards: (labeled \"医嘱甲\", \"林岚 ID48\", \"口服\", \"0.75 g\", \"250 mg/片\", \"10:00\"), (labeled \"医嘱乙\", \"肌肉注射\", \"60 mg\", \"40 mg/mL\", \"10:00\"), (labeled \"医嘱丙\", \"皮内\", \"0.2 mL\", \"10:00\"), (labeled \"医嘱丁\", \"吸入\", \"2 mL\", \"10:00\"). Right cards: (labeled \"计划甲\", \"口服\", \"3片\", \"10:00\"), (labeled \"计划乙\", \"肌肉注射\", \"1.5 mL\", \"10:00\"), (labeled \"计划丙\", \"皮内\", \"0.8 mL\", \"10:00\"), (labeled \"计划丁\", \"吸入\", \"2 mL\", \"10:00\"). Draw 4 horizontal arrows from each order card to its matching plan card, and 4 thin lines from the wristband to the plan cards. Bottom circles labeled \"患者\", \"药物\", \"剂量\", \"途径\", \"时间\". Use a red outline only around the dose box on 计划丙.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出计划代号，关键的患者信息、给药途径、剂量单位、浓度和执行量均在图中，必须看图并换算后才能确定异常项。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中医嘱甲、乙、丙、丁分别给出不同途径、剂量单位和时间",
+        "图中计划甲、乙、丙、丁分别给出对应执行途径、剂量和时间",
+        "图中计划丙剂量与其对应医嘱剂量不同",
+        "图中甲、乙需要通过单位或浓度换算后核对"
+      ],
+      "validation_rules": [
+        "先核对每项计划与腕带患者信息是否一致",
+        "再核对每项计划与对应医嘱的途径和时间是否一致",
+        "对甲执行$0.75\\text{ g}=750\\text{ mg}$，$750\\div250=3$的剂量换算",
+        "对乙执行$60\\div40=1.5$的体积换算",
+        "比较丙的医嘱剂量与计划剂量，识别需暂停核对的异常项"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-002-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-002",
+    "kp_name": "给药原则与途径",
+    "question_language": "zh",
+    "question_text": "在图示的模拟康复护理给药核对场景中，护士按“五个正确”和给药途径要求进行给药前核查。若只能先暂停并复核一个环节，最应判定为异常的是哪一项？",
+    "options": {
+      "A": "口服杯对应的给药环节",
+      "B": "皮下注射器对应的给药环节",
+      "C": "肌内注射器对应的给药环节",
+      "D": "静脉输液袋对应的给药环节"
+    },
+    "correct_answer": "B",
+    "explanation": "图中医嘱卡显示本次模拟任务的身份码、时间、给药途径和计算规则；核对时需同时满足“五个正确”中的正确对象、正确时间、正确途径和正确剂量。图中腕带身份码与医嘱卡一致，时间窗也覆盖医嘱时间，因此不能仅因对象或时间判为异常。剂量计算为每毫升含量乘以准备体积：皮下针筒图示为 $40\\,\\text{mg/mL}\\times1.5\\,\\text{mL}=60\\,\\text{mg}$，而医嘱所需剂量为 $45\\,\\text{mg}$，且途径标为皮下，所以该环节虽然途径相符，但剂量不符，必须暂停复核。口服杯、肌内注射器和静脉输液袋虽可作为常见途径干扰，但与本次指定途径不一致，不能作为本次准备执行的正确环节；其中若只看容量或颜色，容易误判。故答案为B。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/ffa9fb4750c84906.png",
+    "image_prompt": "A synthetic rehabilitation nursing diagram, viewed from above, split into an upper verification area and a lower preparation row. Show 6 main elements: an order card at upper left (labeled \"医嘱卡\", \"身份码2386\", \"09:00\", \"途径：皮下\", \"剂量：45 mg\"), a wristband at upper right (labeled \"腕带\", \"身份码2386\"), and 4 items along the bottom from left to right: a cup (labeled \"口服杯\", \"途径：口服\"), a syringe (labeled \"皮下注射器\", \"途径：皮下\", \"40 mg/mL\", \"1.5 mL\"), a syringe (labeled \"肌内注射器\", \"途径：肌肉\"), and an IV bag (labeled \"静脉输液袋\", \"途径：静脉\"). Place a checklist box in the center (labeled \"对象\", \"时间\", \"途径\", \"剂量\", \"允许时间08:45-09:15\"). Draw thin lines from the checklist to all 6 elements. Highlight only the subcutaneous syringe with a pale red border.",
+    "final_image_prompt": "A synthetic rehabilitation nursing diagram, viewed from above, split into an upper verification area and a lower preparation row. Show 6 main elements: an order card at upper left (labeled \"医嘱卡\", \"身份码2386\", \"09:00\", \"途径：皮下\", \"剂量：45 mg\"), a wristband at upper right (labeled \"腕带\", \"身份码2386\"), and 4 items along the bottom from left to right: a cup (labeled \"口服杯\", \"途径：口服\"), a syringe (labeled \"皮下注射器\", \"途径：皮下\", \"40 mg/mL\", \"1.5 mL\"), a syringe (labeled \"肌内注射器\", \"途径：肌肉\"), and an IV bag (labeled \"静脉输液袋\", \"途径：静脉\"). Place a checklist box in the center (labeled \"对象\", \"时间\", \"途径\", \"剂量\", \"允许时间08:45-09:15\"). Draw thin lines from the checklist to all 6 elements. Highlight only the subcutaneous syringe with a pale red border.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出身份码、时间窗、指定途径、浓度、体积和医嘱剂量；必须读取图中信息并计算后才能确定异常环节。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中医嘱卡给出的身份码、时间、途径和剂量",
+        "图中腕带身份码与医嘱卡身份码的对应关系",
+        "图中允许时间窗与医嘱时间的关系",
+        "图中皮下注射器的浓度和体积",
+        "图中4个准备物各自标注的给药途径"
+      ],
+      "validation_rules": [
+        "必须确认对象核对一致后再判断异常来源",
+        "必须确认医嘱时间落在允许时间窗内",
+        "必须以图中指定途径筛选准备物",
+        "必须用图中浓度与体积计算准备剂量，并与医嘱剂量比较",
+        "仅当途径相符但剂量计算不符时，判定该准备环节为需暂停复核的异常"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-004-Q0002",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-004",
+    "kp_name": "无菌技术",
+    "question_language": "zh",
+    "question_text": "图中记录了4名学生完成同一无菌准备任务时的动作轨迹。若判定标准为：只要轨迹跨过无菌区、接触污染标记、或持物钳钳端高于手柄，均视为违反无菌原则；同时还要计算每条轨迹的无菌边界内停留次数。哪名学生的操作安排最符合要求？",
+    "options": {
+      "A": "学生甲",
+      "B": "学生乙",
+      "C": "学生丙",
+      "D": "学生丁"
+    },
+    "correct_answer": "C",
+    "explanation": "判定需同时核对3类视觉信息。第一，看轨迹是否跨过中央无菌区：甲的轨迹从左下到右上穿过无菌巾中央区域，违反；乙绕行但经过红色污染标记，违反；丁有一段从上缘斜穿无菌区，违反。第二，看无菌持物钳方向：图中丙的钳端低于手柄，符合持物钳使用原则；丁的钳端高于手柄，也违反。第三，看边界内停留次数：丙只在规定取放点短暂停留，且未触及污染标记、未跨越无菌区、持物钳方向正确。因此最符合无菌原则的是学生丙。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "操作步骤",
+    "blueprint_image_type": "clinical_nursing_diagram",
+    "image_path": "images/1abbcfbe3b7c4410.png",
+    "image_prompt": "A clinical nursing diagram, viewed from above, split into a central sterile work area and surrounding operation paths. Show 1 light-blue rectangle labeled \"无菌巾\" with 1 gray outline labeled \"无菌边界\". Place 1 cylinder on the left labeled \"持物钳筒\", 1 package on the right labeled \"手套包\", and 1 red circle at the lower-right outside the rectangle labeled \"污染标记\". Draw exactly 4 colored arrow routes: route labeled \"甲\" from lower-left to upper-right crossing the blue rectangle, with label \"停留2次\"; route labeled \"乙\" curving below the rectangle and touching the red circle, with label \"停留1次\"; route labeled \"丙\" from the left cylinder to the left edge of the rectangle, then outside to the right package, with label \"停留1次\"; route labeled \"丁\" from top to right crossing the upper part of the blue rectangle, with label \"停留2次\". Add 2 small forceps icons: beside 丙 labeled \"钳端低于手柄\", beside 丁 labeled \"钳端高于手柄\". Use red highlighting only on the contamination marker and orange highlighting on the raised forceps tip.",
+    "final_image_prompt": "A clinical nursing diagram, viewed from above, split into a central sterile work area and surrounding operation paths. Show 1 light-blue rectangle labeled \"无菌巾\" with 1 gray outline labeled \"无菌边界\". Place 1 cylinder on the left labeled \"持物钳筒\", 1 package on the right labeled \"手套包\", and 1 red circle at the lower-right outside the rectangle labeled \"污染标记\". Draw exactly 4 colored arrow routes: route labeled \"甲\" from lower-left to upper-right crossing the blue rectangle, with label \"停留2次\"; route labeled \"乙\" curving below the rectangle and touching the red circle, with label \"停留1次\"; route labeled \"丙\" from the left cylinder to the left edge of the rectangle, then outside to the right package, with label \"停留1次\"; route labeled \"丁\" from top to right crossing the upper part of the blue rectangle, with label \"停留2次\". Add 2 small forceps icons: beside 丙 labeled \"钳端低于手柄\", beside 丁 labeled \"钳端高于手柄\". Use red highlighting only on the contamination marker and orange highlighting on the raised forceps tip.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定标准，未给出各学生的轨迹、污染接触、停留次数和持物钳方向；必须读取图中空间关系才能判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "甲的轨迹穿过无菌巾中央且停留2次",
+        "乙的轨迹与污染标记相交",
+        "丙的轨迹沿无菌巾外侧并显示钳端低于手柄",
+        "丁的轨迹进入无菌巾区域且钳端高于手柄"
+      ],
+      "validation_rules": [
+        "排除任何轨迹跨过或进入无菌巾区域的选项",
+        "排除任何轨迹接触污染标记的选项",
+        "排除任何持物钳钳端高于手柄的选项",
+        "在剩余选项中选择停留次数不超过1且动作路径符合无菌原则者"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-004-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-004",
+    "kp_name": "无菌技术",
+    "question_language": "zh",
+    "question_text": "某基础护理技能训练站用图示记录4名学员完成同一无菌持物钳取物与铺巾后整理动作。按无菌原则综合判断，哪名学员的记录应判定为违反无菌技术？",
+    "options": {
+      "A": "甲学员",
+      "B": "乙学员",
+      "C": "丙学员",
+      "D": "丁学员"
+    },
+    "correct_answer": "C",
+    "explanation": "判断需同时看三个图示条件：无菌持物钳转运时钳端应低于手柄；器械运动轨迹不能进入污染标识区；手套或手臂不能越过无菌巾内缘进入无菌区。甲的钳端低于手柄，轨迹与污染区有安全间距，手套未越过内缘；乙虽然轨迹靠近污染标识区，但仍未进入或接触，且钳端低于手柄、手套未越界；丁的手套接近内缘但仍在外侧，钳端方向和轨迹也合格。丙的轨迹与污染标识区相交，同时手套越过无菌巾内缘，任一项均足以判为污染，因此应选C。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/56c101c2a36e49f6.png",
+    "image_prompt": "A rehabilitation_image diagram for a synthetic nursing skills training record, viewed from above and split into 4 equal horizontal panels from left to right. Show 4 trainee panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". In each panel place 1 blue straight line labeled \"无菌巾内缘\", 1 red hatched rectangle labeled \"污染标识区\", 1 black arrow curve labeled \"持物钳轨迹\", 1 green short line labeled \"手套边缘\", and 1 small vertical scale with labels \"钳端\" and \"手柄\". Connections: in \"甲\", the curve misses the red rectangle and is labeled \"3 cm\", with \"钳端 18 cm\", \"手柄 27 cm\", \"外侧1 cm\"; in \"乙\", miss and \"1 cm\", \"16 cm\", \"24 cm\", \"外侧2 cm\"; in \"丙\", curve crosses the red rectangle labeled \"穿过\", \"22 cm\", \"30 cm\", \"越过2 cm\"; in \"丁\", miss and \"4 cm\", \"15 cm\", \"21 cm\", \"外侧0.5 cm\". Use red, blue, green highlights only as specified.",
+    "final_image_prompt": "A rehabilitation_image diagram for a synthetic nursing skills training record, viewed from above and split into 4 equal horizontal panels from left to right. Show 4 trainee panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". In each panel place 1 blue straight line labeled \"无菌巾内缘\", 1 red hatched rectangle labeled \"污染标识区\", 1 black arrow curve labeled \"持物钳轨迹\", 1 green short line labeled \"手套边缘\", and 1 small vertical scale with labels \"钳端\" and \"手柄\". Connections: in \"甲\", the curve misses the red rectangle and is labeled \"3 cm\", with \"钳端 18 cm\", \"手柄 27 cm\", \"外侧1 cm\"; in \"乙\", miss and \"1 cm\", \"16 cm\", \"24 cm\", \"外侧2 cm\"; in \"丙\", curve crosses the red rectangle labeled \"穿过\", \"22 cm\", \"30 cm\", \"越过2 cm\"; in \"丁\", miss and \"4 cm\", \"15 cm\", \"21 cm\", \"外侧0.5 cm\". Use red, blue, green highlights only as specified.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出各学员的轨迹、距离、高度和手套边缘位置，必须根据图中4个面板的空间关系和数值综合判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "丙的持物钳轨迹与污染标识区相交",
+        "丙的手套边缘越过无菌巾内缘",
+        "甲、乙、丁的轨迹未与污染标识区相交",
+        "甲、乙、丁的手套边缘均位于无菌巾内缘外侧",
+        "4名学员的钳端高度均低于对应手柄高度"
+      ],
+      "validation_rules": [
+        "若持物钳轨迹进入或接触污染标识区，则判为违反无菌技术",
+        "若手套边缘越过无菌巾内缘进入无菌区，则判为违反无菌技术",
+        "若钳端高度高于或等于手柄高度，则判为违反无菌持物钳使用原则",
+        "同时检查轨迹、手套边缘和钳端手柄高度后，只有C对应的学员满足违规判定"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-005-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-005",
+    "kp_name": "体位与搬运",
+    "question_language": "zh",
+    "question_text": "根据图示4种候选安置方案，某受照护者需选择半坐卧位：床头抬高应在规定范围内，膝下支托角度需达到床头角度的一半及以上以减少下滑剪切；同时要求左肩不受主要压迫，并保留右背部护理操作通道。最符合要求的是哪一项？",
+    "options": {
+      "A": "方案甲",
+      "B": "方案乙",
+      "C": "方案丙",
+      "D": "方案丁"
+    },
+    "correct_answer": "B",
+    "explanation": "判断需同时满足4个条件。半坐卧位床头角度应在30°～45°；膝下支托角度需不小于床头角度的一半；左肩不能成为主要受压侧；右背部需保留操作通道。方案甲床头角度虽在范围内，但膝下支托不足床头角度的一半。方案乙床头40°在范围内，膝下支托22°满足不少于20°，主要受压标记不在左肩，且右背部通道开放，因此符合。方案丙床头角度低于半坐卧位要求。方案丁床头角度虽可接受，但左肩有主要受压标记且右背部通道被床栏遮挡，不符合。故选B。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "适应证选择",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/4cd423e676a64e46.png",
+    "image_prompt": "An academic diagram showing four candidate patient-positioning panels. Use a 2 by 2 grid viewed from the side: top-left panel labeled \"方案甲\", top-right labeled \"方案乙\", bottom-left labeled \"方案丙\", bottom-right labeled \"方案丁\". Each panel contains 1 adjustable nursing bed and 1 synthetic neutral adult outline in semi-reclining posture. In 方案甲, show a green arc labeled \"床头角 36°\", a blue arc labeled \"膝托角 16°\", a red dot on \"右肩\", and a green gap labeled \"右背部通道开放\". In 方案乙, show \"床头角 40°\", \"膝托角 22°\", red dot on \"右肩\", and \"右背部通道开放\". In 方案丙, show \"床头角 25°\", \"膝托角 18°\", red dot on \"右肩\", and \"右背部通道开放\". In 方案丁, show \"床头角 42°\", \"膝托角 24°\", red dot on \"左肩\", and a black rail labeled \"右背部通道遮挡\". Use red for pressure dots, green for head arcs and open gaps, blue for knee arcs.",
+    "final_image_prompt": "An academic diagram showing four candidate patient-positioning panels. Use a 2 by 2 grid viewed from the side: top-left panel labeled \"方案甲\", top-right labeled \"方案乙\", bottom-left labeled \"方案丙\", bottom-right labeled \"方案丁\". Each panel contains 1 adjustable nursing bed and 1 synthetic neutral adult outline in semi-reclining posture. In 方案甲, show a green arc labeled \"床头角 36°\", a blue arc labeled \"膝托角 16°\", a red dot on \"右肩\", and a green gap labeled \"右背部通道开放\". In 方案乙, show \"床头角 40°\", \"膝托角 22°\", red dot on \"右肩\", and \"右背部通道开放\". In 方案丙, show \"床头角 25°\", \"膝托角 18°\", red dot on \"右肩\", and \"右背部通道开放\". In 方案丁, show \"床头角 42°\", \"膝托角 24°\", red dot on \"左肩\", and a black rail labeled \"右背部通道遮挡\". Use red for pressure dots, green for head arcs and open gaps, blue for knee arcs.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出选择规则，未给出各方案的角度、受压位置和通道状态；必须读图并进行比例比较与条件筛选后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个方案各自的床头角度",
+        "四个方案各自的膝下支托角度",
+        "四个方案各自的肩部受压标记位置",
+        "四个方案各自的右背部通道状态"
+      ],
+      "validation_rules": [
+        "床头角度必须在30°～45°之间",
+        "膝下支托角度必须大于或等于对应床头角度的二分之一",
+        "主要受压标记不得位于左肩",
+        "右背部通道必须显示为开放",
+        "仅同时满足全部规则的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-006-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-006",
+    "kp_name": "管道护理",
+    "question_language": "zh",
+    "question_text": "根据图中床旁管道护理巡查示意，若护理记录卡的组合条件用于判断“需优先处理的异常管道”，下列哪一项应被归入该类？",
+    "options": {
+      "A": "胃管",
+      "B": "尿管",
+      "C": "引流管",
+      "D": "氧气管"
+    },
+    "correct_answer": "B",
+    "explanation": "图中规则卡给出两组组合判断条件：其一为受压角度达到阈值且流量下降达到阈值；其二为固定松动距离超过阈值且外露长度变化达到阈值。逐项读取图示：胃管虽有较大的受压角度，但流量下降未达到组合条件；引流管虽有流量下降，但受压角度未达到组合条件；氧气管虽有固定松动，但外露长度变化未达到组合条件；尿管同时满足固定松动距离超过阈值和外露长度变化达到阈值，因此应归入需优先处理的异常管道。答案选B。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/9301f0c253a44114.png",
+    "image_prompt": "A rehabilitation_image diagram for synthetic nursing education, split into a left rule card and a right column of four tube panels. The left card is labeled \"组合条件\" and contains 2 horizontal rows: row 1 has boxes labeled \"受压角度≥70°\" plus \"流量下降≥20 mL/h\"; row 2 has boxes labeled \"固定松动>1 cm\" plus \"外露变化≥2 cm\". On the right, stack 4 white panels from top to bottom labeled \"胃管\", \"尿管\", \"引流管\", and \"氧气管\". The 胃管 panel connects to two yellow boxes labeled \"受压角度75°\" and \"流量下降12 mL/h\". The 尿管 panel connects to \"固定松动1.4 cm\" and \"外露变化2.5 cm\". The 引流管 panel connects to \"受压角度65°\" and \"流量下降24 mL/h\". The 氧气管 panel connects to \"固定松动1.2 cm\" and \"外露变化1.5 cm\". Use light blue border for the rule card and no answer-highlighting.",
+    "final_image_prompt": "A rehabilitation_image diagram for synthetic nursing education, split into a left rule card and a right column of four tube panels. The left card is labeled \"组合条件\" and contains 2 horizontal rows: row 1 has boxes labeled \"受压角度≥70°\" plus \"流量下降≥20 mL/h\"; row 2 has boxes labeled \"固定松动>1 cm\" plus \"外露变化≥2 cm\". On the right, stack 4 white panels from top to bottom labeled \"胃管\", \"尿管\", \"引流管\", and \"氧气管\". The 胃管 panel connects to two yellow boxes labeled \"受压角度75°\" and \"流量下降12 mL/h\". The 尿管 panel connects to \"固定松动1.4 cm\" and \"外露变化2.5 cm\". The 引流管 panel connects to \"受压角度65°\" and \"流量下降24 mL/h\". The 氧气管 panel connects to \"固定松动1.2 cm\" and \"外露变化1.5 cm\". Use light blue border for the rule card and no answer-highlighting.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出作答任务与管道名称，具体阈值、各管道指标数值及其对应关系均只能从图片读取。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中规则卡给出两组组合判断条件",
+        "图中四个管道面板分别给出对应的两个指标数值",
+        "尿管面板中的两个数值与固定松动、外露变化这一组条件相对应"
+      ],
+      "validation_rules": [
+        "先判断每个选项对应面板的指标类型是否属于同一组组合条件",
+        "再比较两个指标是否同时达到该组阈值",
+        "只有同时满足同一组两个阈值的管道可作为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-007-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-007",
+    "kp_name": "排泄护理",
+    "question_language": "zh",
+    "question_text": "持续膀胱冲洗记录交班时，护士需先按“引流总量－冲洗入量”估算实际尿量，再结合时间间隔判断是否低于护理记录警戒线 $30\\,\\text{mL/h}$。根据图中4张记录卡，哪一床应判定为需要优先复核并上报的异常记录？",
+    "options": {
+      "A": "1床",
+      "B": "2床",
+      "C": "3床",
+      "D": "4床"
+    },
+    "correct_answer": "C",
+    "explanation": "本题不能只看引流袋总量，必须先扣除冲洗入量并除以记录时长。1床实际尿量为 $650-500=150\\,\\text{mL}$，$150\\div4=37.5\\,\\text{mL/h}$；2床为 $930-760=170\\,\\text{mL}$，$170\\div5=34\\,\\text{mL/h}$；3床为 $780-720=60\\,\\text{mL}$，$60\\div3=20\\,\\text{mL/h}$；4床为 $1040-850=190\\,\\text{mL}$，$190\\div6\\approx31.7\\,\\text{mL/h}$。只有3床低于 $30\\,\\text{mL/h}$，因此应优先复核并上报。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/f332ce12de674fc9.png",
+    "image_prompt": "A synthetic rehabilitation nursing diagram showing a bedside bladder irrigation record board. Global layout: front view, split into a 2 by 2 grid of four identical record cards, with a small drainage bag icon to the right of each card. Specific elements: top-left card labeled \"1床\" with \"记录时段 08:00-12:00\", \"冲洗入量 500 mL\", \"引流总量 650 mL\"; top-right card labeled \"2床\" with \"记录时段 07:00-12:00\", \"冲洗入量 760 mL\", \"引流总量 930 mL\"; bottom-left card labeled \"3床\" with \"记录时段 09:00-12:00\", \"冲洗入量 720 mL\", \"引流总量 780 mL\"; bottom-right card labeled \"4床\" with \"记录时段 06:00-12:00\", \"冲洗入量 850 mL\", \"引流总量 1040 mL\". Connections: one thin line links each card to its adjacent bag icon. Title labeled \"膀胱冲洗记录\". Use pale blue for input columns and pale yellow for drainage columns.",
+    "final_image_prompt": "A synthetic rehabilitation nursing diagram showing a bedside bladder irrigation record board. Global layout: front view, split into a 2 by 2 grid of four identical record cards, with a small drainage bag icon to the right of each card. Specific elements: top-left card labeled \"1床\" with \"记录时段 08:00-12:00\", \"冲洗入量 500 mL\", \"引流总量 650 mL\"; top-right card labeled \"2床\" with \"记录时段 07:00-12:00\", \"冲洗入量 760 mL\", \"引流总量 930 mL\"; bottom-left card labeled \"3床\" with \"记录时段 09:00-12:00\", \"冲洗入量 720 mL\", \"引流总量 780 mL\"; bottom-right card labeled \"4床\" with \"记录时段 06:00-12:00\", \"冲洗入量 850 mL\", \"引流总量 1040 mL\". Connections: one thin line links each card to its adjacent bag icon. Title labeled \"膀胱冲洗记录\". Use pale blue for input columns and pale yellow for drainage columns.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判断规则，未给出任何床号对应的时段、冲洗入量和引流总量；必须读取图片并完成扣除与换算后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "各床记录时段只在图片中给出",
+        "各床冲洗入量只在图片中给出",
+        "各床引流总量只在图片中给出"
+      ],
+      "validation_rules": [
+        "先对每床计算实际尿量：引流总量减冲洗入量",
+        "再用实际尿量除以对应记录时长，得到每小时实际尿量",
+        "与 $30\\,\\text{mL/h}$ 比较，低于该值者判定为需优先复核并上报",
+        "四个选项中仅3床满足异常判定条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S12-008-Q0001",
+    "subject_id": "S12",
+    "subject_name": "护理学",
+    "kp_id": "S12-M01-008",
+    "kp_name": "标本采集",
+    "question_language": "zh",
+    "question_text": "实训考核中，某小组按图示完成四类标本采集准备。请判断哪一组标本的处理属于异常，需要优先纠正。",
+    "options": {
+      "A": "咽拭子组",
+      "B": "尿标本组",
+      "C": "痰标本组",
+      "D": "粪标本组"
+    },
+    "correct_answer": "B",
+    "explanation": "判断异常不能只看单个标签，需要同时比较采集时间、放置时间、是否加盖、保存温度和送检时限。图中尿标本的采集时间为08:10，当前为10:25，已经经过135分钟；该标本要求120分钟内送检，且图中显示为未加盖、常温放置，因此同时不符合时限和保存要求，应优先纠正。咽拭子采集至当前经过50分钟，未超过60分钟且加盖、常温；痰标本经过45分钟，未超过120分钟且加盖、4℃；粪标本经过80分钟，未超过120分钟且加盖、4℃。所以异常需要优先纠正的是尿标本组。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "异常判断",
+    "blueprint_image_type": "rehabilitation_image",
+    "image_path": "images/d9611058cacf4420.png",
+    "image_prompt": "A rehabilitation_image diagram of a synthetic nursing training tabletop, viewed from above, split into 4 specimen regions around 1 central time card. Place the central card labeled \"当前10:25\". In the upper-left region, show 1 swab tube labeled \"咽拭子\" and 1 record card with labels \"采集09:35\", \"加盖\", \"常温\", \"60分钟内送检\". In the upper-right region, show 1 urine cup labeled \"尿标本\" and 1 record card with labels \"采集08:10\", \"未加盖\", \"常温\", \"120分钟内送检\". In the lower-left region, show 1 sputum cup labeled \"痰标本\" and labels \"采集09:40\", \"加盖\", \"4℃\", \"120分钟内送检\". In the lower-right region, show 1 stool container labeled \"粪标本\" and labels \"采集09:05\", \"加盖\", \"4℃\", \"120分钟内送检\". Draw thin lines from each region to the central card. Use a light orange border for the urine region and light blue borders for the other 3 regions.",
+    "final_image_prompt": "A rehabilitation_image diagram of a synthetic nursing training tabletop, viewed from above, split into 4 specimen regions around 1 central time card. Place the central card labeled \"当前10:25\". In the upper-left region, show 1 swab tube labeled \"咽拭子\" and 1 record card with labels \"采集09:35\", \"加盖\", \"常温\", \"60分钟内送检\". In the upper-right region, show 1 urine cup labeled \"尿标本\" and 1 record card with labels \"采集08:10\", \"未加盖\", \"常温\", \"120分钟内送检\". In the lower-left region, show 1 sputum cup labeled \"痰标本\" and labels \"采集09:40\", \"加盖\", \"4℃\", \"120分钟内送检\". In the lower-right region, show 1 stool container labeled \"粪标本\" and labels \"采集09:05\", \"加盖\", \"4℃\", \"120分钟内送检\". Draw thin lines from each region to the central card. Use a light orange border for the urine region and light blue borders for the other 3 regions.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未提供采集时间、保存状态、送检时限和当前时间，必须读取图中多项信息并比较后才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "中心时间为10:25",
+        "尿标本采集时间为08:10",
+        "尿标本容器状态为未加盖",
+        "尿标本送检时限为120分钟",
+        "其他三个区域的采集时间、容器状态、保存位置和送检时限"
+      ],
+      "validation_rules": [
+        "分别用当前时间减去各区域采集时间，得到各标本已放置时间",
+        "将每个已放置时间与该区域送检时限比较",
+        "同时检查容器状态是否为加盖",
+        "唯一同时出现超过规定送检时限且容器未加盖的选项为正确答案"
+      ]
+    }
+  }
+]

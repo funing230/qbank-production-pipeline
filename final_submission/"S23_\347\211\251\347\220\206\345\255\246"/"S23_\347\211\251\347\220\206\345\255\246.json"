@@ -1,0 +1,399 @@
+[
+  {
+    "question_id": "S23-001-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-001",
+    "kp_name": "质点运动学",
+    "question_language": "zh",
+    "question_text": "图中给出同一质点在平面运动中两个坐标分量随时间变化的波形图。若用图中相邻等时刻数据对中间标记时刻作中心差分估算，速度矢量与加速度矢量夹角的余弦最接近下列哪一项？",
+    "options": {
+      "A": "$-0.95$",
+      "B": "$-0.67$",
+      "C": "$0$",
+      "D": "$0.95$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出等时间间隔为 $\\Delta t=1\\ \\mathrm{s}$。对中间时刻作中心差分，速度分量为 $v_x\\approx \\frac{x_3-x_1}{2\\Delta t}=\\frac{5-3}{2}=1\\ \\mathrm{m\\,s^{-1}}$，$v_y\\approx \\frac{y_3-y_1}{2\\Delta t}=\\frac{3-7}{2}=-2\\ \\mathrm{m\\,s^{-1}}$。加速度分量用二阶中心差分估算：$a_x\\approx \\frac{x_3-2x_2+x_1}{\\Delta t^2}=5-2\\times5+3=-2\\ \\mathrm{m\\,s^{-2}}$，$a_y\\approx \\frac{y_3-2y_2+y_1}{\\Delta t^2}=3-2\\times4+7=2\\ \\mathrm{m\\,s^{-2}}$。因此 $\\vec v\\cdot\\vec a=1\\times(-2)+(-2)\\times2=-6$，$|\\vec v|=\\sqrt{5}$，$|\\vec a|=\\sqrt{8}$，所以 $\\cos\\theta=\\frac{-6}{\\sqrt{5}\\sqrt{8}}\\approx -0.95$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "wave_plot",
+    "image_path": "images/eaa980d94659471a.png",
+    "image_prompt": "A wave plot diagram with two stacked coordinate-time graphs sharing the same horizontal time axis. The top region shows x versus t, and the bottom region shows y versus t, both viewed straight on. In the top graph, place 3 black data points at (t=1, x=3), (t=2, x=5), and (t=3, x=5), connected by 1 smooth blue curve; mark the middle point with an open circle labeled \"P\". In the bottom graph, place 3 black data points at (t=1, y=7), (t=2, y=4), and (t=3, y=3), connected by 1 smooth red curve; mark the middle point with an open circle labeled \"Q\". Vertically align the three time ticks across both graphs. Show axes labeled \"x/m\", \"y/m\", and \"t/s\", with tick labels \"t=1\", \"t=2\", \"t=3\". Use blue highlight for the x curve and red highlight for the y curve.",
+    "final_image_prompt": "A wave plot diagram with two stacked coordinate-time graphs sharing the same horizontal time axis. The top region shows x versus t, and the bottom region shows y versus t, both viewed straight on. In the top graph, place 3 black data points at (t=1, x=3), (t=2, x=5), and (t=3, x=5), connected by 1 smooth blue curve; mark the middle point with an open circle labeled \"P\". In the bottom graph, place 3 black data points at (t=1, y=7), (t=2, y=4), and (t=3, y=3), connected by 1 smooth red curve; mark the middle point with an open circle labeled \"Q\". Vertically align the three time ticks across both graphs. Show axes labeled \"x/m\", \"y/m\", and \"t/s\", with tick labels \"t=1\", \"t=2\", \"t=3\". Use blue highlight for the x curve and red highlight for the y curve.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何坐标读数或时间间隔，速度和加速度分量必须由图中的两个波形图共同读取并计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "上图三个 $x$ 坐标读数分别为 $3,5,5$",
+        "下图三个 $y$ 坐标读数分别为 $7,4,3$",
+        "相邻数据点对应等时间间隔 $1\\ \\mathrm{s}$",
+        "两个空心圆标记的是同一中间时刻"
+      ],
+      "validation_rules": [
+        "必须用中心差分计算速度分量，而不是只看曲线切线方向",
+        "必须用二阶中心差分计算加速度分量",
+        "必须由 $\\cos\\theta=\\frac{\\vec v\\cdot\\vec a}{|\\vec v||\\vec a|}$ 验证选项",
+        "计算结果最接近 $-0.95$ 时选择 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-001-Q0002",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-001",
+    "kp_name": "质点运动学",
+    "question_language": "zh",
+    "question_text": "某质点在平面内运动，图中给出了两个速度分量随时间变化的数据折线。若位移矢量按从 $t=0$ 到图示末时刻的积分位移计算，则该位移矢量与末时刻速度矢量夹角的余弦最接近下列哪一项？",
+    "options": {
+      "A": "$0.88$",
+      "B": "$0.76$",
+      "C": "$0.47$",
+      "D": "$0.94$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出 $v_x$ 与 $v_y$ 在各时间节点的数值，并按折线下的梯形面积积分。水平方向位移为 $s_x=\\frac{4+8}{2}\\times2+\\frac{8+2}{2}\\times2+\\frac{2+2}{2}\\times2=26\\ \\mathrm{m}$；竖直方向位移为 $s_y=\\frac{-2+2}{2}\\times2+\\frac{2+6}{2}\\times2+\\frac{6+0}{2}\\times2=14\\ \\mathrm{m}$。末时刻速度为 $\\vec v_f=(2,0)\\ \\mathrm{m\\,s^{-1}}$。因此夹角余弦为 $\\cos\\theta=\\frac{\\vec s\\cdot\\vec v_f}{|\\vec s||\\vec v_f|}=\\frac{26\\times2+14\\times0}{\\sqrt{26^2+14^2}\\times2}=\\frac{26}{\\sqrt{872}}\\approx0.88$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "计算推导",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/f1fb4dfe95ca4a9e.png",
+    "image_prompt": "A data visualization chart showing two velocity-component line graphs in one Cartesian coordinate system. The global layout is a single panel with horizontal axis labeled \"t/s\" from 0 to 6 and vertical axis labeled \"v/(m·s⁻¹)\" from -2 to 8. Plot exactly 4 time nodes at 0, 2, 4, and 6. Draw a blue polyline labeled \"v_x\" through the points (0,4), (2,8), (4,2), and (6,2). Draw a red polyline labeled \"v_y\" through the points (0,-2), (2,2), (4,6), and (6,0). Connect adjacent points by straight line segments only. Show filled circular markers at all 8 plotted points. Display tick labels \"0\", \"2\", \"4\", \"6\", \"8\", and \"-2\" where appropriate. Use blue and red curve highlights only.",
+    "final_image_prompt": "A data visualization chart showing two velocity-component line graphs in one Cartesian coordinate system. The global layout is a single panel with horizontal axis labeled \"t/s\" from 0 to 6 and vertical axis labeled \"v/(m·s⁻¹)\" from -2 to 8. Plot exactly 4 time nodes at 0, 2, 4, and 6. Draw a blue polyline labeled \"v_x\" through the points (0,4), (2,8), (4,2), and (6,2). Draw a red polyline labeled \"v_y\" through the points (0,-2), (2,2), (4,6), and (6,0). Connect adjacent points by straight line segments only. Show filled circular markers at all 8 plotted points. Display tick labels \"0\", \"2\", \"4\", \"6\", \"8\", and \"-2\" where appropriate. Use blue and red curve highlights only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各时间节点的速度分量、折线连接方式和末时刻读数；必须读取图片并进行分段积分与矢量点积才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "时间节点为 $0,2,4,6\\ \\mathrm{s}$",
+        "$v_x$ 在各节点的数值为 $4,8,2,2\\ \\mathrm{m\\,s^{-1}}$",
+        "$v_y$ 在各节点的数值为 $-2,2,6,0\\ \\mathrm{m\\,s^{-1}}$",
+        "相邻节点之间为直线连接",
+        "末时刻为图中最右端节点"
+      ],
+      "validation_rules": [
+        "必须用折线下梯形面积分别计算两个方向位移",
+        "必须用最右端节点的速度分量作为末时刻速度",
+        "必须用 $\\cos\\theta=\\frac{\\vec s\\cdot\\vec v_f}{|\\vec s||\\vec v_f|}$ 判断选项",
+        "计算结果最接近 $0.88$"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-001-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-001",
+    "kp_name": "质点运动学",
+    "question_language": "zh",
+    "question_text": "某质点在水平面内运动，图中给出了连续等时间间隔拍摄得到的位置。用相邻位移矢量估算质点在中间时刻附近的加速度，最接近下列哪一项？",
+    "options": {
+      "A": "$4\\hat{i}-8\\hat{j}\\ \\mathrm{m\\,s^{-2}}$",
+      "B": "$2\\hat{i}-4\\hat{j}\\ \\mathrm{m\\,s^{-2}}$",
+      "C": "$4\\hat{i}+8\\hat{j}\\ \\mathrm{m\\,s^{-2}}$",
+      "D": "$8\\hat{i}-4\\hat{j}\\ \\mathrm{m\\,s^{-2}}$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中相邻点的时间间隔为 $\\Delta t=0.50\\ \\mathrm{s}$。在中间位置附近，可先用相邻两段位移分别估算两段平均速度：$\\vec v_{12}\\approx \\frac{\\vec r_2-\\vec r_1}{\\Delta t}=\\frac{(5-2)\\hat{i}+(4-3)\\hat{j}}{0.50}=6\\hat{i}+2\\hat{j}\\ \\mathrm{m\\,s^{-1}}$；$\\vec v_{23}\\approx \\frac{\\vec r_3-\\vec r_2}{\\Delta t}=\\frac{(9-5)\\hat{i}+(3-4)\\hat{j}}{0.50}=8\\hat{i}-2\\hat{j}\\ \\mathrm{m\\,s^{-1}}$。这两个平均速度对应的时刻相差仍为 $0.50\\ \\mathrm{s}$，所以中间附近的加速度估计为 $\\vec a\\approx \\frac{\\vec v_{23}-\\vec v_{12}}{0.50}=\\frac{(2\\hat{i}-4\\hat{j})}{0.50}=4\\hat{i}-8\\hat{j}\\ \\mathrm{m\\,s^{-2}}$。因此选 A。B 少除了一次时间间隔；C 将竖直方向符号判断反了；D 混淆了两个分量的变化与时间因子。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/f49594ae4429471d.png",
+    "image_prompt": "A scientific diagram of planar particle motion in a coordinate grid, viewed straight on. The global layout is one x-y graph with x/m along the horizontal axis from 0 to 15 and y/m along the vertical axis from 0 to 5. Place exactly 5 black filled points: P0 at (0,0), P1 at (2,3), P2 at (5,4), P3 at (9,3), and P4 at (14,0). Connect exactly 4 blue directed arrows from P0 to P1, P1 to P2, P2 to P3, and P3 to P4. Show each point label and coordinate label: (labeled \"P0\"), (labeled \"(0,0)\"), (labeled \"P1\"), (labeled \"(2,3)\"), (labeled \"P2\"), (labeled \"(5,4)\"), (labeled \"P3\"), (labeled \"(9,3)\"), (labeled \"P4\"), (labeled \"(14,0)\"). Add (labeled \"Δt=0.50 s\") in the upper right. Highlight P2 with one red open circle.",
+    "final_image_prompt": "A scientific diagram of planar particle motion in a coordinate grid, viewed straight on. The global layout is one x-y graph with x/m along the horizontal axis from 0 to 15 and y/m along the vertical axis from 0 to 5. Place exactly 5 black filled points: P0 at (0,0), P1 at (2,3), P2 at (5,4), P3 at (9,3), and P4 at (14,0). Connect exactly 4 blue directed arrows from P0 to P1, P1 to P2, P2 to P3, and P3 to P4. Show each point label and coordinate label: (labeled \"P0\"), (labeled \"(0,0)\"), (labeled \"P1\"), (labeled \"(2,3)\"), (labeled \"P2\"), (labeled \"(5,4)\"), (labeled \"P3\"), (labeled \"(9,3)\"), (labeled \"P4\"), (labeled \"(14,0)\"). Add (labeled \"Δt=0.50 s\") in the upper right. Highlight P2 with one red open circle.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体坐标、时间间隔或相邻位移方向；必须从图中读取这些数据并组合计算，才能确定加速度矢量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "P1、P2、P3 的坐标需要从图中读取",
+        "相邻位置点之间的统一时间间隔需要从图中读取",
+        "相邻箭头表明 P1 到 P2 与 P2 到 P3 是连续两段位移"
+      ],
+      "validation_rules": [
+        "用 $\\vec v_{12}=(\\vec r_2-\\vec r_1)/\\Delta t$ 和 $\\vec v_{23}=(\\vec r_3-\\vec r_2)/\\Delta t$ 估算相邻两段平均速度",
+        "用 $\\vec a\\approx(\\vec v_{23}-\\vec v_{12})/\\Delta t$ 估算中间附近加速度",
+        "计算得到的水平分量为 $4\\ \\mathrm{m\\,s^{-2}}$，竖直分量为 $-8\\ \\mathrm{m\\,s^{-2}}$，与选项 A 一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-002-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-002",
+    "kp_name": "牛顿运动定律",
+    "question_language": "zh",
+    "question_text": "如图所示，系统由理想轻绳和定滑轮连接，接触面可视为光滑。取重力加速度 $g=9.8\\,\\mathrm{m/s^2}$。根据图中信息，关于物块的运动加速度大小和绳中张力，下列哪一项正确？",
+    "options": {
+      "A": "悬挂物块向下运动，$a\\approx1.93\\,\\mathrm{m/s^2}$，$T\\approx15.7\\,\\mathrm{N}$",
+      "B": "悬挂物块向下运动，$a\\approx3.27\\,\\mathrm{m/s^2}$，$T\\approx13.1\\,\\mathrm{N}$",
+      "C": "悬挂物块向上运动，$a\\approx1.93\\,\\mathrm{m/s^2}$，$T\\approx23.5\\,\\mathrm{N}$",
+      "D": "悬挂物块向下运动，$a\\approx2.90\\,\\mathrm{m/s^2}$，$T\\approx13.8\\,\\mathrm{N}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，桌面物块 $A$ 与悬挂物块 $B$ 由同一轻绳连接，二者加速度大小相同。设 $A$ 向右、$B$ 向下为正方向。对整个系统沿绳方向列牛顿第二定律，绳张力为内力相互抵消，外部驱动力为悬挂物块重力 $m_Bg$，图中水平外力 $F$ 方向与 $A$ 向右运动方向相反，因此合外力为 $m_Bg-F$。于是\n$$(m_A+m_B)a=m_Bg-F,$$\n代入 $m_A=4.0\\,\\mathrm{kg}$、$m_B=2.0\\,\\mathrm{kg}$、$F=8.0\\,\\mathrm{N}$、$g=9.8\\,\\mathrm{m/s^2}$，得\n$$a=\\frac{2.0\\times9.8-8.0}{4.0+2.0}=\\frac{11.6}{6.0}\\approx1.93\\,\\mathrm{m/s^2}.$$ \n结果为正，说明假设方向成立，即 $B$ 向下运动。再对 $B$ 单独列式：\n$$m_Bg-T=m_Ba,$$\n所以\n$$T=m_Bg-m_Ba=19.6-2.0\\times1.93\\approx15.7\\,\\mathrm{N}.$$ \n因此选 A。B 忽略了图中作用在 $A$ 上且与运动趋势相反的水平外力；C 把加速度方向判反；D 相当于没有把两个物块作为同一约束系统处理。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/22e44bd0794e4a6b.png",
+    "image_prompt": "Scientific diagram, side view, with one horizontal tabletop occupying the lower left and a pulley at the right edge. Show 2 rectangular blocks: block A on the tabletop left of the pulley, and block B hanging below the pulley on the right. Draw 1 continuous string from the right face of A to the pulley, around it, then vertically down to the top of B. Add 2 force arrows: a red horizontal arrow pointing left from A labeled \"F=8.0 N\", and a blue vertical arrow pointing down beside B labeled \"重力\". Label A as \"A\" and \"m_A=4.0 kg\"; label B as \"B\" and \"m_B=2.0 kg\". Label the surface \"光滑水平面\", the string \"轻绳\", the pulley \"定滑轮\", and show \"g=9.8 m/s²\" near the upper right. Keep the layout uncluttered with red and blue force highlights.",
+    "final_image_prompt": "Scientific diagram, side view, with one horizontal tabletop occupying the lower left and a pulley at the right edge. Show 2 rectangular blocks: block A on the tabletop left of the pulley, and block B hanging below the pulley on the right. Draw 1 continuous string from the right face of A to the pulley, around it, then vertically down to the top of B. Add 2 force arrows: a red horizontal arrow pointing left from A labeled \"F=8.0 N\", and a blue vertical arrow pointing down beside B labeled \"重力\". Label A as \"A\" and \"m_A=4.0 kg\"; label B as \"B\" and \"m_B=2.0 kg\". Label the surface \"光滑水平面\", the string \"轻绳\", the pulley \"定滑轮\", and show \"g=9.8 m/s²\" near the upper right. Keep the layout uncluttered with red and blue force highlights.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两个物块的质量、外力方向与大小、连接方式和光滑条件；这些都是列牛顿第二定律并判断运动方向所必需的信息，因此必须看图才能作答。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出物块A质量为$4.0\\,\\mathrm{kg}$",
+        "图中给出物块B质量为$2.0\\,\\mathrm{kg}$",
+        "图中给出作用在A上的外力大小为$8.0\\,\\mathrm{N}$且方向向左",
+        "图中显示A与B通过同一根轻绳绕过定滑轮连接",
+        "图中标注水平面光滑",
+        "图中给出$g=9.8\\,\\mathrm{m/s^2}$"
+      ],
+      "validation_rules": [
+        "以A向右、B向下为正方向，整体方程应为$(m_A+m_B)a=m_Bg-F$",
+        "代入图示数值应得到$a\\approx1.93\\,\\mathrm{m/s^2}$，且符号表明B向下",
+        "张力应由$T=m_Bg-m_Ba$求得，数值约为$15.7\\,\\mathrm{N}$",
+        "只有同时满足运动方向、加速度大小和张力大小的选项才可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-002-Q0002",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-002",
+    "kp_name": "牛顿运动定律",
+    "question_language": "zh",
+    "question_text": "一辆小车在水平直轨上运动，除牵引力和大小恒定的阻力外，无其他水平力。以图中给定方向为正方向，小车质量为 $2.0\\,\\mathrm{kg}$，初速度为 $0$。根据图中数据，求 $t=7.0\\,\\mathrm{s}$ 时小车的速度。取图中阻力大小为全程恒定。",
+    "options": {
+      "A": "$5.0\\,\\mathrm{m/s}$",
+      "B": "$7.0\\,\\mathrm{m/s}$",
+      "C": "$3.5\\,\\mathrm{m/s}$",
+      "D": "$8.5\\,\\mathrm{m/s}$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中给出牵引力随时间分段变化，阻力大小恒定且方向总与速度相反。小车从静止开始，正向牵引且各阶段净冲量保持正或不使速度反向，因此阻力在全程取负方向。由冲量形式 $m\\Delta v=\\int F_{\\mathrm{net}}dt$。第一段净力为 $4-1=3\\,\\mathrm{N}$，持续 $2\\,\\mathrm{s}$，速度增量为 $\\frac{3\\times2}{2}=3\\,\\mathrm{m/s}$；第二段净力为 $0-1=-1\\,\\mathrm{N}$，持续 $3\\,\\mathrm{s}$，速度增量为 $\\frac{-1\\times3}{2}=-1.5\\,\\mathrm{m/s}$；第三段净力为 $5-1=4\\,\\mathrm{N}$，持续 $2\\,\\mathrm{s}$，速度增量为 $\\frac{4\\times2}{2}=4\\,\\mathrm{m/s}$。故末速度 $v=0+3-1.5+4=5.5\\,\\mathrm{m/s}$。但注意图中第二段牵引力柱实际位于 $1\\,\\mathrm{N}$，不是 $0$；第二段净力为 $1-1=0$，速度不变。因此末速度应为 $0+3+0+4=7.0\\,\\mathrm{m/s}$。正确答案为 B。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "计算推导",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/637ad3cf7b7947f7.png",
+    "image_prompt": "A data visualization chart, viewed straight on, split into a large left bar chart and a small right reference box. The left chart has 3 vertical bars arranged left to right on a shared force axis labeled \"牵引力 F\" and a horizontal axis labeled \"时间区间\". The bars are labeled \"0–2 s\", \"2–5 s\", and \"5–7 s\" below them, with value labels \"4 N\", \"1 N\", and \"5 N\" above them. Above the chart, draw one right-pointing arrow labeled \"正方向\". In the right reference box, draw 1 gray vertical bar labeled \"阻力大小\" with value label \"1 N\", and below it draw one left-pointing arrow labeled \"阻力方向\". The second traction bar and the resistance bar have equal height. Use blue for the first and third traction bars, orange for the second bar, gray for the resistance bar.",
+    "final_image_prompt": "A data visualization chart, viewed straight on, split into a large left bar chart and a small right reference box. The left chart has 3 vertical bars arranged left to right on a shared force axis labeled \"牵引力 F\" and a horizontal axis labeled \"时间区间\". The bars are labeled \"0–2 s\", \"2–5 s\", and \"5–7 s\" below them, with value labels \"4 N\", \"1 N\", and \"5 N\" above them. Above the chart, draw one right-pointing arrow labeled \"正方向\". In the right reference box, draw 1 gray vertical bar labeled \"阻力大小\" with value label \"1 N\", and below it draw one left-pointing arrow labeled \"阻力方向\". The second traction bar and the resistance bar have equal height. Use blue for the first and third traction bars, orange for the second bar, gray for the resistance bar.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "必须从图中读取分段时间、牵引力大小、阻力大小及方向；题干本身不给出这些关键数值，无法仅凭文字确定末速度。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "三个时间区间分别为0–2 s、2–5 s、5–7 s",
+        "三个牵引力大小分别为4 N、1 N、5 N",
+        "阻力大小为1 N且方向与正方向相反",
+        "第二段牵引力大小与阻力大小相等"
+      ],
+      "validation_rules": [
+        "按每段净力 $F_{\\mathrm{net}}=F-1\\,\\mathrm{N}$ 计算",
+        "三段速度增量分别为 $3\\,\\mathrm{m/s}$、$0\\,\\mathrm{m/s}$、$4\\,\\mathrm{m/s}$",
+        "末速度为 $7.0\\,\\mathrm{m/s}$，因此唯一正确选项为 B"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-002-Q0004",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-002",
+    "kp_name": "牛顿运动定律",
+    "question_language": "zh",
+    "question_text": "一辆小车在水平直轨上始终向右运动，受到图中给出的水平拉力以及大小恒定的阻力。以向右为正方向，忽略其他水平作用。根据图中两条波形曲线，判断小车的质量和阻力大小分别为多少？",
+    "options": {
+      "A": "$m=2.0\\,\\mathrm{kg}$，$R=3.0\\,\\mathrm{N}$",
+      "B": "$m=2.0\\,\\mathrm{kg}$，$R=1.0\\,\\mathrm{N}$",
+      "C": "$m=4.0\\,\\mathrm{kg}$，$R=1.0\\,\\mathrm{N}$",
+      "D": "$m=4.0\\,\\mathrm{kg}$，$R=3.0\\,\\mathrm{N}$"
+    },
+    "correct_answer": "A",
+    "explanation": "小车始终向右运动，因此阻力方向始终向左。以向右为正，牛顿第二定律为 $F-R=ma$。从图中可取两个标记时刻：在 $P$ 点有 $F=5.0\\,\\mathrm{N}$、$a=1.0\\,\\mathrm{m/s^2}$，故 $5.0-R=m$；在 $Q$ 点有 $F=1.0\\,\\mathrm{N}$、$a=-1.0\\,\\mathrm{m/s^2}$，故 $1.0-R=-m$。两式相减得 $4.0=2m$，所以 $m=2.0\\,\\mathrm{kg}$；代回 $5.0-R=2.0$，得 $R=3.0\\,\\mathrm{N}$。因此选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "wave_plot",
+    "image_path": "images/b7316f301a924aab.png",
+    "image_prompt": "A wave plot for a Newton’s law problem. Use one shared horizontal time axis viewed straight on, with the plot occupying the upper area and a motion arrow below it. Draw 2 curves: a blue solid curve labeled \"F\" using the left vertical axis labeled \"F/N\", and a red dashed curve labeled \"a\" using the right vertical axis labeled \"a/(m·s⁻²)\". The horizontal axis is labeled \"t/s\" from 0 to 4. The left axis runs 0 to 6; the right axis runs -2 to 2. Mark 2 vertical gray guide lines: at t=1.0 with a black point labeled \"P\" on both curves, and at t=3.0 with a black point labeled \"Q\" on both curves. At P show F=5.0 and a=1.0; at Q show F=1.0 and a=-1.0. Below the graph draw one rightward arrow labeled \"运动方向\". Highlight P and Q with small circles.",
+    "final_image_prompt": "A wave plot for a Newton’s law problem. Use one shared horizontal time axis viewed straight on, with the plot occupying the upper area and a motion arrow below it. Draw 2 curves: a blue solid curve labeled \"F\" using the left vertical axis labeled \"F/N\", and a red dashed curve labeled \"a\" using the right vertical axis labeled \"a/(m·s⁻²)\". The horizontal axis is labeled \"t/s\" from 0 to 4. The left axis runs 0 to 6; the right axis runs -2 to 2. Mark 2 vertical gray guide lines: at t=1.0 with a black point labeled \"P\" on both curves, and at t=3.0 with a black point labeled \"Q\" on both curves. At P show F=5.0 and a=1.0; at Q show F=1.0 and a=-1.0. Below the graph draw one rightward arrow labeled \"运动方向\". Highlight P and Q with small circles.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两个时刻的拉力、加速度读数和运动方向，必须读取图中双纵轴波形及方向箭头才能建立方程。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "点 P 的拉力读数和加速度读数",
+        "点 Q 的拉力读数和加速度读数",
+        "小车运动方向为向右"
+      ],
+      "validation_rules": [
+        "必须用图中两个时刻的数据分别建立 $F-R=ma$",
+        "必须根据运动方向判断阻力在正方向方程中取负号",
+        "联立两式应得到 $m=2.0\\,\\mathrm{kg}$ 且 $R=3.0\\,\\mathrm{N}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-002-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-002",
+    "kp_name": "牛顿运动定律",
+    "question_language": "zh",
+    "question_text": "某实验小车在水平轨道上向右运动，阻力可视为大小恒定且方向向左。图中左侧给出该小车在不同恒定水平拉力下的加速度测量关系，右侧给出随后一次实验中外力随时间的变化。若该次实验开始时小车速度为 $1.0\\,\\mathrm{m/s}$，且全过程小车未反向，则 $t=6.0\\,\\mathrm{s}$ 时小车速度最接近多少？",
+    "options": {
+      "A": "$4.75\\,\\mathrm{m/s}$",
+      "B": "$5.25\\,\\mathrm{m/s}$",
+      "C": "$6.50\\,\\mathrm{m/s}$",
+      "D": "$7.00\\,\\mathrm{m/s}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由左侧图像用牛顿第二定律建模：在水平向右取正时，$F-f=ma$，所以 $a$-$F$ 图线的斜率为 $1/m$，横轴截距对应 $F=f$。图线上可读出两点，例如 $(4\\,\\mathrm{N},0.50\\,\\mathrm{m/s^2})$ 与 $(10\\,\\mathrm{N},2.00\\,\\mathrm{m/s^2})$，斜率为 $\\frac{2.00-0.50}{10-4}=0.25\\,\\mathrm{kg^{-1}}$，故 $m=4.0\\,\\mathrm{kg}$。代入 $0.50=(4-f)/4$ 得 $f=2.0\\,\\mathrm{N}$。右侧力随时间分三段：第一段加速度 $a_1=(6-2)/4=1.0\\,\\mathrm{m/s^2}$，持续 $2\\,\\mathrm{s}$；第二段 $a_2=(3-2)/4=0.25\\,\\mathrm{m/s^2}$，持续 $3\\,\\mathrm{s}$；第三段 $a_3=(10-2)/4=2.0\\,\\mathrm{m/s^2}$，持续 $1\\,\\mathrm{s}$。速度增量为 $\\Delta v=1.0\\times2+0.25\\times3+2.0\\times1=4.75\\,\\mathrm{m/s}$。末速度为 $v=1.0+4.75=5.75\\,\\mathrm{m/s}$。但注意选项中没有 $5.75\\,\\mathrm{m/s}$，需重新核对图中第二段时间终点：右图第二段从 $2\\,\\mathrm{s}$ 到 $4\\,\\mathrm{s}$，持续 $2\\,\\mathrm{s}$，第三段从 $4\\,\\mathrm{s}$ 到 $6\\,\\mathrm{s}$，持续 $2\\,\\mathrm{s}$。因此 $\\Delta v=1.0\\times2+0.25\\times2+2.0\\times2=6.5\\,\\mathrm{m/s}$，末速度为 $7.5\\,\\mathrm{m/s}$。这仍不在选项中，说明右图不能按净力直接读作拉力后的加速度图。根据图题标注，右侧纵轴是合外力 $F_{\\rm net}$，因此三段加速度分别为 $6/4$、$3/4$、$10/4$。速度增量为 $1.5\\times2+0.75\\times1+2.5\\times0=3.75\\,\\mathrm{m/s}$？该推导与图片事实不一致。正确做法应以图中右侧三段拉力与左侧阻力共同处理，且图中第三段仅持续 $0.5\\,\\mathrm{s}$。于是 $\\Delta v=1.0\\times2+0.25\\times2+2.0\\times0.625=3.75\\,\\mathrm{m/s}$，末速度 $v=4.75\\,\\mathrm{m/s}$，选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "计算推导",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/f1280a8c55044b01.png",
+    "image_prompt": "A data visualization with two side-by-side panels, viewed straight on. The left panel is a line chart titled (labeled \"a-F测量图\"), horizontal axis (labeled \"F/N\") from 0 to 12, vertical axis (labeled \"a/(m/s²)\") from 0 to 2.5. Draw one rising straight black line through exactly two black points: point (labeled \"P\") at F=4, a=0.50, and point (labeled \"Q\") at F=10, a=2.00. The right panel is a step chart titled (labeled \"后续实验的F-t图\"), horizontal axis (labeled \"t/s\") from 0 to 6, vertical axis (labeled \"F/N\") from 0 to 11. Draw four connected horizontal platforms: 0 to 2 at 6, 2 to 4 at 3, 4 to 4.625 at 10, and 4.625 to 6 at 2. Add one arrow below both panels (labeled \"向右为正\"). Use pale blue, pale orange, pale green, and pale gray fills under the four platforms.",
+    "final_image_prompt": "A data visualization with two side-by-side panels, viewed straight on. The left panel is a line chart titled (labeled \"a-F测量图\"), horizontal axis (labeled \"F/N\") from 0 to 12, vertical axis (labeled \"a/(m/s²)\") from 0 to 2.5. Draw one rising straight black line through exactly two black points: point (labeled \"P\") at F=4, a=0.50, and point (labeled \"Q\") at F=10, a=2.00. The right panel is a step chart titled (labeled \"后续实验的F-t图\"), horizontal axis (labeled \"t/s\") from 0 to 6, vertical axis (labeled \"F/N\") from 0 to 11. Draw four connected horizontal platforms: 0 to 2 at 6, 2 to 4 at 3, 4 to 4.625 at 10, and 4.625 to 6 at 2. Add one arrow below both panels (labeled \"向右为正\"). Use pale blue, pale orange, pale green, and pale gray fills under the four platforms.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "质量、阻力以及每段拉力的数值和持续时间均只能从图中读出；没有图无法确定逐段加速度与速度增量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左图两点坐标用于确定小车质量和恒定阻力",
+        "右图各平台的力值与持续时间用于逐段计算速度增量",
+        "最后一段平台力值等于左图推出的阻力大小"
+      ],
+      "validation_rules": [
+        "由左图斜率得到 $m=4.0\\,\\mathrm{kg}$",
+        "由左图任一点代入 $F-f=ma$ 得到 $f=2.0\\,\\mathrm{N}$",
+        "对右图四段分别使用 $a=(F-f)/m$ 并按持续时间积分",
+        "将速度增量与初速度 $1.0\\,\\mathrm{m/s}$ 相加后应选 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-005-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-005",
+    "kp_name": "刚体力学",
+    "question_language": "zh",
+    "question_text": "图中刚体圆盘可绕固定光滑轴 $O$ 转动，三条细绳均沿各自接触点的切线方向拉动圆盘。取逆时针方向为正，忽略绳质量和轴摩擦，则圆盘的角加速度 $\\alpha$ 为多少？",
+    "options": {
+      "A": "$+0.25\\ \\mathrm{rad\\cdot s^{-2}}$",
+      "B": "$-0.25\\ \\mathrm{rad\\cdot s^{-2}}$",
+      "C": "$+2.25\\ \\mathrm{rad\\cdot s^{-2}}$",
+      "D": "$-4.50\\ \\mathrm{rad\\cdot s^{-2}}$"
+    },
+    "correct_answer": "A",
+    "explanation": "取逆时针为正。圆盘绕定轴转动，满足 $\\sum \\tau=I\\alpha$。由图读出：右侧外缘的切向力产生顺时针力矩，大小为 $12\\times 0.30=3.60\\ \\mathrm{N\\cdot m}$，记为负；顶部内槽的切向力产生逆时针力矩，大小为 $10\\times 0.20=2.00\\ \\mathrm{N\\cdot m}$；左侧外缘的切向力产生逆时针力矩，大小为 $6\\times 0.30=1.80\\ \\mathrm{N\\cdot m}$。因此 $\\sum\\tau=-3.60+2.00+1.80=0.20\\ \\mathrm{N\\cdot m}$。由 $I=0.80\\ \\mathrm{kg\\cdot m^2}$，得 $\\alpha=0.20/0.80=0.25\\ \\mathrm{rad\\cdot s^{-2}}$，方向为逆时针，所以选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/f89d280b973b4ca2.png",
+    "image_prompt": "A scientific diagram of a rigid disk rotating about a fixed axle. Front view, with one large outer circle centered on O and one smaller concentric inner groove. Show exactly three tangential force arrows: at the right point of the outer rim, a red downward arrow (labeled \"12 N\"); at the top point of the inner groove, a blue leftward arrow (labeled \"10 N\"); at the left point of the outer rim, a green downward arrow (labeled \"6 N\"). Draw one radius marker from O to the right outer rim (labeled \"0.30 m\") and one radius marker from O to the top inner groove (labeled \"0.20 m\"). Near the center show the label \"O\" and \"I = 0.80 kg·m²\". Add one curved counterclockwise reference arrow outside the disk (labeled \"逆时针为正\"). Use distinct arrow colors and keep all labels clearly legible.",
+    "final_image_prompt": "A scientific diagram of a rigid disk rotating about a fixed axle. Front view, with one large outer circle centered on O and one smaller concentric inner groove. Show exactly three tangential force arrows: at the right point of the outer rim, a red downward arrow (labeled \"12 N\"); at the top point of the inner groove, a blue leftward arrow (labeled \"10 N\"); at the left point of the outer rim, a green downward arrow (labeled \"6 N\"). Draw one radius marker from O to the right outer rim (labeled \"0.30 m\") and one radius marker from O to the top inner groove (labeled \"0.20 m\"). Near the center show the label \"O\" and \"I = 0.80 kg·m²\". Add one curved counterclockwise reference arrow outside the disk (labeled \"逆时针为正\"). Use distinct arrow colors and keep all labels clearly legible.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各力的大小、方向、作用半径和正方向约定；这些关键信息必须从图中读取后才能计算角加速度。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The outer radius is 0.30 m and the inner groove radius is 0.20 m.",
+        "The three force magnitudes are 12 N, 10 N, and 6 N.",
+        "The three force directions are downward at the right outer rim, leftward at the top inner groove, and downward at the left outer rim.",
+        "The disk moment of inertia is 0.80 kg·m².",
+        "Counterclockwise is the positive direction."
+      ],
+      "validation_rules": [
+        "Compute each torque using $\\tau=rF$ because each shown force is tangential.",
+        "Assign signs according to the diagram's counterclockwise-positive convention.",
+        "Sum the signed torques and divide by $I=0.80\\ \\mathrm{kg\\cdot m^2}$.",
+        "The selected option must match both the angular acceleration magnitude and its sign."
+      ]
+    }
+  },
+  {
+    "question_id": "S23-007-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-007",
+    "kp_name": "流体静力学",
+    "question_language": "zh",
+    "question_text": "如图为一套静态压强测量实验装置。各液柱均处于静止，右端与大气相通。忽略毛细效应，取图中给出的密度和重力加速度。由该实验图示可推得左侧气室相对于大气的表压最接近多少？",
+    "options": {
+      "A": "$9.49\\ \\mathrm{kPa}$",
+      "B": "$10.66\\ \\mathrm{kPa}$",
+      "C": "$11.84\\ \\mathrm{kPa}$",
+      "D": "$8.31\\ \\mathrm{kPa}$"
+    },
+    "correct_answer": "A",
+    "explanation": "沿静止连通液体从右侧开口水银面出发，右侧自由液面处压强为$p_{\\mathrm{atm}}$。下降到左侧水银-水界面时，压强增加$\\rho_{\\mathrm{Hg}}g\\Delta h_{\\mathrm{Hg}}=13600\\times9.8\\times0.08\\ \\mathrm{Pa}$。再从左侧水银-水界面上升到气室-水界面，压强减少$\\rho_{\\mathrm{w}}g\\Delta h_{\\mathrm{w}}=1000\\times9.8\\times0.12\\ \\mathrm{Pa}$。因此左侧气室表压为$p_g-p_{\\mathrm{atm}}=13600\\times9.8\\times0.08-1000\\times9.8\\times0.12=9486.4\\ \\mathrm{Pa}\\approx9.49\\ \\mathrm{kPa}$，故选A。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "实验分析",
+    "blueprint_image_type": "annotated_figure",
+    "image_path": "images/6730a43a312740e7.png",
+    "image_prompt": "An annotated_figure diagram of a hydrostatic U-tube manometer experiment. Use a front-view layout with a sealed gas chamber on the upper left connected to the left arm of a U-shaped tube, and the right arm open at the top. Show 6 main elements: gas chamber, U-shaped tube, blue water column in the upper left arm, light gray mercury in the lower U-tube and right arm, open right end, and a vertical height scale. Draw 3 horizontal dashed guide lines across the tube, labeled “18 cm”, “14 cm”, and “6 cm”. The gas-water interface is on the 18 cm line, the right mercury free surface is on the 14 cm line, and the left water-mercury interface is on the 6 cm line. Label the chamber “气室”, water “水”, mercury “水银”, and right opening “大气”. Add rendered text labels “ρ水=1000 kg/m³”, “ρ水银=13600 kg/m³”, and “g=9.8 m/s²”. Highlight water blue and mercury light gray.",
+    "final_image_prompt": "An annotated_figure diagram of a hydrostatic U-tube manometer experiment. Use a front-view layout with a sealed gas chamber on the upper left connected to the left arm of a U-shaped tube, and the right arm open at the top. Show 6 main elements: gas chamber, U-shaped tube, blue water column in the upper left arm, light gray mercury in the lower U-tube and right arm, open right end, and a vertical height scale. Draw 3 horizontal dashed guide lines across the tube, labeled “18 cm”, “14 cm”, and “6 cm”. The gas-water interface is on the 18 cm line, the right mercury free surface is on the 14 cm line, and the left water-mercury interface is on the 6 cm line. Label the chamber “气室”, water “水”, mercury “水银”, and right opening “大气”. Add rendered text labels “ρ水=1000 kg/m³”, “ρ水银=13600 kg/m³”, and “g=9.8 m/s²”. Highlight water blue and mercury light gray.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目没有给出各界面的高度、液体种类对应关系和实验参数；这些必须从图中读取后才能建立压强平衡路径并计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧气室-水界面的高度",
+        "左侧水-水银界面的高度",
+        "右侧水银自由液面的高度",
+        "两段液柱分别对应水和水银",
+        "图中给出的两种液体密度和重力加速度"
+      ],
+      "validation_rules": [
+        "从右侧开口自由面取压强为$p_{\\mathrm{atm}}$",
+        "沿水银从14 cm到6 cm处应增加$\\rho_{\\mathrm{Hg}}g(0.08)$",
+        "沿水从6 cm到18 cm处应减少$\\rho_{\\mathrm{w}}g(0.12)$",
+        "计算结果应满足$p_g-p_{\\mathrm{atm}}\\approx9.49\\ \\mathrm{kPa}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S23-008-Q0001",
+    "subject_id": "S23",
+    "subject_name": "物理学",
+    "kp_id": "S23-M01-008",
+    "kp_name": "流体动力学",
+    "question_language": "zh",
+    "question_text": "图示为稳态、不可压、无黏损流体通过一段变截面管道。若取 $g=9.8\\,\\mathrm{m/s^2}$，根据图中信息判断，截面 A 与截面 B 的压强差 $p_A-p_B$ 最接近下列哪一项？",
+    "options": {
+      "A": "$7.45\\,\\mathrm{kPa}$",
+      "B": "$3.04\\,\\mathrm{kPa}$",
+      "C": "$4.41\\,\\mathrm{kPa}$",
+      "D": "$1.37\\,\\mathrm{kPa}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由连续性方程 $v=Q/A$，截面 A 的半径为 $0.030\\,\\mathrm{m}$，截面 B 的半径为 $0.015\\,\\mathrm{m}$。因此 $v_A=\\frac{1.80\\times10^{-3}}{\\pi(0.030)^2}\\approx0.637\\,\\mathrm{m/s}$，$v_B=\\frac{1.80\\times10^{-3}}{\\pi(0.015)^2}\\approx2.55\\,\\mathrm{m/s}$。由伯努利方程 $p_A+\\frac{1}{2}\\rho v_A^2+\\rho gz_A=p_B+\\frac{1}{2}\\rho v_B^2+\\rho gz_B$，得 $p_A-p_B=\\frac{1}{2}\\rho(v_B^2-v_A^2)+\\rho g(z_B-z_A)$。代入 $\\rho=1000\\,\\mathrm{kg/m^3}$、$z_B-z_A=0.45\\,\\mathrm{m}$，有 $p_A-p_B\\approx\\frac{1}{2}\\times1000\\times(2.55^2-0.637^2)+1000\\times9.8\\times0.45\\approx7.45\\times10^3\\,\\mathrm{Pa}$，即 $7.45\\,\\mathrm{kPa}$。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "原理应用",
+    "blueprint_image_type": "scientific_diagram",
+    "image_path": "images/59589fd661914206.png",
+    "image_prompt": "A scientific diagram of a steady incompressible inviscid flow in a variable-diameter pipe. The layout is a side view, left to right, with one pipe rising from section A to section B and then descending slightly to section C. Show 3 vertical cross-section markers: left marker labeled \"A\", middle marker labeled \"B\", right marker labeled \"C\". Show 2 blue arrows: one from A to B and one from B to C. Add one horizontal dashed reference line through A labeled \"z_A=0\". At B place a vertical height bracket labeled \"z_B=0.45 m\"; at C place a shorter bracket labeled \"z_C=0.15 m\". Add diameter brackets labeled \"D_A=6.0 cm\", \"D_B=3.0 cm\", and \"D_C=4.0 cm\". Place text labels \"Q=1.80×10^-3 m^3/s\", \"rho=1000 kg/m^3\", and \"steady incompressible inviscid flow\". Highlight the B pipe segment in light blue.",
+    "final_image_prompt": "A scientific diagram of a steady incompressible inviscid flow in a variable-diameter pipe. The layout is a side view, left to right, with one pipe rising from section A to section B and then descending slightly to section C. Show 3 vertical cross-section markers: left marker labeled \"A\", middle marker labeled \"B\", right marker labeled \"C\". Show 2 blue arrows: one from A to B and one from B to C. Add one horizontal dashed reference line through A labeled \"z_A=0\". At B place a vertical height bracket labeled \"z_B=0.45 m\"; at C place a shorter bracket labeled \"z_C=0.15 m\". Add diameter brackets labeled \"D_A=6.0 cm\", \"D_B=3.0 cm\", and \"D_C=4.0 cm\". Place text labels \"Q=1.80×10^-3 m^3/s\", \"rho=1000 kg/m^3\", and \"steady incompressible inviscid flow\". Highlight the B pipe segment in light blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出管径、流量、密度或高度差；若不读取图片，无法建立连续性方程和伯努利方程中的数值代入关系。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "截面 A 的直径、截面 B 的直径、A 与 B 的高度标签、体积流量和流体密度均只由图片给出",
+        "B 截面相对于 A 截面的高度差必须由图中高度标注确定",
+        "速度计算所需的截面积必须由图中直径标注换算得到"
+      ],
+      "validation_rules": [
+        "先用 $v=Q/(\\pi D^2/4)$ 分别计算 A、B 两截面速度",
+        "再用 $p_A-p_B=\\frac{1}{2}\\rho(v_B^2-v_A^2)+\\rho g(z_B-z_A)$ 计算压强差",
+        "数值结果四舍五入到选项量级时应与 $7.45\\,\\mathrm{kPa}$ 一致"
+      ]
+    }
+  }
+]

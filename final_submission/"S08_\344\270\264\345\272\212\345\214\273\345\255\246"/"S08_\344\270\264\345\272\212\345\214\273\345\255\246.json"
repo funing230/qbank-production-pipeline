@@ -1,0 +1,647 @@
+[
+  {
+    "question_id": "S08-001-Q0002",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-001",
+    "kp_name": "血常规检验",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟手工计数与血常规参照图。按图示计数公式先换算各细胞计数，再结合参考区间判断，以下哪一类实验室鉴别判断最符合图示结果？",
+    "options": {
+      "A": "白细胞计数升高合并血小板计数降低，红细胞相关指标未越界",
+      "B": "红细胞计数降低合并血红蛋白降低，白细胞与血小板未越界",
+      "C": "三系计数均低于参考下限，符合标本整体稀释型低值",
+      "D": "仅血小板计数降低，其余血常规指标均在参考区间内"
+    },
+    "correct_answer": "A",
+    "explanation": "图中给出的是模拟教学用手工计数信息，需先按图示公式换算。白细胞计数为$286\\times50=14300/\\mu L$，即$14.3\\times10^9/L$，高于图示参考区间$4.0$至$10.0\\times10^9/L$。红细胞计数为$410\\times0.01=4.10\\times10^{12}/L$，位于$4.0$至$5.5\\times10^{12}/L$；同时血红蛋白$138g/L$、红细胞比容$0.42$也均在图示参考区间内。血小板计数为$74\\times1=74\\times10^9/L$，低于参考区间$100$至$300\\times10^9/L$。因此应归为白细胞计数升高并伴血小板计数降低，而不是红细胞系降低、三系均低或单纯血小板降低。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "鉴别诊断",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/4416f839ae2b49ff.png",
+    "image_prompt": "An academic diagram for simulated complete blood count manual counting, viewed frontally, split into left counting panels and right interpretation panels. Place 3 stacked chamber boxes on the left: top blue box labeled \"白细胞计数室\" with \"N=286\", middle red box labeled \"红细胞计数室\" with \"N=410\", bottom purple box labeled \"血小板计数室\" with \"N=74\". On the upper right, draw 1 small panel labeled \"Hb=138 g/L\" and \"HCT=0.42\". In the middle right, draw 1 reference interval strip labeled \"参考区间\" with five rows: \"WBC 4.0-10.0×10^9/L\", \"RBC 4.0-5.5×10^12/L\", \"Hb 120-160 g/L\", \"HCT 0.40-0.50\", \"PLT 100-300×10^9/L\". In the lower right, show 3 rendered formulas: \"WBC=N×50/μL\", \"RBC=N×0.01×10^12/L\", \"PLT=N×1×10^9/L\". Draw blue, red, and purple arrows from each chamber to its formula, and gray lines from formulas and Hb/HCT panel to the reference strip.",
+    "final_image_prompt": "An academic diagram for simulated complete blood count manual counting, viewed frontally, split into left counting panels and right interpretation panels. Place 3 stacked chamber boxes on the left: top blue box labeled \"白细胞计数室\" with \"N=286\", middle red box labeled \"红细胞计数室\" with \"N=410\", bottom purple box labeled \"血小板计数室\" with \"N=74\". On the upper right, draw 1 small panel labeled \"Hb=138 g/L\" and \"HCT=0.42\". In the middle right, draw 1 reference interval strip labeled \"参考区间\" with five rows: \"WBC 4.0-10.0×10^9/L\", \"RBC 4.0-5.5×10^12/L\", \"Hb 120-160 g/L\", \"HCT 0.40-0.50\", \"PLT 100-300×10^9/L\". In the lower right, show 3 rendered formulas: \"WBC=N×50/μL\", \"RBC=N×0.01×10^12/L\", \"PLT=N×1×10^9/L\". Draw blue, red, and purple arrows from each chamber to its formula, and gray lines from formulas and Hb/HCT panel to the reference strip.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出原始计数、换算公式或参考区间；必须读取图中多个区域并完成换算与比较后才能确定异常组合。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "WBC原始计数为286且需按N×50/μL换算",
+        "RBC原始计数为410且需按N×0.01×10^12/L换算",
+        "PLT原始计数为74且需按N×1×10^9/L换算",
+        "Hb为138 g/L且HCT为0.42",
+        "图中给出WBC、RBC、Hb、HCT、PLT的参考区间"
+      ],
+      "validation_rules": [
+        "按图示公式计算WBC为14300/μL，即14.3×10^9/L，并与图中WBC参考区间比较为高于上限",
+        "按图示公式计算RBC为4.10×10^12/L，并与图中RBC参考区间比较为未越界",
+        "将Hb=138 g/L、HCT=0.42分别与图中参考区间比较为未越界",
+        "按图示公式计算PLT为74×10^9/L，并与图中PLT参考区间比较为低于下限",
+        "唯一符合上述组合的是白细胞计数升高合并血小板计数降低，红细胞相关指标未越界"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-001-Q0002",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-001",
+    "kp_name": "血常规检验",
+    "question_language": "zh",
+    "question_text": "根据图中模拟血常规检验单及其参考区间，若按“先判断是否越界，再比较相对偏离幅度”的规则解读，哪一项描述最符合图示结果？",
+    "options": {
+      "A": "白细胞计数低于参考下限，且血小板计数的相对偏离幅度小于红细胞计数。",
+      "B": "红细胞计数、血红蛋白和血细胞比容呈同向低于参考区间，且血小板计数高于参考上限。",
+      "C": "血红蛋白在参考区间内，血细胞比容低于参考区间，血小板计数未超过参考上限。",
+      "D": "红细胞计数高于参考上限，白细胞计数低于参考下限，血红蛋白低于参考下限。"
+    },
+    "correct_answer": "B",
+    "explanation": "图中给出5项血常规指标及参考区间。逐项比较：RBC为3.30，低于下限4.00；WBC为7.20，位于4.00–10.00之间；Hb为94，低于下限120；PLT为430，高于上限350；HCT为0.30，低于下限0.40。因此，RBC、Hb、HCT均为低于参考区间，PLT高于参考区间，WBC未越界。相对偏离只用于防止把轻微越界与正常值混淆，不改变这些越界方向。只有B完整符合图示。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "报告解读",
+    "blueprint_image_type": "laboratory_image",
+    "image_path": "images/67d2810c992d4e17.png",
+    "image_prompt": "A synthetic educational laboratory_image chart. The global layout is split into a left CBC report table and a right horizontal reference strip, viewed straight on. The left table has 5 rows and 5 columns labeled \"项目\", \"结果\", \"单位\", \"参考区间\", \"标记\", with title labeled \"模拟血常规报告\". Row 1 is labeled \"RBC\" with 3.30, \"×10^12/L\", \"4.00–5.50\", and a blue downward marker labeled \"↓\". Row 2 is labeled \"WBC\" with 7.20, \"×10^9/L\", \"4.00–10.00\", and a gray marker labeled \"●\". Row 3 is labeled \"Hb\" with 94, \"g/L\", \"120–160\", and blue \"↓\". Row 4 is labeled \"PLT\" with 430, \"×10^9/L\", \"100–350\", and orange \"↑\". Row 5 is labeled \"HCT\" with 0.30, \"L/L\", \"0.40–0.50\", and blue \"↓\". The right strip has 3 connected segments labeled \"低\", \"参考\", \"高\"; connect each row marker horizontally to its matching segment using thin lines. Use blue for low markers, gray for reference, orange for high.",
+    "final_image_prompt": "A synthetic educational laboratory_image chart. The global layout is split into a left CBC report table and a right horizontal reference strip, viewed straight on. The left table has 5 rows and 5 columns labeled \"项目\", \"结果\", \"单位\", \"参考区间\", \"标记\", with title labeled \"模拟血常规报告\". Row 1 is labeled \"RBC\" with 3.30, \"×10^12/L\", \"4.00–5.50\", and a blue downward marker labeled \"↓\". Row 2 is labeled \"WBC\" with 7.20, \"×10^9/L\", \"4.00–10.00\", and a gray marker labeled \"●\". Row 3 is labeled \"Hb\" with 94, \"g/L\", \"120–160\", and blue \"↓\". Row 4 is labeled \"PLT\" with 430, \"×10^9/L\", \"100–350\", and orange \"↑\". Row 5 is labeled \"HCT\" with 0.30, \"L/L\", \"0.40–0.50\", and blue \"↓\". The right strip has 3 connected segments labeled \"低\", \"参考\", \"高\"; connect each row marker horizontally to its matching segment using thin lines. Use blue for low markers, gray for reference, orange for high.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出各指标的具体结果及参考区间，必须从图中读取5项数值并逐项比较后才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中RBC结果为3.30，参考区间为4.00–5.50。",
+        "图中WBC结果为7.20，参考区间为4.00–10.00。",
+        "图中Hb结果为94，参考区间为120–160。",
+        "图中PLT结果为430，参考区间为100–350。",
+        "图中HCT结果为0.30，参考区间为0.40–0.50。"
+      ],
+      "validation_rules": [
+        "若某结果小于其参考下限，则判为低于参考区间。",
+        "若某结果大于其参考上限，则判为高于参考区间。",
+        "若某结果位于参考下限与参考上限之间，包括端点，则判为参考区间内。",
+        "按上述规则逐项比较5项指标后，唯一符合全部越界方向的选项为B。"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-001-Q0005",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-001",
+    "kp_name": "血常规检验",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟血常规报告，并严格按报告右侧给出的参考区间判断。下列哪一项对该报告中 5 个项目的异常方向概括最准确？",
+    "options": {
+      "A": "Hb 与 HCT 偏低，WBC 偏高；RBC 与 PLT 未超出参考区间",
+      "B": "RBC、Hb 与 HCT 均偏低；WBC 与 PLT 未超出参考区间",
+      "C": "Hb 偏低，PLT 偏低；RBC、WBC 与 HCT 未超出参考区间",
+      "D": "WBC 与 PLT 偏高，Hb 偏低；RBC 与 HCT 未超出参考区间"
+    },
+    "correct_answer": "A",
+    "explanation": "本题需要先读取报告左侧的性别标识，再按右侧女性参考区间逐项比较。RBC 为 $3.62\\times10^{12}/L$，女性参考区间为 $3.50$ 至 $5.00\\times10^{12}/L$，未超出参考区间；Hb 为 $105\\ g/L$，低于女性参考区间下限 $110\\ g/L$；HCT 为 $0.344$，低于女性参考区间下限 $0.350$；WBC 为 $11.2\\times10^9/L$，高于参考区间上限 $10.0\\times10^9/L$；PLT 为 $118\\times10^9/L$，在 $100$ 至 $300\\times10^9/L$ 范围内。因此只有 A 对 5 个项目的异常方向概括完整且准确。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "报告解读",
+    "blueprint_image_type": "laboratory_image",
+    "image_path": "images/f7ed5fdabc6a45d2.png",
+    "image_prompt": "A synthetic laboratory_image showing a simulated complete blood count report. Global layout: viewed straight on, split into a left report area and a right reference table. The left top has 1 box labeled \"样本信息\" with \"性别：女\". Below it is 1 five-row table labeled \"模拟血常规报告\" with columns labeled \"项目\", \"结果\", \"单位\": RBC 3.62 10^12/L, Hb 105 g/L, HCT 0.344 L/L, WBC 11.2 10^9/L, PLT 118 10^9/L. The right side has 1 reference table labeled \"参考区间\" with columns \"女性\", \"男性\", \"通用\". Rows show RBC female 3.50-5.00 male 4.00-5.50; Hb female 110-150 male 120-160; HCT female 0.350-0.450 male 0.400-0.500; WBC common 4.0-10.0; PLT common 100-300. Draw 5 thin gray horizontal alignment lines from each result row to its reference row. Use light blue borders only.",
+    "final_image_prompt": "A synthetic laboratory_image showing a simulated complete blood count report. Global layout: viewed straight on, split into a left report area and a right reference table. The left top has 1 box labeled \"样本信息\" with \"性别：女\". Below it is 1 five-row table labeled \"模拟血常规报告\" with columns labeled \"项目\", \"结果\", \"单位\": RBC 3.62 10^12/L, Hb 105 g/L, HCT 0.344 L/L, WBC 11.2 10^9/L, PLT 118 10^9/L. The right side has 1 reference table labeled \"参考区间\" with columns \"女性\", \"男性\", \"通用\". Rows show RBC female 3.50-5.00 male 4.00-5.50; Hb female 110-150 male 120-160; HCT female 0.350-0.450 male 0.400-0.500; WBC common 4.0-10.0; PLT common 100-300. Draw 5 thin gray horizontal alignment lines from each result row to its reference row. Use light blue borders only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体检验结果、性别或参考区间；只有通过图片读取这些信息并逐项比较，才能确定哪一项概括准确。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "样本性别为女性",
+        "5 个项目的报告结果数值和单位",
+        "女性 RBC、Hb、HCT 参考区间",
+        "WBC 与 PLT 的通用参考区间"
+      ],
+      "validation_rules": [
+        "必须按图中性别选择女性参考区间判断 RBC、Hb、HCT",
+        "必须按图中通用参考区间判断 WBC 与 PLT",
+        "逐项比较结果值与对应下限、上限后，选出同时覆盖 5 个项目异常方向的唯一选项",
+        "correct_answer 必须等于 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0003",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "图中5个标记白细胞均来自Wright染色外周血涂片视野。若进行白细胞分类计数，哪一个标记细胞最应归入嗜酸性粒细胞？",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "C",
+    "explanation": "嗜酸性粒细胞在Wright染色外周血涂片中通常表现为核多为两叶，胞质内有较粗大的橙红色嗜酸性颗粒。观察图中标记细胞：甲为圆形致密核、胞质较窄，更符合淋巴细胞特征；乙为多叶核且颗粒细小淡紫，更符合中性粒细胞特征；丙具有两叶核并伴粗大橙红颗粒，符合嗜酸性粒细胞；丁呈肾形或折叠样核、胞质较宽灰蓝，更符合单核细胞特征。因此选择丙。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/0b2e3d35b27145aa.png",
+    "image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above inside one circular microscope field. The layout contains 5 labeled leukocytes among pale pink erythrocyte discs: 甲 in the upper left, 乙 in the upper right, 丙 in the center-right, 丁 in the lower left, and 戊 in the lower right. 甲 has one round dark purple nucleus and a narrow pale blue cytoplasm rim. 乙 has a 4-lobed nucleus connected like a curved chain, with fine pale purple granules. 丙 has a 2-lobed nucleus joined by one thin chromatin bridge and 18 coarse orange-red cytoplasmic granules. 丁 has one kidney-shaped folded light purple nucleus and broad gray-blue cytoplasm. 戊 has one S-shaped dark purple nucleus with dark purple coarse granules partly overlapping the nuclear outline. Draw one short black leader line from each label to its cell, each labeled \"甲\", \"乙\", \"丙\", \"丁\", \"戊\". Use distinct Wright-stain colors.",
+    "final_image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above inside one circular microscope field. The layout contains 5 labeled leukocytes among pale pink erythrocyte discs: 甲 in the upper left, 乙 in the upper right, 丙 in the center-right, 丁 in the lower left, and 戊 in the lower right. 甲 has one round dark purple nucleus and a narrow pale blue cytoplasm rim. 乙 has a 4-lobed nucleus connected like a curved chain, with fine pale purple granules. 丙 has a 2-lobed nucleus joined by one thin chromatin bridge and 18 coarse orange-red cytoplasmic granules. 丁 has one kidney-shaped folded light purple nucleus and broad gray-blue cytoplasm. 戊 has one S-shaped dark purple nucleus with dark purple coarse granules partly overlapping the nuclear outline. Draw one short black leader line from each label to its cell, each labeled \"甲\", \"乙\", \"丙\", \"丁\", \"戊\". Use distinct Wright-stain colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出标记名称，未给出各细胞的核形、颗粒颜色和颗粒粗细；必须观察图片才能完成分类判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "丙细胞核分为2叶，2叶之间由细窄染色质相连",
+        "丙细胞胞质内有粗大橙红颗粒，颗粒数量约18个",
+        "乙细胞核分为4叶且胞质颗粒细小淡紫",
+        "甲、丁、戊分别呈现与嗜酸性粒细胞不匹配的核形或颗粒特征"
+      ],
+      "validation_rules": [
+        "先识别各标记细胞的核叶数、核形、胞质颜色和颗粒特征",
+        "将两叶核与粗大橙红颗粒同时满足的标记细胞判为嗜酸性粒细胞",
+        "仅有分叶核、细小淡紫颗粒、肾形核或深紫粗颗粒者不得作为本题答案",
+        "最终答案必须与correct_answer字段一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0002",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "en",
+    "question_text": "In the simulated Wright-stained peripheral blood smear image, use this classification rule: include only intact leukocytes fully inside the counting frame; among included neutrophils, record a morphologic abnormality when the nucleus has 6 or more connected lobes. What percentage of the included neutrophils should be recorded with that abnormal morphology?",
+    "options": {
+      "A": "20.0%",
+      "B": "25.0%",
+      "C": "33.3%",
+      "D": "50.0%"
+    },
+    "correct_answer": "C",
+    "explanation": "First, apply the counting-frame rule rather than counting every labeled leukocyte. Cell E is crossed by the gray smear scratch and is not intact, so it is excluded. Cell D is outside the frame, so it is also excluded. The included leukocytes are A, B, C, and F. Next, classify only included neutrophils: A, B, and F have neutrophil-type segmented nuclei with pale fine granules, while C is an eosinophil because it has coarse orange-red granules and a bilobed nucleus. Finally, apply the abnormality threshold: A has 5 lobes, B has 6 lobes, and F has 3 lobes, so only B meets the 6-or-more-lobe criterion. The required percentage is $1/3 \\times 100\\% = 33.3\\%$, so the correct answer is C.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "形态异常判断",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/11b46ac517c948d8.png",
+    "image_prompt": "A synthetic educational microscopy image of a Wright-stained peripheral blood smear, viewed from above, with one rectangular area labeled \"Counting frame\". Show 6 labeled leukocytes: A at upper left inside the frame with 5 connected nuclear lobes and fine lilac granules; B near upper center inside with 6 connected nuclear lobes and fine lilac granules; C at lower left inside with 2 connected nuclear lobes and coarse orange-red granules; D to the right outside the frame with a round unsegmented nucleus; E at lower center inside with 7 connected nuclear lobes; F at lower right inside with 3 connected nuclear lobes and fine lilac granules. A single gray diagonal line labeled \"Smear scratch\" crosses only E. Label each leukocyte \"A\", \"B\", \"C\", \"D\", \"E\", and \"F\". Use pale pink red blood cells in the background.",
+    "final_image_prompt": "A synthetic educational microscopy image of a Wright-stained peripheral blood smear, viewed from above, with one rectangular area labeled \"Counting frame\". Show 6 labeled leukocytes: A at upper left inside the frame with 5 connected nuclear lobes and fine lilac granules; B near upper center inside with 6 connected nuclear lobes and fine lilac granules; C at lower left inside with 2 connected nuclear lobes and coarse orange-red granules; D to the right outside the frame with a round unsegmented nucleus; E at lower center inside with 7 connected nuclear lobes; F at lower right inside with 3 connected nuclear lobes and fine lilac granules. A single gray diagonal line labeled \"Smear scratch\" crosses only E. Label each leukocyte \"A\", \"B\", \"C\", \"D\", \"E\", and \"F\". Use pale pink red blood cells in the background.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The denominator, numerator, cell eligibility, lobe counts, and neutrophil-versus-eosinophil distinction all depend on visual facts in the image.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The image shows which labeled leukocytes are inside or outside the counting frame.",
+        "The image shows which labeled leukocyte is crossed by the smear scratch.",
+        "The image shows nuclear lobe counts for A through F.",
+        "The image shows granule patterns needed to separate neutrophil-like cells from the eosinophil-like distractor."
+      ],
+      "validation_rules": [
+        "Exclude labeled leukocytes outside the frame or crossed by the smear scratch.",
+        "Among remaining cells, count only neutrophils identified by segmented nuclei with fine lilac granules.",
+        "Apply the 6-or-more-connected-lobes threshold to the included neutrophils.",
+        "Compute the percentage as abnormal included neutrophils divided by total included neutrophils times $100\\%$."
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0001",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "观察图中标记的白细胞。若按Wright染色外周血涂片的白细胞分类标准，哪一个选项对应嗜酸性粒细胞？",
+    "options": {
+      "A": "细胞1",
+      "B": "细胞2",
+      "C": "细胞3",
+      "D": "细胞5"
+    },
+    "correct_answer": "C",
+    "explanation": "嗜酸性粒细胞在Wright染色外周血涂片中通常表现为分叶较少的双叶核，胞质内可见粗大、橙红色或红色颗粒。图中细胞3同时具有双叶核和粗大橙红颗粒，符合嗜酸性粒细胞的分类依据。细胞1为多叶核并有细小淡紫颗粒，符合中性粒细胞特征；细胞2为圆形深染核、胞质量少，符合淋巴细胞特征；细胞5有深紫色粗大颗粒遮盖核形，符合嗜碱性粒细胞特征。因此答案为C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/2e4230ea09034bc5.png",
+    "image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above, with one rectangular smear field and a centered title (labeled \"Wright染色模拟外周血涂片\"). Show 18 pale pink red blood cell discs in the background and 5 larger leukocytes arranged around the field: upper left (labeled \"细胞1\"), upper right (labeled \"细胞2\"), center (labeled \"细胞3\"), lower left (labeled \"细胞4\"), lower right (labeled \"细胞5\"). Cell 1 has a three-lobed nucleus and fine pale purple granules. Cell 2 has a round dark nucleus and a narrow blue cytoplasm rim. Cell 3 has two connected nuclear lobes and coarse orange-red cytoplasmic granules. Cell 4 has a kidney-shaped nucleus, gray-blue cytoplasm, and one vacuole. Cell 5 has an S-shaped nucleus partly covered by coarse dark purple granules. Connect each label to its cell with one short black leader line; draw a thin pale blue ring around each leukocyte.",
+    "final_image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above, with one rectangular smear field and a centered title (labeled \"Wright染色模拟外周血涂片\"). Show 18 pale pink red blood cell discs in the background and 5 larger leukocytes arranged around the field: upper left (labeled \"细胞1\"), upper right (labeled \"细胞2\"), center (labeled \"细胞3\"), lower left (labeled \"细胞4\"), lower right (labeled \"细胞5\"). Cell 1 has a three-lobed nucleus and fine pale purple granules. Cell 2 has a round dark nucleus and a narrow blue cytoplasm rim. Cell 3 has two connected nuclear lobes and coarse orange-red cytoplasmic granules. Cell 4 has a kidney-shaped nucleus, gray-blue cytoplasm, and one vacuole. Cell 5 has an S-shaped nucleus partly covered by coarse dark purple granules. Connect each label to its cell with one short black leader line; draw a thin pale blue ring around each leukocyte.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各标记细胞的核形、颗粒颜色或颗粒粗细，必须观察图片才能完成分类判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "细胞1显示三叶分叶核且有细小淡紫颗粒",
+        "细胞2显示圆形深染核且仅有窄蓝色胞质边缘",
+        "细胞3显示两个相连核叶且有粗大橙红颗粒",
+        "细胞5显示S形核轮廓且有深紫粗大颗粒遮盖核轮廓"
+      ],
+      "validation_rules": [
+        "先确认目标分类需要同时符合双叶核和粗大橙红颗粒两个形态条件",
+        "在图中比较各标记细胞的核形、颗粒粗细和颗粒颜色",
+        "只有细胞3同时满足双叶核与粗大橙红颗粒，因此选择C"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0004",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "图示为模拟 Wright 染色外周血涂片视野。按白细胞分类计数原则，先排除不应纳入计数的标记细胞，再结合细胞核形态、胞质相对量和颗粒特征判断：哪一个标记细胞最应归入单核细胞？",
+    "options": {
+      "A": "标记A",
+      "B": "标记B",
+      "C": "标记C",
+      "D": "标记D"
+    },
+    "correct_answer": "B",
+    "explanation": "应先看图中各标记细胞是否完整，再综合形态判断。标记A虽为完整白细胞，但可见分叶样细胞核并有明显粗大橙红颗粒，符合嗜酸性粒细胞而非单核细胞。标记C为完整细胞，但核圆而致密，胞质量很少，核面积明显大于胞质面积，符合小淋巴细胞特征。标记D位于涂片边缘且部分细胞轮廓被截断，按分类计数原则不宜纳入；即使观察其可见带状核和细中性颗粒，也不支持单核细胞。标记B为完整细胞，细胞较大，核呈肾形/折叠样凹陷，胞质较丰富且无粗大特异性颗粒；图中给出的面积数值还显示其胞质量大于核量，因此最应归入单核细胞。",
+    "difficulty": 3,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/429746a76471480d.png",
+    "image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above, with four labeled white blood cells arranged in a 2 by 2 layout on a pale pink red-cell background. Cell A is upper left (labeled \"A\"), intact, with a two-lobed purple nucleus, coarse orange-red granules, and callouts labeled \"核42\" and \"胞36\". Cell B is upper right (labeled \"B\"), intact, larger, with one kidney-shaped purple nucleus indentation, broad gray-blue cytoplasm, and callouts labeled \"核34\" and \"胞58\". Cell C is lower left (labeled \"C\"), intact, with a round dense purple nucleus, thin blue cytoplasmic rim, and callouts labeled \"核52\" and \"胞12\". Cell D is lower right (labeled \"D\"), partly cut by the right field edge, with a curved band nucleus and fine pale-purple granules. Draw a red bracket at D labeled \"边缘截断\". Use thin black leader lines from each numeric callout to its cell.",
+    "final_image_prompt": "A synthetic peripheral_blood_smear microscopy image, viewed from above, with four labeled white blood cells arranged in a 2 by 2 layout on a pale pink red-cell background. Cell A is upper left (labeled \"A\"), intact, with a two-lobed purple nucleus, coarse orange-red granules, and callouts labeled \"核42\" and \"胞36\". Cell B is upper right (labeled \"B\"), intact, larger, with one kidney-shaped purple nucleus indentation, broad gray-blue cytoplasm, and callouts labeled \"核34\" and \"胞58\". Cell C is lower left (labeled \"C\"), intact, with a round dense purple nucleus, thin blue cytoplasmic rim, and callouts labeled \"核52\" and \"胞12\". Cell D is lower right (labeled \"D\"), partly cut by the right field edge, with a curved band nucleus and fine pale-purple granules. Draw a red bracket at D labeled \"边缘截断\". Use thin black leader lines from each numeric callout to its cell.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出各标记细胞的核形、颗粒、完整性和面积数值；必须观察图片才能完成排除和分类。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "A显示分叶核和粗大橙红颗粒，且核42、胞36",
+        "B显示肾形凹陷核、较宽灰蓝胞质，且核34、胞58",
+        "C显示圆形深染核、窄胞质边，且核52、胞12",
+        "D与视野边缘相交并有边缘截断标记"
+      ],
+      "validation_rules": [
+        "先排除带有边缘截断标记且轮廓不完整的细胞",
+        "在完整细胞中比较核面积与胞质面积，单核细胞应支持胞质相对丰富",
+        "结合核形判断，肾形或折叠样凹陷核支持单核细胞",
+        "排除具有粗大橙红颗粒的分叶核细胞和圆形深染核且胞质很少的细胞"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0002",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "en",
+    "question_text": "In the simulated Wright-stained peripheral blood smear image, apply the morphology flag rule shown in the image. Which labeled cell should be selected for the abnormal granulocyte morphology flag?",
+    "options": {
+      "A": "Cell 1",
+      "B": "Cell 3",
+      "C": "Cell 4",
+      "D": "Cell 6"
+    },
+    "correct_answer": "C",
+    "explanation": "The image rule requires three checks: the cell must be included in review, must show granulocytic morphology rather than a lymphoid or monocytic pattern, and must meet the abnormal flag threshold. Cell 1 is an included granulocyte-like cell with 4 nuclear lobes and only 2 dark coarse granules, so it does not meet the abnormal granulation threshold. Cell 3 has a bilobed nucleus and numerous large orange-red granules, fitting eosinophilic morphology rather than the intended neutrophil-type abnormal flag. Cell 6 has marked coarse granulation but touches the border, so it is excluded by the image rule. Cell 4 is intact and inside the review area, has a single band-like nucleus and 11 coarse dark granules; therefore it satisfies the displayed abnormal morphology rule. The correct answer is C.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "形态异常判断",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/4b8663c0751d49cf.png",
+    "image_prompt": "A synthetic microscopy image of a Wright-stained peripheral blood smear, viewed from above, with one smear field and a small rule box in the upper right. Show exactly 6 labeled leukocyte-like cells among pale pink red blood cells: Cell 1 upper left with 4 purple nuclear lobes and 2 coarse dark granules; Cell 2 upper middle with 1 round dense nucleus and 0 coarse dark granules; Cell 3 lower left with 2 lobes and 14 orange-red granules; Cell 4 center-right with 1 curved band nucleus and 11 coarse dark granules; Cell 5 lower middle with 1 kidney-shaped nucleus, 3 vacuoles, and 1 coarse dark granule; Cell 6 far right touching the border with 1 band nucleus and 12 coarse dark granules. The rule box connects visually to the field and is labeled \"Rule: include intact cells fully inside field\" and \"Flag: granulocyte pattern + <2 lobes + ≥8 coarse dark granules\". Use subtle red border contact highlight only at Cell 6.",
+    "final_image_prompt": "A synthetic microscopy image of a Wright-stained peripheral blood smear, viewed from above, with one smear field and a small rule box in the upper right. Show exactly 6 labeled leukocyte-like cells among pale pink red blood cells: Cell 1 upper left with 4 purple nuclear lobes and 2 coarse dark granules; Cell 2 upper middle with 1 round dense nucleus and 0 coarse dark granules; Cell 3 lower left with 2 lobes and 14 orange-red granules; Cell 4 center-right with 1 curved band nucleus and 11 coarse dark granules; Cell 5 lower middle with 1 kidney-shaped nucleus, 3 vacuoles, and 1 coarse dark granule; Cell 6 far right touching the border with 1 band nucleus and 12 coarse dark granules. The rule box connects visually to the field and is labeled \"Rule: include intact cells fully inside field\" and \"Flag: granulocyte pattern + <2 lobes + ≥8 coarse dark granules\". Use subtle red border contact highlight only at Cell 6.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The question cannot be answered from text alone because the decisive lobe counts, granule colors, granule numbers, and border-exclusion status are encoded only in the microscopy image.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The selected cell must be inferred from the image rule box and the visible morphology of the labeled cells.",
+        "The image alone provides each cell's lobe count, granule type, granule count, and border inclusion status.",
+        "The image alone shows that one option satisfies the lobe threshold, coarse dark granule threshold, granulocyte-pattern requirement, and inclusion rule simultaneously."
+      ],
+      "validation_rules": [
+        "Reject cells that touch the image border before applying morphology thresholds.",
+        "Do not count orange-red eosinophilic granules as coarse dark granules.",
+        "A valid flagged cell must have granulocyte-pattern morphology, fewer than 2 separated nuclear lobes, and at least 8 coarse dark granules.",
+        "Among the answer choices, only Cell 4 satisfies all displayed rule conditions."
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0001",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "观察图中 Wright 染色的模拟外周血涂片。若按图中标尺先筛选核径/胞径不超过 $0.50$ 且可见特异颗粒数不少于 $8$ 的白细胞，再依据该细胞的核形与颗粒染色情况进行白细胞分类，图中应归入哪一类？",
+    "options": {
+      "A": "中性分叶核粒细胞",
+      "B": "嗜酸性粒细胞",
+      "C": "单核细胞",
+      "D": "嗜碱性粒细胞"
+    },
+    "correct_answer": "B",
+    "explanation": "需先从图中读取每个标注细胞的胞径、核径和颗粒数。甲的核径/胞径为 $9/14\\approx0.64$，不满足筛选条件；乙为 $5/12\\approx0.42$ 且颗粒数为 $10$，满足；丙为 $11/16\\approx0.69$，不满足；丁为 $7/11\\approx0.64$，不满足。因此只需对乙进行分类。乙呈双叶核，胞质内可见粗大橙红色颗粒，符合 Wright 染色下嗜酸性粒细胞的形态特征，而不是细颗粒的中性粒细胞、肾形核且颗粒不明显的单核细胞或深紫颗粒常遮盖核的嗜碱性粒细胞。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/4f4e684d47ce4c6f.png",
+    "image_prompt": "A synthetic peripheral blood smear microscopy image, viewed from above inside one circular microscope field. The layout has 4 labeled leukocytes among 18 pale pink erythrocytes: cell 甲 in the upper left, cell 乙 in the upper right, cell 丙 in the lower left, and cell 丁 in the lower right. 甲 has a three-lobed nucleus, fine pale purple granules, and labels (labeled \"胞径14\"), (labeled \"核径9\"), (labeled \"颗粒10\"). 乙 has a bilobed nucleus, coarse orange-red granules, and labels (labeled \"胞径12\"), (labeled \"核径5\"), (labeled \"颗粒10\"). 丙 has a kidney-shaped nucleus, broad cytoplasm, and labels (labeled \"胞径16\"), (labeled \"核径11\"), (labeled \"颗粒2\"). 丁 has coarse deep purple granules partly covering the nucleus and labels (labeled \"胞径11\"), (labeled \"核径7\"), (labeled \"颗粒12\"). Draw double-headed measurement lines from each cell edge and nucleus edge, plus short leader lines from each granule-count label to cytoplasm.",
+    "final_image_prompt": "A synthetic peripheral blood smear microscopy image, viewed from above inside one circular microscope field. The layout has 4 labeled leukocytes among 18 pale pink erythrocytes: cell 甲 in the upper left, cell 乙 in the upper right, cell 丙 in the lower left, and cell 丁 in the lower right. 甲 has a three-lobed nucleus, fine pale purple granules, and labels (labeled \"胞径14\"), (labeled \"核径9\"), (labeled \"颗粒10\"). 乙 has a bilobed nucleus, coarse orange-red granules, and labels (labeled \"胞径12\"), (labeled \"核径5\"), (labeled \"颗粒10\"). 丙 has a kidney-shaped nucleus, broad cytoplasm, and labels (labeled \"胞径16\"), (labeled \"核径11\"), (labeled \"颗粒2\"). 丁 has coarse deep purple granules partly covering the nucleus and labels (labeled \"胞径11\"), (labeled \"核径7\"), (labeled \"颗粒12\"). Draw double-headed measurement lines from each cell edge and nucleus edge, plus short leader lines from each granule-count label to cytoplasm.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各细胞的测量数值、颗粒数、核形和颗粒颜色，必须读图并计算筛选后才能确定分类。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中4个细胞的胞径、核径和颗粒数",
+        "满足筛选条件的标注细胞的核形",
+        "满足筛选条件的标注细胞的颗粒颜色和粗细"
+      ],
+      "validation_rules": [
+        "分别计算每个标注细胞的核径/胞径",
+        "仅保留核径/胞径不超过0.50且颗粒数不少于8的细胞",
+        "依据保留细胞的双叶核和粗大橙红色颗粒判定其分类",
+        "最终答案必须与correct_answer一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0001",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "en",
+    "question_text": "In the simulated Wright-stained peripheral blood smear image, apply this morphology rule: flag the labeled cell that is an intact neutrophil-lineage leukocyte and has an abnormal granulation index greater than $1.5$, where the index is calculated as visible cytoplasmic granule count divided by cytoplasm area units. Which labeled cell should be flagged?",
+    "options": {
+      "A": "Cell A",
+      "B": "Cell B",
+      "C": "Cell C",
+      "D": "Cell F"
+    },
+    "correct_answer": "C",
+    "explanation": "The rule requires three checks: first, the cell must be intact; second, it must fit neutrophil lineage rather than eosinophil, basophil, or monocyte morphology; third, its abnormal granulation index must exceed $1.5$. Cell A is an intact segmented neutrophil, but its index is $18/20=0.90$, so it is not flagged. Cell B has a bilobed nucleus and large orange-red granules, fitting eosinophil morphology, so it is excluded even though $46/23=2.00$. Cell F has a segmented nucleus and $48/20=2.40$, but the cell boundary is ruptured, so it is excluded by the intact-cell requirement. Cell C is intact, has a four-lobed segmented neutrophil nucleus with purple cytoplasmic granules, and its index is $42/21=2.00$, which exceeds $1.5$; therefore Cell C is the only correct choice.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "形态异常判断",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/729b1b2bac034b06.png",
+    "image_prompt": "A microscopy image of a simulated Wright-stained peripheral blood smear, viewed from above in a single rectangular field. Arrange exactly 6 labeled leukocytes on a pale pink erythrocyte background: upper left Cell A, upper center Cell B, upper right Cell C, lower left Cell D, lower center Cell E, lower right Cell F. Cell A has 3 connected purple nuclear lobes and fine purple granules, labeled \"Cell A\", \"granules 18\", \"area 20\". Cell B has 2 nuclear lobes and large orange-red granules, labeled \"Cell B\", \"granules 46\", \"area 23\". Cell C has 4 connected purple nuclear lobes and dense purple granules, labeled \"Cell C\", \"granules 42\", \"area 21\". Cell D is labeled \"Cell D\", \"granules 40\", \"area 20\". Cell E is labeled \"Cell E\", \"granules 12\", \"area 35\". Cell F is labeled \"Cell F\", \"granules 48\", \"area 20\". Add one arrow from label \"ruptured edge\" to Cell F’s broken boundary, with a small red outline segment.",
+    "final_image_prompt": "A microscopy image of a simulated Wright-stained peripheral blood smear, viewed from above in a single rectangular field. Arrange exactly 6 labeled leukocytes on a pale pink erythrocyte background: upper left Cell A, upper center Cell B, upper right Cell C, lower left Cell D, lower center Cell E, lower right Cell F. Cell A has 3 connected purple nuclear lobes and fine purple granules, labeled \"Cell A\", \"granules 18\", \"area 20\". Cell B has 2 nuclear lobes and large orange-red granules, labeled \"Cell B\", \"granules 46\", \"area 23\". Cell C has 4 connected purple nuclear lobes and dense purple granules, labeled \"Cell C\", \"granules 42\", \"area 21\". Cell D is labeled \"Cell D\", \"granules 40\", \"area 20\". Cell E is labeled \"Cell E\", \"granules 12\", \"area 35\". Cell F is labeled \"Cell F\", \"granules 48\", \"area 20\". Add one arrow from label \"ruptured edge\" to Cell F’s broken boundary, with a small red outline segment.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The answer depends on cell-specific morphology, granule color, boundary integrity, and numeric labels that are only available in the image.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "Cell A has granule count 18, area 20, and a three-lobed segmented nucleus",
+        "Cell B has granule count 46, area 23, two lobes, and orange-red coarse granules",
+        "Cell C has granule count 42, area 21, four connected lobes, and purple granules",
+        "Cell F has granule count 48, area 20, and a ruptured cytoplasmic boundary"
+      ],
+      "validation_rules": [
+        "Calculate each candidate index as granule count divided by cytoplasm area units.",
+        "Exclude cells without neutrophil-lineage morphology based on nucleus and granule appearance.",
+        "Exclude cells with a ruptured cytoplasmic boundary.",
+        "Select the remaining intact neutrophil-lineage cell whose index is greater than $1.5$."
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0003",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "图示为模拟 Wright 染色外周血涂片的分类计数记录。按常规白细胞分类计数原则，完整白细胞计入相应类别，破碎或不可判读事件不纳入。根据图中原累计和本轮 6 个标记事件，更新后中性粒细胞在纳入细胞中的比例及纳入总数应为哪一项？",
+    "options": {
+      "A": "中性粒细胞 $51.0\\%$，纳入总数 $98$",
+      "B": "中性粒细胞 $52.6\\%$，纳入总数 $95$",
+      "C": "中性粒细胞 $52.1\\%$，纳入总数 $96$",
+      "D": "中性粒细胞 $54.2\\%$，纳入总数 $96$"
+    },
+    "correct_answer": "B",
+    "explanation": "先读取图中原累计：中性粒细胞为 $48$，纳入总数为 $90$。再逐一判断本轮 6 个标记事件：细胞1为分叶核、细胞质细颗粒的完整中性粒细胞；细胞2为圆形致密核、少量胞质的完整淋巴细胞；细胞3为肾形核、灰蓝胞质的完整单核细胞；细胞4为双叶核并有橙红粗颗粒的完整嗜酸性粒细胞；细胞5虽有深紫颗粒样结构，但边界破碎、被标为不可判读事件，不纳入；细胞6为完整分叶核中性粒细胞，虽有较粗颗粒，仍按中性粒细胞计入。因此本轮新增纳入细胞数为 $5$，其中中性粒细胞新增 $2$。更新后中性粒细胞数为 $48+2=50$，纳入总数为 $90+5=95$，比例为 $\\frac{50}{95}\\times100\\%=52.6\\%$。故选 B。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查外周血涂片与白细胞分类",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/7a398915904041b8.png",
+    "image_prompt": "A data chart for a synthetic Wright-stained peripheral blood smear classification record. The layout is split vertically: a left tally table and a right smear-event panel. The left table is labeled \"原累计\" with 6 rows labeled \"N\", \"L\", \"M\", \"E\", \"B\", and \"纳入总数\", showing values 48, 31, 7, 3, 1, and 90. The right panel is labeled \"本轮事件\" and contains 6 circular cell icons in a 3 by 2 grid: top row \"细胞1\", \"细胞2\", \"细胞3\"; bottom row \"细胞4\", \"细胞5\", \"细胞6\". Cell1 has an intact border, three-lobed purple nucleus, pale fine granules; Cell2 has a dense round nucleus; Cell3 has a kidney-shaped nucleus; Cell4 has a bilobed nucleus and orange-red granules; Cell5 has a broken border, dark purple granules, a red slash, labeled \"不可判读\"; Cell6 has an intact border and segmented nucleus. Use purple nuclei, pale blue cytoplasm, orange-red granules, and red only for the slash.",
+    "final_image_prompt": "A data chart for a synthetic Wright-stained peripheral blood smear classification record. The layout is split vertically: a left tally table and a right smear-event panel. The left table is labeled \"原累计\" with 6 rows labeled \"N\", \"L\", \"M\", \"E\", \"B\", and \"纳入总数\", showing values 48, 31, 7, 3, 1, and 90. The right panel is labeled \"本轮事件\" and contains 6 circular cell icons in a 3 by 2 grid: top row \"细胞1\", \"细胞2\", \"细胞3\"; bottom row \"细胞4\", \"细胞5\", \"细胞6\". Cell1 has an intact border, three-lobed purple nucleus, pale fine granules; Cell2 has a dense round nucleus; Cell3 has a kidney-shaped nucleus; Cell4 has a bilobed nucleus and orange-red granules; Cell5 has a broken border, dark purple granules, a red slash, labeled \"不可判读\"; Cell6 has an intact border and segmented nucleus. Use purple nuclei, pale blue cytoplasm, orange-red granules, and red only for the slash.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出原累计数值、6个事件的具体形态或哪一个事件不可判读；必须通过图片读取表格数据并判断细胞形态后才能计算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "原累计中N为48且纳入总数为90",
+        "本轮6个事件中细胞1和细胞6应按中性粒细胞形态处理",
+        "细胞2、细胞3、细胞4分别不是中性粒细胞",
+        "细胞5因破碎边界和不可判读标记不纳入计数"
+      ],
+      "validation_rules": [
+        "从图中读取原累计中性粒细胞数和原纳入总数",
+        "根据图中6个细胞的边界完整性与Wright染色形态判断本轮可纳入细胞",
+        "只将完整且形态可判读的细胞加入纳入总数",
+        "将两个分叶核完整细胞计入中性粒细胞后计算 $\\frac{50}{95}\\times100\\%=52.6\\%$",
+        "更新后的纳入总数必须为 $95$"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0004",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "观察图中 Wright 染色外周血涂片的编号白细胞。若按常规白细胞分类，应将哪一个编号归入嗜酸性粒细胞？",
+    "options": {
+      "A": "1号细胞",
+      "B": "2号细胞",
+      "C": "3号细胞",
+      "D": "4号细胞"
+    },
+    "correct_answer": "C",
+    "explanation": "嗜酸性粒细胞在 Wright 染色外周血涂片中通常表现为双叶核，胞质内有较粗大、橙红色或嗜酸性颗粒。图中需要先比较各编号细胞的核形，再结合胞质颗粒颜色和粗细判断：1号更符合分叶核中性粒细胞，2号更符合小淋巴细胞，4号更符合单核细胞；3号同时具备双叶核和粗大橙红色颗粒，因此应选 3号细胞。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/8fcc0ae7256f4995.png",
+    "image_prompt": "A peripheral_blood_smear diagram, viewed as one microscope field with a pale pink red blood cell background and a small title label \"Wright染色外周血涂片\" at the top. Place 5 large leukocytes: cell 1 in the upper left, cell 2 in the upper right, cell 3 in the lower left, cell 4 in the lower right, and cell 5 slightly right of center. Cell 1 has a 3-lobed connected purple nucleus and fine pale lilac cytoplasmic granules. Cell 2 has one round dark purple nucleus filling most of the cell and a narrow pale blue rim. Cell 3 has a 2-lobed connected nucleus and coarse orange-red cytoplasmic granules. Cell 4 has a kidney-shaped nucleus and broad gray-blue cytoplasm. Cell 5 has dark purple coarse granules partly covering a curved nucleus. No arrows or connector lines. Label each leukocyte nearby as (labeled \"1\"), (labeled \"2\"), (labeled \"3\"), (labeled \"4\"), and (labeled \"5\").",
+    "final_image_prompt": "A peripheral_blood_smear diagram, viewed as one microscope field with a pale pink red blood cell background and a small title label \"Wright染色外周血涂片\" at the top. Place 5 large leukocytes: cell 1 in the upper left, cell 2 in the upper right, cell 3 in the lower left, cell 4 in the lower right, and cell 5 slightly right of center. Cell 1 has a 3-lobed connected purple nucleus and fine pale lilac cytoplasmic granules. Cell 2 has one round dark purple nucleus filling most of the cell and a narrow pale blue rim. Cell 3 has a 2-lobed connected nucleus and coarse orange-red cytoplasmic granules. Cell 4 has a kidney-shaped nucleus and broad gray-blue cytoplasm. Cell 5 has dark purple coarse granules partly covering a curved nucleus. No arrows or connector lines. Label each leukocyte nearby as (labeled \"1\"), (labeled \"2\"), (labeled \"3\"), (labeled \"4\"), and (labeled \"5\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出编号选择，未给出各编号细胞的核形、胞质颜色和颗粒特征；必须观察图片才能完成分类判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "1号细胞显示多分叶核和淡紫细颗粒",
+        "2号细胞显示高核质比和窄胞质边缘",
+        "3号细胞显示双叶核和粗大橙红颗粒",
+        "4号细胞显示肾形核和宽灰蓝胞质"
+      ],
+      "validation_rules": [
+        "先按核形筛选具有双叶核特征的编号细胞",
+        "再按 Wright 染色颗粒颜色和粗细确认是否符合嗜酸性粒细胞形态",
+        "排除分叶核中性粒细胞样、淋巴细胞样和单核细胞样干扰项后，唯一符合者为3号细胞"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0003",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "图示为一张模拟 Wright 染色外周血涂片教学图。若按白细胞分类计数原则，先判断各形态组所属细胞，再结合图中计数与形态提示，哪一项关联判断最符合图示？",
+    "options": {
+      "A": "以嗜酸性粒细胞比例升高为主，常见关联可指向过敏或寄生虫相关反应",
+      "B": "以中性粒细胞比例升高并伴明显核左移为主，常见关联可指向急性细菌性炎症反应",
+      "C": "以淋巴细胞比例升高为主，常见关联可指向病毒相关反应",
+      "D": "以嗜碱性粒细胞比例升高为主，常见关联可指向骨髓增殖性改变"
+    },
+    "correct_answer": "A",
+    "explanation": "解题需先根据图中形态而不是颜色印象完成分类：双叶核且胞质有粗大橙红颗粒的组对应嗜酸性粒细胞；多分叶核细颗粒为中性粒细胞；圆形深染核、胞质量少者为淋巴细胞；肾形核灰蓝胞质者为单核细胞；深紫粗颗粒遮盖核者为嗜碱性粒细胞。再读取图中各组计数并计算比例：嗜酸性粒细胞为 $22/100=22\\%$，明显高于常规分类计数中通常仅占低比例的细胞；中性粒细胞为 $48\\%$，未显示杆状核或幼稚粒细胞箭头所提示的核左移；淋巴细胞为 $24\\%$，不是主导升高；嗜碱性粒细胞为 $2\\%$，虽可见但不是主导异常。因此最符合图示的是嗜酸性粒细胞比例升高，并与过敏或寄生虫相关反应这一常见实验室关联相符。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "疾病关联",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/a36fc0cef8d14237.png",
+    "image_prompt": "An academic diagram of a synthetic Wright-stained peripheral blood smear teaching figure. The layout is split into a left microscope field and a right differential count panel. In the left field, show 5 enlarged leukocyte icons: top-left cell labeled \"甲\" with multilobed nucleus and fine pale purple granules; top-right labeled \"乙\" with round dark nucleus and scant cytoplasm; center-left labeled \"丙\" with kidney-shaped nucleus and gray-blue cytoplasm; center-right labeled \"丁\" with bilobed nucleus and coarse orange-red granules; bottom-left labeled \"戊\" with dark purple coarse granules partly covering the nucleus. On the right, draw 5 horizontal count bars labeled \"计数\" with values 48, 24, 4, 22, and 2 from top to bottom, each connected by a thin line to 甲, 乙, 丙, 丁, 戊 respectively. Add bottom label \"总计100个白细胞\". Place one orange box labeled \"关联提示：过敏/寄生虫相关反应\" with an arrow pointing to 丁; orange border highlights 丁 and its count bar.",
+    "final_image_prompt": "An academic diagram of a synthetic Wright-stained peripheral blood smear teaching figure. The layout is split into a left microscope field and a right differential count panel. In the left field, show 5 enlarged leukocyte icons: top-left cell labeled \"甲\" with multilobed nucleus and fine pale purple granules; top-right labeled \"乙\" with round dark nucleus and scant cytoplasm; center-left labeled \"丙\" with kidney-shaped nucleus and gray-blue cytoplasm; center-right labeled \"丁\" with bilobed nucleus and coarse orange-red granules; bottom-left labeled \"戊\" with dark purple coarse granules partly covering the nucleus. On the right, draw 5 horizontal count bars labeled \"计数\" with values 48, 24, 4, 22, and 2 from top to bottom, each connected by a thin line to 甲, 乙, 丙, 丁, 戊 respectively. Add bottom label \"总计100个白细胞\". Place one orange box labeled \"关联提示：过敏/寄生虫相关反应\" with an arrow pointing to 丁; orange border highlights 丁 and its count bar.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各字母细胞的形态、计数、总数或提示框位置；必须阅读图片并完成形态分类与比例计算后才能判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中各字母形态组的细胞形态特征",
+        "五个形态组对应计数分别为48、24、4、22、2",
+        "分类计数总数为100个白细胞",
+        "图中未给出杆状核或幼稚粒细胞提示",
+        "关联提示框指向丁形态组"
+      ],
+      "validation_rules": [
+        "先根据形态判定丁组为嗜酸性粒细胞形态",
+        "用丁组计数除以总计数得到 $22\\%$",
+        "比较其他组计数和形态后确认主要异常不是淋巴细胞或嗜碱性粒细胞",
+        "若选择中性粒细胞相关选项，必须能从图中找到核左移提示；图中没有该提示，因此排除",
+        "唯一符合形态、计数比例和关联提示三项条件的选项为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0005",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "图示为模拟 Wright 染色外周血涂片教学视野。若按常规白细胞分类，需先排除形态不完整或明显重叠的细胞，再结合细胞大小、核形和胞质颗粒判断；在备选编号中，哪一个最应归入单核细胞？",
+    "options": {
+      "A": "1号",
+      "B": "3号",
+      "C": "4号",
+      "D": "6号"
+    },
+    "correct_answer": "C",
+    "explanation": "应先看图中各编号细胞是否适合分类计数，再看形态。1号细胞直径约为红细胞直径的1.3倍，核圆且胞质很少，更符合小淋巴细胞；3号为双叶核并有粗大橙红颗粒，符合嗜酸性粒细胞；6号与红细胞重叠且边缘不完整，不宜作为形态判断对象。4号细胞直径约为红细胞直径的2.3倍，胞质较宽、灰蓝色，核呈肾形或折叠状且染色质较疏松，符合单核细胞的分类特征。因此答案为C。",
+    "difficulty": 3,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/c323ad3cd79d44b6.png",
+    "image_prompt": "A synthetic educational peripheral_blood_smear diagram, viewed from above as one microscope field with one title area and one reference marker in the lower right. Show 6 labeled white blood cells among pale pink red blood cells. Place cell 1 upper left, 9 μm, round dark purple nucleus, thin light blue cytoplasm rim. Place cell 2 upper right, 13 μm, 3 purple nuclear lobes, fine pale purple granules. Place cell 3 left middle, 14 μm, 2 purple nuclear lobes, coarse orange-red granules. Place cell 4 center right, 16 μm, kidney-shaped folded nucleus, broad gray-blue cytoplasm, fine purple-red granules. Place cell 5 lower right, 12 μm, dense dark purple granules partly covering its nucleus. Place cell 6 lower left, 15 μm, edge overlapped by 2 red blood cells and incomplete nucleus outline. No arrows. Add labels (labeled \"1\"), (labeled \"2\"), (labeled \"3\"), (labeled \"4\"), (labeled \"5\"), (labeled \"6\"), (labeled \"RBC 7 μm\"), and (labeled \"Wright染色模拟视野\"). Use local color contrast for nuclei and granules.",
+    "final_image_prompt": "A synthetic educational peripheral_blood_smear diagram, viewed from above as one microscope field with one title area and one reference marker in the lower right. Show 6 labeled white blood cells among pale pink red blood cells. Place cell 1 upper left, 9 μm, round dark purple nucleus, thin light blue cytoplasm rim. Place cell 2 upper right, 13 μm, 3 purple nuclear lobes, fine pale purple granules. Place cell 3 left middle, 14 μm, 2 purple nuclear lobes, coarse orange-red granules. Place cell 4 center right, 16 μm, kidney-shaped folded nucleus, broad gray-blue cytoplasm, fine purple-red granules. Place cell 5 lower right, 12 μm, dense dark purple granules partly covering its nucleus. Place cell 6 lower left, 15 μm, edge overlapped by 2 red blood cells and incomplete nucleus outline. No arrows. Add labels (labeled \"1\"), (labeled \"2\"), (labeled \"3\"), (labeled \"4\"), (labeled \"5\"), (labeled \"6\"), (labeled \"RBC 7 μm\"), and (labeled \"Wright染色模拟视野\"). Use local color contrast for nuclei and granules.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各编号细胞的大小、核形、颗粒颜色和重叠情况，必须观察图片并综合这些视觉事实才能确定分类。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "1号的直径、圆核和窄胞质形态",
+        "3号的双叶核和粗大橙红颗粒",
+        "4号的较大直径、肾形折叠核、宽灰蓝胞质和细小紫红颗粒",
+        "6号被2个红细胞重叠遮挡且核轮廓不完整",
+        "红细胞参照圆为7 μm"
+      ],
+      "validation_rules": [
+        "先排除形态不完整或被明显重叠遮挡的备选细胞",
+        "在未排除的备选细胞中比较直径、核形、胞质宽窄和颗粒特征",
+        "圆形大核且窄胞质者不判为单核细胞",
+        "双叶核并有粗大橙红颗粒者不判为单核细胞",
+        "较大细胞、肾形或折叠状核、宽灰蓝胞质且仅有细小颗粒者判为单核细胞"
+      ]
+    }
+  },
+  {
+    "question_id": "S08-002-Q0005",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "zh",
+    "question_text": "观察图中编号结构。按 Wright 染色外周血涂片的白细胞分类计数原则，仅纳入形态完整的白细胞，计算中性粒细胞在纳入计数细胞中的比例，最接近下列哪一项？",
+    "options": {
+      "A": "20%",
+      "B": "33%",
+      "C": "40%",
+      "D": "60%"
+    },
+    "correct_answer": "C",
+    "explanation": "先排除图中形态破碎、不能可靠分类的结构，不将其纳入白细胞分类计数。其余完整白细胞中，具有分叶核且胞质有细小淡紫颗粒者归为中性粒细胞；小圆核、胞质少者归为淋巴细胞；肾形核且胞质较宽者归为单核细胞；双叶核伴粗大橙红颗粒者归为嗜酸性粒细胞。因此纳入计数的完整白细胞共有 5 个，其中中性粒细胞有 2 个，比例为 $2/5\\times100\\%=40\\%$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "细胞识别",
+    "blueprint_image_type": "peripheral_blood_smear",
+    "image_path": "images/d5c3741492834e1c.png",
+    "image_prompt": "A synthetic peripheral_blood_smear diagram, viewed from above, with one rectangular microscopy field titled (labeled \"Wright染色外周血涂片\"). Place 6 numbered foreground structures over a pale pink erythrocyte background: upper left structure (labeled \"1\") is an intact leukocyte with a 3-lobed dark purple nucleus and fine pale lilac granules; upper right (labeled \"2\") is an intact leukocyte with a dense round nucleus and thin blue cytoplasm; center left (labeled \"3\") has a kidney-shaped folded nucleus and broad gray-blue cytoplasm; center right (labeled \"4\") has a bilobed nucleus and coarse orange-red granules; lower left (labeled \"5\") has a 4-lobed dark purple nucleus and fine pale lilac granules; lower right (labeled \"6\") is a ruptured pale nuclear streak with ragged fragments and no complete border. Each circular number label is adjacent to its structure. Use clear color contrast for nuclei and granules.",
+    "final_image_prompt": "A synthetic peripheral_blood_smear diagram, viewed from above, with one rectangular microscopy field titled (labeled \"Wright染色外周血涂片\"). Place 6 numbered foreground structures over a pale pink erythrocyte background: upper left structure (labeled \"1\") is an intact leukocyte with a 3-lobed dark purple nucleus and fine pale lilac granules; upper right (labeled \"2\") is an intact leukocyte with a dense round nucleus and thin blue cytoplasm; center left (labeled \"3\") has a kidney-shaped folded nucleus and broad gray-blue cytoplasm; center right (labeled \"4\") has a bilobed nucleus and coarse orange-red granules; lower left (labeled \"5\") has a 4-lobed dark purple nucleus and fine pale lilac granules; lower right (labeled \"6\") is a ruptured pale nuclear streak with ragged fragments and no complete border. Each circular number label is adjacent to its structure. Use clear color contrast for nuclei and granules.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各编号细胞的核形态、颗粒颜色和边界完整性，必须依赖图片完成识别、排除和计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "编号 1 和编号 5 呈分叶核并有细小淡紫颗粒。",
+        "编号 6 为破碎结构且无完整细胞边界。",
+        "编号 4 为双叶核并有粗大橙红颗粒。",
+        "图中可纳入分类计数的完整白细胞共有 5 个。"
+      ],
+      "validation_rules": [
+        "先排除无完整细胞边界的编号 6。",
+        "在剩余完整白细胞中，只将分叶核且细小淡紫颗粒的细胞计为中性粒细胞。",
+        "按目标细胞数除以纳入计数的完整白细胞总数计算百分比。",
+        "计算结果为 $2/5\\times100\\%=40\\%$，对应 C。"
+      ]
+    }
+  },
+  {
+    "question_id": "e396c121accd4c59",
+    "subject_id": "S08",
+    "subject_name": "临床医学",
+    "kp_id": "S08-M01-002",
+    "kp_name": "外周血涂片与白细胞分类",
+    "question_language": "en",
+    "question_text": "In the Wright-stained peripheral blood smear field, which labeled leukocyte best fits an abnormal neutrophil morphology characterized by a segmented neutrophil nucleus together with cytoplasmic toxic change?",
+    "options": {
+      "A": "W2",
+      "B": "W3",
+      "C": "W4",
+      "D": "W5"
+    },
+    "correct_answer": "C",
+    "explanation": "W4 is the only labeled leukocyte that satisfies both required visual conditions. First, its nucleus is segmented into three lobes connected by thin filaments, supporting neutrophil classification rather than lymphocyte or monocyte. Second, its cytoplasm contains coarse dark blue irregular granules and a pale blue oval inclusion, matching abnormal neutrophil toxic change in a Wright-stained smear. W2 has a round dense nucleus with only a thin rim of cytoplasm, fitting a lymphocyte-like appearance. W3 has a kidney-shaped nucleus and gray-blue cytoplasm without the required segmented nucleus. W5 has a bilobed nucleus with orange-red granules, which directs classification toward eosinophil morphology rather than toxic neutrophil morphology.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "形态异常判断",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/e396c121accd4c59.png",
+    "image_prompt": "A synthetic microscopy image of a Wright-stained peripheral blood smear, viewed from above as one circular microscope field. Arrange 30 pale pink erythrocytes in the background and 6 larger leukocytes in fixed positions: upper left (labeled \"W1\"), upper center (labeled \"W2\"), upper right (labeled \"W3\"), lower center (labeled \"W4\"), lower left (labeled \"W5\"), lower right (labeled \"W6\"). Connect each label to its cell with one thin black leader line. Show W1 with a three-lobed purple nucleus connected by thin filaments and light pink cytoplasm containing fine pink-purple granules. Show W2 with one round dark purple nucleus and narrow light blue cytoplasm. Show W3 with a kidney-shaped purple nucleus and gray-blue cytoplasm. Show W4 with a three-lobed purple nucleus, two thin filaments, eight coarse dark blue irregular cytoplasmic granules, and one pale blue oval inclusion near the edge. Show W5 with a bilobed nucleus and twelve orange-red granules. Show W6 with dense dark purple granules obscuring a lobulated nucleus.",
+    "final_image_prompt": "A synthetic microscopy image of a Wright-stained peripheral blood smear, viewed from above as one circular microscope field. Arrange 30 pale pink erythrocytes in the background and 6 larger leukocytes in fixed positions: upper left (labeled \"W1\"), upper center (labeled \"W2\"), upper right (labeled \"W3\"), lower center (labeled \"W4\"), lower left (labeled \"W5\"), lower right (labeled \"W6\"). Connect each label to its cell with one thin black leader line. Show W1 with a three-lobed purple nucleus connected by thin filaments and light pink cytoplasm containing fine pink-purple granules. Show W2 with one round dark purple nucleus and narrow light blue cytoplasm. Show W3 with a kidney-shaped purple nucleus and gray-blue cytoplasm. Show W4 with a three-lobed purple nucleus, two thin filaments, eight coarse dark blue irregular cytoplasmic granules, and one pale blue oval inclusion near the edge. Show W5 with a bilobed nucleus and twelve orange-red granules. Show W6 with dense dark purple granules obscuring a lobulated nucleus.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The options are only label names, and the decisive features--nuclear lobe pattern, granule color, granule texture, and inclusion presence--are supplied only by the image.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "W1 has a segmented nucleus but lacks cytoplasmic toxic-change features.",
+        "W4 has a segmented three-lobed nucleus.",
+        "W4 contains coarse dark blue cytoplasmic granules.",
+        "W4 contains one pale blue oval cytoplasmic inclusion.",
+        "W5 has orange-red granules and a bilobed nucleus.",
+        "W2 and W3 lack the required segmented neutrophil nucleus plus cytoplasmic toxic-change combination."
+      ],
+      "validation_rules": [
+        "The correct option must identify the labeled cell with both segmented neutrophil nuclear morphology and abnormal cytoplasmic toxic-change features.",
+        "A cell with only a round nucleus, kidney-shaped nucleus, orange-red granules, or dense basophilic granules must be rejected.",
+        "Only the option pointing to W4 satisfies all required visual criteria."
+      ]
+    }
+  }
+]

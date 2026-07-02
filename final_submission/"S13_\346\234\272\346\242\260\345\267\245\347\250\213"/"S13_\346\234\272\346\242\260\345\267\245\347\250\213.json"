@@ -1,0 +1,399 @@
+[
+  {
+    "question_id": "S13-001-Q0004",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-001",
+    "kp_name": "三视图识读与对应关系",
+    "question_language": "zh",
+    "question_text": "图中组合体由等底面小方柱拼成，右侧给出待匹配的主视图外轮廓。若按第一角法建立三视图关系，应选择哪一个观察方向作为主视图方向？",
+    "options": {
+      "A": "方向 A",
+      "B": "方向 B",
+      "C": "方向 C",
+      "D": "方向 D"
+    },
+    "correct_answer": "B",
+    "explanation": "把俯视高度图按候选观察方向作正投影时，主视图每一列的高度等于该视线方向上对应一排小方柱高度的最大值，并且左右顺序要按观察者看到的横向方向排列。方向 A 投影得到的三列轮廓高度为 $3,4,2$，与目标不符；方向 C 会得到 $2,4,3$，是方向 A 的相反观察结果；方向 D 得到 $4,3,2$，也不符。方向 B 从右向左观察，横向顺序对应图中从下到上的三排，其最大高度依次为 $3,4,2$，同时右侧目标轮廓的内部分阶线与靠观察者一侧的较低小方柱位置一致，因此只有方向 B 与给出的主视图对应。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "视图选择",
+    "blueprint_image_type": "mechanical_schematic",
+    "image_path": "images/272f7b1c45504140.png",
+    "image_prompt": "A mechanical_schematic diagram for orthographic view selection. The global layout is split into a left top-height map and a right target front view, separated by one thin vertical line. On the left, draw a 3 by 3 square grid labeled \"俯视高度图\"; place the numbers 2, 4, 1 in the top row, 3, 1, 4 in the middle row, and 1, 2, 3 in the bottom row. Add a north arrow above the grid labeled \"N\". Add four viewing arrows toward the grid center: bottom arrow labeled \"A\", right arrow labeled \"B\", top arrow labeled \"C\", and left arrow labeled \"D\". On the right, draw a target orthographic front outline labeled \"待匹配主视图\" with 3 equal-width bottom segments; their left-to-right heights are 3, 4, and 2, with vertical step lines between adjacent segments. Use thin black outlines and a light blue highlight on the target outline.",
+    "final_image_prompt": "A mechanical_schematic diagram for orthographic view selection. The global layout is split into a left top-height map and a right target front view, separated by one thin vertical line. On the left, draw a 3 by 3 square grid labeled \"俯视高度图\"; place the numbers 2, 4, 1 in the top row, 3, 1, 4 in the middle row, and 1, 2, 3 in the bottom row. Add a north arrow above the grid labeled \"N\". Add four viewing arrows toward the grid center: bottom arrow labeled \"A\", right arrow labeled \"B\", top arrow labeled \"C\", and left arrow labeled \"D\". On the right, draw a target orthographic front outline labeled \"待匹配主视图\" with 3 equal-width bottom segments; their left-to-right heights are 3, 4, and 2, with vertical step lines between adjacent segments. Use thin black outlines and a light blue highlight on the target outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出作答任务与方向代号，具体高度分布、方向位置和目标轮廓都只在图片中，无法脱离图片判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "3乘3高度图中各小方柱的具体高度分布",
+        "四个候选观察箭头相对于高度图的位置与指向",
+        "待匹配主视图三段轮廓的左右高度顺序",
+        "待匹配主视图的上升与下降台阶位置"
+      ],
+      "validation_rules": [
+        "按每个候选方向将高度图沿视线方向作正投影",
+        "每个视图分段高度取该视线压缩方向上的可见最大高度",
+        "候选结果必须同时满足三段高度数值和左右顺序",
+        "只有方向B的投影结果与待匹配主视图一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-001-Q0001",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-001",
+    "kp_name": "三视图识读与对应关系",
+    "question_language": "en",
+    "question_text": "Using first-angle orthographic projection, the diagram gives the front view and top view of a unit-cube composite solid. Which candidate is the missing right-side view?",
+    "options": {
+      "A": "Candidate A",
+      "B": "Candidate B",
+      "C": "Candidate C",
+      "D": "Candidate D"
+    },
+    "correct_answer": "C",
+    "explanation": "In first-angle projection, the right-side view is obtained by looking from the right and projecting height against depth. From the top-view height map, the front depth row has column heights $2,1,3$, so its projected height is $3$. The middle depth row has heights $3,2,1$, so its projected height is also $3$. The back depth row has heights $1,2$, so its projected height is $2$. Therefore the missing right-side view must have three depth positions with heights $3,3,2$ from front to back. Candidate C is the only one matching both the two equal taller front/middle positions and the shorter back position. Candidate A incorrectly lowers the middle depth position, Candidate B reverses the depth order, and Candidate D incorrectly raises the back depth position.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "三视图补全",
+    "blueprint_image_type": "mechanical_diagram",
+    "image_path": "images/343d782ddaaf4940.png",
+    "image_prompt": "Mechanical diagram for first-angle orthographic projection, split into a left study area and a right answer area. In the left area, place a stepped FRONT VIEW above a TOP VIEW; label them (labeled \"FRONT VIEW\") and (labeled \"TOP VIEW\"). The TOP VIEW is a 4 column by 3 row grid, with an arrow (labeled \"front\") pointing toward (labeled \"back\"). Put height labels in occupied cells: front row columns 1,2,3 show 2,1,3; middle row columns 2,3,4 show 3,2,1; back row columns 1,3 show 1,2. The FRONT VIEW shows four stepped column heights 2,3,3,1 from left to right. In the right area, show four small candidate right-side views under (labeled \"RIGHT-SIDE VIEW ?\"): A heights 3,2,2; B heights 2,3,3; C heights 3,3,2; D heights 3,3,3. Use black outlines and a red outline only around the question title.",
+    "final_image_prompt": "Mechanical diagram for first-angle orthographic projection, split into a left study area and a right answer area. In the left area, place a stepped FRONT VIEW above a TOP VIEW; label them (labeled \"FRONT VIEW\") and (labeled \"TOP VIEW\"). The TOP VIEW is a 4 column by 3 row grid, with an arrow (labeled \"front\") pointing toward (labeled \"back\"). Put height labels in occupied cells: front row columns 1,2,3 show 2,1,3; middle row columns 2,3,4 show 3,2,1; back row columns 1,3 show 1,2. The FRONT VIEW shows four stepped column heights 2,3,3,1 from left to right. In the right area, show four small candidate right-side views under (labeled \"RIGHT-SIDE VIEW ?\"): A heights 3,2,2; B heights 2,3,3; C heights 3,3,2; D heights 3,3,3. Use black outlines and a red outline only around the question title.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "Without the diagram, the top-view height map, projection direction, and candidate silhouettes are unknown, so the missing right-side view cannot be determined.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The top-view cell heights and their depth-row positions are only visible in the image.",
+        "The front-to-back direction arrow is only visible in the image.",
+        "The four candidate stepped outlines are only visible in the image."
+      ],
+      "validation_rules": [
+        "Read the top view by depth rows using the front-to-back arrow.",
+        "For each depth row, compare all occupied cell height labels and use the projected visible height for the right-side view.",
+        "Match the resulting three depth-position silhouette to exactly one candidate."
+      ]
+    }
+  },
+  {
+    "question_id": "S13-001-Q0007",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-001",
+    "kp_name": "三视图识读与对应关系",
+    "question_language": "zh",
+    "question_text": "图中为同一组合体的三视图投影示意，采用第一角法并保留投影对应辅助线。若只根据正投影对应关系判断，哪一项所列的两个标注线段表示同一竖直棱线在不同视图中的投影？",
+    "options": {
+      "A": "F2 与 T2",
+      "B": "F1 与 R1",
+      "C": "F3 与 T3",
+      "D": "F2 与 R2"
+    },
+    "correct_answer": "A",
+    "explanation": "按第一角法，俯视图位于主视图下方，二者共享左右方向的投影坐标；右视图位于主视图左侧，二者共享高度方向的投影坐标。图中要判断同一竖直棱线，必须同时满足：在主视图中表现为竖直线段，在俯视图中表现为前后方向的线段，且二者左右坐标一致。F2 位于主视图中同一左右投影位置，其上下端与阶台高度线相关；T2 位于俯视图中相同左右投影位置，表示该竖直棱线在水平面投影中的前后走向位置，因此 F2 与 T2 对应。F1 与 R1只共享高度关系，不能表示同一竖直棱线的俯视对应；F3 与 T3左右投影位置不一致；F2 与 R2混淆了主视图和右视图中共享高度但不共享左右坐标的关系。",
+    "difficulty": 1,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "投影关系判定",
+    "blueprint_image_type": "mechanical_schematic",
+    "image_path": "images/3c1fc8dc4ca0494e.png",
+    "image_prompt": "A mechanical_schematic diagram showing an orthographic projection layout. The global layout has three regions: front view at upper right (labeled \"主视图\"), top view directly below it (labeled \"俯视图\"), and right view to the left (labeled \"右视图\"), with a small title label \"第一角法\". Draw the front view as a stepped outline 60 units wide and 40 units high, containing three marked segments: a vertical short segment (labeled \"F1\") 10 units from the left edge, a vertical segment (labeled \"F2\") 35 units from the left edge, and a horizontal short segment (labeled \"F3\") 50 units from the left edge. Draw the top view as a 60 by 35 rectangle with front-back segments labeled \"T1\", \"T2\", \"T3\" at x positions 20, 35, and 45. Draw the right view as a 35 by 40 stepped outline with segments labeled \"R1\" and \"R2\". Connect F2 to T2 with one vertical dashed projection line, F1 to R1 with one horizontal dashed projection line, and show one offset dashed line near F3 and T3. Highlight only F2 and T2 in blue; all other lines black.",
+    "final_image_prompt": "A mechanical_schematic diagram showing an orthographic projection layout. The global layout has three regions: front view at upper right (labeled \"主视图\"), top view directly below it (labeled \"俯视图\"), and right view to the left (labeled \"右视图\"), with a small title label \"第一角法\". Draw the front view as a stepped outline 60 units wide and 40 units high, containing three marked segments: a vertical short segment (labeled \"F1\") 10 units from the left edge, a vertical segment (labeled \"F2\") 35 units from the left edge, and a horizontal short segment (labeled \"F3\") 50 units from the left edge. Draw the top view as a 60 by 35 rectangle with front-back segments labeled \"T1\", \"T2\", \"T3\" at x positions 20, 35, and 45. Draw the right view as a 35 by 40 stepped outline with segments labeled \"R1\" and \"R2\". Connect F2 to T2 with one vertical dashed projection line, F1 to R1 with one horizontal dashed projection line, and show one offset dashed line near F3 and T3. Highlight only F2 and T2 in blue; all other lines black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "各标注线段的位置、方向、视图排布和辅助线关系只在图片中给出，脱离图片无法判断哪一组选项满足正投影对应关系。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "F2在主视图中的左右投影位置与T2在俯视图中的左右投影位置一致",
+        "F1与R1体现的是高度方向辅助对应",
+        "F3与T3在俯视方向的左右位置不一致",
+        "R2表示右视图中的深度方向位置而非主俯视图的左右对应"
+      ],
+      "validation_rules": [
+        "判定同一竖直棱线的主视—俯视投影时，应检查两者是否共享左右方向坐标",
+        "若两个标注只共享高度方向关系，则不能作为主视—俯视中同一竖直棱线的对应投影",
+        "若主视图与俯视图标注线段左右位置不一致，则排除该组合",
+        "唯一满足同一左右投影位置且线段方向符合竖直棱线投影特征的选项为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-001-Q0001",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-001",
+    "kp_name": "三视图识读与对应关系",
+    "question_language": "en",
+    "question_text": "In the first-angle orthographic arrangement shown in the figure, the front view and top view of a block assembly are given. Which candidate completes the missing right-side view, including the visible step edges and hidden edges?",
+    "options": {
+      "A": "Candidate A",
+      "B": "Candidate B",
+      "C": "Candidate C",
+      "D": "Candidate D"
+    },
+    "correct_answer": "C",
+    "explanation": "Use first-angle projection: the right-side view is read from the depth direction of the top view and the height direction of the front view. From the front view, the maximum heights across the three width zones are $3$, $2$, and $4$ units, so the right view must reach the $4$-unit height where any depth strip contains the rear tall portion. From the top view, the front depth strip is occupied only by the left low block of height $3$ and the middle block of height $2$, so its visible outline is $3$ units high. The middle depth strip includes the middle block of height $2$ and the rear-right block of height $4$, so its outline reaches $4$ units. The rear depth strip includes the left rear block of height $1$ and the rear-right block of height $4$, so it also reaches $4$ units. The vertical step between the front strip and the middle strip is therefore visible at depth $1$, rising from $3$ to $4$. The lower internal rear-left height creates a hidden horizontal edge at height $1$ across the rear depth strip. Only Candidate C has the $3$-then-$4$ outer profile, the visible step at the first depth division, and the hidden rear-strip edge at height $1$.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "三视图补全",
+    "blueprint_image_type": "mechanical_diagram",
+    "image_path": "images/967fbc004a0a460e.png",
+    "image_prompt": "Mechanical diagram of first-angle orthographic projection, split into a left region with two given views and a right region with four candidates. On the left, place FRONT VIEW (labeled \"FRONT VIEW\") above TOP VIEW (labeled \"TOP VIEW\"), both on a unit grid. The front view has three adjacent width zones of 2, 1, and 2 units with top heights 3, 2, and 4. The top view has three depth strips of 1, 2, and 1 units: front strip occupied in left and middle zones, middle strip occupied in middle and right zones, rear strip occupied in left and right zones. Add arrows labeled \"width\", \"depth\", and \"height\", plus label \"first-angle projection\". On the right, show RIGHT VIEW ? and four candidates labeled \"A\", \"B\", \"C\", \"D\". Candidate A profile heights are 4,4,3; B profile heights 3,2,4 with one dashed vertical hidden line; C profile heights 3,4,4 with one blue dashed horizontal line at height 1 in the rear strip; D same profile with dashed line at height 2. Use black outlines and blue dashed hidden lines.",
+    "final_image_prompt": "Mechanical diagram of first-angle orthographic projection, split into a left region with two given views and a right region with four candidates. On the left, place FRONT VIEW (labeled \"FRONT VIEW\") above TOP VIEW (labeled \"TOP VIEW\"), both on a unit grid. The front view has three adjacent width zones of 2, 1, and 2 units with top heights 3, 2, and 4. The top view has three depth strips of 1, 2, and 1 units: front strip occupied in left and middle zones, middle strip occupied in middle and right zones, rear strip occupied in left and right zones. Add arrows labeled \"width\", \"depth\", and \"height\", plus label \"first-angle projection\". On the right, show RIGHT VIEW ? and four candidates labeled \"A\", \"B\", \"C\", \"D\". Candidate A profile heights are 4,4,3; B profile heights 3,2,4 with one dashed vertical hidden line; C profile heights 3,4,4 with one blue dashed horizontal line at height 1 in the rear strip; D same profile with dashed line at height 2. Use black outlines and blue dashed hidden lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The necessary width-zone heights, depth-strip occupancy, projection layout, and candidate hidden-line placements are only available from the figure.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The given top view encodes which width zones exist in each depth strip.",
+        "The given front view encodes the height associated with each width zone.",
+        "Two candidate side views share the same external outline but differ in hidden-edge height."
+      ],
+      "validation_rules": [
+        "For each depth strip, take the maximum height among occupied width zones visible in the top view.",
+        "The side-view depth order must follow first-angle projection as shown by the labeled layout.",
+        "The candidate must include the hidden edge corresponding to the lower rear-left local height inside the rear strip.",
+        "The selected option must match both the external depth-height outline and the hidden-edge placement."
+      ]
+    }
+  },
+  {
+    "question_id": "S13-001-Q0006",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-001",
+    "kp_name": "三视图识读与对应关系",
+    "question_language": "en",
+    "question_text": "In the mechanical diagram, a stepped block is represented by a top view with unit-square cells and by its corresponding front view. Under standard orthographic projection, which candidate should be chosen to complete the missing right view?",
+    "options": {
+      "A": "Candidate A",
+      "B": "Candidate B",
+      "C": "Candidate C",
+      "D": "Candidate D"
+    },
+    "correct_answer": "D",
+    "explanation": "Read the top view as a $4 \\times 3$ footprint, where each filled unit square carries the stack height at that plan position. For the right view, the horizontal direction corresponds to depth rows, and the visible height for each depth row is the maximum stack height among all occupied cells in that row. The front row contains heights $2,1,3$, so its projected height is $3$. The middle row contains heights $1,2,4$, so its projected height is $4$. The back row contains heights $3,2$, so its projected height is $3$. Therefore the right-view depth profile from front to back is $3,4,3$. Among the four candidates, only Candidate D shows exactly this three-column height profile while preserving the orthographic baseline and equal unit widths.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "三视图补全",
+    "blueprint_image_type": "mechanical_diagram",
+    "image_path": "images/b714c1bcb9f543ee.png",
+    "image_prompt": "A mechanical_diagram showing an orthographic-view completion problem. The layout is split into a left region with two given views and a right region with four candidates. In the left region, draw a top view labeled \"Top view\": a 4 by 3 unit grid, with occupied cells filled light blue and labeled by heights: front row column 1 \"2\", column 3 \"1\", column 4 \"3\"; middle row column 1 \"1\", column 2 \"2\", column 3 \"4\"; back row column 2 \"3\", column 4 \"2\". Add arrows labeled \"front\" at the bottom and \"back\" at the top. Below it, draw a front view labeled \"Front view\" with four columns of heights 2, 3, 4, 3, connected by red dashed projection guide lines. On the right, under \"Missing right view?\", draw candidates labeled \"A\", \"B\", \"C\", and \"D\" with three column heights: A 2-4-3, B 3-3-4, C 3-4-2, D 3-4-3. Use light gray candidate fills.",
+    "final_image_prompt": "A mechanical_diagram showing an orthographic-view completion problem. The layout is split into a left region with two given views and a right region with four candidates. In the left region, draw a top view labeled \"Top view\": a 4 by 3 unit grid, with occupied cells filled light blue and labeled by heights: front row column 1 \"2\", column 3 \"1\", column 4 \"3\"; middle row column 1 \"1\", column 2 \"2\", column 3 \"4\"; back row column 2 \"3\", column 4 \"2\". Add arrows labeled \"front\" at the bottom and \"back\" at the top. Below it, draw a front view labeled \"Front view\" with four columns of heights 2, 3, 4, 3, connected by red dashed projection guide lines. On the right, under \"Missing right view?\", draw candidates labeled \"A\", \"B\", \"C\", and \"D\" with three column heights: A 2-4-3, B 3-3-4, C 3-4-2, D 3-4-3. Use light gray candidate fills.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The answer cannot be determined from the text alone because the footprint cells, height labels, projection directions, and candidate profiles are all specified only in the diagram.",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "The occupied top-view cells and their height labels are only visible in the image.",
+        "The front-to-back direction of the top grid is only defined by the image arrows.",
+        "The four candidate right-view profiles are only visible in the image."
+      ],
+      "validation_rules": [
+        "For each top-view depth row, take the greatest visible height label in that row.",
+        "Map top-view depth rows to right-view horizontal columns from front to back.",
+        "Select the candidate whose three right-view column heights match the row-wise projected heights."
+      ]
+    }
+  },
+  {
+    "question_id": "S13-002-Q0003",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-002",
+    "kp_name": "剖视图与断面图",
+    "question_language": "zh",
+    "question_text": "根据图中 A-A 剖切位置绘制移出断面图时，若只对被剖切到的实体材料画剖面线，则该断面图中应画剖面线的材料面积为多少？",
+    "options": {
+      "A": "$1488-64\\pi\\ \\mathrm{mm^2}$",
+      "B": "$1728-64\\pi\\ \\mathrm{mm^2}$",
+      "C": "$1488\\ \\mathrm{mm^2}$",
+      "D": "$1728-240\\pi\\ \\mathrm{mm^2}$"
+    },
+    "correct_answer": "A",
+    "explanation": "移出断面图只表示剖切平面切到的断面形状，剖面线应画在实体材料区域内，孔和通槽等空缺部分不画剖面线。由图读出外轮廓为矩形，面积为 $48\\times36=1728\\ \\mathrm{mm^2}$；中部圆孔为通孔，应扣除 $\\pi\\times8^2=64\\pi\\ \\mathrm{mm^2}$；下部矩形通槽也为空缺，应扣除 $12\\times20=240\\ \\mathrm{mm^2}$。因此应画剖面线的面积为 $1728-64\\pi-240=1488-64\\pi\\ \\mathrm{mm^2}$，选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "断面图",
+    "blueprint_image_type": "mechanical_schematic",
+    "image_path": "images/455f17f941a743d3.png",
+    "image_prompt": "A mechanical schematic diagram for engineering drawing, split into left and right regions. On the left, show one rectangular plate front view with dimensions 48 horizontally and 36 vertically, a centered circular through hole labeled \"⌀16\", and one vertical rectangular through slot below it labeled width \"12\" and height \"20\". Draw one vertical cutting plane line through the centers of the hole and slot, with arrowheads at both ends and labels \"A\" and \"A\". On the right, show the removed section view labeled \"A-A\" matching the same outer rectangle, circular void, and rectangular slot void. Connect the left cutting plane to the right section with one horizontal arrow. Display labels \"48\", \"36\", \"⌀16\", \"12\", \"20\", \"A\", \"A\", and \"A-A\". Hatch only the remaining solid material at 45 degrees, with a light blue highlight on hatched regions.",
+    "final_image_prompt": "A mechanical schematic diagram for engineering drawing, split into left and right regions. On the left, show one rectangular plate front view with dimensions 48 horizontally and 36 vertically, a centered circular through hole labeled \"⌀16\", and one vertical rectangular through slot below it labeled width \"12\" and height \"20\". Draw one vertical cutting plane line through the centers of the hole and slot, with arrowheads at both ends and labels \"A\" and \"A\". On the right, show the removed section view labeled \"A-A\" matching the same outer rectangle, circular void, and rectangular slot void. Connect the left cutting plane to the right section with one horizontal arrow. Display labels \"48\", \"36\", \"⌀16\", \"12\", \"20\", \"A\", \"A\", and \"A-A\". Hatch only the remaining solid material at 45 degrees, with a light blue highlight on hatched regions.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出外轮廓、孔、槽的尺寸，也没有说明 A-A 穿过哪些空缺结构；必须看图才能确定断面图中哪些区域应画剖面线并完成面积计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "外矩形尺寸为 48 mm 和 36 mm",
+        "圆形通孔直径为 16 mm",
+        "矩形通槽尺寸为 12 mm 和 20 mm",
+        "A-A 剖切平面同时穿过圆孔和通槽"
+      ],
+      "validation_rules": [
+        "外轮廓面积按 $48\\times36$ 计算",
+        "圆形通孔空缺面积按 $\\pi\\times8^2$ 扣除",
+        "矩形通槽空缺面积按 $12\\times20$ 扣除",
+        "实体剖面线面积必须等于外轮廓面积减去两个空缺面积"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-002-Q0005",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-002",
+    "kp_name": "剖视图与断面图",
+    "question_language": "zh",
+    "question_text": "根据图中机件的表达方式，判断右侧视图应归类为哪一种剖视表达？",
+    "options": {
+      "A": "全剖视图",
+      "B": "半剖视图",
+      "C": "局部剖视图",
+      "D": "移出断面图"
+    },
+    "correct_answer": "B",
+    "explanation": "图中右侧视图以竖直中心线作为分界，一侧保留外形轮廓，另一侧画出剖面线来表示内部结构；同时左侧给出的机件外形关于中心线对称，适合用一半表达外形、一半表达内部结构。因此该表达不是把整个视图都剖开的全剖视图，也不是只在局部用波浪线限定的局部剖视图，更不是单独移出的断面图，而应判定为半剖视图。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "全剖半剖局部剖",
+    "blueprint_image_type": "engineering_drawing",
+    "image_path": "images/65eac97b3b254eb8.png",
+    "image_prompt": "Engineering drawing diagram, split into left and right regions on a white page, orthographic front view style. On the left, draw 1 symmetric mechanical block with a stepped outer outline, 1 vertical dash-dot centerline (labeled \"中心线\"), and 2 vertical hidden lines indicating one internal coaxial hole. Add 1 vertical cutting plane line coincident with the centerline, with 2 arrows at the top and bottom, each labeled \"A\". On the right, draw 1 corresponding completed view labeled \"A-A\" above it: include the same outer outline, 1 central vertical dash-dot line, the left half showing only visible exterior contour lines, and the right half showing 2 visible internal hole boundary lines plus 1 hatched material region with 45-degree hatch lines. No wavy break line and no separated standalone section shape. Use a subtle light blue tint only behind the hatched right-side region.",
+    "final_image_prompt": "Engineering drawing diagram, split into left and right regions on a white page, orthographic front view style. On the left, draw 1 symmetric mechanical block with a stepped outer outline, 1 vertical dash-dot centerline (labeled \"中心线\"), and 2 vertical hidden lines indicating one internal coaxial hole. Add 1 vertical cutting plane line coincident with the centerline, with 2 arrows at the top and bottom, each labeled \"A\". On the right, draw 1 corresponding completed view labeled \"A-A\" above it: include the same outer outline, 1 central vertical dash-dot line, the left half showing only visible exterior contour lines, and the right half showing 2 visible internal hole boundary lines plus 1 hatched material region with 45-degree hatch lines. No wavy break line and no separated standalone section shape. Use a subtle light blue tint only behind the hatched right-side region.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有说明剖面线分布、中心线分界、是否有波浪线或是否移出，必须观察图片才能判断表达类型。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "右侧视图只有中心线一侧画剖面线，另一侧保留外形表达",
+        "右侧视图没有波浪线边界",
+        "右侧带剖面线部分仍在原视图轮廓内，没有移出成为单独断面",
+        "左侧机件外形关于竖直中心线对称"
+      ],
+      "validation_rules": [
+        "若视图以中心线为界，一半表达外形、一半表达内部剖切结构，则判为半剖视图",
+        "若整个视图均按剖切后表达且剖面线覆盖相应材料区域，才可判为全剖视图",
+        "若剖切范围由波浪线限定，才可判为局部剖视图",
+        "若只表达切断面形状并移出原视图位置，才可判为移出断面图"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-002-Q0001",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-002",
+    "kp_name": "剖视图与断面图",
+    "question_language": "zh",
+    "question_text": "根据图示剖切位置，若按该位置绘制移出断面图，并要求断面只表示剖切平面实际切到的材料部分，则该断面的材料面积最接近下列哪一项？计算时取圆周率为 $3.14$。",
+    "options": {
+      "A": "$2301.84\\ \\text{mm}^2$",
+      "B": "$2373.84\\ \\text{mm}^2$",
+      "C": "$2229.84\\ \\text{mm}^2$",
+      "D": "$2457.84\\ \\text{mm}^2$"
+    },
+    "correct_answer": "A",
+    "explanation": "移出断面图表示剖切平面切到的真实断面形状。由图可知，该位置的外轮廓为圆形，内部有同轴圆孔，顶部还有一个开口矩形键槽，因此材料面积应为外圆面积减去内孔面积，再减去键槽面积。计算为 $\\frac{3.14}{4}(60^2-24^2)-12\\times6=\\frac{3.14}{4}\\times3024-72=2373.84-72=2301.84\\ \\text{mm}^2$。选项B漏减键槽；选项C把键槽重复扣除了两次；选项D把键槽当作增加的材料或混淆了去除关系。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "断面图",
+    "blueprint_image_type": "mechanical_schematic",
+    "image_path": "images/8157cf5c6eb54a23.png",
+    "image_prompt": "A mechanical schematic diagram of a removed section for engineering drawing. The global layout is split into left and right regions: on the left, a simple horizontal shaft main view with one vertical cutting line through the shaft, arrows at both ends, labeled \"A\" above and \"A\" below. On the right, draw one removed section labeled \"A-A\": one circular outer boundary, one concentric circular hole, and one centered rectangular slot opening downward from the top edge of the circle. Add dimension labels on the right section: outer diameter labeled \"φ60\", inner hole labeled \"φ24\", slot width labeled \"12\", slot depth labeled \"6\", and unit label \"mm\" near the dimension group. Show the hatched material region with 45-degree thin lines, excluding the hole and slot. Use a small blue highlight only on the A-A cutting line.",
+    "final_image_prompt": "A mechanical schematic diagram of a removed section for engineering drawing. The global layout is split into left and right regions: on the left, a simple horizontal shaft main view with one vertical cutting line through the shaft, arrows at both ends, labeled \"A\" above and \"A\" below. On the right, draw one removed section labeled \"A-A\": one circular outer boundary, one concentric circular hole, and one centered rectangular slot opening downward from the top edge of the circle. Add dimension labels on the right section: outer diameter labeled \"φ60\", inner hole labeled \"φ24\", slot width labeled \"12\", slot depth labeled \"6\", and unit label \"mm\" near the dimension group. Show the hatched material region with 45-degree thin lines, excluding the hole and slot. Use a small blue highlight only on the A-A cutting line.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出断面外径、孔径、键槽尺寸和槽的去除关系；必须通过图中断面形状、尺寸标注和剖切对应关系才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "外圆直径为60 mm",
+        "中心孔直径为24 mm",
+        "开口矩形槽尺寸为12 mm乘6 mm",
+        "矩形槽属于断面中的去除部分",
+        "右侧断面对应左侧A-A剖切位置"
+      ],
+      "validation_rules": [
+        "必须按移出断面图理解右侧图形为剖切平面切到的真实形状",
+        "材料面积应等于外圆面积减中心孔面积再减矩形槽面积",
+        "使用 $3.14$ 计算圆面积时结果应为 $2301.84\\ \\text{mm}^2$",
+        "只有与该计算结果一致的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-002-Q0004",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-002",
+    "kp_name": "剖视图与断面图",
+    "question_language": "zh",
+    "question_text": "根据图中的剖切位置与右侧主视图的表达方式，判断右侧主视图采用的剖视或断面表达类型。",
+    "options": {
+      "A": "全剖视图",
+      "B": "半剖视图",
+      "C": "局部剖视图",
+      "D": "移出断面图"
+    },
+    "correct_answer": "B",
+    "explanation": "图中剖切平面通过零件的对称中心线，并经过内部圆孔轴线。右侧主视图并不是整个轮廓都按剖开后绘制：一侧显示剖面线和内部结构，另一侧仍保留外形轮廓；两部分之间以中心线作为分界。这符合半剖视图的画法。若为全剖视图，整个主视图都应按剖开后的内部形状表达；若为局部剖视图，通常用不规则波浪线或折断线限定局部剖开范围；若为移出断面图，则应是单独移出的断面形状，而不是主视图的一半外形、一半剖视的组合。因此答案为B。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "全剖半剖局部剖",
+    "blueprint_image_type": "engineering_drawing",
+    "image_path": "images/d6706962a9ef4d3d.png",
+    "image_prompt": "An engineering_drawing diagram, split into a left region and a right region, viewed orthographically. The left region shows a top view labeled \"俯视图\" with 2 concentric circles; a horizontal cutting plane line passes through the circle center and is labeled \"剖切平面A-A\", with \"A-A\" at both ends. The right region shows a front view labeled \"主视图\" of 1 symmetrical stepped cylindrical part. Draw 1 vertical dashed-dotted centerline in the middle labeled \"中心线\". On the left side of this centerline, show the inner hole boundary labeled \"圆孔\" and 1 hatched area with 45-degree lines labeled \"剖面线\". On the right side, show continuous outer profile lines labeled \"外形轮廓\" and no hatching. Connect the visual relationship by alignment between the cutting plane and the centerline. Use a small blue highlight on the centerline only.",
+    "final_image_prompt": "An engineering_drawing diagram, split into a left region and a right region, viewed orthographically. The left region shows a top view labeled \"俯视图\" with 2 concentric circles; a horizontal cutting plane line passes through the circle center and is labeled \"剖切平面A-A\", with \"A-A\" at both ends. The right region shows a front view labeled \"主视图\" of 1 symmetrical stepped cylindrical part. Draw 1 vertical dashed-dotted centerline in the middle labeled \"中心线\". On the left side of this centerline, show the inner hole boundary labeled \"圆孔\" and 1 hatched area with 45-degree lines labeled \"剖面线\". On the right side, show continuous outer profile lines labeled \"外形轮廓\" and no hatching. Connect the visual relationship by alignment between the cutting plane and the centerline. Use a small blue highlight on the centerline only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出剖面线所在半区、外形轮廓保留位置、分界线类型和是否存在独立断面；必须观察图片才能判断表达类型。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "剖切平面线A-A穿过左侧俯视示意区的圆心",
+        "右侧主视图的剖面线只位于竖直中心线左侧",
+        "右侧主视图竖直中心线右侧保留外形轮廓线",
+        "右侧主视图左右两部分的分界线为竖直中心线",
+        "图中没有波浪形断裂边界或独立移出断面图形"
+      ],
+      "validation_rules": [
+        "若剖切平面通过对称中心，且主视图一半表达内部剖切结构、另一半表达外形，则判为半剖视图",
+        "若整个主视图均按剖开后表达，才可判为全剖视图",
+        "若剖切范围由波浪形断裂线限定，才可判为局部剖视图",
+        "若断面形状离开原视图单独绘出，才可判为移出断面图"
+      ]
+    }
+  },
+  {
+    "question_id": "S13-002-Q0002",
+    "subject_id": "S13",
+    "subject_name": "机械工程",
+    "kp_id": "S13-M01-002",
+    "kp_name": "剖视图与断面图",
+    "question_language": "zh",
+    "question_text": "图中给出了某轴套类零件在剖切位置 $A-A$ 处的断面轮廓及尺寸。若按移出断面图的画法，只对被剖切到的实心材料区域画剖面线，则该断面中应画剖面线的材料面积最接近哪一项？取圆周率 $\\pi=3.14$。",
+    "options": {
+      "A": "$1431\\ \\mathrm{mm^2}$",
+      "B": "$1532\\ \\mathrm{mm^2}$",
+      "C": "$1632\\ \\mathrm{mm^2}$",
+      "D": "$1728\\ \\mathrm{mm^2}$"
+    },
+    "correct_answer": "A",
+    "explanation": "移出断面图表示剖切平面切到的实际材料形状，孔洞、槽口等非材料区域不能画剖面线。由图读得外轮廓为矩形，面积为 $48\\times36=1728\\ \\mathrm{mm^2}$；上方槽口为矩形，面积为 $12\\times8=96\\ \\mathrm{mm^2}$；中心圆孔直径为 $16\\ \\mathrm{mm}$，半径为 $8\\ \\mathrm{mm}$，面积为 $3.14\\times8^2=200.96\\ \\mathrm{mm^2}$。因此实心材料面积为 $1728-96-200.96=1431.04\\ \\mathrm{mm^2}$，最接近 $1431\\ \\mathrm{mm^2}$，故选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "断面图",
+    "blueprint_image_type": "mechanical_schematic",
+    "image_path": "images/dbc077301fa841f7.png",
+    "image_prompt": "A mechanical schematic diagram of a removed section drawing. Use a left and right layout: on the left, show one horizontal sleeve-like part with a vertical cutting plane through its middle, arrows at both ends, each arrow labeled \"A\". On the right, show the removed section labeled \"A-A\" above it. The section has 1 outer rectangle, 48 mm wide and 36 mm high, 1 centered rectangular notch cut downward from the top edge, 12 mm wide and 8 mm deep, and 1 centered circular hole labeled \"Ø16\". Connect dimensions with thin extension lines: width labeled \"48\", height labeled \"36\", notch width labeled \"12\", notch depth labeled \"8\", and unit label \"mm\" near the dimension group. Fill only the solid material region with 45-degree hatch lines, leaving the notch and circular hole blank.",
+    "final_image_prompt": "A mechanical schematic diagram of a removed section drawing. Use a left and right layout: on the left, show one horizontal sleeve-like part with a vertical cutting plane through its middle, arrows at both ends, each arrow labeled \"A\". On the right, show the removed section labeled \"A-A\" above it. The section has 1 outer rectangle, 48 mm wide and 36 mm high, 1 centered rectangular notch cut downward from the top edge, 12 mm wide and 8 mm deep, and 1 centered circular hole labeled \"Ø16\". Connect dimensions with thin extension lines: width labeled \"48\", height labeled \"36\", notch width labeled \"12\", notch depth labeled \"8\", and unit label \"mm\" near the dimension group. Fill only the solid material region with 45-degree hatch lines, leaving the notch and circular hole blank.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出断面尺寸、槽口尺寸和圆孔直径，必须读取图中尺寸并结合断面图画法才能确定材料面积。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "右侧断面外矩形尺寸为 $48\\ \\mathrm{mm}\\times36\\ \\mathrm{mm}$",
+        "右侧断面上方槽口尺寸为 $12\\ \\mathrm{mm}\\times8\\ \\mathrm{mm}$",
+        "右侧断面中心圆孔直径为 $16\\ \\mathrm{mm}$",
+        "剖面线区域不包括槽口和圆孔"
+      ],
+      "validation_rules": [
+        "先按外矩形计算总包络面积 $48\\times36$",
+        "再扣除槽口面积 $12\\times8$",
+        "再扣除圆孔面积 $3.14\\times8^2$",
+        "所得材料面积应最接近选项 A"
+      ]
+    }
+  }
+]

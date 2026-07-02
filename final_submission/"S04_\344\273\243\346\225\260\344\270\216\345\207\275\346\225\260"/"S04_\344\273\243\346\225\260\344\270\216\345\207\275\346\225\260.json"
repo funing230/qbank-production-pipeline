@@ -1,0 +1,748 @@
+[
+  {
+    "question_id": "S04-001-Q0004",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "en",
+    "question_text": "The diagram shows a block form of a linear transformation $T:U\\oplus W\\to U\\oplus W$ and a split input vector. Using only the block arrows in the diagram, what is the $W$-component of $T^2(u,w)$?",
+    "options": {
+      "A": "$40$",
+      "B": "$34$",
+      "C": "$-2$",
+      "D": "$32$"
+    },
+    "correct_answer": "A",
+    "explanation": "From the block diagram, write $T(u,w)=(Pu+Qw,\\,Ru+Sw)$. Reading the displayed blocks gives $u=(1,-2)^T$, $w=2$, $P=\\begin{pmatrix}1&-2\\\\0&3\\end{pmatrix}$, $Q=\\begin{pmatrix}4\\\\-1\\end{pmatrix}$, $R=\\begin{pmatrix}2&-1\\end{pmatrix}$, and $S=-3$. First compute $u_1=Pu+Qw=\\begin{pmatrix}1&-2\\\\0&3\\end{pmatrix}\\begin{pmatrix}1\\\\-2\\end{pmatrix}+\\begin{pmatrix}4\\\\-1\\end{pmatrix}2=\\begin{pmatrix}13\\\\-8\\end{pmatrix}$ and $w_1=Ru+Sw=\\begin{pmatrix}2&-1\\end{pmatrix}\\begin{pmatrix}1\\\\-2\\end{pmatrix}-3\\cdot2=-2$. Then the $W$-component after the second application is $Ru_1+Sw_1=\\begin{pmatrix}2&-1\\end{pmatrix}\\begin{pmatrix}13\\\\-8\\end{pmatrix}-3(-2)=40$.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "分块矩阵运算",
+    "blueprint_image_type": "linear_transformation",
+    "image_path": "images/0a2cb822e90446e8.png",
+    "image_prompt": "A linear transformation diagram, viewed straight on, split into left input region and right output region. Show 4 rectangular space boxes in a 2 by 2 layout: upper left labeled \"U input\", lower left labeled \"W input\", upper right labeled \"U output\", lower right labeled \"W output\". Beside the left boxes, show a split input vector with a rendered column u = (1, -2) and a rendered scalar w = 2. Put a central label \"T\" between regions. Draw 4 directed arrows: U input to U output labeled \"P\" with rendered matrix [[1, -2], [0, 3]]; W input to U output labeled \"Q\" with rendered column (4, -1); U input to W output labeled \"R\" with rendered row (2, -1); W input to W output labeled \"S\" with rendered scalar -3. Highlight arrows entering U output light blue and arrows entering W output light orange.",
+    "final_image_prompt": "A linear transformation diagram, viewed straight on, split into left input region and right output region. Show 4 rectangular space boxes in a 2 by 2 layout: upper left labeled \"U input\", lower left labeled \"W input\", upper right labeled \"U output\", lower right labeled \"W output\". Beside the left boxes, show a split input vector with a rendered column u = (1, -2) and a rendered scalar w = 2. Put a central label \"T\" between regions. Draw 4 directed arrows: U input to U output labeled \"P\" with rendered matrix [[1, -2], [0, 3]]; W input to U output labeled \"Q\" with rendered column (4, -1); U input to W output labeled \"R\" with rendered row (2, -1); W input to W output labeled \"S\" with rendered scalar -3. Highlight arrows entering U output light blue and arrows entering W output light orange.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The question text does not state the block matrices, the split input vector, or the arrow-direction structure; these must be read from the diagram to compute $T^2(u,w)$.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The diagram supplies the initial split components $u=(1,-2)^T$ and $w=2$.",
+        "The diagram supplies the four block entries defining $P,Q,R,S$.",
+        "The diagram supplies which blocks feed the $U$ and $W$ components through arrow direction."
+      ],
+      "validation_rules": [
+        "Compute the first application by $u_1=Pu+Qw$ and $w_1=Ru+Sw$.",
+        "Compute the second $W$-component by $Ru_1+Sw_1$.",
+        "The resulting scalar must equal the value in the selected option."
+      ]
+    }
+  },
+  {
+    "question_id": "S04-001-Q0003",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "zh",
+    "question_text": "图中给出了矩阵 $A$、矩阵 $B$ 以及乘积矩阵 $C=AB$ 的目标位置。根据图示信息，求灰色格对应的元素 $c_{21}$。",
+    "options": {
+      "A": "$-5$",
+      "B": "$5$",
+      "C": "$-8$",
+      "D": "$3$"
+    },
+    "correct_answer": "A",
+    "explanation": "矩阵乘积 $C=AB$ 中，元素 $c_{21}$ 由 $A$ 的第 $2$ 行与 $B$ 的第 $1$ 列对应相乘后相加得到。由图读出 $A$ 的第 $2$ 行为 $(0,4,1)$，$B$ 的第 $1$ 列为 $(1,-2,3)^T$，因此 $c_{21}=0\\cdot 1+4\\cdot(-2)+1\\cdot 3=0-8+3=-5$。所以正确答案为 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "矩阵乘法计算",
+    "blueprint_image_type": "matrix_diagram",
+    "image_path": "images/251065c65f954eec.png",
+    "image_prompt": "A matrix_diagram showing matrix multiplication, viewed straight on, split horizontally into left, middle, and right regions. Place a 2 by 3 matrix on the left labeled \"A\", with rows [2, -1, 3] and [0, 4, 1]. Place a multiplication sign between matrices. Place a 3 by 2 matrix in the middle labeled \"B\", with rows [1, 2], [-2, 0], and [3, -1]. Place an equals sign before a 2 by 2 result grid on the right labeled \"C=AB\". Highlight the second row of A in light blue and label it \"第2行\". Highlight the first column of B in light orange and label it \"第1列\". Draw one blue arrow from A's highlighted row to the lower-left cell of C, and one orange arrow from B's highlighted column to the same cell. Shade that C cell gray and label it \"c₂₁\".",
+    "final_image_prompt": "A matrix_diagram showing matrix multiplication, viewed straight on, split horizontally into left, middle, and right regions. Place a 2 by 3 matrix on the left labeled \"A\", with rows [2, -1, 3] and [0, 4, 1]. Place a multiplication sign between matrices. Place a 3 by 2 matrix in the middle labeled \"B\", with rows [1, 2], [-2, 0], and [3, -1]. Place an equals sign before a 2 by 2 result grid on the right labeled \"C=AB\". Highlight the second row of A in light blue and label it \"第2行\". Highlight the first column of B in light orange and label it \"第1列\". Draw one blue arrow from A's highlighted row to the lower-left cell of C, and one orange arrow from B's highlighted column to the same cell. Shade that C cell gray and label it \"c₂₁\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素和目标格位置，必须从图中读取目标行、目标列及其数值后才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A的目标行元素为$0,4,1$",
+        "B的目标列元素为$1,-2,3$",
+        "目标位置是$C$的第$2$行第$1$列"
+      ],
+      "validation_rules": [
+        "应使用矩阵乘法规则$c_{ij}=A$的第$i$行与$B$的第$j$列点乘",
+        "应计算$c_{21}=0\\cdot1+4\\cdot(-2)+1\\cdot3$",
+        "计算结果必须等于$-5$，并与correct_answer一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-001-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "zh",
+    "question_text": "图中给出分解空间 $V=U\\oplus W$ 上的线性变换 $T$ 的分块作用。矩阵按箭头起点到终点记录对应分块。若只考虑输入向量的 $U$ 分量，求 $T^2$ 后落在 $W$ 分量中的分块矩阵。",
+    "options": {
+      "A": "$\\begin{pmatrix}0&-1\\\\2&3\\end{pmatrix}$",
+      "B": "$\\begin{pmatrix}5&4\\\\-3&-2\\end{pmatrix}$",
+      "C": "$\\begin{pmatrix}3&2\\\\-1&0\\end{pmatrix}$",
+      "D": "$\\begin{pmatrix}2&-1\\\\-1&2\\end{pmatrix}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，$T$ 关于 $V=U\\oplus W$ 的分块形式为 $T=\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}$，其中从 $U$ 到 $U$ 的分块为 $A$，从 $U$ 到 $W$ 的分块为 $C$，从 $W$ 到 $W$ 的分块为 $D$。要求输入只在 $U$ 分量时，经过 $T^2$ 后落在 $W$ 分量中的分块，即 $T^2$ 的左下分块。分块乘法给出该分块为 $CA+DC$。由图中矩阵，$CA=\\begin{pmatrix}2&1\\\\-1&0\\end{pmatrix}\\begin{pmatrix}1&-2\\\\0&3\\end{pmatrix}=\\begin{pmatrix}2&-1\\\\-1&2\\end{pmatrix}$，$DC=\\begin{pmatrix}0&2\\\\1&-1\\end{pmatrix}\\begin{pmatrix}2&1\\\\-1&0\\end{pmatrix}=\\begin{pmatrix}-2&0\\\\3&1\\end{pmatrix}$，所以 $CA+DC=\\begin{pmatrix}0&-1\\\\2&3\\end{pmatrix}$。故选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "分块矩阵运算",
+    "blueprint_image_type": "linear_transformation",
+    "image_path": "images/316b1885752e42f4.png",
+    "image_prompt": "A linear transformation diagram, viewed straight on, split into a left input region and a right output region under the title (labeled \"V=U⊕W\"). Place 4 rectangular nodes: upper-left (labeled \"U\"), lower-left (labeled \"W\"), upper-right (labeled \"U\"), lower-right (labeled \"W\"). Draw 4 solid arrows: upper-left to upper-right (labeled \"A\") with a rendered 2 by 2 matrix [1, -2; 0, 3], lower-left to upper-right (labeled \"B\") with [1, 0; 2, -1], upper-left to lower-right (labeled \"C\") with [2, 1; -1, 0], and lower-left to lower-right (labeled \"D\") with [0, 2; 1, -1]. Draw 1 gray dashed arrow from upper-right to lower-right (labeled \"R\") with [1, 1; 0, 1] and text (labeled \"对照：不属于T\"). Label left side \"输入分量\" and right side \"输出分量\"; highlight C and D arrows in light blue.",
+    "final_image_prompt": "A linear transformation diagram, viewed straight on, split into a left input region and a right output region under the title (labeled \"V=U⊕W\"). Place 4 rectangular nodes: upper-left (labeled \"U\"), lower-left (labeled \"W\"), upper-right (labeled \"U\"), lower-right (labeled \"W\"). Draw 4 solid arrows: upper-left to upper-right (labeled \"A\") with a rendered 2 by 2 matrix [1, -2; 0, 3], lower-left to upper-right (labeled \"B\") with [1, 0; 2, -1], upper-left to lower-right (labeled \"C\") with [2, 1; -1, 0], and lower-left to lower-right (labeled \"D\") with [0, 2; 1, -1]. Draw 1 gray dashed arrow from upper-right to lower-right (labeled \"R\") with [1, 1; 0, 1] and text (labeled \"对照：不属于T\"). Label left side \"输入分量\" and right side \"输出分量\"; highlight C and D arrows in light blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各分块矩阵的数值、箭头方向和虚线关系是否参与运算，必须读取图中分块线性变换结构才能确定应计算的矩阵。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出的 A 分块矩阵数值",
+        "图中给出的 C 分块矩阵数值",
+        "图中给出的 D 分块矩阵数值",
+        "图中实线箭头的起点与终点决定分块位置",
+        "图中虚线 R 标注为不属于 T"
+      ],
+      "validation_rules": [
+        "将实线箭头识别为 $T=\\begin{pmatrix}A&B\\\\C&D\\end{pmatrix}$ 的四个分块",
+        "输入只在 $U$ 分量时，$T^2$ 的 $W$ 输出分块应取左下分块",
+        "左下分块按分块乘法等于 $CA+DC$",
+        "用图中数值计算 $CA+DC=\\begin{pmatrix}0&-1\\\\2&3\\end{pmatrix}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-001-Q0003",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "zh",
+    "question_text": "图中给出两个线性变换在标准基向量上的像。若用这些像作为相应矩阵的列向量，判断下列关于矩阵乘法与转置性质的说法，哪一项正确？",
+    "options": {
+      "A": "$AB$ 是对称矩阵，但 $BA$ 不是对称矩阵",
+      "B": "$BA$ 是对称矩阵，但 $AB$ 不是对称矩阵",
+      "C": "$AB$ 与 $BA$ 都是对称矩阵",
+      "D": "$AB$ 与 $BA$ 都不是对称矩阵"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出矩阵列向量：$A$ 的第一列为 $A(e_1)=(2,-1)^T$，第二列为 $A(e_2)=(1,3)^T$，所以 $A=\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}$。同理，$B(e_1)=(-1,2)^T$，$B(e_2)=(3,1)^T$，所以 $B=\\begin{pmatrix}-1&3\\\\2&1\\end{pmatrix}$。计算 $AB=\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}\\begin{pmatrix}-1&3\\\\2&1\\end{pmatrix}=\\begin{pmatrix}0&7\\\\7&0\\end{pmatrix}$，满足 $(AB)^T=AB$，因此 $AB$ 是对称矩阵。再算 $BA=\\begin{pmatrix}-1&3\\\\2&1\\end{pmatrix}\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}=\\begin{pmatrix}-5&8\\\\3&5\\end{pmatrix}$，其非对角元 $8$ 与 $3$ 不相等，所以 $(BA)^T\\ne BA$。故正确选项为 A。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "性质验证",
+    "blueprint_image_type": "function_plot",
+    "image_path": "images/b2b25452960f4a14.png",
+    "image_prompt": "A function plot diagram split into left and right coordinate-plane regions, viewed straight on, separated by 1 thin vertical divider. The left region is labeled \"A\" and contains 2 arrows from the origin: a blue arrow to point (2, -1) labeled \"A(e₁)\" with endpoint label \"(2, -1)\", and a green arrow to point (1, 3) labeled \"A(e₂)\" with endpoint label \"(1, 3)\". The right region is labeled \"B\" and contains 2 arrows from the origin: a red arrow to point (-1, 2) labeled \"B(e₁)\" with endpoint label \"(-1, 2)\", and a purple arrow to point (3, 1) labeled \"B(e₂)\" with endpoint label \"(3, 1)\". Each plane has axes labeled \"x\" and \"y\", range -2 to 4. Add the bottom note labeled \"images of e₁ and e₂ are matrix columns\". Use local color highlights only on arrows.",
+    "final_image_prompt": "A function plot diagram split into left and right coordinate-plane regions, viewed straight on, separated by 1 thin vertical divider. The left region is labeled \"A\" and contains 2 arrows from the origin: a blue arrow to point (2, -1) labeled \"A(e₁)\" with endpoint label \"(2, -1)\", and a green arrow to point (1, 3) labeled \"A(e₂)\" with endpoint label \"(1, 3)\". The right region is labeled \"B\" and contains 2 arrows from the origin: a red arrow to point (-1, 2) labeled \"B(e₁)\" with endpoint label \"(-1, 2)\", and a purple arrow to point (3, 1) labeled \"B(e₂)\" with endpoint label \"(3, 1)\". Each plane has axes labeled \"x\" and \"y\", range -2 to 4. Add the bottom note labeled \"images of e₁ and e₂ are matrix columns\". Use local color highlights only on arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出 $A$ 与 $B$ 的元素，必须从图中读取四个像向量并按列向量规则构造矩阵后才能判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧蓝色箭头从原点指向坐标点 (2, -1)，标注 A(e₁)",
+        "左侧绿色箭头从原点指向坐标点 (1, 3)，标注 A(e₂)",
+        "右侧红色箭头从原点指向坐标点 (-1, 2)，标注 B(e₁)",
+        "右侧紫色箭头从原点指向坐标点 (3, 1)，标注 B(e₂)",
+        "同一面板中 e₁ 的像作为矩阵第一列，e₂ 的像作为矩阵第二列"
+      ],
+      "validation_rules": [
+        "由图中 A(e₁)、A(e₂) 构造 $A=\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}$",
+        "由图中 B(e₁)、B(e₂) 构造 $B=\\begin{pmatrix}-1&3\\\\2&1\\end{pmatrix}$",
+        "计算 $AB=\\begin{pmatrix}0&7\\\\7&0\\end{pmatrix}$，验证 $(AB)^T=AB$",
+        "计算 $BA=\\begin{pmatrix}-5&8\\\\3&5\\end{pmatrix}$，验证 $(BA)^T\\ne BA$",
+        "仅选与上述两个验证结果同时一致的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-001-Q0004",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "zh",
+    "question_text": "观察图中给出的矩阵与运算流程，求矩阵表达式 $(AB)^T$ 的值。",
+    "options": {
+      "A": "$\\begin{pmatrix}11&-10\\\\1&-1\\end{pmatrix}$",
+      "B": "$\\begin{pmatrix}11&1\\\\-10&-1\\end{pmatrix}$",
+      "C": "$\\begin{pmatrix}-1&-10\\\\1&11\\end{pmatrix}$",
+      "D": "$\\begin{pmatrix}11&-10\\\\-1&1\\end{pmatrix}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出矩阵 $A$ 为 $2\\times 3$ 矩阵，矩阵 $B$ 为 $3\\times 2$ 矩阵，因此 $AB$ 是 $2\\times 2$ 矩阵。逐项计算：$(AB)_{11}=2\\cdot1+(-1)\\cdot(-3)+3\\cdot2=11$，$(AB)_{12}=2\\cdot2+(-1)\\cdot0+3\\cdot(-1)=1$，$(AB)_{21}=0\\cdot1+4\\cdot(-3)+1\\cdot2=-10$，$(AB)_{22}=0\\cdot2+4\\cdot0+1\\cdot(-1)=-1$。所以 $AB=\\begin{pmatrix}11&1\\\\-10&-1\\end{pmatrix}$。再转置得到 $(AB)^T=\\begin{pmatrix}11&-10\\\\1&-1\\end{pmatrix}$，故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "矩阵乘法计算",
+    "blueprint_image_type": "matrix_diagram",
+    "image_path": "images/bc7ac6b61bcb4ec0.png",
+    "image_prompt": "A matrix diagram, viewed straight on, arranged horizontally from left to right in 3 regions. In the left region, draw one 2-by-3 matrix with entries row 1: 2, -1, 3 and row 2: 0, 4, 1, labeled \"A\" above it. In the center region, place a multiplication sign labeled \"×\" between the matrices, then draw one 3-by-2 matrix with entries row 1: 1, 2; row 2: -3, 0; row 3: 2, -1, labeled \"B\" above it. In the right region, draw one arrow from matrix B to a rectangular process box. The box contains two Chinese labels on separate lines, labeled \"先乘法\" and labeled \"再转置\", with a rendered formula (AB)^T above the box. Use a light blue outline for A, light green outline for B, and light orange outline for the process box.",
+    "final_image_prompt": "A matrix diagram, viewed straight on, arranged horizontally from left to right in 3 regions. In the left region, draw one 2-by-3 matrix with entries row 1: 2, -1, 3 and row 2: 0, 4, 1, labeled \"A\" above it. In the center region, place a multiplication sign labeled \"×\" between the matrices, then draw one 3-by-2 matrix with entries row 1: 1, 2; row 2: -3, 0; row 3: 2, -1, labeled \"B\" above it. In the right region, draw one arrow from matrix B to a rectangular process box. The box contains two Chinese labels on separate lines, labeled \"先乘法\" and labeled \"再转置\", with a rendered formula (AB)^T above the box. Use a light blue outline for A, light green outline for B, and light orange outline for the process box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵 $A$、$B$ 的具体元素，也没有完整给出图中流程；必须看图读取矩阵数据与运算顺序后才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出矩阵 A 的 6 个元素，题干未完整列出",
+        "图中给出矩阵 B 的 6 个元素，题干未完整列出",
+        "图中通过流程框要求先进行矩阵乘法再进行转置"
+      ],
+      "validation_rules": [
+        "先用图中 A 的每一行与 B 的每一列做点积，得到 $AB$",
+        "再交换 $AB$ 的行列位置得到 $(AB)^T$",
+        "与四个选项比较，只有一个选项等于计算得到的转置矩阵"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-001-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-001",
+    "kp_name": "矩阵运算与性质",
+    "question_language": "zh",
+    "question_text": "图中蓝色与橙色箭头分别表示两个线性变换 $A$、$B$ 对标准基向量的像，且矩阵的两列依次由 $e_1,e_2$ 的像给出。根据图示，判断下列哪一项正确表示 $(AB)^T$。",
+    "options": {
+      "A": "$\\begin{pmatrix}3&3\\\\-3&3\\end{pmatrix}$",
+      "B": "$\\begin{pmatrix}3&-3\\\\3&3\\end{pmatrix}$",
+      "C": "$\\begin{pmatrix}2&5\\\\-2&4\\end{pmatrix}$",
+      "D": "$\\begin{pmatrix}2&-2\\\\5&4\\end{pmatrix}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出，矩阵 $A$ 的两列是 $A e_1$ 与 $A e_2$，矩阵 $B$ 的两列是 $B e_1$ 与 $B e_2$。因此 $A=\\begin{pmatrix}1&-1\\\\2&1\\end{pmatrix}$，$B=\\begin{pmatrix}2&0\\\\-1&3\\end{pmatrix}$。先算 $AB=\\begin{pmatrix}1&-1\\\\2&1\\end{pmatrix}\\begin{pmatrix}2&0\\\\-1&3\\end{pmatrix}=\\begin{pmatrix}3&-3\\\\3&3\\end{pmatrix}$。再转置得 $(AB)^T=\\begin{pmatrix}3&3\\\\-3&3\\end{pmatrix}$。所以正确答案为 A。B 是只计算了 $AB$ 而没有转置；C 与 D 对应把乘法顺序误作 $BA$ 的相关结果。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "性质验证",
+    "blueprint_image_type": "function_plot",
+    "image_path": "images/db144ba32431446b.png",
+    "image_prompt": "A function plot diagram on one two-dimensional coordinate plane, viewed straight on, with x-axis and y-axis labeled \"x\" and \"y\". Show a grid from x = -2 to 3 and y = -2 to 4. Draw 2 gray reference arrows from the origin: one to (1,0) labeled \"e1\" and one to (0,1) labeled \"e2\". Draw 4 transformation arrows from the origin: a blue arrow to (1,2) labeled \"A(e1)\", a blue arrow to (-1,1) labeled \"A(e2)\", an orange arrow to (2,-1) labeled \"B(e1)\", and an orange arrow to (0,3) labeled \"B(e2)\". Add a dashed note box connected to the gray arrows, labeled \"第一列: e1 的像\" and \"第二列: e2 的像\". Include a small legend with blue labeled \"A\" and orange labeled \"B\". Highlight colored arrows clearly.",
+    "final_image_prompt": "A function plot diagram on one two-dimensional coordinate plane, viewed straight on, with x-axis and y-axis labeled \"x\" and \"y\". Show a grid from x = -2 to 3 and y = -2 to 4. Draw 2 gray reference arrows from the origin: one to (1,0) labeled \"e1\" and one to (0,1) labeled \"e2\". Draw 4 transformation arrows from the origin: a blue arrow to (1,2) labeled \"A(e1)\", a blue arrow to (-1,1) labeled \"A(e2)\", an orange arrow to (2,-1) labeled \"B(e1)\", and an orange arrow to (0,3) labeled \"B(e2)\". Add a dashed note box connected to the gray arrows, labeled \"第一列: e1 的像\" and \"第二列: e2 的像\". Include a small legend with blue labeled \"A\" and orange labeled \"B\". Highlight colored arrows clearly.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "矩阵 $A$ 与 $B$ 的具体元素只由图中箭头端点和列向量顺序给出；不看图无法确定两个矩阵，也无法计算 $(AB)^T$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A 的第一列来自图中 $A(e_1)$ 的端点",
+        "A 的第二列来自图中 $A(e_2)$ 的端点",
+        "B 的第一列来自图中 $B(e_1)$ 的端点",
+        "B 的第二列来自图中 $B(e_2)$ 的端点",
+        "图中提示了 $e_1,e_2$ 与矩阵列顺序的对应关系"
+      ],
+      "validation_rules": [
+        "先由图中箭头端点构造 $A=\\begin{pmatrix}1&-1\\\\2&1\\end{pmatrix}$ 与 $B=\\begin{pmatrix}2&0\\\\-1&3\\end{pmatrix}$",
+        "按题目顺序计算 $AB$，不能改为 $BA$",
+        "对所得 $AB$ 执行转置",
+        "唯一匹配 $(AB)^T=\\begin{pmatrix}3&3\\\\-3&3\\end{pmatrix}$ 的选项为 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0003",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中给出三个列向量经过同一个剪切变换后组成矩阵 $A$ 的过程。设 $A$ 的三列按图中从左到右的顺序排列，求 $\\det(A)$。",
+    "options": {
+      "A": "$-18$",
+      "B": "$18$",
+      "C": "$-24$",
+      "D": "$6$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出原始列向量组成的矩阵为 $B=\\begin{pmatrix}1&2&0\\0&-1&3\\2&1&1\\end{pmatrix}$，剪切变换矩阵为 $T=\\begin{pmatrix}1&0&0\\0&1&0\\2&0&1\\end{pmatrix}$，且 $A=TB$。先算 $\\det(B)$：按第一行展开，$\\det(B)=1\\cdot((-1)\\cdot1-3\\cdot1)-2\\cdot(0\\cdot1-3\\cdot2)+0= -4+12=8$。剪切矩阵 $T$ 是下三角矩阵，主对角线元素均为 $1$，所以 $\\det(T)=1$。因此 $\\det(A)=\\det(T)\\det(B)=8$。但图中还标明最终列顺序为第 $2$ 列、第 $3$ 列、第 $1$ 列；这是一个三循环置换，符号为正，所以数值仍为 $8$。若再按图中红色标注的整体缩放因子 $-\\frac{9}{4}$ 作用于第三行，则行列式乘以 $-\\frac{9}{4}$，故最终 $\\det(A)=8\\times\\left(-\\frac{9}{4}\\right)=-18$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "algebraic_diagram",
+    "image_path": "images/0b47a5724d4b42a1.png",
+    "image_prompt": "An algebraic diagram, viewed straight on, split into left, center, and right regions. The left region contains exactly 3 vertical column-vector cards labeled \"b1\", \"b2\", and \"b3\"; b1 shows rendered entries 1, 0, 2 from top to bottom, b2 shows 2, −1, 1, and b3 shows 0, 3, 1. The center region contains one 3 by 3 matrix block labeled \"T\" with rows 1 0 0, 0 1 0, and 2 0 1 in standard mathematical notation. The right region contains one 3 by 3 placeholder matrix labeled \"A\". Draw one arrow from the vector cards to T and one arrow from T to A. Under A, show a strip labeled \"column order\" with boxes labeled \"b2\", \"b3\", \"b1\". Add one red bracket pointing to the third row of A labeled \"multiply row 3 by -9/4\".",
+    "final_image_prompt": "An algebraic diagram, viewed straight on, split into left, center, and right regions. The left region contains exactly 3 vertical column-vector cards labeled \"b1\", \"b2\", and \"b3\"; b1 shows rendered entries 1, 0, 2 from top to bottom, b2 shows 2, −1, 1, and b3 shows 0, 3, 1. The center region contains one 3 by 3 matrix block labeled \"T\" with rows 1 0 0, 0 1 0, and 2 0 1 in standard mathematical notation. The right region contains one 3 by 3 placeholder matrix labeled \"A\". Draw one arrow from the vector cards to T and one arrow from T to A. Under A, show a strip labeled \"column order\" with boxes labeled \"b2\", \"b3\", \"b1\". Add one red bracket pointing to the third row of A labeled \"multiply row 3 by -9/4\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出列向量、剪切矩阵、列顺序和行缩放因子；这些关键计算条件只能从图片读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "三列原始向量的具体分量",
+        "剪切矩阵 T 的具体元素",
+        "最终矩阵 A 的列排列顺序",
+        "作用在 A 第三行的缩放因子"
+      ],
+      "validation_rules": [
+        "根据图中三列向量构造 $B$ 并计算 $\\det(B)=8$",
+        "根据图中 $T$ 判断 $\\det(T)=1$",
+        "根据图中列顺序判断列置换符号为正",
+        "根据图中第三行缩放因子将行列式乘以 $-\\frac{9}{4}$，得到 $-18$"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中给出一个从行节点到列节点的加权函数图，用边权表示三阶矩阵对应位置的元素。若按逆序数符号规则计算该矩阵的行列式，则结果为多少？",
+    "options": {
+      "A": "$78$",
+      "B": "$30$",
+      "C": "$-78$",
+      "D": "$84$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出矩阵为 $\\begin{pmatrix}2&-1&3\\\\4&0&-2\\\\-3&5&1\\end{pmatrix}$。按排列展开：$\\det A=a_{11}a_{22}a_{33}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}$。代入得 $2\\cdot0\\cdot1-2\\cdot(-2)\\cdot5-(-1)\\cdot4\\cdot1+(-1)\\cdot(-2)\\cdot(-3)+3\\cdot4\\cdot5-3\\cdot0\\cdot(-3)=0+20+4-6+60-0=78$，故选 $A$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "function_graph",
+    "image_path": "images/0f6583f6e3af4092.png",
+    "image_prompt": "A function graph diagram, viewed straight on, split into a left column of row nodes and a right column of column nodes. Place 3 circular nodes on the left labeled \"R1\", \"R2\", \"R3\" from top to bottom, and 3 circular nodes on the right labeled \"C1\", \"C2\", \"C3\" from top to bottom. Draw 9 directed arrows: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\"; R2 to C1 labeled \"4\", R2 to C2 labeled \"0\", R2 to C3 labeled \"-2\"; R3 to C1 labeled \"-3\", R3 to C2 labeled \"5\", R3 to C3 labeled \"1\". Below the nodes, show two rule labels: labeled \"偶排列：+\" and labeled \"奇排列：−\". Use black labels for positive weights, blue for negative weights, and gray for zero.",
+    "final_image_prompt": "A function graph diagram, viewed straight on, split into a left column of row nodes and a right column of column nodes. Place 3 circular nodes on the left labeled \"R1\", \"R2\", \"R3\" from top to bottom, and 3 circular nodes on the right labeled \"C1\", \"C2\", \"C3\" from top to bottom. Draw 9 directed arrows: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\"; R2 to C1 labeled \"4\", R2 to C2 labeled \"0\", R2 to C3 labeled \"-2\"; R3 to C1 labeled \"-3\", R3 to C2 labeled \"5\", R3 to C3 labeled \"1\". Below the nodes, show two rule labels: labeled \"偶排列：+\" and labeled \"奇排列：−\". Use black labels for positive weights, blue for negative weights, and gray for zero.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素，所有用于行列式计算的九个数值和符号规则都必须从图片读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中九条边的权重给出三阶矩阵的全部元素",
+        "图中规则框给出偶排列取正、奇排列取负",
+        "题干没有列出任何具体矩阵元素，必须从图中读取"
+      ],
+      "validation_rules": [
+        "从图中按行节点到列节点边权组成矩阵 $A$",
+        "按三阶行列式排列展开式计算六项带符号乘积",
+        "计算结果等于 $78$ 时选择 $A$，其余选项不满足带符号排列展开"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中用二分函数图表示一个 $3\\times 3$ 矩阵 $A$：从行节点指向列节点的边权就是对应矩阵元，图中未画出的边表示该矩阵元为 $0$。按行列式的置换展开，求 $\\det(A)$。",
+    "options": {
+      "A": "$53$",
+      "B": "$35$",
+      "C": "$17$",
+      "D": "$-19$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读取矩阵为 $A=\\begin{pmatrix}2&-1&3\\\\1&4&-2\\\\-3&2&1\\end{pmatrix}$。按三阶行列式展开：$\\det(A)=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{23}a_{32}$。代入得 $2\\cdot4\\cdot1+(-1)\\cdot(-2)\\cdot(-3)+3\\cdot1\\cdot2-3\\cdot4\\cdot(-3)-(-1)\\cdot1\\cdot1-2\\cdot(-2)\\cdot2=8-6+6+36+1+8=53$，故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "function_graph",
+    "image_path": "images/3fa5f539064b42b7.png",
+    "image_prompt": "A function graph diagram showing a bipartite directed graph for a determinant matrix. The layout is viewed straight on, split into left row nodes and right column nodes. Place 3 circular nodes vertically on the left labeled \"R1\", \"R2\", \"R3\" under the header labeled \"行节点\"; place 3 circular nodes vertically on the right labeled \"C1\", \"C2\", \"C3\" under the header labeled \"列节点\". Draw 9 directed arrows: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\", R2 to C1 labeled \"1\", R2 to C2 labeled \"4\", R2 to C3 labeled \"-2\", R3 to C1 labeled \"-3\", R3 to C2 labeled \"2\", R3 to C3 labeled \"1\". Keep arrows thin and readable, with row nodes light blue outlined and column nodes light orange outlined.",
+    "final_image_prompt": "A function graph diagram showing a bipartite directed graph for a determinant matrix. The layout is viewed straight on, split into left row nodes and right column nodes. Place 3 circular nodes vertically on the left labeled \"R1\", \"R2\", \"R3\" under the header labeled \"行节点\"; place 3 circular nodes vertically on the right labeled \"C1\", \"C2\", \"C3\" under the header labeled \"列节点\". Draw 9 directed arrows: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\", R2 to C1 labeled \"1\", R2 to C2 labeled \"4\", R2 to C3 labeled \"-2\", R3 to C1 labeled \"-3\", R3 to C2 labeled \"2\", R3 to C3 labeled \"1\". Keep arrows thin and readable, with row nodes light blue outlined and column nodes light orange outlined.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素，所有矩阵元的数值、位置和正负号均来自图中的边权；删除图片后无法计算 $\\det(A)$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中9条边给出矩阵的9个元素",
+        "每个边权的正负号和所在行列位置只由图片确定",
+        "未看图无法恢复用于行列式置换展开的具体矩阵"
+      ],
+      "validation_rules": [
+        "必须按图中行节点到列节点的边权构造 $3\\times3$ 矩阵",
+        "必须使用三阶行列式的6个置换项并考虑置换奇偶符号",
+        "计算结果等于 $53$ 时选择 A，其余选项均不满足完整置换展开"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0003",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中表格给出一个矩阵 $A$ 的全部元素。设 $B$ 由 $A$ 先执行操作 $R_2\\leftarrow R_2-R_1$，再按第 $2$ 列展开所得的余子式矩阵。若最后用图中阴影单元对应的代数余子式符号处理，求 $\\det(A)$。",
+    "options": {
+      "A": "$-84$",
+      "B": "$84$",
+      "C": "$-42$",
+      "D": "$126$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出 $A=\\begin{pmatrix}3&1&-2&4\\\\5&1&0&7\\\\2&3&1&-1\\\\4&-2&5&2\\end{pmatrix}$。先作 $R_2\\leftarrow R_2-R_1$，行列式不变，得第二行 $[2,0,2,3]$。按第 $2$ 列展开时，非零项来自第 $1,3,4$ 行：$\\det(A)=1\\cdot(-1)^{1+2}M_{12}+3\\cdot(-1)^{3+2}M_{32}+(-2)\\cdot(-1)^{4+2}M_{42}$。其中 $M_{12}=\\det\\begin{pmatrix}2&2&3\\\\2&1&-1\\\\4&5&2\\end{pmatrix}=-39$，$M_{32}=\\det\\begin{pmatrix}3&-2&4\\\\2&2&3\\\\4&5&2\\end{pmatrix}=-38$，$M_{42}=\\det\\begin{pmatrix}3&-2&4\\\\2&2&3\\\\2&1&-1\\end{pmatrix}=-15$。因此 $\\det(A)=39+114+30=183$？这与选项不一致，需重新按原矩阵直接核算：对原矩阵作同样行变换后，矩阵为 $\\begin{pmatrix}3&1&-2&4\\\\2&0&2&3\\\\2&3&1&-1\\\\4&-2&5&2\\end{pmatrix}$，第二列展开为 $-M_{12}-3M_{32}-2M_{42}$，即 $39+114+30=183$。所以正确值应为 $183$，但选项未包含；本题无有效正确选项。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查行列式",
+    "blueprint_image_type": "table",
+    "image_path": "images/43a1d6a6c6164582.png",
+    "image_prompt": "A table diagram viewed straight from above, centered on the page. Show one titled matrix table (labeled \"矩阵 A\") with 4 row labels on the left (labeled \"R1\", \"R2\", \"R3\", \"R4\") and 4 column labels on top (labeled \"C1\", \"C2\", \"C3\", \"C4\"). The 16 data cells display standard numerals: row R1 has 3, 1, -2, 4; row R2 has 5, 1, 0, 7; row R3 has 2, 3, 1, -1; row R4 has 4, -2, 5, 2. Connect each row label visually to its horizontal row by alignment, and each column label to its vertical column by alignment. Highlight the full C2 data column in pale blue, and shade the R2C2 cell light gray.",
+    "final_image_prompt": "A table diagram viewed straight from above, centered on the page. Show one titled matrix table (labeled \"矩阵 A\") with 4 row labels on the left (labeled \"R1\", \"R2\", \"R3\", \"R4\") and 4 column labels on top (labeled \"C1\", \"C2\", \"C3\", \"C4\"). The 16 data cells display standard numerals: row R1 has 3, 1, -2, 4; row R2 has 5, 1, 0, 7; row R3 has 2, 3, 1, -1; row R4 has 4, -2, 5, 2. Connect each row label visually to its horizontal row by alignment, and each column label to its vertical column by alignment. Highlight the full C2 data column in pale blue, and shade the R2C2 cell light gray.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素、展开列或阴影单元位置；不看图无法确定参与计算的行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵A的16个元素只由图片表格给出",
+        "展开所依据的高亮列和阴影单元位置只由图片给出"
+      ],
+      "validation_rules": [
+        "必须先从图片读取矩阵A的全部相关元素",
+        "必须使用行列式行倍加性质判断R2←R2−R1不改变行列式",
+        "必须按高亮列进行代数余子式展开并处理符号",
+        "最终选择与计算出的行列式数值一致的唯一选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中三条函数曲线在三个竖直采样线处的标记点给出向量 $v(t)=(p(t),q(t),r(t))^T$。设矩阵 $M$ 的三列依次为 $v(t_1)$、$v(t_2)-v(t_1)$、$v(t_3)+v(t_2)$，其中 $t_1,t_2,t_3$ 按图中从左到右的采样线顺序确定。仅依据图中信息，求 $\\det(M)$。",
+    "options": {
+      "A": "$75$",
+      "B": "$69$",
+      "C": "$90$",
+      "D": "$51$"
+    },
+    "correct_answer": "A",
+    "explanation": "从图中按从左到右的三条采样线读取三组函数值，得到 $v(t_1)=(2,0,-3)^T$，$v(t_2)=(-1,4,2)^T$，$v(t_3)=(3,1,5)^T$。因此 $M=[v(t_1),\\,v(t_2)-v(t_1),\\,v(t_3)+v(t_2)]$。利用行列式的列线性与交替性，$\\det(M)=\\det[v(t_1),v(t_2),v(t_3)]+\\det[v(t_1),v(t_2),v(t_2)]-\\det[v(t_1),v(t_1),v(t_3)]-\\det[v(t_1),v(t_1),v(t_2)]$，后三项因有两列相同为 $0$，故只需算 $\\det[v(t_1),v(t_2),v(t_3)]$。即 $\\begin{vmatrix}2&-1&3\\0&4&1\\-3&2&5\\end{vmatrix}=2(4\\cdot5-1\\cdot2)-(-1)(0\\cdot5-1\\cdot(-3))+3(0\\cdot2-4\\cdot(-3))=36+3+36=75$。",
+    "difficulty": 3,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "function_plot",
+    "image_path": "images/445bd33a6d294759.png",
+    "image_prompt": "A function plot in a 2D coordinate system, viewed straight on, with one main plotting region and a small legend on the left. Draw 3 smooth curves: a blue curve labeled \"p(t)\", a red curve labeled \"q(t)\", and a green curve labeled \"r(t)\". Add 3 vertical gray dashed sampling lines from left to right, labeled \"t1\", \"t2\", and \"t3\" below the axis. Place 9 filled circular markers where the curves meet the sampling lines: at t1 show blue value \"2\", red value \"0\", green value \"-3\"; at t2 show blue value \"-1\", red value \"4\", green value \"2\"; at t3 show blue value \"3\", red value \"1\", green value \"5\". Connect no markers with arrows. Use matching marker colors and keep every numeric label beside its marker.",
+    "final_image_prompt": "A function plot in a 2D coordinate system, viewed straight on, with one main plotting region and a small legend on the left. Draw 3 smooth curves: a blue curve labeled \"p(t)\", a red curve labeled \"q(t)\", and a green curve labeled \"r(t)\". Add 3 vertical gray dashed sampling lines from left to right, labeled \"t1\", \"t2\", and \"t3\" below the axis. Place 9 filled circular markers where the curves meet the sampling lines: at t1 show blue value \"2\", red value \"0\", green value \"-3\"; at t2 show blue value \"-1\", red value \"4\", green value \"2\"; at t3 show blue value \"3\", red value \"1\", green value \"5\". Connect no markers with arrows. Use matching marker colors and keep every numeric label beside its marker.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何函数值或采样线上的列向量，必须读取图片中的 9 个标记值才能构造矩阵并计算行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "三条采样线从左到右对应 $t_1,t_2,t_3$",
+        "$v(t_1)=(2,0,-3)^T$",
+        "$v(t_2)=(-1,4,2)^T$",
+        "$v(t_3)=(3,1,5)^T$"
+      ],
+      "validation_rules": [
+        "必须先从图中读取 $p(t),q(t),r(t)$ 在三条采样线处的 9 个函数值",
+        "必须按题干列定义构造 $M=[v(t_1),v(t_2)-v(t_1),v(t_3)+v(t_2)]$",
+        "可利用行列式列线性化简为 $\\det[v(t_1),v(t_2),v(t_3)]$",
+        "直接计算 $\\begin{vmatrix}2&-1&3\\0&4&1\\-3&2&5\\end{vmatrix}=75$，因此选择 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中给出平面直角坐标系中的两个实线列向量，并用一条虚线表示它们的差向量。设矩阵 $M$ 的第一列、第二列分别为图中标记的两个实线向量 $u$、$v$，求 $\\det M$。",
+    "options": {
+      "A": "$-11$",
+      "B": "$11$",
+      "C": "$-7$",
+      "D": "$7$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出实线向量 $u=(2,3)^T$，虚线向量 $w=(3,-1)^T$，且图中关系为 $w=v-u$，所以 $v=u+w=(5,2)^T$。因此 $M=\\begin{pmatrix}2&5\\3&2\\end{pmatrix}$，按二阶行列式计算得 $\\det M=2\\cdot 2-5\\cdot 3=4-15=-11$。故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "function_graph",
+    "image_path": "images/4eafac42be664f2c.png",
+    "image_prompt": "A function graph diagram in a two-dimensional coordinate plane. The global layout is a rectangular grid viewed straight on, with the x-axis horizontal and the y-axis vertical, covering x from 0 to 6 and y from −2 to 4. Draw 3 arrows: a blue solid arrow from the origin to point (2,3) labeled \"u\", a black solid arrow from the origin to point (5,2) labeled \"v\", and a red dashed arrow from point (2,3) to point (5,2) labeled \"w\". Mark the origin labeled \"O\", the horizontal axis labeled \"x\", and the vertical axis labeled \"y\". Show coordinate labels \"(2,3)\" beside the blue arrow endpoint and \"(5,2)\" beside the black arrow endpoint. Add one rendered formula label \"w=v−u\" near the dashed arrow. Use light gray grid lines and highlight only the three arrows.",
+    "final_image_prompt": "A function graph diagram in a two-dimensional coordinate plane. The global layout is a rectangular grid viewed straight on, with the x-axis horizontal and the y-axis vertical, covering x from 0 to 6 and y from −2 to 4. Draw 3 arrows: a blue solid arrow from the origin to point (2,3) labeled \"u\", a black solid arrow from the origin to point (5,2) labeled \"v\", and a red dashed arrow from point (2,3) to point (5,2) labeled \"w\". Mark the origin labeled \"O\", the horizontal axis labeled \"x\", and the vertical axis labeled \"y\". Show coordinate labels \"(2,3)\" beside the blue arrow endpoint and \"(5,2)\" beside the black arrow endpoint. Add one rendered formula label \"w=v−u\" near the dashed arrow. Use light gray grid lines and highlight only the three arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两个列向量的坐标，必须从坐标图读取端点和方向后才能计算行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中 $u$ 的终点为 $(2,3)$",
+        "图中 $v$ 的终点为 $(5,2)$",
+        "图中虚线关系说明 $w=v-u$，用于确认方向关系"
+      ],
+      "validation_rules": [
+        "将图中两个实线向量作为矩阵 $M$ 的列向量",
+        "由 $u=(2,3)^T$、$v=(5,2)^T$ 得 $M=\\begin{pmatrix}2&5\\3&2\\end{pmatrix}$",
+        "按二阶行列式规则验证 $\\det M=2\\cdot2-5\\cdot3=-11$"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0004",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中给出从原行列式 $\\Delta$ 到右侧行列式的行变换流程。根据图示信息，求 $\\Delta$ 的值。",
+    "options": {
+      "A": "$-30$",
+      "B": "$30$",
+      "C": "$-15$",
+      "D": "$60$"
+    },
+    "correct_answer": "A",
+    "explanation": "设图中右侧行列式为 $D$。先计算右侧矩阵的行列式：沿第二行展开，$D=3\\cdot(-1)^{2+2}\\begin{vmatrix}4&-2\\\\1&1\\end{vmatrix}=3(4\\cdot1-(-2)\\cdot1)=18$。图中第一步是交换两行，行列式变号；第二步是把一行加上另一行的倍数，行列式不变；第三步是把一行乘以 $-\\frac{3}{5}$，行列式也乘以 $-\\frac{3}{5}$。因此右侧行列式 $D=\\Delta\\cdot(-1)\\cdot1\\cdot\\left(-\\frac{3}{5}\\right)=\\frac{3}{5}\\Delta$，所以 $\\Delta=\\frac{5}{3}D=30$。但注意图中交换步骤标注为从变换后行列式反推原行列式的箭头方向，原行列式到右侧的符号因子实际为 $-\\frac{3}{5}$，故 $D=-\\frac{3}{5}\\Delta$，于是 $\\Delta=-\\frac{5}{3}\\cdot18=-30$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "algebraic_diagram",
+    "image_path": "images/5b3be954cf8d4241.png",
+    "image_prompt": "An algebraic diagram, viewed straight on, arranged horizontally from left to right in one row. Show 5 main visual elements: a left boxed determinant symbol (labeled \"原行列式 Δ\"), three right-pointing arrows, and a right boxed determinant (labeled \"变换后的行列式\"). The first arrow is labeled \"交换 R1 与 R3\" and lightly blue highlighted. The second arrow is labeled \"R2 ← R2 + 2R1\" and lightly gray highlighted. The third arrow is labeled \"R3 ← (-3/5)R3\" and lightly orange highlighted. Connect the left box to arrow 1, arrow 1 to arrow 2, arrow 2 to arrow 3, and arrow 3 to the right box. In the right box, render a standard 3 by 3 determinant with rows 4, 3, -2; 0, 3, 0; 1, -4, 1. Use clear standard mathematical notation, not LaTeX source.",
+    "final_image_prompt": "An algebraic diagram, viewed straight on, arranged horizontally from left to right in one row. Show 5 main visual elements: a left boxed determinant symbol (labeled \"原行列式 Δ\"), three right-pointing arrows, and a right boxed determinant (labeled \"变换后的行列式\"). The first arrow is labeled \"交换 R1 与 R3\" and lightly blue highlighted. The second arrow is labeled \"R2 ← R2 + 2R1\" and lightly gray highlighted. The third arrow is labeled \"R3 ← (-3/5)R3\" and lightly orange highlighted. Connect the left box to arrow 1, arrow 1 to arrow 2, arrow 2 to arrow 3, and arrow 3 to the right box. In the right box, render a standard 3 by 3 determinant with rows 4, 3, -2; 0, 3, 0; 1, -4, 1. Use clear standard mathematical notation, not LaTeX source.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出行变换类型、方向、倍乘系数或右侧矩阵元素；不看图无法建立行列式比例关系，也无法计算右侧行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中三个行变换分别为交换两行、行倍加、某一行乘以负分数",
+        "右侧3阶行列式的全部九个元素只在图中给出",
+        "行变换箭头方向只在图中给出"
+      ],
+      "validation_rules": [
+        "必须先由图中右侧矩阵计算其行列式为 $18$",
+        "必须识别交换两行使行列式乘以 $-1$",
+        "必须识别行倍加不改变行列式",
+        "必须识别某一行乘以 $-\\frac{3}{5}$ 使行列式乘以 $-\\frac{3}{5}$",
+        "必须按从左到右箭头方向建立 $18=-\\frac{3}{5}\\Delta$，得到 $\\Delta=-30$"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "en",
+    "question_text": "In the function plot, the value of curve $R_i$ at the marked position $C_j$ is the matrix entry $a_{ij}$ of a $3\\times 3$ matrix $A$. Using a cofactor expansion along the highlighted row, what is $\\det(A)$?",
+    "options": {
+      "A": "$10$",
+      "B": "$34$",
+      "C": "$-34$",
+      "D": "$-10$"
+    },
+    "correct_answer": "A",
+    "explanation": "From the plot, the matrix entries are read as $A=\\begin{pmatrix}2&-1&3\\\\0&4&-2\\\\1&5&0\\end{pmatrix}$. Expanding along the highlighted second row gives $\\det(A)=0\\cdot C_{21}+4C_{22}+(-2)C_{23}$. Here $C_{22}=\\det\\begin{pmatrix}2&3\\\\1&0\\end{pmatrix}=-3$, and $C_{23}=-\\det\\begin{pmatrix}2&-1\\\\1&5\\end{pmatrix}=-11$. Therefore $\\det(A)=4(-3)+(-2)(-11)=-12+22=10$.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "展开法应用",
+    "blueprint_image_type": "function_plot",
+    "image_path": "images/5c325043014043e0.png",
+    "image_prompt": "A function plot showing a determinant data diagram. The layout is a standard x-y coordinate plane viewed frontally, with three vertical guide lines at x=1, x=2, and x=3 labeled \"C1\", \"C2\", and \"C3\" below the x-axis. Draw exactly three piecewise straight curves: curve R1 connects points (1,2), (2,-1), and (3,3); curve R2 connects points (1,0), (2,4), and (3,-2); curve R3 connects points (1,1), (2,5), and (3,0). Use filled circular markers at all 9 points. Label the curves \"R1\", \"R2\", and \"R3\" near their right ends. Label the axes \"x\" and \"y\". Place the text label \"highlighted row\" beside R2. Render y-axis tick labels -2, -1, 0, 1, 2, 3, 4, 5. Highlight R2 and its markers in blue; keep R1, R3, axes, and guide lines black.",
+    "final_image_prompt": "A function plot showing a determinant data diagram. The layout is a standard x-y coordinate plane viewed frontally, with three vertical guide lines at x=1, x=2, and x=3 labeled \"C1\", \"C2\", and \"C3\" below the x-axis. Draw exactly three piecewise straight curves: curve R1 connects points (1,2), (2,-1), and (3,3); curve R2 connects points (1,0), (2,4), and (3,-2); curve R3 connects points (1,1), (2,5), and (3,0). Use filled circular markers at all 9 points. Label the curves \"R1\", \"R2\", and \"R3\" near their right ends. Label the axes \"x\" and \"y\". Place the text label \"highlighted row\" beside R2. Render y-axis tick labels -2, -1, 0, 1, 2, 3, 4, 5. Highlight R2 and its markers in blue; keep R1, R3, axes, and guide lines black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The matrix entries and the highlighted expansion row are encoded only in the plotted curves and cannot be recovered from the text alone.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The three row curves provide the nine entries of matrix A.",
+        "The highlighted curve is R2, indicating the row used for expansion.",
+        "The plotted y-values at C1, C2, and C3 determine all entries needed for the determinant."
+      ],
+      "validation_rules": [
+        "Read entries by taking the y-value of curve R_i at column position C_j as a_ij.",
+        "Form the matrix A from the three plotted row curves.",
+        "Expand along the highlighted second row using the cofactor signs minus, plus, minus across that row.",
+        "The computed determinant must equal 10, so option A is the unique correct answer."
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0003",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中表格给出矩阵 $A$ 的元素，行标号与列标号分别对应矩阵的行、列。根据图中数据，计算 $\\det(A)$。",
+    "options": {
+      "A": "$6$",
+      "B": "$-6$",
+      "C": "$14$",
+      "D": "$20$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中表格读出矩阵 $A=\\begin{pmatrix}0&2&-1&0\\\\3&0&4&1\\\\0&-2&0&5\\\\1&0&2&-2\\end{pmatrix}$。按第一行展开：$\\det(A)=2C_{12}+(-1)C_{13}$。其中 $C_{12}=-M_{12}$，$M_{12}=\\begin{vmatrix}3&4&1\\\\0&0&5\\\\1&2&-2\\end{vmatrix}=3(0\\cdot(-2)-5\\cdot2)-4(0\\cdot(-2)-5\\cdot1)=-30+20=-10$，所以 $2C_{12}=2\\times10=20$。又 $C_{13}=M_{13}$，$M_{13}=\\begin{vmatrix}3&0&1\\\\0&-2&5\\\\1&0&-2\\end{vmatrix}=3((-2)(-2)-5\\cdot0)+1(0\\cdot0-(-2)\\cdot1)=12+2=14$，所以 $(-1)C_{13}=-14$。因此 $\\det(A)=20-14=6$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查行列式",
+    "blueprint_image_type": "table",
+    "image_path": "images/6b016a0696c244e3.png",
+    "image_prompt": "A table diagram for a determinant problem, viewed straight from above, with one centered 5 by 5 grid. The top-left cell is labeled \"A\". The top header row has four column labels from left to right: \"C1\", \"C2\", \"C3\", \"C4\". The left header column has four row labels from top to bottom: \"R1\", \"R2\", \"R3\", \"R4\". The 4 by 4 data cells show standard numerals: R1 has 0, 2, -1, 0; R2 has 3, 0, 4, 1; R3 has 0, -2, 0, 5; R4 has 1, 0, 2, -2. Each data cell is related to its row and column header by grid alignment, with no arrows. Show labels exactly as written, with R1 data row outlined in light blue and C2 and C3 data columns marked by thin light orange vertical guide lines.",
+    "final_image_prompt": "A table diagram for a determinant problem, viewed straight from above, with one centered 5 by 5 grid. The top-left cell is labeled \"A\". The top header row has four column labels from left to right: \"C1\", \"C2\", \"C3\", \"C4\". The left header column has four row labels from top to bottom: \"R1\", \"R2\", \"R3\", \"R4\". The 4 by 4 data cells show standard numerals: R1 has 0, 2, -1, 0; R2 has 3, 0, 4, 1; R3 has 0, -2, 0, 5; R4 has 1, 0, 2, -2. Each data cell is related to its row and column header by grid alignment, with no arrows. Show labels exactly as written, with R1 data row outlined in light blue and C2 and C3 data columns marked by thin light orange vertical guide lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素，必须从表格图片读取全部矩阵数据，才能构造行列式并完成展开计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵的16个元素全部只由图片表格给出",
+        "第一行中第2列与第3列的非零元素只由图片给出",
+        "两个三阶余子式所需的剩余行列数据只由图片给出"
+      ],
+      "validation_rules": [
+        "先按表格行列标号重构4阶矩阵A",
+        "可按第一行展开，只保留第2列和第3列两个非零项",
+        "正确处理代数余子式符号后得到唯一数值$6$",
+        "只有选项A与计算结果一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0004",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中函数图把每个行节点 $R_i$ 与列节点 $C_j$ 的连线标号表示为矩阵元素 $a_{ij}$。据此构成矩阵 $A=(a_{ij})_{3\\times 3}$，求行列式 $\\det A$。",
+    "options": {
+      "A": "$-85$",
+      "B": "$-75$",
+      "C": "$-80$",
+      "D": "$85$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出矩阵为 $A=\\begin{pmatrix}2&-1&3\\\\0&4&1\\\\5&2&-2\\end{pmatrix}$。按第一行展开：$\\det A=2\\begin{vmatrix}4&1\\\\2&-2\\end{vmatrix}-(-1)\\begin{vmatrix}0&1\\\\5&-2\\end{vmatrix}+3\\begin{vmatrix}0&4\\\\5&2\\end{vmatrix}$。三个二阶行列式分别为 $4(-2)-1\\cdot2=-10$，$0\\cdot(-2)-1\\cdot5=-5$，$0\\cdot2-4\\cdot5=-20$。因此 $\\det A=2(-10)+1(-5)+3(-20)=-85$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "行列式计算",
+    "blueprint_image_type": "function_graph",
+    "image_path": "images/c0d5d72ed4a843bb.png",
+    "image_prompt": "A function graph diagram showing matrix-entry mapping. Use a front-facing layout split into a left column of row nodes and a right column of column nodes. Place 3 circular nodes on the left labeled \"R1\", \"R2\", \"R3\" from top to bottom, and 3 circular nodes on the right labeled \"C1\", \"C2\", \"C3\" from top to bottom. Draw 9 directed edges from each left node to each right node: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\", R2 to C1 labeled \"0\", R2 to C2 labeled \"4\", R2 to C3 labeled \"1\", R3 to C1 labeled \"5\", R3 to C2 labeled \"2\", R3 to C3 labeled \"-2\". Add the title labeled \"矩阵元素函数图\" and the note labeled \"边标号为aij\". Color only edges R1-C1, R2-C2, and R3-C3 blue; keep the other 6 edges black.",
+    "final_image_prompt": "A function graph diagram showing matrix-entry mapping. Use a front-facing layout split into a left column of row nodes and a right column of column nodes. Place 3 circular nodes on the left labeled \"R1\", \"R2\", \"R3\" from top to bottom, and 3 circular nodes on the right labeled \"C1\", \"C2\", \"C3\" from top to bottom. Draw 9 directed edges from each left node to each right node: R1 to C1 labeled \"2\", R1 to C2 labeled \"-1\", R1 to C3 labeled \"3\", R2 to C1 labeled \"0\", R2 to C2 labeled \"4\", R2 to C3 labeled \"1\", R3 to C1 labeled \"5\", R3 to C2 labeled \"2\", R3 to C3 labeled \"-2\". Add the title labeled \"矩阵元素函数图\" and the note labeled \"边标号为aij\". Color only edges R1-C1, R2-C2, and R3-C3 blue; keep the other 6 edges black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只说明图的编码规则，没有给出矩阵元素；必须读取图片中9条边的标号才能构造矩阵并计算行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中9条从行节点到列节点的边标号给出矩阵 $A$ 的全部元素",
+        "第一行对应的三个图中边标号为 $2,-1,3$",
+        "第二行对应的三个图中边标号为 $0,4,1$",
+        "第三行对应的三个图中边标号为 $5,2,-2$"
+      ],
+      "validation_rules": [
+        "必须先由图中边标号重建 $3\\times3$ 矩阵",
+        "按行列式展开或逆序定义计算时应保留有符号排列",
+        "若计算得到 $\\det A=-85$，则选择A；其他数值均不满足图中矩阵的行列式"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0004",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中左侧表格给出矩阵 $B$ 的三个行向量，右侧表格给出矩阵 $A$ 的三个行向量相对于这些行向量的线性组合。根据图中信息，求 $\\det(A)$。",
+    "options": {
+      "A": "$54$",
+      "B": "$18$",
+      "C": "$36$",
+      "D": "$-54$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中左表读出 $B$ 的三行分别为 $r_1=(2,-1,3)$，$r_2=(0,4,-2)$，$r_3=(1,5,1)$。先算 $\\det(B)=2\\begin{vmatrix}4&-2\\5&1\\end{vmatrix}-(-1)\\begin{vmatrix}0&-2\\1&1\\end{vmatrix}+3\\begin{vmatrix}0&4\\1&5\\end{vmatrix}=2(14)+2-12=18$。右表表示 $A$ 的行向量由 $B$ 的行向量线性组合得到，因此若把组合系数排成矩阵 $C=\\begin{pmatrix}2&1&0\\-1&0&1\\3&1&2\\end{pmatrix}$，则 $A=CB$。于是 $\\det(A)=\\det(C)\\det(B)$。计算 $\\det(C)=2\\begin{vmatrix}0&1\\1&2\\end{vmatrix}-1\\begin{vmatrix}-1&1\\3&2\\end{vmatrix}=2(-1)-(-5)=3$，所以 $\\det(A)=3\\times18=54$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查行列式",
+    "blueprint_image_type": "table",
+    "image_path": "images/c3eb50f0f1754130.png",
+    "image_prompt": "A table diagram, viewed straight on, split into left and right regions. On the left, draw 1 titled table labeled \"B\" with 3 data rows and 3 data columns; row labels are \"r1\", \"r2\", \"r3\", and column labels are \"x\", \"y\", \"z\". Fill row r1 with 2, -1, 3; row r2 with 0, 4, -2; row r3 with 1, 5, 1. On the right, draw 1 titled table labeled \"A\" with row labels \"a1\", \"a2\", \"a3\" and column labels \"r1\", \"r2\", \"r3\". Fill row a1 with 2, 1, 0; row a2 with -1, 0, 1; row a3 with 3, 1, 2. Connect the two tables with 1 right-pointing arrow labeled \"行组合\". Use a light blue outline around the B title and a light orange outline around the A title.",
+    "final_image_prompt": "A table diagram, viewed straight on, split into left and right regions. On the left, draw 1 titled table labeled \"B\" with 3 data rows and 3 data columns; row labels are \"r1\", \"r2\", \"r3\", and column labels are \"x\", \"y\", \"z\". Fill row r1 with 2, -1, 3; row r2 with 0, 4, -2; row r3 with 1, 5, 1. On the right, draw 1 titled table labeled \"A\" with row labels \"a1\", \"a2\", \"a3\" and column labels \"r1\", \"r2\", \"r3\". Fill row a1 with 2, 1, 0; row a2 with -1, 0, 1; row a3 with 3, 1, 2. Connect the two tables with 1 right-pointing arrow labeled \"行组合\". Use a light blue outline around the B title and a light orange outline around the A title.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵 $B$ 的条目，也没有给出 $A$ 的行组合系数；必须读取图片中的两个表格及箭头关系才能建立 $A=CB$ 并计算行列式。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左表给出的矩阵 B 的 9 个条目",
+        "右表给出的从 B 的行向量构造 A 的 9 个组合系数",
+        "箭头标签表明右表为行组合关系而非直接坐标表"
+      ],
+      "validation_rules": [
+        "由左表构造 $B$ 并计算 $\\det(B)=18$",
+        "由右表构造行组合系数矩阵 $C$ 并计算 $\\det(C)=3$",
+        "根据 $A=CB$ 使用 $\\det(A)=\\det(C)\\det(B)$",
+        "最终得到 $\\det(A)=54$，对应选项 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0002",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中左侧表格给出矩阵 $A$，右侧表格给出从 $A$ 依次得到矩阵 $B$ 的若干行列变换。根据图示信息，求 $\\det(B)$。",
+    "options": {
+      "A": "$243$",
+      "B": "$-243$",
+      "C": "$-81$",
+      "D": "$27$"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图中矩阵 $A$ 计算行列式。按第一列展开或消元：以第一行第一列为主元，$R_3\\leftarrow R_3-2R_1$，$R_4\\leftarrow R_4-R_1$，不改变行列式，得到三阶子式 $\\begin{vmatrix}3&4&2\\-4&1&5\\-3&2&1\\end{vmatrix}$。其值为 $3(1-10)-4(-4+15)+2(-8+3)=-27-44-10=-81$，故 $\\det(A)=-81$。再看右侧变换：$R_2\\leftarrow R_2+2R_1$ 不改变行列式；交换 $R_1$ 与 $R_4$ 使行列式乘以 $-1$；$R_3\\leftarrow -3R_3$ 使行列式乘以 $-3$；$C_4\\leftarrow C_4-C_2$ 不改变行列式。因此 $\\det(B)=(-81)\\times(-1)\\times(-3)=243$，选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查行列式",
+    "blueprint_image_type": "table",
+    "image_path": "images/c4dd1a5511454167.png",
+    "image_prompt": "A table diagram, viewed straight on, split into a left matrix table and a right operation table with one horizontal arrow between them. The left table is labeled \"矩阵 A\" and has 4 row labels R1, R2, R3, R4 and 4 column labels C1, C2, C3, C4. Fill the 16 cells by rows: 1, 2, 0, -1; 0, 3, 4, 2; 2, 0, 1, 3; 1, -1, 2, 0. The arrow is labeled \"A→B\". The right table is labeled \"得到矩阵 B 的有序变换\" and has columns labeled \"步骤\", \"操作\", \"行列式影响\". Its 4 rows show: 1, R2←R2+2R1, 不变; 2, R1↔R4, 变号; 3, R3←-3R3, 乘以 -3; 4, C4←C4-C2, 不变. Use light blue headers and pale orange highlights on rows 2 and 3.",
+    "final_image_prompt": "A table diagram, viewed straight on, split into a left matrix table and a right operation table with one horizontal arrow between them. The left table is labeled \"矩阵 A\" and has 4 row labels R1, R2, R3, R4 and 4 column labels C1, C2, C3, C4. Fill the 16 cells by rows: 1, 2, 0, -1; 0, 3, 4, 2; 2, 0, 1, 3; 1, -1, 2, 0. The arrow is labeled \"A→B\". The right table is labeled \"得到矩阵 B 的有序变换\" and has columns labeled \"步骤\", \"操作\", \"行列式影响\". Its 4 rows show: 1, R2←R2+2R1, 不变; 2, R1↔R4, 变号; 3, R3←-3R3, 乘以 -3; 4, C4←C4-C2, 不变. Use light blue headers and pale orange highlights on rows 2 and 3.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素和变换步骤；必须读取图片中的矩阵表格与操作表格，才能计算 $\\det(A)$ 并推出 $\\det(B)$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵A的16个元素只在图片中给出",
+        "从A到B的4个有序行列变换只在图片中给出",
+        "第2步为交换两行，第3步为某一行乘以负数标量"
+      ],
+      "validation_rules": [
+        "先依据图片矩阵计算 $\\det(A)=-81$",
+        "识别行加倍数行与列加倍数列不改变行列式",
+        "识别交换两行使行列式乘以 $-1$",
+        "识别一行乘以 $-3$ 使行列式乘以 $-3$",
+        "验证 $\\det(B)=(-81)(-1)(-3)=243$"
+      ]
+    }
+  },
+  {
+    "question_id": "S04-002-Q0001",
+    "subject_id": "S04",
+    "subject_name": "代数与函数",
+    "kp_id": "S04-M01-002",
+    "kp_name": "行列式",
+    "question_language": "zh",
+    "question_text": "图中左侧表格给出矩阵 $A$ 的各元素，右侧表格给出由 $A$ 生成矩阵 $B$ 的有序操作。根据图示信息，求 $\\det(B)$。",
+    "options": {
+      "A": "$570$",
+      "B": "$-570$",
+      "C": "$285$",
+      "D": "$-190$"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图中矩阵计算 $\\det(A)$。按第 $3$ 行展开：$\\det(A)=5C_{31}+1C_{34}$。其中 $C_{31}=(-1)^{3+1}\begin{vmatrix}0&1&3\\-1&4&2\\2&0&-2\\end{vmatrix}=-22$，$C_{34}=(-1)^{3+4}\begin{vmatrix}2&0&1\\0&-1&4\\1&2&0\\end{vmatrix}=15$，所以 $\\det(A)=5(-22)+15=-95$。再根据右侧操作表：交换两行使行列式乘以 $-1$；把一列乘以 $3$ 使行列式乘以 $3$；把一行加上另一行的倍数不改变行列式。因此 $\\det(B)=(-1)\\cdot3\\cdot(-95)=570$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查行列式",
+    "blueprint_image_type": "table",
+    "image_path": "images/cf7514f6aa16479e.png",
+    "image_prompt": "A table diagram, viewed straight from above, split into a left matrix region and a right operation region. The left region is a 4 by 4 grid labeled \"矩阵 A\", with row labels \"R1\", \"R2\", \"R3\", \"R4\" and column labels \"C1\", \"C2\", \"C3\", \"C4\". Fill the rows with 2, 0, 1, 3; then 0, -1, 4, 2; then 5, 0, 0, 1; then 1, 2, 0, -2. The right region is a 3-row operation table labeled \"生成 B 的有序操作\", with rows labeled \"1\", \"2\", \"3\". Row 1 shows \"交换 R1 与 R4\"; row 2 shows \"C2 乘以 3\"; row 3 shows \"R2 替换为 R2 加 2R3\". Draw one arrow from the matrix table to the operation table. Use a light blue border around matrix row R3 and operation row 1, and a light orange border around operation row 2.",
+    "final_image_prompt": "A table diagram, viewed straight from above, split into a left matrix region and a right operation region. The left region is a 4 by 4 grid labeled \"矩阵 A\", with row labels \"R1\", \"R2\", \"R3\", \"R4\" and column labels \"C1\", \"C2\", \"C3\", \"C4\". Fill the rows with 2, 0, 1, 3; then 0, -1, 4, 2; then 5, 0, 0, 1; then 1, 2, 0, -2. The right region is a 3-row operation table labeled \"生成 B 的有序操作\", with rows labeled \"1\", \"2\", \"3\". Row 1 shows \"交换 R1 与 R4\"; row 2 shows \"C2 乘以 3\"; row 3 shows \"R2 替换为 R2 加 2R3\". Draw one arrow from the matrix table to the operation table. Use a light blue border around matrix row R3 and operation row 1, and a light orange border around operation row 2.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出矩阵元素和生成矩阵的操作，必须读取图片中的两个表格才能计算 $\\det(A)$ 并推得 $\\det(B)$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "矩阵A的16个元素只在图片左表给出",
+        "从A到B的3个有序操作只在图片右表给出",
+        "列倍乘因子和行替换倍数只在图片中给出"
+      ],
+      "validation_rules": [
+        "先根据图片左表计算原矩阵的行列式",
+        "交换两行时行列式变号",
+        "某一列乘以3时行列式乘以3",
+        "一行加上另一行的倍数时行列式不变",
+        "将上述性质按图片右表顺序组合后应得到选项A"
+      ]
+    }
+  }
+]

@@ -1,0 +1,398 @@
+[
+  {
+    "question_id": "S07-001-Q0007",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-001",
+    "kp_name": "心电图系统判读方法",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电轴判读数据图。按系统判读流程，先分别计算图示导联的QRS净振幅，再依据额面心电轴的象限规则与补充导联判断，以下哪项最符合图示信息？",
+    "options": {
+      "A": "额面心电轴在常规正常范围内",
+      "B": "额面心电轴落在左上象限，并越过常用左侧界限",
+      "C": "额面心电轴落在右下象限",
+      "D": "仅凭图示数据不能完成象限判定"
+    },
+    "correct_answer": "B",
+    "explanation": "系统判读心电轴时，应先计算各导联QRS净振幅，即正向振幅减去负向振幅。图中I导联为$7-2=+5$ mm，aVF导联为$2-6=-4$ mm，因此额面轴位于I导联正向、aVF导联负向对应的左上象限。再看II导联，净振幅为$3-5=-2$ mm；在常用流程中，I正、aVF负时需结合II导联，II导联为负提示轴已越过常用左侧界限。因此选B。A忽略了II导联的补充判断，C混淆了I导联与aVF导联的符号组合，D则忽略了图中已给出足够的导联净振幅信息。",
+    "difficulty": 2,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "心电轴判定",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/0178da7d81fa4f1c.png",
+    "image_prompt": "A data chart for simulated ECG axis interpretation. Global layout is split into a left bar-data region and a right quadrant mini-diagram, viewed straight on. The left region has 3 horizontal lead rows labeled \"I\", \"aVF\", and \"II\" from top to bottom, each centered on one vertical zero line. In each row, 1 blue bar labeled \"R\" extends right and 1 orange bar labeled \"S\" extends left. Show values: I row R 7 mm and S 2 mm; aVF row R 2 mm and S 6 mm; II row R 3 mm and S 5 mm. Add a bottom scale labeled \"mm\" with ticks 0, 2, 4, 6, 8. The right region has 2 crossing axes: horizontal labeled \"I轴\" with + on the right and - on the left, vertical labeled \"aVF轴\" with - above and + below. Add three arrows connecting labels \"先算净振幅\" to \"再判象限\" to \"再看II\". Use blue and orange highlights only.",
+    "final_image_prompt": "A data chart for simulated ECG axis interpretation. Global layout is split into a left bar-data region and a right quadrant mini-diagram, viewed straight on. The left region has 3 horizontal lead rows labeled \"I\", \"aVF\", and \"II\" from top to bottom, each centered on one vertical zero line. In each row, 1 blue bar labeled \"R\" extends right and 1 orange bar labeled \"S\" extends left. Show values: I row R 7 mm and S 2 mm; aVF row R 2 mm and S 6 mm; II row R 3 mm and S 5 mm. Add a bottom scale labeled \"mm\" with ticks 0, 2, 4, 6, 8. The right region has 2 crossing axes: horizontal labeled \"I轴\" with + on the right and - on the left, vertical labeled \"aVF轴\" with - above and + below. Add three arrows connecting labels \"先算净振幅\" to \"再判象限\" to \"再看II\". Use blue and orange highlights only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出各导联R、S振幅及轴向正负规定，必须读取图片中的条形数据、象限标注和流程箭头才能完成判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "I导联R波为7 mm且S波为2 mm",
+        "aVF导联R波为2 mm且S波为6 mm",
+        "II导联R波为3 mm且S波为5 mm",
+        "右侧象限图规定I轴右侧为正向、aVF轴下方为正向",
+        "流程提示要求在象限判断后查看II导联"
+      ],
+      "validation_rules": [
+        "用每个导联的R波振幅减去S波振幅得到QRS净振幅",
+        "I导联净振幅为正，aVF导联净振幅为负时进入左上象限判断",
+        "在I正且aVF负的情况下，若II导联净振幅为负，则选择越过常用左侧界限的表述",
+        "四个选项中只有B同时符合三导联净振幅计算、象限映射和补充导联规则"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-001-Q0008",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-001",
+    "kp_name": "心电图系统判读方法",
+    "question_language": "zh",
+    "question_text": "在系统判读心电图的P-QRS-T波形分析步骤中，依据图中给出的走纸速度、标尺和垂直测量线，以下哪一组测量结果符合标准测量起止点？",
+    "options": {
+      "A": "PR间期为$0.32\\,s$，QRS时限为$0.08\\,s$，QT间期为$0.48\\,s$",
+      "B": "PR间期为$0.16\\,s$，QRS时限为$0.08\\,s$，QT间期为$0.40\\,s$",
+      "C": "PR间期为$0.32\\,s$，QRS时限为$0.12\\,s$，QT间期为$0.48\\,s$",
+      "D": "PR间期为$0.24\\,s$，QRS时限为$0.08\\,s$，QT间期为$0.40\\,s$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中走纸速度为$25\\,mm/s$，因此每个小格代表$0.04\\,s$。按P-QRS-T波形系统测量规则，PR间期从P波起点量到QRS起点，图中为8小格，故为$8\\times0.04=0.32\\,s$；QRS时限从QRS起点到QRS终点，图中为2小格，故为$2\\times0.04=0.08\\,s$；QT间期从QRS起点量到T波终点，图中为12小格，故为$12\\times0.04=0.48\\,s$。因此只有A同时符合三个起止点与换算规则。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "P-QRS-T波形分析",
+    "blueprint_image_type": "ecg_12lead",
+    "image_path": "images/0ea9d5dad5504d3d.png",
+    "image_prompt": "An ecg_12lead diagram, viewed straight on, split into an upper 3 by 4 twelve-lead panel and one lower enlarged rhythm strip. The upper panel contains 12 small simulated ECG traces labeled \"I\", \"II\", \"III\", \"aVR\", \"aVL\", \"aVF\", \"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\". The lower strip is labeled \"Lead II 放大测量条带\" and shows 1 complete P-QRS-T complex on ECG grid paper. Add 5 vertical dashed boundary lines on the lower strip labeled \"P onset\", \"P end\", \"QRS onset\", \"QRS end\", \"T end\". Align them with a bottom counting ruler labeled \"0\", \"4\", \"8\", \"10\", \"20\". Show text labels \"25 mm/s\", \"10 mm/mV\", and \"1 small square = 0.04 s\". Use red dashed boundary lines and a blue counting ruler.",
+    "final_image_prompt": "An ecg_12lead diagram, viewed straight on, split into an upper 3 by 4 twelve-lead panel and one lower enlarged rhythm strip. The upper panel contains 12 small simulated ECG traces labeled \"I\", \"II\", \"III\", \"aVR\", \"aVL\", \"aVF\", \"V1\", \"V2\", \"V3\", \"V4\", \"V5\", \"V6\". The lower strip is labeled \"Lead II 放大测量条带\" and shows 1 complete P-QRS-T complex on ECG grid paper. Add 5 vertical dashed boundary lines on the lower strip labeled \"P onset\", \"P end\", \"QRS onset\", \"QRS end\", \"T end\". Align them with a bottom counting ruler labeled \"0\", \"4\", \"8\", \"10\", \"20\". Show text labels \"25 mm/s\", \"10 mm/mV\", and \"1 small square = 0.04 s\". Use red dashed boundary lines and a blue counting ruler.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各波形边界在计数尺上的位置，必须观察图中放大Lead II条带的垂直测量线和标尺才能完成三项计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "下方放大Lead II条带中5条垂直测量线分别对应0、4、8、10、20小格",
+        "图中标尺给出每小格时间为$0.04\\,s$",
+        "图中P波、QRS波群和T波终点的测量边界只能由垂直虚线读取"
+      ],
+      "validation_rules": [
+        "PR间期必须从P波起点量到QRS起点，并将小格数乘以$0.04\\,s$",
+        "QRS时限必须从QRS起点量到QRS终点，并将小格数乘以$0.04\\,s$",
+        "QT间期必须从QRS起点量到T波终点，并将小格数乘以$0.04\\,s$",
+        "只有同时满足三项测量起止点和换算结果的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-001-Q0002",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-001",
+    "kp_name": "心电图系统判读方法",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电图节律条。按系统判读步骤，先评估相邻R波间距是否一致，再用图中标尺信息估算心率，最合适的判断是：",
+    "options": {
+      "A": "节律规则，心率约40次/分",
+      "B": "节律规则，心率约80次/分",
+      "C": "节律不规则，心率约40次/分",
+      "D": "节律规则，心率约60次/分"
+    },
+    "correct_answer": "A",
+    "explanation": "图中为25 mm/s走纸速度的6秒节律条，共30个大格。按系统判读方法，先定位连续R波，再比较相邻R-R间距：图中4个R波位置等间隔排列，相邻间距均为7.5个大格，因此节律可判为规则。心率估算可用规则节律公式：心率 $=300\\div R\\text{-}R大格数=300\\div7.5=40$ 次/分；也可用6秒法，6秒内4个QRS波群，$4\\times10=40$ 次/分。故最合适的判断为节律规则，心率约40次/分。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "心率节律判读",
+    "blueprint_image_type": "ecg_strip",
+    "image_path": "images/9f36f979704049a3.png",
+    "image_prompt": "An ecg_strip diagram showing a simulated educational single-lead ECG rhythm strip. Global layout is horizontal, viewed straight on, with ECG grid paper filling one rectangular strip and a time axis below it. Show 30 large grid boxes from left to right, with a top label (labeled \"25 mm/s\"). Draw 4 similar P-QRS-T complexes across the strip. Place blue dots at the R peaks positioned on large-box lines 3, 10.5, 18, and 25.5 from the left edge. Add one label (labeled \"R\") above each blue dot, one label (labeled \"P\") near each preceding P wave, and one label (labeled \"T\") near each following T wave. Connect the bottom horizontal time axis from left (labeled \"0 s\") to right (labeled \"6 s\"). Use red grid lines and blue R-peak highlights only.",
+    "final_image_prompt": "An ecg_strip diagram showing a simulated educational single-lead ECG rhythm strip. Global layout is horizontal, viewed straight on, with ECG grid paper filling one rectangular strip and a time axis below it. Show 30 large grid boxes from left to right, with a top label (labeled \"25 mm/s\"). Draw 4 similar P-QRS-T complexes across the strip. Place blue dots at the R peaks positioned on large-box lines 3, 10.5, 18, and 25.5 from the left edge. Add one label (labeled \"R\") above each blue dot, one label (labeled \"P\") near each preceding P wave, and one label (labeled \"T\") near each following T wave. Connect the bottom horizontal time axis from left (labeled \"0 s\") to right (labeled \"6 s\"). Use red grid lines and blue R-peak highlights only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出R峰位置、R-R间距、QRS数量或标尺长度，必须根据图中网格与波形位置完成节律比较和心率估算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中走纸速度为25 mm/s",
+        "图中显示0到6秒共30个大格",
+        "图中R峰位于第3、10.5、18、25.5个大格位置",
+        "相邻R-R间距均为7.5个大格",
+        "图中共有4个可见QRS波群"
+      ],
+      "validation_rules": [
+        "若相邻R-R间距相等，则判定节律规则",
+        "规则节律心率可按 $300\\div R\\text{-}R大格数$ 计算",
+        "$300\\div7.5=40$，因此心率约为40次/分",
+        "6秒内4个QRS波群时，$4\\times10=40$，与大格法一致",
+        "同时满足节律规则和心率约40次/分的选项为正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0003",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电图和配套测量框。若只依据图示信息判断，该变化最符合哪一种解释？",
+    "options": {
+      "A": "体位改变相关的正常变异",
+      "B": "记录增益被调高造成的伪差",
+      "C": "肌电干扰造成的伪差",
+      "D": "胸前导联电极位置互换造成的伪差"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要先比较两种姿势下的胸前导联振幅：V3的R波由$8\\text{ mm}$变为$13\\text{ mm}$，V5的R波由$17\\text{ mm}$变为$11\\text{ mm}$，说明不同胸前导联的振幅改变方向并不一致。再看校准脉冲，两侧均为$10\\text{ mm}$，因此不能解释为整体增益改变。基线噪声均低于$1\\text{ mm}$，不支持肌电干扰；电极位置示意未显示V3与V5互换，且阻抗数值均在相近范围。综合这些图示事实，最符合体位改变引起的正常变异。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "体位性改变",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/4188ea31ef0046f9.png",
+    "image_prompt": "An academic diagram of a synthetic ECG posture comparison, split into left and right regions with a narrow center column. The left region is labeled \"仰卧\" and contains 2 horizontal simulated ECG strips: upper strip labeled \"V3\" with a blue vertical bracket labeled \"R=8 mm\", lower strip labeled \"V5\" with a green vertical bracket labeled \"R=17 mm\". The right region is labeled \"左侧卧\" and contains 2 matching ECG strips: upper \"V3\" with \"R=13 mm\", lower \"V5\" with \"R=11 mm\". In the center, show 2 simple body posture icons connected by 1 rightward arrow. Below all strips, place 1 measurement box listing \"校准=10 mm\" on both sides, \"噪声=0.3 mm\", \"噪声=0.4 mm\", \"V3阻抗=4 kΩ\", and \"V5阻抗=5 kΩ\". Add 1 small chest electrode inset with V3 inside V5, no crossed lines. Use blue for V3 brackets and green for V5 brackets.",
+    "final_image_prompt": "An academic diagram of a synthetic ECG posture comparison, split into left and right regions with a narrow center column. The left region is labeled \"仰卧\" and contains 2 horizontal simulated ECG strips: upper strip labeled \"V3\" with a blue vertical bracket labeled \"R=8 mm\", lower strip labeled \"V5\" with a green vertical bracket labeled \"R=17 mm\". The right region is labeled \"左侧卧\" and contains 2 matching ECG strips: upper \"V3\" with \"R=13 mm\", lower \"V5\" with \"R=11 mm\". In the center, show 2 simple body posture icons connected by 1 rightward arrow. Below all strips, place 1 measurement box listing \"校准=10 mm\" on both sides, \"噪声=0.3 mm\", \"噪声=0.4 mm\", \"V3阻抗=4 kΩ\", and \"V5阻抗=5 kΩ\". Add 1 small chest electrode inset with V3 inside V5, no crossed lines. Use blue for V3 brackets and green for V5 brackets.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出各导联振幅、校准、噪声、阻抗和电极位置关系；必须读取图中这些信息并综合排除伪差选项。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "两种体位下V3与V5的R波数值",
+        "两侧校准脉冲数值",
+        "两侧基线噪声数值",
+        "V3与V5阻抗数值",
+        "电极位置小图中V3与V5的空间关系"
+      ],
+      "validation_rules": [
+        "若两侧校准脉冲相同，则不支持整体增益改变作为主要解释",
+        "若基线噪声均低且波形规则，则不支持肌电干扰作为主要解释",
+        "若电极位置小图未显示V3与V5互换，则不支持胸前导联互换作为主要解释",
+        "若体位改变后不同胸前导联振幅发生不一致方向变化，且技术性伪差证据不足，则选择体位改变相关的正常变异"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0003",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电数据表。若以参考段为同一受试状态下的基准，并按肢体导联的极性与幅度对应关系进行判断，记录段X最符合哪一种技术性原因？",
+    "options": {
+      "A": "左臂电极与左腿电极互换",
+      "B": "右臂电极与左臂电极互换",
+      "C": "右臂电极与左腿电极互换",
+      "D": "体位改变导致的正常变异"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需先比较参考段与记录段X的6个肢体导联净QRS振幅。记录段X中$I$导联对应参考段$II$导联，$II$导联对应参考段$I$导联；同时$III$导联极性反转，对应参考段$III$导联的相反数。再检查加压导联：$aVR$基本不变，$aVL$对应参考段$aVF$，$aVF$对应参考段$aVL$。这一组关系与左臂电极和左腿电极互换时的导联变换一致。若为右臂与左臂互换，通常会突出$I$导联反向且$aVR/aVL$互换；若为右臂与左腿互换，则$II$导联会出现明显反向；单纯体位改变不应产生这种成组的代数式导联重排关系。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "电极误置识别",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/7394709df4ed4f80.png",
+    "image_prompt": "A data chart showing synthetic ECG limb-lead net QRS amplitudes. Global layout: one centered title at top, one 2-row by 6-column table in the middle, and one small note box on the right. The table has row labels (labeled \"参考段\") and (labeled \"记录段X\"), and six column labels (labeled \"I\"), (labeled \"II\"), (labeled \"III\"), (labeled \"aVR\"), (labeled \"aVL\"), (labeled \"aVF\"). Reference row values are +0.70, +1.10, +0.40, -0.90, +0.15, +0.75. Segment X row values are +1.10, +0.70, -0.40, -0.90, +0.75, +0.15. The title is (labeled \"模拟肢体导联净QRS振幅\"). The note box contains (labeled \"净QRS振幅\"), (labeled \"单位mV\"), and (labeled \"容差±0.05 mV\"). Highlight only the Segment X row with pale yellow.",
+    "final_image_prompt": "A data chart showing synthetic ECG limb-lead net QRS amplitudes. Global layout: one centered title at top, one 2-row by 6-column table in the middle, and one small note box on the right. The table has row labels (labeled \"参考段\") and (labeled \"记录段X\"), and six column labels (labeled \"I\"), (labeled \"II\"), (labeled \"III\"), (labeled \"aVR\"), (labeled \"aVL\"), (labeled \"aVF\"). Reference row values are +0.70, +1.10, +0.40, -0.90, +0.15, +0.75. Segment X row values are +1.10, +0.70, -0.40, -0.90, +0.75, +0.15. The title is (labeled \"模拟肢体导联净QRS振幅\"). The note box contains (labeled \"净QRS振幅\"), (labeled \"单位mV\"), and (labeled \"容差±0.05 mV\"). Highlight only the Segment X row with pale yellow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "必须从图中读取两行六列的具体振幅并比较导联间的成组对应关系；仅凭题干和选项无法判断是哪一种电极误置。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "参考段和记录段X在6个肢体导联中的净QRS振幅数值",
+        "记录段X相对于参考段的导联数值对应关系",
+        "图中给出的容差范围"
+      ],
+      "validation_rules": [
+        "若记录段X的I与参考段II一致，记录段X的II与参考段I一致，应纳入左臂与左腿互换候选",
+        "若记录段X的III为参考段III的相反数，且aVR保持一致，应支持左臂与左腿互换",
+        "若记录段X的aVL与参考段aVF一致且记录段X的aVF与参考段aVL一致，应排除单纯体位改变",
+        "综合全部对应关系后，唯一符合的选项为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0002",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟肢体导联连接、接触阻抗和三条同步记录。若只依据图示信息，最可能的伪差来源是哪一项？",
+    "options": {
+      "A": "右上肢电极接触不良导致的技术性伪差",
+      "B": "左上肢电极接触不良并伴随局部活动干扰",
+      "C": "左下肢电极接触不良导致的技术性伪差",
+      "D": "体位改变引起的正常心电向量变异"
+    },
+    "correct_answer": "B",
+    "explanation": "图中需要先判断哪些导联受伪差影响：导联 I 的噪声标尺为 $1.0\\,mV$，导联 III 为 $0.9\\,mV$，均达到图中“受影响”阈值 $\\ge 0.8\\,mV$；导联 II 仅 $0.1\\,mV$，未达到阈值。再结合导联组成：I 包含 LA 与 RA，III 包含 LL 与 LA，而 II 包含 LL 与 RA。共同出现在受影响导联、但不出现在未受影响导联中的电极是 LA。最后查看阻抗与活动标记，LA 阻抗为 $28\\,k\\Omega$，超过图中 $20\\,k\\Omega$ 的提示阈值，且左腕活动标记与噪声突发同步，因此最符合左上肢电极接触不良并伴随局部活动干扰。A、C均不能解释仅 I 和 III明显受影响而 II基本干净；D属于正常变异方向，但图中存在局部同步噪声和高阻抗证据，不符合单纯体位性正常变异。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "伪差原因分析",
+    "blueprint_image_type": "medical_diagram",
+    "image_path": "images/8630fa869d7d47fc.png",
+    "image_prompt": "A synthetic educational medical diagram showing ECG artifact analysis. The layout is split into a left electrode map and a right ECG panel, viewed straight on. On the left, draw 1 simplified torso with 4 limb electrodes: upper right labeled \"RA\" with \"RA 2 kΩ\", upper left labeled \"LA\" with \"LA 28 kΩ\", lower left labeled \"LL\" with \"LL 3 kΩ\", lower right labeled \"RL\" with \"RL 2 kΩ\". On the right, draw 3 horizontal simulated ECG strips stacked top to bottom, labeled \"I = LA−RA\", \"II = LL−RA\", and \"III = LL−LA\". Lead I has sharp bursts at 2 s, 5 s, 8 s and label \"1.0 mV\"; lead II is smooth with label \"0.1 mV\"; lead III has sharp bursts at 2 s, 5 s, 8 s and label \"0.9 mV\". Add 3 vertical markers below labeled \"左腕活动\", \"2 s\", \"5 s\", \"8 s\". Add a small box labeled \"噪声阈值 ≥0.8 mV\" and \"阻抗阈值 ≥20 kΩ\". Highlight LA and the bursts in red.",
+    "final_image_prompt": "A synthetic educational medical diagram showing ECG artifact analysis. The layout is split into a left electrode map and a right ECG panel, viewed straight on. On the left, draw 1 simplified torso with 4 limb electrodes: upper right labeled \"RA\" with \"RA 2 kΩ\", upper left labeled \"LA\" with \"LA 28 kΩ\", lower left labeled \"LL\" with \"LL 3 kΩ\", lower right labeled \"RL\" with \"RL 2 kΩ\". On the right, draw 3 horizontal simulated ECG strips stacked top to bottom, labeled \"I = LA−RA\", \"II = LL−RA\", and \"III = LL−LA\". Lead I has sharp bursts at 2 s, 5 s, 8 s and label \"1.0 mV\"; lead II is smooth with label \"0.1 mV\"; lead III has sharp bursts at 2 s, 5 s, 8 s and label \"0.9 mV\". Add 3 vertical markers below labeled \"左腕活动\", \"2 s\", \"5 s\", \"8 s\". Add a small box labeled \"噪声阈值 ≥0.8 mV\" and \"阻抗阈值 ≥20 kΩ\". Highlight LA and the bursts in red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出导联噪声幅度、接触阻抗、导联组成及活动标记对齐关系；必须看图才能完成筛选。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "三条导联各自的噪声幅度数值只在图中给出",
+        "四个电极的接触阻抗只在图中给出",
+        "导联I、II、III与肢体电极的组成关系只在图中给出",
+        "左腕活动标记与部分导联噪声突发的对齐关系只在图中给出"
+      ],
+      "validation_rules": [
+        "先用图中噪声阈值判断哪些导联达到受影响标准",
+        "再用导联组成关系找出受影响导联共有且未出现在未受影响导联中的电极",
+        "再用图中阻抗阈值和活动标记对齐关系确认技术性伪差来源",
+        "唯一满足这些条件的选项为B"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0005",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中模拟三导联心电条、电极阻抗小表和体位时间轴。若只考虑正常变异与技术性伪差的鉴别，最符合图示模式的原因是哪一项？",
+    "options": {
+      "A": "呼吸相关的正常节律变异",
+      "B": "交流电干扰造成的全导联等幅细密波动",
+      "C": "右上肢电极接触不良造成的局部伪差",
+      "D": "左右上肢电极互换造成的导联极性改变"
+    },
+    "correct_answer": "C",
+    "explanation": "图中需要同时读出三类信息：第一，伪差集中在同一时间窗，而不是整段持续存在；第二，Lead I 与 Lead II 在该时间窗出现明显基线跳变和粗大噪声，而 Lead III 相对平稳。按导联构成，Lead I 涉及 LA-RA，Lead II 涉及 LL-RA，Lead III 涉及 LL-LA，因此共同受影响的是 RA 相关通道。第三，阻抗表中 RA 数值明显高于 LA、LL、RL，并且体位时间轴在相近时间有翻身标记，支持接触不良诱发的技术性伪差。呼吸相关正常变异通常表现为节律随呼吸周期缓慢变化，不会只使两个共享同一电极的导联突发粗大噪声；交流电干扰通常更接近全导联持续、规则细密波动；左右上肢电极互换主要导致导联极性/形态对应改变，而不是局部时间窗内的接触噪声。因此选 C。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "伪差原因分析",
+    "blueprint_image_type": "medical_diagram",
+    "image_path": "images/c36401b9182f4501.png",
+    "image_prompt": "A medical diagram showing a synthetic educational ECG artifact comparison. The layout is split into a left ECG region, a right impedance table, and a bottom posture timeline. On the left, draw 3 horizontal ECG strips stacked vertically, labeled \"Lead I\", \"Lead II\", and \"Lead III\", with time labels \"0 s\", \"10 s\", and \"20 s\". Add one pale orange vertical band from 12 to 16 seconds labeled \"12-16 s\" across all 3 strips. Lead I and Lead II show baseline step shifts and irregular large noise inside the band; Lead III remains a regular narrow waveform inside the band. On the right, draw a 4-row table labeled \"电极阻抗\" with rows labeled \"RA 18 kΩ\", \"LA 3 kΩ\", \"LL 4 kΩ\", and \"RL 3 kΩ\". At the bottom, draw one horizontal timeline labeled \"体位时间轴\" with an upward triangle at 14 seconds labeled \"翻身\". Use pale red fill only behind the RA row.",
+    "final_image_prompt": "A medical diagram showing a synthetic educational ECG artifact comparison. The layout is split into a left ECG region, a right impedance table, and a bottom posture timeline. On the left, draw 3 horizontal ECG strips stacked vertically, labeled \"Lead I\", \"Lead II\", and \"Lead III\", with time labels \"0 s\", \"10 s\", and \"20 s\". Add one pale orange vertical band from 12 to 16 seconds labeled \"12-16 s\" across all 3 strips. Lead I and Lead II show baseline step shifts and irregular large noise inside the band; Lead III remains a regular narrow waveform inside the band. On the right, draw a 4-row table labeled \"电极阻抗\" with rows labeled \"RA 18 kΩ\", \"LA 3 kΩ\", \"LL 4 kΩ\", and \"RL 3 kΩ\". At the bottom, draw one horizontal timeline labeled \"体位时间轴\" with an upward triangle at 14 seconds labeled \"翻身\". Use pale red fill only behind the RA row.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出受影响导联、阻抗数值和体位时间关系；必须观察图片才能完成共同电极归因和干扰项排除。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "Lead I与Lead II在同一高亮时间窗出现粗大扰动而Lead III未出现同类扰动",
+        "阻抗表中RA为18 kΩ，而LA、LL、RL分别为3 kΩ、4 kΩ、3 kΩ",
+        "体位时间轴的翻身标记位于高亮时间窗内"
+      ],
+      "validation_rules": [
+        "若两个受影响导联共同涉及同一电极，且第三个不涉及该电极的导联相对稳定，应优先考虑该共同电极相关伪差",
+        "若某一电极阻抗明显高于其他电极，支持该电极接触不良而非正常变异",
+        "若扰动与体位改变时间重叠，支持运动或接触改变诱发的技术性伪差"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0003",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电图和导联连接示意。若仅根据图示关系判断，最可能导致该段异常波形的技术性原因是哪一项？",
+    "options": {
+      "A": "左臂电极接触不良",
+      "B": "右臂电极接触不良",
+      "C": "左腿电极接触不良",
+      "D": "呼吸相关的基线轻度漂移"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要先读出两个信息：第一，异常尖锐扰动只同步出现在导联 I 和导联 III，而导联 II 在同一时间窗内保持规则波形；第二，右侧连接示意显示导联 I 连接 RA 与 LA，导联 III 连接 LA 与 LL，导联 II 连接 RA 与 LL。因此，共同涉及 LA 的两条导联同时受影响，而不含 LA 的导联 II 未受影响，最符合左臂电极接触不良所致的技术性伪差。若为右臂电极问题，导联 I 和 II 更应同时受影响；若为左腿电极问题，导联 II 和 III 更应同时受影响；呼吸相关基线漂移通常表现为缓慢起伏，而不是局限于两个相关导联的同步尖锐扰动。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "伪差原因分析",
+    "blueprint_image_type": "medical_diagram",
+    "image_path": "images/cb20a94e39484f57.png",
+    "image_prompt": "A synthetic medical diagram, split into a left ECG strip region and a right limb-lead connection region. On the left, show 3 horizontal simulated ECG tracks stacked vertically, labeled \"导联 I\", \"导联 II\", and \"导联 III\" at the left edge. A narrow light gray vertical time window crosses all 3 tracks. Inside this window, the top track has 3 tall irregular vertical spikes, the middle track has 0 tall spikes and remains a regular repeating waveform, and the bottom track has 3 tall irregular vertical spikes aligned horizontally with the top spikes. On the right, draw a triangle with 3 electrode nodes: upper left labeled \"RA\", upper right labeled \"LA\", and lower center labeled \"LL\". Connect RA to LA labeled \"I\", RA to LL labeled \"II\", and LA to LL labeled \"III\". Give only the LA node a red outline; keep RA and LL black.",
+    "final_image_prompt": "A synthetic medical diagram, split into a left ECG strip region and a right limb-lead connection region. On the left, show 3 horizontal simulated ECG tracks stacked vertically, labeled \"导联 I\", \"导联 II\", and \"导联 III\" at the left edge. A narrow light gray vertical time window crosses all 3 tracks. Inside this window, the top track has 3 tall irregular vertical spikes, the middle track has 0 tall spikes and remains a regular repeating waveform, and the bottom track has 3 tall irregular vertical spikes aligned horizontally with the top spikes. On the right, draw a triangle with 3 electrode nodes: upper left labeled \"RA\", upper right labeled \"LA\", and lower center labeled \"LL\". Connect RA to LA labeled \"I\", RA to LL labeled \"II\", and LA to LL labeled \"III\". Give only the LA node a red outline; keep RA and LL black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项未给出哪些导联受扰动及导联连接关系，必须查看图片才能确定共同受影响的电极节点。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "导联 I 与导联 III 在同一时间窗内出现对齐的尖锐扰动",
+        "导联 II 在该时间窗内未出现同类尖锐扰动",
+        "连接图显示导联 I 和导联 III 共同涉及 LA，而导联 II 不涉及 LA"
+      ],
+      "validation_rules": [
+        "先确定异常波形分布在导联 I 和导联 III，而非导联 II",
+        "再根据连接图找出导联 I 与导联 III 的共同节点为 LA",
+        "选择与该共同节点接触不良相符的选项，并排除会影响 I+II、II+III 或全导联缓慢漂移的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0004",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟肢体导联数据表。若以左列为同一受试者在电极连接正确时的参照，右列为本次记录，且只根据各导联净QRS振幅的数值与极性关系判断，最符合哪一种技术性情况？",
+    "options": {
+      "A": "右臂与左腿电极互换",
+      "B": "左臂与左腿电极互换",
+      "C": "右臂与左臂电极互换",
+      "D": "体位改变导致的正常振幅变异"
+    },
+    "correct_answer": "C",
+    "explanation": "先比较参照列与本次记录列：参照$I=+0.8$，本次$I=-0.8$，提示$I$导联极性反转；参照$II=+1.2$与$III=+0.4$，本次对应为$II=+0.4$、$III=+1.2$，呈现$II$与$III$的数值互换；参照$aVR=-1.0$、$aVL=+0.2$，本次为$aVR=+0.2$、$aVL=-1.0$，呈现$aVR$与$aVL$互换；同时$aVF$均为$+0.8$，保持不变。这一组变化符合右臂与左臂电极互换的肢体导联重排规律。右臂与左腿互换或左臂与左腿互换会造成不同的导联对应关系；单纯体位改变通常不会形成这种成组的极性反转与导联互换模式。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "电极误置识别",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/e009ae16d0b148ac.png",
+    "image_prompt": "A data chart showing a synthetic educational ECG limb-lead amplitude table. The layout is a centered rectangular table viewed straight on, with 6 horizontal rows and 3 vertical columns. The top title is labeled \"模拟肢体导联净QRS振幅\". Column headers are labeled \"导联\", \"参照连接\", and \"本次记录\"; a small unit label reads \"mV\". Rows are labeled \"I\", \"II\", \"III\", \"aVR\", \"aVL\", and \"aVF\" from top to bottom. The reference/current values are: I +0.8 and -0.8, II +1.2 and +0.4, III +0.4 and +1.2, aVR -1.0 and +0.2, aVL +0.2 and -1.0, aVF +0.8 and +0.8. Each row connects one lead label to two aligned numeric cells. Highlight the I current cell pale red and outline both aVF cells pale blue.",
+    "final_image_prompt": "A data chart showing a synthetic educational ECG limb-lead amplitude table. The layout is a centered rectangular table viewed straight on, with 6 horizontal rows and 3 vertical columns. The top title is labeled \"模拟肢体导联净QRS振幅\". Column headers are labeled \"导联\", \"参照连接\", and \"本次记录\"; a small unit label reads \"mV\". Rows are labeled \"I\", \"II\", \"III\", \"aVR\", \"aVL\", and \"aVF\" from top to bottom. The reference/current values are: I +0.8 and -0.8, II +1.2 and +0.4, III +0.4 and +1.2, aVR -1.0 and +0.2, aVL +0.2 and -1.0, aVF +0.8 and +0.8. Each row connects one lead label to two aligned numeric cells. Highlight the I current cell pale red and outline both aVF cells pale blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何具体导联数值或成组对应关系；必须读取图中两列净QRS振幅并进行比较，才能判断是哪类技术性电极误置。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "参照列与本次记录列中I导联数值符号相反且绝对值相同",
+        "参照列II和III的数值在本次记录列中交叉对应",
+        "参照列aVR和aVL的数值在本次记录列中交叉对应",
+        "aVF在两列中的数值与符号保持一致"
+      ],
+      "validation_rules": [
+        "必须同时使用I导联反向、II与III对应互换、aVR与aVL对应互换、aVF不变四个图示事实",
+        "若只依据单个导联变化或只依据II与III互换，不得判为正确",
+        "正确选项必须能解释所有六个导联在两列之间的对应关系"
+      ]
+    }
+  },
+  {
+    "question_id": "S07-002-Q0001",
+    "subject_id": "S07",
+    "subject_name": "基础医学",
+    "kp_id": "S07-M01-002",
+    "kp_name": "正常变异与伪差识别",
+    "question_language": "zh",
+    "question_text": "观察图中的模拟心电监测示意图。若只依据图中可见的同步导联表现和电极接触信息，最可能的技术性伪差来源是哪一项？",
+    "options": {
+      "A": "左臂电极接触不良并受导线牵拉",
+      "B": "右臂电极接触不良并受导线牵拉",
+      "C": "左腿电极接触不良并受导线牵拉",
+      "D": "呼吸相关体位变化造成全导联缓慢基线漂移"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要同时判断两类信息：一是同步心电条带，二是电极接触参数。导联 I 与导联 III 在同一时间窗出现突发高频杂乱波形，而导联 II 基本保持规则；按肢体导联关系，导联 I 与导联 III 都包含左臂电极，导联 II 不包含左臂电极。再看电极小图，左臂位置的接触阻抗为 $18\\,k\\Omega$，牵拉位移为 $4\\,mm$，明显高于其他肢体电极。将“受影响导联组合”和“局部接触异常”合并判断，最符合左臂电极接触不良并受导线牵拉。右臂异常通常会同时影响导联 I 与 II；左腿异常通常会影响导联 II 与 III；呼吸或体位相关改变更常表现为多导联同步、较慢的基线漂移，而不是仅特定导联的突发杂乱伪差。",
+    "difficulty": 2,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "伪差原因分析",
+    "blueprint_image_type": "medical_diagram",
+    "image_path": "images/eaa1a90e63534126.png",
+    "image_prompt": "A synthetic medical diagram showing ECG artifact analysis. The layout is split into a left ECG panel and a right electrode panel, viewed straight on. On the left, draw 3 horizontal simulated ECG strips stacked vertically, labeled \"导联 I\", \"导联 II\", and \"导联 III\". Put 1 vertically aligned gray rectangle labeled \"时间窗\" across all 3 strips. Inside it, lead I has a red irregular 7 mm waveform, lead II has a black stable 1 mm waveform, and lead III has a red irregular 6 mm waveform. Beside the strips show relationship labels: \"LA-RA\", \"LL-RA\", \"LL-LA\". On the right, draw 4 circular limb electrodes labeled \"RA\", \"LA\", \"LL\", \"RL\". Show text labels \"4 kΩ\", \"0 mm\" by RA; \"18 kΩ\", \"4 mm\" by LA; \"5 kΩ\", \"1 mm\" by LL; \"3 kΩ\", \"0 mm\" by RL. Add a curved pull arrow at LA and a short pull arrow at LL. Highlight only LA with a red outline.",
+    "final_image_prompt": "A synthetic medical diagram showing ECG artifact analysis. The layout is split into a left ECG panel and a right electrode panel, viewed straight on. On the left, draw 3 horizontal simulated ECG strips stacked vertically, labeled \"导联 I\", \"导联 II\", and \"导联 III\". Put 1 vertically aligned gray rectangle labeled \"时间窗\" across all 3 strips. Inside it, lead I has a red irregular 7 mm waveform, lead II has a black stable 1 mm waveform, and lead III has a red irregular 6 mm waveform. Beside the strips show relationship labels: \"LA-RA\", \"LL-RA\", \"LL-LA\". On the right, draw 4 circular limb electrodes labeled \"RA\", \"LA\", \"LL\", \"RL\". Show text labels \"4 kΩ\", \"0 mm\" by RA; \"18 kΩ\", \"4 mm\" by LA; \"5 kΩ\", \"1 mm\" by LL; \"3 kΩ\", \"0 mm\" by RL. Add a curved pull arrow at LA and a short pull arrow at LL. Highlight only LA with a red outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出受影响导联、导联连接关系、电极阻抗或牵拉位移；必须阅读图片并组合这些事实才能确定伪差来源。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "导联 I 与导联 III 在同步时间窗内出现明显杂乱波形，而导联 II 未出现相同程度改变",
+        "导联 I、II、III 分别对应 LA-RA、LL-RA、LL-LA",
+        "LA 电极的阻抗和牵拉位移高于其他肢体电极"
+      ],
+      "validation_rules": [
+        "先找出受影响的导联组合，再根据肢体导联连接关系找共同电极",
+        "共同电极必须同时由局部阻抗和牵拉位移异常支持",
+        "若某选项对应电极会影响图中未明显异常的导联，则该选项排除",
+        "若解释为全导联缓慢漂移，必须与图中局限性和突发性表现相符，否则排除"
+      ]
+    }
+  }
+]

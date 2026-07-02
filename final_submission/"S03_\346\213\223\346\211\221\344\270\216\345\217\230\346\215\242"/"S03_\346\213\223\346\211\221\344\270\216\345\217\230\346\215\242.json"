@@ -1,0 +1,835 @@
+[
+  {
+    "question_id": "S03-001-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the diagram, define $\\tau_X=\\{f^{-1}(V):V\\in\\tau_Y\\}$ using the displayed map and the displayed candidate family on $Y$. Which classification is correct?",
+    "options": {
+      "A": "$\\tau_X$ is not a topology on $X$, because a required finite intersection is missing.",
+      "B": "$\\tau_X$ is a topology on $X$, because the displayed family contains $\\varnothing$ and $X$ after taking inverse images.",
+      "C": "$\\tau_X$ is not a topology on $X$, because a required finite union is missing.",
+      "D": "$\\tau_X$ is a topology on $X$, but only after replacing $\\tau_Y$ by all subsets of $Y$."
+    },
+    "correct_answer": "A",
+    "explanation": "From the diagram, the fibers are $f^{-1}(a)=\\{x_1,x_2\\}$, $f^{-1}(b)=\\{x_3\\}$, and $f^{-1}(c)=\\{x_4,x_5\\}$. The displayed family on $Y$ is $\\tau_Y=\\{\\varnothing,Y,\\{a\\},\\{b,c\\},\\{a,b\\}\\}$. Hence $\\tau_X=\\{\\varnothing,X,\\{x_1,x_2\\},\\{x_3,x_4,x_5\\},\\{x_1,x_2,x_3\\}\\}$. This family contains $\\varnothing$ and $X$. Its finite unions among the nontrivial displayed sets are still in the family, but $\\{x_3,x_4,x_5\\}\\cap\\{x_1,x_2,x_3\\}=\\{x_3\\}$, which is not in $\\tau_X$. Therefore $\\tau_X$ fails the finite-intersection axiom and is not a topology on $X$.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/00e308811e7e419e.png",
+    "image_prompt": "A continuous map illustration diagram, viewed straight on, split into three horizontal regions: left oval for X, center oval for Y, and a right boxed list for tau_Y. Place 5 black dots in X labeled \"x1\", \"x2\", \"x3\", \"x4\", \"x5\" from top to bottom, and 3 black dots in Y labeled \"a\", \"b\", \"c\" from top to bottom. Draw 5 directed arrows labeled collectively by one central label \"f\": x1 to a, x2 to a, x3 to b, x4 to c, and x5 to c. In the right box labeled \"tau_Y\", display exactly 5 entries: \"∅\", \"Y\", \"{a}\", \"{b,c}\", and \"{a,b}\". Add thin colored outlines around the entries \"{a}\", \"{b,c}\", and \"{a,b}\" using three distinct colors.",
+    "final_image_prompt": "A continuous map illustration diagram, viewed straight on, split into three horizontal regions: left oval for X, center oval for Y, and a right boxed list for tau_Y. Place 5 black dots in X labeled \"x1\", \"x2\", \"x3\", \"x4\", \"x5\" from top to bottom, and 3 black dots in Y labeled \"a\", \"b\", \"c\" from top to bottom. Draw 5 directed arrows labeled collectively by one central label \"f\": x1 to a, x2 to a, x3 to b, x4 to c, and x5 to c. In the right box labeled \"tau_Y\", display exactly 5 entries: \"∅\", \"Y\", \"{a}\", \"{b,c}\", and \"{a,b}\". Add thin colored outlines around the entries \"{a}\", \"{b,c}\", and \"{a,b}\" using three distinct colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The answer depends on the arrows defining the fibers of $f$ and on the exact displayed members of $\\tau_Y$; without the image, the induced family $\\tau_X$ cannot be determined.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The map sends two X-points to a, one X-point to b, and two X-points to c.",
+        "The displayed family on Y contains exactly ∅, Y, {a}, {b,c}, and {a,b}.",
+        "The inverse images of the three nontrivial displayed subsets must be computed from the arrows."
+      ],
+      "validation_rules": [
+        "Compute $f^{-1}(V)$ for every displayed member $V\\in\\tau_Y$.",
+        "Verify that $\\varnothing$ and $X$ occur in the induced family.",
+        "Check finite unions of the induced nontrivial sets.",
+        "Check finite intersections of the induced nontrivial sets; the intersection $f^{-1}(\\{b,c\\})\\cap f^{-1}(\\{a,b\\})$ equals $\\{x_3\\}$, which is absent.",
+        "Select the option stating that $\\tau_X$ is not a topology due to failure of finite-intersection closure."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0003",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图中有限集合 $X$ 和三个彩色闭合曲线标出的“必须作为开集”的子集。设 $\\tau$ 为包含这些标出子集并满足拓扑开集公理的最小拓扑。以下哪项依次给出 $|\\tau|$ 与 $\\tau$ 中恰含 $3$ 个点的开集个数？",
+    "options": {
+      "A": "$10$，$3$",
+      "B": "$8$，$3$",
+      "C": "$10$，$4$",
+      "D": "$12$，$2$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出三个必须开集分别为 $U=\\{p,q,r\\}$、$V=\\{q,r,s\\}$、$W=\\{r,s,t\\}$。最小拓扑必须包含 $\\varnothing$、$X$，并对有限交与任意并封闭。先求有限交：$U\\cap V=\\{q,r\\}$，$U\\cap W=\\{r\\}$，$V\\cap W=\\{r,s\\}$，三者交仍为 $\\{r\\}$。再取这些基本开集的所有并，可得除 $\\varnothing$ 外的开集为 $\\{r\\}$、$\\{q,r\\}$、$\\{r,s\\}$、$\\{p,q,r\\}$、$\\{q,r,s\\}$、$\\{r,s,t\\}$、$\\{p,q,r,s\\}$、$\\{q,r,s,t\\}$、$X$，共 $10$ 个开集。其中恰含 $3$ 个点的是 $\\{p,q,r\\}$、$\\{q,r,s\\}$、$\\{r,s,t\\}$，共有 $3$ 个。因此选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "基于精确图示信息考查拓扑空间与开集公理",
+    "blueprint_image_type": "annotated_structure",
+    "image_path": "images/0cacad4b43154732.png",
+    "image_prompt": "An annotated structure diagram, viewed from above, showing a finite topological set. The global layout is one large horizontal rectangle (labeled \"X\") containing 5 black point markers in a single left-to-right row, labeled \"p\", \"q\", \"r\", \"s\", and \"t\". Draw 3 colored closed curves: a red curve (labeled \"U\") around p, q, r; a blue curve (labeled \"V\") around q, r, s; and a green curve (labeled \"W\") around r, s, t. The red and blue curves overlap over q and r; the blue and green curves overlap over r and s; all 3 curves share the central point r. Add a small top label (labeled \"必须开集\"). Use thin colored outlines with no filled shading, and keep all labels clearly separated.",
+    "final_image_prompt": "An annotated structure diagram, viewed from above, showing a finite topological set. The global layout is one large horizontal rectangle (labeled \"X\") containing 5 black point markers in a single left-to-right row, labeled \"p\", \"q\", \"r\", \"s\", and \"t\". Draw 3 colored closed curves: a red curve (labeled \"U\") around p, q, r; a blue curve (labeled \"V\") around q, r, s; and a green curve (labeled \"W\") around r, s, t. The red and blue curves overlap over q and r; the blue and green curves overlap over r and s; all 3 curves share the central point r. Add a small top label (labeled \"必须开集\"). Use thin colored outlines with no filled shading, and keep all labels clearly separated.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出三个必须开集各自包含哪些点；必须依赖图片中的点位置与曲线重叠关系才能生成并计数最小拓扑。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中红色曲线对应的点成员关系",
+        "图中蓝色曲线对应的点成员关系",
+        "图中绿色曲线对应的点成员关系",
+        "三个曲线的两两重叠与中心共同重叠关系"
+      ],
+      "validation_rules": [
+        "从图中读取三个必须开集后，先加入 $\\varnothing$ 与 $X$。",
+        "对三个必须开集求所有有限交，得到生成最小拓扑所需的基本开集。",
+        "对基本开集取所有可能并集并去重，得到 $|\\tau|=10$。",
+        "在所得开集中筛选恰含 $3$ 个点的集合，计数为 $3$。"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0002",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图片中的有限集合元素与三张“生成开集”卡片。设 $\\tau$ 是包含图中三张卡片所表示集合的最小拓扑，即由这些集合生成的拓扑。下列哪一个是 $\\tau$？",
+    "options": {
+      "A": "$\\{\\varnothing,\\{2\\},\\{3\\},\\{2,3\\},\\{1,2\\},\\{2,3\\},\\{3,4\\},\\{1,2,3\\},\\{2,3,4\\},X\\}$",
+      "B": "$\\{\\varnothing,\\{2\\},\\{3\\},\\{1,2\\},\\{2,3\\},\\{3,4\\},\\{1,2,3\\},\\{2,3,4\\},X\\}$",
+      "C": "$\\{\\varnothing,\\{2\\},\\{3\\},\\{1,2\\},\\{2,3\\},\\{3,4\\},\\{1,4\\},\\{1,2,3\\},\\{2,3,4\\},X\\}$",
+      "D": "$\\{\\varnothing,\\{2\\},\\{3\\},\\{2,3\\},\\{1,2\\},\\{2,3\\},\\{3,4\\},\\{1,2,3\\},X\\}$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中三张生成卡片分别给出三个必须为开的集合。最小拓扑必须包含 $\\varnothing$ 与 $X$，并对有限交和任意并封闭。先做交运算：第一、第二张卡片相交得到 $\\{2\\}$；第二、第三张卡片相交得到 $\\{3\\}$；第一、第三张卡片相交得到 $\\varnothing$。再做并运算：$\\{2\\}\\cup\\{3\\}=\\{2,3\\}$；第一、第二张卡片并为 $\\{1,2,3\\}$；第二、第三张卡片并为 $\\{2,3,4\\}$；第一、第三张卡片并为 $X$。连同原来的三张卡片，得到选项 A。B 漏掉了由 $\\{2\\}$ 与 $\\{3\\}$ 的并产生的 $\\{2,3\\}$；C 加入 $\\{1,4\\}$ 后还必须包含它与 $\\{1,2\\}$ 的交 $\\{1\\}$，因此所列族不满足拓扑公理；D 漏掉了第二、第三张卡片的并 $\\{2,3,4\\}$。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "构造满足条件的拓扑",
+    "blueprint_image_type": "network_diagram",
+    "image_path": "images/0e2f105de8e14c40.png",
+    "image_prompt": "A network diagram viewed from above, with one lower region labeled \"X\" containing 4 circular element nodes in a horizontal row labeled \"1\", \"2\", \"3\", and \"4\" from left to right. Place 3 rectangular card nodes above the row: the left card labeled \"G1\", the center card labeled \"G2\", and the right card labeled \"G3\". Add the title label \"生成开集\" at the upper left. Draw exactly 6 straight membership links: G1 to 1, G1 to 2, G2 to 2, G2 to 3, G3 to 3, and G3 to 4. Do not draw other links. Use white circles for element nodes and light blue rectangles for generator cards, with the six links highlighted in black.",
+    "final_image_prompt": "A network diagram viewed from above, with one lower region labeled \"X\" containing 4 circular element nodes in a horizontal row labeled \"1\", \"2\", \"3\", and \"4\" from left to right. Place 3 rectangular card nodes above the row: the left card labeled \"G1\", the center card labeled \"G2\", and the right card labeled \"G3\". Add the title label \"生成开集\" at the upper left. Draw exactly 6 straight membership links: G1 to 1, G1 to 2, G2 to 2, G2 to 3, G3 to 3, and G3 to 4. Do not draw other links. Use white circles for element nodes and light blue rectangles for generator cards, with the six links highlighted in black.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "三张生成卡片各自对应哪些元素只在图片的连线中给出；没有这些成员关系，无法计算交闭包和并闭包，也无法判断哪个选项是最小拓扑。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中G1只连接元素1和2",
+        "图中G2只连接元素2和3",
+        "图中G3只连接元素3和4",
+        "图中共有4个底层元素，构成全集X"
+      ],
+      "validation_rules": [
+        "候选答案必须包含空集和全集$X$",
+        "候选答案必须包含图中三张生成卡片表示的集合",
+        "候选答案必须包含所有由这些生成集合经有限交得到的集合",
+        "候选答案必须包含所有由已得到开集经任意并得到的集合",
+        "候选答案不得遗漏闭包运算强制产生的集合，也不得列出一个不满足拓扑公理的集合族"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0001",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图中给出的有限集合族 $\\mathcal{T}$。关于它是否构成集合 $X$ 上的拓扑，下列判断哪一项正确？",
+    "options": {
+      "A": "$\\mathcal{T}$ 构成拓扑，因为它含有 $\\varnothing$ 与 $X$，且满足开集公理。",
+      "B": "$\\mathcal{T}$ 不构成拓扑，因为它没有包含空集。",
+      "C": "$\\mathcal{T}$ 不构成拓扑，因为存在两个成员的并集不属于 $\\mathcal{T}$。",
+      "D": "$\\mathcal{T}$ 不构成拓扑，因为存在两个成员的交集不属于 $\\mathcal{T}$。"
+    },
+    "correct_answer": "C",
+    "explanation": "图中给出 $X=\\{p,q,r,s\\}$，且 $\\mathcal{T}$ 的成员包括 $\\varnothing$ 与 $X$，所以选项B错误。判断拓扑还必须检查任意并封闭与有限交封闭。由图可读出其中有两个集合分别为 $\\{q\\}$ 与 $\\{p,r\\}$，它们的并集为 $\\{p,q,r\\}$。再对照图中列出的全部成员，$\\{p,q,r\\}$ 没有出现在 $\\mathcal{T}$ 中，因此并封闭性失败，$\\mathcal{T}$ 不构成拓扑，选项C正确。选项D对应的交封闭性问题并未由图中这些关键集合导致；例如 $\\{p,q\\}\\cap\\{p,r\\}=\\{p\\}$，图中也列出了 $\\{p\\}$。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "topological_space_diagram",
+    "image_path": "images/31044571777d441e.png",
+    "image_prompt": "A topological space diagram viewed from above, split into a left universal-set region and a right family-of-subsets region. On the left, draw one rectangle (labeled \"X\") containing exactly 4 point labels: \"p\", \"q\", \"r\", and \"s\". On the right, draw exactly 6 subset cards in a 2 by 3 grid grouped by one brace (labeled \"𝒯\"). The cards are: top-left card (labeled \"U0\") showing \"∅\"; top-middle card (labeled \"U1\") showing \"{p}\"; top-right card (labeled \"U2\") showing \"{q}\"; bottom-left card (labeled \"U3\") showing \"{p,q}\"; bottom-middle card (labeled \"U4\") showing \"{p,r}\"; bottom-right card (labeled \"U5\") showing \"{p,q,r,s}\". Place one union symbol (labeled \"∪\") between U2 and U4. Give U2 and U4 thin blue outlines.",
+    "final_image_prompt": "A topological space diagram viewed from above, split into a left universal-set region and a right family-of-subsets region. On the left, draw one rectangle (labeled \"X\") containing exactly 4 point labels: \"p\", \"q\", \"r\", and \"s\". On the right, draw exactly 6 subset cards in a 2 by 3 grid grouped by one brace (labeled \"𝒯\"). The cards are: top-left card (labeled \"U0\") showing \"∅\"; top-middle card (labeled \"U1\") showing \"{p}\"; top-right card (labeled \"U2\") showing \"{q}\"; bottom-left card (labeled \"U3\") showing \"{p,q}\"; bottom-middle card (labeled \"U4\") showing \"{p,r}\"; bottom-right card (labeled \"U5\") showing \"{p,q,r,s}\". Place one union symbol (labeled \"∪\") between U2 and U4. Give U2 and U4 thin blue outlines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $\\mathcal{T}$ 的具体成员，也没有说明哪两个集合需要组合；必须从图中读取集合卡片、蓝色标记和并符号后才能判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中列出的 $\\mathcal{T}$ 的六个成员分别是 $\\varnothing,\\{p\\},\\{q\\},\\{p,q\\},\\{p,r\\},\\{p,q,r,s\\}$。",
+        "图中用蓝色轮廓和并符号提示需要比较 $\\{q\\}$ 与 $\\{p,r\\}$ 的并。",
+        "图中没有列出 $\\{p,q,r\\}$ 这一成员。"
+      ],
+      "validation_rules": [
+        "若图中集合族含有 $\\varnothing$ 与 $X$，则不能选择声称空集缺失的选项。",
+        "计算图中被提示的两个成员的并集，并检查该并集是否仍在图中列出的集合族内。",
+        "若存在两个成员的并集不在集合族内，则该集合族不满足拓扑的任意并封闭公理。"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0005",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the diagram, the right-hand panel lists a candidate family $\\tau$ of subsets of the displayed set $X$. Using only the open-set axioms for a topology, which statement is correct?",
+    "options": {
+      "A": "$\\tau$ is a topology on $X$.",
+      "B": "$\\tau$ is not a topology, because it fails closure under finite intersections.",
+      "C": "$\\tau$ is not a topology, because it fails closure under arbitrary unions.",
+      "D": "$\\tau$ is not a topology, because one of $\\varnothing$ or $X$ is absent."
+    },
+    "correct_answer": "A",
+    "explanation": "From the diagram, $X=\\{a,b,c,d\\}$ and $\\tau=\\{\\varnothing,\\{a,b\\},\\{b,c\\},\\{b\\},\\{a,b,c\\},X\\}$. The family contains both $\\varnothing$ and $X$. For finite intersections, the only nontrivial check is $\\{a,b\\}\\cap\\{b,c\\}=\\{b\\}$, and intersections with $\\{a,b,c\\}$ or $X$ remain among the listed sets. For arbitrary unions, the key nontrivial union is $\\{a,b\\}\\cup\\{b,c\\}=\\{a,b,c\\}$, and unions involving $\\{a,b,c\\}$ or $X$ also remain listed. Therefore all open-set axioms are satisfied, so $\\tau$ is a topology on $X$.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/3e98b5d4975b47c0.png",
+    "image_prompt": "A continuous map illustration diagram, split into a left domain region and a right candidate-family region, viewed straight on. On the left, draw 1 oval (labeled \"X\") containing exactly 4 point labels: \"a\" near upper left, \"b\" near center, \"c\" near upper right, and \"d\" near lower center. On the right, draw 1 rectangle (labeled \"candidate family τ\") containing exactly 6 subset cards in 2 rows of 3: top row cards labeled \"∅\", \"{a,b}\", \"{b,c}\"; bottom row cards labeled \"{b}\", \"{a,b,c}\", and \"X\". Draw exactly 2 thin arrows from the oval toward the rectangle: the upper arrow labeled \"union check\" and the lower arrow labeled \"intersection check\". Keep all cards unhighlighted except for light gray card borders.",
+    "final_image_prompt": "A continuous map illustration diagram, split into a left domain region and a right candidate-family region, viewed straight on. On the left, draw 1 oval (labeled \"X\") containing exactly 4 point labels: \"a\" near upper left, \"b\" near center, \"c\" near upper right, and \"d\" near lower center. On the right, draw 1 rectangle (labeled \"candidate family τ\") containing exactly 6 subset cards in 2 rows of 3: top row cards labeled \"∅\", \"{a,b}\", \"{b,c}\"; bottom row cards labeled \"{b}\", \"{a,b,c}\", and \"X\". Draw exactly 2 thin arrows from the oval toward the rectangle: the upper arrow labeled \"union check\" and the lower arrow labeled \"intersection check\". Keep all cards unhighlighted except for light gray card borders.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The question text does not list the elements of $X$ or the members of $\\tau$; the closure checks can only be performed after reading the subset cards in the diagram.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The displayed universe has four elements labeled a, b, c, d.",
+        "The displayed candidate family contains exactly ∅, {a,b}, {b,c}, {b}, {a,b,c}, and X.",
+        "The cards needed for the nontrivial union and intersection checks are visibly present."
+      ],
+      "validation_rules": [
+        "Confirm that both $\\varnothing$ and $X$ appear in the displayed family.",
+        "Check that finite intersections of displayed nontrivial members stay in the displayed family.",
+        "Check that arbitrary unions of displayed members stay in the displayed family.",
+        "Select the unique option stating that the displayed family is a topology."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the illustrated finite space, the left panel gives a candidate family $\\mathcal{T}$ of subsets of $X$. Using the open-set axioms only, which classification of $\\mathcal{T}$ is correct?",
+    "options": {
+      "A": "$\\mathcal{T}$ is a topology on $X$.",
+      "B": "$\\mathcal{T}$ is not a topology, because one required union of displayed members is missing.",
+      "C": "$\\mathcal{T}$ is not a topology, because one required finite intersection of displayed members is missing.",
+      "D": "$\\mathcal{T}$ is not a topology, because $\\varnothing$ or $X$ is absent."
+    },
+    "correct_answer": "B",
+    "explanation": "From the diagram, $\\varnothing$ and $X$ are included, so option D is false. To test the topology axioms, check closure under unions and finite intersections among the displayed members. The subsets labeled $U_1$ and $U_2$ are both in $\\mathcal{T}$, and their union is $\\{x_1,x_2,x_3\\}$, which is not one of the displayed members of $\\mathcal{T}$. Therefore $\\mathcal{T}$ fails closure under arbitrary unions. Although there are intersections to check, the decisive failure is already the missing union, so $\\mathcal{T}$ is not a topology on $X$.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/6cdbc45afce34e92.png",
+    "image_prompt": "A continuous map illustration, viewed straight on, split into a left region and a right region. On the left, draw one rectangle labeled \"X\" containing 4 points labeled \"x1\", \"x2\", \"x3\", \"x4\" from top to bottom. On the right, draw one rectangle labeled \"Y\" containing 3 points labeled \"y1\", \"y2\", \"y3\" from top to bottom. Draw 4 arrows labeled \"f\": x1 to y1, x2 to y2, x3 to y2, x4 to y3. Below X, show one card labeled \"candidate family T\" with 7 entries: \"∅\", \"X\", \"U1 = {x1, x2}\", \"U2 = {x2, x3}\", \"U3 = {x2}\", \"U4 = {x3, x4}\", \"U5 = {x2, x3, x4}\". Below Y, show one card labeled \"shown open family on Y\" with \"{y1}\", \"{y2}\", \"Y\". Add blue, orange, green, and purple outline ovals for U1, U2, U4, and U5.",
+    "final_image_prompt": "A continuous map illustration, viewed straight on, split into a left region and a right region. On the left, draw one rectangle labeled \"X\" containing 4 points labeled \"x1\", \"x2\", \"x3\", \"x4\" from top to bottom. On the right, draw one rectangle labeled \"Y\" containing 3 points labeled \"y1\", \"y2\", \"y3\" from top to bottom. Draw 4 arrows labeled \"f\": x1 to y1, x2 to y2, x3 to y2, x4 to y3. Below X, show one card labeled \"candidate family T\" with 7 entries: \"∅\", \"X\", \"U1 = {x1, x2}\", \"U2 = {x2, x3}\", \"U3 = {x2}\", \"U4 = {x3, x4}\", \"U5 = {x2, x3, x4}\". Below Y, show one card labeled \"shown open family on Y\" with \"{y1}\", \"{y2}\", \"Y\". Add blue, orange, green, and purple outline ovals for U1, U2, U4, and U5.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The decisive subsets, the missing union, and the membership list of $\\mathcal{T}$ are only available from the diagram; the text does not specify them.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "The candidate family T contains ∅ and X.",
+        "The candidate family T contains U1 = {x1, x2}.",
+        "The candidate family T contains U2 = {x2, x3}.",
+        "The candidate family T does not display {x1, x2, x3} as a member.",
+        "The candidate family T contains U3 = {x2}, supporting that a key intersection is not the failing condition."
+      ],
+      "validation_rules": [
+        "Verify that the empty set and the whole set are displayed in the candidate family.",
+        "Compute the union of the two displayed members U1 and U2.",
+        "Compare the computed union with every displayed member of the candidate family.",
+        "Select the option stating failure of closure under unions, not failure of finite intersections or boundary-set inclusion."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0003",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the illustrated finite setting, the right-hand collection is proposed as the open sets on $X$. Using only the family shown in the diagram, which statement correctly classifies this proposal under the topology axioms?",
+    "options": {
+      "A": "It is not a topology, because closure under arbitrary unions fails while the listed empty and whole-set requirements are present.",
+      "B": "It is a topology, because every displayed pair of basic regions either overlaps in a displayed region or is disjoint.",
+      "C": "It is not a topology, because the empty set axiom fails.",
+      "D": "It is not a topology, because closure under finite intersections fails for the two nonnested two-point regions."
+    },
+    "correct_answer": "A",
+    "explanation": "The diagram shows a candidate family on $X=\\{p,q,r,s,t\\}$ containing $\\varnothing$ and $X$. To test the topology axioms, one must also check unions and finite intersections among the displayed members. The two separate two-point members containing $p,q$ and $r,s$ have union $\\{p,q,r,s\\}$. This union is not one of the displayed members: the diagram includes the whole set $X=\\{p,q,r,s,t\\}$ and another three-point member, but not exactly $\\{p,q,r,s\\}$. Hence closure under arbitrary unions fails. The empty set is displayed, so C is false. The intersection of the two nonnested two-point regions is $\\varnothing$, which is displayed, so D is false. Therefore the correct classification is A.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/87231e8829954ff2.png",
+    "image_prompt": "A continuous map illustration diagram, split into a left panel and a right panel, viewed straight on. The left panel is a rectangle labeled \"X\" containing exactly 5 black dots labeled \"p\", \"q\", \"r\", \"s\", and \"t\". The right panel is a larger rectangle labeled \"T\" containing exactly 5 member cards: a white card labeled \"O0=∅\" with no dots; a pale blue card labeled \"O1\" containing dots \"p\" and \"q\"; a pale orange card labeled \"O2\" containing dots \"r\" and \"s\"; a pale green card labeled \"O3\" containing dots \"p\", \"q\", and \"t\"; and a light gray card labeled \"O5=X\" containing dots \"p\", \"q\", \"r\", \"s\", and \"t\". Draw exactly 2 thin arrows from panel \"X\" to panel \"T\". Add a small legend labeled \"union\" and \"intersection\". Use clear spacing and matching point labels.",
+    "final_image_prompt": "A continuous map illustration diagram, split into a left panel and a right panel, viewed straight on. The left panel is a rectangle labeled \"X\" containing exactly 5 black dots labeled \"p\", \"q\", \"r\", \"s\", and \"t\". The right panel is a larger rectangle labeled \"T\" containing exactly 5 member cards: a white card labeled \"O0=∅\" with no dots; a pale blue card labeled \"O1\" containing dots \"p\" and \"q\"; a pale orange card labeled \"O2\" containing dots \"r\" and \"s\"; a pale green card labeled \"O3\" containing dots \"p\", \"q\", and \"t\"; and a light gray card labeled \"O5=X\" containing dots \"p\", \"q\", \"r\", \"s\", and \"t\". Draw exactly 2 thin arrows from panel \"X\" to panel \"T\". Add a small legend labeled \"union\" and \"intersection\". Use clear spacing and matching point labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The classification depends on the exact memberships of the displayed candidate open sets; without the diagram, the missing union cannot be identified.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The displayed family contains an empty-set card and a whole-set card.",
+        "One displayed two-point member contains p and q.",
+        "Another displayed two-point member contains r and s.",
+        "No displayed member has exactly the four labels p, q, r, and s.",
+        "The displayed intersection of the two nonnested two-point memberships would correspond to no shared point."
+      ],
+      "validation_rules": [
+        "Verify that $\\varnothing$ and $X$ are included among the displayed members.",
+        "Compute the union of the displayed member containing $p,q$ with the displayed member containing $r,s$.",
+        "Check whether a displayed member equals exactly $\\{p,q,r,s\\}$.",
+        "Reject any option claiming the empty-set axiom fails.",
+        "Reject any option claiming the two nonnested two-point regions force a missing finite intersection."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图中给出的有限集合 $X$ 及候选开集族 $\\mathcal{T}$。根据拓扑空间的开集公理，判断图中的 $\\mathcal{T}$ 是否构成 $X$ 上的一个拓扑。",
+    "options": {
+      "A": "$\\mathcal{T}$ 构成拓扑，因为它包含 $\\varnothing$ 和 $X$。",
+      "B": "$\\mathcal{T}$ 不构成拓扑，因为有限交封闭性不满足。",
+      "C": "$\\mathcal{T}$ 不构成拓扑，因为任意并封闭性不满足。",
+      "D": "$\\mathcal{T}$ 不构成拓扑，因为缺少 $\\varnothing$ 或 $X$。"
+    },
+    "correct_answer": "B",
+    "explanation": "拓扑公理要求：$\\varnothing$ 和 $X$ 必须属于 $\\mathcal{T}$；任意多个开集的并仍属于 $\\mathcal{T}$；有限多个开集的交仍属于 $\\mathcal{T}$。由图可读出候选族中确实包含 $\\varnothing$ 和 $X$。再检查图中两个非平凡集合：一个包含 $q,r$，另一个包含 $p,q$，它们的交为 $\\{q\\}$。但图中候选族没有单独的 $\\{q\\}$，所以有限交封闭性失败。因此 $\\mathcal{T}$ 不是拓扑，正确答案是 B。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "topological_space_diagram",
+    "image_path": "images/8bea45dabbd546ce.png",
+    "image_prompt": "A topological space diagram, viewed from above, split into a left region and a right region. On the left, draw one large oval boundary (labeled \"X\") containing exactly 3 black points: one upper-left point (labeled \"p\"), one upper-right point (labeled \"q\"), and one lower-center point (labeled \"r\"). On the right, draw exactly 5 vertically stacked rounded cards grouped by one large brace (labeled \"T\"). The top card is labeled \"∅\" and contains no points. The second card is labeled \"X\" and contains points labeled \"p\", \"q\", \"r\". The third card is labeled \"U1\" and contains point \"p\". The fourth card is labeled \"U2\" and contains points \"q\" and \"r\". The fifth card is labeled \"U3\" and contains points \"p\" and \"q\". Use light blue outlines for all 5 cards.",
+    "final_image_prompt": "A topological space diagram, viewed from above, split into a left region and a right region. On the left, draw one large oval boundary (labeled \"X\") containing exactly 3 black points: one upper-left point (labeled \"p\"), one upper-right point (labeled \"q\"), and one lower-center point (labeled \"r\"). On the right, draw exactly 5 vertically stacked rounded cards grouped by one large brace (labeled \"T\"). The top card is labeled \"∅\" and contains no points. The second card is labeled \"X\" and contains points labeled \"p\", \"q\", \"r\". The third card is labeled \"U1\" and contains point \"p\". The fourth card is labeled \"U2\" and contains points \"q\" and \"r\". The fifth card is labeled \"U3\" and contains points \"p\" and \"q\". Use light blue outlines for all 5 cards.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出候选集族的具体成员，必须通过图片读取各候选集合所含元素，才能判断哪条拓扑公理失败。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "候选集族中包含空集卡片和全集卡片",
+        "候选集族中有一个集合含 q、r",
+        "候选集族中有一个集合含 p、q",
+        "候选集族中没有只含 q 的集合卡片"
+      ],
+      "validation_rules": [
+        "若图中候选族包含 $\\varnothing$ 和 $X$，则不能选缺少 $\\varnothing$ 或 $X$ 的判断。",
+        "取图中含 $q,r$ 的候选集合与含 $p,q$ 的候选集合，其交为 $\\{q\\}$。",
+        "若 $\\{q\\}$ 未作为候选集合出现，则有限交封闭性不满足。",
+        "有限交封闭性不满足时，该候选族不是拓扑。"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0001",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "如图给出了集合 $X$ 上的一个子集族 $\\mathcal{T}$。根据拓扑空间的开集公理，判断图中的 $\\mathcal{T}$ 是否构成 $X$ 上的一个拓扑。",
+    "options": {
+      "A": "$\\mathcal{T}$ 构成拓扑，因为它包含 $\\varnothing$ 和 $X$，且满足并与交的封闭性。",
+      "B": "$\\mathcal{T}$ 不构成拓扑，因为它不满足有限交封闭性。",
+      "C": "$\\mathcal{T}$ 不构成拓扑，因为它不满足任意并封闭性。",
+      "D": "$\\mathcal{T}$ 不构成拓扑，因为它没有同时包含 $\\varnothing$ 和 $X$。"
+    },
+    "correct_answer": "B",
+    "explanation": "从图中读出 $X=\\{a,b,c,d\\}$，且 $\\mathcal{T}$ 中列出的集合包括 $\\varnothing$ 与 $X$，所以选项 D 的理由不成立。检验拓扑公理还需看任意并和有限交。图中两个开集 $\\{c,d\\}$ 与 $\\{a,b,c\\}$ 都属于 $\\mathcal{T}$，但它们的交为 $\\{c\\}$，而图中没有列出 $\\{c\\}$，因此 $\\mathcal{T}$ 对有限交不封闭，不构成拓扑。虽然相关并集如 $\\{c,d\\}\\cup\\{a,b,c\\}=X$ 没有造成反例，但有限交已失败，所以正确答案是 B。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "topological_space_diagram",
+    "image_path": "images/a09badb593c84ad1.png",
+    "image_prompt": "A topological space diagram viewed from above, split into a left region and a right region. On the left, draw 1 large rectangle labeled \"X\" containing exactly 4 labeled points: \"a\" at upper left, \"b\" at upper right, \"c\" at lower left, and \"d\" at lower right. On the right, draw a boxed list region labeled \"子集族 T\" with exactly 6 subset cards arranged in 2 columns and 3 rows. The cards are labeled \"∅\", \"X\", \"{a,b}\", \"{c,d}\", \"{a,b,c}\", and \"{a,b,d}\". For the 4 proper nonempty subset cards, show tiny point diagrams that circle exactly the elements named in each card. No arrows are used. Use identical black card borders, with no color indicating correctness.",
+    "final_image_prompt": "A topological space diagram viewed from above, split into a left region and a right region. On the left, draw 1 large rectangle labeled \"X\" containing exactly 4 labeled points: \"a\" at upper left, \"b\" at upper right, \"c\" at lower left, and \"d\" at lower right. On the right, draw a boxed list region labeled \"子集族 T\" with exactly 6 subset cards arranged in 2 columns and 3 rows. The cards are labeled \"∅\", \"X\", \"{a,b}\", \"{c,d}\", \"{a,b,c}\", and \"{a,b,d}\". For the 4 proper nonempty subset cards, show tiny point diagrams that circle exactly the elements named in each card. No arrows are used. Use identical black card borders, with no color indicating correctness.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有列出 $\\mathcal{T}$ 的具体成员，必须通过图片读取6张集合卡片并比较交、并公理才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中 $\\mathcal{T}$ 包含 $\\varnothing$ 与 $X$。",
+        "图中 $\\mathcal{T}$ 包含 $\\{c,d\\}$ 和 $\\{a,b,c\\}$。",
+        "图中 $\\mathcal{T}$ 没有列出 $\\{c\\}$。"
+      ],
+      "validation_rules": [
+        "若一个子集族是拓扑，则必须包含 $\\varnothing$ 和 $X$。",
+        "若一个子集族是拓扑，则任意两个成员的交仍必须属于该子集族。",
+        "由图中两个成员取交得到 $\\{c\\}$，但 $\\{c\\}$ 不在图示子集族中，因此有限交封闭性失败。"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the illustrated finite space, the right panel gives a candidate family $\\mathcal{T}$ of subsets of $X$. Based only on the displayed subsets and the topology axioms, which statement is correct?",
+    "options": {
+      "A": "$\\mathcal{T}$ is not a topology, because closure under finite intersections fails.",
+      "B": "$\\mathcal{T}$ is not a topology, because closure under arbitrary unions fails.",
+      "C": "$\\mathcal{T}$ is a topology on $X$.",
+      "D": "$\\mathcal{T}$ is not a topology, because either $\\varnothing$ or $X$ is missing."
+    },
+    "correct_answer": "A",
+    "explanation": "From the diagram, $\\varnothing$ and $X$ are both included in $\\mathcal{T}$. To test the topology axioms, one must check unions and finite intersections among the displayed subsets. The union tests do not produce a counterexample here: for example, the union of the two highlighted nontrivial sets is $X$, which is displayed. However, their intersection is the singleton consisting of the common element, and that singleton is not one of the displayed members of $\\mathcal{T}$. Therefore $\\mathcal{T}$ fails closure under finite intersections, so it is not a topology.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/d4f93d5978ea4fce.png",
+    "image_prompt": "A continuous map illustration diagram, split into a left region and a right region. On the left, draw one oval boundary labeled \"X\" containing exactly 4 points labeled \"a\", \"b\", \"c\", and \"d\". On the right, draw a rectangular panel labeled \"T\" containing exactly 6 subset cards arranged in 2 columns and 3 rows. The cards are labeled \"∅\", \"X\", \"{a,b}\", \"{c,d}\", \"{a,b,c}\", and \"{a,b,d}\". Draw 3 thin arrows from the oval X region toward the T card panel. The card labeled \"{a,b,c}\" has a blue outline, and the card labeled \"{c,d}\" has a red outline. Keep all labels clearly visible, with the two highlighted cards in the middle of the grid.",
+    "final_image_prompt": "A continuous map illustration diagram, split into a left region and a right region. On the left, draw one oval boundary labeled \"X\" containing exactly 4 points labeled \"a\", \"b\", \"c\", and \"d\". On the right, draw a rectangular panel labeled \"T\" containing exactly 6 subset cards arranged in 2 columns and 3 rows. The cards are labeled \"∅\", \"X\", \"{a,b}\", \"{c,d}\", \"{a,b,c}\", and \"{a,b,d}\". Draw 3 thin arrows from the oval X region toward the T card panel. The card labeled \"{a,b,c}\" has a blue outline, and the card labeled \"{c,d}\" has a red outline. Keep all labels clearly visible, with the two highlighted cards in the middle of the grid.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The candidate family $\\mathcal{T}$ and the highlighted subsets are specified only in the image, so the topology axiom failure cannot be determined from the text alone.",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The displayed family contains exactly the six subset cards shown in the right panel.",
+        "The two highlighted subset cards have one shared element.",
+        "The singleton formed by that shared element is not displayed as a member of the family.",
+        "The full underlying set is displayed as a member of the family."
+      ],
+      "validation_rules": [
+        "Verify that $\\varnothing$ and $X$ are included in the displayed family.",
+        "Use the highlighted displayed subsets to compute their finite intersection.",
+        "Check whether the resulting intersection appears among the displayed subset cards.",
+        "Select the option stating failure of finite-intersection closure."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0002",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "en",
+    "question_text": "In the illustrated finite-space diagram, the right panel displays a proposed family $\\mathcal{T}$ of subsets of $X$, and the lower operation panel highlights two closure tests. Based only on the diagram, which classification is correct?",
+    "options": {
+      "A": "$\\mathcal{T}$ is a topology on $X$.",
+      "B": "$\\mathcal{T}$ is not a topology, because one required finite-intersection result is missing from the displayed family.",
+      "C": "$\\mathcal{T}$ is not a topology, because the whole space $X$ is missing.",
+      "D": "$\\mathcal{T}$ is not a topology, because one displayed union result is outside the family."
+    },
+    "correct_answer": "B",
+    "explanation": "A family of subsets is a topology on $X$ only if it contains $\\varnothing$ and $X$, is closed under arbitrary unions, and is closed under finite intersections. From the diagram, $\\varnothing$ and $X$ both appear in $\\mathcal{T}$. The highlighted union test combines the two shown subsets and gives a subset that is also listed in $\\mathcal{T}$, so that highlighted union does not disprove the topology axioms. However, the highlighted intersection test gives the singleton $\\{c\\}$, and that subset is not among the displayed members of $\\mathcal{T}$. Therefore finite-intersection closure fails, so $\\mathcal{T}$ is not a topology on $X$.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "continuous_map_illustration",
+    "image_path": "images/ea44cbce61044039.png",
+    "image_prompt": "A continuous map illustration diagram, viewed straight on, split into a left finite-space panel, a right candidate-family panel, and a lower operation panel. On the left, draw 1 oval labeled \"X\" containing exactly 4 points labeled \"a\", \"b\", \"c\", and \"d\" at upper-left, upper-right, lower-left, and lower-right positions. On the right, draw 8 subset cards in 2 rows of 4, labeled \"∅\", \"X = {a,b,c,d}\", \"{a}\", \"{b}\", \"{a,b}\", \"{a,c}\", \"{b,c}\", and \"{a,b,c}\", with the panel labeled \"candidate family T\". Below, draw 2 operation boxes labeled \"union\" and \"intersection\". Connect \"{a,c}\" and \"{b,c}\" by blue arrows to \"union\", then to a blue-outlined result card labeled \"{a,b,c}\". Connect \"{a,c}\" and \"{b,c}\" by red arrows to \"intersection\", then to a red-outlined result card labeled \"{c}\" outside the family panel.",
+    "final_image_prompt": "A continuous map illustration diagram, viewed straight on, split into a left finite-space panel, a right candidate-family panel, and a lower operation panel. On the left, draw 1 oval labeled \"X\" containing exactly 4 points labeled \"a\", \"b\", \"c\", and \"d\" at upper-left, upper-right, lower-left, and lower-right positions. On the right, draw 8 subset cards in 2 rows of 4, labeled \"∅\", \"X = {a,b,c,d}\", \"{a}\", \"{b}\", \"{a,b}\", \"{a,c}\", \"{b,c}\", and \"{a,b,c}\", with the panel labeled \"candidate family T\". Below, draw 2 operation boxes labeled \"union\" and \"intersection\". Connect \"{a,c}\" and \"{b,c}\" by blue arrows to \"union\", then to a blue-outlined result card labeled \"{a,b,c}\". Connect \"{a,c}\" and \"{b,c}\" by red arrows to \"intersection\", then to a red-outlined result card labeled \"{c}\" outside the family panel.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The decisive membership comparisons depend on which subset cards appear inside the candidate-family panel and which operation result is outside it; the text does not list those cards.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "The candidate-family panel includes ∅ and the whole-space card.",
+        "The highlighted union output matches a card inside the candidate-family panel.",
+        "The highlighted intersection output is a singleton card placed outside the candidate-family panel.",
+        "The singleton intersection output is not listed among the eight candidate-family cards."
+      ],
+      "validation_rules": [
+        "Verify that $\\varnothing$ and $X$ are displayed as members of $\\mathcal{T}$.",
+        "Verify that the highlighted union result is displayed as a member of $\\mathcal{T}$.",
+        "Verify that the highlighted intersection result is not displayed as a member of $\\mathcal{T}$.",
+        "Conclude that finite-intersection closure fails, so the family is not a topology."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0001",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图中给出的有限集合 $X$ 及候选开集族 $\\tau$。依据拓扑空间的开集公理，以下判断哪一项正确？",
+    "options": {
+      "A": "$\\tau$ 构成 $X$ 上的一个拓扑",
+      "B": "$\\tau$ 不构成拓扑，因为它不满足空集公理",
+      "C": "$\\tau$ 不构成拓扑，因为图中两张单点集合卡片的并集不满足要求",
+      "D": "$\\tau$ 不构成拓扑，因为图中两张单点集合卡片的交集不满足要求"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要检查三条开集公理。首先，候选族 $\\tau$ 中包含 $\\varnothing$，也包含全集 $X=\\{a,b,c\\}$。其次，对图中列出的集合做任意并：$\\{a\\}\\cup\\{b\\}=\\{a,b\\}$，再与 $X$、$\\varnothing$ 或自身取并仍落在图中列出的集合内。最后，对有限交检查关键情形：$\\{a\\}\\cap\\{b\\}=\\varnothing$，$\\{a\\}\\cap\\{a,b\\}=\\{a\\}$，$\\{b\\}\\cap\\{a,b\\}=\\{b\\}$，其余与 $X$ 或 $\\varnothing$ 的交也仍在 $\\tau$ 中。因此 $\\tau$ 满足拓扑公理，选 A。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断集族是否构成拓扑",
+    "blueprint_image_type": "topological_space_diagram",
+    "image_path": "images/eaf42155043f41ce.png",
+    "image_prompt": "A topological space diagram, viewed straight from above, split into a left region and a right region. On the left, draw 1 large oval boundary (labeled \"X\") containing exactly 3 points: upper-left point (labeled \"a\"), upper-right point (labeled \"b\"), and lower-center point (labeled \"c\"). On the right, draw 1 dashed rectangular container (labeled \"候选开集族 τ\"). Inside it place exactly 5 rounded set cards in 2 rows: top row has cards (labeled \"∅\"), (labeled \"{a}\"), and (labeled \"{b}\"); bottom row has cards (labeled \"{a,b}\") and (labeled \"{a,b,c}\"). There are no arrows or connecting lines between the oval and the cards. Use a light blue outline for the ∅ card, a light green outline for the {a,b,c} card, and black outlines for the other 3 cards.",
+    "final_image_prompt": "A topological space diagram, viewed straight from above, split into a left region and a right region. On the left, draw 1 large oval boundary (labeled \"X\") containing exactly 3 points: upper-left point (labeled \"a\"), upper-right point (labeled \"b\"), and lower-center point (labeled \"c\"). On the right, draw 1 dashed rectangular container (labeled \"候选开集族 τ\"). Inside it place exactly 5 rounded set cards in 2 rows: top row has cards (labeled \"∅\"), (labeled \"{a}\"), and (labeled \"{b}\"); bottom row has cards (labeled \"{a,b}\") and (labeled \"{a,b,c}\"). There are no arrows or connecting lines between the oval and the cards. Use a light blue outline for the ∅ card, a light green outline for the {a,b,c} card, and black outlines for the other 3 cards.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $X$ 的元素和候选族 $\\tau$ 的具体成员，必须根据图片读取集合卡片后才能检查拓扑公理。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中候选族包含空集卡片",
+        "图中候选族包含全集对应卡片",
+        "图中候选族包含两个单点集合及其并集对应卡片",
+        "图中全集由a、b、c三个点组成"
+      ],
+      "validation_rules": [
+        "若候选族同时包含$\\varnothing$和$X$，通过第一条拓扑公理检查",
+        "若图中任意列出集合的并仍可对应到图中某张卡片，则满足任意并封闭",
+        "若图中任意有限交仍可对应到图中某张卡片，则满足有限交封闭",
+        "三条开集公理全部满足时，答案为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-001-Q0005",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-001",
+    "kp_name": "拓扑空间与开集公理",
+    "question_language": "zh",
+    "question_text": "观察图中的有限拓扑网络。按图示规则判断，下列哪一个子集是开集？",
+    "options": {
+      "A": "$\\{u,v,t\\}$",
+      "B": "$\\{v,w,t\\}$",
+      "C": "$\\{u,w,t\\}$",
+      "D": "$\\{v,t\\}$"
+    },
+    "correct_answer": "B",
+    "explanation": "图中规则表示：若某点属于候选子集，则从该点沿箭头可到达的所有点也必须属于该子集。逐项检查：$\\{u,v,t\\}$ 中含 $u$，但从 $u$ 可沿箭头到达 $w$，而 $w$ 不在该集合中，所以不是开集；$\\{v,w,t\\}$ 中含 $v$，需包含 $t$，已满足，含 $w$ 也需包含 $t$，已满足，$t$ 无需再加入其他点，所以是开集；$\\{u,w,t\\}$ 中含 $u$，但从 $u$ 可到达 $v$，而 $v$ 不在集合中，所以不是开集；$\\{v,t\\}$ 虽满足 $v$ 的要求，但图中 $v$ 所在的候选区域还需结合全部可达关系检查，缺少由同层连接诱导的必要点 $w$，因此不满足图示网络给出的开集闭包条件。故唯一正确答案为 B。",
+    "difficulty": 2,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "识别常见开集",
+    "blueprint_image_type": "network_diagram",
+    "image_path": "images/ee0c2090a2864522.png",
+    "image_prompt": "A network diagram viewed from above, with a rule box on the left and a directed node network on the right. Draw exactly 4 circular nodes: top center node (labeled \"u\"), lower-left node (labeled \"v\"), lower-right node (labeled \"w\"), and bottom-center node (labeled \"t\"). Add exactly 5 thin black directed arrows: u to v, u to w, v to w, v to t, and w to t. Place one light-blue horizontal band behind nodes v and w only, visually grouping them. On the left, draw one rectangular rule box (labeled \"开集判定规则\") containing the Chinese sentence (labeled \"取点后必须包含所有箭头可达点\"). Keep labels clear and do not show answer choice letters. Use the blue band as the only colored highlight.",
+    "final_image_prompt": "A network diagram viewed from above, with a rule box on the left and a directed node network on the right. Draw exactly 4 circular nodes: top center node (labeled \"u\"), lower-left node (labeled \"v\"), lower-right node (labeled \"w\"), and bottom-center node (labeled \"t\"). Add exactly 5 thin black directed arrows: u to v, u to w, v to w, v to t, and w to t. Place one light-blue horizontal band behind nodes v and w only, visually grouping them. On the left, draw one rectangular rule box (labeled \"开集判定规则\") containing the Chinese sentence (labeled \"取点后必须包含所有箭头可达点\"). Keep labels clear and do not show answer choice letters. Use the blue band as the only colored highlight.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "候选集合是否开取决于图中箭头方向、节点分组和可达关系；没有图片无法知道哪些点必须随候选点一起被包含。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中存在从u到v、u到w、v到w、v到t、w到t的有向箭头",
+        "图中t没有向外箭头",
+        "图中v与w处于同一个浅蓝色同层背景带中"
+      ],
+      "validation_rules": [
+        "若候选集合含有某节点，则必须包含该节点沿图中箭头可达的所有节点",
+        "逐一检查四个选项，只有一个选项对其所含每个节点都满足图示可达闭包条件",
+        "正确答案必须与correct_answer字段一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "zh",
+    "question_text": "图中两行数据分别表示通常拓扑下实数轴上的子集 $A$ 与 $B$。根据图示信息，集合 $(A\\cup B)'\\setminus(A'\\cap B')$ 等于哪一项？",
+    "options": {
+      "A": "$\\{0\\}$",
+      "B": "$\\{2\\}$",
+      "C": "$\\{0,2\\}$",
+      "D": "$\\varnothing$"
+    },
+    "correct_answer": "B",
+    "explanation": "由图读出：$A$ 中有一列点从左侧趋近于 $0$，另有一个孤立点在 $2$，所以 $A'=\\{0\\}$。$B$ 中有一列点从右侧趋近于 $0$，还有一列点从右侧趋近于 $2$，所以 $B'=\\{0,2\\}$。因此 $(A\\cup B)'=A'\\cup B'=\\{0,2\\}$，而 $A'\\cap B'=\\{0\\}$。故 $(A\\cup B)'\\setminus(A'\\cap B')=\\{2\\}$。",
+    "difficulty": 2,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "导集运算",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/595a7e51ba154f8f.png",
+    "image_prompt": "A data visualization diagram of two aligned horizontal number lines, viewed straight on, split into an upper row and a lower row. The upper row is labeled \"A\" and the lower row is labeled \"B\". Both rows show tick labels \"-1\", \"0\", \"1\", \"2\", and \"3\" at matching positions. On row A, draw 5 red filled dots at -1, -1/2, -1/3, -1/4, and 2. On row B, draw 8 blue filled dots at 1, 1/2, 1/3, 1/4, 3, 5/2, 7/3, and 9/4. Add an open circle at 0 and at 2 on each row as reference markers labeled \"参考点\". Add small arrows labeled \"继续趋近\" from the A negative-side dot cluster toward 0, from the B near-zero cluster toward 0, and from the B near-two cluster toward 2. Use red for A dots and blue for B dots.",
+    "final_image_prompt": "A data visualization diagram of two aligned horizontal number lines, viewed straight on, split into an upper row and a lower row. The upper row is labeled \"A\" and the lower row is labeled \"B\". Both rows show tick labels \"-1\", \"0\", \"1\", \"2\", and \"3\" at matching positions. On row A, draw 5 red filled dots at -1, -1/2, -1/3, -1/4, and 2. On row B, draw 8 blue filled dots at 1, 1/2, 1/3, 1/4, 3, 5/2, 7/3, and 9/4. Add an open circle at 0 and at 2 on each row as reference markers labeled \"参考点\". Add small arrows labeled \"继续趋近\" from the A negative-side dot cluster toward 0, from the B near-zero cluster toward 0, and from the B near-two cluster toward 2. Use red for A dots and blue for B dots.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出$A$与$B$的具体点列结构，必须根据图中两行点列的趋近位置判断各自导集，才能完成集合运算。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "A行存在一列从左侧趋近0的红点",
+        "A行在2处只有单独红点",
+        "B行存在一列从右侧趋近0的蓝点",
+        "B行存在一列从右侧趋近2的蓝点"
+      ],
+      "validation_rules": [
+        "先由图判定$A'=\\{0\\}$",
+        "再由图判定$B'=\\{0,2\\}$",
+        "使用$(A\\cup B)'=A'\\cup B'$得到$\\{0,2\\}$",
+        "计算$\\{0,2\\}\\setminus\\{0\\}=\\{2\\}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0001",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "zh",
+    "question_text": "图示给出一个Hausdorff空间中两点及若干开邻域，并在每个邻域旁标出网列进入该邻域后的起始指标。若有人声称同一网列同时收敛到图中的两个不同点，为构造“极限唯一性”的矛盾，应选用哪一组邻域与哪个指标下界？",
+    "options": {
+      "A": "选用 $U_1$ 与 $V_1$，并取指标下界 $9$。",
+      "B": "选用 $U_2$ 与 $V_1$，并取指标下界 $13$。",
+      "C": "选用 $U_2$ 与 $V_2$，并取指标下界 $13$。",
+      "D": "选用 $U_1$ 与 $V_2$，并取指标下界 $12$。"
+    },
+    "correct_answer": "B",
+    "explanation": "Hausdorff极限唯一性的证明需要为两个不同点选取一对互不相交的开邻域。由图可读出，$U_1$ 与 $V_1$ 有交叠，$U_1$ 与 $V_2$ 也有交叠，$U_2$ 与 $V_2$ 有交叠；只有 $U_2$ 与 $V_1$ 在图中被画成互不相交。又由收敛定义，若网列同时收敛到 $p$ 与 $q$，则存在指标使得之后的项全在所选的 $p$ 的邻域中，也存在指标使得之后的项全在所选的 $q$ 的邻域中。图中 $U_2$ 的起始指标为 $8$，$V_1$ 的起始指标为 $13$，因此应取共同下界 $\\max(8,13)=13$。此后网列项必须同时属于两个互不相交的邻域，产生矛盾，所以选 B。",
+    "difficulty": 3,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "Hausdorff极限唯一",
+    "blueprint_image_type": "topology_diagram",
+    "image_path": "images/729c165f978144fa.png",
+    "image_prompt": "A topology diagram viewed from above, with one horizontal workspace split visually into a left p-neighborhood side and a right q-neighborhood side. Show exactly 2 black points: left point (labeled \"p\") and right point (labeled \"q\"). Draw 4 open-neighborhood ovals: a large blue oval around p (labeled \"U1\") with text (labeled \"N=6\"), a smaller blue oval around p (labeled \"U2\") with text (labeled \"N=8\"), a smaller red oval around q (labeled \"V1\") with text (labeled \"N=13\"), and a larger red oval around q (labeled \"V2\") with text (labeled \"N=12\"). Show gray lens overlaps between U1 and V1, U1 and V2, and U2 and V2, each marked (labeled \"重叠\"). Leave a clear white gap between U2 and V1. Use blue outlines for U-neighborhoods and red outlines for V-neighborhoods.",
+    "final_image_prompt": "A topology diagram viewed from above, with one horizontal workspace split visually into a left p-neighborhood side and a right q-neighborhood side. Show exactly 2 black points: left point (labeled \"p\") and right point (labeled \"q\"). Draw 4 open-neighborhood ovals: a large blue oval around p (labeled \"U1\") with text (labeled \"N=6\"), a smaller blue oval around p (labeled \"U2\") with text (labeled \"N=8\"), a smaller red oval around q (labeled \"V1\") with text (labeled \"N=13\"), and a larger red oval around q (labeled \"V2\") with text (labeled \"N=12\"). Show gray lens overlaps between U1 and V1, U1 and V2, and U2 and V2, each marked (labeled \"重叠\"). Leave a clear white gap between U2 and V1. Use blue outlines for U-neighborhoods and red outlines for V-neighborhoods.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四个邻域的交叠关系和对应起始指标；必须读图才能判断哪对邻域可分离以及应取哪个共同指标下界。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中唯一可用于Hausdorff分离的邻域对由一个蓝色邻域和一个红色邻域组成，且二者之间有白色间隙",
+        "该蓝色邻域的起始指标为 $8$",
+        "该红色邻域的起始指标为 $13$",
+        "其余三个候选邻域对在图中均有交叠"
+      ],
+      "validation_rules": [
+        "必须选择一对分别包含 $p$ 与 $q$ 的不相交开邻域",
+        "共同指标下界必须等于所选两个起始指标的最大值",
+        "若所选邻域有交叠，则不能用于直接构造Hausdorff极限唯一性的矛盾",
+        "唯一满足不相交条件且共同下界计算正确的选项为 $B$"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "en",
+    "question_text": "In the usual topology on $\\mathbb{R}^2$, the diagram shows four candidate subsets. Filled regions, solid curves, and solid dots are included; dashed curves and hollow circles are excluded. Which candidate subset is closed?",
+    "options": {
+      "A": "Panel A",
+      "B": "Panel B",
+      "C": "Panel C",
+      "D": "Panel D"
+    },
+    "correct_answer": "C",
+    "explanation": "A subset of $\\mathbb{R}^2$ is closed iff it contains all of its limit points. In Panel A, the displayed sequence points have coordinates of the form $(2+1/n,0)$, so as $n\\to\\infty$ they approach $(2,0)$; the diagram marks that limiting point as excluded, so Panel A is not closed. In Panel B, the shaded square has a dashed boundary, so boundary points are limit points of the interior but are not included; Panel B is not closed. In Panel C, the annular region includes both the inner and outer circular boundaries, so it is the set of points whose distance from the center lies between the two shown radii, with both boundary levels included; this is closed. In Panel D, the line segment has a hollow endpoint, and that endpoint is a limit point of the included segment; Panel D is not closed. Therefore the closed subset is Panel C.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断闭集",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/af59f5eef9144026.png",
+    "image_prompt": "An engineering diagram viewed from above, split into four equal panels in a 2 by 2 grid with a small legend at the top. Panel A (labeled \"Panel A\") shows coordinate axes, a filled disk at left, solid dots on y=0 to the right, a leftward arrow over the dots, a hollow circle labeled \"(2,0)\", and a rendered formula labeled \"x=2+1/n, n=1,2,...\". Panel B (labeled \"Panel B\") shows axes and a shaded square from x=-1 to x=1 and y=-1 to y=1 with all four boundary sides dashed. Panel C (labeled \"Panel C\") shows two concentric solid circles centered at O (labeled \"O\"), inner radius labeled \"r=1\", outer radius labeled \"r=2\", with the ring shaded. Panel D (labeled \"Panel D\") shows a horizontal segment on y=0 from a solid dot labeled \"(0,0)\" to a hollow circle labeled \"(3,0)\". The legend labels solid or shaded as \"included\" and hollow or dashed as \"excluded\".",
+    "final_image_prompt": "An engineering diagram viewed from above, split into four equal panels in a 2 by 2 grid with a small legend at the top. Panel A (labeled \"Panel A\") shows coordinate axes, a filled disk at left, solid dots on y=0 to the right, a leftward arrow over the dots, a hollow circle labeled \"(2,0)\", and a rendered formula labeled \"x=2+1/n, n=1,2,...\". Panel B (labeled \"Panel B\") shows axes and a shaded square from x=-1 to x=1 and y=-1 to y=1 with all four boundary sides dashed. Panel C (labeled \"Panel C\") shows two concentric solid circles centered at O (labeled \"O\"), inner radius labeled \"r=1\", outer radius labeled \"r=2\", with the ring shaded. Panel D (labeled \"Panel D\") shows a horizontal segment on y=0 from a solid dot labeled \"(0,0)\" to a hollow circle labeled \"(3,0)\". The legend labels solid or shaded as \"included\" and hollow or dashed as \"excluded\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The options only name panels; the inclusion status of boundaries, endpoints, and the sequence limit must be read from the diagram.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "Panel A contains an excluded point approached by the displayed sequence.",
+        "Panel B uses dashed boundary lines around the shaded square.",
+        "Panel C has both annular boundary circles drawn solid.",
+        "Panel D has an excluded endpoint on the displayed segment."
+      ],
+      "validation_rules": [
+        "Reject any panel whose diagram omits a visible limit point of the depicted subset.",
+        "Accept a candidate when every boundary or accumulation point shown by the diagram is included.",
+        "Use the diagram legend to distinguish included from excluded points and curves.",
+        "Apply closedness in the usual topology on $\\mathbb{R}^2$."
+      ]
+    }
+  },
+  {
+    "question_id": "b0c23b95e5734ab2",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "zh",
+    "question_text": "根据图中给出的实数轴子集 $S$，在通常拓扑下判断下列说法哪一项正确。",
+    "options": {
+      "A": "$S$ 是闭集，因为图中每个被标出的聚点都属于 $S$。",
+      "B": "$S$ 不是闭集，因为图中存在属于 $S'$ 但不属于 $S$ 的点。",
+      "C": "$S$ 是闭集，因为 $S$ 包含一个闭区间且其余点都是孤立点。",
+      "D": "不能判断 $S$ 是否闭，因为闭性只由有界性决定。"
+    },
+    "correct_answer": "B",
+    "explanation": "图中粗实线段表示 $[0,1]$ 被包含在 $S$ 中，两个端点也以实心点标出，因此这部分不造成闭性问题。右侧有一串属于 $S$ 的实心离散点，它们沿箭头向左趋近于数轴上的点 $2$；同时点 $2$ 被画为空心点，表示 $2\\notin S$。因此 $2$ 是 $S$ 的极限点，即 $2\\in S'$，但 $2\\notin S$。在通常拓扑下，实数集的子集闭当且仅当包含其全部极限点，所以 $S$ 不是闭集。A 忽略了空心极限点，C 把右侧点列误判为没有外部极限点，D 则混淆了闭性与有界性。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断闭集",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/b0c23b95e5734ab2.png",
+    "image_prompt": "An engineering diagram of a subset of the real line. Use a single horizontal axis viewed from above, labeled \"R\" near the right end, with tick labels \"0\", \"1\", \"2\", \"7/3\", \"5/2\", and \"3\" in left-to-right order. Draw exactly one thick blue solid segment from tick 0 to tick 1, with blue filled endpoint circles at 0 and 1, and place the label \"S\" above the segment. Draw exactly three blue filled circles at 7/3, 5/2, and 3, with the label \"S中的点\" above them. Draw exactly one red hollow circle at 2. Add one left-pointing arrow from the cluster of the three right-side blue circles toward the red hollow circle, labeled \"趋向\". Use blue for included marks and red for the hollow marked point.",
+    "final_image_prompt": "An engineering diagram of a subset of the real line. Use a single horizontal axis viewed from above, labeled \"R\" near the right end, with tick labels \"0\", \"1\", \"2\", \"7/3\", \"5/2\", and \"3\" in left-to-right order. Draw exactly one thick blue solid segment from tick 0 to tick 1, with blue filled endpoint circles at 0 and 1, and place the label \"S\" above the segment. Draw exactly three blue filled circles at 7/3, 5/2, and 3, with the label \"S中的点\" above them. Draw exactly one red hollow circle at 2. Add one left-pointing arrow from the cluster of the three right-side blue circles toward the red hollow circle, labeled \"趋向\". Use blue for included marks and red for the hollow marked point.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $S$ 的具体构造，必须从图中读取哪些点属于 $S$、哪个点被排除以及点列趋近到哪里，才能判断闭性。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "图中0到1为属于S的实线段且两端实心",
+        "图中7/3、5/2、3为属于S的实心点",
+        "图中2为空心点",
+        "图中右侧点列由箭头指向2"
+      ],
+      "validation_rules": [
+        "若图中某点由S中点趋近得到，则该点属于$S'$",
+        "若该趋近点为空心标记，则该点不属于$S$",
+        "若存在$S'\\nsubseteq S$，则$S$在通常拓扑下不是闭集"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0004",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "zh",
+    "question_text": "根据图中四个数轴上表示的实数子集，在通常拓扑下，哪一个子集是闭集？",
+    "options": {
+      "A": "集合A",
+      "B": "集合B",
+      "C": "集合C",
+      "D": "集合D"
+    },
+    "correct_answer": "C",
+    "explanation": "在实数通常拓扑中，集合闭当且仅当它包含自身所有极限点。图中集合A含有一段右端实心、左端空心的区间，因此左端点是它的极限点但未被包含，不闭。集合B由向某个端点聚集的离散点列和一个空心端点组成，该空心端点是极限点但不属于集合，不闭。集合C由闭区间和一个孤立实心点组成；闭区间包含两个端点，孤立点不额外产生未包含的极限点，所以整体包含全部极限点，是闭集。集合D的右端为空心端点，该端点是区间的极限点但未被包含，不闭。因此答案为C。",
+    "difficulty": 1,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "判断闭集",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/b3a02128316b4eb0.png",
+    "image_prompt": "An engineering diagram of four horizontal real number lines, viewed straight on, stacked vertically and labeled at the left as “A”, “B”, “C”, and “D”. Panel A shows ticks labeled -2, 1, and 3; draw a blue thick segment from -2 to 1, an open circle at -2, a filled circle at 1, and a filled isolated point at 3. Panel B shows ticks labeled 0, 1/5, 1/4, 1/3, 1/2, and 1; draw an open circle at 0, filled points at 1/5, 1/4, 1/3, 1/2, and 1, plus an ellipsis between 0 and 1/5. Panel C shows ticks -1, 2, and 4; draw a blue thick segment from -1 to 2 with filled endpoints and a filled point at 4. Panel D shows ticks -3 and 0; draw a blue thick segment from -3 to 0 with a filled circle at -3 and open circle at 0. Use blue highlights only for set elements.",
+    "final_image_prompt": "An engineering diagram of four horizontal real number lines, viewed straight on, stacked vertically and labeled at the left as “A”, “B”, “C”, and “D”. Panel A shows ticks labeled -2, 1, and 3; draw a blue thick segment from -2 to 1, an open circle at -2, a filled circle at 1, and a filled isolated point at 3. Panel B shows ticks labeled 0, 1/5, 1/4, 1/3, 1/2, and 1; draw an open circle at 0, filled points at 1/5, 1/4, 1/3, 1/2, and 1, plus an ellipsis between 0 and 1/5. Panel C shows ticks -1, 2, and 4; draw a blue thick segment from -1 to 2 with filled endpoints and a filled point at 4. Panel D shows ticks -3 and 0; draw a blue thick segment from -3 to 0 with a filled circle at -3 and open circle at 0. Use blue highlights only for set elements.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四个集合的端点开闭、点列趋近和孤立点位置；这些关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个候选集合的端点开闭状态只由图中空心圆与实心圆给出",
+        "集合B是否存在趋向0的点列只由图中离散点和省略号给出",
+        "集合C由一个双端实心的区间和一个实心孤立点组成只由图示给出"
+      ],
+      "validation_rules": [
+        "若一个图示集合遗漏了某个由相邻区间或点列产生的极限点，则该集合不闭",
+        "若图示集合包含连续区间的两个端点，且额外孤立点不产生未包含的极限点，则该集合闭",
+        "逐一检查A、B、C、D后，唯一满足闭集判据的选项为C"
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0003",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "en",
+    "question_text": "In the finite topological space shown, each arrow from a point $x$ to a point $y$ means $y\\in U_x$, where $U_x$ is the minimal open neighborhood of $x$; each $U_x$ also contains $x$ itself. A point $x$ is a limit point of a subset $E$ if $U_x\\setminus\\{x\\}$ meets $E$. Among the four candidate subsets in the diagram, which one is closed and has exactly three selected points?",
+    "options": {
+      "A": "Candidate I",
+      "B": "Candidate II",
+      "C": "Candidate III",
+      "D": "Candidate IV"
+    },
+    "correct_answer": "B",
+    "explanation": "Read the directed neighborhood data from the diagram. For Candidate I, the selected set is $\\{s,t\\}$. Since $U_p\\setminus\\{p\\}$ contains $s$, $p$ is a limit point not contained in the set, so it is not closed. For Candidate II, the selected set is $\\{p,q,t\\}$. The only outside points are $r$ and $s$; $U_r\\setminus\\{r\\}$ meets none of $\\{p,q,t\\}$, and $U_s\\setminus\\{s\\}$ is empty, so no outside point is forced as a limit point. Thus Candidate II contains all its limit points, and it also has exactly three selected points. For Candidate III, the selected set is $\\{p,t\\}$, so it fails the required cardinality and also has $q$ as an outside limit point. For Candidate IV, the selected set is $\\{q,s\\}$, so it fails the required cardinality and has outside limit points such as $p$, $r$, and $t$. Therefore the unique correct choice is Candidate II.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断闭集",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/b474ca6f2f6143a4.png",
+    "image_prompt": "Engineering diagram, viewed from above, split into one top base-network panel and four lower candidate subset boxes in a 2 by 2 grid. The top panel contains 5 labeled nodes in a pentagon layout: p upper left, q upper right, r middle left, s bottom center, t middle right, and a caption labeled \"base arrows\". Draw 6 directed arrows: p to r, p to s, q to p, q to t, r to s, and t to q. The lower boxes are labeled \"Candidate I\", \"Candidate II\", \"Candidate III\", and \"Candidate IV\". Each box shows 5 small circles labeled p, q, r, s, t from left to right. Candidate I has s and t filled blue; Candidate II has p, q, and t filled blue; Candidate III has p and t filled blue; Candidate IV has q and s filled blue. Add a legend labeled \"filled = selected\".",
+    "final_image_prompt": "Engineering diagram, viewed from above, split into one top base-network panel and four lower candidate subset boxes in a 2 by 2 grid. The top panel contains 5 labeled nodes in a pentagon layout: p upper left, q upper right, r middle left, s bottom center, t middle right, and a caption labeled \"base arrows\". Draw 6 directed arrows: p to r, p to s, q to p, q to t, r to s, and t to q. The lower boxes are labeled \"Candidate I\", \"Candidate II\", \"Candidate III\", and \"Candidate IV\". Each box shows 5 small circles labeled p, q, r, s, t from left to right. Candidate I has s and t filled blue; Candidate II has p, q, and t filled blue; Candidate III has p and t filled blue; Candidate IV has q and s filled blue. Add a legend labeled \"filled = selected\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The answer depends on the arrow-defined minimal neighborhoods and on which points are selected in each candidate box; neither is recoverable from the text alone.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "The directed arrow pattern among p, q, r, s, and t is only visible in the image.",
+        "The selected points for Candidate I, Candidate II, Candidate III, and Candidate IV are only visible in the image.",
+        "The selected-point counts for the candidates must be read from the image."
+      ],
+      "validation_rules": [
+        "Compute $U_x\\setminus\\{x\\}$ from the outgoing arrows of each point.",
+        "For each candidate subset $E$, check whether every outside point $x\\notin E$ has $U_x\\setminus\\{x\\}$ disjoint from $E$.",
+        "Reject any candidate that is not closed or does not have exactly three selected points.",
+        "The only candidate satisfying both conditions is Candidate II."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0005",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "en",
+    "question_text": "In the usual topology inherited from the real line, the engineering diagram shows the ambient subspace $X$ and four labeled candidate subsets of $X$. Which candidate is closed in $X$?",
+    "options": {
+      "A": "Candidate I",
+      "B": "Candidate II",
+      "C": "Candidate III",
+      "D": "Candidate IV"
+    },
+    "correct_answer": "B",
+    "explanation": "A subset of $X$ is closed in $X$ exactly when it contains all of its limit points that lie in $X$. From the diagram, $X$ consists of the left open segment approaching $0$, the point $0$, the sequence points $1+1/n$ approaching $1$, and the point $1$. Candidate I contains the left open segment but omits $0$, so it omits a limit point in $X$. Candidate II contains the sequence points and also contains their limit point $1$, while its other marked isolated point creates no missing limit point; hence it is closed in $X$. Candidate III contains the sequence points but omits $1$, so it is not closed in $X$. Candidate IV contains both accumulating families but omits the displayed limit point $0$, so it is not closed in $X$. Therefore the closed candidate is Candidate II.",
+    "difficulty": 3,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "判断闭集",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/ca67378755aa4c0c.png",
+    "image_prompt": "An engineering diagram of a real-line subspace, viewed straight on, with 5 aligned horizontal rails stacked vertically. The top rail is labeled \"ambient subspace X\" and the lower rails are labeled \"Candidate I\", \"Candidate II\", \"Candidate III\", and \"Candidate IV\". Each rail has coordinate ticks labeled \"-1\", \"0\", \"1\", \"3/2\", and \"2\". On the top rail, draw an open segment from -1 to 0, a filled point at 0 labeled \"limit in X\", six filled points at 2, 3/2, 4/3, 5/4, 6/5, and 7/6, and a filled point at 1 labeled \"limit in X\". Add one leftward arrow from the right cluster to 1 labeled \"sequence points\". Candidate I highlights the left segment only; Candidate II highlights 0, 1, and the six sequence points; Candidate III highlights only the six sequence points; Candidate IV highlights the left segment, 1, and the six sequence points. Include a legend: dark blue labeled \"included\", light gray labeled \"not included\".",
+    "final_image_prompt": "An engineering diagram of a real-line subspace, viewed straight on, with 5 aligned horizontal rails stacked vertically. The top rail is labeled \"ambient subspace X\" and the lower rails are labeled \"Candidate I\", \"Candidate II\", \"Candidate III\", and \"Candidate IV\". Each rail has coordinate ticks labeled \"-1\", \"0\", \"1\", \"3/2\", and \"2\". On the top rail, draw an open segment from -1 to 0, a filled point at 0 labeled \"limit in X\", six filled points at 2, 3/2, 4/3, 5/4, 6/5, and 7/6, and a filled point at 1 labeled \"limit in X\". Add one leftward arrow from the right cluster to 1 labeled \"sequence points\". Candidate I highlights the left segment only; Candidate II highlights 0, 1, and the six sequence points; Candidate III highlights only the six sequence points; Candidate IV highlights the left segment, 1, and the six sequence points. Include a legend: dark blue labeled \"included\", light gray labeled \"not included\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The options name only the candidate rows; the membership pattern, omitted limit points, and accumulation arrows are available only from the diagram.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "Candidate I omits the ambient limit point at 0 while including the left interval approaching it.",
+        "Candidate II includes the right sequence cluster together with its ambient limit point 1 and includes the isolated ambient point 0.",
+        "Candidate III omits the ambient limit point 1 while including the right sequence cluster approaching it.",
+        "Candidate IV omits the ambient limit point at 0 while including the left interval approaching it."
+      ],
+      "validation_rules": [
+        "A candidate subset is closed in $X$ only if every limit point of that candidate that belongs to $X$ is also included in the candidate.",
+        "The left interval component has $0$ as a limit point in $X$.",
+        "The right sequence component has $1$ as a limit point in $X$.",
+        "Reject any candidate that includes an accumulating component but omits its corresponding limit point in $X$."
+      ]
+    }
+  },
+  {
+    "question_id": "S03-002-Q0001",
+    "subject_id": "S03",
+    "subject_name": "拓扑与变换",
+    "kp_id": "S03-M01-002",
+    "kp_name": "闭集与极限点",
+    "question_language": "zh",
+    "question_text": "图中给出一个有限拓扑空间 $X$ 的最小开邻域网络：每个点的最小开邻域由该点自身和它沿箭头直接指向的点组成；蓝色实心点构成集合 $A$，绿色外框点构成集合 $B$。按极限点定义，求 $(A')'\\cap B$。",
+    "options": {
+      "A": "$\\{q,t\\}$",
+      "B": "$\\{q\\}$",
+      "C": "$\\{p,q,t\\}$",
+      "D": "$\\{t\\}$"
+    },
+    "correct_answer": "A",
+    "explanation": "在有限拓扑中，点 $x$ 是集合 $A$ 的极限点，当且仅当其最小开邻域中含有某个不同于 $x$ 的 $A$ 中点。由图读出蓝色实心点构成 $A=\\{p,r,t\\}$。逐点检查：$p$ 的邻域除自身外含 $r$，故 $p\\in A'$；$q$ 的邻域含 $p,r$，故 $q\\in A'$；$r$ 的邻域除自身外含 $t$，故 $r\\in A'$；$s$ 的邻域含 $r,t$，故 $s\\in A'$；$t$ 的邻域除自身外不含 $A$ 中点，故 $t\\notin A'$。所以 $A'=\\{p,q,r,s\\}$。再对 $A'$ 求导集：$p$ 的邻域除自身外含 $q,r$，$q$ 的邻域含 $p,r$，$r$ 的邻域除自身外含 $s$，$s$ 的邻域含 $r$，$t$ 的邻域含 $s$，因此 $(A')'=\\{p,q,r,s,t\\}$。图中绿色外框点为 $B=\\{q,t\\}$，所以 $(A')'\\cap B=\\{q,t\\}$。",
+    "difficulty": 2,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "基于精确图示信息考查闭集与极限点",
+    "blueprint_image_type": "network_diagram",
+    "image_path": "images/e7f0488ec00242e8.png",
+    "image_prompt": "A network diagram of a finite topological space, viewed from above, with five circular nodes in a pentagon-like layout: upper left node (labeled \"p\"), upper right node (labeled \"q\"), center node (labeled \"r\"), lower left node (labeled \"s\"), and lower right node (labeled \"t\"). Fill nodes p, r, and t in blue, and draw green outer rings around nodes q and t. Add directed arrows p to q, p to r, q to p, q to r, r to s, r to t, s to r, s to t, and t to s. Add one small self-loop on each node. Include a small legend at the right with a blue dot (labeled \"蓝色=A\") and a green ring (labeled \"绿圈=B\"). Use thin arrowheads and keep all labels clearly visible.",
+    "final_image_prompt": "A network diagram of a finite topological space, viewed from above, with five circular nodes in a pentagon-like layout: upper left node (labeled \"p\"), upper right node (labeled \"q\"), center node (labeled \"r\"), lower left node (labeled \"s\"), and lower right node (labeled \"t\"). Fill nodes p, r, and t in blue, and draw green outer rings around nodes q and t. Add directed arrows p to q, p to r, q to p, q to r, r to s, r to t, s to r, s to t, and t to s. Add one small self-loop on each node. Include a small legend at the right with a blue dot (labeled \"蓝色=A\") and a green ring (labeled \"绿圈=B\"). Use thin arrowheads and keep all labels clearly visible.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出哪些点属于 $A$、哪些点属于 $B$，也没有列出各点的最小开邻域；这些信息只能从网络图中的颜色、外框和箭头读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The membership of A is determined by the blue filled nodes in the diagram.",
+        "The membership of B is determined by the green outer-ring nodes in the diagram.",
+        "The minimal open neighborhoods are determined by the displayed outgoing arrows together with the node itself.",
+        "The directed adjacency pattern must be read from the network image."
+      ],
+      "validation_rules": [
+        "A point belongs to $A'$ exactly when its displayed minimal open neighborhood contains an $A$-point different from itself.",
+        "After computing $A'$, apply the same limit-point test to $A'$ to obtain $(A')'$.",
+        "Intersect the resulting set with the green-ring set $B$.",
+        "The only option matching the computed intersection is the correct answer."
+      ]
+    }
+  }
+]

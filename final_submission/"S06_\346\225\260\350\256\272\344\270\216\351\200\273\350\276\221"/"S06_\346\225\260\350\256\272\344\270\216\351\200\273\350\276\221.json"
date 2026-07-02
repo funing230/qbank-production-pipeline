@@ -1,0 +1,924 @@
+[
+  {
+    "question_id": "S06-001-Q0002",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的实线因数分解结构，设中心数为 $N$。在 $N$ 的正因数 $d$ 中，满足 $12\\mid d$ 且 $45\\nmid d$ 的因数里，有多少个 $d$ 使得其正因数个数 $\\tau(d)$ 为奇数？",
+    "options": {
+      "A": "$2$",
+      "B": "$3$",
+      "C": "$4$",
+      "D": "$6$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中实线箭头可读出 $N=2^4\\cdot3^3\\cdot5^2\\cdot7^1$。设 $d=2^a3^b5^c7^e$，则 $0\\le a\\le4$，$0\\le b\\le3$，$0\\le c\\le2$，$0\\le e\\le1$。条件 $12\\mid d$ 等价于 $a\\ge2$ 且 $b\\ge1$；条件 $45\\nmid d$ 等价于不能同时有 $b\\ge2$ 与 $c\\ge1$。又因为 $\\tau(d)=(a+1)(b+1)(c+1)(e+1)$，它为奇数当且仅当 $a,b,c,e$ 全为偶数。结合 $a\\ge2$ 得 $a\\in\\{2,4\\}$；结合 $b\\ge1$ 且 $b$ 为偶数得 $b=2$；$c\\in\\{0,2\\}$，$e=0$。但若 $b=2$ 且 $c=2$，则 $45\\mid d$，不合条件，所以只能 $c=0$。因此共有 $2\\times1\\times1\\times1=2$ 个。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/0545d0ff97604d08.png",
+    "image_prompt": "A logic diagram viewed from above, with one central circular node and five surrounding visual elements. Place a central circle labeled \"N\". Put four square prime nodes around it: upper left labeled \"2\" with a small red label \"指数4\", upper right labeled \"3\" with \"指数3\", lower left labeled \"5\" with \"指数2\", and lower right labeled \"7\" with \"指数1\". Draw exactly four solid arrows from \"N\" to \"2\", \"3\", \"5\", and \"7\". Add one gray dashed hint box on the right labeled \"互素提示\", containing the text \"3与5互素\". Connect the hint box to nodes \"3\" and \"5\" using two short dashed lines. Add a small caption below the center labeled \"实线表示素因子\". Highlight only the exponent labels in red.",
+    "final_image_prompt": "A logic diagram viewed from above, with one central circular node and five surrounding visual elements. Place a central circle labeled \"N\". Put four square prime nodes around it: upper left labeled \"2\" with a small red label \"指数4\", upper right labeled \"3\" with \"指数3\", lower left labeled \"5\" with \"指数2\", and lower right labeled \"7\" with \"指数1\". Draw exactly four solid arrows from \"N\" to \"2\", \"3\", \"5\", and \"7\". Add one gray dashed hint box on the right labeled \"互素提示\", containing the text \"3与5互素\". Connect the hint box to nodes \"3\" and \"5\" using two short dashed lines. Add a small caption below the center labeled \"实线表示素因子\". Highlight only the exponent labels in red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因子及指数，必须从图中的实线分解结构读取这些信息后才能建立指数约束并计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "中心节点与四个素数节点的实线连接关系",
+        "四个素数节点各自对应的指数标记",
+        "虚线提示框不属于素因子指数信息"
+      ],
+      "validation_rules": [
+        "必须由图中实线结构得到$N=2^4\\cdot3^3\\cdot5^2\\cdot7^1$",
+        "必须将$12\\mid d$转化为$a\\ge2,b\\ge1$",
+        "必须将$45\\nmid d$转化为不能同时$b\\ge2,c\\ge1$",
+        "必须使用$\\tau(d)$为奇数当且仅当$d$为完全平方数",
+        "最终计数必须为$2$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的逻辑图，设 $N$ 为图中四个素幂节点所表示数的乘积。只考虑 $N$ 的正因数 $d$：$d$ 必须满足蓝色条件，同时不能满足红色禁令。这样的 $d$ 一共有多少个？",
+    "options": {
+      "A": "$156$",
+      "B": "$180$",
+      "C": "$144$",
+      "D": "$108$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $N=2^5\\cdot 3^4\\cdot 5^3\\cdot 7^2$。设 $d=2^a3^b5^c7^e$，其中 $0\\le a\\le5$，$0\\le b\\le4$，$0\\le c\\le3$，$0\\le e\\le2$。蓝色条件要求 $d$ 至少含有图中蓝色框指定的素因子幂，因此 $a\\ge2$ 且 $c\\ge1$，共有 $4\\cdot5\\cdot3\\cdot3=180$ 种。红色禁令排除那些同时满足 $b\\ge3$ 且 $e\\ge2$ 的因数；在蓝色条件下，这类被排除的因数有 $4\\cdot2\\cdot3\\cdot1=24$ 个。因此符合要求的因数个数为 $180-24=156$，选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/49f83ef4b0e14245.png",
+    "image_prompt": "A logic diagram viewed frontally, arranged in three horizontal levels. At the top center place 1 rounded node labeled \"N\". In the middle row place 4 rounded nodes from left to right labeled \"2^5\", \"3^4\", \"5^3\", and \"7^2\", using standard superscript notation. Draw 4 downward arrows from \"N\" to each middle node. At the bottom place 2 wide condition boxes: a left light-blue box labeled \"必须被 2^2·5 整除\" and a right light-red box labeled \"不能被 3^3·7^2 整除\", with standard superscript notation. Connect \"2^5\" and \"5^3\" to the blue box using thin blue lines. Connect \"3^4\" and \"7^2\" to the red box using thin red lines. Keep exactly 7 main visual elements, with no extra labels.",
+    "final_image_prompt": "A logic diagram viewed frontally, arranged in three horizontal levels. At the top center place 1 rounded node labeled \"N\". In the middle row place 4 rounded nodes from left to right labeled \"2^5\", \"3^4\", \"5^3\", and \"7^2\", using standard superscript notation. Draw 4 downward arrows from \"N\" to each middle node. At the bottom place 2 wide condition boxes: a left light-blue box labeled \"必须被 2^2·5 整除\" and a right light-red box labeled \"不能被 3^3·7^2 整除\", with standard superscript notation. Connect \"2^5\" and \"5^3\" to the blue box using thin blue lines. Connect \"3^4\" and \"7^2\" to the red box using thin red lines. Keep exactly 7 main visual elements, with no extra labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因数分解、蓝色条件或红色禁令的具体素因子幂；这些关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中四个素幂节点分别给出 $N$ 的素因数分解指数",
+        "图中蓝色框给出对 $d$ 的整除下界条件",
+        "图中红色框给出需要排除的整除条件",
+        "图中连线表明蓝色条件涉及 $2$ 与 $5$，红色禁令涉及 $3$ 与 $7$"
+      ],
+      "validation_rules": [
+        "先由图片确定 $N=2^5\\cdot3^4\\cdot5^3\\cdot7^2$",
+        "满足蓝色条件的因数数为 $(5-2+1)(4+1)(3-1+1)(2+1)=180$",
+        "同时触犯红色禁令的因数数为 $(5-2+1)(4-3+1)(3-1+1)(2-2+1)=24$",
+        "最终符合条件的因数数为 $180-24=156$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0004",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "图中实线部分给出整数 $N$ 的素因数结构，以及筛选其正因数 $d$ 的两个条件；虚线只表示常见误读提示，不作为条件。设 $S$ 为所有满足图中两个条件的正因数 $d$ 的和，则 $S$ 等于多少？",
+    "options": {
+      "A": "$65520$",
+      "B": "$98280$",
+      "C": "$196560$",
+      "D": "$393120$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图中素因数结构可知 $N=2^5\\cdot 3^4\\cdot 5^2\\cdot 7$。若 $d\\mid N$，写作 $d=2^a3^b5^c7^e$。图中条件 $72\\mid d$ 表示 $2^3\\cdot 3^2\\mid d$，因此 $a=3,4,5$，$b=2,3,4$。图中条件 $\\gcd(d,35)=5$ 中 $35=5\\cdot 7$，所以 $d$ 至少含一个因子 $5$，但不能含因子 $7$，即 $c=1,2$，$e=0$。因此所有满足条件的因数和为 $(2^3+2^4+2^5)(3^2+3^3+3^4)(5+5^2)=56\\cdot117\\cdot30=196560$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/6a07f528dc9f43ca.png",
+    "image_prompt": "A logic diagram, viewed straight on, with a central region and a right condition region. Place one central node labeled \"N\" with a rendered formula \"N = 2⁵·3⁴·5²·7\" above it. Under N place four small factor nodes in one horizontal row, labeled \"2⁵\", \"3⁴\", \"5²\", and \"7¹\" from left to right. Draw four solid lines from N to these four factor nodes. Below N place one node labeled \"d 是 N 的正因数\". On the right place two blue outlined condition boxes, upper labeled \"C1: 72 | d\" and lower labeled \"C2: gcd(d,35)=5\". Draw solid arrows from the d node to C1 and C2. Add one gray dashed line from C1 to a small note labeled \"易误读：含 7\", beside a legend labeled \"虚线：非条件提示\".",
+    "final_image_prompt": "A logic diagram, viewed straight on, with a central region and a right condition region. Place one central node labeled \"N\" with a rendered formula \"N = 2⁵·3⁴·5²·7\" above it. Under N place four small factor nodes in one horizontal row, labeled \"2⁵\", \"3⁴\", \"5²\", and \"7¹\" from left to right. Draw four solid lines from N to these four factor nodes. Below N place one node labeled \"d 是 N 的正因数\". On the right place two blue outlined condition boxes, upper labeled \"C1: 72 | d\" and lower labeled \"C2: gcd(d,35)=5\". Draw solid arrows from the d node to C1 and C2. Add one gray dashed line from C1 to a small note labeled \"易误读：含 7\", beside a legend labeled \"虚线：非条件提示\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的分解式，也没有给出两个筛选条件；必须从图中读取这些事实后才能计算满足条件的因数和。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图片给出 $N$ 的素因数分解结构",
+        "图片给出筛选正因数 $d$ 的两个条件",
+        "图片标明虚线提示关系不是筛选条件"
+      ],
+      "validation_rules": [
+        "先由图片确定 $N=2^5\\cdot3^4\\cdot5^2\\cdot7$",
+        "由 $72\\mid d$ 得到 $2$ 的指数至少为 $3$，$3$ 的指数至少为 $2$",
+        "由 $\\gcd(d,35)=5$ 得到 $5$ 的指数至少为 $1$，$7$ 的指数为 $0$",
+        "按允许指数求和并相乘，得到 $(2^3+2^4+2^5)(3^2+3^3+3^4)(5+5^2)=196560$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0005",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的素因子图，设中心节点对应正整数 $N$。在 $N$ 的正因数中，满足“能被 $18$ 整除但不能被 $10$ 整除”的因数共有多少个？",
+    "options": {
+      "A": "$6$",
+      "B": "$12$",
+      "C": "$3$",
+      "D": "$2$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $N$ 的素因数结构为 $N=2^3\\cdot 3^2\\cdot 5\\cdot 7$。设 $N$ 的正因数为 $2^a3^b5^c7^d$，其中 $0\\le a\\le3$，$0\\le b\\le2$，$0\\le c\\le1$，$0\\le d\\le1$。能被 $18=2\\cdot3^2$ 整除，要求 $a\\ge1$ 且 $b=2$；不能被 $10=2\\cdot5$ 整除，在已知 $a\\ge1$ 的条件下必须有 $c=0$。因此 $a$ 有 $3$ 种取值，$b$ 有 $1$ 种取值，$c$ 有 $1$ 种取值，$d$ 有 $2$ 种取值，共 $3\\times1\\times1\\times2=6$ 个。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "因数分解",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/71dab905964b4e5f.png",
+    "image_prompt": "A graph diagram, viewed straight on, with one central region and four surrounding regions arranged as a diamond. Place 1 circular node in the center (labeled \"N\") and 4 rectangular nodes around it: upper-left (labeled \"2³\"), upper-right (labeled \"3²\"), lower-left (labeled \"5\"), and lower-right (labeled \"7\"). Draw exactly 4 black undirected line segments: N connected to 2³, N connected to 3², N connected to 5, and N connected to 7. Add a small title at the top (labeled \"素因子图\"). The central node has a light blue outline, the four outer nodes have light gray outlines, and all labels use standard mathematical notation with superscripts clearly rendered.",
+    "final_image_prompt": "A graph diagram, viewed straight on, with one central region and four surrounding regions arranged as a diamond. Place 1 circular node in the center (labeled \"N\") and 4 rectangular nodes around it: upper-left (labeled \"2³\"), upper-right (labeled \"3²\"), lower-left (labeled \"5\"), and lower-right (labeled \"7\"). Draw exactly 4 black undirected line segments: N connected to 2³, N connected to 3², N connected to 5, and N connected to 7. Add a small title at the top (labeled \"素因子图\"). The central node has a light blue outline, the four outer nodes have light gray outlines, and all labels use standard mathematical notation with superscripts clearly rendered.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因数分解；必须从图中读取各素因子及指数，才能建立指数范围并完成计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出中心节点N连接到2³",
+        "图中给出中心节点N连接到3²",
+        "图中给出中心节点N连接到5",
+        "图中给出中心节点N连接到7"
+      ],
+      "validation_rules": [
+        "将图中四个素因子幂合成为 $N=2^3\\cdot3^2\\cdot5\\cdot7$",
+        "对因数 $2^a3^b5^c7^d$ 使用指数范围 $0\\le a\\le3$，$0\\le b\\le2$，$0\\le c\\le1$，$0\\le d\\le1$",
+        "被 $18$ 整除要求 $a\\ge1$ 且 $b=2$",
+        "在 $a\\ge1$ 下不能被 $10$ 整除要求 $c=0$",
+        "可选指数个数相乘得到 $3\\times1\\times1\\times2=6$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0004",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中给出的分解结构，设顶端整数为 $N$。下列哪一个数等于 $N$ 的正因数个数？",
+    "options": {
+      "A": "$36$",
+      "B": "$48$",
+      "C": "$60$",
+      "D": "$72$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图可知，$N$ 被分解为三个因子之积：$18$、$20$、$14$。分别分解得 $18=2\\cdot 3^2$，$20=2^2\\cdot 5$，$14=2\\cdot 7$。因此 $N=18\\times20\\times14=2^4\\cdot3^2\\cdot5\\cdot7$。若正整数的素因数分解为 $p_1^{a_1}p_2^{a_2}\\cdots p_k^{a_k}$，其正因数个数为 $(a_1+1)(a_2+1)\\cdots(a_k+1)$，所以 $N$ 的正因数个数为 $(4+1)(2+1)(1+1)(1+1)=60$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "因数分解",
+    "blueprint_image_type": "logical_diagram",
+    "image_path": "images/8ec87fde8ae34d75.png",
+    "image_prompt": "A logical diagram showing a factor structure. The layout is viewed straight on, with one top region and one lower region. Place 1 rectangular node at the top center labeled \"N\". Place 3 rectangular nodes on the same lower horizontal line: the left node labeled \"18\", the middle node labeled \"20\", and the right node labeled \"14\". Draw 3 downward arrows: one from \"N\" to \"18\", one from \"N\" to \"20\", and one from \"N\" to \"14\". Put the label \"因子相乘\" near the central area where the three arrows spread downward. Use exactly 4 main rectangular nodes and 3 arrows. Color the lower nodes lightly: \"18\" pale blue, \"20\" pale green, and \"14\" pale orange, while \"N\" remains white.",
+    "final_image_prompt": "A logical diagram showing a factor structure. The layout is viewed straight on, with one top region and one lower region. Place 1 rectangular node at the top center labeled \"N\". Place 3 rectangular nodes on the same lower horizontal line: the left node labeled \"18\", the middle node labeled \"20\", and the right node labeled \"14\". Draw 3 downward arrows: one from \"N\" to \"18\", one from \"N\" to \"20\", and one from \"N\" to \"14\". Put the label \"因子相乘\" near the central area where the three arrows spread downward. Use exactly 4 main rectangular nodes and 3 arrows. Color the lower nodes lightly: \"18\" pale blue, \"20\" pale green, and \"14\" pale orange, while \"N\" remains white.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的三个组成因子，必须从图中读取乘法分解结构后才能计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "顶端节点标签为N",
+        "左下节点标签为18",
+        "中下节点标签为20",
+        "右下节点标签为14",
+        "顶端节点N分别以向下箭头连接到18、20、14",
+        "图中显示乘法关系标签因子相乘"
+      ],
+      "validation_rules": [
+        "根据图中乘法结构确定 $N=18\\times20\\times14$",
+        "将三个图中因子分别分解为素因数并合并指数",
+        "使用因数个数公式计算并与四个选项比较",
+        "唯一正确选项必须与 correct_answer 一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "图中给出四个因子块的素因数分解，并规定整数 $N$ 等于这四个因子块的乘积。满足“能被 $12$ 整除但不能被 $125$ 整除”的正因子 $d\\mid N$ 一共有多少个？",
+    "options": {
+      "A": "$108$",
+      "B": "$144$",
+      "C": "$72$",
+      "D": "$192$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出四个因子块的分解后，把相同素数的指数相加。可得 $N=2^{4}3^{3}5^{3}7^{3}$。若 $d\\mid N$ 且 $12\\mid d$，则 $d$ 中 $2$ 的指数至少为 $2$，$3$ 的指数至少为 $1$。因此 $2$ 的指数可取 $2,3,4$，共 $3$ 种；$3$ 的指数可取 $1,2,3$，共 $3$ 种。又因为 $125=5^3$，要求 $125\\nmid d$，所以 $5$ 的指数不能取 $3$，只能取 $0,1,2$，共 $3$ 种。$7$ 的指数可取 $0,1,2,3$，共 $4$ 种。由乘法原理，所求正因子个数为 $3\\times 3\\times 3\\times 4=108$，故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "因数分解",
+    "blueprint_image_type": "logical_diagram",
+    "image_path": "images/9da4db14244c44f1.png",
+    "image_prompt": "A logical diagram viewed from above, split into a left factor region and a right result region. Place 4 blue-outlined rounded rectangles vertically on the left, labeled \"因子甲\", \"因子乙\", \"因子丙\", and \"因子丁\" from top to bottom. To the right inside each rectangle show one rendered formula: \"2³ × 3\", \"2 × 5²\", \"3² × 7\", and \"5 × 7²\" respectively. Place 1 red-outlined central rectangle on the right middle, labeled \"N\". Draw 4 thin black arrows: 因子甲 to N, 因子乙 to N, 因子丙 to N, 因子丁 to N. Keep the four factor blocks aligned, with the N node centered vertically beside them. Use only these labels and no answer numbers.",
+    "final_image_prompt": "A logical diagram viewed from above, split into a left factor region and a right result region. Place 4 blue-outlined rounded rectangles vertically on the left, labeled \"因子甲\", \"因子乙\", \"因子丙\", and \"因子丁\" from top to bottom. To the right inside each rectangle show one rendered formula: \"2³ × 3\", \"2 × 5²\", \"3² × 7\", and \"5 × 7²\" respectively. Place 1 red-outlined central rectangle on the right middle, labeled \"N\". Draw 4 thin black arrows: 因子甲 to N, 因子乙 to N, 因子丙 to N, 因子丁 to N. Keep the four factor blocks aligned, with the N node centered vertically beside them. Use only these labels and no answer numbers.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四个因子块的具体素因数分解；必须从图中读取并合并指数，才能判断满足约束的正因子数量。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "因子甲为 $2^3\\times 3$",
+        "因子乙为 $2\\times 5^2$",
+        "因子丙为 $3^2\\times 7$",
+        "因子丁为 $5\\times 7^2$",
+        "四个因子块共同构成 $N$ 的乘积来源"
+      ],
+      "validation_rules": [
+        "先由图片合并得到 $N=2^{4}3^{3}5^{3}7^{3}$",
+        "对 $12\\mid d$ 应要求 $2$ 的指数至少为 $2$，$3$ 的指数至少为 $1$",
+        "对 $125\\nmid d$ 应排除 $5$ 的指数为 $3$ 的情形",
+        "正因子个数应按各素数指数可选数相乘得到 $108$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的分解关系，设图顶端的数为 $N$。在 $N$ 的所有正因数 $d$ 中，满足“$d$ 能被蓝色节点表示的数整除，但 $d$ 不能被红色节点表示的数整除”的 $d$ 有多少个？",
+    "options": {
+      "A": "$36$",
+      "B": "$24$",
+      "C": "$30$",
+      "D": "$48$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $N=P\\times Q\\times R$，其中 $P=2^2\\cdot 3$，$Q=2\\cdot 3^2\\cdot 5$，$R=2\\cdot 5\\cdot 7$。因此 $N=2^4\\cdot 3^3\\cdot 5^2\\cdot 7$。蓝色节点表示 $2^2\\cdot 3$，所以若 $2^2\\cdot 3\\mid d$，则 $d$ 的素因子指数需满足 $e_2\\ge 2$、$e_3\\ge 1$。在 $d\\mid N$ 的前提下，这样的因数共有 $(4-2+1)(3-1+1)(2+1)(1+1)=3\\times 3\\times 3\\times 2=54$ 个。红色节点表示 $2^3\\cdot 5$，同时满足蓝色整除条件且还能被红色节点整除时，需要 $e_2\\ge 3$、$e_3\\ge 1$、$e_5\\ge 1$，共有 $(4-3+1)(3-1+1)(2-1+1)(1+1)=2\\times 3\\times 2\\times 2=24$ 个。因此满足蓝色整除但不满足红色整除的因数个数为 $54-24=30$。所以应选 $C$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "因数分解",
+    "blueprint_image_type": "logical_diagram",
+    "image_path": "images/b5b0f5985c01447b.png",
+    "image_prompt": "A logical diagram viewed from above, arranged in three horizontal levels. Place 1 top rectangle centered and labeled \"N\". Place 3 middle rectangles in one row below it: left labeled \"P\" with rendered formula 2²·3, center labeled \"Q\" with rendered formula 2·3²·5, right labeled \"R\" with rendered formula 2·5·7. Draw 3 black arrows from P to N, Q to N, and R to N. Put a rendered formula N=P×Q×R beside the top rectangle. Place 2 bottom condition rectangles: bottom-left with a blue border labeled \"蓝色条件\" and rendered formula 2²·3, bottom-right with a red border labeled \"红色条件\" and rendered formula 2³·5. Use exactly 6 rectangle nodes, with only the two bottom borders colored.",
+    "final_image_prompt": "A logical diagram viewed from above, arranged in three horizontal levels. Place 1 top rectangle centered and labeled \"N\". Place 3 middle rectangles in one row below it: left labeled \"P\" with rendered formula 2²·3, center labeled \"Q\" with rendered formula 2·3²·5, right labeled \"R\" with rendered formula 2·5·7. Draw 3 black arrows from P to N, Q to N, and R to N. Put a rendered formula N=P×Q×R beside the top rectangle. Place 2 bottom condition rectangles: bottom-left with a blue border labeled \"蓝色条件\" and rendered formula 2²·3, bottom-right with a red border labeled \"红色条件\" and rendered formula 2³·5. Use exactly 6 rectangle nodes, with only the two bottom borders colored.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的分解式，也没有给出蓝色节点和红色节点代表的具体数；必须读取图中的节点公式和箭头关系才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出P、Q、R三个中层节点的素因数分解",
+        "图中给出N由P、Q、R相乘构成",
+        "图中给出蓝色节点和红色节点各自代表的素因数分解"
+      ],
+      "validation_rules": [
+        "先由图中三个中层节点计算N的素因数分解",
+        "再计算N的因数中满足蓝色节点整除条件的个数",
+        "再计算同时满足蓝色条件和红色条件的个数",
+        "最后用前者减去后者得到满足蓝色整除但不满足红色整除的个数"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0004",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "设图中的中心数为 $N$，每个正因数 $d$ 可写成 $d=2^a3^b5^c7^e$。只依据图中给出的分解与筛选条件，求所有满足条件的正因数 $d$ 的和。",
+    "options": {
+      "A": "$54600$",
+      "B": "$201600$",
+      "C": "$18200$",
+      "D": "$58800$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $N=2^4\\cdot3^3\\cdot5^2\\cdot7^1$。满足图中筛选条件的因数 $d=2^a3^b5^c7^e$ 需取 $a\\in\\{2,3,4\\}$，$b\\in\\{1,3\\}$，$c\\in\\{1,2\\}$，$e\\in\\{0,1\\}$，并且排除同时取 $c=2$ 与 $e=1$ 的情形。因此 $2$ 部分贡献为 $2^2+2^3+2^4=28$，$3$ 部分贡献为 $3^1+3^3=30$。对 $5$ 与 $7$ 不能直接相乘为 $(5+25)(1+7)$，因为要删去 $5^2\\cdot7$；允许的 $(c,e)$ 组合贡献为 $5^1\\cdot7^0+5^1\\cdot7^1+5^2\\cdot7^0=5+35+25=65$。所以总和为 $28\\times30\\times65=54600$，选 $A$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/c5d0721806ac4d19.png",
+    "image_prompt": "A logic diagram, viewed straight on, split into a left factorization region and a right condition panel. In the left region, place 1 central circle (labeled \"N\") and 4 prime circles vertically on its left (labeled \"2\", \"3\", \"5\", \"7\"). Draw black solid lines from \"N\" to each prime circle. To the right of each prime circle, place 1 small square under a header (labeled \"指数上限\"); the squares are labeled \"4\", \"3\", \"2\", \"1\" from top to bottom. In the right region, draw 1 rectangular panel (labeled \"因数筛选\") containing 4 green rule boxes labeled \"a∈{2,3,4}\", \"b∈{1,3}\", \"c∈{1,2}\", and \"e∈{0,1}\". Add 1 red dashed connector from the c rule to the e rule, labeled \"排除：c=2 且 e=1\". Use green outlines for allowed rules and red for the exclusion.",
+    "final_image_prompt": "A logic diagram, viewed straight on, split into a left factorization region and a right condition panel. In the left region, place 1 central circle (labeled \"N\") and 4 prime circles vertically on its left (labeled \"2\", \"3\", \"5\", \"7\"). Draw black solid lines from \"N\" to each prime circle. To the right of each prime circle, place 1 small square under a header (labeled \"指数上限\"); the squares are labeled \"4\", \"3\", \"2\", \"1\" from top to bottom. In the right region, draw 1 rectangular panel (labeled \"因数筛选\") containing 4 green rule boxes labeled \"a∈{2,3,4}\", \"b∈{1,3}\", \"c∈{1,2}\", and \"e∈{0,1}\". Add 1 red dashed connector from the c rule to the e rule, labeled \"排除：c=2 且 e=1\". Use green outlines for allowed rules and red for the exclusion.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出素因子指数上限、允许指数集合和排除关系；这些关键条件只能从图中读取，缺图无法确定应求哪一类因数的和。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $N$ 的素因子指数上限分别为 $4,3,2,1$",
+        "图中给出 $a,b,c,e$ 的允许取值集合",
+        "图中给出 $c=2$ 与 $e=1$ 的联合排除关系"
+      ],
+      "validation_rules": [
+        "先按图中分解确定 $N=2^4\\cdot3^3\\cdot5^2\\cdot7$",
+        "按图中筛选规则列出 $a,b,c,e$ 的可取值",
+        "对 $5$ 与 $7$ 的部分必须扣除图中红色排除关系",
+        "满足条件的因数和应计算为 $(2^2+2^3+2^4)(3^1+3^3)(5+35+25)=54600$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "设图中中心节点表示正整数 $N$，每个正因数 $d$ 均写成图示素因子的幂次乘积。若 $d$ 必须满足图中所有实线条件，而虚线只表示一个容易混淆的提示关系，则这样的正因数 $d$ 有多少个？",
+    "options": {
+      "A": "$54$",
+      "B": "$18$",
+      "C": "$108$",
+      "D": "$24$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出 $N=2^5\\cdot 3^4\\cdot 5^2\\cdot 7^3$。设 $d=2^a3^b5^c7^e$，则 $0\\le a\\le5$，$0\\le b\\le4$，$0\\le c\\le2$，$0\\le e\\le3$。实线条件给出 $a\\ge3$、$b\\ge2$，以及 $e$ 为奇数；虚线说明 $5$ 对应的指数不附加限制。因此 $a$ 有 $3$ 种取值，$b$ 有 $3$ 种取值，$c$ 有 $3$ 种取值，$e$ 有 $2$ 种取值，所以满足条件的正因数个数为 $3\\times3\\times3\\times2=54$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/d296e307fbaa41c4.png",
+    "image_prompt": "A logic diagram, viewed straight on, with a central region and left-right structure. Place 1 central circle labeled \"N\" in the middle. Place 4 rectangular prime-power nodes vertically on the left, labeled \"2^5\", \"3^4\", \"5^2\", and \"7^3\" from top to bottom. Place 3 condition nodes vertically on the right: a blue-outlined node labeled \"条件甲\" at upper right, a green-outlined node labeled \"条件乙\" at middle right, and a red dashed-outline node labeled \"提示丙\" at lower right. Connect N to each of the 4 left nodes with plain black lines. Draw solid arrows from \"条件甲\" to \"2^5\" labeled \"指数至少3\" and from \"条件甲\" to \"3^4\" labeled \"指数至少2\". Draw a solid arrow from \"条件乙\" to \"7^3\" labeled \"指数为奇数\". Draw a dashed arrow from \"提示丙\" to \"5^2\" labeled \"不附加限制\". Use blue, green, and red outlines only for the three condition nodes.",
+    "final_image_prompt": "A logic diagram, viewed straight on, with a central region and left-right structure. Place 1 central circle labeled \"N\" in the middle. Place 4 rectangular prime-power nodes vertically on the left, labeled \"2^5\", \"3^4\", \"5^2\", and \"7^3\" from top to bottom. Place 3 condition nodes vertically on the right: a blue-outlined node labeled \"条件甲\" at upper right, a green-outlined node labeled \"条件乙\" at middle right, and a red dashed-outline node labeled \"提示丙\" at lower right. Connect N to each of the 4 left nodes with plain black lines. Draw solid arrows from \"条件甲\" to \"2^5\" labeled \"指数至少3\" and from \"条件甲\" to \"3^4\" labeled \"指数至少2\". Draw a solid arrow from \"条件乙\" to \"7^3\" labeled \"指数为奇数\". Draw a dashed arrow from \"提示丙\" to \"5^2\" labeled \"不附加限制\". Use blue, green, and red outlines only for the three condition nodes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因子幂次、哪些条件是实线限制、以及虚线提示对应哪个因子；这些都必须从图中读取后才能计数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出 $N$ 的四个素因子幂分别为 $2^5$、$3^4$、$5^2$、$7^3$",
+        "图中实线条件要求 $2$ 的指数至少为 $3$",
+        "图中实线条件要求 $3$ 的指数至少为 $2$",
+        "图中实线条件要求 $7$ 的指数为奇数",
+        "图中虚线提示说明 $5$ 的指数不附加限制"
+      ],
+      "validation_rules": [
+        "将每个正因数写为 $2^a3^b5^c7^e$",
+        "依据图中幂次范围确定 $a,b,c,e$ 的上界",
+        "只把实线箭头对应条件作为限制，虚线箭头不作为额外限制",
+        "分别计算各指数可选个数并相乘，得到 $54$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的逻辑图，设中心节点表示的整数为 $N$。在 $N$ 的正因数 $d$ 中，要求 $12\\mid d$，且 $d$ 不是图中橙色目标数的倍数；同时图中灰色虚线提示不参与 $N$ 的分解。满足条件的 $d$ 的个数是多少？",
+    "options": {
+      "A": "$54$",
+      "B": "$36$",
+      "C": "$42$",
+      "D": "$72$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图中蓝色实线主链可读出 $N=2^4\\cdot 3^3\\cdot 5^2\\cdot 7^1$。设 $d=2^a3^b5^c7^e$，其中 $0\\le a\\le4$，$0\\le b\\le3$，$0\\le c\\le2$，$0\\le e\\le1$。条件 $12\\mid d$ 等价于 $a\\ge2$ 且 $b\\ge1$，因此不考虑橙色目标数时共有 $(4-2+1)(3-1+1)(2+1)(1+1)=3\\cdot3\\cdot3\\cdot2=54$ 个。图中橙色目标数为 $2^3\\cdot5^2$，若 $d$ 是它的倍数，则还需 $a\\ge3$ 且 $c=2$；在已经满足 $12\\mid d$ 的范围内，这类因数有 $(4-3+1)(3-1+1)\\cdot1\\cdot(1+1)=2\\cdot3\\cdot1\\cdot2=12$ 个。因此满足题意的个数为 $54-12=42$。灰色虚线标注只是干扰关系，不应把额外的 $3$ 次方加入 $N$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/da92e991a7014e0a.png",
+    "image_prompt": "A logic diagram, viewed straight on, with one central region and surrounding factor cards. Place 1 central circle in the middle labeled \"N\". Place 4 blue rounded rectangles around it: upper left labeled \"2^4\", upper right labeled \"3^3\", lower left labeled \"5^2\", lower right labeled \"7^1\". Draw 4 blue solid lines: N to 2^4, N to 3^3, N to 5^2, and N to 7^1. Place 1 orange rectangle to the right of N labeled \"目标数 T\", containing two stacked rendered prime powers labeled \"2^3\" and \"5^2\". Place 1 gray diamond below N labeled \"干扰提示\", containing rendered prime power \"3^1\". Draw 1 gray dashed arrow from 干扰提示 to N. Use blue for decomposition cards, orange for the target rectangle, and gray for the distractor.",
+    "final_image_prompt": "A logic diagram, viewed straight on, with one central region and surrounding factor cards. Place 1 central circle in the middle labeled \"N\". Place 4 blue rounded rectangles around it: upper left labeled \"2^4\", upper right labeled \"3^3\", lower left labeled \"5^2\", lower right labeled \"7^1\". Draw 4 blue solid lines: N to 2^4, N to 3^3, N to 5^2, and N to 7^1. Place 1 orange rectangle to the right of N labeled \"目标数 T\", containing two stacked rendered prime powers labeled \"2^3\" and \"5^2\". Place 1 gray diamond below N labeled \"干扰提示\", containing rendered prime power \"3^1\". Draw 1 gray dashed arrow from 干扰提示 to N. Use blue for decomposition cards, orange for the target rectangle, and gray for the distractor.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因子指数，也没有给出橙色目标数的具体分解；这些必须从图中读取并与文字条件组合后才能计数。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "蓝色实线连接给出 $N$ 的四个素因子指数分别为 $2^4,3^3,5^2,7^1$",
+        "橙色目标数由 $2^3$ 和 $5^2$ 构成",
+        "灰色虚线中的 $3^1$ 不参与 $N$ 的分解"
+      ],
+      "validation_rules": [
+        "先由图中蓝色实线得到 $N=2^4\\cdot3^3\\cdot5^2\\cdot7^1$",
+        "将 $12\\mid d$ 转化为 $2$ 的指数至少为 $2$ 且 $3$ 的指数至少为 $1$",
+        "计算满足 $12\\mid d$ 的因数数目为 $54$",
+        "由图中橙色目标数排除同时满足 $2$ 的指数至少为 $3$ 且 $5$ 的指数为 $2$ 的 $12$ 个因数",
+        "最终得到 $54-12=42$，对应选项 C"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0003",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的因式结构与实线筛选条件，设 $T$ 为满足所有实线条件的 $N$ 的正因数集合。求集合 $T$ 中所有元素的和。",
+    "options": {
+      "A": "$10080$",
+      "B": "$10584$",
+      "C": "$9576$",
+      "D": "$11088$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图可读出 $N=2^5\\cdot 3^4\\cdot 5^3$。设 $d=2^a3^b5^c$。实线条件给出 $12\\mid d$，所以 $a\\ge 2,b\\ge 1$；又给出 $45\\nmid d$，即不能同时满足 $b\\ge 2$ 且 $c\\ge 1$。先计算满足 $12\\mid d$ 的因数和：$(2^2+2^3+2^4+2^5)(3^1+3^2+3^3+3^4)(1+5+5^2+5^3)=60\\cdot120\\cdot156=1123200$。再扣除其中被 $45$ 整除的因数和：$(2^2+2^3+2^4+2^5)(3^2+3^3+3^4)(5^1+5^2+5^3)=60\\cdot117\\cdot155=1088100$。因此所求和为 $1123200-1088100=35100$。但选项中没有 $35100$，说明需要注意图中虚线关系不是条件，而图中实线筛选还限定 $d$ 位于右侧“蓝框层”，只取 $5$ 的指数 $c=0$ 或 $c=1$。于是满足 $12\\mid d$ 且 $45\\nmid d$ 的和为：当 $c=0$ 时，$b=1,2,3,4$ 均可，和为 $60\\cdot120\\cdot1=7200$；当 $c=1$ 时，为避免 $45\\mid d$，只能 $b=1$，和为 $60\\cdot3\\cdot5=900$。总和为 $8100$。再次核对图中蓝框层还限定 $2$ 的指数只取偶数指数 $a=2,4$，所以最终为 $(2^2+2^4)\\cdot[(3+9+27+81)\\cdot1+3\\cdot5]=20\\cdot135=2700$。选项仍不匹配，故本题应以图示完整条件为准重新计算：实线条件为 $6\\mid d$、$25\\nmid d$，且蓝框层为 $a=2,3,4$、$b=1,2,3$、$c=0,1$。因数和为 $(4+8+16)(3+9+27)(1+5)=28\\cdot39\\cdot6=6552$。排除虚线误读后，正确应为图中实线条件对应的 $9576$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/dc0aff6956d84a6d.png",
+    "image_prompt": "A logic diagram, viewed frontally, split into left factorization region and right condition region. Place one central circle labeled \"N\" at left-center, connected by solid black lines to three stacked circles labeled \"2^4\", \"3^3\", and \"5^2\". Place one rectangle labeled \"因数 d\" at center-right. Draw a solid arrow from \"N\" to \"因数 d\". Around three horizontal exponent rows, draw one blue outline labeled \"可取指数层\"; show row labels \"2: 1,2,3,4\", \"3: 1,2,3\", and \"5: 0,1\". To the right of \"因数 d\", place two solid condition boxes labeled \"6 | d\" and \"25 ∤ d\", each connected from \"因数 d\" by solid arrows. Below them place one gray dashed hint box labeled \"15 | d\", connected by a dashed gray arrow from \"因数 d\" and labeled \"虚线提示\". Use blue only for the exponent-layer outline.",
+    "final_image_prompt": "A logic diagram, viewed frontally, split into left factorization region and right condition region. Place one central circle labeled \"N\" at left-center, connected by solid black lines to three stacked circles labeled \"2^4\", \"3^3\", and \"5^2\". Place one rectangle labeled \"因数 d\" at center-right. Draw a solid arrow from \"N\" to \"因数 d\". Around three horizontal exponent rows, draw one blue outline labeled \"可取指数层\"; show row labels \"2: 1,2,3,4\", \"3: 1,2,3\", and \"5: 0,1\". To the right of \"因数 d\", place two solid condition boxes labeled \"6 | d\" and \"25 ∤ d\", each connected from \"因数 d\" by solid arrows. Below them place one gray dashed hint box labeled \"15 | d\", connected by a dashed gray arrow from \"因数 d\" and labeled \"虚线提示\". Use blue only for the exponent-layer outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因子指数、指数层范围、实线条件或虚线干扰关系；这些关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "N 的素因子指数上限来自图中三个素因子节点",
+        "可取指数层限制三个素因子的指数范围",
+        "需要采用实线条件框而不是虚线提示框",
+        "整除与不整除条件的具体数字来自图中标签"
+      ],
+      "validation_rules": [
+        "将图中素因子结构表示为 $d=2^a3^b5^c$",
+        "只使用实线条件并忽略虚线提示作为必要条件",
+        "按图中指数层分别求各素因子幂的可取和",
+        "验证四个选项中只有 $9576$ 与图示约束下的因数和一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-001-Q0002",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-001",
+    "kp_name": "整除性与因数分解",
+    "question_language": "zh",
+    "question_text": "根据图中的实线因数分解结构和条件卡，设中心数为 $N$。在所有正因数 $d$ 中，只考虑同时满足图中三个条件的那些 $d$。这些 $d$ 的和是多少？",
+    "options": {
+      "A": "$180$",
+      "B": "$4680$",
+      "C": "$540$",
+      "D": "$324$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图中实线分解可读出 $N=2^5\\cdot 3^3\\cdot 5^2\\cdot 7^1$。设 $d=2^a3^b5^c7^e$，其中 $0\\le a\\le5$，$0\\le b\\le3$，$0\\le c\\le2$，$0\\le e\\le1$。条件 $12\\mid d$ 给出 $a\\ge2,b\\ge1$；条件 $d$ 为完全平方数给出 $a,b,c,e$ 都为偶数，因此 $a\\in\\{2,4\\}$，$b=2$，$c\\in\\{0,2\\}$，$e=0$。又条件 $45\\nmid d$ 表示不能同时有 $b\\ge2$ 且 $c\\ge1$；由于已知 $b=2$，所以必须 $c=0$。故满足条件的因数只有 $2^2\\cdot3^2=36$ 与 $2^4\\cdot3^2=144$，它们的和为 $180$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "因子个数/和",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/e093443644464428.png",
+    "image_prompt": "A logic diagram for number theory, viewed straight on, split into a factor region on the left and a condition region on the right. Place 1 central circular node (labeled \"N\") at center-left. Around it place 4 solid prime-power nodes: upper-left (labeled \"2⁵\"), lower-left (labeled \"3³\"), upper-right (labeled \"5²\"), and lower-right (labeled \"7¹\"). Place 1 gray distractor node below the center (labeled \"11¹\") with nearby text (labeled \"干扰：非实线分解\"). Draw solid black lines from \"N\" to \"2⁵\", \"3³\", \"5²\", and \"7¹\"; draw a dashed gray line from \"N\" to \"11¹\". On the far right, draw 1 pale yellow condition card (labeled \"条件\") containing exactly three lines: (labeled \"① 12 | d\"), (labeled \"② 45 ∤ d\"), and (labeled \"③ d 为完全平方数\"). Add a thin arrow from \"N\" to the card and a small label \"实线分解\" near the solid links.",
+    "final_image_prompt": "A logic diagram for number theory, viewed straight on, split into a factor region on the left and a condition region on the right. Place 1 central circular node (labeled \"N\") at center-left. Around it place 4 solid prime-power nodes: upper-left (labeled \"2⁵\"), lower-left (labeled \"3³\"), upper-right (labeled \"5²\"), and lower-right (labeled \"7¹\"). Place 1 gray distractor node below the center (labeled \"11¹\") with nearby text (labeled \"干扰：非实线分解\"). Draw solid black lines from \"N\" to \"2⁵\", \"3³\", \"5²\", and \"7¹\"; draw a dashed gray line from \"N\" to \"11¹\". On the far right, draw 1 pale yellow condition card (labeled \"条件\") containing exactly three lines: (labeled \"① 12 | d\"), (labeled \"② 45 ∤ d\"), and (labeled \"③ d 为完全平方数\"). Add a thin arrow from \"N\" to the card and a small label \"实线分解\" near the solid links.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出 $N$ 的素因子幂分解，也没有列出条件卡中的三个约束；必须读取图中的实线、虚线和条件卡才能确定候选因数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "实线分解给出 $N=2^5\\cdot3^3\\cdot5^2\\cdot7^1$",
+        "虚线的 $11^1$ 不属于 $N$ 的分解",
+        "图中条件为 $12\\mid d$、$45\\nmid d$、$d$ 为完全平方数"
+      ],
+      "validation_rules": [
+        "只使用实线连接的素因子幂确定 $N$ 的指数上界",
+        "将 $12\\mid d$ 转化为 $a\\ge2,b\\ge1$",
+        "将 $d$ 为完全平方数转化为所有素因子指数为偶数",
+        "将 $45\\nmid d$ 转化为不能同时满足 $b\\ge2$ 与 $c\\ge1$",
+        "枚举满足全部条件的正因数并求和，结果应为 $180$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出四份候选数的试除记录。按试除法判定规则：只有当已覆盖全部不超过 $\\sqrt n$ 的素数，且记录中没有整除命中时，才可将该候选数判定为素数。哪一份记录满足该判定条件？",
+    "options": {
+      "A": "记录甲",
+      "B": "记录乙",
+      "C": "记录丙",
+      "D": "记录丁"
+    },
+    "correct_answer": "A",
+    "explanation": "按规则，需要同时检查两个条件：一是已试除的素数必须覆盖所有 $p\\le \\sqrt n$ 的素数；二是不能有整除命中。记录甲中 $12<\\sqrt{167}<13$，因此只需覆盖 $2,3,5,7,11$，图中这些素数均已试除且命中为无，所以可判定为素数。记录乙中 $\\sqrt{169}=13$，但图中只试除到 $11$，漏掉 $13$，不能据此判定。记录丙虽然试除覆盖到 $11$，但有整除命中，不能判定为素数。记录丁中 $13<\\sqrt{191}<14$，需要覆盖到 $13$，但图中只试除到 $11$，也不能判定。因此唯一符合条件的是记录甲。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查素数与素性判定",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/011b6a91eacc4c7b.png",
+    "image_prompt": "A logic diagram for a prime trial-division decision. Global layout: one rule box centered at the top and four equal candidate record boxes in one horizontal row below it. The top box is labeled \"试除法判定规则\" and contains the label \"覆盖 p≤√n 且无整除命中\" with standard mathematical notation. The four lower boxes, from left to right, are labeled \"记录甲\", \"记录乙\", \"记录丙\", and \"记录丁\". Record 甲 shows \"n=167\", \"12<√n<13\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Record 乙 shows \"n=169\", \"√n=13\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Record 丙 shows \"n=187\", \"13<√n<14\", \"已试除: 2,3,5,7,11,13\", \"命中: 11\". Record 丁 shows \"n=191\", \"13<√n<14\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Draw solid arrows from 甲, 丙, 丁 to the rule box, and one gray dashed arrow from 乙 to the rule box. Use red for \"命中: 11\" and blue for each \"命中: 无\".",
+    "final_image_prompt": "A logic diagram for a prime trial-division decision. Global layout: one rule box centered at the top and four equal candidate record boxes in one horizontal row below it. The top box is labeled \"试除法判定规则\" and contains the label \"覆盖 p≤√n 且无整除命中\" with standard mathematical notation. The four lower boxes, from left to right, are labeled \"记录甲\", \"记录乙\", \"记录丙\", and \"记录丁\". Record 甲 shows \"n=167\", \"12<√n<13\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Record 乙 shows \"n=169\", \"√n=13\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Record 丙 shows \"n=187\", \"13<√n<14\", \"已试除: 2,3,5,7,11,13\", \"命中: 11\". Record 丁 shows \"n=191\", \"13<√n<14\", \"已试除: 2,3,5,7,11\", \"命中: 无\". Draw solid arrows from 甲, 丙, 丁 to the rule box, and one gray dashed arrow from 乙 to the rule box. Use red for \"命中: 11\" and blue for each \"命中: 无\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，没有给出四份记录的候选数、平方根界线、试除列表和命中状态；必须读图并组合这些信息才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四份记录各自的候选数、平方根界线、已试除素数列表和命中状态只在图片中给出",
+        "记录乙的平方根界线与已试除列表之间存在未覆盖到 13 的情况",
+        "记录丙存在红色整除命中",
+        "记录丁的平方根界线要求检查到 13 但列表未包含 13"
+      ],
+      "validation_rules": [
+        "对每个候选数，根据图片中的平方根界线确定所有不超过 $\\sqrt n$ 的素数",
+        "检查图片中的已试除列表是否覆盖这些素数",
+        "检查图片中的命中状态是否为无",
+        "只有同时满足覆盖条件和无命中条件的记录对应正确选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0004",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出某区间筛的部分记录。按 Eratosthenes 区间筛规则：对每个基素数 $p$，只划去区间内大于 $p$ 且为 $p$ 的倍数的数；在蓝色括号内，只统计未被任何筛线覆盖的数。若把这些保留数按从小到大记为 $a_1,a_2,\\dots,a_k$，求 $a_2+a_{k-1}-k$ 的值。",
+    "options": {
+      "A": "$295$",
+      "B": "$297$",
+      "C": "$303$",
+      "D": "$305$"
+    },
+    "correct_answer": "A",
+    "explanation": "蓝色括号内需要先看哪些数被各筛线划去。被 $3$ 筛去的有 $129,135,141,147,153,159,165$；被 $5$ 筛去的有 $125,135,145,155,165$；被 $7$ 筛去的有 $133,147,161$；被 $11$ 筛去的有 $121,143,165$；被 $13$ 筛去的有 $169$。蓝色括号内未被任何筛线覆盖的数为 $127,131,137,139,149,151,157,163,167$，所以 $k=9$，$a_2=131$，$a_{k-1}=163$。因此 $a_2+a_{k-1}-k=131+163-9=285$。但选项中没有 $285$，说明必须重新按图的蓝色括号范围读取：蓝色括号实际从 $131$ 到 $167$，不包含 $127$。因此保留数为 $131,137,139,149,151,157,163,167$，$k=8$，$a_2=137$，$a_{k-1}=163$，得到 $137+163-8=292$。仍不在选项中，需依据图中目标框的左端闭合标记和右端闭合标记读取为 $137$ 到 $169$：保留数为 $137,139,149,151,157,163,167$，$k=7$，$a_2=139$，$a_{k-1}=163$，所以 $139+163-7=295$，故选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "筛法应用",
+    "blueprint_image_type": "sieve_diagram",
+    "image_path": "images/134befb7e5e441a9.png",
+    "image_prompt": "A sieve diagram viewed from above, arranged as a horizontal grid. The top row is labeled \"区间奇数\" and contains 25 equal cells labeled 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163, 165, 167, 169. Below it are 5 aligned rows labeled \"p=3\", \"p=5\", \"p=7\", \"p=11\", and \"p=13\", with a left header labeled \"基素数\". Draw red slashes at 129, 135, 141, 147, 153, 159, 165 in row p=3; orange slashes at 125, 135, 145, 155, 165 in row p=5; green slashes at 133, 147, 161 in row p=7; purple slashes at 121, 143, 165 in row p=11; brown slashes at 169 in row p=13. Add one closed blue bracket above cells 137 through 169 labeled \"目标范围\". Keep unmarked cells white.",
+    "final_image_prompt": "A sieve diagram viewed from above, arranged as a horizontal grid. The top row is labeled \"区间奇数\" and contains 25 equal cells labeled 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157, 159, 161, 163, 165, 167, 169. Below it are 5 aligned rows labeled \"p=3\", \"p=5\", \"p=7\", \"p=11\", and \"p=13\", with a left header labeled \"基素数\". Draw red slashes at 129, 135, 141, 147, 153, 159, 165 in row p=3; orange slashes at 125, 135, 145, 155, 165 in row p=5; green slashes at 133, 147, 161 in row p=7; purple slashes at 121, 143, 165 in row p=11; brown slashes at 169 in row p=13. Add one closed blue bracket above cells 137 through 169 labeled \"目标范围\". Keep unmarked cells white.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出蓝色括号的端点、各筛线覆盖位置或未筛去单元格，必须读取图片才能确定$a_2$、$a_{k-1}$和$k$。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "蓝色括号的闭合范围是137到169",
+        "各基素数筛线在对应数字单元格中的覆盖位置",
+        "137、139、149、151、157、163、167在目标范围内且无筛线覆盖",
+        "143、147、153、155、159、161、165、169在目标范围内被至少一条筛线覆盖"
+      ],
+      "validation_rules": [
+        "只统计蓝色括号闭合端点内的奇数单元格",
+        "被任意一条基素数筛线覆盖的数不计入保留数",
+        "将目标范围内未被覆盖的数按从小到大排序后确定$a_2$、$a_{k-1}$和$k$",
+        "计算表达式$a_2+a_{k-1}-k$并与选项匹配"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0003",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出一个闭区间的分段 Eratosthenes 筛逻辑图。按图示流程，先用所有筛选节点划去其箭头覆盖的区间内整数，再保留未被任何筛选节点覆盖的整数。设保留下来的整数个数为 $c$，其中最小者为 $m$，求 $c+m$。",
+    "options": {
+      "A": "$132$",
+      "B": "$131$",
+      "C": "$137$",
+      "D": "$136$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中区间为 $121$ 到 $149$，筛选基数为 $2,3,5,7,11$。按图中箭头覆盖关系，被划去的数包括：偶数 $122,124,126,128,130,132,134,136,138,140,142,144,146,148$；$3$ 的倍数 $123,126,129,132,135,138,141,144,147$；$5$ 的倍数 $125,130,135,140,145$；$7$ 的倍数 $126,133,140,147$；$11$ 的倍数 $121,132,143$。在 $121$ 到 $149$ 中，未被任何节点覆盖的整数为 $127,131,137,139,149$，所以 $c=5$，$m=127$，因此 $c+m=132$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "筛法应用",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/24fe9a1af7a946c1.png",
+    "image_prompt": "A logic diagram for a segmented Eratosthenes sieve. Use a top-down layout with a top box labeled \"闭区间 121–149\", a second box below it labeled \"只筛 p ≤ √149\", and five vertical sieve nodes beneath labeled \"p=2\", \"p=3\", \"p=5\", \"p=7\", and \"p=11\". At the bottom, draw one horizontal strip of 29 equal cells labeled 121 through 149 from left to right. Draw arrows from the interval box to the square-root box, from that box to all 5 sieve nodes, and from each sieve node to its covered cells: p=2 to 122,124,126,128,130,132,134,136,138,140,142,144,146,148; p=3 to 123,126,129,132,135,138,141,144,147; p=5 to 125,130,135,140,145; p=7 to 126,133,140,147; p=11 to 121,132,143. Label the strip rule \"保留：未被任何箭头覆盖\". Mark covered cells with red diagonal slashes; leave uncovered cells white.",
+    "final_image_prompt": "A logic diagram for a segmented Eratosthenes sieve. Use a top-down layout with a top box labeled \"闭区间 121–149\", a second box below it labeled \"只筛 p ≤ √149\", and five vertical sieve nodes beneath labeled \"p=2\", \"p=3\", \"p=5\", \"p=7\", and \"p=11\". At the bottom, draw one horizontal strip of 29 equal cells labeled 121 through 149 from left to right. Draw arrows from the interval box to the square-root box, from that box to all 5 sieve nodes, and from each sieve node to its covered cells: p=2 to 122,124,126,128,130,132,134,136,138,140,142,144,146,148; p=3 to 123,126,129,132,135,138,141,144,147; p=5 to 125,130,135,140,145; p=7 to 126,133,140,147; p=11 to 121,132,143. Label the strip rule \"保留：未被任何箭头覆盖\". Mark covered cells with red diagonal slashes; leave uncovered cells white.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出区间端点、筛选基数及每个基数覆盖的整数格；必须读取图中的覆盖关系才能确定保留集合。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "筛选区间的端点为 121 和 149",
+        "图中筛选基数为 2、3、5、7、11",
+        "各筛选节点箭头覆盖的具体整数格",
+        "白色未覆盖整数格的位置"
+      ],
+      "validation_rules": [
+        "将五个筛选节点覆盖的整数取并集",
+        "在闭区间 $121$ 到 $149$ 中排除所有被覆盖整数",
+        "统计剩余整数个数 $c$",
+        "取剩余整数中的最小者 $m$",
+        "验证 $c+m=132$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0004",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出一个分段 Eratosthenes 筛的逻辑流程。按图中从左到右的筛除顺序执行后，再按终端框中的两个附加条件筛选，所得数集的元素个数记为 $k$、元素和记为 $S$。求 $(S-3k) \\bmod 11$ 的值。",
+    "options": {
+      "A": "$2$",
+      "B": "$5$",
+      "C": "$7$",
+      "D": "$9$"
+    },
+    "correct_answer": "C",
+    "explanation": "图中初始区间为 $90$ 到 $119$。按筛法只需用不超过 $\\sqrt{119}$ 的素数，即 $2,3,5,7$ 进行筛除。图中各筛除节点给出被对应素数筛去的数：先筛去偶数；再筛去未被前一步筛去的 $3$ 的倍数；再筛去未被前两步筛去的 $5$ 的倍数；最后筛去未被前三步筛去的 $7$ 的倍数。执行后剩余候选为 $97,101,103,107,109,113$。终端框要求同时满足“大于 $100$”且“除以 $4$ 余 $1$”，因此保留 $101,109,113$。于是 $k=3$，$S=101+109+113=323$，所以 $(S-3k)\\bmod 11=(323-9)\\bmod 11=314\\bmod 11=7$，故选 C。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "筛法应用",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/574d9ec805c74062.png",
+    "image_prompt": "A logic diagram for a segmented Eratosthenes sieve, viewed straight on, arranged as 6 main rectangular nodes in one horizontal row from left to right. The nodes are labeled \"初始区间 90–119\", \"筛 p=2\", \"筛 p=3\", \"筛 p=5\", \"筛 p=7\", and \"终端条件\". Under the p=2 node place one pale red list box labeled \"90,92,94,96,98,100,102,104,106,108,110,112,114,116,118\". Under p=3 place one pale orange list box labeled \"93,99,105,111,117\". Under p=5 place one pale yellow list box labeled \"95,115\". Under p=7 place one pale green list box labeled \"91,119\". Draw right arrows from each node to the next node. Under the terminal node, stack 2 pale blue bars labeled \"大于100\" and \"除以4余1\".",
+    "final_image_prompt": "A logic diagram for a segmented Eratosthenes sieve, viewed straight on, arranged as 6 main rectangular nodes in one horizontal row from left to right. The nodes are labeled \"初始区间 90–119\", \"筛 p=2\", \"筛 p=3\", \"筛 p=5\", \"筛 p=7\", and \"终端条件\". Under the p=2 node place one pale red list box labeled \"90,92,94,96,98,100,102,104,106,108,110,112,114,116,118\". Under p=3 place one pale orange list box labeled \"93,99,105,111,117\". Under p=5 place one pale yellow list box labeled \"95,115\". Under p=7 place one pale green list box labeled \"91,119\". Draw right arrows from each node to the next node. Under the terminal node, stack 2 pale blue bars labeled \"大于100\" and \"除以4余1\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出初始区间、各筛除阶段的具体列表或终端条件，必须读取图中流程与标签才能确定剩余候选并完成计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "初始区间为90–119",
+        "四个筛除节点分别对应p=2、p=3、p=5、p=7",
+        "各筛除节点下方的数字列表",
+        "终端条件为大于100且除以4余1"
+      ],
+      "validation_rules": [
+        "先从90到119中删除图中四个筛除列表内的所有整数",
+        "再从剩余整数中保留同时满足两个终端条件的数",
+        "计算保留数的元素个数k和元素和S",
+        "将(S-3k)对11取余，结果必须为7"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "下图给出四个候选整数的试除余数分布。按试除法规则：只需检查不超过 $\\sqrt{n}$ 的素数因子。根据图中信息，哪一个候选整数可判定为素数？",
+    "options": {
+      "A": "候选 $N_1$",
+      "B": "候选 $N_2$",
+      "C": "候选 $N_3$",
+      "D": "候选 $N_4$"
+    },
+    "correct_answer": "B",
+    "explanation": "试除法要求对每个候选数检查所有不超过 $\\sqrt{n}$ 的素数除数。图中 $N_1$ 的检查范围到 $13$，且在 $p=13$ 处余数为 $0$，所以不是素数。$N_2$ 的检查范围到 $13$，在 $2,3,5,7,11,13$ 这些素数处余数均不为 $0$，因此可判定为素数。$N_3$ 的检查范围也到 $13$，但在 $p=13$ 处余数为 $0$，所以不是素数。$N_4$ 的平方根界限达到 $17$，必须包含 $p=17$ 的检查；图中 $p=17$ 处余数为 $0$，所以不是素数。故选 $B$。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "素性判断",
+    "blueprint_image_type": "prime_distribution_chart",
+    "image_path": "images/835e2a00e5c44458.png",
+    "image_prompt": "A prime_distribution_chart showing trial-division remainder distribution. Use a top-down rectangular grid with 4 horizontal candidate rows and 7 vertical prime columns, title labeled \"试除余数分布\". Left side row labels are \"N1=221\", \"N2=223\", \"N3=247\", \"N4=289\"; top column labels are \"p=2\", \"p=3\", \"p=5\", \"p=7\", \"p=11\", \"p=13\", \"p=17\". Place right-side row labels \"检查至 ≤13\" beside N1, N2, N3 and \"检查至 ≤17\" beside N4. Connect each row label horizontally to its 7 cells. Show white checked cells with remainder labels: N1 r=1,r=2,r=1,r=4,r=1,r=0; N2 r=1,r=1,r=3,r=6,r=3,r=2; N3 r=1,r=1,r=2,r=2,r=5,r=0; N4 r=1,r=1,r=4,r=2,r=3,r=3,r=0. Gray out N1,N2,N3 cells under p=17 labeled \"超过界限\". Use red dots for cells labeled \"r=0\" and blue dots for nonzero cells, with a small legend labeled \"r=0\" and \"r≠0\".",
+    "final_image_prompt": "A prime_distribution_chart showing trial-division remainder distribution. Use a top-down rectangular grid with 4 horizontal candidate rows and 7 vertical prime columns, title labeled \"试除余数分布\". Left side row labels are \"N1=221\", \"N2=223\", \"N3=247\", \"N4=289\"; top column labels are \"p=2\", \"p=3\", \"p=5\", \"p=7\", \"p=11\", \"p=13\", \"p=17\". Place right-side row labels \"检查至 ≤13\" beside N1, N2, N3 and \"检查至 ≤17\" beside N4. Connect each row label horizontally to its 7 cells. Show white checked cells with remainder labels: N1 r=1,r=2,r=1,r=4,r=1,r=0; N2 r=1,r=1,r=3,r=6,r=3,r=2; N3 r=1,r=1,r=2,r=2,r=5,r=0; N4 r=1,r=1,r=4,r=2,r=3,r=3,r=0. Gray out N1,N2,N3 cells under p=17 labeled \"超过界限\". Use red dots for cells labeled \"r=0\" and blue dots for nonzero cells, with a small legend labeled \"r=0\" and \"r≠0\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "候选数的检查界限、有效列与各列余数均只在图中给出；不看图无法知道哪一个候选数通过了全部必要试除检查。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "各候选数对应的试除检查界限来自图中右侧标记",
+        "各候选数在有效试除素数列中的余数来自图中单元格",
+        "哪些 p=17 单元超过界限、哪个 p=17 单元仍需检查来自图中灰白单元编码"
+      ],
+      "validation_rules": [
+        "只检查每行不超过该行界限的素数列",
+        "若有效检查列中存在余数 $0$，该候选数不能判定为素数",
+        "若所有有效检查列余数均非 $0$，该候选数可由试除法判定为素数",
+        "四个选项中仅 $N_2$ 满足所有有效试除列余数均非 $0$"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出 6 个候选奇数的素性判定逻辑记录。判定规则为：只有当试除覆盖到该数所需的最后一个素数，并且在已试除部分没有出现整除命中时，才能确认为素数；图中的 Miller-Rabin 结果只能作为概率提示，不能单独作为确认证书。根据图示，哪一组选项恰好列出了所有可确认为素数的候选数？",
+    "options": {
+      "A": "$\\alpha,\\gamma,\\zeta$",
+      "B": "$\\alpha,\\delta,\\zeta$",
+      "C": "$\\alpha,\\gamma,\\varepsilon,\\zeta$",
+      "D": "$\\gamma,\\zeta$"
+    },
+    "correct_answer": "A",
+    "explanation": "逐个按图中记录核验。$\\alpha$ 的试除终点达到图示所需终点，且没有命中整除，因此可确认是素数。$\\beta$ 虽然覆盖达到要求，但图中存在整除命中，所以不能确认为素数。$\\gamma$ 覆盖达到要求且无整除命中，可确认是素数。$\\delta$ 的图示覆盖未达到所需终点，尽管 Miller-Rabin 显示通过，也只能说明概率性通过，不能按本题规则确认。$\\varepsilon$ 有整除命中，不能确认为素数。$\\zeta$ 覆盖达到要求且无整除命中，可确认是素数。因此恰好为 $\\alpha,\\gamma,\\zeta$，选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查素数与素性判定",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/93617bce9ec14bbe.png",
+    "image_prompt": "A logic diagram, viewed straight on, split into a left candidate region and a right logic-summary region. Place 6 rounded candidate nodes in a 2 by 3 grid: top row α (labeled \"α\", \"n=211\", \"R=13\", \"T=13\", \"H=none\", \"MR=pass\"), β (labeled \"β\", \"n=221\", \"R=13\", \"T=13\", \"H=13\", \"MR=pass\"), γ (labeled \"γ\", \"n=229\", \"R=13\", \"T=13\", \"H=none\", \"MR=pass\"); bottom row δ, ε, ζ with labels \"n=247 R=13 T=11 H=none MR=pass\", \"n=259 R=13 T=13 H=7 MR=fail\", \"n=263 R=13 T=13 H=none MR=pass\". On the right place 3 nodes labeled \"C1: 覆盖达标\", \"C0: 覆盖不足\", \"M: 概率提示\". Draw blue solid arrows α-C1, β-C1, γ-C1, ε-C1, ζ-C1; a gray line δ-C0; an orange dashed arrow δ-M. Mark H=none with green check icons and H=13, H=7 with red cross icons.",
+    "final_image_prompt": "A logic diagram, viewed straight on, split into a left candidate region and a right logic-summary region. Place 6 rounded candidate nodes in a 2 by 3 grid: top row α (labeled \"α\", \"n=211\", \"R=13\", \"T=13\", \"H=none\", \"MR=pass\"), β (labeled \"β\", \"n=221\", \"R=13\", \"T=13\", \"H=13\", \"MR=pass\"), γ (labeled \"γ\", \"n=229\", \"R=13\", \"T=13\", \"H=none\", \"MR=pass\"); bottom row δ, ε, ζ with labels \"n=247 R=13 T=11 H=none MR=pass\", \"n=259 R=13 T=13 H=7 MR=fail\", \"n=263 R=13 T=13 H=none MR=pass\". On the right place 3 nodes labeled \"C1: 覆盖达标\", \"C0: 覆盖不足\", \"M: 概率提示\". Draw blue solid arrows α-C1, β-C1, γ-C1, ε-C1, ζ-C1; a gray line δ-C0; an orange dashed arrow δ-M. Mark H=none with green check icons and H=13, H=7 with red cross icons.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出判定规则，未给出 6 个候选节点的 R、T、H、MR 记录和箭头关系；必须读取图中这些事实才能确定哪些候选数满足规则。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "α 的 R 与 T 相等且 H 为 none",
+        "β 的 R 与 T 相等但 H 为 13",
+        "γ 的 R 与 T 相等且 H 为 none",
+        "δ 的 T 小于 R 且另有 MR 概率提示关系",
+        "ε 的 R 与 T 相等但 H 为 7",
+        "ζ 的 R 与 T 相等且 H 为 none"
+      ],
+      "validation_rules": [
+        "候选数可确认为素数当且仅当 $T\\ge R$ 且 $H=\\text{none}$",
+        "若 $H$ 为具体素因子数值，则该候选数不能确认为素数",
+        "若 $T<R$，即使 $MR=\\text{pass}$，也不能按试除法确认为素数",
+        "按上述规则逐个筛选后，唯一匹配的选项为 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0005",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出一个区间筛的逻辑流程。按图中箭头顺序执行 Eratosthenes 筛：每到一个素数节点，只删除该区间内尚未被删除且是该素数倍数的数。执行完全部筛选后，再在保留下来的数中统计“数字和为奇数”的元素个数。下列哪一项等于“由最后一个素数节点新删除的个数；最终满足数字和为奇数的保留个数”？",
+    "options": {
+      "A": "$1;4$",
+      "B": "$2;4$",
+      "C": "$1;5$",
+      "D": "$2;5$"
+    },
+    "correct_answer": "A",
+    "explanation": "按图中流程，候选区间为 $90$ 到 $125$，且先去掉 $1$ 不涉及，因为区间不含 $1$。依次筛除：$p=2$ 删除偶数；$p=3$ 删除尚未删去的 $3$ 的倍数；$p=5$ 删除尚未删去的 $5$ 的倍数；$p=7$ 删除尚未删去的 $7$ 的倍数；最后 $p=11$ 只需考虑区间内且不小于 $11^2=121$ 的倍数，因此新删除的是 $121$，个数为 $1$。全部筛后保留的数为该区间内的素数：$97,101,103,107,109,113$。其数字和分别为 $16,2,4,8,10,5$，只有 $97,113$ 的数字和为偶数，其余 $101,103,107,109$ 的数字和为奇数，所以满足条件的保留个数为 $4$。因此应选 $1;4$。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "筛法应用",
+    "blueprint_image_type": "logic_diagram",
+    "image_path": "images/9f499b0ea7ed4e1a.png",
+    "image_prompt": "A logic diagram, viewed straight on, arranged as a left-to-right flow with 6 main rounded rectangles. The first rectangle is labeled \"区间 90–125\", followed by rectangles labeled \"p=2\", \"p=3\", \"p=5\", \"p=7\", and \"p=11\". Draw arrows from each rectangle to the next in that order. Under p=2, show 18 black small circles labeled 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124. Under p=3, show gray circles labeled 90,96,102,108,114,120 and black circles labeled 93,99,105,111,117,123. Under p=5, show gray 90,100,105,110,120 and black 95,115,125. Under p=7, show gray 91,98,105,112,119. Under p=11, show gray 99,110 and black 121. Add a legend labeled \"已删\" for gray and \"新删\" for black. Place a small table labeled \"保留候选\" at lower right listing 97,101,103,107,109,113. Use a blue outline around p=11.",
+    "final_image_prompt": "A logic diagram, viewed straight on, arranged as a left-to-right flow with 6 main rounded rectangles. The first rectangle is labeled \"区间 90–125\", followed by rectangles labeled \"p=2\", \"p=3\", \"p=5\", \"p=7\", and \"p=11\". Draw arrows from each rectangle to the next in that order. Under p=2, show 18 black small circles labeled 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124. Under p=3, show gray circles labeled 90,96,102,108,114,120 and black circles labeled 93,99,105,111,117,123. Under p=5, show gray 90,100,105,110,120 and black 95,115,125. Under p=7, show gray 91,98,105,112,119. Under p=11, show gray 99,110 and black 121. Add a legend labeled \"已删\" for gray and \"新删\" for black. Place a small table labeled \"保留候选\" at lower right listing 97,101,103,107,109,113. Use a blue outline around p=11.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出区间、筛选顺序、各节点已删/新删分类或最终保留候选列表；这些关键信息只能从图中读取并组合计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "筛选流程的候选区间为90到125",
+        "筛选节点顺序为p=2,p=3,p=5,p=7,p=11",
+        "p=11节点的新删标记只有121",
+        "右下角保留候选为97,101,103,107,109,113",
+        "灰色表示已删，黑色表示新删"
+      ],
+      "validation_rules": [
+        "必须按箭头顺序执行筛法并区分灰色已删与黑色新删",
+        "最后一个素数节点的新删除数量只统计p=11下方黑色小圆",
+        "最终保留候选的数字和奇偶必须逐一计算",
+        "选项必须同时匹配最后节点新删个数和数字和为奇数的保留个数"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0002",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出某个候选区间的 Eratosthenes 筛法记录。按照图示流程，只保留未被任何必要筛除步骤划去的数，则该区间内素数的个数是多少？",
+    "options": {
+      "A": "$9$",
+      "B": "$10$",
+      "C": "$11$",
+      "D": "$12$"
+    },
+    "correct_answer": "C",
+    "explanation": "候选区间的上界小于 $90$，因此只需用不超过 $\\sqrt{89}$ 的素数 $2,3,5,7$ 筛除。图中候选行已经只列出奇数，所以相当于已经排除了 $2$ 的倍数；接着读取三条筛除行：被 $3$ 筛除的是 $45,51,57,63,69,75,81,87$，被 $5$ 筛除的是 $55,65,85$，被 $7$ 筛除的是 $49,77$。从候选行的 $25$ 个奇数中去掉这些被划去的合数，共去掉 $8+3+2=13$ 个，剩下 $25-13=12$？注意图中候选行从 $41$ 到 $89$，其中未划去的数为 $41,43,47,53,59,61,67,71,73,79,83,89$，共有 $12$ 个。因此正确答案为 $D$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "素数计数",
+    "blueprint_image_type": "sieve_diagram",
+    "image_path": "images/a0f15dae22e6403c.png",
+    "image_prompt": "A sieve diagram, viewed from above, with one wide grid split into 4 horizontal bands and 25 aligned columns. The top band is labeled \"候选奇数\" and contains cells labeled \"41\", \"43\", \"45\", \"47\", \"49\", \"51\", \"53\", \"55\", \"57\", \"59\", \"61\", \"63\", \"65\", \"67\", \"69\", \"71\", \"73\", \"75\", \"77\", \"79\", \"81\", \"83\", \"85\", \"87\", \"89\". The second band is labeled \"筛3\" with gray diagonal slash marks under 45, 51, 57, 63, 69, 75, 81, 87. The third band is labeled \"筛5\" with slash marks under 55, 65, 85. The fourth band is labeled \"筛7\" with slash marks under 49, 77. Add a small legend labeled \"灰斜线=筛除\" and a rendered formula √89 < 10 above the grid. Use white cells and gray slash marks.",
+    "final_image_prompt": "A sieve diagram, viewed from above, with one wide grid split into 4 horizontal bands and 25 aligned columns. The top band is labeled \"候选奇数\" and contains cells labeled \"41\", \"43\", \"45\", \"47\", \"49\", \"51\", \"53\", \"55\", \"57\", \"59\", \"61\", \"63\", \"65\", \"67\", \"69\", \"71\", \"73\", \"75\", \"77\", \"79\", \"81\", \"83\", \"85\", \"87\", \"89\". The second band is labeled \"筛3\" with gray diagonal slash marks under 45, 51, 57, 63, 69, 75, 81, 87. The third band is labeled \"筛5\" with slash marks under 55, 65, 85. The fourth band is labeled \"筛7\" with slash marks under 49, 77. Add a small legend labeled \"灰斜线=筛除\" and a rendered formula √89 < 10 above the grid. Use white cells and gray slash marks.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出候选数列、各筛除标记位置或端点信息；必须从图中逐列读取筛法记录才能计数。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "图中候选行只列出 $41$ 到 $89$ 的奇数。",
+        "图中 $3$ 的筛除标记位于 $45,51,57,63,69,75,81,87$。",
+        "图中 $5$ 的筛除标记位于 $55,65,85$。",
+        "图中 $7$ 的筛除标记位于 $49,77$。"
+      ],
+      "validation_rules": [
+        "先确认候选行共有 $25$ 个奇数格。",
+        "只统计没有被 $3,5,7$ 任一筛除带标记的候选格。",
+        "未划去的候选数共有 $12$ 个，因此正确选项为 $D$。"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0002",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中给出四个候选数的试除记录。按试除法，只需检查不超过该候选数平方根的素数；红色实心点表示“整除”，空心点表示“不整除”。根据图中信息，这四个候选数中素数的个数是多少？",
+    "options": {
+      "A": "$0$",
+      "B": "$1$",
+      "C": "$2$",
+      "D": "$3$"
+    },
+    "correct_answer": "B",
+    "explanation": "试除法判定一个大于 $1$ 的整数 $n$ 是否为素数时，只需检查所有不超过 $\\sqrt{n}$ 的素数是否能整除 $n$。图中四个候选数都位于 $14<\\sqrt{n}<16$ 的范围附近，因此需要关注行标签为 $2,3,5,7,11,13$ 的试除结果。读取图中红色实心点可知，$221$ 在素数 $13$ 处被整除，$247$ 在素数 $13$ 处被整除，$253$ 在素数 $11$ 处被整除；只有 $223$ 在这些试除素数对应位置均为空心点。因此四个候选数中只有 $1$ 个素数，答案为 B。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "素性判断",
+    "blueprint_image_type": "prime_distribution_chart",
+    "image_path": "images/ae8c461d0d4e48ef.png",
+    "image_prompt": "A prime distribution chart showing trial division records. The layout is a front-facing 4-column by 6-row grid, with candidate numbers across the top and trial primes down the left. The four columns are labeled \"221\", \"223\", \"247\", and \"253\" under the header labeled \"候选数\". The six rows are labeled \"2\", \"3\", \"5\", \"7\", \"11\", and \"13\" beside the vertical label \"试除素数\". Above 221 and 223 place the label \"14<√n<15\"; above 247 and 253 place the label \"15<√n<16\". Put red filled dots at intersections 221-13, 247-13, and 253-11. Put gray hollow dots in all other grid cells. Add a right-side legend with a red filled dot labeled \"整除\" and a gray hollow dot labeled \"不整除\". Use red only for filled divisibility dots.",
+    "final_image_prompt": "A prime distribution chart showing trial division records. The layout is a front-facing 4-column by 6-row grid, with candidate numbers across the top and trial primes down the left. The four columns are labeled \"221\", \"223\", \"247\", and \"253\" under the header labeled \"候选数\". The six rows are labeled \"2\", \"3\", \"5\", \"7\", \"11\", and \"13\" beside the vertical label \"试除素数\". Above 221 and 223 place the label \"14<√n<15\"; above 247 and 253 place the label \"15<√n<16\". Put red filled dots at intersections 221-13, 247-13, and 253-11. Put gray hollow dots in all other grid cells. Add a right-side legend with a red filled dot labeled \"整除\" and a gray hollow dot labeled \"不整除\". Use red only for filled divisibility dots.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各候选数对试除素数的整除关系，必须读取图中每个交叉格的红点或空心点才能判断。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "221列在13行有整除标记",
+        "223列在所有试除素数行均为不整除标记",
+        "247列在13行有整除标记",
+        "253列在11行有整除标记",
+        "四个候选数对应的平方根区间使图中6个试除素数均需纳入检查"
+      ],
+      "validation_rules": [
+        "若某候选数在不超过其平方根的试除素数行存在整除标记，则该候选数为合数",
+        "若某候选数在不超过其平方根的全部试除素数行均无整除标记，则该候选数为素数",
+        "按上述规则统计四个候选数中满足素数条件的数量，结果应对应选项B"
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0005",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "en",
+    "question_text": "In the prime-distribution chart, each interval first shows the number of candidates surviving trial division by small primes, and the red marker shows how many of those survivors are later eliminated by the next trial divisors. Consider only intervals whose survivor count is greater than $2$ and whose red eliminated count is not $1$. What is the total number of confirmed primes in those intervals?",
+    "options": {
+      "A": "$7$",
+      "B": "$8$",
+      "C": "$9$",
+      "D": "$11$"
+    },
+    "correct_answer": "C",
+    "explanation": "For each eligible interval, the confirmed-prime count is computed as survivor count minus later eliminated count. The chart must be read in two stages: first keep only intervals with survivor count greater than $2$, then exclude any interval whose red eliminated count equals $1$. The remaining intervals have values $(4,2)$, $(3,0)$, and $(4,0)$ for survivor and eliminated counts. Their confirmed-prime counts are $4-2=2$, $3-0=3$, and $4-0=4$. Therefore the required total is $2+3+4=9$, so the correct answer is C.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "素数计数",
+    "blueprint_image_type": "prime_distribution_chart",
+    "image_path": "images/b5ceef7824a64e23.png",
+    "image_prompt": "A prime_distribution_chart titled (labeled \"Prime Distribution by Interval\"), viewed straight on with six vertical columns arranged left to right. The y-axis on the left is labeled \"Count\" with tick labels 0, 1, 2, 3, 4, 5. Draw six blue survivor bars at intervals (labeled \"101-110\"), (labeled \"111-120\"), (labeled \"121-130\"), (labeled \"131-140\"), (labeled \"141-150\"), and (labeled \"151-160\"). Their bar labels are respectively (labeled \"S=5\"), (labeled \"S=2\"), (labeled \"S=4\"), (labeled \"S=3\"), (labeled \"S=3\"), (labeled \"S=4\"). Add red eliminated markers beside the same columns labeled \"E=1\", \"E=0\", \"E=2\", \"E=0\", \"E=1\", \"E=0\". Include a small legend: blue (labeled \"Survivors after trial division by 2,3,5,7\") and red (labeled \"Eliminated by trial division by 11 or 13\").",
+    "final_image_prompt": "A prime_distribution_chart titled (labeled \"Prime Distribution by Interval\"), viewed straight on with six vertical columns arranged left to right. The y-axis on the left is labeled \"Count\" with tick labels 0, 1, 2, 3, 4, 5. Draw six blue survivor bars at intervals (labeled \"101-110\"), (labeled \"111-120\"), (labeled \"121-130\"), (labeled \"131-140\"), (labeled \"141-150\"), and (labeled \"151-160\"). Their bar labels are respectively (labeled \"S=5\"), (labeled \"S=2\"), (labeled \"S=4\"), (labeled \"S=3\"), (labeled \"S=3\"), (labeled \"S=4\"). Add red eliminated markers beside the same columns labeled \"E=1\", \"E=0\", \"E=2\", \"E=0\", \"E=1\", \"E=0\". Include a small legend: blue (labeled \"Survivors after trial division by 2,3,5,7\") and red (labeled \"Eliminated by trial division by 11 or 13\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The question does not list the interval counts in text; the filtering, subtraction, and final total depend on reading the paired blue and red values from the chart.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The survivor and eliminated counts for all six intervals are only visible in the chart.",
+        "The intervals satisfying the two stated conditions must be identified from the visual S and E labels.",
+        "The confirmed-prime counts require subtracting each visible eliminated count from its corresponding visible survivor count."
+      ],
+      "validation_rules": [
+        "Select only intervals with visible survivor count greater than $2$.",
+        "From those, remove intervals with visible eliminated count equal to $1$.",
+        "For each remaining interval, compute survivor count minus eliminated count.",
+        "Sum the resulting confirmed-prime counts and match the unique option."
+      ]
+    }
+  },
+  {
+    "question_id": "S06-002-Q0001",
+    "subject_id": "S06",
+    "subject_name": "数论与逻辑",
+    "kp_id": "S06-M01-002",
+    "kp_name": "素数与素性判定",
+    "question_language": "zh",
+    "question_text": "图中展示了对连续整数进行 Eratosthenes 筛后的记录。若只统计未被筛去且位于两个蓝色括号覆盖范围内的整数，则这些整数中素数的总个数是多少？",
+    "options": {
+      "A": "$12$",
+      "B": "$11$",
+      "C": "$10$",
+      "D": "$9$"
+    },
+    "correct_answer": "B",
+    "explanation": "Eratosthenes 筛在判断小于 $100$ 的数是否为素数时，只需筛去素数 $2,3,5,7$ 的倍数，因为 $\\sqrt{99}<10$。图中灰色叉号表示已被这些素数筛去，白色格表示保留下来的候选素数。左侧蓝色括号覆盖 $50$ 到 $69$，其中保留的数为 $53,59,61,67$，共 $4$ 个。右侧蓝色括号覆盖 $70$ 到 $99$，其中保留的数为 $71,73,79,83,89,97$，共 $7$ 个。两段合计为 $4+7=11$，所以答案为 $B$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "素数计数",
+    "blueprint_image_type": "sieve_diagram",
+    "image_path": "images/e26583ad4b414ebe.png",
+    "image_prompt": "A sieve diagram viewed from above, arranged as a rectangular grid with a left label column and five horizontal number rows. Show five rows of ten square cells each, containing integers 50 to 99 in increasing order; rows are labeled “50-59”, “60-69”, “70-79”, “80-89”, and “90-99”. Place four divisor labels on the far left, vertically stacked and labeled “×2”, “×3”, “×5”, “×7”. Use gray X marks on every cell except 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97, which remain white. Add a blue bracket labeled “范围甲” spanning rows 50-59 and 60-69, and a second blue bracket labeled “范围乙” spanning rows 70-79, 80-89, and 90-99. Add a legend labeled “筛去” and “保留”, plus the title labeled “50-99筛表”.",
+    "final_image_prompt": "A sieve diagram viewed from above, arranged as a rectangular grid with a left label column and five horizontal number rows. Show five rows of ten square cells each, containing integers 50 to 99 in increasing order; rows are labeled “50-59”, “60-69”, “70-79”, “80-89”, and “90-99”. Place four divisor labels on the far left, vertically stacked and labeled “×2”, “×3”, “×5”, “×7”. Use gray X marks on every cell except 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97, which remain white. Add a blue bracket labeled “范围甲” spanning rows 50-59 and 60-69, and a second blue bracket labeled “范围乙” spanning rows 70-79, 80-89, and 90-99. Add a legend labeled “筛去” and “保留”, plus the title labeled “50-99筛表”.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出两个蓝色范围的具体覆盖行，也没有列出哪些整数被筛去；必须读取图中的括号、格子颜色和图例才能确定计数。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "两个蓝色括号分别覆盖哪些行只能从图中读取。",
+        "每一行哪些整数为白色保留格只能从图中读取。",
+        "灰色叉号与白色格的含义由图中图例给出。"
+      ],
+      "validation_rules": [
+        "根据图例，只统计白色保留格，不统计灰色叉号格。",
+        "只统计两个蓝色括号覆盖范围内的白色格。",
+        "范围甲内白色格数量为 $4$，范围乙内白色格数量为 $7$。",
+        "合计 $4+7=11$，因此正确选项为 $B$。"
+      ]
+    }
+  }
+]

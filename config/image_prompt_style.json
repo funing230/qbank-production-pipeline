@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "frozen": "2026-06-21",
+    "description": "GPT image_prompt 生成配置 — pipeline 代码读取此文件"
+  },
+  "style_suffix": "Clean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+  "constraints": {
+    "min_words": 50,
+    "max_words": 200,
+    "target_words_min": 100,
+    "target_words_max": 160,
+    "max_main_elements": 8
+  },
+  "validation": {
+    "reject_if_contains_suffix_keywords": [
+      "textbook illustration",
+      "no shading",
+      "no 3D perspective",
+      "no drop shadows",
+      "no gradients"
+    ],
+    "required_opening_patterns": [
+      "^A\\s",
+      "^An\\s",
+      "^Diagram",
+      "^Chart",
+      "^Graph",
+      "^Engineering",
+      "^Technical",
+      "^Scientific",
+      "^Physics",
+      "^Chemical",
+      "^Biological",
+      "^Mechanical",
+      "^Electrical",
+      "^Circuit",
+      "^Structure",
+      "^Cross-section",
+      "^Flowchart",
+      "^Table",
+      "^Plot",
+      "^Map",
+      "^Schematic",
+      "^Venn",
+      "^Bar",
+      "^Scatter",
+      "^Line",
+      "^Histogram",
+      "^Tree",
+      "^Network"
+    ]
+  },
+  "assembly": {
+    "template": "{image_prompt}\n{style_suffix}",
+    "note": "pipeline在调用gpt-image-2前按此模板拼接final_prompt"
+  }
+}

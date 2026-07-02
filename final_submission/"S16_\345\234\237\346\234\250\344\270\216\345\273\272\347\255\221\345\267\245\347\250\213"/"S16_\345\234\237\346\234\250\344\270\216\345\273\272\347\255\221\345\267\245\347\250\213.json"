@@ -1,0 +1,447 @@
+[
+  {
+    "question_id": "S16-001-Q0002",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "如图所示，刚性平面构件上作用若干平面力和一个自由力偶。取点 $O$ 为简化中心，逆时针力矩为正。若将图示力系等效为一个合力且不附加力偶，则该合力的作用线与 $x$ 轴的交点横坐标最接近下列哪一项？",
+    "options": {
+      "A": "$6.0\\ \\mathrm{m}$",
+      "B": "$4.8\\ \\mathrm{m}$",
+      "C": "$5.2\\ \\mathrm{m}$",
+      "D": "$6.8\\ \\mathrm{m}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出各力的作用点、方向和自由力偶方向。取逆时针为正。各力对 $O$ 的力矩按 $M_O=xF_y-yF_x$ 计算：左侧竖向力通过 $O$ 的竖线，力矩为 $0$；中部水平向右力的力矩为 $-2\\times 40=-80\\ \\mathrm{kN\\cdot m}$；右下斜向力由 $3$-$4$-$5$ 方向三角形得分量 $F_x=-30\\ \\mathrm{kN}$、$F_y=-40\\ \\mathrm{kN}$，其力矩为 $5\\times(-40)-0\\times(-30)=-200\\ \\mathrm{kN\\cdot m}$；右上竖向力的力矩为 $2\\times 20=40\\ \\mathrm{kN\\cdot m}$；顺时针自由力偶为 $-60\\ \\mathrm{kN\\cdot m}$。故总力矩为 $M_O=-300\\ \\mathrm{kN\\cdot m}$。合力分量为 $R_x=40-30=10\\ \\mathrm{kN}$，$R_y=-30-40+20=-50\\ \\mathrm{kN}$。若合力作用线与 $x$ 轴交于 $(a,0)$，则 $M_O=aR_y-0\\cdot R_x=a(-50)$，所以 $a=6.0\\ \\mathrm{m}$。因此选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "力系简化",
+    "blueprint_image_type": "load_diagram",
+    "image_path": "images/3fb8f4184d9a42ef.png",
+    "image_prompt": "A load diagram for planar statics, viewed straight-on with a small rigid plate in the center and x-y axes starting at the lower-left origin. Show 4 labeled points on the plate: A at the y-axis above O, B in the middle right, C on the x-axis to the right, and D near the upper middle. Draw 4 force arrows: at A a downward arrow labeled \"30 kN\", at B a rightward arrow labeled \"40 kN\", at C a diagonal arrow down-left labeled \"50 kN\", and at D an upward arrow labeled \"20 kN\". Add dashed projection dimensions labeled \"2 m\", \"3 m\", \"4 m\", and \"5 m\" matching the point positions. Next to the C arrow, draw one direction triangle labeled \"3\", \"4\", \"5\". Draw one red clockwise curved couple arrow labeled \"60 kN·m\" at the plate center. Label axes \"x\", \"y\", and origin \"O\".",
+    "final_image_prompt": "A load diagram for planar statics, viewed straight-on with a small rigid plate in the center and x-y axes starting at the lower-left origin. Show 4 labeled points on the plate: A at the y-axis above O, B in the middle right, C on the x-axis to the right, and D near the upper middle. Draw 4 force arrows: at A a downward arrow labeled \"30 kN\", at B a rightward arrow labeled \"40 kN\", at C a diagonal arrow down-left labeled \"50 kN\", and at D an upward arrow labeled \"20 kN\". Add dashed projection dimensions labeled \"2 m\", \"3 m\", \"4 m\", and \"5 m\" matching the point positions. Next to the C arrow, draw one direction triangle labeled \"3\", \"4\", \"5\". Draw one red clockwise curved couple arrow labeled \"60 kN·m\" at the plate center. Label axes \"x\", \"y\", and origin \"O\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何力的作用点、方向、斜向力分量比例或自由力偶转向；这些都是完成合力与力矩简化计算所必需的信息，必须由图读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各集中力的作用点坐标来自图中尺寸和点位",
+        "各集中力的方向和大小来自图中箭头及标签",
+        "斜向力的分量比例来自图中 3-4-5 方向三角形",
+        "自由力偶的大小和顺时针方向来自图中弯箭头"
+      ],
+      "validation_rules": [
+        "按图中力值与方向求得合力分量 $R_x=10\\ \\mathrm{kN}$、$R_y=-50\\ \\mathrm{kN}$",
+        "按 $M_O=xF_y-yF_x$ 并计入顺时针自由力偶求得 $M_O=-300\\ \\mathrm{kN\\cdot m}$",
+        "合力作用线与 $x$ 轴交点满足 $M_O=aR_y$",
+        "计算得到 $a=6.0\\ \\mathrm{m}$，应选择 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-001-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "如图所示，左侧为某平面力系的数据图，右侧给出将其向点 $O$ 简化后的四个候选等效表示。取逆时针力矩为正，哪一个候选表示与原力系等效？",
+    "options": {
+      "A": "方案 I",
+      "B": "方案 II",
+      "C": "方案 III",
+      "D": "方案 IV"
+    },
+    "correct_answer": "C",
+    "explanation": "平面力系向点 $O$ 简化时，应同时保持合力分量与对 $O$ 的合力矩不变。由图读出各力分量并求和：$R_x=30-10+20-25=15\\ \\mathrm{kN}$，$R_y=20+40-30-10=20\\ \\mathrm{kN}$。各力对 $O$ 的矩为 $M_i=x_iF_{yi}-y_iF_{xi}$，故 $M_A=2\\times20-1\\times30=10\\ \\mathrm{kN\\cdot m}$，$M_B=(-1)\\times40-3\\times(-10)=-10\\ \\mathrm{kN\\cdot m}$，$M_C=4\\times(-30)-(-2)\\times20=-80\\ \\mathrm{kN\\cdot m}$，$M_D=(-3)\\times(-10)-(-1)\\times(-25)=5\\ \\mathrm{kN\\cdot m}$。集中力矩之和为 $-75\\ \\mathrm{kN\\cdot m}$，再加上图中自由力偶 $+55\\ \\mathrm{kN\\cdot m}$，得 $M_O=-20\\ \\mathrm{kN\\cdot m}$。因此等效简化结果应为 $R_x=15\\ \\mathrm{kN}$、$R_y=20\\ \\mathrm{kN}$、$M_O=-20\\ \\mathrm{kN\\cdot m}$，对应方案 III。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "等效判断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/7e875e50ee904a2e.png",
+    "image_prompt": "A data visualization diagram for statics equivalence. The layout is split into a left region labeled \"原力系\" and a right region labeled \"候选简化结果\", with point O labeled as the moment center near the left table. The left region contains one 4-row table with columns labeled \"点\", \"x\", \"y\", \"Fx\", \"Fy\": row A has 2 m, 1 m, 30 kN, 20 kN; row B has -1 m, 3 m, -10 kN, 40 kN; row C has 4 m, -2 m, 20 kN, -30 kN; row D has -3 m, -1 m, -25 kN, -10 kN. Below it draw one counterclockwise curved arrow labeled \"自由力偶\" and \"+55 kN·m\". The right region has 4 stacked cards labeled \"方案 I\", \"方案 II\", \"方案 III\", \"方案 IV\". Card I shows Rx=15 kN, Ry=20 kN, MO=-75 kN·m; card II shows Rx=15 kN, Ry=20 kN, MO=+20 kN·m; card III shows Rx=15 kN, Ry=20 kN, MO=-20 kN·m; card IV shows Rx=5 kN, Ry=50 kN, MO=-20 kN·m. Use neutral gray card borders with no answer highlighting.",
+    "final_image_prompt": "A data visualization diagram for statics equivalence. The layout is split into a left region labeled \"原力系\" and a right region labeled \"候选简化结果\", with point O labeled as the moment center near the left table. The left region contains one 4-row table with columns labeled \"点\", \"x\", \"y\", \"Fx\", \"Fy\": row A has 2 m, 1 m, 30 kN, 20 kN; row B has -1 m, 3 m, -10 kN, 40 kN; row C has 4 m, -2 m, 20 kN, -30 kN; row D has -3 m, -1 m, -25 kN, -10 kN. Below it draw one counterclockwise curved arrow labeled \"自由力偶\" and \"+55 kN·m\". The right region has 4 stacked cards labeled \"方案 I\", \"方案 II\", \"方案 III\", \"方案 IV\". Card I shows Rx=15 kN, Ry=20 kN, MO=-75 kN·m; card II shows Rx=15 kN, Ry=20 kN, MO=+20 kN·m; card III shows Rx=15 kN, Ry=20 kN, MO=-20 kN·m; card IV shows Rx=5 kN, Ry=50 kN, MO=-20 kN·m. Use neutral gray card borders with no answer highlighting.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出候选方案编号，坐标、力分量、自由力偶以及候选数值组合都必须从图中读取，删除图片后无法计算或判断等效关系。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个受力点相对 O 的坐标",
+        "四个力的水平与竖向分量",
+        "自由力偶的大小和正号",
+        "四个候选方案中的 Rx、Ry、MO 数值组合"
+      ],
+      "validation_rules": [
+        "按 $R_x=\\sum F_x$ 验证候选的水平合力分量",
+        "按 $R_y=\\sum F_y$ 验证候选的竖向合力分量",
+        "按 $M_O=\\sum(xF_y-yF_x)+\\sum M$ 验证候选的等效力矩",
+        "只有同时满足合力分量和对 O 力矩相等的候选可判为等效力系"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-001-Q0004",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "如图所示，刚性平面构件受三 个集中力和一个力偶作用。若要把该力系等效为“一个合力且不附加力偶”，合力的大小与方向取原力系主矢，作用线通过图中一个候选点。规定逆时针力矩为正，下列哪个候选点满足等效条件？",
+    "options": {
+      "A": "点 $P$",
+      "B": "点 $Q$",
+      "C": "点 $R$",
+      "D": "点 $S$"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图读出三个力：在 $A$ 点有 $6\\,\\text{kN}$ 水平向右，在 $B$ 点有 $8\\,\\text{kN}$ 竖直向下，在 $C$ 点有 $5\\,\\text{kN}$ 水平向左；另有 $22\\,\\text{kN}\\cdot\\text{m}$ 逆时针力偶。原力系主矢为 $\\sum F_x=6-5=1\\,\\text{kN}$，$\\sum F_y=-8\\,\\text{kN}$。对 $O$ 点取矩，逆时针为正：$M_A=0\\cdot0-3\\cdot6=-18\\,\\text{kN}\\cdot\\text{m}$，$M_B=4\\cdot(-8)-3\\cdot0=-32\\,\\text{kN}\\cdot\\text{m}$，$M_C=4\\cdot0-0\\cdot(-5)=0$，加上力偶 $+22\\,\\text{kN}\\cdot\\text{m}$，得 $M_O=-28\\,\\text{kN}\\cdot\\text{m}$。若合力 $\\mathbf{R}=(1,-8)\\,\\text{kN}$ 通过候选点 $(x,y)$ 且不附加力偶，则须满足 $xR_y-yR_x=-28$，即 $-8x-y=-28$，也就是 $8x+y=28$。图中候选点坐标代入：$P(3,4)$ 满足 $8\\times3+4=28$；$Q(2,5)$ 得 $21$；$R(4,1)$ 得 $33$；$S(1,6)$ 得 $14$。因此只有点 $P$ 满足等效条件。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查静力学基本公理与力系简化",
+    "blueprint_image_type": "structural_diagram",
+    "image_path": "images/9a2da3d955c74c40.png",
+    "image_prompt": "A structural_diagram of a rigid planar L-shaped frame on a square x-y coordinate grid, viewed straight on. The grid spans x from 0 to 5 and y from 0 to 6 with unit ticks labeled in m. Draw one frame with three members: O to A vertical, A to B horizontal, B to C vertical; label O at (0,0), A at (0,3), B at (4,3), C at (4,0). Attach a rightward arrow at A labeled \"6 kN\", a downward arrow at B labeled \"8 kN\", and a leftward arrow at C labeled \"5 kN\". Draw one counterclockwise curved arrow inside the frame labeled \"22 kN·m\" and nearby text labeled \"逆时针为正\". Plot four blue hollow points labeled \"P\" at (3,4), \"Q\" at (2,5), \"R\" at (4,1), and \"S\" at (1,6). Label axes \"x\" and \"y\".",
+    "final_image_prompt": "A structural_diagram of a rigid planar L-shaped frame on a square x-y coordinate grid, viewed straight on. The grid spans x from 0 to 5 and y from 0 to 6 with unit ticks labeled in m. Draw one frame with three members: O to A vertical, A to B horizontal, B to C vertical; label O at (0,0), A at (0,3), B at (4,3), C at (4,0). Attach a rightward arrow at A labeled \"6 kN\", a downward arrow at B labeled \"8 kN\", and a leftward arrow at C labeled \"5 kN\". Draw one counterclockwise curved arrow inside the frame labeled \"22 kN·m\" and nearby text labeled \"逆时针为正\". Plot four blue hollow points labeled \"P\" at (3,4), \"Q\" at (2,5), \"R\" at (4,1), and \"S\" at (1,6). Label axes \"x\" and \"y\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各力的作用点、方向、力偶转向或候选点坐标；这些数据必须从结构图读取，缺图无法建立主矢与力矩等效条件。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "三 个集中力的大小、方向及其作用点坐标来自图片。",
+        "力偶大小和转向来自图片。",
+        "四个候选点的坐标来自图片。"
+      ],
+      "validation_rules": [
+        "由图中力求主矢，必须得到 $\\mathbf{R}=(1,-8)\\,\\text{kN}$。",
+        "由图中力和力偶对 $O$ 点取矩，必须得到 $M_O=-28\\,\\text{kN}\\cdot\\text{m}$。",
+        "候选点必须满足 $xR_y-yR_x=M_O$，即 $8x+y=28$。",
+        "四个候选点中只有点 $P$ 满足该等效条件。"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-001-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "如图所示，刚性平面构件受若干集中力和一个自由力偶作用。若将该平面力系等效为“不附加力偶的一条单一合力作用线”，取逆时针力矩为正，下列哪一项与图示力系等效？",
+    "options": {
+      "A": "合力为 $20\\,\\text{kN}$，竖直向下，作用线与 $x$ 轴交于 $x=5.5\\,\\text{m}$ 处",
+      "B": "合力为 $20\\,\\text{kN}$，竖直向下，作用线与 $x$ 轴交于 $x=2.5\\,\\text{m}$ 处",
+      "C": "合力为 $20\\,\\text{kN}$，竖直向上，作用线与 $x$ 轴交于 $x=5.5\\,\\text{m}$ 处",
+      "D": "合力为 $40\\,\\text{kN}$，竖直向下，作用线与 $x$ 轴交于 $x=2.75\\,\\text{m}$ 处"
+    },
+    "correct_answer": "A",
+    "explanation": "先由图读出各力的方向与作用点。各力在 $x$ 方向的合力为 $\\Sigma F_x=30-30=0$；在 $y$ 方向的合力为 $\\Sigma F_y=-40+40-20=-20\\,\\text{kN}$，故合力大小为 $20\\,\\text{kN}$，方向竖直向下。对点 $O$ 取矩，逆时针为正：$F_1$ 的力矩为 $-4\\times30=-120\\,\\text{kN}\\cdot\\text{m}$，$F_2$ 的力矩为 $5\\times(-40)=-200\\,\\text{kN}\\cdot\\text{m}$，$F_3$ 的力矩为 $7\\times40-1\\times(-30)=310\\,\\text{kN}\\cdot\\text{m}$，$F_4$ 的力矩为 $2\\times(-20)=-40\\,\\text{kN}\\cdot\\text{m}$，自由力偶为 $-60\\,\\text{kN}\\cdot\\text{m}$。故总力矩为 $M_O=-120-200+310-40-60=-110\\,\\text{kN}\\cdot\\text{m}$。若用一条竖直向下合力表示，设其与 $x$ 轴交于 $x=a$，则 $M_O=a(-20)$，得 $a=5.5\\,\\text{m}$。因此选 A。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "等效判断",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/c015a48cd5344234.png",
+    "image_prompt": "An engineering diagram of a rigid planar bracket force system. Show a front view with origin O at the lower left, x axis pointing right and y axis pointing upward. Draw one polygonal rigid plate with four marked points: A(1,4) near upper left, B(5,3) near upper middle, C(7,1) near lower right, and D(2,0) on the bottom edge. Add 4 force arrows: at A a rightward arrow labeled \"F1=30 kN\", at B a downward arrow labeled \"F2=40 kN\", at C a left-up oblique arrow labeled \"F3=50 kN\", and at D a downward arrow labeled \"F4=20 kN\". Near C, draw one small 3-4-5 direction triangle labeled \"3\", \"4\", \"5\" matching the left-up direction. Add one clockwise curved couple arrow in the upper right labeled \"C0=60 kN·m 顺时针\". Use black force arrows and one blue couple arrow.",
+    "final_image_prompt": "An engineering diagram of a rigid planar bracket force system. Show a front view with origin O at the lower left, x axis pointing right and y axis pointing upward. Draw one polygonal rigid plate with four marked points: A(1,4) near upper left, B(5,3) near upper middle, C(7,1) near lower right, and D(2,0) on the bottom edge. Add 4 force arrows: at A a rightward arrow labeled \"F1=30 kN\", at B a downward arrow labeled \"F2=40 kN\", at C a left-up oblique arrow labeled \"F3=50 kN\", and at D a downward arrow labeled \"F4=20 kN\". Near C, draw one small 3-4-5 direction triangle labeled \"3\", \"4\", \"5\" matching the left-up direction. Add one clockwise curved couple arrow in the upper right labeled \"C0=60 kN·m 顺时针\". Use black force arrows and one blue couple arrow.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出受力点坐标、斜向力分量关系、各力方向或自由力偶方向；必须读取图中这些事实后才能完成力系简化与等效判断。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四个受力点的坐标只由图中给出",
+        "四个集中力的大小和方向只由图中给出",
+        "斜向力的 3-4-5 分量关系只由图中给出",
+        "自由力偶的大小和顺时针方向只由图中给出"
+      ],
+      "validation_rules": [
+        "按图中坐标和方向计算 $\\Sigma F_x$ 与 $\\Sigma F_y$",
+        "按 $M_O=xF_y-yF_x$ 计算各集中力对 O 的矩，并代入图中自由力偶方向符号",
+        "用单一合力的力矩等效条件 $M_O=x_R R_y-y_R R_x$ 验证候选作用线",
+        "只有同时满足合力大小、合力方向和对 O 的总力矩等效的选项可判为正确"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-001-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "如图所示，刚性平面支架受三个位于不同点的集中力及一个自由力偶作用。取逆时针力矩为正，求该力系对点 $O$ 的等效合力矩。",
+    "options": {
+      "A": "$-71\\ \\text{kN}\\cdot\\text{m}$",
+      "B": "$-251\\ \\text{kN}\\cdot\\text{m}$",
+      "C": "$-131\\ \\text{kN}\\cdot\\text{m}$",
+      "D": "$+19\\ \\text{kN}\\cdot\\text{m}$"
+    },
+    "correct_answer": "A",
+    "explanation": "以点 $O$ 为矩心，采用 $M_O=xF_y-yF_x$，逆时针为正。图中斜向力可由方向三角形分解为 $F_{Ax}=75\\times\\frac{3}{5}=45\\ \\text{kN}$，$F_{Ay}=-75\\times\\frac{4}{5}=-60\\ \\text{kN}$，故 $M_A=2.4\\times(-60)-1.0\\times45=-189\\ \\text{kN}\\cdot\\text{m}$。点 $B$ 的竖向力矩为 $M_B=(-1.2)\\times(-50)=+60\\ \\text{kN}\\cdot\\text{m}$。点 $C$ 的水平向左力矩为 $M_C=0-(-0.8)(-40)=-32\\ \\text{kN}\\cdot\\text{m}$。自由力偶按图示为逆时针，直接代数相加 $+90\\ \\text{kN}\\cdot\\text{m}$。因此 $M_O=-189+60-32+90=-71\\ \\text{kN}\\cdot\\text{m}$，即顺时针 $71\\ \\text{kN}\\cdot\\text{m}$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "力矩计算",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/d86fc77db2dc46e5.png",
+    "image_prompt": "Technical illustration of a planar statics bracket, viewed straight on, with x-axis to the right and y-axis upward crossing at point O (labeled \"O\"). Draw one rigid L-shaped bracket with points A (labeled \"A\") on the upper right, B (labeled \"B\") on the upper left, and C (labeled \"C\") on the lower right. Show dimension labels: from O to A, \"2.4 m\" horizontally and \"1.0 m\" vertically; from O to B, \"1.2 m\" leftward and \"2.0 m\" upward; from O to C, \"3.0 m\" horizontally and \"0.8 m\" downward. Add a red force at A labeled \"75 kN\" pointing down-right with a small direction triangle labeled \"3\", \"4\", \"5\". Add a red downward force at B labeled \"50 kN\" and a red leftward force at C labeled \"40 kN\". Add one blue counterclockwise curved couple arrow labeled \"90 kN·m\".",
+    "final_image_prompt": "Technical illustration of a planar statics bracket, viewed straight on, with x-axis to the right and y-axis upward crossing at point O (labeled \"O\"). Draw one rigid L-shaped bracket with points A (labeled \"A\") on the upper right, B (labeled \"B\") on the upper left, and C (labeled \"C\") on the lower right. Show dimension labels: from O to A, \"2.4 m\" horizontally and \"1.0 m\" vertically; from O to B, \"1.2 m\" leftward and \"2.0 m\" upward; from O to C, \"3.0 m\" horizontally and \"0.8 m\" downward. Add a red force at A labeled \"75 kN\" pointing down-right with a small direction triangle labeled \"3\", \"4\", \"5\". Add a red downward force at B labeled \"50 kN\" and a red leftward force at C labeled \"40 kN\". Add one blue counterclockwise curved couple arrow labeled \"90 kN·m\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各力的作用点坐标、斜力分解方向、三力方向或自由力偶转向；这些均需从图中读取后才能完成力矩代数合成。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A点相对O点的位置坐标由图中尺寸给出。",
+        "B点相对O点的位置坐标由图中尺寸给出。",
+        "C点相对O点的位置坐标由图中尺寸给出。",
+        "A点斜向力的大小、方向和3-4-5分解关系只在图中给出。",
+        "B点力和C点力的方向与大小只在图中给出。",
+        "自由力偶的大小和转向只在图中给出。"
+      ],
+      "validation_rules": [
+        "按 $M_O=xF_y-yF_x$ 分别计算三个集中力对O点的力矩。",
+        "A点斜力必须按图示方向分解为正$x$分量和负$y$分量。",
+        "自由力偶不需要乘力臂，应按图示转向直接代数相加。",
+        "逆时针取正时，最终等效合力矩应为 $-71\\ \\text{kN}\\cdot\\text{m}$。"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-001-Q0002",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-001",
+    "kp_name": "静力学基本公理与力系简化",
+    "question_language": "zh",
+    "question_text": "图中给出某平面力系的数据汇总及四个候选简化方案。以点 $O$ 为矩心，取逆时针力矩为正。若等效条件要求合力的两个分量和对 $O$ 的合力矩均相同，哪一候选方案与原力系等效？",
+    "options": {
+      "A": "方案甲",
+      "B": "方案乙",
+      "C": "方案丙",
+      "D": "方案丁"
+    },
+    "correct_answer": "C",
+    "explanation": "由图中原力系数据读取三力及自由力偶。合力分量为 $\\sum F_x=4-2+6=8\\,\\mathrm{kN}$，$\\sum F_y=-6+5+1=0\\,\\mathrm{kN}$。对点 $O$ 的力矩为 $\\sum M_O=\\sum(xF_y-yF_x)+M_c$。逐项计算：第一力为 $1\\times(-6)-2\\times4=-14\\,\\mathrm{kN\\cdot m}$；第二力为 $3\\times5-1\\times(-2)=17\\,\\mathrm{kN\\cdot m}$；第三力为 $2\\times1-4\\times6=-22\\,\\mathrm{kN\\cdot m}$；再加自由力偶 $+7\\,\\mathrm{kN\\cdot m}$，得 $M_O=-12\\,\\mathrm{kN\\cdot m}$。再检查候选方案：方案甲合力分量虽为 $8,0$，但作用点使矩为 $-16\\,\\mathrm{kN\\cdot m}$；方案乙把合力矩调成一致，但 $F_y$ 不为零；方案丁少考虑了自由力偶导致矩不一致。方案丙的合力分量为 $8,0$，且 $xF_y-yF_x+C=2\\times0-2\\times8+4=-12\\,\\mathrm{kN\\cdot m}$，故与原力系等效。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "等效判断",
+    "blueprint_image_type": "data_visualization",
+    "image_path": "images/e60c56ac1acb406b.png",
+    "image_prompt": "A data visualization diagram for statics equivalence. The layout is split into a left region and a right region, with a vertical divider; a small sign convention marker sits at the top. On the left, show one table titled labeled \"原力系\" with four rows labeled \"F1\", \"F2\", \"F3\", and \"Mc\" and columns labeled \"x\", \"y\", \"Fx\", \"Fy\", \"C\". Fill F1 with 1 m, 2 m, 4 kN, -6 kN; F2 with 3 m, 1 m, -2 kN, 5 kN; F3 with 2 m, 4 m, 6 kN, 1 kN; Mc with C=+7 kN·m. On the right, show four side-by-side cards labeled \"方案甲\", \"方案乙\", \"方案丙\", \"方案丁\". Connect no cards to each other. Card values: 甲 x=1, y=2, Fx=8, Fy=0, C=0; 乙 x=2, y=2, Fx=8, Fy=1, C=+2; 丙 x=2, y=2, Fx=8, Fy=0, C=+4; 丁 x=2, y=2, Fx=8, Fy=0, C=-3. Add a curved arrow labeled \"逆时针为 +\" near \"O\"; use a thin light-blue border only around \"方案丙\".",
+    "final_image_prompt": "A data visualization diagram for statics equivalence. The layout is split into a left region and a right region, with a vertical divider; a small sign convention marker sits at the top. On the left, show one table titled labeled \"原力系\" with four rows labeled \"F1\", \"F2\", \"F3\", and \"Mc\" and columns labeled \"x\", \"y\", \"Fx\", \"Fy\", \"C\". Fill F1 with 1 m, 2 m, 4 kN, -6 kN; F2 with 3 m, 1 m, -2 kN, 5 kN; F3 with 2 m, 4 m, 6 kN, 1 kN; Mc with C=+7 kN·m. On the right, show four side-by-side cards labeled \"方案甲\", \"方案乙\", \"方案丙\", \"方案丁\". Connect no cards to each other. Card values: 甲 x=1, y=2, Fx=8, Fy=0, C=0; 乙 x=2, y=2, Fx=8, Fy=1, C=+2; 丙 x=2, y=2, Fx=8, Fy=0, C=+4; 丁 x=2, y=2, Fx=8, Fy=0, C=-3. Add a curved arrow labeled \"逆时针为 +\" near \"O\"; use a thin light-blue border only around \"方案丙\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项只给出作答任务与方案名称，三力坐标、力分量、自由力偶以及候选方案参数均只在图中出现；不读图无法计算或比较等效条件。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "原力系三力的作用点坐标与力分量",
+        "原力系自由力偶的符号和数值",
+        "四个候选方案的合力作用点、合力分量和附加自由力偶",
+        "逆时针为正的力矩符号约定"
+      ],
+      "validation_rules": [
+        "先验证候选方案的 $F_x$ 等于原力系 $\\sum F_x$",
+        "再验证候选方案的 $F_y$ 等于原力系 $\\sum F_y$",
+        "再按 $M_O=\\sum(xF_y-yF_x)+C$ 验证候选方案对 $O$ 的力矩等于原力系对 $O$ 的力矩",
+        "只有同时满足两个合力分量和对 $O$ 的合力矩均相同的方案可判为等效"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-004-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-004",
+    "kp_name": "弯曲内力与应力",
+    "question_language": "zh",
+    "question_text": "按图示梁的荷载、支承与截面信息，采用弯曲正应力公式 $\\sigma=\\frac{My}{I}$。在截面 $C$ 处，哪一项最接近受拉边缘的弯曲正应力大小？",
+    "options": {
+      "A": "$5.0\\ \\mathrm{MPa}$",
+      "B": "$8.9\\ \\mathrm{MPa}$",
+      "C": "$15.0\\ \\mathrm{MPa}$",
+      "D": "$26.7\\ \\mathrm{MPa}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出梁为 $A$、$B$ 简支且右端外伸，荷载位于跨内与外伸端。整体平衡：$R_A+R_B=12+8=20\\ \\mathrm{kN}$；对 $A$ 点取矩，$6R_B-12\\times2-8\\times8=0$，得 $R_B=14.667\\ \\mathrm{kN}$，$R_A=5.333\\ \\mathrm{kN}$。截面 $C$ 位于 $A$ 右侧 $4\\ \\mathrm{m}$，取左段弯矩：$M_C=R_A\\times4-12\\times(4-2)=5.333\\times4-24=-2.667\\ \\mathrm{kN\\cdot m}$，为负弯矩，受拉边缘在上缘。图中截面上缘到中性轴距离为 $90\\ \\mathrm{mm}$，惯性矩 $I=48\\times10^6\\ \\mathrm{mm^4}$。故受拉边缘应力大小为 $\\sigma=\\frac{2.667\\times10^6\\times90}{48\\times10^6}=5.0\\ \\mathrm{MPa}$，选 A。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "应力计算",
+    "blueprint_image_type": "technical_illustration",
+    "image_path": "images/3abad7c514a542e0.png",
+    "image_prompt": "A technical illustration split into left and right regions. On the left, draw one horizontal beam from A to D with 5 marked positions in order: A, a load point, C, B, D. Place a pin support under A (labeled \"A\") and a roller support under B (labeled \"B\"). Show 2 red downward arrows: one at the load point labeled \"12 kN\", one at D labeled \"8 kN\". Add 4 dimension segments below the beam, each labeled \"2 m\", between A-load, load-C, C-B, and B-D. Label C on the beam and D at the right end. On the right, draw a T-shaped section labeled \"截面 C\" with a blue horizontal neutral axis labeled \"NA\". Add blue vertical dimensions labeled \"90 mm\" from top edge to NA and \"160 mm\" from NA to bottom edge. Add a small note labeled \"I = 48 × 10⁶ mm⁴\". Use red for load arrows and blue for dimensions.",
+    "final_image_prompt": "A technical illustration split into left and right regions. On the left, draw one horizontal beam from A to D with 5 marked positions in order: A, a load point, C, B, D. Place a pin support under A (labeled \"A\") and a roller support under B (labeled \"B\"). Show 2 red downward arrows: one at the load point labeled \"12 kN\", one at D labeled \"8 kN\". Add 4 dimension segments below the beam, each labeled \"2 m\", between A-load, load-C, C-B, and B-D. Label C on the beam and D at the right end. On the right, draw a T-shaped section labeled \"截面 C\" with a blue horizontal neutral axis labeled \"NA\". Add blue vertical dimensions labeled \"90 mm\" from top edge to NA and \"160 mm\" from NA to bottom edge. Add a small note labeled \"I = 48 × 10⁶ mm⁴\". Use red for load arrows and blue for dimensions.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "支座位置、荷载大小与位置、C 截面位置、截面中性轴距离和惯性矩均只在图中给出；没有图片无法确定弯矩符号、受拉边缘和应力数值。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "梁上 A、荷载点、C、B、D 的相邻距离均为 2 m",
+        "两个集中荷载分别为 12 kN 与 8 kN 且均向下",
+        "B 支座位于 A 右侧 6 m，D 位于 A 右侧 8 m",
+        "C 截面上缘到中性轴距离为 90 mm，下缘到中性轴距离为 160 mm",
+        "截面惯性矩为 I = 48 × 10⁶ mm⁴"
+      ],
+      "validation_rules": [
+        "必须先由整体平衡求得支座反力，不能把支座反力当作图中直接给定量",
+        "必须用 C 截面左侧内力计算得到 $M_C=-2.667\\ \\mathrm{kN\\cdot m}$",
+        "必须根据负弯矩判断受拉边缘取上缘距离 $90\\ \\mathrm{mm}$",
+        "必须按 $\\sigma=\\frac{|M_C|y}{I}$ 得到 $5.0\\ \\mathrm{MPa}$ 并选择 A"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-005-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-005",
+    "kp_name": "弯曲变形",
+    "question_language": "zh",
+    "question_text": "图示等截面悬臂梁的抗弯刚度为常数。按小变形线弹性叠加法计算自由端竖向挠度，并判断其是否满足限值 $L/350$。取向下挠度为正，下列哪一项正确？",
+    "options": {
+      "A": "$v_B=12.67\\text{ mm}$，不满足刚度限值",
+      "B": "$v_B=10.67\\text{ mm}$，满足刚度限值",
+      "C": "$v_B=21.33\\text{ mm}$，不满足刚度限值",
+      "D": "$v_B=8.67\\text{ mm}$，满足刚度限值"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出悬臂梁全长 $L=4\\text{ m}$，自由端集中力 $P_1=10\\text{ kN}$，距固定端 $a=2\\text{ m}$ 处另有集中力 $P_2=6\\text{ kN}$，且 $EI=20000\\text{ kN}\\cdot\\text{m}^2$。自由端集中力引起的自由端挠度为 $v_{B1}=\\frac{P_1L^3}{3EI}=\\frac{10\\times4^3}{3\\times20000}=0.01067\\text{ m}=10.67\\text{ mm}$。距固定端 $a$ 处集中力引起自由端挠度为 $v_{B2}=\\frac{P_2a^2(3L-a)}{6EI}=\\frac{6\\times2^2\\times(3\\times4-2)}{6\\times20000}=0.00200\\text{ m}=2.00\\text{ mm}$。叠加得 $v_B=12.67\\text{ mm}$。刚度限值为 $L/350=4000/350=11.43\\text{ mm}$，故 $12.67\\text{ mm}>11.43\\text{ mm}$，不满足刚度限值。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "挠度计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/33f35e38145e4b43.png",
+    "image_prompt": "An engineering diagram of a horizontal cantilever beam, viewed in side elevation. The layout has the fixed support on the left and the free end on the right. Draw 1 straight beam with 3 labeled points along it: left point (labeled \"A\"), middle point (labeled \"C\"), and right point (labeled \"B\"). Add 1 fixed wall support at A. Add 2 downward red force arrows: one at C (labeled \"6 kN\") and one at B (labeled \"10 kN\"). Below the beam, draw 2 dimension lines: A to C (labeled \"2 m\") and C to B (labeled \"2 m\"). Above the beam, show the text label (labeled \"EI=20000 kN·m²\"). Near the lower right, show (labeled \"刚度限值L/350\"). Use red only for the two load arrows.",
+    "final_image_prompt": "An engineering diagram of a horizontal cantilever beam, viewed in side elevation. The layout has the fixed support on the left and the free end on the right. Draw 1 straight beam with 3 labeled points along it: left point (labeled \"A\"), middle point (labeled \"C\"), and right point (labeled \"B\"). Add 1 fixed wall support at A. Add 2 downward red force arrows: one at C (labeled \"6 kN\") and one at B (labeled \"10 kN\"). Below the beam, draw 2 dimension lines: A to C (labeled \"2 m\") and C to B (labeled \"2 m\"). Above the beam, show the text label (labeled \"EI=20000 kN·m²\"). Near the lower right, show (labeled \"刚度限值L/350\"). Use red only for the two load arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "荷载大小、荷载位置、梁长、边界条件、EI和刚度限值均由图给出；没有图片无法确定应采用的挠度叠加项和限值比较。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "固定端在A，自由端在B",
+        "A到C为2 m，C到B为2 m",
+        "C点有6 kN向下集中力",
+        "B点有10 kN向下集中力",
+        "EI为20000 kN·m²",
+        "刚度限值为L/350"
+      ],
+      "validation_rules": [
+        "应先由图确定全长为 $L=4\\text{ m}$、中间荷载距固定端为 $a=2\\text{ m}$",
+        "自由端荷载贡献应按 $\\frac{P_1L^3}{3EI}$ 计算",
+        "中间荷载对自由端挠度贡献应按 $\\frac{P_2a^2(3L-a)}{6EI}$ 计算",
+        "总挠度应为两个同向挠度贡献之和",
+        "应将总挠度与 $4000/350\\text{ mm}$ 比较判断刚度条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-006-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-006",
+    "kp_name": "扭转",
+    "question_language": "zh",
+    "question_text": "图示阶梯实心圆轴承受集中扭矩作用，忽略应力集中。按截面外缘最大剪应力公式 $\\tau=\\frac{16T}{\\pi d^3}$，该轴的控制最大剪应力最接近下列哪一项？",
+    "options": {
+      "A": "$170\\ \\mathrm{MPa}$",
+      "B": "$167\\ \\mathrm{MPa}$",
+      "C": "$12.2\\ \\mathrm{MPa}$",
+      "D": "$239\\ \\mathrm{MPa}$"
+    },
+    "correct_answer": "A",
+    "explanation": "取图中顺时针扭矩为正。由右侧截面法求各段内扭矩：$CD$ 段只平衡端部扭矩，$|T_{CD}|=0.9\\ \\mathrm{kN\\cdot m}$；$BC$ 段右侧包含 $C$ 与 $D$ 处扭矩，$|T_{BC}|=|-3.0+0.9|=2.1\\ \\mathrm{kN\\cdot m}$；$AB$ 段右侧包含 $B,C,D$ 处扭矩，$|T_{AB}|=|1.8-3.0+0.9|=0.3\\ \\mathrm{kN\\cdot m}$。再分别代入 $\\tau=\\frac{16T}{\\pi d^3}$：$\\tau_{AB}=\\frac{16\\times0.3\\times10^6}{\\pi\\times50^3}\\approx12.2\\ \\mathrm{MPa}$，$\\tau_{BC}=\\frac{16\\times2.1\\times10^6}{\\pi\\times40^3}\\approx167\\ \\mathrm{MPa}$，$\\tau_{CD}=\\frac{16\\times0.9\\times10^6}{\\pi\\times30^3}\\approx170\\ \\mathrm{MPa}$。虽然 $BC$ 段内扭矩较大，但 $CD$ 段直径更小，故控制最大剪应力约为 $170\\ \\mathrm{MPa}$。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "应力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/ae14625822214848.png",
+    "image_prompt": "An engineering diagram of a torsion-loaded stepped solid circular shaft. Global layout: side view, one horizontal shaft running left to right, with a fixed wall at the far left and three shaft segments between four station marks. Specific elements: four stations labeled \"A\", \"B\", \"C\", \"D\" from left to right; segment AB labeled \"d=50 mm\", segment BC labeled \"d=40 mm\", segment CD labeled \"d=30 mm\" below the shaft; the left support labeled \"固定端\". Connections: A connects to B, B connects to C, and C connects to D along the same axis, with vertical shoulder lines at B and C. Draw one clockwise curved arrow at B labeled \"1.8 kN·m\", one counterclockwise curved arrow at C labeled \"3.0 kN·m\", and one clockwise curved arrow at D labeled \"0.9 kN·m\". Highlight CD with a thin blue outline and BC with a thin gray outline.",
+    "final_image_prompt": "An engineering diagram of a torsion-loaded stepped solid circular shaft. Global layout: side view, one horizontal shaft running left to right, with a fixed wall at the far left and three shaft segments between four station marks. Specific elements: four stations labeled \"A\", \"B\", \"C\", \"D\" from left to right; segment AB labeled \"d=50 mm\", segment BC labeled \"d=40 mm\", segment CD labeled \"d=30 mm\" below the shaft; the left support labeled \"固定端\". Connections: A connects to B, B connects to C, and C connects to D along the same axis, with vertical shoulder lines at B and C. Draw one clockwise curved arrow at B labeled \"1.8 kN·m\", one counterclockwise curved arrow at C labeled \"3.0 kN·m\", and one clockwise curved arrow at D labeled \"0.9 kN·m\". Highlight CD with a thin blue outline and BC with a thin gray outline.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各段直径、扭矩方向、扭矩大小和固定端位置；这些决定分段内扭矩与应力比较的关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出三段直径分别对应 AB、BC、CD。",
+        "图中给出 B、C、D 三处扭矩的方向和大小。",
+        "图中给出固定端位于 A，从而可按右侧截面法确定各段内扭矩。"
+      ],
+      "validation_rules": [
+        "必须按图中扭矩方向进行代数求和得到各段内扭矩绝对值。",
+        "必须对 AB、BC、CD 三段分别使用 $\\tau=\\frac{16T}{\\pi d^3}$ 计算外缘剪应力。",
+        "必须选取三段计算值中的最大者作为控制最大剪应力。"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-007-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-007",
+    "kp_name": "组合变形与应力状态",
+    "question_language": "zh",
+    "question_text": "图示圆截面杆件在点 $P$ 处处于弯拉扭组合受力状态。按图中给出的受力方向，取拉应力为正，求点 $P$ 处的较大主应力最接近下列哪一项？",
+    "options": {
+      "A": "$131.5\\ \\mathrm{MPa}$",
+      "B": "$119.4\\ \\mathrm{MPa}$",
+      "C": "$108.7\\ \\mathrm{MPa}$",
+      "D": "$155.4\\ \\mathrm{MPa}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读得该杆为直径 $d=80\\ \\mathrm{mm}$ 的实心圆截面，点 $P$ 位于弯矩产生拉应力的一侧。轴向拉应力为 $\\sigma_N=\\frac{N}{A}=\\frac{120000}{\\pi d^2/4}=23.87\\ \\mathrm{MPa}$。弯曲正应力为 $\\sigma_M=\\frac{Mc}{I}=\\frac{4.8\\times10^6\\times40}{\\pi d^4/64}=95.49\\ \\mathrm{MPa}$。故点 $P$ 的总正应力 $\\sigma_x=23.87+95.49=119.36\\ \\mathrm{MPa}$。扭转剪应力为 $\\tau=\\frac{Tc}{J}=\\frac{2.0\\times10^6\\times40}{\\pi d^4/32}=19.89\\ \\mathrm{MPa}$。平面应力状态下 $\\sigma_y=0$，较大主应力为 $\\sigma_1=\\frac{\\sigma_x}{2}+\\sqrt{\\left(\\frac{\\sigma_x}{2}\\right)^2+\\tau^2}=\\frac{119.36}{2}+\\sqrt{59.68^2+19.89^2}=131.57\\ \\mathrm{MPa}$，最接近 $131.5\\ \\mathrm{MPa}$。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "主应力求解",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/e22f5cfe45e94628.png",
+    "image_prompt": "An engineering diagram of a combined loading stress problem. Use a side view layout with a horizontal solid circular rod, fixed support on the left (labeled \"固定端\") and free end on the right (labeled \"自由端\"). Show 5 main visual elements: the rod, the fixed support, a circular cross-section inset near the right, a load arrows group, and a small local stress element. On the free end draw one rightward axial arrow labeled \"N = 120 kN\", one curved bending moment arrow labeled \"M = 4.8 kN·m\", and one curved torque arrow about the rod axis labeled \"T = 2.0 kN·m\". In the circular inset, label the diameter \"d = 80 mm\", place point \"P\" at the top outer fiber, and mark the top side \"拉侧\". Connect point P visually to the local stress element with a thin leader line. Highlight P and the upper tensile side in red.",
+    "final_image_prompt": "An engineering diagram of a combined loading stress problem. Use a side view layout with a horizontal solid circular rod, fixed support on the left (labeled \"固定端\") and free end on the right (labeled \"自由端\"). Show 5 main visual elements: the rod, the fixed support, a circular cross-section inset near the right, a load arrows group, and a small local stress element. On the free end draw one rightward axial arrow labeled \"N = 120 kN\", one curved bending moment arrow labeled \"M = 4.8 kN·m\", and one curved torque arrow about the rod axis labeled \"T = 2.0 kN·m\". In the circular inset, label the diameter \"d = 80 mm\", place point \"P\" at the top outer fiber, and mark the top side \"拉侧\". Connect point P visually to the local stress element with a thin leader line. Highlight P and the upper tensile side in red.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出杆件直径、三种外力大小、点 $P$ 的截面位置和弯曲拉压侧判断；这些关键信息只能从图中获得。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出圆截面直径为 $80\\ \\mathrm{mm}$",
+        "图中给出轴向力为 $120\\ \\mathrm{kN}$",
+        "图中给出弯矩为 $4.8\\ \\mathrm{kN\\cdot m}$",
+        "图中给出扭矩为 $2.0\\ \\mathrm{kN\\cdot m}$",
+        "图中表明点 $P$ 位于圆截面上缘且为弯曲拉侧"
+      ],
+      "validation_rules": [
+        "必须用 $A=\\pi d^2/4$ 计算轴向正应力",
+        "必须用 $I=\\pi d^4/64$ 和 $c=d/2$ 计算弯曲正应力",
+        "必须用 $J=\\pi d^4/32$ 和 $c=d/2$ 计算扭转剪应力",
+        "必须将轴向拉应力与点 $P$ 处弯曲拉应力相加得到 $\\sigma_x$",
+        "必须用 $\\sigma_1=\\frac{\\sigma_x}{2}+\\sqrt{(\\frac{\\sigma_x}{2})^2+\\tau^2}$ 验证选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S16-008-Q0001",
+    "subject_id": "S16",
+    "subject_name": "土木与建筑工程",
+    "kp_id": "S16-M01-008",
+    "kp_name": "压杆稳定",
+    "question_language": "zh",
+    "question_text": "根据图示压杆及其截面信息，按欧拉公式并取截面的较小主惯性矩计算该压杆的临界力，最接近下列哪一项？",
+    "options": {
+      "A": "$328\\ \\mathrm{kN}$",
+      "B": "$161\\ \\mathrm{kN}$",
+      "C": "$839\\ \\mathrm{kN}$",
+      "D": "$643\\ \\mathrm{kN}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可读出该压杆为一端固定、一端铰支，故欧拉稳定计算可取有效长度系数 $K=0.7$。图中杆长为 $L=3.2\\ \\mathrm{m}=3200\\ \\mathrm{mm}$，材料弹性模量为 $E=200\\ \\mathrm{GPa}=200000\\ \\mathrm{N/mm^2}$。矩形截面尺寸为 $80\\ \\mathrm{mm}\\times 50\\ \\mathrm{mm}$，应取较小主惯性矩：$I_{\\min}=\\frac{80\\times 50^3}{12}=8.333\\times 10^5\\ \\mathrm{mm^4}$。有效长度为 $KL=0.7\\times 3200=2240\\ \\mathrm{mm}$。欧拉临界力为 $P_{cr}=\\frac{\\pi^2EI_{\\min}}{(KL)^2}=\\frac{\\pi^2\\times 200000\\times 8.333\\times 10^5}{2240^2}\\approx 3.28\\times 10^5\\ \\mathrm{N}=328\\ \\mathrm{kN}$。因此选 A。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "临界力计算",
+    "blueprint_image_type": "engineering_diagram",
+    "image_path": "images/06ab7271f273437b.png",
+    "image_prompt": "Engineering diagram, front elevation layout with the column on the left and a section inset on the right. Draw 1 vertical slender compression member in the left center. At the top of the member draw 1 downward axial arrow labeled \"P\". Attach a pin support symbol to the top end labeled \"铰支端\" and a fixed support symbol to the bottom end labeled \"固定端\". Place 1 vertical dimension line to the right of the member labeled \"L = 3.2 m\". On the right, draw 1 rectangular cross-section inset labeled \"截面\". The rectangle has a horizontal dimension line labeled \"80 mm\" and a vertical dimension line labeled \"50 mm\". Draw centroidal axes crossing at the section center, labeled \"x\" and \"y\". Below the inset show \"E = 200 GPa\". Use a red arrow for P and blue dimension lines.",
+    "final_image_prompt": "Engineering diagram, front elevation layout with the column on the left and a section inset on the right. Draw 1 vertical slender compression member in the left center. At the top of the member draw 1 downward axial arrow labeled \"P\". Attach a pin support symbol to the top end labeled \"铰支端\" and a fixed support symbol to the bottom end labeled \"固定端\". Place 1 vertical dimension line to the right of the member labeled \"L = 3.2 m\". On the right, draw 1 rectangular cross-section inset labeled \"截面\". The rectangle has a horizontal dimension line labeled \"80 mm\" and a vertical dimension line labeled \"50 mm\". Draw centroidal axes crossing at the section center, labeled \"x\" and \"y\". Below the inset show \"E = 200 GPa\". Use a red arrow for P and blue dimension lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "端部约束形式、杆长、截面两个方向尺寸和弹性模量均只在图中给出；没有这些图示信息无法确定有效长度系数、较小惯性矩及最终临界力。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中压杆端部约束为上端铰支、下端固定",
+        "图中杆长为3.2 m",
+        "图中截面尺寸为80 mm乘50 mm",
+        "图中材料弹性模量为200 GPa"
+      ],
+      "validation_rules": [
+        "根据图中一端固定一端铰支，采用$K=0.7$",
+        "将图中长度换算为$3200\\ \\mathrm{mm}$，有效长度为$2240\\ \\mathrm{mm}$",
+        "按图中矩形截面取较小主惯性矩$I_{\\min}=\\frac{80\\times 50^3}{12}\\ \\mathrm{mm^4}$",
+        "代入$P_{cr}=\\frac{\\pi^2EI_{\\min}}{(KL)^2}$后应得到约$328\\ \\mathrm{kN}$"
+      ]
+    }
+  }
+]

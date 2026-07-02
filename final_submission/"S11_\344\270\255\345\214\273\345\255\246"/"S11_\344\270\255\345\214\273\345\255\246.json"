@@ -1,0 +1,640 @@
+[
+  {
+    "question_id": "S11-001-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "某公共卫生团队要在图示4个地区中选择一个地区开展年度比较研究。选择规则为：先排除7月1日时点患病率超过$8\\%$的地区；在剩余地区中，选择按人时发病率反映“新发生速度”最高的地区。根据图中资料，应选择哪一地区？",
+    "options": {
+      "A": "甲地区",
+      "B": "乙地区",
+      "C": "丙地区",
+      "D": "丁地区"
+    },
+    "correct_answer": "C",
+    "explanation": "先按7月1日时点患病率筛选：甲为$24/400=6.0\\%$，乙为$30/360\\approx 8.33\\%$，丙为$14/200=7.0\\%$，丁为$18/240=7.5\\%$，因此乙超过$8\\%$应排除。再在甲、丙、丁中计算人时发病率：甲为$18/300=0.060$，丙为$16/180\\approx 0.0889$，丁为$14/160=0.0875$。丙略高于丁，且满足时点患病率限制，所以应选择丙地区。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查发病率与患病率",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/271a8dac307f4d51.png",
+    "image_prompt": "A data chart titled (labeled \"4个地区年度频率资料\"), viewed straight on, with one rectangular table centered on a white background. The table has 5 columns and 5 rows: header row plus 4 district rows. Column headers are (labeled \"地区\"), (labeled \"年内新发生人数\"), (labeled \"全年危险人时\"), (labeled \"7月1日现有人数\"), and (labeled \"7月1日总人数\"). Row 1 is (labeled \"甲地区\") with values (labeled \"18\"), (labeled \"300\"), (labeled \"24\"), (labeled \"400\"). Row 2 is (labeled \"乙地区\") with (labeled \"20\"), (labeled \"250\"), (labeled \"30\"), (labeled \"360\"). Row 3 is (labeled \"丙地区\") with (labeled \"16\"), (labeled \"180\"), (labeled \"14\"), (labeled \"200\"). Row 4 is (labeled \"丁地区\") with (labeled \"14\"), (labeled \"160\"), (labeled \"18\"), (labeled \"240\"). Place four small circular district markers at the left of the row labels. Use orange header fill for the two incidence columns and blue header fill for the two prevalence columns.",
+    "final_image_prompt": "A data chart titled (labeled \"4个地区年度频率资料\"), viewed straight on, with one rectangular table centered on a white background. The table has 5 columns and 5 rows: header row plus 4 district rows. Column headers are (labeled \"地区\"), (labeled \"年内新发生人数\"), (labeled \"全年危险人时\"), (labeled \"7月1日现有人数\"), and (labeled \"7月1日总人数\"). Row 1 is (labeled \"甲地区\") with values (labeled \"18\"), (labeled \"300\"), (labeled \"24\"), (labeled \"400\"). Row 2 is (labeled \"乙地区\") with (labeled \"20\"), (labeled \"250\"), (labeled \"30\"), (labeled \"360\"). Row 3 is (labeled \"丙地区\") with (labeled \"16\"), (labeled \"180\"), (labeled \"14\"), (labeled \"200\"). Row 4 is (labeled \"丁地区\") with (labeled \"14\"), (labeled \"160\"), (labeled \"18\"), (labeled \"240\"). Place four small circular district markers at the left of the row labels. Use orange header fill for the two incidence columns and blue header fill for the two prevalence columns.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出选择规则，未给出4个地区的原始人数和人时数据；必须读取图中表格才能完成筛选和比较。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中给出各地区年内新发生人数和全年危险人时",
+        "图中给出各地区7月1日现有人数和7月1日总人数",
+        "乙地区的时点患病率由图中两个数值相除得到且超过题干阈值",
+        "丙地区和丁地区的人时发病率需要用图中不同分母精确比较"
+      ],
+      "validation_rules": [
+        "先用7月1日现有人数除以7月1日总人数，排除时点患病率超过$8\\%$的地区。",
+        "再用年内新发生人数除以全年危险人时，比较剩余地区的人时发病率。",
+        "唯一正确选项必须是满足时点患病率限制且人时发病率最高的地区。"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "根据图中的公共卫生决策示意图，若只能选择一个指标来满足图中右侧的监测目标，下列哪一项最合适？",
+    "options": {
+      "A": "半年累积发病率，计算为 $36/(1200-68)=3.2\\%$",
+      "B": "半年发病密度，计算为 $36/570=0.063$ 每人年",
+      "C": "6月30日时点患病率，计算为 $84/1200=7.0\\%$",
+      "D": "1—6月期间患病率，计算为 $(84+20)/1200=8.7\\%$"
+    },
+    "correct_answer": "C",
+    "explanation": "图中右侧目标强调的是在同一个日历时点估计服务负担，并要求包含该时点仍处于状态中的旧有与新近对象，而不是只统计新发生事件。发病率类指标只反映新发生速度或风险：半年累积发病率用新发生数作分子，发病密度还要结合人时，均不适合估计某一时点的存量负担。期间患病率覆盖一段时间内出现过相关状态的人，包含了期间内已不再处于该状态者，不符合图中“当日服务负担”的目标。因此应选6月30日时点患病率，按图中该日处于相关状态的人数除以该日总观察人口，得到 $84/1200=7.0\\%$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "指标选择",
+    "blueprint_image_type": "public_health_diagram",
+    "image_path": "images/670371f6d3f94183.png",
+    "image_prompt": "A public health diagram, split into a left data region and a right goal region. Show 6 rectangular boxes: top-left box labeled \"社区观察\" with \"1月1日—6月30日\" and \"总观察人口 1200\"; middle-left box labeled \"新发生数 36\"; middle-right box labeled \"累计观察人时 570人年\"; bottom-left box labeled \"6月30日处于状态 84\"; bottom-right box labeled \"期间已退出 20\"; right box labeled \"监测目标\" with three lines labeled \"同一日历时点\", \"当前服务负担\", and \"包含当日仍处于状态者\". Draw arrows from \"社区观察\" to the three data boxes for new events, person-time, and June 30 status. Draw a green solid arrow from \"6月30日处于状态 84\" to \"监测目标\" and a gray dashed line from \"期间已退出 20\" to \"监测目标\". Use a pale blue border around the goal box.",
+    "final_image_prompt": "A public health diagram, split into a left data region and a right goal region. Show 6 rectangular boxes: top-left box labeled \"社区观察\" with \"1月1日—6月30日\" and \"总观察人口 1200\"; middle-left box labeled \"新发生数 36\"; middle-right box labeled \"累计观察人时 570人年\"; bottom-left box labeled \"6月30日处于状态 84\"; bottom-right box labeled \"期间已退出 20\"; right box labeled \"监测目标\" with three lines labeled \"同一日历时点\", \"当前服务负担\", and \"包含当日仍处于状态者\". Draw arrows from \"社区观察\" to the three data boxes for new events, person-time, and June 30 status. Draw a green solid arrow from \"6月30日处于状态 84\" to \"监测目标\" and a gray dashed line from \"期间已退出 20\" to \"监测目标\". Use a pale blue border around the goal box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出监测目标的具体约束、分子分母数值或干扰性人时信息，必须读取图中的目标框和数据框才能判断应选哪类指标并完成计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中给出总观察人口为1200",
+        "图中给出6月30日处于状态的人数为84",
+        "图中右侧目标要求同一日历时点的当前服务负担",
+        "图中给出新发生数、人时和期间退出人数作为干扰信息"
+      ],
+      "validation_rules": [
+        "若目标是同一日历时点的当前服务负担，应选择时点患病率而非发病率",
+        "时点患病率的分子应使用该时点仍处于相关状态的人数",
+        "时点患病率的分母应使用同一时点对应的观察人口",
+        "按图中数值计算为 $84/1200=7.0\\%$"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "图中给出4个社区同一观察年的底层资料。若按以下规则比较频率：先计算各社区累积发病率并排序，再计算期间患病率并排序；排名数字越小表示频率越高。要求选择“累积发病率排名相对期间患病率排名前移2位”，且其人时发病率不少于每100人年20例的社区。下列哪一项符合条件？",
+    "options": {
+      "A": "社区甲",
+      "B": "社区乙",
+      "C": "社区丙",
+      "D": "社区丁"
+    },
+    "correct_answer": "C",
+    "explanation": "需要分别计算三个频率指标并比较排名。累积发病率的分母为期初总人数减去期初已有状态人数，即$\\text{累积发病率}=\\frac{\\text{新发生数}}{\\text{期初总人数}-\\text{期初已有状态人数}}$。社区甲为$48/(520-40)=10.0\\%$；社区乙为$56/(460-60)=14.0\\%$；社区丙为$90/(610-10)=15.0\\%$；社区丁为$61/(400-20)\\approx16.1\\%$。因此累积发病率排名为丁第1、丙第2、乙第3、甲第4。期间患病率按图中“期间任一时点处于状态人数/平均登记人数”计算：甲$88/500=17.6\\%$，乙$116/440\\approx26.4\\%$，丙$100/590\\approx16.9\\%$，丁$81/385\\approx21.0\\%$，期间患病率排名为乙第1、丁第2、甲第3、丙第4。只有社区丙从期间患病率第4位前移到累积发病率第2位，前移2位。再验算人时发病率：丙为$90/375\\times100=24.0$例/100人年，满足不少于20例/100人年的条件。因此选C。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "频率比较",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/6ac3365d2e6f4311.png",
+    "image_prompt": "An academic diagram for epidemiological frequency comparison, split into a top formula strip, a central 2 by 2 grid, and a small right legend. Show 4 rectangular community cards: upper left labeled \"社区甲\", upper right labeled \"社区乙\", lower left labeled \"社区丙\", lower right labeled \"社区丁\". Each card has 6 visible rows labeled \"期初总人数\", \"期初已有状态人数\", \"新发生数\", \"观察人时\", \"期间任一时点处于状态人数\", \"平均登记人数\". Values are: 甲 520, 40, 48, 430人年, 88, 500; 乙 460, 60, 56, 280人年, 116, 440; 丙 610, 10, 90, 375人年, 100, 590; 丁 400, 20, 61, 500人年, 81, 385. Connect rows to the top strip with blue arrows. The strip shows rendered formulas labeled \"累积发病率=新发生数/初始风险人数\", \"期间患病率=期间任一时点处于状态人数/平均登记人数\", \"人时发病率=新发生数/观察人时\". Legend labeled \"蓝色箭头：进入计算\".",
+    "final_image_prompt": "An academic diagram for epidemiological frequency comparison, split into a top formula strip, a central 2 by 2 grid, and a small right legend. Show 4 rectangular community cards: upper left labeled \"社区甲\", upper right labeled \"社区乙\", lower left labeled \"社区丙\", lower right labeled \"社区丁\". Each card has 6 visible rows labeled \"期初总人数\", \"期初已有状态人数\", \"新发生数\", \"观察人时\", \"期间任一时点处于状态人数\", \"平均登记人数\". Values are: 甲 520, 40, 48, 430人年, 88, 500; 乙 460, 60, 56, 280人年, 116, 440; 丙 610, 10, 90, 375人年, 100, 590; 丁 400, 20, 61, 500人年, 81, 385. Connect rows to the top strip with blue arrows. The strip shows rendered formulas labeled \"累积发病率=新发生数/初始风险人数\", \"期间患病率=期间任一时点处于状态人数/平均登记人数\", \"人时发病率=新发生数/观察人时\". Legend labeled \"蓝色箭头：进入计算\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出任何社区的具体人数、人时或期间状态人数；必须从图中读取并组合这些数值，才能计算三个频率指标、比较排名变化并验证阈值。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "4个社区的期初总人数、期初已有状态人数、新发生数、观察人时、期间任一时点处于状态人数、平均登记人数均只在图中给出",
+        "社区丙的累积发病率为$90/(610-10)=15.0\\%$",
+        "社区丙的期间患病率为$100/590\\approx16.9\\%$",
+        "社区丙的人时发病率为$90/375\\times100=24.0$例/100人年"
+      ],
+      "validation_rules": [
+        "用$\\text{新发生数}/(\\text{期初总人数}-\\text{期初已有状态人数})$计算各社区累积发病率并降序排名",
+        "用$\\text{期间任一时点处于状态人数}/\\text{平均登记人数}$计算各社区期间患病率并降序排名",
+        "找出累积发病率排名相对期间患病率排名前移2位的社区",
+        "再用$\\text{新发生数}/\\text{观察人时}\\times100$验证该社区人时发病率是否不少于20例/100人年"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0005",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "根据图中四个社区同一年度的示意资料，若用“人时发病率排序相对于时点患病率排序的前移幅度”来判断哪个社区的新发生速度更突出，应选择哪一个社区？",
+    "options": {
+      "A": "甲社区",
+      "B": "乙社区",
+      "C": "丙社区",
+      "D": "丁社区"
+    },
+    "correct_answer": "D",
+    "explanation": "先分别计算两个频率指标。时点患病率为调查日已有状态人数除以调查日总人数：甲为 $72/1200=6.0\\%$，乙为 $45/900=5.0\\%$，丙为 $90/1000=9.0\\%$，丁为 $32/800=4.0\\%$，从高到低排序为丙、甲、乙、丁。人时发病率为观察期新发生人数除以累计观察人时：甲为 $36/900=4.0$ 每100人年，乙为 $50/1000=5.0$ 每100人年，丙为 $24/800=3.0$ 每100人年，丁为 $42/700=6.0$ 每100人年，从高到低排序为丁、乙、甲、丙。比较两个排序位置，丁社区由时点患病率第4位变为人时发病率第1位，前移3位，最能体现新发生速度相对于存量比例更突出。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "频率比较",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/6bff36f039904b28.png",
+    "image_prompt": "An academic diagram showing an epidemiological comparison table, viewed straight on, split into a left data table and a right formula-hint area. The left table has 4 horizontal community rows and 5 columns labeled \"社区\", \"调查日总人数\", \"调查日已有状态人数\", \"观察期新发生人数\", and \"累计观察人时\". Row 1 is labeled \"甲社区\" with 1200, 72, 36, and \"900 人年\". Row 2 is labeled \"乙社区\" with 900, 45, 50, and \"1000 人年\". Row 3 is labeled \"丙社区\" with 1000, 90, 24, and \"800 人年\". Row 4 is labeled \"丁社区\" with 800, 32, 42, and \"700 人年\". On the right, draw 2 boxes labeled \"时点患病率提示\" and \"人时发病率提示\". Arrows connect the existing-count and total columns to the first box, and the new-events and person-time columns to the second box. Use a pale blue outline for the first box and a pale orange outline for the second.",
+    "final_image_prompt": "An academic diagram showing an epidemiological comparison table, viewed straight on, split into a left data table and a right formula-hint area. The left table has 4 horizontal community rows and 5 columns labeled \"社区\", \"调查日总人数\", \"调查日已有状态人数\", \"观察期新发生人数\", and \"累计观察人时\". Row 1 is labeled \"甲社区\" with 1200, 72, 36, and \"900 人年\". Row 2 is labeled \"乙社区\" with 900, 45, 50, and \"1000 人年\". Row 3 is labeled \"丙社区\" with 1000, 90, 24, and \"800 人年\". Row 4 is labeled \"丁社区\" with 800, 32, 42, and \"700 人年\". On the right, draw 2 boxes labeled \"时点患病率提示\" and \"人时发病率提示\". Arrows connect the existing-count and total columns to the first box, and the new-events and person-time columns to the second box. Use a pale blue outline for the first box and a pale orange outline for the second.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出任何社区的原始人数、人时或指标对应关系，必须读取图中数据并结合箭头提示才能完成两类频率比较。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "四个社区的调查日总人数和已有状态人数只在图片中给出",
+        "四个社区的观察期新发生人数和累计观察人时只在图片中给出",
+        "两个指标各自需要使用的分子和分母关系由图片右侧箭头给出"
+      ],
+      "validation_rules": [
+        "按调查日已有状态人数除以调查日总人数计算四个社区的时点患病率",
+        "按观察期新发生人数除以累计观察人时计算四个社区的人时发病率",
+        "分别将两个指标从高到低排序",
+        "选择在人时发病率排序中相对于时点患病率排序前移幅度最大的社区"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "图中为某封闭社区一个观察年的分季度随访资料。若要求计算该年度“人时发病率”，并按图中给出的中点近似规则处理每个季度内的新发与退出，应选择下列哪一项作为最接近的结果？",
+    "options": {
+      "A": "$69.8/1000$人年",
+      "B": "$63.1/1000$人年",
+      "C": "$58.3/1000$人年",
+      "D": "$71.1/1000$人年"
+    },
+    "correct_answer": "A",
+    "explanation": "人时发病率的分子应为观察期内新发人数，图中四个季度新发合计为$6+10+8+4=28$。分母应使用处于发病风险中的人时，年初总人数中已有状态者不进入风险集，因此年初风险集为$480-36=444$人。按图示中点近似规则，每季度人时约为该季度期初风险人数减去该季度新发与退出合计的一半，再乘以$0.25$年。四季度对应的风险人数变化为：第1季度期初$444$，新发和退出共$18$，人时为$(444-9)\\times0.25=108.75$人年；第2季度期初$426$，共$28$，人时为$(426-14)\\times0.25=103.00$人年；第3季度期初$398$，共$18$，人时为$(398-9)\\times0.25=97.25$人年；第4季度期初$380$，共$24$，人时为$(380-12)\\times0.25=92.00$人年。总人时为$401.00$人年，因此人时发病率为$28/401.00\\times1000\\approx69.8/1000$人年。B混用了累积发病率思路，C把年初总人数作为分母，D主要来自未把新发者也作为季度内退出风险集的中点处理对象。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "指标计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/893e019868a041e0.png",
+    "image_prompt": "An epidemiological chart, viewed straight on, split into a left baseline region, a central quarterly timeline, and an upper rule box. Show 7 main boxes: top-left box labeled \"年初总人数 480人\", lower-left box labeled \"年初已有状态 36人\", four center boxes in one horizontal row labeled \"第1季度\", \"第2季度\", \"第3季度\", \"第4季度\", and one upper box labeled \"规则\". Inside Q1 show labels \"新发 6人\" and \"退出 12人\"; inside Q2 \"新发 10人\" and \"退出 18人\"; inside Q3 \"新发 8人\" and \"退出 10人\"; inside Q4 \"新发 4人\" and \"退出 20人\". Connect both baseline boxes to Q1 with arrows, then Q1 to Q2, Q2 to Q3, Q3 to Q4. In the rule box show \"先排除年初已有状态者\" and \"每季度按期中发生处理\". Use light blue quarter borders, a pale yellow rule box, red new-case markers, and gray exit markers.",
+    "final_image_prompt": "An epidemiological chart, viewed straight on, split into a left baseline region, a central quarterly timeline, and an upper rule box. Show 7 main boxes: top-left box labeled \"年初总人数 480人\", lower-left box labeled \"年初已有状态 36人\", four center boxes in one horizontal row labeled \"第1季度\", \"第2季度\", \"第3季度\", \"第4季度\", and one upper box labeled \"规则\". Inside Q1 show labels \"新发 6人\" and \"退出 12人\"; inside Q2 \"新发 10人\" and \"退出 18人\"; inside Q3 \"新发 8人\" and \"退出 10人\"; inside Q4 \"新发 4人\" and \"退出 20人\". Connect both baseline boxes to Q1 with arrows, then Q1 to Q2, Q2 to Q3, Q3 to Q4. In the rule box show \"先排除年初已有状态者\" and \"每季度按期中发生处理\". Use light blue quarter borders, a pale yellow rule box, red new-case markers, and gray exit markers.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出年初人数、已有状态人数、各季度新发和退出人数，也没有给出图中采用的中点近似规则；缺少图片无法确定分子、分母和计算路径。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "年初总人数为480人",
+        "年初已有状态人数为36人",
+        "四个季度新发人数分别为6、10、8、4",
+        "四个季度退出人数分别为12、18、10、20",
+        "图中规则要求先排除年初已有状态者，并按季度期中发生处理"
+      ],
+      "validation_rules": [
+        "先用年初总人数减去年初已有状态人数得到年初风险集",
+        "分子为4个季度新发人数之和",
+        "逐季度用期初风险人数减去该季度新发与退出合计的一半，再乘以0.25年得到季度人时",
+        "四个季度人时相加后，用新发总数除以总人时并乘以1000",
+        "所得结果最接近$69.8/1000$人年"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "根据图示的封闭观察队列资料，计算该年度的累积发病率与6月30日时点患病率。最合适的一组结果是：",
+    "options": {
+      "A": "年度累积发病率 $=8.60\\%$；6月30日时点患病率 $=9.50\\%$",
+      "B": "年度累积发病率 $=9.37\\%$；6月30日时点患病率 $=9.50\\%$",
+      "C": "年度累积发病率 $=9.37\\%$；6月30日时点患病率 $=9.77\\%$",
+      "D": "年度累积发病率 $=8.60\\%$；6月30日时点患病率 $=9.77\\%$"
+    },
+    "correct_answer": "C",
+    "explanation": "累积发病率的分母应为年初无该状态、处于风险中的人数，而不是年初总人数。图中年初处于风险中人数为 $918$，全年新发生人数为上半年新发生 $47$ 加下半年新发生 $39$，即 $86$，所以年度累积发病率为 $86/918\\times100\\%=9.37\\%$。6月30日时点患病率要看该时点仍处于该状态的人数，并以该时点在观察人群中人数为分母。年初已有者在6月30日仍存在 $82-21=61$ 人，上半年新发生者在6月30日仍存在 $47-13=34$ 人，时点现患人数为 $95$。6月30日观察人群人数为 $1000-28=972$，故时点患病率为 $95/972\\times100\\%=9.77\\%$。因此选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "指标计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/9a45e3f7ebd34d65.png",
+    "image_prompt": "An epidemiological chart showing a synthetic cohort timeline, viewed straight on, split horizontally from left to right into 1月1日, 6月30日, and 12月31日. Place 6 main visual elements: a left top box labeled \"年初总队列 1000人\", a lower orange box labeled \"年初已有该状态 82人\", a lower blue box labeled \"年初无该状态 918人\", a green middle box labeled \"上半年新发生 47人\", a vertical midline labeled \"6月30日\", and a green right box labeled \"下半年新发生 39人\". Connect the total cohort box downward to the two baseline boxes. Draw a green arrow from \"年初无该状态 918人\" to \"上半年新发生 47人\", and another green arrow to \"下半年新发生 39人\". Draw dashed lines from \"年初已有该状态 82人\" to a label \"6月30日前状态结束 21人\" and from \"上半年新发生 47人\" to a label \"6月30日前状态结束 13人\". Draw a gray arrow from \"年初无该状态 918人\" to \"6月30日前退出观察 28人\". Use blue, orange, green, and gray highlights.",
+    "final_image_prompt": "An epidemiological chart showing a synthetic cohort timeline, viewed straight on, split horizontally from left to right into 1月1日, 6月30日, and 12月31日. Place 6 main visual elements: a left top box labeled \"年初总队列 1000人\", a lower orange box labeled \"年初已有该状态 82人\", a lower blue box labeled \"年初无该状态 918人\", a green middle box labeled \"上半年新发生 47人\", a vertical midline labeled \"6月30日\", and a green right box labeled \"下半年新发生 39人\". Connect the total cohort box downward to the two baseline boxes. Draw a green arrow from \"年初无该状态 918人\" to \"上半年新发生 47人\", and another green arrow to \"下半年新发生 39人\". Draw dashed lines from \"年初已有该状态 82人\" to a label \"6月30日前状态结束 21人\" and from \"上半年新发生 47人\" to a label \"6月30日前状态结束 13人\". Draw a gray arrow from \"年初无该状态 918人\" to \"6月30日前退出观察 28人\". Use blue, orange, green, and gray highlights.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各时间点人数、新发生人数、状态结束人数和退出观察人数；必须读取图中多个数值并区分其在发病率和患病率中的作用才能作答。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "年初总队列为1000人",
+        "年初处于风险中人数为918人",
+        "上半年新发生为47人",
+        "下半年新发生为39人",
+        "年初已有该状态为82人",
+        "年初已有者中6月30日前状态结束为21人",
+        "上半年新发生者中6月30日前状态结束为13人",
+        "6月30日前退出观察为28人"
+      ],
+      "validation_rules": [
+        "年度累积发病率应使用全年新发生人数除以年初处于风险中人数，即 $(47+39)/918$",
+        "6月30日时点现患人数应为年初已有且未在6月30日前结束者加上上半年新发生且未在6月30日前结束者，即 $(82-21)+(47-13)$",
+        "6月30日时点患病率分母应扣除6月30日前退出观察者，即 $1000-28$",
+        "唯一同时满足两个指标计算结果的选项为 C"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-001-Q0004",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-001",
+    "kp_name": "发病率与患病率",
+    "question_language": "zh",
+    "question_text": "根据图中的社区年度随访示意图，若研究目的为估计该年度的累积发病率，应选择下列哪一项作为最接近的计算结果？",
+    "options": {
+      "A": "$7.0\\%$",
+      "B": "$7.7\\%$",
+      "C": "$16.0\\%$",
+      "D": "$8.6\\%$"
+    },
+    "correct_answer": "B",
+    "explanation": "累积发病率的分子是观察期间的新发事件数，分母是期初处于风险中的人数，即期初总人数中排除期初已存在事件者。图中四个季度的新发数相加为 $5+3+4+2=14$；期初处于风险中的人数为 $200-18=182$。因此累积发病率为 $\\frac{14}{182}\\times100\\%=7.69\\%$，最接近 $7.7\\%$。A 使用了期初总人数作分母，C 将期初已有事件与新发事件混合作患病频率，D 属于进一步错误缩小分母后的结果。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "指标计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/9d9ddb39a9ba437b.png",
+    "image_prompt": "An epidemiological chart showing a synthetic educational community follow-up diagram. The layout is left-to-right: a left upper box, a left lower box, one central box, four small right-side boxes on a horizontal timeline, plus one bottom time axis. The left upper box is labeled \"期初社区总人数\" and \"200人\". A downward arrow connects it to the left lower box labeled \"期初已有事件者\" and \"18人\". A horizontal arrow connects the left upper box to the central green-bordered box labeled \"期初处于风险人数\" and \"182人\". To the right, four orange-bordered boxes sit along the follow-up arrow, labeled \"第1季度新发\" \"5例\", \"第2季度新发\" \"3例\", \"第3季度新发\" \"4例\", and \"第4季度新发\" \"2例\". The bottom axis is labeled \"2024年1月1日\", \"年度随访\", and \"2024年12月31日\". Use blue border for existing events, green for at-risk, orange for new events.",
+    "final_image_prompt": "An epidemiological chart showing a synthetic educational community follow-up diagram. The layout is left-to-right: a left upper box, a left lower box, one central box, four small right-side boxes on a horizontal timeline, plus one bottom time axis. The left upper box is labeled \"期初社区总人数\" and \"200人\". A downward arrow connects it to the left lower box labeled \"期初已有事件者\" and \"18人\". A horizontal arrow connects the left upper box to the central green-bordered box labeled \"期初处于风险人数\" and \"182人\". To the right, four orange-bordered boxes sit along the follow-up arrow, labeled \"第1季度新发\" \"5例\", \"第2季度新发\" \"3例\", \"第3季度新发\" \"4例\", and \"第4季度新发\" \"2例\". The bottom axis is labeled \"2024年1月1日\", \"年度随访\", and \"2024年12月31日\". Use blue border for existing events, green for at-risk, orange for new events.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出期初人数、期初已有事件者或分季度新发数；必须读取图中多个局部数据并组合计算，才能确定累积发病率。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "期初总人数为200人",
+        "期初已有事件者为18人",
+        "期初处于风险人数为182人",
+        "四个季度新发事件数分别为5例、3例、4例、2例"
+      ],
+      "validation_rules": [
+        "累积发病率分母必须使用期初处于风险人数",
+        "累积发病率分子必须使用观察期间新发事件总数",
+        "新发事件总数为 $5+3+4+2=14$",
+        "计算 $\\frac{14}{182}\\times100\\%=7.69\\%$，四舍五入后对应 $7.7\\%$"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中直接法标化所需信息，若以图示标准人口为权重，地区甲的标化死亡率最接近哪一项？",
+    "options": {
+      "A": "$6.98\\text{‰}$",
+      "B": "$8.50\\text{‰}$",
+      "C": "$7.52\\text{‰}$",
+      "D": "$9.80\\text{‰}$"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率应使用各年龄组死亡率乘以同一标准人口权重，再除以标准人口总数。由图可得：$0\\text{–}44$岁组期望死亡数为$1.8\\times 50000/1000=90$，$45\\text{–}64$岁组为$5.6\\times 30000/1000=168$，$65+$岁组为$22.0\\times 20000/1000=440$。合计期望死亡数为$90+168+440=698$，标准人口总数为$100000$，所以标化死亡率为$698/100000\\times 1000=6.98\\text{‰}$。B项相当于误用粗死亡率；C项可能漏算或错误加权；D项可能把标准人口权重与年龄组率错误配对。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/56fa9243315d4e28.png",
+    "image_prompt": "An epidemiological_chart showing a direct standardization worksheet, split into a large left table and two right-side boxes. The table has 4 columns and 3 data rows, with headers labeled \"年龄组\", \"地区甲年龄别死亡率\", \"地区甲实际人口\", and \"标准人口\". Row labels are \"0–44岁\", \"45–64岁\", and \"65+岁\". The death-rate column shows 1.8‰, 5.6‰, and 22.0‰. The local population column shows 40000, 35000, and 25000. The standard population column shows 50000, 30000, and 20000. On the right, a box labeled \"直接法标化死亡率\" displays a rendered formula: sum of age-specific death rate times standard population divided by sum of standard population. Three green arrows connect the standard population column to this box, and three black arrows connect the death-rate column to this box. A lower box labeled \"粗死亡率参考\" receives one blue arrow from the local population column. Add a gray strip labeled \"单位：死亡率为‰\".",
+    "final_image_prompt": "An epidemiological_chart showing a direct standardization worksheet, split into a large left table and two right-side boxes. The table has 4 columns and 3 data rows, with headers labeled \"年龄组\", \"地区甲年龄别死亡率\", \"地区甲实际人口\", and \"标准人口\". Row labels are \"0–44岁\", \"45–64岁\", and \"65+岁\". The death-rate column shows 1.8‰, 5.6‰, and 22.0‰. The local population column shows 40000, 35000, and 25000. The standard population column shows 50000, 30000, and 20000. On the right, a box labeled \"直接法标化死亡率\" displays a rendered formula: sum of age-specific death rate times standard population divided by sum of standard population. Three green arrows connect the standard population column to this box, and three black arrows connect the death-rate column to this box. A lower box labeled \"粗死亡率参考\" receives one blue arrow from the local population column. Add a gray strip labeled \"单位：死亡率为‰\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "年龄别死亡率、标准人口权重以及应使用直接法而非粗死亡率参考的信息均只在图中给出，删除图片后无法确定应代入哪些数值。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中给出3个年龄组的地区甲年龄别死亡率",
+        "图中给出3个年龄组的标准人口",
+        "图中直接法公式要求按标准人口加权而非按地区甲实际人口加权"
+      ],
+      "validation_rules": [
+        "必须使用直接法：$\\sum r_iN_i^{std}/\\sum N_i^{std}$",
+        "必须将图中死亡率按每千人口换算为期望死亡数",
+        "计算得到$1.8\\times50000/1000+5.6\\times30000/1000+22.0\\times20000/1000=698$",
+        "用$698/100000\\times1000$验证答案为$6.98\\text{‰}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中资料，若采用间接法进行标化，并以图中给出的标准粗死亡率作为换算基准，该地区的间接标化死亡率最接近下列哪一项？",
+    "options": {
+      "A": "$7.8\\text{‰}$",
+      "B": "$6.3\\text{‰}$",
+      "C": "$1.29\\text{‰}$",
+      "D": "$6.0\\text{‰}$"
+    },
+    "correct_answer": "A",
+    "explanation": "间接法先用标准年龄别死亡率计算该地区的期望死亡数。图中三组期望死亡数分别为：$12000\\times1.2/1000=14.4$，$7500\\times5.6/1000=42.0$，$2800\\times18.5/1000=51.8$，合计$108.2$。观察死亡数为$18+52+70=140$，所以$SMR=140/108.2\\approx1.294$。间接标化死亡率为$SMR\\times$标准粗死亡率，即$1.294\\times6.0\\text{‰}\\approx7.76\\text{‰}$，最接近$7.8\\text{‰}$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/5b868df14eac4652.png",
+    "image_prompt": "An epidemiological chart showing indirect standardization data. The layout is a top title area, a central 3-row by 4-column table, and one separate box centered below the table. The title is labeled \"间接法标化资料\". The table headers are labeled \"年龄组\", \"研究地区人口数\", \"观察死亡数\", and \"标准年龄别死亡率(‰)\". Row 1 shows \"0–44岁\", \"12000\", \"18\", \"1.2‰\". Row 2 shows \"45–64岁\", \"7500\", \"52\", \"5.6‰\". Row 3 shows \"65岁及以上\", \"2800\", \"70\", \"18.5‰\". The lower box is labeled \"标准粗死亡率\" and contains \"6.0‰\". Horizontal alignment links each age row to its three numeric values. Use a light blue header row and a light yellow lower box.",
+    "final_image_prompt": "An epidemiological chart showing indirect standardization data. The layout is a top title area, a central 3-row by 4-column table, and one separate box centered below the table. The title is labeled \"间接法标化资料\". The table headers are labeled \"年龄组\", \"研究地区人口数\", \"观察死亡数\", and \"标准年龄别死亡率(‰)\". Row 1 shows \"0–44岁\", \"12000\", \"18\", \"1.2‰\". Row 2 shows \"45–64岁\", \"7500\", \"52\", \"5.6‰\". Row 3 shows \"65岁及以上\", \"2800\", \"70\", \"18.5‰\". The lower box is labeled \"标准粗死亡率\" and contains \"6.0‰\". Horizontal alignment links each age row to its three numeric values. Use a light blue header row and a light yellow lower box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "计算所需的人口数、观察死亡数、标准年龄别死亡率和标准粗死亡率均只在图片中给出，删除图片后无法完成间接标化计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "三组研究地区人口数分别为12000、7500、2800",
+        "三组观察死亡数分别为18、52、70",
+        "三组标准年龄别死亡率分别为1.2‰、5.6‰、18.5‰",
+        "标准粗死亡率为6.0‰"
+      ],
+      "validation_rules": [
+        "用各年龄组研究地区人口数乘以同组标准年龄别死亡率，得到期望死亡数并求和",
+        "用观察死亡数合计除以期望死亡数合计得到SMR",
+        "用SMR乘以标准粗死亡率得到间接标化死亡率",
+        "所得数值最接近选项A"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中资料，若采用直接法计算甲地区以标准人口为权重的标化死亡率，最接近下列哪一项？",
+    "options": {
+      "A": "$11.2\\text{‰}$",
+      "B": "$11.7\\text{‰}$",
+      "C": "$14.8\\text{‰}$",
+      "D": "$4.9\\text{‰}$"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率应先由甲地区各年龄组资料计算年龄别死亡率，再按标准人口构成加权。图中甲地区青年组死亡率为 $48/12000\\times1000=4.0\\text{‰}$，老年组死亡率为 $198/9000\\times1000=22.0\\text{‰}$。标准人口中青年组和老年组分别为 $30000$ 与 $20000$，总标准人口为 $50000$。因此标化死亡率为 $\\frac{4.0\\times30000+22.0\\times20000}{50000}=11.2\\text{‰}$。B 是把甲地区总死亡数除以甲地区总人口得到的粗死亡率；C 是误把标准人口权重颠倒；D 是误将甲地区总死亡数除以标准总人口。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/5ec0b41048884429.png",
+    "image_prompt": "An epidemiological chart titled labeled \"甲地区死亡资料与标准人口\", split into left and right regions. On the left, draw 1 table labeled \"甲地区\" with 2 rows and 3 columns labeled \"年龄组\", \"人口\", \"死亡数\". The first row is labeled \"青年组\" with values \"12000\" and \"48\"; the second row is labeled \"老年组\" with values \"9000\" and \"198\". On the right, draw 1 horizontal bar chart labeled \"标准人口\" with exactly 2 bars: a light blue bar labeled \"青年组\" and \"30000\", and a light orange bar labeled \"老年组\" and \"20000\". Draw 1 arrow from the table to the bar chart. At the bottom, show a narrow banner labeled \"直接法：先算年龄别死亡率，再按标准人口加权\" and a small label \"单位：‰\". Use blue for youth and orange for old age.",
+    "final_image_prompt": "An epidemiological chart titled labeled \"甲地区死亡资料与标准人口\", split into left and right regions. On the left, draw 1 table labeled \"甲地区\" with 2 rows and 3 columns labeled \"年龄组\", \"人口\", \"死亡数\". The first row is labeled \"青年组\" with values \"12000\" and \"48\"; the second row is labeled \"老年组\" with values \"9000\" and \"198\". On the right, draw 1 horizontal bar chart labeled \"标准人口\" with exactly 2 bars: a light blue bar labeled \"青年组\" and \"30000\", and a light orange bar labeled \"老年组\" and \"20000\". Draw 1 arrow from the table to the bar chart. At the bottom, show a narrow banner labeled \"直接法：先算年龄别死亡率，再按标准人口加权\" and a small label \"单位：‰\". Use blue for youth and orange for old age.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各年龄组人口、死亡数和标准人口权重，必须读取图片中的表格和条形图才能完成直接法标化计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "甲地区青年组人口为12000、死亡数为48",
+        "甲地区老年组人口为9000、死亡数为198",
+        "标准人口青年组为30000、老年组为20000",
+        "图中提示采用直接法并以年龄别死亡率按标准人口加权"
+      ],
+      "validation_rules": [
+        "先计算青年组年龄别死亡率：$48/12000\\times1000=4.0\\text{‰}$",
+        "先计算老年组年龄别死亡率：$198/9000\\times1000=22.0\\text{‰}$",
+        "用标准人口加权：$\\frac{4.0\\times30000+22.0\\times20000}{30000+20000}=11.2\\text{‰}$",
+        "唯一匹配的选项为A"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0003",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "某地区进行死亡率比较时，需按图中给出的标准人口构成对地区X进行直接标化。根据图片信息，地区X的直接标化死亡率最接近下列哪一项？",
+    "options": {
+      "A": "9.4‰",
+      "B": "17.8‰",
+      "C": "13.3‰",
+      "D": "94.0‰"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率的核心是将研究地区各年龄组死亡率套用到同一标准人口构成上。由图读取地区X三个年龄组的年龄别死亡率分别为$2‰$、$8‰$、$30‰$，标准人口数分别为$5000$、$3000$、$2000$。因此期望死亡数为$2‰\\times5000+8‰\\times3000+30‰\\times2000=10+24+60=94$。标准总人口为$5000+3000+2000=10000$，直接标化死亡率为$\\frac{94}{10000}\\times1000=9.4‰$。B混入了地区X自身人口构成计算粗死亡率，C类似误用简单平均或错误权重，D则把期望死亡数误当成每千人口率。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/64ed7927c2484d3b.png",
+    "image_prompt": "An epidemiological_chart showing direct standardization data. The layout is split into left and right regions with a centered title at the top. On the left, draw 1 table labeled \"地区X年龄别资料\" with 3 rows labeled \"0-44岁\", \"45-64岁\", \"65岁及以上\" and 3 columns labeled \"人口\", \"死亡数\", \"年龄别死亡率\"; the cells show 2000, 4, 2‰; 3000, 24, 8‰; 5000, 150, 30‰. On the right, draw 1 aligned table labeled \"标准人口构成\" with 3 matching rows and 1 column labeled \"标准人口\"; the cells show 5000, 3000, 2000. Add 3 horizontal dashed guide lines connecting matching age rows between tables. At the bottom, show a rendered formula in standard mathematical notation: 标化率 = Σ(年龄别死亡率 × 标准人口) / Σ标准人口. Highlight the mortality-rate column blue and the standard-population column orange.",
+    "final_image_prompt": "An epidemiological_chart showing direct standardization data. The layout is split into left and right regions with a centered title at the top. On the left, draw 1 table labeled \"地区X年龄别资料\" with 3 rows labeled \"0-44岁\", \"45-64岁\", \"65岁及以上\" and 3 columns labeled \"人口\", \"死亡数\", \"年龄别死亡率\"; the cells show 2000, 4, 2‰; 3000, 24, 8‰; 5000, 150, 30‰. On the right, draw 1 aligned table labeled \"标准人口构成\" with 3 matching rows and 1 column labeled \"标准人口\"; the cells show 5000, 3000, 2000. Add 3 horizontal dashed guide lines connecting matching age rows between tables. At the bottom, show a rendered formula in standard mathematical notation: 标化率 = Σ(年龄别死亡率 × 标准人口) / Σ标准人口. Highlight the mortality-rate column blue and the standard-population column orange.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各年龄组死亡率和标准人口构成，必须读取图片中两个表格的对应数据并组合计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "地区X各年龄组年龄别死亡率为2‰、8‰、30‰",
+        "标准人口构成为5000、3000、2000",
+        "地区X自身人口和死亡数也在图中出现，构成粗死亡率干扰信息"
+      ],
+      "validation_rules": [
+        "必须使用直接法，即用地区X年龄别死亡率乘以对应标准人口",
+        "期望死亡数计算为$2‰\\times5000+8‰\\times3000+30‰\\times2000=94$",
+        "标准总人口为$10000$",
+        "直接标化死亡率为$\\frac{94}{10000}\\times1000=9.4‰$，因此选择A"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中给出的研究人群分年龄组资料和标准人口构成，采用直接法计算该人群的年龄标化死亡率。下列哪一项最接近正确结果？",
+    "options": {
+      "A": "$11.2\\text{‰}$",
+      "B": "$14.4\\text{‰}$",
+      "C": "$16.5\\text{‰}$",
+      "D": "$22.0\\text{‰}$"
+    },
+    "correct_answer": "C",
+    "explanation": "直接法标化死亡率应先计算各年龄组死亡率，再按标准人口构成加权。图中三组年龄别死亡率分别为：$24/12000\\times1000=2\\text{‰}$，$90/6000\\times1000=15\\text{‰}$，$110/2000\\times1000=55\\text{‰}$。标准人口权重分别为$0.50$、$0.30$、$0.20$，所以年龄标化死亡率为$2\\times0.50+15\\times0.30+55\\times0.20=1.0+4.5+11.0=16.5\\text{‰}$。A是粗死亡率$224/20000\\times1000=11.2\\text{‰}$，没有进行标化；B和D分别对应权重或分母使用错误后的结果。因此选C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/7f08ea8e77824de8.png",
+    "image_prompt": "An epidemiological_chart showing a direct standardization worksheet, viewed frontally, split into a left data table, a right stacked weight bar, and a bottom formula hint box. The left table has 3 rows and 3 columns, labeled \"研究人群\", \"年龄组\", \"人口数\", \"死亡数\"; row labels are \"0–39岁\", \"40–64岁\", \"65岁及以上\" with values 12000 and 24, 6000 and 90, 2000 and 110. The right vertical stacked bar is labeled \"标准人口权重\" and has 3 segments labeled \"0–39岁 0.50\", \"40–64岁 0.30\", \"65岁及以上 0.20\". Two arrows connect the table and bar to the bottom box labeled \"直接法\" and \"年龄别死亡率 × 标准人口权重\", with a unit note \"每1000人\". Use light blue for the table header, light orange for the bar, and light green for the hint box.",
+    "final_image_prompt": "An epidemiological_chart showing a direct standardization worksheet, viewed frontally, split into a left data table, a right stacked weight bar, and a bottom formula hint box. The left table has 3 rows and 3 columns, labeled \"研究人群\", \"年龄组\", \"人口数\", \"死亡数\"; row labels are \"0–39岁\", \"40–64岁\", \"65岁及以上\" with values 12000 and 24, 6000 and 90, 2000 and 110. The right vertical stacked bar is labeled \"标准人口权重\" and has 3 segments labeled \"0–39岁 0.50\", \"40–64岁 0.30\", \"65岁及以上 0.20\". Two arrows connect the table and bar to the bottom box labeled \"直接法\" and \"年龄别死亡率 × 标准人口权重\", with a unit note \"每1000人\". Use light blue for the table header, light orange for the bar, and light green for the hint box.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出分年龄组人口数、死亡数和标准权重，必须从图中读取这些信息才能完成直接法标化计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中给出3个年龄组各自的人口数和死亡数",
+        "图中给出3个年龄组对应的标准人口权重",
+        "图中提示采用直接法，将年龄别死亡率与标准人口权重相乘后求和"
+      ],
+      "validation_rules": [
+        "必须先用每个年龄组死亡数除以同组人口数并乘以1000",
+        "必须使用标准人口权重而不是研究人群年龄构成进行加权",
+        "三个加权年龄别死亡率之和应与correct_answer对应的数值一致",
+        "若只用总死亡数除以总人口数，则判为粗死亡率误用"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0005",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中资料，采用直接法按标准人口构成计算甲地区的标化死亡率，结果最接近下列哪一项？",
+    "options": {
+      "A": "$8.20\\text{‰}$",
+      "B": "$9.64\\text{‰}$",
+      "C": "$12.83\\text{‰}$",
+      "D": "$16.24\\text{‰}$"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率的步骤是先计算甲地区各年龄组死亡率，再按标准人口构成加权。图中甲地区三个年龄组死亡率分别为：$44/22000\\times1000=2.00\\text{‰}$，$147/21000\\times1000=7.00\\text{‰}$，$378/14000\\times1000=27.00\\text{‰}$。按标准构成加权：$2.00\\times0.48+7.00\\times0.34+27.00\\times0.18=0.96+2.38+4.86=8.20\\text{‰}$。因此答案为A。B接近把年龄别死亡率与本地人口构成混合使用后的结果，C接近直接用总死亡数除以总观察人年得到的粗死亡率，D则体现了把病例数或病死率思路误用于死亡率标化的错误。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/bd31ef78374043df.png",
+    "image_prompt": "An epidemiological_chart showing direct standardization data. The layout is split into a left table and a right horizontal bar chart, viewed straight on. At the top center, show the title (labeled \"甲地区直接标化资料（观察期1年）\"). The left table has 3 rows and 3 columns labeled \"年龄组\", \"观察人年\", and \"死亡数\"; rows are labeled \"0–44岁\" with 22000 and 44, \"45–64岁\" with 21000 and 147, and \"65岁及以上\" with 14000 and 378. The right chart is labeled \"标准人口构成\" and has 3 aligned bars: \"0–44岁\" labeled \"48%\", \"45–64岁\" labeled \"34%\", and \"65岁及以上\" labeled \"18%\". A bottom note box labeled \"每1000人年\" connects by 2 arrows to the table and bar chart, and includes the rendered formula text \"直接法：年龄别死亡率 × 标准人口构成\". Use muted blue for the table header and muted orange for the bars.",
+    "final_image_prompt": "An epidemiological_chart showing direct standardization data. The layout is split into a left table and a right horizontal bar chart, viewed straight on. At the top center, show the title (labeled \"甲地区直接标化资料（观察期1年）\"). The left table has 3 rows and 3 columns labeled \"年龄组\", \"观察人年\", and \"死亡数\"; rows are labeled \"0–44岁\" with 22000 and 44, \"45–64岁\" with 21000 and 147, and \"65岁及以上\" with 14000 and 378. The right chart is labeled \"标准人口构成\" and has 3 aligned bars: \"0–44岁\" labeled \"48%\", \"45–64岁\" labeled \"34%\", and \"65岁及以上\" labeled \"18%\". A bottom note box labeled \"每1000人年\" connects by 2 arrows to the table and bar chart, and includes the rendered formula text \"直接法：年龄别死亡率 × 标准人口构成\". Use muted blue for the table header and muted orange for the bars.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出年龄别死亡数、观察人年和标准人口构成，必须读取图中表格与条形图后才能完成直接标化计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "甲地区三个年龄组的观察人年分别为22000、21000、14000",
+        "甲地区三个年龄组的死亡数分别为44、147、378",
+        "标准人口构成权重分别为48%、34%、18%",
+        "率的单位为每1000人年"
+      ],
+      "validation_rules": [
+        "必须先按年龄组分别计算死亡率：死亡数除以观察人年再乘以1000",
+        "必须使用标准人口构成进行直接法加权",
+        "计算式应为$44/22000\\times1000\\times0.48+147/21000\\times1000\\times0.34+378/14000\\times1000\\times0.18$",
+        "所得结果应最接近$8.20\\text{‰}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中给出的某地区分年龄组资料，若采用直接法并以图示标准人口作为权重计算该地区的标化死亡率，下列哪项判断正确？",
+    "options": {
+      "A": "$19.9‰$，且高于该地区粗死亡率",
+      "B": "$15.7‰$，且等于该地区粗死亡率",
+      "C": "$17.8‰$，且低于该地区粗死亡率",
+      "D": "$22.4‰$，且由各年龄组死亡数直接相加得到"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率应先用该地区各年龄组死亡率乘以标准人口权重，再除以标准总人口。图中该地区三个年龄组死亡率分别为$24/12000=2‰$、$90/6000=15‰$、$216/3000=72‰$。按标准人口计算的期望死亡数为$2‰\\times50000=100$、$15‰\\times30000=450$、$72‰\\times20000=1440$，合计$1990$。标准总人口为$100000$，所以直接标化死亡率为$1990/100000=19.9‰$。该地区粗死亡率为$(24+90+216)/(12000+6000+3000)=330/21000\\approx15.7‰$，因此标化死亡率高于粗死亡率。故选A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/bf1b9c0032b64b48.png",
+    "image_prompt": "An epidemiological chart, viewed straight on, split into a central data table and a right standard-population column. The central table has 3 rows and 3 columns, labeled \"某地区资料\", \"年龄组\", \"死亡数\", and \"观察人口\". Row 1 is labeled \"0–39岁\" with values 24 and 12000; row 2 is labeled \"40–64岁\" with values 90 and 6000; row 3 is labeled \"65岁及以上\" with values 216 and 3000. The right column is labeled \"标准人口\" and contains 50000, 30000, and 20000 aligned with the 3 rows. Draw 3 horizontal connector lines from each table row to its matching standard-population value. At the bottom, show a 3-step arrow flow labeled \"直接法\": \"年龄别死亡率\" → \"乘以标准人口\" → \"汇总后除以标准总人口\". Use a light blue border around the standard-population column and light orange arrows.",
+    "final_image_prompt": "An epidemiological chart, viewed straight on, split into a central data table and a right standard-population column. The central table has 3 rows and 3 columns, labeled \"某地区资料\", \"年龄组\", \"死亡数\", and \"观察人口\". Row 1 is labeled \"0–39岁\" with values 24 and 12000; row 2 is labeled \"40–64岁\" with values 90 and 6000; row 3 is labeled \"65岁及以上\" with values 216 and 3000. The right column is labeled \"标准人口\" and contains 50000, 30000, and 20000 aligned with the 3 rows. Draw 3 horizontal connector lines from each table row to its matching standard-population value. At the bottom, show a 3-step arrow flow labeled \"直接法\": \"年龄别死亡率\" → \"乘以标准人口\" → \"汇总后除以标准总人口\". Use a light blue border around the standard-population column and light orange arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各年龄组死亡数、观察人口、标准人口和直接法流程，必须读取图中数据与对应关系才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "三个年龄组的死亡数、观察人口和标准人口均只在图片中给出",
+        "图中流程限定采用直接法而不是粗死亡率或间接法",
+        "标准人口与各年龄组的对应关系由图片中的水平连接线给出"
+      ],
+      "validation_rules": [
+        "按各年龄组死亡数除以观察人口得到年龄别死亡率",
+        "将各年龄别死亡率分别乘以对应标准人口并汇总",
+        "用汇总期望死亡数除以标准总人口得到直接标化死亡率",
+        "再计算观察总死亡数除以观察总人口得到粗死亡率并比较方向"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-002-Q0001",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-002",
+    "kp_name": "死亡率与病死率",
+    "question_language": "zh",
+    "question_text": "根据图中资料，若采用直接法按标准人口构成计算甲地的标化死亡率，并判断其与甲地粗死亡率的关系，下列哪项最接近？",
+    "options": {
+      "A": "$12.1\\text{‰}$，高于粗死亡率",
+      "B": "$8.9\\text{‰}$，等于粗死亡率",
+      "C": "$12.1\\text{‰}$，低于粗死亡率",
+      "D": "$15.7\\text{‰}$，高于粗死亡率"
+    },
+    "correct_answer": "A",
+    "explanation": "直接法标化死亡率需先由甲地各年龄组资料计算年龄别死亡率，再按标准人口构成加权。图中甲地三组年龄别死亡率分别为：$18/6000\\times1000=3.0\\text{‰}$，$36/3000\\times1000=12.0\\text{‰}$，$35/1000\\times1000=35.0\\text{‰}$。按标准人口权重计算：$3.0\\times0.50+12.0\\times0.30+35.0\\times0.20=12.1\\text{‰}$。甲地粗死亡率为$(18+36+35)/(6000+3000+1000)\\times1000=8.9\\text{‰}$。因此直接标化死亡率约为$12.1\\text{‰}$，且高于粗死亡率。",
+    "difficulty": 3,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "标化计算",
+    "blueprint_image_type": "epidemiological_chart",
+    "image_path": "images/c79b7c5b45d348b8.png",
+    "image_prompt": "An epidemiological chart, split into a left table region and a right horizontal bar region, viewed straight on. At the top, show the title (labeled \"甲地死亡资料与标准人口构成\"). The left table (labeled \"甲地观察资料\") has 3 data rows and 3 columns labeled \"年龄组\", \"人口数\", \"死亡数\"; rows display \"0–44岁\", \"6000\", \"18\"; \"45–64岁\", \"3000\", \"36\"; \"65岁及以上\", \"1000\", \"35\". The right region is a 3-bar chart (labeled \"标准人口构成\") with bars labeled \"0–44岁 权重 0.50\", \"45–64岁 权重 0.30\", and \"65岁及以上 权重 0.20\". Draw 3 thin arrows linking each table age row to its matching bar. At the bottom, add a box labeled \"直接法：年龄别死亡率 × 标准构成\". Use light blue table header, light orange bars, and a thin red outline around the oldest age row.",
+    "final_image_prompt": "An epidemiological chart, split into a left table region and a right horizontal bar region, viewed straight on. At the top, show the title (labeled \"甲地死亡资料与标准人口构成\"). The left table (labeled \"甲地观察资料\") has 3 data rows and 3 columns labeled \"年龄组\", \"人口数\", \"死亡数\"; rows display \"0–44岁\", \"6000\", \"18\"; \"45–64岁\", \"3000\", \"36\"; \"65岁及以上\", \"1000\", \"35\". The right region is a 3-bar chart (labeled \"标准人口构成\") with bars labeled \"0–44岁 权重 0.50\", \"45–64岁 权重 0.30\", and \"65岁及以上 权重 0.20\". Draw 3 thin arrows linking each table age row to its matching bar. At the bottom, add a box labeled \"直接法：年龄别死亡率 × 标准构成\". Use light blue table header, light orange bars, and a thin red outline around the oldest age row.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各年龄组人口数、死亡数和标准人口权重；必须读取图中两个区域并完成对应加权计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "甲地各年龄组人口数和死亡数来自图中左侧表格",
+        "标准人口构成的三个权重来自图中右侧条形图",
+        "年龄组与标准权重的对应关系由图中箭头和相同标签确定"
+      ],
+      "validation_rules": [
+        "先用每个年龄组死亡数除以相应人口数并乘以1000，得到年龄别死亡率",
+        "再将三个年龄别死亡率分别乘以对应标准人口权重并求和，得到直接标化死亡率",
+        "另用总死亡数除以总人口数并乘以1000，得到甲地粗死亡率",
+        "选项必须同时匹配标化死亡率近似值及其与粗死亡率的大小关系"
+      ]
+    }
+  },
+  {
+    "question_id": "S11-004-Q0002",
+    "subject_id": "S11",
+    "subject_name": "中医学",
+    "kp_id": "S11-M01-004",
+    "kp_name": "病例对照研究设计",
+    "question_language": "zh",
+    "question_text": "某病例对照研究的设计流程图给出了结局分组及回顾性暴露分布。若按图中“进入分析”的四个单元计算暴露与结局的比值比，最接近的结果是：",
+    "options": {
+      "A": "$1.93$",
+      "B": "$1.29$",
+      "C": "$0.52$",
+      "D": "$2.25$"
+    },
+    "correct_answer": "A",
+    "explanation": "病例对照研究中，比值比按四格表计算：若病例暴露数为 $a$、病例未暴露数为 $c$、对照暴露数为 $b$、对照未暴露数为 $d$，则 $OR=\\frac{a\\times d}{b\\times c}$。根据图中进入分析的四个单元，$a=54$，$c=42$，$b=48$，$d=72$。因此 $OR=\\frac{54\\times72}{48\\times42}=\\frac{3888}{2016}\\approx1.93$。选项B常见于把对照暴露与未暴露数误读为相等或忽略图中对照分流；选项C是把交叉乘积方向颠倒得到的倒数；选项D则相当于混淆病例组内部暴露比与对照组内部暴露比的分母结构。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "OR计算",
+    "blueprint_image_type": "study_design_flowchart",
+    "image_path": "images/78de204d49074f5e.png",
+    "image_prompt": "A study design flowchart for a synthetic educational epidemiology diagram, viewed straight on, arranged in three horizontal tiers. The top tier has 1 centered rectangle labeled \"研究对象库\". The middle tier has 2 rectangles: left labeled \"病例组\" and right labeled \"对照组\". The bottom tier has 4 endpoint rectangles with blue outlines and a small label \"进入分析\" inside each: under 病例组, left endpoint labeled \"暴露+\" and \"n=54\", right endpoint labeled \"暴露-\" and \"n=42\"; under 对照组, left endpoint labeled \"暴露+\" and \"n=48\", right endpoint labeled \"暴露-\" and \"n=72\". Draw 2 arrows from 研究对象库 to the two middle rectangles, then 4 downward arrows from each middle rectangle to its two endpoints. Use pale blue highlighting only on the four endpoint boxes.",
+    "final_image_prompt": "A study design flowchart for a synthetic educational epidemiology diagram, viewed straight on, arranged in three horizontal tiers. The top tier has 1 centered rectangle labeled \"研究对象库\". The middle tier has 2 rectangles: left labeled \"病例组\" and right labeled \"对照组\". The bottom tier has 4 endpoint rectangles with blue outlines and a small label \"进入分析\" inside each: under 病例组, left endpoint labeled \"暴露+\" and \"n=54\", right endpoint labeled \"暴露-\" and \"n=42\"; under 对照组, left endpoint labeled \"暴露+\" and \"n=48\", right endpoint labeled \"暴露-\" and \"n=72\". Draw 2 arrows from 研究对象库 to the two middle rectangles, then 4 downward arrows from each middle rectangle to its two endpoints. Use pale blue highlighting only on the four endpoint boxes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四格表的四个单元数值，必须读取流程图中病例组和对照组的暴露分布后才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "病例暴露人数为54",
+        "病例未暴露人数为42",
+        "对照暴露人数为48",
+        "对照未暴露人数为72"
+      ],
+      "validation_rules": [
+        "必须按病例对照研究四格表计算 $OR=\\frac{a\\times d}{b\\times c}$",
+        "必须将病例暴露数作为 $a$、病例未暴露数作为 $c$、对照暴露数作为 $b$、对照未暴露数作为 $d$",
+        "计算结果 $\\frac{54\\times72}{48\\times42}\\approx1.93$，与正确选项一致"
+      ]
+    }
+  }
+]

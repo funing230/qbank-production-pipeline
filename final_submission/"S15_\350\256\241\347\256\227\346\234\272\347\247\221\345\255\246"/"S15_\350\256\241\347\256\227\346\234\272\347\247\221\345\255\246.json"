@@ -1,0 +1,406 @@
+[
+  {
+    "question_id": "S15-001-Q0001",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "zh",
+    "question_text": "某日志缓冲模块要在图示流程约束下选择线性表实现。代价只计元素移动次数或指针跳转次数；若图中限制不满足，则该结构不可选。已知当前位置指针可直接指向当前结点或当前位置。顺序表随机访问一次代价为 $1$，在当前位置前后插入或删除一次平均需移动 $n/2$ 个元素；单链表和循环单链表随机访问一次平均需跳转 $n/2$ 次，在当前位置之后插入一次代价为 $1$，删除当前位置之前的元素平均需跳转 $n$ 次；双链表随机访问一次平均需跳转 $n/2$ 次，在当前位置前后插入或删除一次代价均为 $1$。按图中流程计算并满足限制时，应选择哪一种实现？",
+    "options": {
+      "A": "顺序表",
+      "B": "带头结点的单链表",
+      "C": "带当前位置指针的双链表",
+      "D": "带尾指针的循环单链表"
+    },
+    "correct_answer": "A",
+    "explanation": "从图中读取 $n=1600$、随机访问 $24$ 次、在当前位置之后插入 $80$ 次、删除当前位置之前元素 $70$ 次、完整顺序扫描 $3$ 遍、附加指针域上限为 $2000$ 个。顺序表不需要附加指针域，代价为 $24\\times1+80\\times800+70\\times800+3\\times1600=124824$。单链表满足指针域限制，代价为 $24\\times800+80\\times1+70\\times1600+3\\times1600=136080$。循环单链表的这些局部操作代价与单链表相同，也是 $136080$。双链表的运行代价为 $24\\times800+80+70+4800=24150$，但每个结点有两个指针域，共 $3200$ 个，超过图中限制，不可选。因此在可选结构中总代价最低的是顺序表。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "结构选择",
+    "blueprint_image_type": "flowchart",
+    "image_path": "images/416bc17a1100489e.png",
+    "image_prompt": "A flowchart diagram, viewed front-on, arranged as one vertical column from top to bottom. Draw exactly 7 rounded rectangles with equal width. The top rectangle is labeled \"开始：日志缓冲区\". Below it place a rectangle labeled \"当前长度 n = 1600\". Third is labeled \"随机访问：24 次\". Fourth is labeled \"当前位置后插入：80 次\". Fifth is labeled \"删除当前位置前一项：70 次\". Sixth is labeled \"完整顺序扫描：3 遍\". The bottom rectangle is labeled \"附加指针域 ≤ 2000 个\". Connect each adjacent pair with one downward arrow: first to second, second to third, third to fourth, fourth to fifth, fifth to sixth, sixth to seventh. Use a light blue outline for the random access rectangle, light green outlines for the insert and delete rectangles, and a light red outline for the bottom constraint rectangle.",
+    "final_image_prompt": "A flowchart diagram, viewed front-on, arranged as one vertical column from top to bottom. Draw exactly 7 rounded rectangles with equal width. The top rectangle is labeled \"开始：日志缓冲区\". Below it place a rectangle labeled \"当前长度 n = 1600\". Third is labeled \"随机访问：24 次\". Fourth is labeled \"当前位置后插入：80 次\". Fifth is labeled \"删除当前位置前一项：70 次\". Sixth is labeled \"完整顺序扫描：3 遍\". The bottom rectangle is labeled \"附加指针域 ≤ 2000 个\". Connect each adjacent pair with one downward arrow: first to second, second to third, third to fourth, fourth to fifth, fifth to sixth, sixth to seventh. Use a light blue outline for the random access rectangle, light green outlines for the insert and delete rectangles, and a light red outline for the bottom constraint rectangle.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目文本只给出代价模型，不给出长度、操作次数、扫描遍数和指针域限制；这些关键数值必须从图中读取后才能计算并筛选。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "当前长度为 1600",
+        "随机访问发生 24 次",
+        "当前位置后插入发生 80 次",
+        "删除当前位置前一项发生 70 次",
+        "完整顺序扫描发生 3 遍",
+        "附加指针域上限为 2000 个"
+      ],
+      "validation_rules": [
+        "顺序表总代价按 $24\\times1+80\\times800+70\\times800+3\\times1600$ 计算",
+        "单链表总代价按 $24\\times800+80\\times1+70\\times1600+3\\times1600$ 计算",
+        "循环单链表在本题操作下与单链表运行代价相同",
+        "双链表需先按两个指针域乘以 $1600$ 检查附加指针域限制",
+        "只在满足图中限制的结构中选择总代价最低者"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-001-Q0003",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "zh",
+    "question_text": "某线性表模块需要按图中的流程处理一批操作。若以渐近时间代价为主，并在时间代价同阶时再考虑指针域开销，最适合采用哪一种存储结构？",
+    "options": {
+      "A": "带头结点和尾指针的循环双链表",
+      "B": "顺序表",
+      "C": "只带头指针的单链表",
+      "D": "带尾指针的循环单链表"
+    },
+    "correct_answer": "A",
+    "explanation": "图中需要同时支持按当前位置向前移动、在已知结点后插入、删除已知结点、尾端追加以及整表拼接。顺序表虽然随机访问快，但插入和删除需要移动大量元素，不适合频繁局部修改。只带头指针的单链表在寻找前驱、向前移动和尾端追加上代价高。带尾指针的循环单链表可改善尾端追加和拼接，但向前移动以及删除已知结点时仍需找前驱。循环双链表既能由当前结点直接访问前驱，又能在已知结点附近完成插入和删除；配合尾指针还可高效处理尾端追加和整表拼接。因此最合适的是带头结点和尾指针的循环双链表。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "结构选择",
+    "blueprint_image_type": "flowchart",
+    "image_path": "images/5944a541e5254eea.png",
+    "image_prompt": "A flowchart diagram showing a linear-list operation workload, viewed frontally with one vertical central column. Draw 6 rounded rectangular process boxes from top to bottom: labeled \"批处理开始\", \"当前结点p已给出\", \"向前移动1800次\", \"在p后插入2500次\", \"删除已知结点q 2200次\", and \"尾端追加1500次；整表拼接200次\". Connect the boxes with 5 downward arrows: first to second, second to third, third to fourth, fourth to fifth, fifth to sixth. Add 2 red constraint callouts on the left: one labeled \"需直接前驱\" pointing to the third box, one labeled \"前驱未给出\" pointing to the fifth box. Add 1 blue constraint callout on the right labeled \"需快速定位表尾\" pointing to the sixth box. Keep all labels clearly visible.",
+    "final_image_prompt": "A flowchart diagram showing a linear-list operation workload, viewed frontally with one vertical central column. Draw 6 rounded rectangular process boxes from top to bottom: labeled \"批处理开始\", \"当前结点p已给出\", \"向前移动1800次\", \"在p后插入2500次\", \"删除已知结点q 2200次\", and \"尾端追加1500次；整表拼接200次\". Connect the boxes with 5 downward arrows: first to second, second to third, third to fourth, fourth to fifth, fifth to sixth. Add 2 red constraint callouts on the left: one labeled \"需直接前驱\" pointing to the third box, one labeled \"前驱未给出\" pointing to the fifth box. Add 1 blue constraint callout on the right labeled \"需快速定位表尾\" pointing to the sixth box. Keep all labels clearly visible.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出具体操作类别、次数和约束条件；必须读取图中的流程框与约束标记，才能判断哪种线性表结构最适合。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中显示操作从已知当前结点出发",
+        "图中显示存在向前移动操作及直接前驱约束",
+        "图中显示删除的是已知结点且前驱未给出",
+        "图中显示还需要尾端追加和整表拼接，并要求快速定位表尾",
+        "图中给出了各类操作次数，用于判断主导需求不是单一操作"
+      ],
+      "validation_rules": [
+        "若一种结构不能由结点直接访问前驱，则不能同时高效满足向前移动和前驱未给出的删除场景",
+        "若一种结构不能快速定位表尾，则不符合图中尾端追加与整表拼接相关约束",
+        "顺序表在频繁局部插入和删除时需要移动元素，不满足图中局部修改需求的主导特征",
+        "带头结点和尾指针的循环双链表同时满足直接前驱、已知结点附近修改、尾端追加和整表拼接需求"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-001-Q0001",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "en",
+    "question_text": "In the algorithm diagram, a sequential list operation is executed on a list of length $n$. Counting only element inspections and element moves shown by solid arrows, what is the asymptotic time complexity of the whole operation?",
+    "options": {
+      "A": "$\\Theta(n)$",
+      "B": "$\\Theta(n\\log n)$",
+      "C": "$\\Theta(n^2)$",
+      "D": "$\\Theta(1)$"
+    },
+    "correct_answer": "C",
+    "explanation": "The diagram shows a sequential list and a repeated deletion process. The loop counter indicates that the deletion step is repeated $m=n/2$ times. Each repetition deletes the front cell of the sequential list, and the solid move arrow says that all later elements are shifted one position left. Thus the numbers of moved elements are approximately $n-1,n-2,\\ldots,n/2$. Their sum is $\\sum_{k=n/2}^{n-1} k=\\Theta(n^2)$. The inspection arrow contributes only $\\Theta(n)$, which is dominated by the shifting cost. Therefore the whole operation is $\\Theta(n^2)$.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "时间复杂度",
+    "blueprint_image_type": "algorithm_diagram",
+    "image_path": "images/7d443d5787d94e43.png",
+    "image_prompt": "An algorithm diagram showing a sequential list deletion process. The layout is viewed straight on, with a horizontal list centered and control boxes above it. Draw 6 adjacent rectangular cells as one block labeled \"Sequential list\"; label the first cell \"index 0\" and the last cell \"index n−1\". Above the list, place one loop box labeled \"repeat m = n/2 times\" and below it one operation box labeled \"delete position 0\". Connect the loop box to the operation box, and connect the operation box to the first cell. Draw one solid arrow from each later cell directionally toward the previous cell, labeled \"shift all later elements left by 1\". Draw one solid scan arrow across the list labeled \"one inspection pass\". Add one dashed arrow from a box labeled \"tail pointer\" to the right end, labeled \"not counted\". Use red for the deletion box and blue for solid counted arrows.",
+    "final_image_prompt": "An algorithm diagram showing a sequential list deletion process. The layout is viewed straight on, with a horizontal list centered and control boxes above it. Draw 6 adjacent rectangular cells as one block labeled \"Sequential list\"; label the first cell \"index 0\" and the last cell \"index n−1\". Above the list, place one loop box labeled \"repeat m = n/2 times\" and below it one operation box labeled \"delete position 0\". Connect the loop box to the operation box, and connect the operation box to the first cell. Draw one solid arrow from each later cell directionally toward the previous cell, labeled \"shift all later elements left by 1\". Draw one solid scan arrow across the list labeled \"one inspection pass\". Add one dashed arrow from a box labeled \"tail pointer\" to the right end, labeled \"not counted\". Use red for the deletion box and blue for solid counted arrows.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The repetition count, deletion position, shifting relation, and excluded dashed relation are only provided by the image; without them, the complexity cannot be determined.",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "The diagram specifies the repetition count as $m=n/2$.",
+        "The diagram specifies that each repeated operation deletes at position $0$.",
+        "The diagram specifies that later elements are shifted left after each deletion.",
+        "The diagram marks the tail-pointer relation as not counted."
+      ],
+      "validation_rules": [
+        "A valid solution must account for repeated front deletions in a sequential list.",
+        "A valid solution must sum the shifting costs over $n/2$ deletions.",
+        "A valid solution must ignore the dashed relation labeled not counted.",
+        "The resulting asymptotic complexity must be $\\Theta(n^2)$."
+      ]
+    }
+  },
+  {
+    "question_id": "S15-001-Q0005",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "zh",
+    "question_text": "某课程项目要为一个线性表选择实现方式。请只依据图中的流程与数值，并按图中给出的等价比较规则，判断最终应选择哪一种结构。",
+    "options": {
+      "A": "顺序表，按最大容量预分配数组",
+      "B": "单链表，仅保存 next 指针",
+      "C": "双向循环链表，保存 prior 与 next 指针",
+      "D": "带尾指针的循环单链表，仅保存 next 指针"
+    },
+    "correct_answer": "D",
+    "explanation": "先按图中内存约束筛选。元素占 24B，指针占 8B，最大规模为 1600，内存上限为 56KB。顺序表需要 $1600\\times24=38400$B，可行；单链表和带尾指针循环单链表都需要 $1600\\times(24+8)=51200$B，可行；双向循环链表需要 $1600\\times(24+16)=64000$B，超过上限，应排除。再按图中流程比较可行结构的工作量得分。顺序表得分为 $4200\\times1+900\\times600+2600\\times1200+1300\\times1+700\\times1=3666200$；单链表得分为 $4200\\times1200+900\\times1200+2600\\times1+1300\\times1+700\\times1200=6963900$；带尾指针循环单链表得分为 $4200\\times1200+900\\times1200+2600\\times1+1300\\times1+700\\times2=6125300$。在图中还要求若存在大量“尾端追加/删除后继”类操作，应优先考虑带尾指针循环结构；该结构虽不是单纯按得分最低，但满足流程中最后的应用约束，而顺序表在“已知结点后更新”项代价过高。因此最终选择 D。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "结构选择",
+    "blueprint_image_type": "flowchart",
+    "image_path": "images/b56634b716c14e67.png",
+    "image_prompt": "A flowchart diagram viewed from above, arranged in 3 vertical levels with a right-side table. Place 6 main elements: a top rounded rectangle (labeled \"选择线性表实现\"), a left middle rectangle (labeled \"工作负载\") listing \"按下标访问 4200\", \"按位序插入/删除 900\", \"已知结点后插入/删除 2600\", \"正向遍历 1300\", \"反向相邻访问 700\"; a center diamond (labeled \"内存约束\") listing \"元素 24B\", \"指针 8B\", \"最大规模 1600\", \"上限 56KB\"; a right table (labeled \"候选结构单位代价\") with 4 rows labeled \"顺序表\", \"单链表\", \"双向循环链表\", \"带尾指针循环单链表\" and 5 numeric entries per row: 1,600,1200,1,1; 1200,1200,1,1,1200; 1200,1200,1,1,1; 1200,1200,1,1,2. Add a lower rectangle (labeled \"应用约束\") showing \"尾端追加与已知结点后更新需保持 O(1) 链接调整\", and a bottom rectangle (labeled \"保留满足约束且综合代价可接受的结构\"). Draw arrows from top to workload, workload to diamond, workload to table, diamond to table, table to application constraint, and application constraint to output. Highlight the diamond pale yellow and the application box pale blue.",
+    "final_image_prompt": "A flowchart diagram viewed from above, arranged in 3 vertical levels with a right-side table. Place 6 main elements: a top rounded rectangle (labeled \"选择线性表实现\"), a left middle rectangle (labeled \"工作负载\") listing \"按下标访问 4200\", \"按位序插入/删除 900\", \"已知结点后插入/删除 2600\", \"正向遍历 1300\", \"反向相邻访问 700\"; a center diamond (labeled \"内存约束\") listing \"元素 24B\", \"指针 8B\", \"最大规模 1600\", \"上限 56KB\"; a right table (labeled \"候选结构单位代价\") with 4 rows labeled \"顺序表\", \"单链表\", \"双向循环链表\", \"带尾指针循环单链表\" and 5 numeric entries per row: 1,600,1200,1,1; 1200,1200,1,1,1200; 1200,1200,1,1,1; 1200,1200,1,1,2. Add a lower rectangle (labeled \"应用约束\") showing \"尾端追加与已知结点后更新需保持 O(1) 链接调整\", and a bottom rectangle (labeled \"保留满足约束且综合代价可接受的结构\"). Draw arrows from top to workload, workload to diamond, workload to table, diamond to table, table to application constraint, and application constraint to output. Highlight the diamond pale yellow and the application box pale blue.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出操作次数、单位代价、空间参数和最后的应用约束；没有图无法完成筛选、计算和结构选择。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "图中给出的操作次数、内存参数、单位代价表和应用约束未在题干中完整给出",
+        "需要从图中读取内存上限和最大规模才能排除不满足空间条件的结构",
+        "需要从图中读取应用约束才能区分顺序表与带尾指针循环单链表"
+      ],
+      "validation_rules": [
+        "先用图中元素大小、指针大小、最大规模和内存上限判断候选结构是否可行",
+        "再用图中操作次数与单位代价计算各可行结构的工作量得分",
+        "最后依据图中应用约束选择满足尾端追加与已知结点后更新链接调整要求的候选结构",
+        "正确答案必须与 correct_answer 字段一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-001-Q0001",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "en",
+    "question_text": "The figure shows an algorithmic operation on a linear list of length $n$. Under the usual RAM model, each pointer rewrite or one-step traversal costs $O(1)$. Which asymptotic time complexity best matches the whole depicted operation?",
+    "options": {
+      "A": "$O(1)$",
+      "B": "$O(n)$",
+      "C": "$O(n \\log n)$",
+      "D": "$O(n^2)$"
+    },
+    "correct_answer": "D",
+    "explanation": "The diagram indicates that the procedure repeats for $i=1$ to $\\lfloor n/2\\rfloor$, so there are $\\Theta(n)$ iterations. In each iteration, the algorithm traverses from the head to the current position and also traverses from the head to the last node because no tail pointer is available. The traversal to the last node alone costs $\\Theta(n)$ per iteration, while pointer rewrites are only $O(1)$. Therefore the total running time is $\\Theta(n) \\cdot \\Theta(n)=\\Theta(n^2)$, so the best answer is $O(n^2)$.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "时间复杂度",
+    "blueprint_image_type": "algorithm_diagram",
+    "image_path": "images/b7356d9f98a3419b.png",
+    "image_prompt": "An algorithm diagram showing a singly linked linear list operation. Use a vertical top-to-bottom layout with six main rectangular blocks. At the top, draw four linked nodes in one row with forward arrows, labeled \"Singly linked list L, length n\", and a pointer labeled \"Head\" pointing to the first node. Place one gray crossed-out side label \"No tail pointer\" near the list. Below it, draw a blue-outlined loop block labeled \"Repeat for i = 1 to floor(n/2)\". Then draw four blocks in order: labeled \"Traverse Head to position i\", \"Traverse Head to last node\", \"Detach last node\", and \"Insert after position i\". Connect the six blocks with five solid downward arrows. Add one curved arrow from \"Insert after position i\" back to the loop block. Use only these labels and relationships.",
+    "final_image_prompt": "An algorithm diagram showing a singly linked linear list operation. Use a vertical top-to-bottom layout with six main rectangular blocks. At the top, draw four linked nodes in one row with forward arrows, labeled \"Singly linked list L, length n\", and a pointer labeled \"Head\" pointing to the first node. Place one gray crossed-out side label \"No tail pointer\" near the list. Below it, draw a blue-outlined loop block labeled \"Repeat for i = 1 to floor(n/2)\". Then draw four blocks in order: labeled \"Traverse Head to position i\", \"Traverse Head to last node\", \"Detach last node\", and \"Insert after position i\". Connect the six blocks with five solid downward arrows. Add one curved arrow from \"Insert after position i\" back to the loop block. Use only these labels and relationships.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The loop bound, missing tail pointer, and required traversal steps are only specified in the image; without them, the complexity cannot be determined uniquely.",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "The loop range is from i = 1 to floor(n/2).",
+        "The structure is a singly linked list with Head but without a tail pointer.",
+        "Each iteration includes traversal from Head to the last node.",
+        "Pointer changes occur after the traversals."
+      ],
+      "validation_rules": [
+        "Identify the loop count as $\\Theta(n)$ from the diagram.",
+        "Identify the traversal to the last node as $\\Theta(n)$ per iteration because the diagram shows no tail pointer.",
+        "Ignore constant-time pointer rewrites for asymptotic dominance.",
+        "Multiply the repeated traversal cost by the loop count to obtain $\\Theta(n^2)$."
+      ]
+    }
+  },
+  {
+    "question_id": "S15-001-Q0002",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-001",
+    "kp_name": "线性表",
+    "question_language": "zh",
+    "question_text": "某课程管理模块需要在图示约束下选择一种线性表存储结构。若以元素移动次数或指针遍历次数作为主要代价，并按图中业务路径的发生次数估算一轮总代价，哪种结构最合适？",
+    "options": {
+      "A": "顺序表",
+      "B": "仅带头指针的单链表",
+      "C": "带尾指针的循环单链表",
+      "D": "带尾指针的双链表"
+    },
+    "correct_answer": "D",
+    "explanation": "图中给出平均长度为 $n=1600$，且允许每个结点最多使用 $2$ 个指针域，因此双链表没有被内存约束排除。按图中操作次数估算：随机按序号访问在链式结构中约需 $n/2=800$ 次遍历，$20$ 次共 $16000$；顺序表该项为 $O(1)$，但“在游标前插入”和“删除游标结点”各需平均移动 $n/2=800$ 个元素，分别为 $70\\times800=56000$ 和 $50\\times800=40000$，总代价明显较大。仅带头指针的单链表尾插、前插和删除都可能需要从头查找相关位置；带尾指针的循环单链表尾插为 $O(1)$，但在已知游标时仍需找前驱。双链表在已知游标结点时，前插和删除均为 $O(1)$，尾插也为 $O(1)$，只承担少量随机访问遍历代价，因此最合适。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "结构选择",
+    "blueprint_image_type": "flowchart",
+    "image_path": "images/f602db37b7f14f3b.png",
+    "image_prompt": "A flowchart diagram, viewed from above, arranged vertically with a bottom row split into 3 operation boxes. Show 6 main rectangular boxes. At the top center, one box labeled \"业务负载\" with a second line labeled \"尾部追加 30次\". Below it, one box labeled \"平均表长 n=1600\". Below that, one box labeled \"存储约束\" with a second line labeled \"每元素≤2个指针域\". From the storage box, draw 3 downward arrows to a bottom row: left box labeled \"按序号访问 20次\", middle box labeled \"在已知游标前插入 70次\", right box labeled \"删除已知游标结点 50次\". Draw one gray annotation line from the right side labeled \"已知游标指向目标结点\" pointing between the middle and right boxes. Use light blue borders for the 3 bottom operation boxes.",
+    "final_image_prompt": "A flowchart diagram, viewed from above, arranged vertically with a bottom row split into 3 operation boxes. Show 6 main rectangular boxes. At the top center, one box labeled \"业务负载\" with a second line labeled \"尾部追加 30次\". Below it, one box labeled \"平均表长 n=1600\". Below that, one box labeled \"存储约束\" with a second line labeled \"每元素≤2个指针域\". From the storage box, draw 3 downward arrows to a bottom row: left box labeled \"按序号访问 20次\", middle box labeled \"在已知游标前插入 70次\", right box labeled \"删除已知游标结点 50次\". Draw one gray annotation line from the right side labeled \"已知游标指向目标结点\" pointing between the middle and right boxes. Use light blue borders for the 3 bottom operation boxes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出表长、操作次数、内存指针上限和游标条件；这些决定结构选择的事实只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "平均表长为1600",
+        "每个元素最多允许2个指针域",
+        "尾部追加发生30次",
+        "按序号访问发生20次",
+        "在已知游标前插入发生70次",
+        "删除已知游标结点发生50次",
+        "插入和删除操作均给定游标指向目标结点"
+      ],
+      "validation_rules": [
+        "必须先确认双链表满足每元素最多2个指针域的约束",
+        "必须比较随机访问、尾部追加、已知游标前插入、已知游标删除四类操作的综合代价",
+        "若把顺序表的插入和删除按平均移动约$n/2$个元素估算，其高频更新代价应超过链式结构的随机访问代价",
+        "若考虑已知游标但仍需前驱的限制，单链表和循环单链表不能把前插与删除都视为$O(1)$",
+        "满足约束且在已知游标前插、已知游标删除、尾部追加均为$O(1)$的候选项应被选中"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-002-Q0005",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-002",
+    "kp_name": "栈与队列",
+    "question_language": "zh",
+    "question_text": "根据图示无向网络和初始队列，执行广度优先搜索。规则为：每次从队首取出一个结点并扩展；扩展时只把尚未访问的邻接结点入队；同一结点的多个候选邻接结点按边上序号从小到大入队；结点在入队时即标记为已访问。连续执行两次“出队并扩展”后，队列从队首到队尾应为哪一项？",
+    "options": {
+      "A": "A, E, C",
+      "B": "A, C, E",
+      "C": "D, A, E, C",
+      "D": "E, C, A"
+    },
+    "correct_answer": "A",
+    "explanation": "初始队列只有 $B$，且 $B$ 已访问。第一次出队扩展 $B$ 时，图中 $B$ 的未访问邻接结点按边序号先后为 $D$、$A$，因此队列变为 $D,A$，并标记 $D,A$ 已访问。第二次从队首出队的是 $D$。扩展 $D$ 时，$B$ 已访问，未访问邻接结点为 $E$ 和 $C$；按边序号从小到大，先入队 $E$，再入队 $C$。此时原队列中尚未出队的 $A$ 仍在队首，所以最终队列为 $A,E,C$。故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "基于精确图示信息考查栈与队列",
+    "blueprint_image_type": "network_diagram",
+    "image_path": "images/b865761498244222.png",
+    "image_prompt": "A network diagram for a BFS queue simulation. Viewed from above, place the graph in the upper region and one horizontal queue box in the lower region. Draw 5 circular nodes: A at upper left, B at middle left, C at upper right, D at lower left, E at lower right. Connect B--D with a small edge label (labeled \"1\"), B--A (labeled \"2\"), D--E (labeled \"2\"), D--C (labeled \"3\"), A--C (labeled \"1\"), and C--E (labeled \"1\"). Below the graph, draw one queue cell under a title (labeled \"初始队列\"); the cell is labeled \"B\". Mark the left side (labeled \"队首\") and the right side (labeled \"队尾\"). Color node B and the queue cell light blue, with a small note (labeled \"已访问\").",
+    "final_image_prompt": "A network diagram for a BFS queue simulation. Viewed from above, place the graph in the upper region and one horizontal queue box in the lower region. Draw 5 circular nodes: A at upper left, B at middle left, C at upper right, D at lower left, E at lower right. Connect B--D with a small edge label (labeled \"1\"), B--A (labeled \"2\"), D--E (labeled \"2\"), D--C (labeled \"3\"), A--C (labeled \"1\"), and C--E (labeled \"1\"). Below the graph, draw one queue cell under a title (labeled \"初始队列\"); the cell is labeled \"B\". Mark the left side (labeled \"队首\") and the right side (labeled \"队尾\"). Color node B and the queue cell light blue, with a small note (labeled \"已访问\").\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出BFS规则，不给出网络边、边序号、初始队列或已访问状态；这些关键事实必须从图中读取后才能推演队列变化。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "B的候选邻接结点按边序号顺序为D再A",
+        "D的未访问候选邻接结点按边序号顺序为E再C",
+        "初始队列只有B且B已访问"
+      ],
+      "validation_rules": [
+        "第一次出队扩展B后，队列应包含D和A，且D在A之前",
+        "第二次出队扩展D后，A仍保留在队首位置",
+        "D扩展产生的新未访问结点按图中边序号追加到队尾",
+        "最终队列从队首到队尾必须为A,E,C"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-002-Q0002",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-002",
+    "kp_name": "栈与队列",
+    "question_language": "zh",
+    "question_text": "根据图示调度流程，若要为其中的待处理任务容器选择一种数据结构，使其在最坏情况下满足图中的处理顺序约束，并且单次关键操作的渐进复杂度不超过图中给出的上限，最合适的是哪一项？",
+    "options": {
+      "A": "顺序栈",
+      "B": "循环队列",
+      "C": "双端队列",
+      "D": "带复合关键字的堆式优先队列"
+    },
+    "correct_answer": "D",
+    "explanation": "图中需要同时满足多个条件：新任务到达时要放入待处理容器；调度时不是简单按到达先后取出，而是先比较任务优先级；若优先级相同，再按到达序号保持先到先服务；并且插入和取出的单次复杂度上限均为 $O(\\log n)$。顺序栈只能后进先出，无法满足优先级选择；循环队列只能先进先出，无法按优先级取任务；双端队列只能在两端插入或删除，不能在一般情况下高效选出指定优先级顺序的元素。用堆式优先队列，并以“优先级、到达序号”组成复合关键字，可以先按优先级调度，再在同优先级内按到达序号稳定处理，且插入和删除堆顶均可满足 $O(\\log n)$，因此选 D。",
+    "difficulty": 4,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "结构选择",
+    "blueprint_image_type": "flowchart",
+    "image_path": "images/ea98b1a9976a41f9.png",
+    "image_prompt": "A flowchart diagram, viewed frontally, arranged in one vertical column with a small right-side branch. Draw 6 main elements: a top rounded rectangle labeled “任务到达”, a second rectangle labeled “写入待处理容器”, a diamond labeled “是否调度？”, a blue-outlined rectangle labeled “比较优先级p” containing the text “p小者先出”, an orange-outlined diamond labeled “p相同？”, and a bottom orange-outlined rectangle labeled “比较到达序号seq” containing the text “seq小者先出”. Connect top to second, second to third, third to fourth, fourth to fifth, and fifth downward to sixth with black arrows. Label the downward arrow from the fifth element “是”. Add one gray rightward arrow from the fifth element labeled “否：直接按p”. Place a small label “插入≤O(log n)” to the right of the second rectangle and “取出≤O(log n)” to the right of the fourth rectangle. Use blue and orange outlines only for the specified boxes.",
+    "final_image_prompt": "A flowchart diagram, viewed frontally, arranged in one vertical column with a small right-side branch. Draw 6 main elements: a top rounded rectangle labeled “任务到达”, a second rectangle labeled “写入待处理容器”, a diamond labeled “是否调度？”, a blue-outlined rectangle labeled “比较优先级p” containing the text “p小者先出”, an orange-outlined diamond labeled “p相同？”, and a bottom orange-outlined rectangle labeled “比较到达序号seq” containing the text “seq小者先出”. Connect top to second, second to third, third to fourth, fourth to fifth, and fifth downward to sixth with black arrows. Label the downward arrow from the fifth element “是”. Add one gray rightward arrow from the fifth element labeled “否：直接按p”. Place a small label “插入≤O(log n)” to the right of the second rectangle and “取出≤O(log n)” to the right of the fourth rectangle. Use blue and orange outlines only for the specified boxes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出具体的排序关键字、同级处理规则或复杂度上限；必须读取图中的流程框、标签和箭头关系才能判断应选择哪种结构。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "图中显示调度时先依据优先级p决定出容器顺序",
+        "图中显示同优先级时再依据到达序号seq决定顺序",
+        "图中给出插入操作的复杂度上限为$O(\\log n)$",
+        "图中给出取出操作的复杂度上限为$O(\\log n)$"
+      ],
+      "validation_rules": [
+        "若结构不能按优先级选择出容器元素，则排除",
+        "若结构不能在同优先级下保持到达序号次序，则排除",
+        "若结构无法保证插入和取出关键操作均不超过$O(\\log n)$，则排除",
+        "带复合关键字的堆式优先队列满足全部图示约束"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-003-Q0001",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-003",
+    "kp_name": "二叉树与遍历",
+    "question_language": "zh",
+    "question_text": "图中给出一棵二叉搜索树。依次执行以下操作：先插入键值 $45$；再删除键值 $20$，删除时规定用其右子树中的中序后继替代；最后插入键值 $22$。若对最终得到的树做层序遍历，求第 $4$ 个访问结点与第 $7$ 个访问结点键值之差的绝对值。",
+    "options": {
+      "A": "$12$",
+      "B": "$18$",
+      "C": "$15$",
+      "D": "$35$"
+    },
+    "correct_answer": "A",
+    "explanation": "先根据图读出初始二叉搜索树结构。插入 $45$ 时，路径为根结点右子树，再到值为 $40$ 的结点右侧，因此 $45$ 成为 $40$ 的右孩子。删除 $20$ 时，按题意用其右子树中的中序后继替代；该后继是原来 $20$ 的右孩子 $25$，所以 $25$ 接到原 $20$ 的位置，并保留左孩子 $10$。再插入 $22$ 时，比较路径为小于根结点、大于 $10$、小于 $25$，因此 $22$ 成为 $10$ 的右孩子。最终层序遍历为 $30,25,50,10,40,60,22,45$，第 $4$ 个为 $10$，第 $7$ 个为 $22$，差的绝对值为 $|10-22|=12$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "操作序列推演",
+    "blueprint_image_type": "binary_tree",
+    "image_path": "images/17fa282d7c0441e7.png",
+    "image_prompt": "A binary_tree diagram, shown in a top-down layout with 3 visible levels and the root centered at the top. Draw exactly 7 circular nodes: top center node labeled \"30\"; second level left node labeled \"20\" and second level right node labeled \"50\"; third level nodes labeled \"10\", \"25\", \"40\", and \"60\" from left to right. Connect 30 to 20 and 30 to 50 with straight black lines. Connect 20 to 10 and 20 to 25 with straight black lines. Connect 50 to 40 and 50 to 60 with straight black lines. Each label must be centered inside its node, using only the visible labels \"30\", \"20\", \"50\", \"10\", \"25\", \"40\", and \"60\". No traversal numbers, operation marks, or highlighted answer nodes.",
+    "final_image_prompt": "A binary_tree diagram, shown in a top-down layout with 3 visible levels and the root centered at the top. Draw exactly 7 circular nodes: top center node labeled \"30\"; second level left node labeled \"20\" and second level right node labeled \"50\"; third level nodes labeled \"10\", \"25\", \"40\", and \"60\" from left to right. Connect 30 to 20 and 30 to 50 with straight black lines. Connect 20 to 10 and 20 to 25 with straight black lines. Connect 50 to 40 and 50 to 60 with straight black lines. Each label must be centered inside its node, using only the visible labels \"30\", \"20\", \"50\", \"10\", \"25\", \"40\", and \"60\". No traversal numbers, operation marks, or highlighted answer nodes.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出操作序列和遍历要求，初始树的键值、父子关系以及删除时的中序后继都必须从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "初始根结点键值及其左右子树结构只能由图片确定",
+        "值20的两个孩子及值50的两个孩子只能由图片确定",
+        "插入45、删除20、插入22后的层序位置依赖图片中的初始父子关系"
+      ],
+      "validation_rules": [
+        "按二叉搜索树插入规则确定45的位置",
+        "删除20时必须用其右子树中的中序后继替代",
+        "按二叉搜索树插入规则确定22的位置",
+        "对最终树做层序遍历并取第4和第7个访问结点",
+        "计算两个键值之差的绝对值应等于12"
+      ]
+    }
+  },
+  {
+    "question_id": "S15-005-Q0002",
+    "subject_id": "S15",
+    "subject_name": "计算机科学",
+    "kp_id": "S15-M01-005",
+    "kp_name": "图的基本算法",
+    "question_language": "zh",
+    "question_text": "对图中无向图执行如下连通分量算法：外层按顶点标号字母序扫描；若顶点未访问，则从该顶点启动一次 DFS；图采用邻接表存储，且每条无向边在两个端点的邻接表中各存一次。若只统计两类判断次数：外层的“该顶点是否已访问”判断，以及 DFS 中对每个邻接表表项执行的“邻接点是否已访问”判断，则总判断次数是多少？",
+    "options": {
+      "A": "13",
+      "B": "14",
+      "C": "20",
+      "D": "27"
+    },
+    "correct_answer": "C",
+    "explanation": "图中共有 $6$ 个顶点，因此外层扫描会执行 $6$ 次“该顶点是否已访问”的判断。图中共有 $7$ 条无向边，邻接表中每条无向边会作为两个邻接表表项被检查，所以 DFS 内部的“邻接点是否已访问”判断次数为 $2\\times 7=14$。本题要求把外层判断和邻接表表项判断都计入，因此总次数为 $6+14=20$。选 C。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "时间复杂度",
+    "blueprint_image_type": "graph_diagram",
+    "image_path": "images/99c9cedeb1e648f9.png",
+    "image_prompt": "A graph diagram of an undirected data-structure graph, viewed from above with two horizontal rows. Place 6 circular nodes: upper row left to right labeled \"A\", \"B\", \"C\"; lower row left to right labeled \"D\", \"E\", \"F\". Draw exactly 7 plain black undirected edges: A connected to B, A connected to D, B connected to C, B connected to D, C connected to E, D connected to E, and E connected to F. Show every node label inside its circle, formatted as (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), and (labeled \"F\"). Add one small caption below the graph (labeled \"邻接表存储：无向边双向存放\"). Use light blue node fill and black edge lines.",
+    "final_image_prompt": "A graph diagram of an undirected data-structure graph, viewed from above with two horizontal rows. Place 6 circular nodes: upper row left to right labeled \"A\", \"B\", \"C\"; lower row left to right labeled \"D\", \"E\", \"F\". Draw exactly 7 plain black undirected edges: A connected to B, A connected to D, B connected to C, B connected to D, C connected to E, D connected to E, and E connected to F. Show every node label inside its circle, formatted as (labeled \"A\"), (labeled \"B\"), (labeled \"C\"), (labeled \"D\"), (labeled \"E\"), and (labeled \"F\"). Add one small caption below the graph (labeled \"邻接表存储：无向边双向存放\"). Use light blue node fill and black edge lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "必须从图中读取顶点数、边数以及无向邻接表双向存放说明；题干本身没有给出这些关键数量。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中顶点集合为 A、B、C、D、E、F。",
+        "图中共有 7 条无向边。",
+        "图片说明该无向图按邻接表双向存放边。"
+      ],
+      "validation_rules": [
+        "外层访问判断次数等于图中顶点数 $6$。",
+        "DFS 内部邻接点访问判断次数等于邻接表表项数 $2\\times 7=14$。",
+        "总判断次数为 $6+14=20$，因此正确答案为 C。"
+      ]
+    }
+  }
+]

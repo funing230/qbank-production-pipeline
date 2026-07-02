@@ -1,0 +1,559 @@
+[
+  {
+    "question_id": "S09-001-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "zh",
+    "question_text": "观察肩胛区骨性标志定位示意图。按题干给定的定位规则筛选候选点：该点必须位于扁骨区域；位于肩胛冈参考线的上方；其到内侧缘的水平距离小于其到关节盂中心水平距离的$\\frac{1}{4}$；且到上缘参考折线的垂直距离不超过$0.6$格。最符合这些条件的候选标记是哪一个？",
+    "options": {
+      "A": "P",
+      "B": "Q",
+      "C": "R",
+      "D": "V"
+    },
+    "correct_answer": "A",
+    "explanation": "先看骨分类区域，P、Q、R、V均在肩胛骨扁骨区域内，T在长骨区域内因此不应参与。再按空间条件判断：肩胛冈参考线为$y=1$，P、Q、R都在其上方，V位于线上而不是上方。接着比较水平距离：内侧缘为$x=-6$，关节盂中心为$G(0,0)$。P的横坐标为$-5.4$，到内侧缘距离为$0.6$，到G的水平距离为$5.4$，$0.6<5.4/4=1.35$；Q为$2.0<4.0/4=1.0$不成立；R为$4.8<1.2/4=0.3$不成立。最后看上缘折线，P到该折线的垂直距离标为$0.3$格，不超过$0.6$格；Q为$1.8$格，R为$0.4$格但已不满足水平距离条件。综合所有约束，只有P符合。",
+    "difficulty": 5,
+    "blueprint_slot": 7,
+    "blueprint_archetype": "标志定位",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/03f4293cd1aa42ae.png",
+    "image_prompt": "An academic diagram of a synthetic anatomy teaching scapular landmark map. The layout is a posterior scapular region on a square coordinate grid, with the tan left field labeled \"肩胛骨：扁骨\" and the blue lateral field labeled \"肱骨：长骨\". Show point G at (0,0) labeled \"G\". Draw a vertical reference line at x=-6 labeled \"内侧缘\", a horizontal line at y=1 labeled \"肩胛冈参考线\", and a superior border polyline from (-6,5) to (-3,4.6) to (-1,4.0) labeled \"上缘参考折线\". Plot 7 circular candidate markers: P at (-5.4,4.7), Q at (-4.0,2.4), R at (-1.2,3.6), S at (-4.8,-3.2), T at (1.2,0.6), U at (-2.6,1.2), V at (-5.7,1.0), each labeled. Add dashed vertical measurement segments from P, Q, and R to the superior border, labeled \"0.3格\", \"1.8格\", and \"0.4格\". Use neutral marker colors.",
+    "final_image_prompt": "An academic diagram of a synthetic anatomy teaching scapular landmark map. The layout is a posterior scapular region on a square coordinate grid, with the tan left field labeled \"肩胛骨：扁骨\" and the blue lateral field labeled \"肱骨：长骨\". Show point G at (0,0) labeled \"G\". Draw a vertical reference line at x=-6 labeled \"内侧缘\", a horizontal line at y=1 labeled \"肩胛冈参考线\", and a superior border polyline from (-6,5) to (-3,4.6) to (-1,4.0) labeled \"上缘参考折线\". Plot 7 circular candidate markers: P at (-5.4,4.7), Q at (-4.0,2.4), R at (-1.2,3.6), S at (-4.8,-3.2), T at (1.2,0.6), U at (-2.6,1.2), V at (-5.7,1.0), each labeled. Add dashed vertical measurement segments from P, Q, and R to the superior border, labeled \"0.3格\", \"1.8格\", and \"0.4格\". Use neutral marker colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各候选点坐标、骨分类区域、参考线位置或测量标注；必须读图并组合计算后才能确定唯一答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "候选点的坐标位置只在图片中给出",
+        "骨分类区域的归属只在图片中给出",
+        "各候选点与上缘参考折线的垂直距离标注只在图片中给出",
+        "肩胛冈参考线、内侧缘和关节盂中心的位置只在图片中给出"
+      ],
+      "validation_rules": [
+        "先排除不在扁骨区域的候选点",
+        "候选点必须严格位于肩胛冈参考线之上",
+        "计算候选点到x=-6的水平距离，并与其到x=0水平距离的四分之一比较",
+        "候选点到上缘参考折线的垂直距离必须不超过0.6格",
+        "四个条件同时满足者为唯一正确答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-001-Q0002",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中标本甲的模拟显微结构，并按系统解剖学中关节分类原则判断其所属类型。以下哪一项最符合？",
+    "options": {
+      "A": "纤维连结",
+      "B": "软骨连结",
+      "C": "滑膜关节",
+      "D": "骨性融合"
+    },
+    "correct_answer": "B",
+    "explanation": "标本甲需要综合判断，而不是只看一个局部。图中标本甲两侧为骨端，中间没有开放性腔隙；中央连接带被标为透明软骨，厚度为$0.8\\text{ mm}$；其两侧骨面之间由连续组织桥相接，而不是由关节腔分隔。纤维连结应以致密纤维束为主要连接组织；滑膜关节应见关节腔、关节囊及关节软骨面；骨性融合则应表现为骨组织连续。因此标本甲符合软骨连结。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "关节分类",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/05995c0951a64f3f.png",
+    "image_prompt": "A synthetic educational microscopy-style diagram, arranged as a 2 by 2 grid of rectangular tissue panels viewed straight on. The upper-left panel is labeled \"标本甲\", upper-right \"对照乙\", lower-left \"对照丙\", lower-right \"对照丁\". Each panel contains exactly 2 pale beige bone-end regions labeled \"骨端\" on the left and right. In \"标本甲\", place 1 blue continuous bridge between the bone ends, labeled \"透明软骨\" and \"0.8 mm\". In \"对照乙\", place 1 pink band of parallel fibers between bone ends, labeled \"致密纤维\". In \"对照丙\", place 1 white central gap labeled \"腔隙0.6 mm\" with 1 black curved outer line labeled \"囊\". In \"对照丁\", place 1 pale beige continuous trabecular bridge labeled \"骨小梁\". Use blue highlight only in 标本甲.",
+    "final_image_prompt": "A synthetic educational microscopy-style diagram, arranged as a 2 by 2 grid of rectangular tissue panels viewed straight on. The upper-left panel is labeled \"标本甲\", upper-right \"对照乙\", lower-left \"对照丙\", lower-right \"对照丁\". Each panel contains exactly 2 pale beige bone-end regions labeled \"骨端\" on the left and right. In \"标本甲\", place 1 blue continuous bridge between the bone ends, labeled \"透明软骨\" and \"0.8 mm\". In \"对照乙\", place 1 pink band of parallel fibers between bone ends, labeled \"致密纤维\". In \"对照丙\", place 1 white central gap labeled \"腔隙0.6 mm\" with 1 black curved outer line labeled \"囊\". In \"对照丁\", place 1 pale beige continuous trabecular bridge labeled \"骨小梁\". Use blue highlight only in 标本甲.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出标本甲的中央组织、腔隙状态或参照结构；必须读取图片中的组织标签、空间关系和对照差异才能分类。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "标本甲中央连接组织的标签为透明软骨",
+        "标本甲两个骨端之间没有开放腔隙",
+        "标本甲中央组织桥与骨端颜色不同",
+        "对照丙显示腔隙和囊作为区别参照"
+      ],
+      "validation_rules": [
+        "若标本甲两骨端之间为连续透明软骨桥且无开放腔隙，则应归为软骨连结",
+        "若主要连接组织为致密纤维束，才可归为纤维连结",
+        "若存在关节腔并伴囊样结构，才可归为滑膜关节",
+        "若两骨端之间为骨组织连续，才可归为骨性融合"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-001-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中4个骨骼标本。先只保留可按全身骨骼分类判定为长骨的标本；再对保留标本按公式 $S=2E+M-L$ 计算识别评分，其中 $E$ 为图中可见膨大端数，$M$ 为蓝色骨性标志点数，$L$ 为红色关节连线数。评分最高者对应哪一项？",
+    "options": {
+      "A": "标本甲",
+      "B": "标本乙",
+      "C": "标本丙",
+      "D": "标本丁"
+    },
+    "correct_answer": "C",
+    "explanation": "先依据图中形态识别骨类：标本甲呈典型长管状并有两端，为长骨；标本乙近似小块状，为短骨；标本丙呈细长管状并有两端，为长骨；标本丁呈板状，为扁骨。因此只计算甲、丙。标本甲图示 $E=2$、$M=3$、$L=2$，所以 $S=2\\times2+3-2=5$。标本丙图示 $E=2$、$M=4$、$L=1$，所以 $S=2\\times2+4-1=7$。丙的评分高于甲，故选C。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "骨骼识别",
+    "blueprint_image_type": "anatomical_diagram",
+    "image_path": "images/3442c86e39714848.png",
+    "image_prompt": "An anatomical_diagram for anatomy teaching, arranged as a horizontal row of 4 skeletal specimens on a white page, viewed frontally. From left to right show specimen 甲 (labeled \"标本甲\") as a long tubular bone with 2 enlarged ends, specimen 乙 (labeled \"标本乙\") as a small cuboid bone, specimen 丙 (labeled \"标本丙\") as a slender tubular bone with 2 enlarged ends, and specimen 丁 (labeled \"标本丁\") as a broad flat triangular plate bone. Draw blue landmark dots on the surfaces: 3 on 甲, 2 on 乙, 4 on 丙, 3 on 丁. Draw red joint lines: 2 from the two ends of 甲, 1 from the right side of 乙, 1 from the lower end of 丙, 2 from the outer edge of 丁. Add labels \"蓝点=骨性标志\", \"红线=关节连线\", and small count boxes labeled \"E\", \"M\", \"L\" under each specimen. Use blue only for dots and red only for lines.",
+    "final_image_prompt": "An anatomical_diagram for anatomy teaching, arranged as a horizontal row of 4 skeletal specimens on a white page, viewed frontally. From left to right show specimen 甲 (labeled \"标本甲\") as a long tubular bone with 2 enlarged ends, specimen 乙 (labeled \"标本乙\") as a small cuboid bone, specimen 丙 (labeled \"标本丙\") as a slender tubular bone with 2 enlarged ends, and specimen 丁 (labeled \"标本丁\") as a broad flat triangular plate bone. Draw blue landmark dots on the surfaces: 3 on 甲, 2 on 乙, 4 on 丙, 3 on 丁. Draw red joint lines: 2 from the two ends of 甲, 1 from the right side of 乙, 1 from the lower end of 丙, 2 from the outer edge of 丁. Add labels \"蓝点=骨性标志\", \"红线=关节连线\", and small count boxes labeled \"E\", \"M\", \"L\" under each specimen. Use blue only for dots and red only for lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出计算规则和筛选原则，骨类形态、膨大端数、蓝点数和红线数均必须从图中读取，脱离图片无法确定候选或评分。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "各标本的轮廓形态需要从图片识别",
+        "各标本的膨大端数量需要从图片读取",
+        "各标本的蓝色骨性标志点数量需要从图片读取",
+        "各标本的红色关节连线数量需要从图片读取"
+      ],
+      "validation_rules": [
+        "先排除不符合长骨形态的标本乙和标本丁",
+        "对剩余标本使用 $S=2E+M-L$",
+        "标本甲评分为 $2\\times2+3-2=5$",
+        "标本丙评分为 $2\\times2+4-1=7$",
+        "选择评分较高的保留标本"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-001-Q0002",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中5个骨标本的形态、关节类型标记和骨性标志编号。按以下规则选择唯一标本：先排除长度与最窄处宽度之比小于4的标本；再排除两端关节类型不均为滑膜关节的标本；最后在剩余标本中，选择图上编号骨性标志数为4个的标本。该标本是：",
+    "options": {
+      "A": "甲",
+      "B": "乙",
+      "C": "丙",
+      "D": "丁"
+    },
+    "correct_answer": "A",
+    "explanation": "需要按题干规则逐步读图。甲的长度为12、最窄处宽度为2，比例为$12/2=6$，不小于4；其近端与远端关节类型均标为滑膜关节；图中编号骨性标志为4个，因此满足全部条件。乙的比例为$7/5=1.4$，第一步即被排除。丙的比例为$10/2=5$，但两端关节类型分别为滑膜关节和纤维关节，不满足第二步。丁的比例为$6/2=3$，第一步被排除；即使观察其关节类型，也不能进入最后筛选。戊未列入选项，且其比例也不足4。因此唯一符合条件的是甲。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "骨骼识别",
+    "blueprint_image_type": "anatomical_diagram",
+    "image_path": "images/7572fd8e78e941c8.png",
+    "image_prompt": "An anatomical teaching diagram, viewed frontally, with 5 synthetic bone specimens arranged horizontally from left to right. Draw specimen 甲 at far left as a long tubular bone (labeled \"甲\"), 乙 as a flat triangular bone (labeled \"乙\"), 丙 as a slender curved bone (labeled \"丙\"), 丁 as an irregular vertebra-like bone (labeled \"丁\"), and 戊 as a short block bone (labeled \"戊\"). Above them place length labels: \"长度12\", \"长度7\", \"长度10\", \"长度6\", \"长度4\". Below them place width labels: \"宽度2\", \"宽度5\", \"宽度2\", \"宽度2\", \"宽度3\". Add left and right joint boxes: 甲 \"滑膜\"-\"滑膜\", 乙 \"滑膜\"-\"滑膜\", 丙 \"滑膜\"-\"纤维\", 丁 \"软骨\"-\"滑膜\", 戊 \"滑膜\"-\"滑膜\". Put numbered landmark circles: 甲 has \"1\",\"2\",\"3\",\"4\"; 乙 has \"1\",\"2\",\"3\"; 丙 has \"1\",\"2\"; 丁 has \"1\",\"2\",\"3\",\"4\"; 戊 has \"1\". Use pale blue fill only on 甲.",
+    "final_image_prompt": "An anatomical teaching diagram, viewed frontally, with 5 synthetic bone specimens arranged horizontally from left to right. Draw specimen 甲 at far left as a long tubular bone (labeled \"甲\"), 乙 as a flat triangular bone (labeled \"乙\"), 丙 as a slender curved bone (labeled \"丙\"), 丁 as an irregular vertebra-like bone (labeled \"丁\"), and 戊 as a short block bone (labeled \"戊\"). Above them place length labels: \"长度12\", \"长度7\", \"长度10\", \"长度6\", \"长度4\". Below them place width labels: \"宽度2\", \"宽度5\", \"宽度2\", \"宽度2\", \"宽度3\". Add left and right joint boxes: 甲 \"滑膜\"-\"滑膜\", 乙 \"滑膜\"-\"滑膜\", 丙 \"滑膜\"-\"纤维\", 丁 \"软骨\"-\"滑膜\", 戊 \"滑膜\"-\"滑膜\". Put numbered landmark circles: 甲 has \"1\",\"2\",\"3\",\"4\"; 乙 has \"1\",\"2\",\"3\"; 丙 has \"1\",\"2\"; 丁 has \"1\",\"2\",\"3\",\"4\"; 戊 has \"1\". Use pale blue fill only on 甲.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出筛选规则，未给出任何标本的测量值、关节类型或骨性标志数量；必须读图并计算比例后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各标本的长度与最窄处宽度数值只在图中给出",
+        "各标本两端关节类型只在图中以小标签给出",
+        "各标本的编号骨性标志数只在图中给出"
+      ],
+      "validation_rules": [
+        "先计算每个可选标本的长度与最窄处宽度之比，保留比例不小于4者",
+        "再检查剩余标本的近端和远端关节类型是否均为滑膜关节",
+        "最后检查剩余标本的编号骨性标志数是否为4个",
+        "仅有甲同时满足比例、双端关节类型和编号标志数三个条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-001-Q0006",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "en",
+    "question_text": "Inspect the highlighted articulation in the simulated microscopy image. Which structural joint classification is most consistent with the combined visible features?",
+    "options": {
+      "A": "Fibrous joint, syndesmosis",
+      "B": "Synovial joint",
+      "C": "Primary cartilaginous joint, synchondrosis",
+      "D": "Secondary cartilaginous joint, symphysis"
+    },
+    "correct_answer": "B",
+    "explanation": "The image must be interpreted by combining several visible features rather than by reading a single label. The two bony ends are separated by a distinct clear space, each facing surface is capped by cartilage, and an outer capsule surrounds the opposed ends. The side dense band is adjacent to the joint but does not form a continuous bridge between the two bones, so it should not be treated as the defining connector. A fibrous syndesmosis would be characterized by fibrous tissue connecting bones without a joint cavity. A synchondrosis would show a continuous hyaline cartilage connection between bones. A symphysis would show fibrocartilage uniting the bones. The combination of a cavity-like space, articular cartilage caps, and a surrounding capsule identifies the articulation as a synovial joint.",
+    "difficulty": 4,
+    "blueprint_slot": 6,
+    "blueprint_archetype": "关节分类",
+    "blueprint_image_type": "microscopy_image",
+    "image_path": "images/dafda4076a944897.png",
+    "image_prompt": "A synthetic microscopy image of an educational joint section. Global layout: one horizontal specimen viewed in cross-section, with Specimen X centered at the top, Bone A on the left third and Bone B on the right third. Specific elements: 2 pale tan trabecular bone regions, 2 blue cartilage caps on the facing medial surfaces, 1 white central vertical clear space, 1 thin black oval outer capsule, and 1 green side dense band along the lower-right outside. Connections and relationships: the left cartilage cap borders the left edge of the clear space; the right cartilage cap borders the right edge; the outer capsule surrounds both facing bone ends, both cartilage caps, and the clear space; the green side dense band touches Bone B externally but does not cross to Bone A. Labels: Bone A, Bone B, cartilage cap, clear space, outer capsule, side dense band, Specimen X. Highlight the clear space with a pale yellow rim.",
+    "final_image_prompt": "A synthetic microscopy image of an educational joint section. Global layout: one horizontal specimen viewed in cross-section, with Specimen X centered at the top, Bone A on the left third and Bone B on the right third. Specific elements: 2 pale tan trabecular bone regions, 2 blue cartilage caps on the facing medial surfaces, 1 white central vertical clear space, 1 thin black oval outer capsule, and 1 green side dense band along the lower-right outside. Connections and relationships: the left cartilage cap borders the left edge of the clear space; the right cartilage cap borders the right edge; the outer capsule surrounds both facing bone ends, both cartilage caps, and the clear space; the green side dense band touches Bone B externally but does not cross to Bone A. Labels: Bone A, Bone B, cartilage cap, clear space, outer capsule, side dense band, Specimen X. Highlight the clear space with a pale yellow rim.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "The options cannot be distinguished from text alone; the answer depends on visually checking the central space, the separate cartilage caps, the capsule, and the non-bridging distractor band.",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "The two bone ends are separated by a clear central space.",
+        "Each bone end has its own cartilage cap rather than one continuous cartilage bridge.",
+        "An outer capsule surrounds the opposed bone ends and the central space.",
+        "The green side dense band is outside the capsule and does not connect the two bones."
+      ],
+      "validation_rules": [
+        "If a visible joint space lies between cartilage-covered bone ends and the region is enclosed by a capsule, classify the articulation as a synovial joint.",
+        "Reject fibrous syndesmosis when the only dense band is outside the capsule and does not connect both bones.",
+        "Reject synchondrosis and symphysis when the image shows no continuous cartilage or fibrocartilage bridge between the bones."
+      ]
+    }
+  },
+  {
+    "question_id": "S09-001-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-001",
+    "kp_name": "骨骼系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中的骨骼结构数据图。按以下规则筛选：先保留骨类符合题干要求的候选，再要求其相邻关节类型符合要求；最后在小坐标框中比较标志点L相对于参考点R的水平与垂直位移，选择“L位于R的右上方，且水平位移比垂直位移多2格”的候选。若骨类要求为“不规则骨或扁骨”，关节要求为“滑膜关节”，应选哪一项？",
+    "options": {
+      "A": "甲",
+      "B": "丙",
+      "C": "丁",
+      "D": "己"
+    },
+    "correct_answer": "B",
+    "explanation": "先按骨类筛选：题干要求“不规则骨或扁骨”，因此排除骨类不符合者。再按关节类型筛选，只保留相邻关节为滑膜关节的候选。随后读取各候选小坐标框中L与R的位置，计算水平位移与垂直位移：只有丙的L在R右上方，且水平位移为4格、垂直位移为2格，满足“水平位移比垂直位移多2格”。丁虽然也涉及滑膜关节，但其位移关系不符合；己的骨类符合但关节类型不符合；甲的关节和位移容易造成干扰，但骨类不符合。因此答案为B。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查骨骼系统结构",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/edf5a9dc0c10434d.png",
+    "image_prompt": "A data chart for a synthetic anatomy teaching diagram, titled labeled \"骨骼结构数据图\". Use a left-to-right table layout with 6 horizontal rows and 4 columns labeled \"候选\", \"骨类\", \"相邻关节\", and \"标志定位\". Rows are labeled \"甲\", \"乙\", \"丙\", \"丁\", \"戊\", \"己\". Bone class cells show, in order: \"长骨\", \"扁骨\", \"不规则骨\", \"扁骨\", \"短骨\", \"不规则骨\". Joint cells show, in order: \"滑膜关节\", \"纤维关节\", \"滑膜关节\", \"滑膜关节\", \"软骨关节\", \"纤维关节\". Each row has one 5 by 5 coordinate grid with axes labeled \"x→\" and \"y↑\". Place blue circle \"R\" and red triangle \"L\": 甲 R(1,1) L(4,4); 乙 R(3,1) L(5,2); 丙 R(1,2) L(5,4); 丁 R(2,1) L(5,5); 戊 R(4,2) L(2,5); 己 R(2,3) L(5,4). Use light gray grid lines.",
+    "final_image_prompt": "A data chart for a synthetic anatomy teaching diagram, titled labeled \"骨骼结构数据图\". Use a left-to-right table layout with 6 horizontal rows and 4 columns labeled \"候选\", \"骨类\", \"相邻关节\", and \"标志定位\". Rows are labeled \"甲\", \"乙\", \"丙\", \"丁\", \"戊\", \"己\". Bone class cells show, in order: \"长骨\", \"扁骨\", \"不规则骨\", \"扁骨\", \"短骨\", \"不规则骨\". Joint cells show, in order: \"滑膜关节\", \"纤维关节\", \"滑膜关节\", \"滑膜关节\", \"软骨关节\", \"纤维关节\". Each row has one 5 by 5 coordinate grid with axes labeled \"x→\" and \"y↑\". Place blue circle \"R\" and red triangle \"L\": 甲 R(1,1) L(4,4); 乙 R(3,1) L(5,2); 丙 R(1,2) L(5,4); 丁 R(2,1) L(5,5); 戊 R(4,2) L(2,5); 己 R(2,3) L(5,4). Use light gray grid lines.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出筛选规则，不给出各候选的骨类、关节类型和坐标；必须读取图中数据并进行位移计算才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "各候选的骨类标签需要从图中读取",
+        "各候选的相邻关节类型需要从图中读取",
+        "各候选的R点和L点坐标需要从图中读取",
+        "L相对于R的水平位移和垂直位移需要依据图中坐标计算"
+      ],
+      "validation_rules": [
+        "先保留骨类为不规则骨或扁骨的候选",
+        "再保留相邻关节为滑膜关节的候选",
+        "再检验L是否位于R右上方",
+        "再计算水平位移与垂直位移，并要求水平位移比垂直位移多2格",
+        "唯一满足全部条件的选项为B"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-002-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-002",
+    "kp_name": "肌肉系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中的肌肉结构数据图。按题干给出的结构指数规则计算：指数 = $2\\times$屈肘值 + $1\\times$旋后值 + 肌群加分 + 神经加分 + 关节扣分。其中前臂前群或臂前群加 $1$ 分；肌皮神经加 $2$ 分，桡神经或正中神经扣 $2$ 分；若跨越肩关节再扣 $3$ 分。应选择哪一个候选肌？",
+    "options": {
+      "A": "候选1",
+      "B": "候选2",
+      "C": "候选3",
+      "D": "候选4"
+    },
+    "correct_answer": "B",
+    "explanation": "需从图中逐行读取屈肘值、旋后值、肌群、神经和是否跨肩。候选1：$2\\times3+2+1+2-3=8$。候选2：$2\\times4+1+1+2+0=12$。候选3：$2\\times2+3+1-2+0=6$。候选4：$2\\times1+0+0-2+0=0$。因此候选2的结构指数最高，选择B。候选1容易因屈肘和旋后均较强而被误选，但它跨肩需扣分；候选3旋后值高但神经扣分；候选4既非目标肌群又神经扣分。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查肌肉系统结构",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/0bcd3b13bffb44e0.png",
+    "image_prompt": "A data chart for a synthetic anatomy teaching diagram, arranged as a left table and a right rule box. The left table has 4 rows labeled \"候选1\", \"候选2\", \"候选3\", \"候选4\" and 5 columns labeled \"肌群\", \"神经\", \"跨肩\", \"屈肘值\", \"旋后值\". Row 1 shows \"臂前群\", \"肌皮神经\", \"是\", 3, 2. Row 2 shows \"臂前群\", \"肌皮神经\", \"否\", 4, 1. Row 3 shows \"前臂前群\", \"正中神经\", \"否\", 2, 3. Row 4 shows \"臂后群\", \"桡神经\", \"否\", 1, 0. The right box is labeled \"结构指数规则\" and lists \"屈肘×2\", \"旋后×1\", \"目标肌群+1\", \"肌皮+2\", \"正中/桡-2\", \"跨肩是-3\". Draw thin arrows from each rule item to its matching table column. Use a light blue border around row 2 only.",
+    "final_image_prompt": "A data chart for a synthetic anatomy teaching diagram, arranged as a left table and a right rule box. The left table has 4 rows labeled \"候选1\", \"候选2\", \"候选3\", \"候选4\" and 5 columns labeled \"肌群\", \"神经\", \"跨肩\", \"屈肘值\", \"旋后值\". Row 1 shows \"臂前群\", \"肌皮神经\", \"是\", 3, 2. Row 2 shows \"臂前群\", \"肌皮神经\", \"否\", 4, 1. Row 3 shows \"前臂前群\", \"正中神经\", \"否\", 2, 3. Row 4 shows \"臂后群\", \"桡神经\", \"否\", 1, 0. The right box is labeled \"结构指数规则\" and lists \"屈肘×2\", \"旋后×1\", \"目标肌群+1\", \"肌皮+2\", \"正中/桡-2\", \"跨肩是-3\". Draw thin arrows from each rule item to its matching table column. Use a light blue border around row 2 only.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出计算任务，不给出各候选肌的肌群、神经、跨肩状态和作用数值；没有图无法完成比较。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "四个候选肌的肌群、神经、跨肩状态、屈肘值和旋后值均需从图中读取",
+        "结构指数的各项权重和扣分规则需从图中读取"
+      ],
+      "validation_rules": [
+        "按图中规则分别计算四个候选肌的结构指数",
+        "候选1指数为8，候选2指数为12，候选3指数为6，候选4指数为0",
+        "选择指数最高且唯一的候选肌"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-002-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-002",
+    "kp_name": "肌肉系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中4条编号肌束的近端附着、远端附着、跨越关节和神经标注。若要识别股直肌，最符合条件的是哪一个编号？",
+    "options": {
+      "A": "①",
+      "B": "②",
+      "C": "③",
+      "D": "④"
+    },
+    "correct_answer": "C",
+    "explanation": "股直肌属于股四头肌之一，典型特点是近端起于髂前下棘附近，远端经髌骨连至胫骨粗隆，跨越髋关节和膝关节，可参与屈髋与伸膝，并由股神经支配。图中③的近端附着点位于髂前下棘，远端附着点连至髌骨和胫骨粗隆，轨迹同时跨过髋、膝两个关节，旁侧神经标注为股神经，因此③符合股直肌。①更符合缝匠肌样的斜行路径，②只跨膝且近端位于股骨前外侧，④位于内侧且神经标注不同，均不符合。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "肌肉识别",
+    "blueprint_image_type": "anatomical_diagram",
+    "image_path": "images/6a6df2b1cd124c80.png",
+    "image_prompt": "An anatomical_diagram showing a synthetic teaching anterior view of the right pelvis-to-leg region. Global layout: pelvis at the top, femur vertical in the center, patella and proximal tibia at the bottom, with 2 horizontal joint lines labeled “髋关节线” and “膝关节线”. Include 4 colored numbered muscle bands: blue band ① from “髂前上棘” to “胫骨内侧面”, orange band ② from “股骨前外侧面” to “髌骨/胫骨粗隆”, red band ③ from “髂前下棘” to “髌骨/胫骨粗隆”, green band ④ from “股骨内侧面” to “髌骨/胫骨粗隆”. Connections: ① and ③ cross both joint lines; ② and ④ cross only the knee joint line. Labels must include “右侧骨盆”, “股骨”, “髌骨”, “胫骨”, 3 “股神经” labels beside ①②③, and 1 “闭孔神经” label beside ④. Use distinct flat colors.",
+    "final_image_prompt": "An anatomical_diagram showing a synthetic teaching anterior view of the right pelvis-to-leg region. Global layout: pelvis at the top, femur vertical in the center, patella and proximal tibia at the bottom, with 2 horizontal joint lines labeled “髋关节线” and “膝关节线”. Include 4 colored numbered muscle bands: blue band ① from “髂前上棘” to “胫骨内侧面”, orange band ② from “股骨前外侧面” to “髌骨/胫骨粗隆”, red band ③ from “髂前下棘” to “髌骨/胫骨粗隆”, green band ④ from “股骨内侧面” to “髌骨/胫骨粗隆”. Connections: ① and ③ cross both joint lines; ② and ④ cross only the knee joint line. Labels must include “右侧骨盆”, “股骨”, “髌骨”, “胫骨”, 3 “股神经” labels beside ①②③, and 1 “闭孔神经” label beside ④. Use distinct flat colors.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各编号的附着点、跨关节情况和神经标签，必须依赖图中多处标注组合判断。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "③的近端附着在髂前下棘",
+        "③的远端附着到髌骨/胫骨粗隆",
+        "③跨越髋关节线和膝关节线",
+        "③旁标注为股神经"
+      ],
+      "validation_rules": [
+        "股直肌应同时满足近端位于髂前下棘、远端至髌骨/胫骨粗隆、跨髋膝两关节、股神经支配",
+        "只有选项C对应的编号同时满足全部图示条件",
+        "任一只满足远端附着、神经支配或跨关节中的部分条件的编号均不能作为答案"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-002-Q0003",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-002",
+    "kp_name": "肌肉系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中4条编号候选肌及右下角的结构码规则。若目标肌为缝匠肌，应选择哪一个编号？",
+    "options": {
+      "A": "Ⅰ",
+      "B": "Ⅱ",
+      "C": "Ⅲ",
+      "D": "Ⅳ"
+    },
+    "correct_answer": "C",
+    "explanation": "缝匠肌的结构识别需同时符合起止点、跨关节、神经支配和作用方向。图中规则为结构码 $=(P\\times J)+D-R$。Ⅰ的计算为 $(2\\times2)+5-11=-2$，且作用箭头不符合缝匠肌的典型组合；Ⅱ为 $(3\\times1)+4-13=-6$，跨关节数和神经支配不符；Ⅲ为 $(4\\times2)+6-11=3$，其近端位于髂前上棘区、远端至胫骨内侧近端区，跨髋膝两关节，神经根和为 $11$，并显示髋屈曲、髋外展、髋外旋、膝屈曲四个作用箭头，符合缝匠肌；Ⅳ为 $(4\\times2)+7-12=3$，虽结构码相同，但远端区、神经根和与作用箭头组合不符合。因此唯一正确的是Ⅲ。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "肌肉识别",
+    "blueprint_image_type": "anatomical_diagram",
+    "image_path": "images/9f1df411a24a42f3.png",
+    "image_prompt": "An anatomical_diagram, synthetic anatomy teaching diagram, frontal view of pelvis to proximal leg, split into a large left anatomy panel and a small lower-right rule panel. Show 3 simplified bone regions: pelvis, femur, tibia. Draw 4 colored muscle bands labeled \"Ⅰ\", \"Ⅱ\", \"Ⅲ\", \"Ⅳ\". Add data boxes: for \"Ⅰ\" show \"P=2 D=5 J=2 R=11\"; for \"Ⅱ\" show \"P=3 D=4 J=1 R=13\"; for \"Ⅲ\" show \"P=4 D=6 J=2 R=11\"; for \"Ⅳ\" show \"P=4 D=7 J=2 R=12\". Connect \"Ⅲ\" from labeled \"髂前上棘区\" to labeled \"胫骨内侧近端区\"; connect \"Ⅲ\" to labeled \"股神经\". Show action arrows labeled \"髋屈\", \"髋外展\", \"髋外旋\", \"膝屈\" near \"Ⅲ\"; show the other listed arrows near their bands. Display a rendered formula labeled \"结构码=(P×J)+D-R\" in the rule panel. Use equal line weight for all 4 bands.",
+    "final_image_prompt": "An anatomical_diagram, synthetic anatomy teaching diagram, frontal view of pelvis to proximal leg, split into a large left anatomy panel and a small lower-right rule panel. Show 3 simplified bone regions: pelvis, femur, tibia. Draw 4 colored muscle bands labeled \"Ⅰ\", \"Ⅱ\", \"Ⅲ\", \"Ⅳ\". Add data boxes: for \"Ⅰ\" show \"P=2 D=5 J=2 R=11\"; for \"Ⅱ\" show \"P=3 D=4 J=1 R=13\"; for \"Ⅲ\" show \"P=4 D=6 J=2 R=11\"; for \"Ⅳ\" show \"P=4 D=7 J=2 R=12\". Connect \"Ⅲ\" from labeled \"髂前上棘区\" to labeled \"胫骨内侧近端区\"; connect \"Ⅲ\" to labeled \"股神经\". Show action arrows labeled \"髋屈\", \"髋外展\", \"髋外旋\", \"膝屈\" near \"Ⅲ\"; show the other listed arrows near their bands. Display a rendered formula labeled \"结构码=(P×J)+D-R\" in the rule panel. Use equal line weight for all 4 bands.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各编号的起止点、神经支配、作用箭头或结构码公式；没有图无法计算并区分Ⅲ与相近干扰项Ⅳ。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "各编号候选肌的P、D、J、R数值只在图中给出",
+        "各编号候选肌的起止区域只在图中给出",
+        "各编号候选肌的作用箭头组合只在图中给出",
+        "右下角结构码公式只在图中给出"
+      ],
+      "validation_rules": [
+        "必须依据图中公式分别计算4个候选肌的结构码",
+        "必须排除跨关节数、神经根和或作用箭头组合不符合缝匠肌者",
+        "若两个候选肌结构码相同，必须继续比较远端附着区、神经标记和作用箭头",
+        "最终选择同时符合缝匠肌起止点、作用、神经支配和结构码条件的编号"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-002-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-002",
+    "kp_name": "肌肉系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中4条编号肌束及其神经来源、根值和两种作用力臂。若目标肌必须同时满足：支配神经来自臂丛后束、根值只含两个相邻颈神经根，并且在等收缩力条件下肩外展作用力矩至少为外旋作用力矩的3倍，则应选择哪一编号？",
+    "options": {
+      "A": "①号肌束",
+      "B": "②号肌束",
+      "C": "③号肌束",
+      "D": "④号肌束"
+    },
+    "correct_answer": "C",
+    "explanation": "需要把图中的神经来源、根值和力臂数据合并判断。①号肌束的神经来自后束，根值为C5-C6，但肩外展力臂为12 mm、外旋力臂为8 mm，$12<3\\times 8$，不满足力矩比例。②号肌束的肩外展力臂为21 mm、外旋力臂为9 mm，且神经根值显示为C5-C7，神经来源也不是后束，因此不符合。③号肌束的神经来自后束，根值为C5-C6；其肩外展力臂为20 mm、外旋力臂为6 mm，$20\\ge 3\\times 6$，同时满足三个条件。④号肌束虽然神经来自后束，且$16\\ge 3\\times 5$，但根值为C6-C8，并非只含C5和C6。因此唯一符合条件的是③号肌束。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "神经支配",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/a209631b4d774721.png",
+    "image_prompt": "An academic diagram of simplified brachial plexus innervation and shoulder muscle moment arms. The layout is split into a left nerve-source region and a right muscle region, viewed frontally. On the left, show 3 vertical cord labels: labeled \"外侧束\" at upper left, labeled \"后束\" in the middle, labeled \"内侧束\" at lower left. On the right, show 4 horizontal muscle strips from top to bottom, labeled \"①\", \"②\", \"③\", and \"④\". Draw 4 nerve lines: \"N1\" from \"后束\" to \"①\", \"N2\" from \"外侧束\" to \"②\", \"N3\" from \"后束\" to \"③\", and \"N4\" from \"后束\" to \"④\". Place root labels: N1 \"C5-C6\", N2 \"C5-C7\", N3 \"C5-C6\", N4 \"C6-C8\". Beside each muscle show blue boxes labeled \"肩外展力臂\" with 12 mm, 21 mm, 20 mm, 16 mm and orange boxes labeled \"外旋力臂\" with 8 mm, 9 mm, 6 mm, 5 mm. Use purple posterior-cord nerve lines and green lateral-cord nerve line.",
+    "final_image_prompt": "An academic diagram of simplified brachial plexus innervation and shoulder muscle moment arms. The layout is split into a left nerve-source region and a right muscle region, viewed frontally. On the left, show 3 vertical cord labels: labeled \"外侧束\" at upper left, labeled \"后束\" in the middle, labeled \"内侧束\" at lower left. On the right, show 4 horizontal muscle strips from top to bottom, labeled \"①\", \"②\", \"③\", and \"④\". Draw 4 nerve lines: \"N1\" from \"后束\" to \"①\", \"N2\" from \"外侧束\" to \"②\", \"N3\" from \"后束\" to \"③\", and \"N4\" from \"后束\" to \"④\". Place root labels: N1 \"C5-C6\", N2 \"C5-C7\", N3 \"C5-C6\", N4 \"C6-C8\". Beside each muscle show blue boxes labeled \"肩外展力臂\" with 12 mm, 21 mm, 20 mm, 16 mm and orange boxes labeled \"外旋力臂\" with 8 mm, 9 mm, 6 mm, 5 mm. Use purple posterior-cord nerve lines and green lateral-cord nerve line.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各编号肌束的神经起点、根值或两种力臂数值；必须读取图中神经连线和数值框并计算比例后才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "③号肌束由从后束发出的N3连接",
+        "③号肌束的根值标签为C5-C6",
+        "③号肌束的肩外展力臂为20 mm、外旋力臂为6 mm",
+        "①号肌束的肩外展力臂与外旋力臂不满足3倍条件",
+        "②号肌束的神经来源不是后束且根值不是只含C5-C6",
+        "④号肌束的根值标签不是C5-C6"
+      ],
+      "validation_rules": [
+        "先筛选神经线起点为后束的编号",
+        "再筛选根值标签只含C5和C6的编号",
+        "最后验证肩外展力臂是否大于或等于外旋力臂的3倍",
+        "仅③号肌束同时满足三个筛选规则"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-002-Q0004",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-002",
+    "kp_name": "肌肉系统结构",
+    "question_language": "zh",
+    "question_text": "观察图中的肌肉结构数据图。若目标肌需同时满足：属于肩关节周围肌、跨越肩关节、由臂丛后束相关神经支配，并且其主作用方向与肩关节内收相符，最符合条件的是哪一个编号？",
+    "options": {
+      "A": "M1",
+      "B": "M2",
+      "C": "M3",
+      "D": "M4"
+    },
+    "correct_answer": "D",
+    "explanation": "先从图中筛选跨越肩关节且属于肩关节周围结构的肌肉编号：M1、M2、M3、M4均需结合附着点和跨关节标记判断。再看神经支配，题干要求为臂丛后束相关神经支配，图中符合该条件的包括标注腋神经或胸背神经的项目。最后比较主作用方向，肩关节内收对应的是使肱骨向躯干靠近的动作箭头。M4图示为近端附着肩胛下角附近、远端附着肱骨小结节嵴，跨越肩关节，神经为胸背神经，动作箭头为肩关节内收，因此最符合条件。M1虽跨肩关节并受腋神经支配，但主作用为外展；M2受肌皮神经支配且主要跨肘关节；M3虽与肩胛和肱骨有关，但动作方向为外旋，不符合内收。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查肌肉系统结构",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/da78b330cd0f48d5.png",
+    "image_prompt": "A data chart for an anatomy teaching diagram. The layout is a wide table viewed straight on, with 4 horizontal muscle rows and 5 information columns labeled \"编号\", \"近端附着\", \"远端附着\", \"跨越关节\", \"神经支配\", and \"主作用\". Row 1 is labeled \"M1\" with \"肩胛冈上窝\", \"肱骨大结节上部\", \"肩关节\", \"腋神经\", and an arrow labeled \"外展\". Row 2 is labeled \"M2\" with \"肩胛盂上结节\", \"桡骨粗隆\", \"肩关节+肘关节\", \"肌皮神经\", and an arrow labeled \"屈肘\". Row 3 is labeled \"M3\" with \"肩胛冈下窝\", \"肱骨大结节中部\", \"肩关节\", \"肩胛上神经\", and an arrow labeled \"外旋\". Row 4 is labeled \"M4\" with \"肩胛下角邻近背部\", \"肱骨小结节嵴\", \"肩关节\", \"胸背神经\", and an arrow labeled \"内收\". Use four muted row colors without highlighting an answer.",
+    "final_image_prompt": "A data chart for an anatomy teaching diagram. The layout is a wide table viewed straight on, with 4 horizontal muscle rows and 5 information columns labeled \"编号\", \"近端附着\", \"远端附着\", \"跨越关节\", \"神经支配\", and \"主作用\". Row 1 is labeled \"M1\" with \"肩胛冈上窝\", \"肱骨大结节上部\", \"肩关节\", \"腋神经\", and an arrow labeled \"外展\". Row 2 is labeled \"M2\" with \"肩胛盂上结节\", \"桡骨粗隆\", \"肩关节+肘关节\", \"肌皮神经\", and an arrow labeled \"屈肘\". Row 3 is labeled \"M3\" with \"肩胛冈下窝\", \"肱骨大结节中部\", \"肩关节\", \"肩胛上神经\", and an arrow labeled \"外旋\". Row 4 is labeled \"M4\" with \"肩胛下角邻近背部\", \"肱骨小结节嵴\", \"肩关节\", \"胸背神经\", and an arrow labeled \"内收\". Use four muted row colors without highlighting an answer.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干未给出各编号的附着点、神经支配和动作方向，必须读取图中的多列信息才能筛选唯一答案。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "M1、M2、M3、M4各自的近端附着、远端附着、跨越关节、神经支配和主作用均只在图片中给出",
+        "图中显示M4跨越肩关节、神经为胸背神经、主作用为内收",
+        "图中显示其他编号至少有一个条件与题干要求不一致"
+      ],
+      "validation_rules": [
+        "先确认候选编号是否属于肩关节相关结构并跨越肩关节",
+        "再筛选神经支配是否为臂丛后束相关神经",
+        "最后筛选主作用箭头是否表示肩关节内收",
+        "同时满足三项筛选条件的唯一编号为M4"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-003-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-003",
+    "kp_name": "心血管解剖",
+    "question_language": "zh",
+    "question_text": "根据图中编号结构、血流箭头和瓣膜小叶数，哪一个编号最符合“右心房”的解剖位置与连接特征？",
+    "options": {
+      "A": "①",
+      "B": "②",
+      "C": "③",
+      "D": "④"
+    },
+    "correct_answer": "B",
+    "explanation": "右心房应接受来自上、下腔静脉的静脉回流，并经右房室瓣进入右心室。图中②位于图示右侧上部，接收来自①和⑤的两条蓝色入流箭头，且②到③之间的房室瓣标注为3片小叶，符合右房室瓣即三尖瓣的特征。③再经半月瓣连向④，提示③为右心室、④为肺动脉干；①和⑤是静脉入口相关结构，④是出流动脉结构。因此最符合右心房的是②。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "结构识别",
+    "blueprint_image_type": "anatomical_diagram",
+    "image_path": "images/1d822610f6274041.png",
+    "image_prompt": "An anatomical_diagram of a synthetic educational heart blood-flow layout. Global layout: anterior simplified heart view, blue right-heart pathway on the viewer’s right, red left-heart element on the viewer’s left, with 6 numbered structures. Draw ① as a blue upper vertical tube, ② as a blue upper chamber below it, ③ as a blue lower chamber below ②, ④ as a blue outflow tube above-left of ③, ⑤ as a blue lower vertical tube entering upward, and ⑥ as a red lower-left chamber. Connections: blue arrow from ① to ②, blue arrow from ⑤ to ②, blue arrow from ② to ③, blue arrow from ③ to ④, and one red outflow arrow from ⑥ upward. Labels: each structure labeled \"①\", \"②\", \"③\", \"④\", \"⑤\", \"⑥\"; valve between ② and ③ labeled \"3片小叶\"; valve between ③ and ④ labeled \"3片小叶\"; one arrow label \"血流\". Use blue highlights for ①-⑤ and red highlight for ⑥.",
+    "final_image_prompt": "An anatomical_diagram of a synthetic educational heart blood-flow layout. Global layout: anterior simplified heart view, blue right-heart pathway on the viewer’s right, red left-heart element on the viewer’s left, with 6 numbered structures. Draw ① as a blue upper vertical tube, ② as a blue upper chamber below it, ③ as a blue lower chamber below ②, ④ as a blue outflow tube above-left of ③, ⑤ as a blue lower vertical tube entering upward, and ⑥ as a red lower-left chamber. Connections: blue arrow from ① to ②, blue arrow from ⑤ to ②, blue arrow from ② to ③, blue arrow from ③ to ④, and one red outflow arrow from ⑥ upward. Labels: each structure labeled \"①\", \"②\", \"③\", \"④\", \"⑤\", \"⑥\"; valve between ② and ③ labeled \"3片小叶\"; valve between ③ and ④ labeled \"3片小叶\"; one arrow label \"血流\". Use blue highlights for ①-⑤ and red highlight for ⑥.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各编号的空间位置、箭头方向和瓣膜小叶数；必须观察图中这些关系才能判断哪个编号对应右心房。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "②接收来自两个不同管状结构的蓝色入流箭头",
+        "②向下游心腔③发出蓝色箭头",
+        "②与③之间的房室瓣标注为3片小叶",
+        "③位于②下方并继续连向④"
+      ],
+      "validation_rules": [
+        "若某编号接收上下两条静脉样入口并经3片小叶房室瓣连向下方心腔，则该编号对应右心房",
+        "若某编号位于半月瓣后方或仅为管状入口，则不能判定为右心房",
+        "唯一同时满足两条入流、一个下游房室连接和上方心腔位置的编号为②"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-004-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-004",
+    "kp_name": "呼吸系统解剖",
+    "question_language": "zh",
+    "question_text": "观察图中胸前外侧体表投影示意图。若将“胸膜隐窝投影区”限定为同一参考线处位于肺下界以下、胸膜下界以上的肋位点，不包括落在任一边界线上的点，则图中哪个标记点应归入该类？",
+    "options": {
+      "A": "P点",
+      "B": "Q点",
+      "C": "R点",
+      "D": "S点"
+    },
+    "correct_answer": "A",
+    "explanation": "判定时需要在同一体表参考线内比较标记点与两条下界线的位置。图中锁骨中线处肺下界在第6肋，胸膜下界在第8肋，P点位于第7肋，满足低于肺下界且高于胸膜下界，并且不在边界上。腋中线处Q点位于肺下界线上，不计入；S点位于胸膜下界线上，也不计入。肩胛线处R点位于第11肋，而该线肺下界与胸膜下界之间的范围为第10肋至第12肋之间，所以R点也在两者之间，但题干限定为胸前外侧投影示意图中的参考线分类，图中肩胛线位于后外侧辅助区，不归入该胸前外侧类。故选A。",
+    "difficulty": 3,
+    "blueprint_slot": 3,
+    "blueprint_archetype": "体表投影",
+    "blueprint_image_type": "academic_diagram",
+    "image_path": "images/2f9ebd01f2404f8b.png",
+    "image_prompt": "An academic diagram of thoracic surface projection. Global layout: frontal chest schematic with a slight right lateral extension, rib levels arranged as 8 horizontal guide lines from 第5肋 to 第12肋 on the left. Show 3 vertical reference lines from left to right: (labeled \"锁骨中线\"), (labeled \"腋中线\"), and (labeled \"肩胛线\"). Draw 2 boundary curves: a green solid curve (labeled \"肺下界\") connecting rib 6 on 锁骨中线, rib 8 on 腋中线, and rib 10 on 肩胛线; a purple dashed curve (labeled \"胸膜下界\") connecting rib 8, rib 10, and rib 12 on the same three lines. Place 4 red points: (labeled \"P\") at 锁骨中线 rib 7, (labeled \"Q\") at 腋中线 rib 8, (labeled \"R\") at 肩胛线 rib 11, and (labeled \"S\") at 腋中线 rib 10. Add a pale blue rectangular background covering 锁骨中线 and 腋中线 only, labeled \"胸前外侧范围\".",
+    "final_image_prompt": "An academic diagram of thoracic surface projection. Global layout: frontal chest schematic with a slight right lateral extension, rib levels arranged as 8 horizontal guide lines from 第5肋 to 第12肋 on the left. Show 3 vertical reference lines from left to right: (labeled \"锁骨中线\"), (labeled \"腋中线\"), and (labeled \"肩胛线\"). Draw 2 boundary curves: a green solid curve (labeled \"肺下界\") connecting rib 6 on 锁骨中线, rib 8 on 腋中线, and rib 10 on 肩胛线; a purple dashed curve (labeled \"胸膜下界\") connecting rib 8, rib 10, and rib 12 on the same three lines. Place 4 red points: (labeled \"P\") at 锁骨中线 rib 7, (labeled \"Q\") at 腋中线 rib 8, (labeled \"R\") at 肩胛线 rib 11, and (labeled \"S\") at 腋中线 rib 10. Add a pale blue rectangular background covering 锁骨中线 and 腋中线 only, labeled \"胸前外侧范围\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各参考线的边界肋位、点位或浅蓝区域范围，必须读取图中空间位置并组合判断才能确定答案。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "锁骨中线处肺下界为第6肋、胸膜下界为第8肋，P点在第7肋",
+        "Q点在腋中线第8肋，正好落在肺下界线上",
+        "S点在腋中线第10肋，正好落在胸膜下界线上",
+        "R点虽位于两条边界之间，但在浅蓝底色表示的胸前外侧范围之外"
+      ],
+      "validation_rules": [
+        "先按每个点所在参考线读取该线的肺下界和胸膜下界肋位",
+        "只保留肋位严格介于两条下界之间的点，排除落在任一边界线上的点",
+        "再保留位于浅蓝底色胸前外侧范围内的点",
+        "四个选项中只有A满足全部条件"
+      ]
+    }
+  },
+  {
+    "question_id": "S09-004-Q0001",
+    "subject_id": "S09",
+    "subject_name": "药学",
+    "kp_id": "S09-M01-004",
+    "kp_name": "呼吸系统解剖",
+    "question_language": "zh",
+    "question_text": "观察图中的右肺段数据图。按以下教学筛选规则选择一个肺段：先保留属于右下叶且段中心位于第$7.5$肋以下的肺段；再要求该段中心到同侧腋中线胸膜下界的肋位差至少为$1.5$。在仍保留者中，计算指标$J=2g-r$，其中$g$为从气管到该段支气管的级数，$r$为段中心肋位。应选哪一个肺段？",
+    "options": {
+      "A": "S6",
+      "B": "S8",
+      "C": "S9",
+      "D": "S10"
+    },
+    "correct_answer": "D",
+    "explanation": "需从图中逐步读取肺叶归属、段中心肋位、胸膜下界肋位和支气管级数。右下叶候选为图中归入右下叶支气管的肺段。段中心需低于第$7.5$肋，因此排除中心肋位不够低的候选。再算与腋中线胸膜下界的肋位差：差值为“胸膜下界肋位减去段中心肋位”，必须至少为$1.5$。在满足条件的候选中计算$J=2g-r$：S8为$2\\times4-8.0=0$，S9为$2\\times4-8.5=-0.5$，S10为$2\\times5-8.0=2$。因此指标最大的保留肺段为S10。",
+    "difficulty": 4,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查呼吸系统解剖",
+    "blueprint_image_type": "data_chart",
+    "image_path": "images/b282a120b5c745d6.png",
+    "image_prompt": "A data chart for a synthetic anatomy teaching diagram. Use a split layout: simplified bronchial tree on the left and a 4-row attribute table on the right. Left side shows 5 connected airway branches: trachea (labeled \"气管\") to right main bronchus (labeled \"右主支气管\"), then to right upper lobar, right middle lobar, and right lower lobar bronchi (labeled \"右上叶支气管\", \"右中叶支气管\", \"右下叶支气管\"). The right lower lobar bronchus connects to 4 segment boxes labeled \"S6\", \"S8\", \"S9\", \"S10\". Right table columns labeled \"所属叶支气管\", \"级数g\", \"段中心肋位r\", \"腋中线胸膜下界\". Rows: S6, right lower, 4, 7.0, 10.0; S8, right lower, 4, 8.0, 9.0; S9, right lower, 4, 8.5, 10.0; S10, right lower, 5, 8.0, 10.5. Use light blue outlines for right lower lobe items and gray outlines for other lobar branches.",
+    "final_image_prompt": "A data chart for a synthetic anatomy teaching diagram. Use a split layout: simplified bronchial tree on the left and a 4-row attribute table on the right. Left side shows 5 connected airway branches: trachea (labeled \"气管\") to right main bronchus (labeled \"右主支气管\"), then to right upper lobar, right middle lobar, and right lower lobar bronchi (labeled \"右上叶支气管\", \"右中叶支气管\", \"右下叶支气管\"). The right lower lobar bronchus connects to 4 segment boxes labeled \"S6\", \"S8\", \"S9\", \"S10\". Right table columns labeled \"所属叶支气管\", \"级数g\", \"段中心肋位r\", \"腋中线胸膜下界\". Rows: S6, right lower, 4, 7.0, 10.0; S8, right lower, 4, 8.0, 9.0; S9, right lower, 4, 8.5, 10.0; S10, right lower, 5, 8.0, 10.5. Use light blue outlines for right lower lobe items and gray outlines for other lobar branches.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给筛选规则和计算公式，肺段所属、级数、段中心肋位以及胸膜下界肋位都必须从图中读取，缺图无法判断候选或完成计算。",
+    "truth_spec": {
+      "correct_answer": "D",
+      "image_only_facts": [
+        "各选项对应肺段的所属叶支气管",
+        "各选项对应肺段的级数g",
+        "各选项对应肺段的段中心肋位r",
+        "各选项对应肺段的腋中线胸膜下界肋位"
+      ],
+      "validation_rules": [
+        "先保留图中属于右下叶支气管的选项",
+        "再保留段中心肋位r大于7.5的选项",
+        "再保留胸膜下界肋位减去段中心肋位r至少为1.5的选项",
+        "对保留选项计算J=2g-r并选择J值最大的唯一选项"
+      ]
+    }
+  }
+]

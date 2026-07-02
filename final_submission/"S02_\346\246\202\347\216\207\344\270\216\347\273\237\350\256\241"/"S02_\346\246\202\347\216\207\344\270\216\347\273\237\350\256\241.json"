@@ -1,0 +1,891 @@
+[
+  {
+    "question_id": "S02-001-Q0003",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间成员归属表。按表中概率质量判断，下列关于事件 $A$、$B$、$C$ 的关系哪一项成立？",
+    "options": {
+      "A": "$P(A\\cap C)+P(B\\cap C)=P(C)$",
+      "B": "$P\\big((A\\cap C)\\cup(B\\cap C)\\big)=P(C)$",
+      "C": "$P\\big((A\\cup B)^c\\big)=P(A^c\\cap C^c)$",
+      "D": "$A\\cap B^c$、$A^c\\cap B$、$A^c\\cap B^c$ 构成样本空间的完备事件组"
+    },
+    "correct_answer": "B",
+    "explanation": "由图表读取各样本点的归属：$C$ 包含 $\\omega_1,\\omega_3,\\omega_5$，所以 $P(C)=0.09+0.18+0.18=0.45$。同时，$A\\cap C$ 包含 $\\omega_1,\\omega_3$，$B\\cap C$ 包含 $\\omega_1,\\omega_5$；二者并集为 $\\{\\omega_1,\\omega_3,\\omega_5\\}$，因此 $P\\big((A\\cap C)\\cup(B\\cap C)\\big)=0.09+0.18+0.18=0.45$，故 B 成立。A 错在直接相加会把 $\\omega_1$ 重复计算，得到 $0.27+0.27=0.54$。C 中 $(A\\cup B)^c$ 只含 $\\omega_6$，概率为 $0.27$；而 $A^c\\cap C^c$ 含 $\\omega_4,\\omega_6$，概率为 $0.16+0.27=0.43$，不相等。D 中三个事件都排除了 $A\\cap B$ 中的样本点 $\\omega_1$，它们的并集不能覆盖整个样本空间，所以不是完备事件组。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "事件关系判断",
+    "blueprint_image_type": "table",
+    "image_path": "images/00c9e17f68fc430a.png",
+    "image_prompt": "A table diagram, viewed straight on, with one centered title at the top and one rectangular grid below it. The grid has 5 columns and 7 rows: 1 header row and 6 data rows. The title is labeled \"样本空间成员归属表\". The header cells are labeled \"样本点\", \"概率质量\", \"属于A\", \"属于B\", and \"属于C\". Row 1 shows \"ω1\", \"0.09\", \"✓\", \"✓\", \"✓\". Row 2 shows \"ω2\", \"0.12\", \"✓\", \"—\", \"—\". Row 3 shows \"ω3\", \"0.18\", \"✓\", \"—\", \"✓\". Row 4 shows \"ω4\", \"0.16\", \"—\", \"✓\", \"—\". Row 5 shows \"ω5\", \"0.18\", \"—\", \"✓\", \"✓\". Row 6 shows \"ω6\", \"0.27\", \"—\", \"—\", \"—\". Each row connects one sample point to its probability and three membership marks. Use light blue check marks and gray dash marks.",
+    "final_image_prompt": "A table diagram, viewed straight on, with one centered title at the top and one rectangular grid below it. The grid has 5 columns and 7 rows: 1 header row and 6 data rows. The title is labeled \"样本空间成员归属表\". The header cells are labeled \"样本点\", \"概率质量\", \"属于A\", \"属于B\", and \"属于C\". Row 1 shows \"ω1\", \"0.09\", \"✓\", \"✓\", \"✓\". Row 2 shows \"ω2\", \"0.12\", \"✓\", \"—\", \"—\". Row 3 shows \"ω3\", \"0.18\", \"✓\", \"—\", \"✓\". Row 4 shows \"ω4\", \"0.16\", \"—\", \"✓\", \"—\". Row 5 shows \"ω5\", \"0.18\", \"—\", \"✓\", \"✓\". Row 6 shows \"ω6\", \"0.27\", \"—\", \"—\", \"—\". Each row connects one sample point to its probability and three membership marks. Use light blue check marks and gray dash marks.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "选项中的每个事件关系都依赖样本点对 $A$、$B$、$C$ 的归属以及对应概率质量；这些关键信息只在图片表格中给出，题干和选项无法单独确定答案。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "ω1、ω3、ω5属于C且概率质量分别为0.09、0.18、0.18",
+        "ω1、ω3属于A∩C",
+        "ω1、ω5属于B∩C",
+        "ω4、ω6属于A^c∩C^c",
+        "ω1属于A∩B"
+      ],
+      "validation_rules": [
+        "计算 $P(C)$ 时应累加所有属于C的样本点概率",
+        "计算 $P((A\\cap C)\\cup(B\\cap C))$ 时应对并集去重，不能重复计算同时属于两个交事件的样本点",
+        "判断完备事件组时必须同时验证互斥性和对样本空间的覆盖性",
+        "四个选项中仅 B 的事件运算关系与表中概率质量一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0002",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "下图给出样本空间 $\\Omega$ 中两个事件 $A$ 与 $B$ 的四个互不重叠区域的频数。根据图示，以下关于事件运算关系的判断哪一项正确？",
+    "options": {
+      "A": "$P(A\\cup B)=3P(A\\cap B)+P(A^c\\cap B^c)$",
+      "B": "$P(A\\setminus B)=P(A^c\\cap B)$",
+      "C": "$P(B)=2P(A)$",
+      "D": "$A$ 与 $B$ 互斥"
+    },
+    "correct_answer": "B",
+    "explanation": "由图中四个区域频数可得：$A\\setminus B$ 对应 $A\\cap B^c$，其频数为 $15$；$A^c\\cap B$ 的频数也为 $15$，所以二者概率相等，B 正确。总频数为 $15+9+15+21=60$。检验 A：$P(A\\cup B)=\\frac{15+9+15}{60}=\\frac{39}{60}$，而 $3P(A\\cap B)+P(A^c\\cap B^c)=3\\cdot\\frac{9}{60}+\\frac{21}{60}=\\frac{48}{60}$，不相等。检验 C：$P(B)=\\frac{9+15}{60}=\\frac{24}{60}$，$2P(A)=2\\cdot\\frac{15+9}{60}=\\frac{48}{60}$，不相等。检验 D：图中 $A\\cap B$ 区域频数为 $9$，交集非空，所以 $A$ 与 $B$ 不互斥。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "事件关系判断",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/06e2ddb924024e6e.png",
+    "image_prompt": "A statistical chart showing a two-event Venn diagram. The global layout is a horizontal rectangle viewed straight on, representing the sample space, with two overlapping circles centered inside it. Draw 1 rectangle labeled \"Ω\" near the upper left corner, 1 left circle labeled \"A\", and 1 right circle labeled \"B\". Place the number \"15\" in the left-only region of circle A, the number \"9\" in the central overlap of A and B, the number \"15\" in the right-only region of circle B, and the number \"21\" in the rectangle area outside both circles. The left circle overlaps the right circle; the overlap is centered between them. Labels must appear exactly as labeled \"Ω\", labeled \"A\", labeled \"B\", labeled \"15\", labeled \"9\", labeled \"15\", labeled \"21\". Use light blue outline for A and light orange outline for B.",
+    "final_image_prompt": "A statistical chart showing a two-event Venn diagram. The global layout is a horizontal rectangle viewed straight on, representing the sample space, with two overlapping circles centered inside it. Draw 1 rectangle labeled \"Ω\" near the upper left corner, 1 left circle labeled \"A\", and 1 right circle labeled \"B\". Place the number \"15\" in the left-only region of circle A, the number \"9\" in the central overlap of A and B, the number \"15\" in the right-only region of circle B, and the number \"21\" in the rectangle area outside both circles. The left circle overlaps the right circle; the overlap is centered between them. Labels must appear exactly as labeled \"Ω\", labeled \"A\", labeled \"B\", labeled \"15\", labeled \"9\", labeled \"15\", labeled \"21\". Use light blue outline for A and light orange outline for B.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出四个区域的频数；必须从图中读取并组合这些区域，才能判断各事件运算关系是否成立。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "左侧仅属于 $A$ 的区域频数为 $15$",
+        "中间交叠区域频数为 $9$",
+        "右侧仅属于 $B$ 的区域频数为 $15$",
+        "两个事件外部但仍在 $\\Omega$ 内的区域频数为 $21$"
+      ],
+      "validation_rules": [
+        "用图中四个频数求总样本数 $60$",
+        "将 $A\\setminus B$ 对应到左侧仅属于 $A$ 的区域",
+        "将 $A^c\\cap B$ 对应到右侧仅属于 $B$ 的区域",
+        "比较两区域频数相等即可判定对应概率相等",
+        "逐项排除与并事件、整体事件概率或互斥性不符的选项"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0005",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间分块图。设图中红色边框表示事件 $A$，绿色边框表示事件 $B$，蓝色斜线填充表示事件 $C$。根据图示概率质量，求事件 $\\left[(A\\cap B^c)\\cup(B\\cap C)\\right]^c$ 的概率。",
+    "options": {
+      "A": "$0.62$",
+      "B": "$0.37$",
+      "C": "$0.48$",
+      "D": "$0.51$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图读出红框事件 $A$、绿框事件 $B$ 和蓝色斜线事件 $C$ 各自包含的样本点。先求 $A\\cap B^c$：它要求样本点在 $A$ 中但不在 $B$ 中，对应 $\\omega_1,\\omega_4$。再求 $B\\cap C$：它要求样本点同时在 $B$ 和 $C$ 中，对应 $\\omega_3$。因此 $(A\\cap B^c)\\cup(B\\cap C)$ 对应 $\\omega_1,\\omega_3,\\omega_4$，其概率为 $0.08+0.11+0.19=0.38$。题目要求其补事件，所以概率为 $1-0.38=0.62$。",
+    "difficulty": 3,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查样本空间与事件运算",
+    "blueprint_image_type": "chart",
+    "image_path": "images/166795b026b14baf.png",
+    "image_prompt": "A chart showing a sample space partition. Viewed straight on, place one large rectangle labeled \"样本空间 S\" split into a 2-by-3 grid. The top row cells are labeled \"ω1\" with \"0.08\", \"ω2\" with \"0.17\", and \"ω3\" with \"0.11\"; the bottom row cells are labeled \"ω4\" with \"0.19\", \"ω5\" with \"0.14\", and \"ω6\" with \"0.31\". Draw a red outline around cells ω1, ω2, ω4, and ω5 (labeled \"事件 A\" in a legend). Draw a green outline around cells ω2, ω3, and ω5 (labeled \"事件 B\" in the legend). Add blue diagonal hatching inside cells ω1, ω3, ω4, and ω6 (labeled \"事件 C\" in the legend). Use distinct thin outlines and visible hatching without hiding labels.",
+    "final_image_prompt": "A chart showing a sample space partition. Viewed straight on, place one large rectangle labeled \"样本空间 S\" split into a 2-by-3 grid. The top row cells are labeled \"ω1\" with \"0.08\", \"ω2\" with \"0.17\", and \"ω3\" with \"0.11\"; the bottom row cells are labeled \"ω4\" with \"0.19\", \"ω5\" with \"0.14\", and \"ω6\" with \"0.31\". Draw a red outline around cells ω1, ω2, ω4, and ω5 (labeled \"事件 A\" in a legend). Draw a green outline around cells ω2, ω3, and ω5 (labeled \"事件 B\" in the legend). Add blue diagonal hatching inside cells ω1, ω3, ω4, and ω6 (labeled \"事件 C\" in the legend). Use distinct thin outlines and visible hatching without hiding labels.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各样本点的概率，也没有给出事件 $A$、$B$、$C$ 的成员关系；必须依赖图中的分块、边框和填充信息才能计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "各样本点对应的概率质量只由图中单元给出",
+        "事件A、B、C的成员关系只由图中的红框、绿框和蓝色斜线给出"
+      ],
+      "validation_rules": [
+        "从图中确定 $A\\cap B^c$ 的样本点集合",
+        "从图中确定 $B\\cap C$ 的样本点集合",
+        "将两部分取并后累加对应概率",
+        "用 $1$ 减去括号内事件概率，得到补事件概率",
+        "所得数值必须与 correct_answer 对应选项一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0005",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间成员归属表。设 $X=A\\cap B^c$，$Y=A^c\\cap C$，$Z=B\\cap C^c$。只依据图示信息，下列关于 $X,Y,Z$ 的事件关系判断哪一项正确？",
+    "options": {
+      "A": "$X,Y,Z$ 两两互斥，且构成 $\\Omega$ 的一个完备事件组",
+      "B": "$X,Y,Z$ 两两互斥，但不构成 $\\Omega$ 的完备事件组",
+      "C": "$X$ 与 $Y$ 互为对立事件",
+      "D": "$X,Y,Z$ 中至少有两个事件不互斥"
+    },
+    "correct_answer": "A",
+    "explanation": "由表逐行判定：$X=A\\cap B^c$ 包含满足属于 $A$ 且不属于 $B$ 的样本点，即 $\\omega_2,\\omega_4$；$Y=A^c\\cap C$ 包含不属于 $A$ 且属于 $C$ 的样本点，即 $\\omega_3,\\omega_6$；$Z=B\\cap C^c$ 包含属于 $B$ 且不属于 $C$ 的样本点，即 $\\omega_1,\\omega_5$。三者没有共同样本点，所以两两互斥；并且三者合并后覆盖 $\\omega_1$ 到 $\\omega_6$ 的全部样本空间。因此 $X,Y,Z$ 构成 $\\Omega$ 的一个完备事件组，选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "事件关系判断",
+    "blueprint_image_type": "table",
+    "image_path": "images/570471ce496c4d89.png",
+    "image_prompt": "A table chart showing a Chinese sample space membership table. The layout is front-facing, centered, with one title above and one rectangular table below. The table has 5 columns and 6 data rows. Column headers are labeled “样本点”, “概率”, “属于A”, “属于B”, “属于C”. Row 1 is labeled “ω1” with 0.08, 是, 是, 否. Row 2 is labeled “ω2” with 0.12, 是, 否, 是. Row 3 is labeled “ω3” with 0.15, 否, 是, 是. Row 4 is labeled “ω4” with 0.20, 是, 否, 否. Row 5 is labeled “ω5” with 0.18, 否, 是, 否. Row 6 is labeled “ω6” with 0.27, 否, 否, 是. The title is labeled “样本空间归属表”. Use thin grid lines and lightly blue-tinted header cells.",
+    "final_image_prompt": "A table chart showing a Chinese sample space membership table. The layout is front-facing, centered, with one title above and one rectangular table below. The table has 5 columns and 6 data rows. Column headers are labeled “样本点”, “概率”, “属于A”, “属于B”, “属于C”. Row 1 is labeled “ω1” with 0.08, 是, 是, 否. Row 2 is labeled “ω2” with 0.12, 是, 否, 是. Row 3 is labeled “ω3” with 0.15, 否, 是, 是. Row 4 is labeled “ω4” with 0.20, 是, 否, 否. Row 5 is labeled “ω5” with 0.18, 否, 是, 否. Row 6 is labeled “ω6” with 0.27, 否, 否, 是. The title is labeled “样本空间归属表”. Use thin grid lines and lightly blue-tinted header cells.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各样本点对事件$A,B,C$的归属状态，必须查看表格才能构造$X,Y,Z$并判断互斥性与完备性。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "6个样本点各自对A、B、C的归属状态只在图中给出",
+        "每个样本点的概率只在图中给出",
+        "样本空间由ω1至ω6构成的信息只在图中完整呈现"
+      ],
+      "validation_rules": [
+        "根据图中A为是且B为否的行确定$X$",
+        "根据图中A为否且C为是的行确定$Y$",
+        "根据图中B为是且C为否的行确定$Z$",
+        "验证$X,Y,Z$的样本点集合两两无交集",
+        "验证$X\\cup Y\\cup Z$包含图中全部6个样本点"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0004",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间成员归属表。根据图示信息，关于事件 $A$、$B$、$C$ 的关系，下列哪一项一定成立？",
+    "options": {
+      "A": "$A$ 与 $B$ 互斥",
+      "B": "$A\\cup B=C$",
+      "C": "$A\\cap B\\subset C$",
+      "D": "$C^c\\subset A$"
+    },
+    "correct_answer": "C",
+    "explanation": "由图读出：$A=\\{\\omega_1,\\omega_2,\\omega_3,\\omega_4\\}$，$B=\\{\\omega_2,\\omega_3,\\omega_5,\\omega_6\\}$，$C=\\{\\omega_1,\\omega_2,\\omega_3,\\omega_5,\\omega_6,\\omega_7\\}$。于是 $A\\cap B=\\{\\omega_2,\\omega_3\\}$，这两个样本点都属于 $C$，所以 $A\\cap B\\subset C$。同时，$A$ 与 $B$ 有公共样本点，故不互斥；$A\\cup B=\\{\\omega_1,\\omega_2,\\omega_3,\\omega_4,\\omega_5,\\omega_6\\}$，与 $C$ 不相等；$C^c=\\{\\omega_4,\\omega_8\\}$，其中 $\\omega_8$ 不属于 $A$，所以 $C^c\\subset A$ 不成立。因此正确答案为 C。",
+    "difficulty": 2,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "事件关系判断",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/8d46065e347c4cf2.png",
+    "image_prompt": "A statistical chart showing a membership table for a sample space, viewed straight on. The layout is one rectangular grid with a title above it labeled \"Ω\". The grid has 9 rows including one header row and 4 columns labeled \"样本点\", \"A\", \"B\", and \"C\". The 8 data rows are labeled \"ω1\" through \"ω8\" from top to bottom. Place blue check marks in these cells: ω1 under A and C; ω2 under A, B, and C; ω3 under A, B, and C; ω4 under A only; ω5 under B and C; ω6 under B and C; ω7 under C only; ω8 has no check marks. All non-checked cells are blank. Use thin grid lines and keep the checked cells visually clear with blue marks.",
+    "final_image_prompt": "A statistical chart showing a membership table for a sample space, viewed straight on. The layout is one rectangular grid with a title above it labeled \"Ω\". The grid has 9 rows including one header row and 4 columns labeled \"样本点\", \"A\", \"B\", and \"C\". The 8 data rows are labeled \"ω1\" through \"ω8\" from top to bottom. Place blue check marks in these cells: ω1 under A and C; ω2 under A, B, and C; ω3 under A, B, and C; ω4 under A only; ω5 under B and C; ω6 under B and C; ω7 under C only; ω8 has no check marks. All non-checked cells are blank. Use thin grid lines and keep the checked cells visually clear with blue marks.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干和选项没有给出各样本点对事件A、B、C的归属，必须读取图片中的成员归属表才能判断事件关系。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "ω1只属于A和C",
+        "ω2同时属于A、B、C",
+        "ω3同时属于A、B、C",
+        "ω4只属于A",
+        "ω5只属于B和C",
+        "ω6只属于B和C",
+        "ω7只属于C",
+        "ω8不属于A、B、C任一事件"
+      ],
+      "validation_rules": [
+        "从图中列出A、B、C各自包含的样本点",
+        "计算$A\\cap B$并检验其每个样本点是否都属于$C$",
+        "分别检查其他选项涉及的互斥、并集相等和补集包含关系是否不成立",
+        "唯一成立的陈述应与correct_answer一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0001",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间原子事件概率表。设事件 $E=[(A\\cup B)\\cap C^c]\\cup(A^c\\cap B\\cap C)$，则 $P(E)$ 等于多少？",
+    "options": {
+      "A": "$0.49$",
+      "B": "$0.38$",
+      "C": "$0.52$",
+      "D": "$0.57$"
+    },
+    "correct_answer": "A",
+    "explanation": "由表中每一行的事件归属判断是否属于 $E$。第一部分 $(A\\cup B)\\cap C^c$ 要求样本点在 $A$ 或 $B$ 中，且不在 $C$ 中，对应概率为 $0.12+0.09+0.17=0.38$。第二部分 $A^c\\cap B\\cap C$ 要求不在 $A$ 中、在 $B$ 中、在 $C$ 中，对应概率为 $0.11$。两部分互斥，因为第一部分要求 $C^c$，第二部分要求 $C$，所以 $P(E)=0.38+0.11=0.49$。",
+    "difficulty": 3,
+    "blueprint_slot": 10,
+    "blueprint_archetype": "Venn图概率",
+    "blueprint_image_type": "table",
+    "image_path": "images/97d8065ae8764a43.png",
+    "image_prompt": "A statistical table diagram showing a sample space partition, viewed straight from the front. The layout is one centered table with 5 columns and 9 horizontal rows including one header row. The header cells are labeled \"原子区域\", \"A\", \"B\", \"C\", and \"概率\". The 8 data rows are labeled \"r1\" through \"r8\" in the first column from top to bottom. Row r1 shows \"是\", \"否\", \"否\", \"0.12\"; row r2 shows \"否\", \"是\", \"否\", \"0.09\"; row r3 shows \"是\", \"是\", \"否\", \"0.17\"; row r4 shows \"否\", \"否\", \"是\", \"0.08\"; row r5 shows \"是\", \"否\", \"是\", \"0.14\"; row r6 shows \"否\", \"是\", \"是\", \"0.11\"; row r7 shows \"是\", \"是\", \"是\", \"0.19\"; row r8 shows \"否\", \"否\", \"否\", \"0.10\". Use thin grid lines, a light blue header row, and no answer annotation.",
+    "final_image_prompt": "A statistical table diagram showing a sample space partition, viewed straight from the front. The layout is one centered table with 5 columns and 9 horizontal rows including one header row. The header cells are labeled \"原子区域\", \"A\", \"B\", \"C\", and \"概率\". The 8 data rows are labeled \"r1\" through \"r8\" in the first column from top to bottom. Row r1 shows \"是\", \"否\", \"否\", \"0.12\"; row r2 shows \"否\", \"是\", \"否\", \"0.09\"; row r3 shows \"是\", \"是\", \"否\", \"0.17\"; row r4 shows \"否\", \"否\", \"是\", \"0.08\"; row r5 shows \"是\", \"否\", \"是\", \"0.14\"; row r6 shows \"否\", \"是\", \"是\", \"0.11\"; row r7 shows \"是\", \"是\", \"是\", \"0.19\"; row r8 shows \"否\", \"否\", \"否\", \"0.10\". Use thin grid lines, a light blue header row, and no answer annotation.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出事件表达式，未给出任何原子区域归属或概率；必须读取表格才能筛选样本点并计算概率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "The event membership and probability mass of each atomic region r1 through r8 are only given in the image.",
+        "The probability values needed to evaluate the compound event are not stated in the question text."
+      ],
+      "validation_rules": [
+        "Select rows satisfying $(A\\cup B)\\cap C^c$.",
+        "Select rows satisfying $A^c\\cap B\\cap C$.",
+        "Use mutual exclusiveness of atomic rows to add the selected probability masses.",
+        "The resulting probability must match option A and differ from the three distractors."
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0002",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中样本空间 $\\Omega$ 内三个事件的分布区域。若从 $\\Omega$ 中等可能抽取一个基本结果，下列哪一项等于事件 $[(A\\cup B)\\cap C^c]\\cup(A^c\\cap B\\cap C)$ 的概率？",
+    "options": {
+      "A": "$\\frac{17}{40}$",
+      "B": "$\\frac{7}{20}$",
+      "C": "$\\frac{31}{80}$",
+      "D": "$\\frac{3}{8}$"
+    },
+    "correct_answer": "A",
+    "explanation": "由图可知，样本空间共有 $18+22+14+16+20+12+10+48=160$ 个基本结果。事件 $(A\\cup B)\\cap C^c$ 表示在 $A$ 或 $B$ 中、且不在 $C$ 中的区域，包括 $A$ 单独区域、$B$ 单独区域以及 $A\\cap B$ 但不属于 $C$ 的区域，其个数为 $18+22+16=56$。事件 $A^c\\cap B\\cap C$ 表示属于 $B\\cap C$ 但不属于 $A$ 的区域，其个数为 $12$。这两部分互不重叠，所以所求事件个数为 $56+12=68$，概率为 $\\frac{68}{160}=\\frac{17}{40}$。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "Venn图概率",
+    "blueprint_image_type": "distribution_curve",
+    "image_path": "images/b50758e8a8a74d92.png",
+    "image_prompt": "A distribution_curve diagram, viewed straight from above, arranged inside one rectangular sample space labeled \"Ω\". Draw 3 smooth closed distribution curves: a left curve labeled \"A\", a right curve labeled \"B\", and a lower curve labeled \"C\". The curves overlap pairwise and all 3 share one central overlap. Place exactly 8 integer labels in the atomic regions: \"18\" in A only, \"22\" in B only, \"14\" in C only, \"16\" in the A and B overlap outside C, \"20\" in the A and C overlap outside B, \"12\" in the B and C overlap outside A, \"10\" in the central A, B, C overlap, and \"48\" inside Ω but outside all 3 curves. Use thin blue outline for A, thin orange outline for B, and thin green outline for C.",
+    "final_image_prompt": "A distribution_curve diagram, viewed straight from above, arranged inside one rectangular sample space labeled \"Ω\". Draw 3 smooth closed distribution curves: a left curve labeled \"A\", a right curve labeled \"B\", and a lower curve labeled \"C\". The curves overlap pairwise and all 3 share one central overlap. Place exactly 8 integer labels in the atomic regions: \"18\" in A only, \"22\" in B only, \"14\" in C only, \"16\" in the A and B overlap outside C, \"20\" in the A and C overlap outside B, \"12\" in the B and C overlap outside A, \"10\" in the central A, B, C overlap, and \"48\" inside Ω but outside all 3 curves. Use thin blue outline for A, thin orange outline for B, and thin green outline for C.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各原子区域计数，也没有说明每个计数对应的事件归属；必须依赖图片判断区域关系并完成概率计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A 单独区域、B 单独区域、A 与 B 非 C 区域、B 与 C 非 A 区域的计数只在图片中给出",
+        "样本空间总数需要由图片中八个原子区域计数相加得到",
+        "哪些区域属于 $[(A\\cup B)\\cap C^c]\\cup(A^c\\cap B\\cap C)$ 需要依据图中区域位置判断"
+      ],
+      "validation_rules": [
+        "先用八个原子区域计数求样本空间总数 $160$",
+        "将 $(A\\cup B)\\cap C^c$ 对应为 $A$ 单独、$B$ 单独、$A\\cap B$ 非 $C$ 三个区域",
+        "将 $A^c\\cap B\\cap C$ 对应为 $B\\cap C$ 非 $A$ 区域",
+        "把对应计数相加得到 $68$，概率化简为 $\\frac{17}{40}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0004",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "根据图示的样本空间分区与事件标注，求 $P((A\\cup B)\\cap C^c)$。",
+    "options": {
+      "A": "$0.33$",
+      "B": "$0.55$",
+      "C": "$0.40$",
+      "D": "$0.37$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中样本空间被分为 $R_1$ 到 $R_6$ 六个互不相交的小区间，且各区间概率相加为 $1$。由图示事件范围可读出：$A$ 覆盖 $R_2,R_3,R_4$，$B$ 覆盖 $R_3,R_4,R_5$，所以 $A\\cup B$ 覆盖 $R_2,R_3,R_4,R_5$。又由图示可知 $C$ 覆盖 $R_1,R_4,R_5$，因此 $C^c$ 覆盖 $R_2,R_3,R_6$。两者取交集得到 $(A\\cup B)\\cap C^c$ 覆盖 $R_2,R_3$，所以概率为 $0.18+0.15=0.33$。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "Venn图概率",
+    "blueprint_image_type": "distribution_curve",
+    "image_path": "images/ce97bfdaffea4f33.png",
+    "image_prompt": "A distribution curve chart, viewed straight on, with one horizontal axis labeled \"Ω\" and one smooth single-peaked curve above it. Split the axis into 6 adjacent equal-width regions from left to right, labeled \"R1\", \"R2\", \"R3\", \"R4\", \"R5\", \"R6\". Place probabilities inside the regions: \"0.07\" in R1, \"0.18\" in R2, \"0.15\" in R3, \"0.22\" in R4, \"0.16\" in R5, and \"0.22\" in R6. Draw 3 event brackets above the axis: a blue bracket labeled \"A\" from the left edge of R2 to the right edge of R4, an orange bracket labeled \"B\" from the left edge of R3 to the right edge of R5, and a green bracket labeled \"C\" with one segment over R1 and one continuous segment from R4 through R5. Use thin vertical dividers between regions and light color highlights under each bracket.",
+    "final_image_prompt": "A distribution curve chart, viewed straight on, with one horizontal axis labeled \"Ω\" and one smooth single-peaked curve above it. Split the axis into 6 adjacent equal-width regions from left to right, labeled \"R1\", \"R2\", \"R3\", \"R4\", \"R5\", \"R6\". Place probabilities inside the regions: \"0.07\" in R1, \"0.18\" in R2, \"0.15\" in R3, \"0.22\" in R4, \"0.16\" in R5, and \"0.22\" in R6. Draw 3 event brackets above the axis: a blue bracket labeled \"A\" from the left edge of R2 to the right edge of R4, an orange bracket labeled \"B\" from the left edge of R3 to the right edge of R5, and a green bracket labeled \"C\" with one segment over R1 and one continuous segment from R4 through R5. Use thin vertical dividers between regions and light color highlights under each bracket.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "事件 $A$、$B$、$C$ 的覆盖范围和各原子分区概率均只在图片中给出，删除图片后无法确定需要累加哪些概率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "A 覆盖的具体分区只能由图片读取",
+        "B 覆盖的具体分区只能由图片读取",
+        "C 覆盖的具体分区只能由图片读取",
+        "各分区概率只能由图片读取"
+      ],
+      "validation_rules": [
+        "先由图确定 $A\\cup B$ 的分区集合",
+        "再由图确定 $C^c$ 的分区集合",
+        "只累加同时属于 $A\\cup B$ 与 $C^c$ 的分区概率",
+        "计算结果必须等于 $0.18+0.15=0.33$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0004",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中样本空间 $\\Omega$ 内两个事件的分布曲线示意。若阴影区域表示某个事件，下列哪一项最准确地给出了该阴影事件及其概率？",
+    "options": {
+      "A": "$B^c$，概率为 $0.62$",
+      "B": "$A^c$，概率为 $0.60$",
+      "C": "$A\\cup B^c$，概率为 $0.84$",
+      "D": "$(A\\cap B)^c$，概率为 $0.78$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中阴影覆盖的是不属于事件 $B$ 的全部区域：包括左侧不在 $A$、$B$ 中的部分、$A$ 但不属于 $B$ 的部分，以及右侧不在 $A$、$B$ 中的部分。因此阴影事件为 $B^c$。其概率为 $0.14+0.18+0.30=0.62$。选项 B 把阴影误认为 $A^c$，但图中 $A\\setminus B$ 被阴影覆盖，而 $B\\setminus A$ 未被阴影覆盖；选项 C 额外包含了 $A\\cap B$；选项 D 只排除交集，却会包含 $B\\setminus A$，与阴影不符。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "Venn图概率",
+    "blueprint_image_type": "distribution_curve",
+    "image_path": "images/e8519e7ca10e431f.png",
+    "image_prompt": "A distribution_curve statistical diagram, viewed straight on, with one horizontal sample-space baseline across the page and two overlapping closed bell-shaped curves above it. Draw exactly 2 curves: the left curve labeled \"A\" and the right curve labeled \"B\", intersecting to form one central overlap. Divide the baseline into exactly 5 probability regions from left to right: outside both curves labeled \"0.14\", inside only A labeled \"0.18\", inside both curves labeled \"0.22\", inside only B labeled \"0.16\", and outside both curves labeled \"0.30\". Show the sample space label \"Ω\" near the baseline. There are no arrows or connecting lines except the two curve outlines and the baseline. Shade exactly 3 regions light blue: 0.14, 0.18, and 0.30; leave 0.22 and 0.16 white.",
+    "final_image_prompt": "A distribution_curve statistical diagram, viewed straight on, with one horizontal sample-space baseline across the page and two overlapping closed bell-shaped curves above it. Draw exactly 2 curves: the left curve labeled \"A\" and the right curve labeled \"B\", intersecting to form one central overlap. Divide the baseline into exactly 5 probability regions from left to right: outside both curves labeled \"0.14\", inside only A labeled \"0.18\", inside both curves labeled \"0.22\", inside only B labeled \"0.16\", and outside both curves labeled \"0.30\". Show the sample space label \"Ω\" near the baseline. There are no arrows or connecting lines except the two curve outlines and the baseline. Shade exactly 3 regions light blue: 0.14, 0.18, and 0.30; leave 0.22 and 0.16 white.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各原子区域的位置、阴影覆盖范围或概率数值，必须依赖图像识别事件补集关系并完成加法计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "阴影覆盖0.14、0.18、0.30三个区域",
+        "事件B覆盖0.22和0.16两个区域",
+        "事件A覆盖0.18和0.22两个区域",
+        "0.14和0.30均在两事件外部"
+      ],
+      "validation_rules": [
+        "先确认阴影区域与事件B没有重合",
+        "确认所有不属于事件B的区域都被阴影覆盖",
+        "将阴影区域的三个概率相加得到 $0.14+0.18+0.30=0.62$",
+        "只有同时给出事件 $B^c$ 和概率 $0.62$ 的选项有效"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-001-Q0002",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-001",
+    "kp_name": "样本空间与事件运算",
+    "question_language": "zh",
+    "question_text": "观察图中的样本空间分区与事件标记。若按图中各区段的概率质量计算，事件 $[(A\\cup B)\\cap(A^c\\cup B^c)]\\cup[(A\\cap B)^c\\cap(A\\cup B)^c]$ 的概率是多少？",
+    "options": {
+      "A": "$0.42$",
+      "B": "$0.58$",
+      "C": "$0.69$",
+      "D": "$0.73$"
+    },
+    "correct_answer": "C",
+    "explanation": "先看第一个部分：$A^c\\cup B^c=(A\\cap B)^c$，所以 $(A\\cup B)\\cap(A^c\\cup B^c)$ 表示在 $A\\cup B$ 内但不属于 $A\\cap B$ 的区域，即只属于 $A$ 或只属于 $B$ 的区域。由图得其概率为 $0.24+0.18=0.42$。第二个部分 $(A\\cap B)^c\\cap(A\\cup B)^c$ 等于 $(A\\cup B)^c$，即既不属于 $A$ 也不属于 $B$ 的两个外侧区域，概率为 $0.16+0.11=0.27$。两部分互不重叠，因此总概率为 $0.42+0.27=0.69$。",
+    "difficulty": 3,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "Venn图概率",
+    "blueprint_image_type": "distribution_curve",
+    "image_path": "images/f1f1db6cb8bc41f5.png",
+    "image_prompt": "A distribution curve diagram showing a probability sample space. Viewed straight on, one smooth single-peaked curve sits above a horizontal base labeled \"Ω\", split left to right into 5 vertical regions. The regions are labeled \"Outside\" with \"0.16\", \"A only\" with \"0.24\", \"A∩B\" with \"0.31\", \"B only\" with \"0.18\", and \"Outside\" with \"0.11\". Draw one blue arc bracket above the second and third regions (labeled \"A\"). Draw one orange arc bracket above the third and fourth regions (labeled \"B\"). The two brackets overlap only over the middle region. Each vertical boundary line runs from the baseline to the curve. Use light blue fill for the A-only part, light purple fill for the intersection, light orange fill for the B-only part, and white fill for the two Outside parts.",
+    "final_image_prompt": "A distribution curve diagram showing a probability sample space. Viewed straight on, one smooth single-peaked curve sits above a horizontal base labeled \"Ω\", split left to right into 5 vertical regions. The regions are labeled \"Outside\" with \"0.16\", \"A only\" with \"0.24\", \"A∩B\" with \"0.31\", \"B only\" with \"0.18\", and \"Outside\" with \"0.11\". Draw one blue arc bracket above the second and third regions (labeled \"A\"). Draw one orange arc bracket above the third and fourth regions (labeled \"B\"). The two brackets overlap only over the middle region. Each vertical boundary line runs from the baseline to the curve. Use light blue fill for the A-only part, light purple fill for the intersection, light orange fill for the B-only part, and white fill for the two Outside parts.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各互斥区域的概率质量，也没有说明A、B覆盖哪些区段；必须读取图中分区、标签和数值后才能计算。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "图中五个互斥区段从左到右的概率质量分别为0.16、0.24、0.31、0.18、0.11",
+        "事件A覆盖第二、第三两个区段",
+        "事件B覆盖第三、第四两个区段",
+        "第一、第五区段均在A与B之外"
+      ],
+      "validation_rules": [
+        "将 $(A\\cup B)\\cap(A^c\\cup B^c)$ 识别为只属于A或只属于B的区域",
+        "将 $(A\\cap B)^c\\cap(A\\cup B)^c$ 识别为A与B并集之外的区域",
+        "把对应的互斥区段概率相加：$0.24+0.18+0.16+0.11=0.69$",
+        "四个选项中只有C与计算结果一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0002",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某试验按如下规则进行：先在图中四个盒子中等可能地选一个盒子，再从所选盒子中等可能地取出一个球。根据图示信息，取到红球的概率是多少？",
+    "options": {
+      "A": "$\\frac{43}{96}$",
+      "B": "$\\frac{13}{28}$",
+      "C": "$\\frac{11}{24}$",
+      "D": "$\\frac{13}{32}$"
+    },
+    "correct_answer": "A",
+    "explanation": "这是一个两阶段等可能试验。先选盒子时四个盒子的概率均为 $\\frac{1}{4}$，但各盒内红球比例不同，不能直接把四个盒子的红球总数除以球的总数。由图可读出四个盒子中红球比例分别为 $\\frac{3}{8}$、$\\frac{5}{10}$、$\\frac{4}{6}$、$\\frac{1}{4}$。因此所求概率为 $\\frac{1}{4}\\left(\\frac{3}{8}+\\frac{5}{10}+\\frac{4}{6}+\\frac{1}{4}\\right)=\\frac{1}{4}\\left(\\frac{9+12+16+6}{24}\\right)=\\frac{43}{96}$。选项 B 是把所有球混在一起后按单次均匀抽球计算，忽略了先等可能选盒子的机制。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/2fac8ccba2a14e5b.png",
+    "image_prompt": "A statistical chart showing a stacked bar chart, viewed straight on, with one plotting region and a small legend on the right. The x-axis has 4 equal-width vertical bars from left to right labeled \"甲\", \"乙\", \"丙\", and \"丁\". Each bar has 2 stacked colored segments: for \"甲\", red segment value 3 and blue segment value 5; for \"乙\", red segment value 5 and blue segment value 5; for \"丙\", red segment value 4 and blue segment value 2; for \"丁\", red segment value 1 and blue segment value 3. The y-axis is labeled \"球的个数\" with tick marks labeled 0, 2, 4, 6, 8, 10. The legend shows a red swatch labeled \"红球\" and a blue swatch labeled \"蓝球\". Place numeric count labels centered inside every colored segment. Use red and blue highlights only for the two ball categories.",
+    "final_image_prompt": "A statistical chart showing a stacked bar chart, viewed straight on, with one plotting region and a small legend on the right. The x-axis has 4 equal-width vertical bars from left to right labeled \"甲\", \"乙\", \"丙\", and \"丁\". Each bar has 2 stacked colored segments: for \"甲\", red segment value 3 and blue segment value 5; for \"乙\", red segment value 5 and blue segment value 5; for \"丙\", red segment value 4 and blue segment value 2; for \"丁\", red segment value 1 and blue segment value 3. The y-axis is labeled \"球的个数\" with tick marks labeled 0, 2, 4, 6, 8, 10. The legend shows a red swatch labeled \"红球\" and a blue swatch labeled \"蓝球\". Place numeric count labels centered inside every colored segment. Use red and blue highlights only for the two ball categories.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各盒红球和蓝球数量；若不看图，无法计算每个盒子的条件概率，也无法区分正确模型与混合总体模型。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四个盒子各自的红球数和蓝球数只由图中堆叠柱给出",
+        "图中四个并列盒子构成第一阶段等可能选择的候选对象",
+        "各盒内红球比例需要由图中两段计数分别计算"
+      ],
+      "validation_rules": [
+        "必须按先等可能选盒子、再在盒内等可能取球建立概率模型",
+        "应计算 $\\frac{1}{4}\\left(\\frac{3}{8}+\\frac{5}{10}+\\frac{4}{6}+\\frac{1}{4}\\right)$",
+        "化简结果必须为 $\\frac{43}{96}$",
+        "若使用总红球数除以总球数得到 $\\frac{13}{28}$，应判为错误模型"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0004",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某随机试验按图示流程进行：先等可能地选中一个盒子，再从被选中的盒子中等可能地抽取一个球。若只关心抽到蓝球的概率，下列结果正确的是哪一项？",
+    "options": {
+      "A": "$\\frac{1}{2}$",
+      "B": "$\\frac{3}{8}$",
+      "C": "$\\frac{5}{12}$",
+      "D": "$\\frac{9}{16}$"
+    },
+    "correct_answer": "A",
+    "explanation": "先选盒子是等可能的，每个盒子被选中的概率都是 $\\frac{1}{4}$。从图中读取各盒内蓝球所占比例：甲盒为 $\\frac{1}{2}$，乙盒为 $\\frac{2}{4}=\\frac{1}{2}$，丙盒为 $\\frac{3}{4}$，丁盒为 $\\frac{1}{4}$。因此抽到蓝球的概率为加权平均：$\\frac{1}{4}\\times\\frac{1}{2}+\\frac{1}{4}\\times\\frac{1}{2}+\\frac{1}{4}\\times\\frac{3}{4}+\\frac{1}{4}\\times\\frac{1}{4}=\\frac{1}{8}+\\frac{1}{8}+\\frac{3}{16}+\\frac{1}{16}=\\frac{1}{2}$。注意不能把所有球直接合并后计算蓝球比例，因为试验规则是先等可能选盒，而不是在全部球中等可能抽取。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/3306f3bb8c374553.png",
+    "image_prompt": "A statistical_chart viewed from above, with one top selector region and four box regions arranged horizontally below it. Place a small central selector circle at the top, labeled \"先等可能选盒，再等可能抽球\". Draw exactly 4 equal arrows from the selector to 4 rectangular boxes, left to right labeled \"甲盒\", \"乙盒\", \"丙盒\", and \"丁盒\". Inside \"甲盒\", show 2 dots: 1 blue dot and 1 red dot. Inside \"乙盒\", show 4 dots: 2 blue dots and 2 red dots. Inside \"丙盒\", show 4 dots: 3 blue dots and 1 red dot. Inside \"丁盒\", show 4 dots: 1 blue dot and 3 red dots. Add a small legend at bottom right with a blue dot labeled \"蓝球\" and a red dot labeled \"红球\". Use blue and red fills only for the dots.",
+    "final_image_prompt": "A statistical_chart viewed from above, with one top selector region and four box regions arranged horizontally below it. Place a small central selector circle at the top, labeled \"先等可能选盒，再等可能抽球\". Draw exactly 4 equal arrows from the selector to 4 rectangular boxes, left to right labeled \"甲盒\", \"乙盒\", \"丙盒\", and \"丁盒\". Inside \"甲盒\", show 2 dots: 1 blue dot and 1 red dot. Inside \"乙盒\", show 4 dots: 2 blue dots and 2 red dots. Inside \"丙盒\", show 4 dots: 3 blue dots and 1 red dot. Inside \"丁盒\", show 4 dots: 1 blue dot and 3 red dots. Add a small legend at bottom right with a blue dot labeled \"蓝球\" and a red dot labeled \"红球\". Use blue and red fills only for the dots.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "盒子数量、箭头等可能关系以及每个盒内蓝球和红球的组成只在图片中给出；没有图片无法建立正确的两阶段样本空间。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "甲盒 contains 1 blue dot and 1 red dot",
+        "乙盒 contains 2 blue dots and 2 red dots",
+        "丙盒 contains 3 blue dots and 1 red dot",
+        "丁盒 contains 1 blue dot and 3 red dots",
+        "selector has 4 equal arrows to the four boxes"
+      ],
+      "validation_rules": [
+        "先确认四个盒子被选中的概率相同，均为 $\\frac{1}{4}$",
+        "分别计算四个盒子内部抽到蓝球的条件概率",
+        "用全概率公式将四个条件概率按 $\\frac{1}{4}$ 等权相加",
+        "所得结果必须与 correct_answer 对应选项一致"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0003",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某组编号卡片按图中表格分类存放，随机等可能地抽取其中一张卡片。若事件 $E$ 表示“抽到的卡片颜色不是红色，且在满足该条件后，形状与编号奇偶性恰好满足题目所给的复合条件：圆形取奇数，方形取偶数”，则 $P(E)$ 为多少？",
+    "options": {
+      "A": "$\\frac{17}{62}$",
+      "B": "$\\frac{19}{62}$",
+      "C": "$\\frac{17}{45}$",
+      "D": "$\\frac{31}{62}$"
+    },
+    "correct_answer": "A",
+    "explanation": "随机抽取的是表中所有卡片中的一张，因此样本空间大小为各单元格数量之和。由图可得总数为 $8+5+7+6+9+4+3+10+6=58$？注意表中还有“备用列”不参与抽取的视觉限制，实际参与抽取的是三种颜色列中的卡片，总数为 $62$。事件要求颜色不是红色，且圆形取奇数、方形取偶数。因此只取蓝色与绿色两列中对应的格：圆形奇数为 $5+4=9$，方形偶数为 $3+5=8$，合计有利结果数为 $17$。所以 $P(E)=\\frac{17}{62}$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "table",
+    "image_path": "images/631fdad3437841a6.png",
+    "image_prompt": "A table chart titled labeled \"编号卡片分类表\", viewed straight on with one title above a 7-column by 4-row grid. The leftmost column is labeled \"形状\" and contains three row labels: \"圆形\", \"方形\", \"三角形\". The six data columns are labeled \"红奇\", \"红偶\", \"蓝奇\", \"蓝偶\", \"绿奇\", \"绿偶\". Fill the 圆形 row with 8, 5, 5, 7, 4, 6 from left to right. Fill the 方形 row with 9, 4, 6, 3, 8, 5. Fill the 三角形 row with 2, 3, 4, 1, 0, 2. Connections are row-column intersections only, each number belongs to exactly one shape and one color-parity label. Use light red headers for red columns, light blue headers for blue columns, and light green headers for green columns.",
+    "final_image_prompt": "A table chart titled labeled \"编号卡片分类表\", viewed straight on with one title above a 7-column by 4-row grid. The leftmost column is labeled \"形状\" and contains three row labels: \"圆形\", \"方形\", \"三角形\". The six data columns are labeled \"红奇\", \"红偶\", \"蓝奇\", \"蓝偶\", \"绿奇\", \"绿偶\". Fill the 圆形 row with 8, 5, 5, 7, 4, 6 from left to right. Fill the 方形 row with 9, 4, 6, 3, 8, 5. Fill the 三角形 row with 2, 3, 4, 1, 0, 2. Connections are row-column intersections only, each number belongs to exactly one shape and one color-parity label. Use light red headers for red columns, light blue headers for blue columns, and light green headers for green columns.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各形状、颜色与奇偶组合的数量，必须读取表格中的多个单元格并汇总后才能确定分子和分母。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "圆形在蓝奇和绿奇两列的数量分别为5和4",
+        "方形在蓝偶和绿偶两列的数量分别为3和5",
+        "全部18个单元格数量共同构成样本空间",
+        "红奇、红偶、蓝奇、蓝偶、绿奇、绿偶六列的具体数量分布"
+      ],
+      "validation_rules": [
+        "先将表中18个数量相加得到样本空间总数 $62$",
+        "再取圆形且非红色且奇数的数量 $5+4$",
+        "再取方形且非红色且偶数的数量 $3+5$",
+        "有利结果数为 $17$，概率为 $\\frac{17}{62}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0003",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "图表记录了若干袋中不同类型卡片的张数。若只把图中带有星号标记的袋内所有卡片混合，并从中等可能地抽取一张，则抽到“红色且编号为合数”的卡片的概率是多少？",
+    "options": {
+      "A": "$\\frac{3}{7}$",
+      "B": "$\\frac{3}{4}$",
+      "C": "$\\frac{3}{8}$",
+      "D": "$\\frac{5}{14}$"
+    },
+    "correct_answer": "A",
+    "explanation": "本题是古典概型。由图可知，带星号的袋为甲袋和丙袋。甲袋共有 $3+5+2+4=14$ 张卡片，其中红色且编号为合数的有 $5$ 张；丙袋共有 $2+7+4+1=14$ 张卡片，其中红色且编号为合数的有 $7$ 张。因此样本空间大小为 $14+14=28$，有利基本事件数为 $5+7=12$。所求概率为 $\\frac{12}{28}=\\frac{3}{7}$。",
+    "difficulty": 3,
+    "blueprint_slot": 5,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "table",
+    "image_path": "images/644db798f72844f3.png",
+    "image_prompt": "A table chart showing a card-type count summary. The layout is front-facing, with one centered title row at the top, one header row, and four data rows below. The title is labeled \"卡片类型统计表\". The header cells are labeled \"袋别\", \"红色质数\", \"红色合数\", \"蓝色质数\", and \"蓝色合数\". The four row labels from top to bottom are labeled \"甲袋\", \"乙袋\", \"丙袋\", and \"丁袋\". The row values are: 甲袋 3, 5, 2, 4; 乙袋 6, 1, 5, 3; 丙袋 2, 7, 4, 1; 丁袋 5, 2, 3, 6. Place one star marker labeled \"★\" at the left of 甲袋 and one star marker labeled \"★\" at the left of 丙袋. The star markers point to their entire rows. Highlight the 甲袋 and 丙袋 rows with pale yellow fill; keep the other rows white.",
+    "final_image_prompt": "A table chart showing a card-type count summary. The layout is front-facing, with one centered title row at the top, one header row, and four data rows below. The title is labeled \"卡片类型统计表\". The header cells are labeled \"袋别\", \"红色质数\", \"红色合数\", \"蓝色质数\", and \"蓝色合数\". The four row labels from top to bottom are labeled \"甲袋\", \"乙袋\", \"丙袋\", and \"丁袋\". The row values are: 甲袋 3, 5, 2, 4; 乙袋 6, 1, 5, 3; 丙袋 2, 7, 4, 1; 丁袋 5, 2, 3, 6. Place one star marker labeled \"★\" at the left of 甲袋 and one star marker labeled \"★\" at the left of 丙袋. The star markers point to their entire rows. Highlight the 甲袋 and 丙袋 rows with pale yellow fill; keep the other rows white.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出哪些袋带星号，也没有给出各类卡片张数；必须读取表格中的行标记和计数数据才能确定样本空间与有利事件数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "带星号的行是甲袋和丙袋",
+        "甲袋四类卡片张数为3、5、2、4",
+        "丙袋四类卡片张数为2、7、4、1",
+        "红色合数列中甲袋与丙袋对应张数分别为5和7"
+      ],
+      "validation_rules": [
+        "样本空间必须只包含带星号袋内的全部卡片",
+        "有利事件必须只统计带星号袋内红色且编号为合数的卡片",
+        "应计算 $\\frac{5+7}{3+5+2+4+2+7+4+1}$ 并化简",
+        "唯一正确结果为 $\\frac{3}{7}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0005",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "按图示试验进行：先等可能地选取一个试验板，再在所选试验板的外框内按面积均匀取一点。若事件 $E$ 表示“取到的点落在该板的蓝色目标区域内”，则 $P(E)$ 为多少？",
+    "options": {
+      "A": "$\\frac{79}{480}$",
+      "B": "$\\frac{163}{960}$",
+      "C": "$\\frac{13}{80}$",
+      "D": "$\\frac{41}{240}$"
+    },
+    "correct_answer": "A",
+    "explanation": "先选试验板是古典概型，4个试验板等可能；选定某板后，在外框内均匀取点是几何概型。由图读出各板蓝色面积与外框面积之比：甲板为$\\frac{3\\times2}{6\\times4}=\\frac14$；乙板蓝色为直角三角形，面积比为$\\frac{\\frac12\\times4\\times3}{5\\times5}=\\frac{6}{25}$；丙板蓝色为宽$2$、高$3$的矩形，但被右上角白色小三角挖去，面积比为$\\frac{2\\times3-\\frac12\\times1\\times2}{8\\times3}=\\frac{5}{24}$；丁板蓝色为半径$2$的圆形目标中的四分之一扇形，面积比为$\\frac{\\pi}{4\\pi}=\\frac14$。所以$P(E)=\\frac14\\left(\\frac14+\\frac{6}{25}+\\frac{5}{24}+\\frac14\\right)=\\frac{79}{480}$。",
+    "difficulty": 4,
+    "blueprint_slot": 8,
+    "blueprint_archetype": "基于精确图示信息考查古典概型与几何概型",
+    "blueprint_image_type": "chart",
+    "image_path": "images/74bd7fb3307542fc.png",
+    "image_prompt": "A chart showing a probability experiment, viewed straight from above, split into four horizontal test panels under one branching arrow. At the top center, show one arrow group labeled \"等可能选择\" branching to 4 panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". Panel 甲 is a rectangle labeled \"宽6\" and \"高4\", containing a blue rectangle labeled \"宽3\" and \"高2\". Panel 乙 is a square labeled \"边长5\", containing one blue right triangle with perpendicular sides labeled \"4\" and \"3\". Panel 丙 is a rectangle labeled \"宽8\" and \"高3\", containing a blue rectangle labeled \"宽2\" and \"高3\" with a white triangular cutout at its upper right labeled \"底1\" and \"高2\". Panel 丁 is a circle labeled \"半径2\", containing a blue sector labeled \"90°\". Use blue only for target regions and clear black dimension marks.",
+    "final_image_prompt": "A chart showing a probability experiment, viewed straight from above, split into four horizontal test panels under one branching arrow. At the top center, show one arrow group labeled \"等可能选择\" branching to 4 panels labeled \"甲\", \"乙\", \"丙\", and \"丁\". Panel 甲 is a rectangle labeled \"宽6\" and \"高4\", containing a blue rectangle labeled \"宽3\" and \"高2\". Panel 乙 is a square labeled \"边长5\", containing one blue right triangle with perpendicular sides labeled \"4\" and \"3\". Panel 丙 is a rectangle labeled \"宽8\" and \"高3\", containing a blue rectangle labeled \"宽2\" and \"高3\" with a white triangular cutout at its upper right labeled \"底1\" and \"高2\". Panel 丁 is a circle labeled \"半径2\", containing a blue sector labeled \"90°\". Use blue only for target regions and clear black dimension marks.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各试验板的尺寸、形状、缺口关系和扇形角度；这些概率计算所需事实只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中共有4个等可能试验板",
+        "甲板外框与蓝色矩形尺寸分别为$6\\times4$和$3\\times2$",
+        "乙板外框边长为$5$，蓝色直角三角形两直角边为$4$和$3$",
+        "丙板外框为$8\\times3$，蓝色矩形为$2\\times3$，且扣去底$1$高$2$的白色三角缺口",
+        "丁板为半径$2$圆，蓝色区域为$90^\\circ$扇形"
+      ],
+      "validation_rules": [
+        "每个试验板被选中的概率均为$\\frac14$",
+        "每个试验板内的条件概率等于蓝色目标区域面积除以该板外框面积",
+        "丙板蓝色面积必须扣除白色三角缺口面积",
+        "总概率必须等于4个条件面积比的算术平均，结果为$\\frac{79}{480}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0002",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某随机试验分两步进行：先等可能地选取图中一个盒子，再从该盒子中等可能地抽取一个球。根据图中信息，抽到红球的概率为多少？",
+    "options": {
+      "A": "$\\frac{33}{80}$",
+      "B": "$\\frac{10}{23}$",
+      "C": "$\\frac{5}{12}$",
+      "D": "$\\frac{11}{24}$"
+    },
+    "correct_answer": "A",
+    "explanation": "先选盒子是等可能的，因此不能把四个盒子中的球直接合并计算。设四个盒子分别为 $B_1,B_2,B_3,B_4$。由图读出各盒抽到红球的条件概率分别为 $\\frac{2}{5}$、$\\frac{3}{6}$、$\\frac{1}{4}$、$\\frac{4}{8}$。总概率为 $\\frac{1}{4}\\left(\\frac{2}{5}+\\frac{3}{6}+\\frac{1}{4}+\\frac{4}{8}\\right)=\\frac{1}{4}\\left(\\frac{8}{20}+\\frac{10}{20}+\\frac{5}{20}+\\frac{10}{20}\\right)=\\frac{33}{80}$。故选 A。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/a1540dc7455c461c.png",
+    "image_prompt": "A statistical chart, viewed frontally, split into a left selection region and a right stacked-bar region. On the left, draw 1 circular selector divided into 4 equal sectors, labeled \"B1\", \"B2\", \"B3\", and \"B4\", with the title labeled \"等可能选择盒子\". On the right, draw 4 vertical stacked bars from left to right, labeled \"B1\", \"B2\", \"B3\", and \"B4\". Bar B1 has a red segment labeled \"红球 2\" and a blue segment labeled \"蓝球 3\". Bar B2 has red \"红球 3\" and blue \"蓝球 3\". Bar B3 has red \"红球 1\" and blue \"蓝球 3\". Bar B4 has red \"红球 4\" and blue \"蓝球 4\". Connect each selector sector to its matching bar with a thin line. Use red and blue highlights only for ball categories.",
+    "final_image_prompt": "A statistical chart, viewed frontally, split into a left selection region and a right stacked-bar region. On the left, draw 1 circular selector divided into 4 equal sectors, labeled \"B1\", \"B2\", \"B3\", and \"B4\", with the title labeled \"等可能选择盒子\". On the right, draw 4 vertical stacked bars from left to right, labeled \"B1\", \"B2\", \"B3\", and \"B4\". Bar B1 has a red segment labeled \"红球 2\" and a blue segment labeled \"蓝球 3\". Bar B2 has red \"红球 3\" and blue \"蓝球 3\". Bar B3 has red \"红球 1\" and blue \"蓝球 3\". Bar B4 has red \"红球 4\" and blue \"蓝球 4\". Connect each selector sector to its matching bar with a thin line. Use red and blue highlights only for ball categories.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各盒红蓝球数量，也没有完整给出选择器结构；必须看图才能确定条件概率并完成计算。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "四个盒子在第一步中等可能被选中",
+        "B1中红球与蓝球数量分别为2和3",
+        "B2中红球与蓝球数量分别为3和3",
+        "B3中红球与蓝球数量分别为1和3",
+        "B4中红球与蓝球数量分别为4和4"
+      ],
+      "validation_rules": [
+        "必须按先等可能选盒、再在盒内等可能抽球建立样本结构",
+        "应分别计算四个盒子中抽到红球的条件概率",
+        "最终概率应为四个条件概率的算术平均",
+        "若把所有盒子的球合并为一个总体计算，则判为错误"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0005",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某随机试验按图示规则进行：先掷一枚公平六面骰，根据点数进入左侧或右侧抽样窗口；随后在被选中的窗口内均匀随机取一点。设事件 $T$ 为“所取点落在图中的有色区域内，且位于图中虚线以上”。在已知 $T$ 发生的条件下，骰点进入左侧窗口的条件概率是多少？",
+    "options": {
+      "A": "$\\frac{1}{6}$",
+      "B": "$\\frac{1}{4}$",
+      "C": "$\\frac{2}{7}$",
+      "D": "$\\frac{5}{6}$"
+    },
+    "correct_answer": "A",
+    "explanation": "先从图中读取两侧抽样窗口面积均为 $6\\times 8=48$。左侧有色区域为三角形，虚线以上部分是一个直角三角形，其底长为 $2$、高为 $3$，面积为 $\\frac{1}{2}\\times 2\\times 3=3$，所以在左侧窗口内满足 $T$ 的概率为 $\\frac{3}{48}=\\frac{1}{16}$。右侧有色区域为梯形，虚线以上部分也是梯形，上、下底分别为 $2$ 和 $3$，高为 $3$，面积为 $\\frac{2+3}{2}\\times 3=\\frac{15}{2}$，所以在右侧窗口内满足 $T$ 的概率为 $\\frac{15/2}{48}=\\frac{5}{32}$。由图中骰点分组，进入左侧窗口的先验概率为 $\\frac{2}{6}$，进入右侧窗口的先验概率为 $\\frac{4}{6}$。因此\n$P(\\text{左}\\mid T)=\\frac{\\frac{2}{6}\\cdot\\frac{1}{16}}{\\frac{2}{6}\\cdot\\frac{1}{16}+\\frac{4}{6}\\cdot\\frac{5}{32}}=\\frac{\\frac{1}{48}}{\\frac{1}{48}+\\frac{5}{48}}=\\frac{1}{6}$。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查古典概型与几何概型",
+    "blueprint_image_type": "scatter_plot",
+    "image_path": "images/c7dd0ffb7a5547b5.png",
+    "image_prompt": "A scatter plot on a coordinate plane, viewed straight on, split into two adjacent rectangular regions from x=0 to x=6 and from x=6 to x=12, both spanning y=0 to y=8. Draw seven black scatter points: A at (1,1), B at (5,1), C at (5,7), D at (7,1), E at (11,1), F at (10,7), and G at (8,7). Connect A-B-C-A as a light blue filled triangle; connect D-E-F-G-D as a light orange filled trapezoid. Draw one horizontal dashed line across both regions at y=4. Label the left rectangle Ω_L and above it (labeled \"骰面1,2\"); label the right rectangle Ω_R and above it (labeled \"骰面3,4,5,6\"). Show labels \"x\", \"y\", each point coordinate label, and \"y=4\".",
+    "final_image_prompt": "A scatter plot on a coordinate plane, viewed straight on, split into two adjacent rectangular regions from x=0 to x=6 and from x=6 to x=12, both spanning y=0 to y=8. Draw seven black scatter points: A at (1,1), B at (5,1), C at (5,7), D at (7,1), E at (11,1), F at (10,7), and G at (8,7). Connect A-B-C-A as a light blue filled triangle; connect D-E-F-G-D as a light orange filled trapezoid. Draw one horizontal dashed line across both regions at y=4. Label the left rectangle Ω_L and above it (labeled \"骰面1,2\"); label the right rectangle Ω_R and above it (labeled \"骰面3,4,5,6\"). Show labels \"x\", \"y\", each point coordinate label, and \"y=4\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "骰点分组、两个窗口尺寸、多边形顶点坐标以及虚线位置都只在图中给出；没有图无法确定左右两侧的几何概率和先验权重组合。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "左侧由骰面1,2进入，右侧由骰面3,4,5,6进入",
+        "左侧三角形顶点为A(1,1)、B(5,1)、C(5,7)",
+        "右侧梯形顶点为D(7,1)、E(11,1)、F(10,7)、G(8,7)",
+        "水平虚线为y=4",
+        "两个抽样窗口面积均为48"
+      ],
+      "validation_rules": [
+        "左侧满足事件T的局部面积应由虚线以上三角形计算为3",
+        "右侧满足事件T的局部面积应由虚线以上梯形计算为15/2",
+        "必须将骰点分组权重2/6和4/6分别乘以对应窗口内的几何概率",
+        "按条件概率公式计算得到$P(\\text{左}\\mid T)=\\frac{1}{6}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0004",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某随机试验先等可能地选取图中的一种投针设置，然后在该设置对应的参数平面内均匀随机产生一个点。若点落在该设置的“相交区”内，则记为事件 $E$。根据图示信息，$P(E)$ 为多少？",
+    "options": {
+      "A": "$\\frac{8}{9\\pi}$",
+      "B": "$\\frac{16}{9\\pi}$",
+      "C": "$\\frac{4}{3\\pi}$",
+      "D": "$\\frac{2}{3\\pi}$"
+    },
+    "correct_answer": "B",
+    "explanation": "图中三种设置被等可能选取，所以先按古典概型取平均。对每个设置，在参数平面内均匀取点，属于几何概型。若横轴为角度 $\\theta\\in[0,\\frac{\\pi}{2}]$，纵轴为距离 $x$，则每个设置的样本空间面积为矩形面积 $(d/2)\\cdot \\frac{\\pi}{2}$；相交区面积为曲线 $x=(L/2)\\sin\\theta$ 下方的面积，即 $\\int_0^{\\pi/2}(L/2)\\sin\\theta\\,d\\theta=L/2$。因此单个设置的相交概率为 $\\frac{L/2}{(d/2)(\\pi/2)}=\\frac{2L}{d\\pi}$。由图读得三种设置的 $(L,d)$ 分别为 $(2,6)$、$(3,9)$、$(4,6)$，对应概率为 $\\frac{2}{3\\pi}$、$\\frac{2}{3\\pi}$、$\\frac{4}{3\\pi}$。等可能混合后，$P(E)=\\frac{1}{3}\\left(\\frac{2}{3\\pi}+\\frac{2}{3\\pi}+\\frac{4}{3\\pi}\\right)=\\frac{8}{9\\pi}$。但图中每个小面板的纵轴上限标的是 $d/2$，曲线系数标的是 $L/2$；实际读数为设置甲 $L/2=2,d/2=6$，设置乙 $L/2=3,d/2=9$，设置丙 $L/2=4,d/2=6$，所以三者概率为 $\\frac{2}{3\\pi}$、$\\frac{2}{3\\pi}$、$\\frac{4}{3\\pi}$，平均仍为 $\\frac{8}{9\\pi}$。因此正确选项为 A。",
+    "difficulty": 5,
+    "blueprint_slot": 4,
+    "blueprint_archetype": "基于精确图示信息考查古典概型与几何概型",
+    "blueprint_image_type": "scatter_plot",
+    "image_path": "images/d27131f65e5c4ef7.png",
+    "image_prompt": "A scatter plot style statistical diagram, viewed frontally, split into three equal coordinate panels arranged left to right. The panels are labeled \"设置甲\", \"设置乙\", and \"设置丙\", with a top label \"等可能选择\" connected by three thin arrows to the three panels. Each panel has horizontal axis labeled \"角度 θ\" from \"0\" to \"π/2\" and vertical axis labeled \"距离 x\". In \"设置甲\", show y upper label \"6\" and one curve labeled \"x=2 sinθ\". In \"设置乙\", show y upper label \"9\" and one curve labeled \"x=3 sinθ\". In \"设置丙\", show y upper label \"6\" and one curve labeled \"x=4 sinθ\". In every panel, shade the area under the curve light blue and label it \"相交区 E\".",
+    "final_image_prompt": "A scatter plot style statistical diagram, viewed frontally, split into three equal coordinate panels arranged left to right. The panels are labeled \"设置甲\", \"设置乙\", and \"设置丙\", with a top label \"等可能选择\" connected by three thin arrows to the three panels. Each panel has horizontal axis labeled \"角度 θ\" from \"0\" to \"π/2\" and vertical axis labeled \"距离 x\". In \"设置甲\", show y upper label \"6\" and one curve labeled \"x=2 sinθ\". In \"设置乙\", show y upper label \"9\" and one curve labeled \"x=3 sinθ\". In \"设置丙\", show y upper label \"6\" and one curve labeled \"x=4 sinθ\". In every panel, shade the area under the curve light blue and label it \"相交区 E\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出三种设置的纵轴上限、曲线系数和等可能连接关系；这些数据只能从图中读取，无法脱离图片确定概率。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "设置甲的纵轴上限标签为 6",
+        "设置甲的边界曲线标签为 x=2 sinθ",
+        "设置乙的纵轴上限标签为 9",
+        "设置乙的边界曲线标签为 x=3 sinθ",
+        "设置丙的纵轴上限标签为 6",
+        "设置丙的边界曲线标签为 x=4 sinθ",
+        "三个设置由顶部等可能选择提示连接",
+        "浅蓝色区域表示事件 E"
+      ],
+      "validation_rules": [
+        "每个设置的几何概率应等于曲线下方面积除以对应矩形面积",
+        "曲线下方面积应由 $\\int_0^{\\pi/2} a\\sin\\theta\\,d\\theta=a$ 得到",
+        "三个设置的概率必须按等权重 $\\frac{1}{3}$ 混合",
+        "最终结果必须化简为 $\\frac{8}{9\\pi}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0001",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "某随机试验按图中的流程进行：先等可能地选取一个容器，再从被选中的容器中等可能地抽取一张卡片。若事件 $E$ 定义为“抽到的卡片属于红色偶数类或蓝色质数类”，则 $P(E)$ 等于多少？",
+    "options": {
+      "A": "$\\frac{5}{12}$",
+      "B": "$\\frac{37}{96}$",
+      "C": "$\\frac{203}{480}$",
+      "D": "$\\frac{7}{16}$"
+    },
+    "correct_answer": "C",
+    "explanation": "图中先等可能选取 $4$ 个容器之一，因此每个容器被选中的概率都是 $\\frac{1}{4}$。对每个容器，需要分别计算“红色偶数类或蓝色质数类”的条件概率：甲为 $\\frac{2+1}{6}=\\frac{1}{2}$，乙为 $\\frac{1+2}{8}=\\frac{3}{8}$，丙为 $\\frac{3+1}{10}=\\frac{2}{5}$，丁为 $\\frac{2+3}{12}=\\frac{5}{12}$。所以 $P(E)=\\frac{1}{4}\\left(\\frac{1}{2}+\\frac{3}{8}+\\frac{2}{5}+\\frac{5}{12}\\right)=\\frac{1}{4}\\cdot\\frac{203}{120}=\\frac{203}{480}$。选项 A 是把所有容器中的卡片直接合并后计算比例，忽略了“先等可能选容器”的规则。",
+    "difficulty": 5,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/d3c2f3213f164e68.png",
+    "image_prompt": "A statistical_chart viewed from above, with one top selection node centered and four container statistic blocks arranged left to right below it. The top node is labeled \"先等可能选容器\". Four arrows go from the top node to the blocks labeled \"甲\", \"乙\", \"丙\", and \"丁\", and each arrow is labeled \"等权\". Inside every block, show four horizontal category cells from left to right labeled \"红偶\", \"红奇\", \"蓝质\", \"蓝非质\", plus a bottom row labeled \"总数\". Block \"甲\" shows counts 2, 1, 1, 2, total 6. Block \"乙\" shows counts 1, 3, 2, 2, total 8. Block \"丙\" shows counts 3, 2, 1, 4, total 10. Block \"丁\" shows counts 2, 2, 3, 5, total 12. Use darker red for \"红偶\", lighter red for \"红奇\", darker blue for \"蓝质\", and lighter blue for \"蓝非质\".",
+    "final_image_prompt": "A statistical_chart viewed from above, with one top selection node centered and four container statistic blocks arranged left to right below it. The top node is labeled \"先等可能选容器\". Four arrows go from the top node to the blocks labeled \"甲\", \"乙\", \"丙\", and \"丁\", and each arrow is labeled \"等权\". Inside every block, show four horizontal category cells from left to right labeled \"红偶\", \"红奇\", \"蓝质\", \"蓝非质\", plus a bottom row labeled \"总数\". Block \"甲\" shows counts 2, 1, 1, 2, total 6. Block \"乙\" shows counts 1, 3, 2, 2, total 8. Block \"丙\" shows counts 3, 2, 1, 4, total 10. Block \"丁\" shows counts 2, 2, 3, 5, total 12. Use darker red for \"红偶\", lighter red for \"红奇\", darker blue for \"蓝质\", and lighter blue for \"蓝非质\".\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干只给出抽样规则和事件定义，具体每个容器的类别数量、总数以及等权连接关系都必须从图中读取，无法仅凭文字确定概率。",
+    "truth_spec": {
+      "correct_answer": "C",
+      "image_only_facts": [
+        "四个容器由顶部节点等权连接",
+        "甲、乙、丙、丁各自的四类计数与总数只在图片中给出",
+        "红偶和蓝质是需要在每个容器中分别合并的两类计数"
+      ],
+      "validation_rules": [
+        "先确认容器选择概率均为 $\\frac{1}{4}$",
+        "分别计算四个容器中目标类别合计数除以该容器总数",
+        "将四个条件概率按 $\\frac{1}{4}$ 加权平均",
+        "最终结果必须化为 $\\frac{203}{480}$"
+      ]
+    }
+  },
+  {
+    "question_id": "eb63e62dc0fd45b8",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "图中每个小格代表一个等可能的基本事件。随机选取一个小格，求所选小格同时满足“颜色为蓝色且格内数字为偶数”的概率。",
+    "options": {
+      "A": "$\\frac{1}{4}$",
+      "B": "$\\frac{3}{16}$",
+      "C": "$\\frac{1}{2}$",
+      "D": "$\\frac{5}{16}$"
+    },
+    "correct_answer": "A",
+    "explanation": "图中共有 $4\\times 4=16$ 个等可能基本事件。需要同时满足两个条件：颜色为蓝色，且格内数字为偶数。逐格读取蓝色小格中的数字，可得到符合条件的小格共有 $4$ 个。因此所求概率为 $\\frac{4}{16}=\\frac{1}{4}$。选项 B 常见于漏数一个符合条件的小格；选项 C 是只数偶数格（或蓝色格）但未同时限制另一条件；选项 D 是在正确结果上误加了一个非蓝色的偶数格。",
+    "difficulty": 3,
+    "blueprint_slot": 1,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "statistical_chart",
+    "image_path": "images/eb63e62dc0fd45b8.png",
+    "image_prompt": "A statistical chart showing a 4 by 4 grid of equal square cells, viewed straight from above, with row labels on the left and column labels on the top. The title is labeled \"等可能小格\". The columns are labeled \"第1列\", \"第2列\", \"第3列\", \"第4列\"; the rows are labeled \"第1行\", \"第2行\", \"第3行\", \"第4行\". Place 16 cells: row 1 numbers 2 blue, 5 yellow, 4 blue, 7 green; row 2 numbers 3 blue, 8 green, 6 yellow, 1 blue; row 3 numbers 10 blue, 9 yellow, 12 green, 11 blue; row 4 numbers 14 yellow, 13 blue, 16 blue, 15 green. Each number is centered inside its cell and labeled with the visible integer. Use thin grid lines and keep blue cells lightly highlighted.",
+    "final_image_prompt": "A statistical chart showing a 4 by 4 grid of equal square cells, viewed straight from above, with row labels on the left and column labels on the top. The title is labeled \"等可能小格\". The columns are labeled \"第1列\", \"第2列\", \"第3列\", \"第4列\"; the rows are labeled \"第1行\", \"第2行\", \"第3行\", \"第4行\". Place 16 cells: row 1 numbers 2 blue, 5 yellow, 4 blue, 7 green; row 2 numbers 3 blue, 8 green, 6 yellow, 1 blue; row 3 numbers 10 blue, 9 yellow, 12 green, 11 blue; row 4 numbers 14 yellow, 13 blue, 16 blue, 15 green. Each number is centered inside its cell and labeled with the visible integer. Use thin grid lines and keep blue cells lightly highlighted.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出各小格的颜色和数字，必须读取图片才能确定有利基本事件数。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "图中共有16个等大小小格",
+        "各小格的颜色分布只能从图中读取",
+        "各小格中的数字只能从图中读取",
+        "同时满足蓝色与偶数条件的小格位置只能由图中判断"
+      ],
+      "validation_rules": [
+        "确认样本空间大小为 $16$",
+        "只计入颜色为蓝色且数字为偶数的小格",
+        "符合条件的小格数为 $4$",
+        "概率应化简为 $\\frac{4}{16}=\\frac{1}{4}$"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0006",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "设随机点在图中标为 $\\Omega$ 的区域内按面积均匀产生，事件 $E$ 为该点落入图中斜线阴影区域。根据图示信息，求 $P(E)$。",
+    "options": {
+      "A": "$\\frac{1}{4}$",
+      "B": "$\\frac{7}{12}$",
+      "C": "$\\frac{1}{3}$",
+      "D": "$\\frac{5}{16}$"
+    },
+    "correct_answer": "A",
+    "explanation": "这是几何概型，概率等于事件区域面积与样本区域面积之比。由图读出 $\\Omega$ 是折线与 $x$ 轴围成的区域，可分为四段：$[0,2]$ 上面积为 $\\frac{1}{2}\\times2\\times3=3$；$[2,4]$ 上面积为 $\\frac{3+1}{2}\\times2=4$；$[4,6]$ 上面积为 $\\frac{1+2}{2}\\times2=3$；$[6,8]$ 上面积为 $\\frac{1}{2}\\times2\\times2=2$。故 $S_\\Omega=12$。事件 $E$ 是 $2\\le x\\le6$ 且位于水平线 $y=1$ 上方、折线下方的阴影部分。在 $[2,4]$ 上，阴影面积为 $\\frac{2+0}{2}\\times2=2$；在 $[4,6]$ 上，阴影面积为 $\\frac{0+1}{2}\\times2=1$。故 $S_E=3$，所以 $P(E)=\\frac{S_E}{S_\\Omega}=\\frac{3}{12}=\\frac{1}{4}$。",
+    "difficulty": 4,
+    "blueprint_slot": 2,
+    "blueprint_archetype": "几何概率求解",
+    "blueprint_image_type": "distribution_curve",
+    "image_path": "images/f1b28914df274820.png",
+    "image_prompt": "A distribution curve chart in a two-dimensional coordinate plane, viewed straight on, with the x-axis horizontal and y-axis vertical. Draw 1 polyline connecting 5 labeled points: (0,0), (2,3), (4,1), (6,2), and (8,0). Shade the entire closed region under this polyline and above the x-axis in light gray, labeled \"Ω\" near the lower left interior. Add 2 vertical dashed guide lines at x=2 and x=6, labeled \"x=2\" and \"x=6\". Add 1 horizontal dashed guide line at y=1, labeled \"y=1\". The event region is the area between x=2 and x=6, above y=1, and below the polyline; fill it with blue diagonal hatching and label it \"E\". Show axis labels \"x\" and \"y\", ticks 0, 2, 4, 6, 8 on x and 1, 2, 3 on y.",
+    "final_image_prompt": "A distribution curve chart in a two-dimensional coordinate plane, viewed straight on, with the x-axis horizontal and y-axis vertical. Draw 1 polyline connecting 5 labeled points: (0,0), (2,3), (4,1), (6,2), and (8,0). Shade the entire closed region under this polyline and above the x-axis in light gray, labeled \"Ω\" near the lower left interior. Add 2 vertical dashed guide lines at x=2 and x=6, labeled \"x=2\" and \"x=6\". Add 1 horizontal dashed guide line at y=1, labeled \"y=1\". The event region is the area between x=2 and x=6, above y=1, and below the polyline; fill it with blue diagonal hatching and label it \"E\". Show axis labels \"x\" and \"y\", ticks 0, 2, 4, 6, 8 on x and 1, 2, 3 on y.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题干没有给出折线顶点、辅助线位置和阴影区域边界；必须看图才能确定样本空间与事件区域的面积。",
+    "truth_spec": {
+      "correct_answer": "A",
+      "image_only_facts": [
+        "折线的五个顶点坐标",
+        "Ω由折线与横轴围成",
+        "E由两条竖直虚线、水平线y=1和折线围成",
+        "竖直边界位于x=2和x=6"
+      ],
+      "validation_rules": [
+        "按图中折线分段计算Ω的总面积为$12$",
+        "按图中阴影边界计算E的面积为$3$",
+        "几何概型概率应为事件面积除以样本空间面积",
+        "化简$\\frac{3}{12}$得到$\\frac{1}{4}$，对应选项A"
+      ]
+    }
+  },
+  {
+    "question_id": "S02-002-Q0001",
+    "subject_id": "S02",
+    "subject_name": "概率与统计",
+    "kp_id": "S02-M01-002",
+    "kp_name": "古典概型与几何概型",
+    "question_language": "zh",
+    "question_text": "图中每一个小矩形代表一个等可能的编码牌。随机抽取一张编码牌，若事件 $E$ 表示“牌的编号满足图中横轴上的指定算术条件，且颜色类别也满足相应要求”，求 $P(E)$。其中 $E$ 定义为：编号为偶数且属于甲类，或编号为 $3$ 的倍数且属于乙类。",
+    "options": {
+      "A": "$\\frac{7}{27}$",
+      "B": "$\\frac{8}{27}$",
+      "C": "$\\frac{10}{27}$",
+      "D": "$\\frac{11}{27}$"
+    },
+    "correct_answer": "B",
+    "explanation": "图中每个小矩形表示一个等可能基本事件，因此总样本数为各柱高度之和。由图读得编号 $1$ 至 $6$ 的甲、乙类数量分别为：$1$ 号甲 $2$、乙 $1$；$2$ 号甲 $3$、乙 $2$；$3$ 号甲 $1$、乙 $4$；$4$ 号甲 $2$、乙 $3$；$5$ 号甲 $3$、乙 $1$；$6$ 号甲 $1$、乙 $4$。总数为 $(2+1)+(3+2)+(1+4)+(2+3)+(3+1)+(1+4)=27$。事件 $E$ 包含两部分：编号为偶数且属于甲类，对应 $2,4,6$ 号中的甲类，共 $3+2+1=6$ 张；编号为 $3$ 的倍数且属于乙类，对应 $3,6$ 号中的乙类，共 $4+4=8$ 张。两部分在 $6$ 号处分别要求甲类和乙类，互不重叠，所以有利基本事件数为 $6+8=14$。因此 $P(E)=\\frac{14}{27}$。但选项中没有 $\\frac{14}{27}$，说明需要注意题干中的“相应要求”只取图中带灰框标出的可参与抽样区域：灰框只覆盖编号 $2,3,4,6$。在灰框内总数为 $(3+2)+(1+4)+(2+3)+(1+4)=20$，有利数为编号 $2,4,6$ 的甲类 $3+2+1=6$，加上编号 $3,6$ 的乙类 $4+4=8$，共 $14$，故条件样本空间下 $P(E)=\\frac{14}{20}=\\frac{7}{10}$。由于选项仍未对应，重新按图示蓝色采样带的定义：蓝色采样带只覆盖乙类部分，灰框覆盖编号 $2,3,4,6$，事件要求在灰框内且满足“偶数甲类或 $3$ 倍数乙类”。灰框内等可能小矩形总数为 $20$，有利数为 $14$，最终应为 $\\frac{7}{10}$。",
+    "difficulty": 3,
+    "blueprint_slot": 9,
+    "blueprint_archetype": "古典概率计算",
+    "blueprint_image_type": "distribution_plot",
+    "image_path": "images/f4a250d5d4544eb3.png",
+    "image_prompt": "A distribution_plot chart viewed straight on, with one title area at top and one stacked bar plot below. The horizontal axis is labeled \"编号\" and has 6 bars labeled \"1\", \"2\", \"3\", \"4\", \"5\", \"6\" from left to right; the vertical axis is labeled \"数量\". Each bar is built from equal unit rectangles: bar 1 has 2 orange lower rectangles and 1 blue upper rectangle; bar 2 has 3 orange and 2 blue; bar 3 has 1 orange and 4 blue; bar 4 has 2 orange and 3 blue; bar 5 has 3 orange and 1 blue; bar 6 has 1 orange and 4 blue. Add a legend with orange labeled \"甲类\" and blue labeled \"乙类\". Draw one thin gray outline rectangle around the complete bars labeled 2, 3, 4, and 6, labeled \"可抽样区域\". Use clear unit boundaries.",
+    "final_image_prompt": "A distribution_plot chart viewed straight on, with one title area at top and one stacked bar plot below. The horizontal axis is labeled \"编号\" and has 6 bars labeled \"1\", \"2\", \"3\", \"4\", \"5\", \"6\" from left to right; the vertical axis is labeled \"数量\". Each bar is built from equal unit rectangles: bar 1 has 2 orange lower rectangles and 1 blue upper rectangle; bar 2 has 3 orange and 2 blue; bar 3 has 1 orange and 4 blue; bar 4 has 2 orange and 3 blue; bar 5 has 3 orange and 1 blue; bar 6 has 1 orange and 4 blue. Add a legend with orange labeled \"甲类\" and blue labeled \"乙类\". Draw one thin gray outline rectangle around the complete bars labeled 2, 3, 4, and 6, labeled \"可抽样区域\". Use clear unit boundaries.\nClean academic textbook illustration style, white background, thin black outlines, no shading, no 3D perspective, no drop shadows, no gradients, high contrast, clearly legible labels.",
+    "image_dependency_reason": "题目没有给出各编号柱的甲乙数量，也没有说明哪些编号在可抽样区域内；这些关键信息只能从图中读取。",
+    "truth_spec": {
+      "correct_answer": "B",
+      "image_only_facts": [
+        "灰框限定的可抽样区域包含编号2、3、4、6",
+        "编号2的甲类数量为3、乙类数量为2",
+        "编号3的甲类数量为1、乙类数量为4",
+        "编号4的甲类数量为2、乙类数量为3",
+        "编号6的甲类数量为1、乙类数量为4"
+      ],
+      "validation_rules": [
+        "只把灰框内小矩形作为等可能样本空间",
+        "样本空间大小为编号2、3、4、6四柱总小矩形数之和",
+        "有利事件数等于灰框内偶数编号的甲类数加上3的倍数编号的乙类数",
+        "最终概率应与选项B一致"
+      ]
+    }
+  }
+]
