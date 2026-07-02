@@ -1,0 +1,57 @@
+# secrets
+config/.env
+*.env
+.gpt_keys_b64.txt
+*key*
+*secret*
+*token*
+
+# large/runtime data
+output/
+production.db*
+*.db
+*.sqlite
+*.zip
+final_package/
+final_submission_*/
+human_review_sample*/
+feishu_samples/
+api_responses*/
+smoke_runs/
+preflight/
+backups/
+archives/
+
+# logs/runtime state
+logs/
+*.log
+*.pid
+*.stdout.log
+*.stderr.log
+.monitor*
+monitor_*state*.json
+pipeline_state.json*
+runtime_control.json
+STOP_AT_*.TRIGGERED
+production_v7_queue_report.json
+latest_report.txt
+monitor_state_simple.txt
+feishu_queue/
+
+# python/cache/env
+__pycache__/
+*.pyc
+.venv*/
+.pytest_cache/
+.mypy_cache/
+
+# generated reports/samples
+integrity_reports/
+quality_audits/
+*_sample*.json
+*_coverage_report.json
+
+# backups / old copies
+*.bak*
+*.before_*
+*_backup.py
